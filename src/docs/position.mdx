@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "position";
-export const description = "Utilities for controlling how an element is positioned in the document.";
+export const description = "控制元素在文档中定位的工具类。";
 
 <ApiTable
   rows={[
@@ -16,11 +16,11 @@ export const description = "Utilities for controlling how an element is position
   ]}
 />
 
-## Examples
+## 示例
 
-### Statically positioning elements
+### 静态定位元素
 
-Use the `static` utility to position an element according to the normal flow of the document:
+使用 `static` 工具类根据文档的正常流来定位元素：
 
 <Figure>
 
@@ -29,9 +29,9 @@ Use the `static` utility to position an element according to the normal flow of 
     <div className="relative text-sm leading-6 font-medium">
       <div className="rounded-lg border border-purple-700/10 bg-purple-400/20 p-4 dark:border-0 dark:bg-sky-900/70">
         <div className="static h-32 border border-purple-700/10 bg-purple-400/20 p-4 dark:border-0 dark:bg-sky-400/20">
-          <p className="text-purple-700 dark:text-sky-200">Static parent</p>
+          <p className="text-purple-700 dark:text-sky-200">静态父元素</p>
           <div className="absolute bottom-0 left-0 rounded-lg bg-purple-500 p-4 text-white shadow-lg dark:bg-sky-500">
-            <p>Absolute child</p>
+            <p>绝对子元素</p>
           </div>
         </div>
       </div>
@@ -42,20 +42,20 @@ Use the `static` utility to position an element according to the normal flow of 
 ```html
 <!-- [!code classes:static] -->
 <div class="static ...">
-  <p>Static parent</p>
+  <p>静态父元素</p>
   <div class="absolute bottom-0 left-0 ...">
-    <p>Absolute child</p>
+    <p>绝对子元素</p>
   </div>
 </div>
 ```
 
 </Figure>
 
-With statically positioned elements, any [offsets](/docs/top-right-bottom-left) will be ignored and the element will not act as a position reference for absolutely positioned children.
+对于静态定位的元素，任何 [偏移](/docs/top-right-bottom-left) 将被忽略，该元素不会作为绝对定位子元素的参考。
 
-### Relatively positioning elements
+### 相对定位元素
 
-Use the `relative` utility to position an element according to the normal flow of the document:
+使用 `relative` 工具类根据文档的正常流来定位元素：
 
 <Figure>
 
@@ -64,9 +64,9 @@ Use the `relative` utility to position an element according to the normal flow o
     <div className="relative text-sm leading-6 font-medium">
       <div className="rounded-lg border border-sky-700/10 bg-sky-400/20 p-4 dark:border-0 dark:bg-blue-900/70">
         <div className="relative h-32 border border-sky-700/10 bg-sky-400/20 p-4 dark:border-0 dark:bg-blue-400/20">
-          <p className="text-sky-700 dark:text-white">Relative parent</p>
+          <p className="text-sky-700 dark:text-white">相对父元素</p>
           <div className="absolute bottom-0 left-0 rounded-lg bg-sky-500 p-4 text-white shadow-lg dark:bg-blue-500">
-            <p>Absolute child</p>
+            <p>绝对子元素</p>
           </div>
         </div>
       </div>
@@ -77,20 +77,20 @@ Use the `relative` utility to position an element according to the normal flow o
 ```html
 <!-- [!code classes:relative] -->
 <div class="relative ...">
-  <p>Relative parent</p>
+  <p>相对父元素</p>
   <div class="absolute bottom-0 left-0 ...">
-    <p>Absolute child</p>
+    <p>绝对子元素</p>
   </div>
 </div>
 ```
 
 </Figure>
 
-With relatively position elements, any [offsets](/docs/top-right-bottom-left) are calculated relative to the element's normal position and the element will act as a position reference for absolutely positioned children.
+对于相对定位的元素，任何 [偏移](/docs/top-right-bottom-left) 是相对于元素的正常位置计算的，该元素将作为绝对定位子元素的参考。
 
-### Absolutely positioning elements
+### 绝对定位元素
 
-Use the `absolute` utility to position an element _outside_ of the normal flow of the document, causing neighboring elements to act as if the element doesn't exist:
+使用 `absolute` 工具类将元素定位到文档的正常流 _外部_，使得邻近的元素看起来就像这个元素不存在：
 
 <Figure>
 
@@ -98,18 +98,18 @@ Use the `absolute` utility to position an element _outside_ of the normal flow o
   {
     <div className="space-y-8">
       <div>
-        <p className="mb-4 text-sm font-medium text-gray-500">With static positioning</p>
+        <p className="mb-4 text-sm font-medium text-gray-500">静态定位</p>
         <div className="relative text-sm leading-6 font-medium">
           <div className="relative rounded-lg border border-indigo-700/10 bg-indigo-400/20 p-4 dark:border-0 dark:bg-indigo-900/80">
-            <p className="-mt-2 mb-2 text-indigo-700 dark:text-indigo-200">Relative parent</p>
+            <p className="-mt-2 mb-2 text-indigo-700 dark:text-indigo-200">相对父元素</p>
             <div className="static flex h-32 flex-col justify-between border border-indigo-700/10 bg-indigo-400/20 p-4 dark:border-0">
-              <p className="text-indigo-700 dark:text-indigo-200">Static parent</p>
+              <p className="text-indigo-700 dark:text-indigo-200">静态父元素</p>
               <div className="flex gap-4">
                 <div className="bottom-0 left-0 rounded-lg bg-indigo-500 p-4 text-white shadow-lg">
-                  <p>Static child?</p>
+                  <p>静态子元素?</p>
                 </div>
                 <div className="rounded-lg bg-indigo-100 p-4 text-indigo-600 shadow-lg">
-                  <p>Static sibling</p>
+                  <p>静态兄弟元素</p>
                 </div>
               </div>
             </div>
@@ -117,18 +117,18 @@ Use the `absolute` utility to position an element _outside_ of the normal flow o
         </div>
       </div>
       <div>
-        <p className="mb-4 text-sm font-medium text-gray-500">With absolute positioning</p>
+        <p className="mb-4 text-sm font-medium text-gray-500">绝对定位</p>
         <div className="relative text-sm leading-6 font-medium">
           <div className="relative rounded-lg border border-indigo-700/10 bg-indigo-400/20 p-4 dark:border-0 dark:bg-indigo-900/80">
-            <p className="-mt-2 mb-2 text-indigo-700 dark:text-indigo-200">Relative parent</p>
+            <p className="-mt-2 mb-2 text-indigo-700 dark:text-indigo-200">相对父元素</p>
             <div className="static flex h-32 flex-col justify-between border border-indigo-700/10 bg-indigo-400/20 p-4 dark:border-0">
-              <p className="text-indigo-700 dark:text-indigo-200">Static parent</p>
+              <p className="text-indigo-700 dark:text-indigo-200">静态父元素</p>
               <div className="flex gap-4">
                 <div className="absolute top-0 right-0 rounded-lg bg-indigo-500 p-4 text-white shadow-lg">
-                  <p>Absolute child</p>
+                  <p>绝对子元素</p>
                 </div>
                 <div className="rounded-lg bg-indigo-100 p-4 text-indigo-600 shadow-lg">
-                  <p>Static sibling</p>
+                  <p>静态兄弟元素</p>
                 </div>
               </div>
             </div>
@@ -142,31 +142,31 @@ Use the `absolute` utility to position an element _outside_ of the normal flow o
 ```html
 <!-- [!code classes:absolute] -->
 <div class="static ...">
-  <!-- Static parent -->
-  <div class="static ..."><p>Static child</p></div>
-  <div class="inline-block ..."><p>Static sibling</p></div>
-  <!-- Static parent -->
-  <div class="absolute ..."><p>Absolute child</p></div>
-  <div class="inline-block ..."><p>Static sibling</p></div>
+  <!-- 静态父元素 -->
+  <div class="static ..."><p>静态子元素</p></div>
+  <div class="inline-block ..."><p>静态兄弟元素</p></div>
+  <!-- 静态父元素 -->
+  <div class="absolute ..."><p>绝对子元素</p></div>
+  <div class="inline-block ..."><p>静态兄弟元素</p></div>
 </div>
 ```
 
 </Figure>
 
-With absolutely positioned elements, any [offsets](/docs/top-right-bottom-left) are calculated relative to the nearest parent that has a position other than `static`, and the element will act as a position reference for other absolutely positioned children.
+对于绝对定位的元素，任何 [偏移](/docs/top-right-bottom-left) 是相对于最近的具有非 `static` 定位的父元素计算的，该元素将作为其他绝对定位子元素的参考。
 
-### Fixed positioning elements
+### 固定定位元素
 
-Use the `fixed` utility to position an element relative to the browser window:
+使用 `fixed` 工具类将元素相对于浏览器窗口进行定位：
 
-<Figure hint="Scroll this element to see the fixed positioning in action">
+<Figure hint="滚动此元素以查看固定定位的效果">
 
 <Example padding={false}>
   {
     <div className="px-3">
       <div className="relative mx-auto h-80 max-w-md overflow-hidden bg-white shadow-lg ring-1 ring-gray-900/5 dark:bg-gray-800">
         <div className="absolute top-0 right-0 left-0 flex items-center bg-gray-50/90 px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-900/10 backdrop-blur-sm dark:bg-gray-700/90 dark:text-gray-200 dark:ring-black/10">
-          Contacts
+          联系人
         </div>
         <div className="flex h-80 flex-col divide-y divide-gray-200 overflow-auto dark:divide-gray-200/5">
           <div className="flex items-center gap-4 p-4">
@@ -220,7 +220,7 @@ Use the `fixed` utility to position an element relative to the browser window:
 ```html
 <!-- [!code classes:fixed] -->
 <div class="relative">
-  <div class="fixed top-0 right-0 left-0">Contacts</div>
+  <div class="fixed top-0 right-0 left-0">联系人</div>
   <div>
     <div>
       <img src="/img/andrew.jpg" />
@@ -237,13 +237,13 @@ Use the `fixed` utility to position an element relative to the browser window:
 
 </Figure>
 
-With fixed positioned elements, any [offsets](/docs/top-right-bottom-left) are calculated relative to the viewport and the element will act as a position reference for absolutely positioned children:
+对于固定定位的元素，任何 [偏移](/docs/top-right-bottom-left) 是相对于视口计算的，该元素将作为绝对定位子元素的参考：
 
-### Sticky positioning elements
+### 粘性定位元素
 
-Use the `sticky` utility to position an element as `relative` until it crosses a specified threshold, then treat it as `fixed` until its parent is off screen:
+使用 `sticky` 工具类将元素定位为 `relative`，直到它跨越指定的阈值，然后将其视为 `fixed`，直到其父元素出屏幕外：
 
-<Figure hint="Scroll this element to see the sticky positioning in action">
+<Figure hint="滚动此元素以查看粘性定位的效果">
 
 <Example padding={false}>
   {
@@ -392,8 +392,8 @@ Use the `sticky` utility to position an element as `relative` until it crosses a
 
 </Figure>
 
-With sticky positioned elements, any [offsets](/docs/top-right-bottom-left) are calculated relative to the element's normal position and the element will act as a position reference for absolutely positioned children.
+对于粘性定位的元素，任何 [偏移](/docs/top-right-bottom-left) 是相对于元素的正常位置计算的，该元素将作为绝对定位子元素的参考。
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="position" defaultClass="relative" featuredClass="absolute" />

@@ -4,8 +4,8 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 import dedent from "dedent";
 
-export const title = "text-overflow";
-export const description = "Utilities for controlling how the text of an element overflows.";
+export const title = "文本溢出";
+export const description = "用于控制元素文本如何溢出的工具类。";
 
 <ApiTable
   rows={[
@@ -22,82 +22,76 @@ export const description = "Utilities for controlling how the text of an element
   ]}
 />
 
-## Examples
+## 示例
 
-### Truncating text
+### 文本截断
 
-Use the `truncate` utility to prevent text from wrapping and truncate overflowing text with an ellipsis (…) if needed:
+使用 `truncate` 工具类来防止文本换行，并在需要时使用省略号 (…) 截断溢出的文本：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs truncate border-x border-x-pink-400/30 py-8 text-gray-900 dark:text-gray-200">
-      The longest word in any of the major English language dictionaries is{" "}
-      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> a word that refers to a lung
-      disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it
-      is the same as silicosis.
+      在任何主要英语词典中，最长的单词是{" "}
+      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是从吸入非常细的二氧化硅颗粒（特别是来自火山）而感染的肺病；在医学上，它与矽肺病是一样的。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:truncate] -->
-<p class="truncate">The longest word in any of the major...</p>
+<p class="truncate">在任何主要英语词典中，最长的单词是...</p>
 ```
 
 </Figure>
 
-### Adding an ellipsis
+### 添加省略号
 
-Use the `text-ellipsis` utility to truncate overflowing text with an ellipsis (…) if needed:
+使用 `text-ellipsis` 工具类在需要时用省略号 (…) 截断溢出的文本：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs overflow-hidden border-x border-x-pink-400/30 py-8 text-ellipsis text-gray-900 dark:text-gray-200">
-      The longest word in any of the major English language dictionaries is{" "}
-      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> a word that refers to a lung
-      disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it
-      is the same as silicosis.
+      在任何主要英语词典中，最长的单词是{" "}
+      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是从吸入非常细的二氧化硅颗粒（特别是来自火山）而感染的肺病；在医学上，它与矽肺病是一样的。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:text-ellipsis] -->
-<p class="overflow-hidden text-ellipsis">The longest word in any of the major...</p>
+<p class="overflow-hidden text-ellipsis">在任何主要英语词典中，最长的单词是...</p>
 ```
 
 </Figure>
 
-### Clipping text
+### 剪裁文本
 
-Use the `text-clip` utility to truncate the text at the limit of the content area:
+使用 `text-clip` 工具类在内容区域的限制处截断文本：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs overflow-hidden border-x border-x-pink-400/30 py-8 text-clip text-gray-900 dark:text-gray-200">
-      The longest word in any of the major English language dictionaries is{" "}
-      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> a word that refers to a lung
-      disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it
-      is the same as silicosis.
+      在任何主要英语词典中，最长的单词是{" "}
+      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是从吸入非常细的二氧化硅颗粒（特别是来自火山）而感染的肺病；在医学上，它与矽肺病是一样的。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:text-clip] -->
-<p class="overflow-hidden text-clip">The longest word in any of the major...</p>
+<p class="overflow-hidden text-clip">在任何主要英语词典中，最长的单词是...</p>
 ```
 
 </Figure>
 
-This is the default browser behavior.
+这是默认的浏览器行为。
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="p" property="text-overflow" defaultClass="text-ellipsis" featuredClass="text-clip" />

@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "text-wrap";
-export const description = "Utilities for controlling how text wraps within an element.";
+export const title = "文本换行";
+export const description = "用于控制文本在元素内如何换行的工具。";
 
 <ApiTable
   rows={[
@@ -15,21 +15,20 @@ export const description = "Utilities for controlling how text wraps within an e
   ]}
 />
 
-## Examples
+## 示例
 
-### Allowing text to wrap
+### 允许文本换行
 
-Use the `text-wrap` utility to wrap overflowing text onto multiple lines at logical points in the text:
+使用 `text-wrap` 工具在文本中逻辑点将溢出的文本换到多行：
 
 <Figure>
 
 <Example padding={false}>
   {
     <div className="mx-auto grid max-w-xs gap-4 border-x border-x-pink-400/30 py-8 text-gray-700 dark:text-gray-400">
-      <div className="text-xl font-semibold text-gray-900 dark:text-white">Beloved Manhattan soup stand closes</div>
+      <div className="text-xl font-semibold text-gray-900 dark:text-white">心爱的曼哈顿汤摊关闭</div>
       <p className="text-sm/6">
-        New Yorkers are facing the winter chill with less warmth this year as the city's most revered soup stand
-        unexpectedly shutters, following a series of events that have left the community puzzled.
+        纽约人在这个冬天感到寒意更重，因为这座城市最受尊敬的汤摊意外关闭，接连发生的事件让社区感到困惑。
       </p>
     </div>
   }
@@ -38,16 +37,16 @@ Use the `text-wrap` utility to wrap overflowing text onto multiple lines at logi
 ```html
 <!-- [!code classes:text-wrap] -->
 <article class="text-wrap">
-  <h3>Beloved Manhattan soup stand closes</h3>
-  <p>New Yorkers are facing the winter chill...</p>
+  <h3>心爱的曼哈顿汤摊关闭</h3>
+  <p>纽约人在这个冬天感到寒意更重...</p>
 </article>
 ```
 
 </Figure>
 
-### Preventing text from wrapping
+### 防止文本换行
 
-Use the `text-nowrap` utility to prevent text from wrapping, allowing it to overflow if necessary:
+使用 `text-nowrap` 工具阻止文本换行，如果需要，可以允许其溢出：
 
 <Figure>
 
@@ -56,11 +55,10 @@ Use the `text-nowrap` utility to prevent text from wrapping, allowing it to over
     <div className="overflow-hidden">
       <div className="mx-auto grid max-w-xs gap-4 border-x border-x-pink-400/30 py-8 text-gray-700 dark:text-gray-400">
         <div className="text-xl font-semibold text-nowrap text-gray-900 dark:text-white">
-          Beloved Manhattan soup stand closes
+          心爱的曼哈顿汤摊关闭
         </div>
         <p className="text-sm/6 text-nowrap">
-          New Yorkers are facing the winter chill with less warmth this year as the city's most revered soup stand
-          unexpectedly shutters, following a series of events that have left the community puzzled.
+          纽约人在这个冬天感到寒意更重，因为这座城市最受尊敬的汤摊意外关闭，接连发生的事件让社区感到困惑。
         </p>
       </div>
     </div>
@@ -70,16 +68,16 @@ Use the `text-nowrap` utility to prevent text from wrapping, allowing it to over
 ```html
 <!-- [!code classes:text-nowrap] -->
 <article class="text-nowrap">
-  <h3>Beloved Manhattan soup stand closes</h3>
-  <p>New Yorkers are facing the winter chill...</p>
+  <h3>心爱的曼哈顿汤摊关闭</h3>
+  <p>纽约人在这个冬天感到寒意更重...</p>
 </article>
 ```
 
 </Figure>
 
-### Balanced text wrapping
+### 平衡文本换行
 
-Use the `text-balance` utility to distribute the text evenly across each line:
+使用 `text-balance` 工具将文本均匀分布在每行上：
 
 <Figure>
 
@@ -87,11 +85,10 @@ Use the `text-balance` utility to distribute the text evenly across each line:
   {
     <div className="mx-auto grid max-w-xs gap-4 border-x border-x-pink-400/30 py-8 text-gray-700 dark:text-gray-400">
       <div className="text-xl font-semibold text-balance text-gray-900 dark:text-white">
-        Beloved Manhattan soup stand closes
+        心爱的曼哈顿汤摊关闭
       </div>
       <p className="text-sm/6">
-        New Yorkers are facing the winter chill with less warmth this year as the city's most revered soup stand
-        unexpectedly shutters, following a series of events that have left the community puzzled.
+        纽约人在这个冬天感到寒意更重，因为这座城市最受尊敬的汤摊意外关闭，接连发生的事件让社区感到困惑。
       </p>
     </div>
   }
@@ -100,18 +97,18 @@ Use the `text-balance` utility to distribute the text evenly across each line:
 ```html
 <!-- [!code classes:text-balance] -->
 <article>
-  <h3 class="text-balance">Beloved Manhattan soup stand closes</h3>
-  <p>New Yorkers are facing the winter chill...</p>
+  <h3 class="text-balance">心爱的曼哈顿汤摊关闭</h3>
+  <p>纽约人在这个冬天感到寒意更重...</p>
 </article>
 ```
 
 </Figure>
 
-For performance reasons browsers limit text balancing to blocks that are ~6 lines or less, making it best suited for headings.
+出于性能原因，浏览器将文本平衡限制在大约 6 行或更少的块上，最适合用于标题。
 
-### Pretty text wrapping
+### 美观的文本换行
 
-Use the `text-pretty` utility to prevent orphans (a single word on its own line) at the end of a text block:
+使用 `text-pretty` 工具防止孤立行（单词自己在一行）的出现：
 
 <Figure>
 
@@ -119,11 +116,10 @@ Use the `text-pretty` utility to prevent orphans (a single word on its own line)
   {
     <div className="mx-auto grid max-w-xs gap-4 border-x border-x-pink-400/30 py-8 text-gray-700 dark:text-gray-400">
       <div className="text-xl font-semibold text-pretty text-gray-900 dark:text-white">
-        Beloved Manhattan soup stand closes
+        心爱的曼哈顿汤摊关闭
       </div>
       <p className="text-sm/6">
-        New Yorkers are facing the winter chill with less warmth this year as the city's most revered soup stand
-        unexpectedly shutters, following a series of events that have left the community puzzled.
+        纽约人在这个冬天感到寒意更重，因为这座城市最受尊敬的汤摊意外关闭，接连发生的事件让社区感到困惑。
       </p>
     </div>
   }
@@ -132,13 +128,13 @@ Use the `text-pretty` utility to prevent orphans (a single word on its own line)
 ```html
 <!-- [!code classes:text-pretty] -->
 <article>
-  <h3 class="text-pretty">Beloved Manhattan soup stand closes</h3>
-  <p>New Yorkers are facing the winter chill...</p>
+  <h3 class="text-pretty">心爱的曼哈顿汤摊关闭</h3>
+  <p>纽约人在这个冬天感到寒意更重...</p>
 </article>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="h1" property="text-wrap" defaultClass="text-pretty" featuredClass="text-balance" />

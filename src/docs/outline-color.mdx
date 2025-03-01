@@ -4,8 +4,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import colors from "./utils/colors";
 
-export const title = "outline-color";
-export const description = "Utilities for controlling the color of an element's outline.";
+export const title = "轮廓颜色";
+export const description = "控制元素轮廓颜色的工具类。";
 
 <ApiTable
   rows={[
@@ -21,11 +21,11 @@ export const description = "Utilities for controlling the color of an element's 
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `outline-rose-500` and `outline-lime-100` to control the color of an element's outline:
+使用类似 `outline-rose-500` 和 `outline-lime-100` 的工具类控制元素的轮廓颜色：
 
 <Figure>
 
@@ -37,7 +37,7 @@ Use utilities like `outline-rose-500` and `outline-lime-100` to control the colo
           outline-blue-500
         </p>
         <button className="rounded-md border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 outline-2 outline-offset-2 outline-blue-500 dark:border-transparent dark:bg-gray-700 dark:text-gray-200">
-          Button A
+          按钮 A
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
@@ -45,7 +45,7 @@ Use utilities like `outline-rose-500` and `outline-lime-100` to control the colo
           outline-cyan-500
         </p>
         <button className="rounded-md border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 outline-2 outline-offset-2 outline-cyan-500 dark:border-transparent dark:bg-gray-700 dark:text-gray-200">
-          Button B
+          按钮 B
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
@@ -53,7 +53,7 @@ Use utilities like `outline-rose-500` and `outline-lime-100` to control the colo
           outline-pink-500
         </p>
         <button className="rounded-md border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 outline-2 outline-offset-2 outline-pink-500 dark:border-transparent dark:bg-gray-700 dark:text-gray-200">
-          Button C
+          按钮 C
         </button>
       </div>
     </div>
@@ -62,16 +62,16 @@ Use utilities like `outline-rose-500` and `outline-lime-100` to control the colo
 
 ```html
 <!-- [!code classes:outline-blue-500,outline-cyan-500,outline-pink-500] -->
-<button class="outline-2 outline-offset-2 outline-blue-500 ...">Button A</button>
-<button class="outline-2 outline-offset-2 outline-cyan-500 ...">Button B</button>
-<button class="outline-2 outline-offset-2 outline-pink-500 ...">Button C</button>
+<button class="outline-2 outline-offset-2 outline-blue-500 ...">按钮 A</button>
+<button class="outline-2 outline-offset-2 outline-cyan-500 ...">按钮 B</button>
+<button class="outline-2 outline-offset-2 outline-pink-500 ...">按钮 C</button>
 ```
 
 </Figure>
 
-### Changing the opacity
+### 更改不透明度
 
-Use the color opacity modifier to control the opacity of an element's outline color:
+使用颜色不透明度修饰符控制元素轮廓颜色的不透明度：
 
 <Figure>
 
@@ -83,7 +83,7 @@ Use the color opacity modifier to control the opacity of an element's outline co
           outline-blue-500/100
         </p>
         <button className="rounded-md border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 outline-2 outline-offset-2 outline-blue-500/100 dark:border-transparent dark:bg-gray-700 dark:text-gray-200">
-          Button A
+          按钮 A
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
@@ -91,7 +91,7 @@ Use the color opacity modifier to control the opacity of an element's outline co
           outline-blue-500/75
         </p>
         <button className="rounded-md border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 outline-2 outline-offset-2 outline-blue-500/75 dark:border-transparent dark:bg-gray-700 dark:text-gray-200">
-          Button B
+          按钮 B
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
@@ -99,7 +99,7 @@ Use the color opacity modifier to control the opacity of an element's outline co
           outline-blue-500/50
         </p>
         <button className="rounded-md border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 outline-2 outline-offset-2 outline-blue-500/50 dark:border-transparent dark:bg-gray-700 dark:text-gray-200">
-          Button C
+          按钮 C
         </button>
       </div>
     </div>
@@ -110,21 +110,21 @@ Use the color opacity modifier to control the opacity of an element's outline co
 <!-- [!code word:/100] -->
 <!-- [!code word:/75] -->
 <!-- [!code word:/50] -->
-<button class="outline-2 outline-blue-500/100 ...">Button A</button>
-<button class="outline-2 outline-blue-500/75 ...">Button B</button>
-<button class="outline-2 outline-blue-500/50 ...">Button C</button>
+<button class="outline-2 outline-blue-500/100 ...">按钮 A</button>
+<button class="outline-2 outline-blue-500/75 ...">按钮 B</button>
+<button class="outline-2 outline-blue-500/50 ...">按钮 C</button>
 ```
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="outline" name="outline color" value="#243c5a" variable="color" />
+<UsingACustomValue utility="outline" name="轮廓颜色" value="#243c5a" variable="color" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="outline-color" defaultClass="outline" featuredClass="outline-blue-400" />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourThemeColors utility="outline" />

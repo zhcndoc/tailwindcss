@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "resize";
-export const description = "Utilities for controlling how an element can be resized.";
+export const title = "调整大小";
+export const description = "用于控制元素如何调整大小的工具。";
 
 <ApiTable
   rows={[
@@ -15,13 +15,13 @@ export const description = "Utilities for controlling how an element can be resi
   ]}
 />
 
-## Examples
+## 示例
 
-### Resizing in all directions
+### 在所有方向上调整大小
 
-Use `resize` to make an element horizontally and vertically resizable:
+使用 `resize` 使元素在水平和垂直方向上可调整大小：
 
-<Figure hint="Drag the textarea handle in the demo to see the expected behavior">
+<Figure hint="在演示中拖动文本区域的控件以查看预期行为">
 
 <Example>
   {
@@ -39,11 +39,11 @@ Use `resize` to make an element horizontally and vertically resizable:
 
 </Figure>
 
-### Resizing vertically
+### 垂直调整大小
 
-Use `resize-y` to make an element vertically resizable:
+使用 `resize-y` 使元素在垂直方向上可调整大小：
 
-<Figure hint="Drag the textarea handle in the demo to see the expected behavior">
+<Figure hint="在演示中拖动文本区域的控件以查看预期行为">
 
 <Example>
   {
@@ -61,11 +61,11 @@ Use `resize-y` to make an element vertically resizable:
 
 </Figure>
 
-### Resizing horizontally
+### 水平调整大小
 
-Use `resize-x` to make an element horizontally resizable:
+使用 `resize-x` 使元素在水平方向上可调整大小：
 
-<Figure hint="Drag the textarea handle in the demo to see the expected behavior">
+<Figure hint="在演示中拖动文本区域的控件以查看预期行为">
 
 <Example>
   {
@@ -83,11 +83,11 @@ Use `resize-x` to make an element horizontally resizable:
 
 </Figure>
 
-### Prevent resizing
+### 防止调整大小
 
-Use `resize-none` to prevent an element from being resizable:
+使用 `resize-none` 防止元素可调整大小：
 
-<Figure hint="Notice that the textarea handle is gone">
+<Figure hint="注意文本区域的控件消失了">
 
 <Example>
   {
@@ -105,6 +105,6 @@ Use `resize-none` to prevent an element from being resizable:
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="resize" defaultClass="resize-none" featuredClass="resize" />

@@ -5,7 +5,7 @@ import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "flex";
-export const description = "Utilities for controlling how flex items both grow and shrink.";
+export const description = "用于控制 flex 项目如何增长和收缩的实用工具。";
 
 <ApiTable
   rows={[
@@ -19,11 +19,11 @@ export const description = "Utilities for controlling how flex items both grow a
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `flex-<number>` utilities like `flex-1` to allow a flex item to grow and shrink as needed, ignoring its initial size:
+使用 `flex-<number>` 工具，如 `flex-1`，以允许 flex 项目根据需要增长和收缩，忽略其初始大小：
 
 <Figure>
 
@@ -53,9 +53,9 @@ Use `flex-<number>` utilities like `flex-1` to allow a flex item to grow and shr
 
 </Figure>
 
-### Initial
+### 初始
 
-Use `flex-initial` to allow a flex item to shrink but not grow, taking into account its initial size:
+使用 `flex-initial` 允许一个 flex 项目收缩但不增长，考虑其初始大小：
 
 <Figure>
 
@@ -85,9 +85,9 @@ Use `flex-initial` to allow a flex item to shrink but not grow, taking into acco
 
 </Figure>
 
-### Auto
+### 自动
 
-Use `flex-auto` to allow a flex item to grow and shrink, taking into account its initial size:
+使用 `flex-auto` 允许一个 flex 项目增长和收缩，考虑其初始大小：
 
 <Figure>
 
@@ -117,9 +117,9 @@ Use `flex-auto` to allow a flex item to grow and shrink, taking into account its
 
 </Figure>
 
-### None
+### 无
 
-Use `flex-none` to prevent a flex item from growing or shrinking:
+使用 `flex-none` 防止一个 flex 项目增长或收缩：
 
 <Figure>
 
@@ -155,10 +155,10 @@ Use `flex-none` to prevent a flex item from growing or shrinking:
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="flex" name="flex shorthand property" value="3_1_auto" />
+<UsingACustomValue utility="flex" name="flex 缩写属性" value="3_1_auto" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="flex" defaultClass="flex-none" featuredClass="flex-1" />

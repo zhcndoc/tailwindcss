@@ -1,9 +1,9 @@
 import { ApiTable } from "@/components/api-table.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "isolation";
+export const title = "隔离";
 export const description =
-  "Utilities for controlling whether an element should explicitly create a new stacking context.";
+  "用于控制元素是否应该显式创建新的堆叠上下文的工具。";
 
 <ApiTable
   rows={[
@@ -12,11 +12,11 @@ export const description =
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use the `isolate` and `isolation-auto` utilities to control whether an element should explicitly create a new stacking context:
+使用 `isolate` 和 `isolation-auto` 工具来控制元素是否应该显式创建新的堆叠上下文：
 
 ```html
 <!-- [!code classes:isolate] -->
@@ -25,6 +25,6 @@ Use the `isolate` and `isolation-auto` utilities to control whether an element s
 </div>
 ```
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="isolation" defaultClass="isolate" featuredClass="isolation-auto" />

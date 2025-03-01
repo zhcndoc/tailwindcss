@@ -7,40 +7,39 @@ import sanityStudio from "./sanity-studio.png";
 import blog from "./blog.png";
 
 export const meta = {
-  title: "Radiant: A beautiful new marketing site template",
-  description: `Over the past couple of months we’ve been working away at a new SaaS template called Radiant and it’s out now as part of Tailwind UI.`,
+  title: "Radiant: 一个美丽的新市场网站模板",
+  description: `在过去的几个月里，我们一直在努力工作，开发一个新的SaaS模板叫做Radiant，现在作为Tailwind UI的一部分发布了。`,
   date: "2024-09-12T10:30:00.000Z",
   authors: [danhollick],
   image: twitterCard,
   excerpt: (
     <>
-      Over the past couple of months we’ve been working away at a new SaaS marketing site template for Tailwind UI. It's
-      called <a href="https://tailwindui.com/templates/radiant">Radiant</a>, and you can start using it today.
+      在过去的几个月里，我们一直在努力开发一个新的SaaS市场网站模板为Tailwind UI。它叫做 <a href="https://tailwindui.com/templates/radiant">Radiant</a>，你今天就可以开始使用它。
     </>
   ),
 };
 
-We just wrapped up work on a beautiful new SaaS marketing site template called [Radiant](https://tailwindui.com/templates/radiant), and it's available now as part of [Tailwind UI](https://tailwindui.com).
+我们刚刚完成了一个美丽的新SaaS市场网站模板 [Radiant](https://tailwindui.com/templates/radiant) 的开发，现在作为 [Tailwind UI](https://tailwindui.com) 的一部分发布。
 
 <p>
   <a href="https://tailwindui.com/templates/radiant">
-    <Image src={template} alt="Learn about the Radiant template" />
+    <Image src={template} alt="了解Radiant模板" />
   </a>
 </p>
 
-It’s built with Next.js, Framer Motion, and Tailwind CSS, with a blog powered by Sanity.
+它是使用Next.js、Framer Motion和Tailwind CSS构建的，博客由Sanity提供支持。
 
-It's been a while since we built a SaaS marketing template like this, and in that time we've learned a lot about what makes a template like this useful and easy to work with. We've tried to incorporate all of those learnings into Radiant.
+我们已经有一段时间没有构建这样的SaaS市场模板了，在此期间，我们学到了很多关于什么使得这样的模板有用且易于使用的知识。我们努力将所有这些经验融入到Radiant中。
 
-Check out the [live preview](https://radiant.tailwindui.com) as always for the full experience — there are tons of cool details in this one that you have to see in the browser to really appreciate.
+像往常一样，查看[实时预览](https://radiant.tailwindui.com)以获取完整体验——这个模板中有很多酷炫的细节，您必须在浏览器中查看才能真正欣赏。
 
 ---
 
-## Tastefully interactive
+## 精致的互动
 
-It's super easy to overdo animation on a site like this. We've all seen sites where you can't even scroll a few pixels without a bunch of different elements animating in to place. Even worse is how slow things feel when you have to wait for the content to appear before you can read it.
+在这样的网站上，过度使用动画是非常容易的。我们都见过那些在滚动时，许多不同元素都在动画中的网站。更糟糕的是，当您必须等待内容出现才能阅读时，感觉是多么的慢。
 
-Radiant is loaded with delightful animations, but they are all layered on to existing content and triggered by user interaction so the site still feels fast. In most cases, we went for animations that loop to make elements feel "alive" while you're interacting with them.
+Radiant 充满了让人愉悦的动画，但它们都是叠加在现有内容上并由用户交互触发，这样网站仍然感觉很快。在大多数情况下，我们选择了循环动画，以使元素在你与它们互动时感觉“活着”。
 
 <div className="relative my-8 overflow-hidden rounded-2xl">
   <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
@@ -54,9 +53,9 @@ Radiant is loaded with delightful animations, but they are all layered on to exi
   />
 </div>
 
-We used [Framer Motion](https://www.framer.com/motion/) for almost all of the animations. It's declarative, making it easy to create our own APIs for complex animations that other people can customize without much effort.
+我们几乎使用[Framer Motion](https://www.framer.com/motion/)进行了所有的动画。它是声明式的，这使得创建我们自己的API以供他人定制复杂动画变得容易。
 
-It does have some drawbacks to work around though. For example, when you have multiple elements animating independently it's annoying to pass a hover state down to each child. We ended up leveraging Framer's variant propagation to make this work — a hover event triggers a variant change in the parent that propagates down to the children because they share the same variant keys.
+不过，它确实有一些需要避免的缺点。例如，当您有多个独立动画的元素时，将悬停状态传递到每个子元素会很麻烦。我们最终利用了Framer的变体传播来使其工作——悬停事件触发父元素的变体变化，这种变化会向下传播到子元素，因为它们共享相同的变体键。
 
 ```jsx
 // [!code filename:bento-card.tsx]
@@ -75,7 +74,7 @@ export function BentoCard() {
 }
 ```
 
-There is no difference between the variants in the parent so it doesn't actually change but the children still get a signal to change variants on hover, even if they are deeply nested.
+父元素中的变体没有区别，因此实际上不会更改，但子元素在悬停时仍然获得变更变体的信号，即使它们嵌套得很深。
 
 ```jsx
 // [!code filename:map.tsx]
@@ -109,7 +108,7 @@ function Marker({
 /* ... */
 ```
 
-The logo timeline animation is a bit different, because we wanted the logos to pause in their current position when you stop hovering, rather than return to their original position. This doesn't play very well with Framer's approach of specifying start and end states, so it was actually easier to build this in CSS.
+logo时间线动画稍微不同，因为我们希望在您停止悬停时，logo在当前位置暂停，而不是返回到原始位置。这与Framer的起始和结束状态的定义方法不太兼容，因此实际上在CSS中构建这个要容易得多。
 
 <div className="relative my-8 overflow-hidden rounded-2xl">
   <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
@@ -123,7 +122,7 @@ The logo timeline animation is a bit different, because we wanted the logos to p
   />
 </div>
 
-It exploits the fact that you can set a negative `animation-delay` value to offset the start position of the element. That way all the logos share the same animation keyframes but they can start at different positions and have different durations.
+它利用了您可以设置负的`animation-delay`值来偏移元素的起始位置这一点。这样所有logo共享相同的动画关键帧，但它们可以在不同的位置开始并具有不同的持续时间。
 
 ```jsx
 // [!code filename:logo-timeline.tsx]
@@ -172,15 +171,15 @@ export function LogoTimeline() {
     /* ... */
 ```
 
-This approach means we don't need to track the play state in JavaScript, we can just use a `group-hover:[animation-play-state:running]` class to start the animation when the parent is hovered.
+这种方法使得我们无需在JavaScript中跟踪播放状态，我们只需使用`group-hover:[animation-play-state:running]`类来在父元素悬停时启动动画。
 
-As you've maybe noticed, we're using a bunch of arbitrary properties for individual `animation` properties in this component, since these utilities don't exist in Tailwind today. This is what's great about building these templates — it helps us find blind spots in Tailwind CSS. Who knows, maybe we'll see these utilities added for v4.0!
+正如你可能注意到的，我们在这个组件中使用了一堆任意属性来设置各个`animation`属性，因为这些实用工具在今天的Tailwind中并不存在。这正是创建这些模板的好处——它帮助我们发现了Tailwind CSS中的盲点。谁知道呢，也许我们会在v4.0中看到这些实用工具的增加！
 
 ---
 
-## Deliberately reusable
+## 深思熟虑的可重用性
 
-The trickiest part of designing a SaaS template like this, is coming up with interactive elements that people can apply to their own product without too much effort. There's nothing worse than buying a template and realizing that it's so specific to the example content that you can't actually use it for your own project.
+设计这样的SaaS模板最棘手的部分是想出用户可以在其产品中轻松应用的交互元素。买到一个模板却发现它对实例内容过于具体，无法用于自己的项目，那是最糟糕的事情了。
 
 <div className="relative my-8 overflow-hidden rounded-2xl">
   <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
@@ -194,21 +193,21 @@ The trickiest part of designing a SaaS template like this, is coming up with int
   />
 </div>
 
-We came up with some core graphical elements that most SaaS products might have. A map with pins, a logo cluster, a keyboard — things that could be applied to a bunch of different features. Because we wanted them to be easy to repurpose for your own product, we built a lot of them in code and designed nice APIs for them.
+我们想出了一些大多数SaaS产品可能具有的核心图形元素。比如带有标记的地图、logo集群、键盘——这些东西可以应用于许多不同的功能。因为我们希望它们易于重用到您的产品中，所以我们在代码中构建了许多，并为它们设计了不错的API。
 
-The logo cluster, for example, has a simple API that lets you pass in your own logos, tweak their position and hover animation to match.
+例如，logo集群具有一个简单的API，允许您传入自己的logo，调整它们的位置和悬停动画以匹配。
 
 ```jsx
 <Logo src="./logo-cluster/dribbble.svg" left={285} top={20} hover={{ x: 4, y: -5, rotate: 6, delay: 0.3 }} />
 ```
 
-The keyboard shortcuts section is another good example. Adding your own shortcuts is as simple as passing an array of key names to the Keyboard component and because each key is a component, you can easily add custom keys or change the layout.
+键盘快捷键部分是另一个很好的例子。只需将一个键名数组传递给Keyboard组件，即可添加您自己的快捷键，并且因为每个键都是一个组件，您可以轻松添加自定义键或更改布局。
 
 ```jsx
 <Keyboard highlighted={["F", "M", "L"]} />
 ```
 
-It turns out it's actually quite a lot of work to build a keyboard in code, but at least now you'll never have to find that out for yourself.
+其实在代码中构建一个键盘其实需要不少工作，但至少您现在再也不用自己去发现这个了。
 
 <div className="relative my-8 overflow-hidden rounded-2xl">
   <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
@@ -222,21 +221,21 @@ It turns out it's actually quite a lot of work to build a keyboard in code, but 
   />
 </div>
 
-Of course, we also left spots for you to drop in screenshots of your own product. Here's what this section looks like customized to suit our friends at [SavvyCal](https://savvycal.com/), using the same interactive components.
+当然，我们还留出了您插入自己产品截图的地方。这一部分的样子是为了我们的朋友们 [SavvyCal](https://savvycal.com/) 定制的，使用了相同的交互组件。
 
-<Image alt="Radiant as SavvyCal" src={savvycalRadiant} />
+<Image alt="Radiant作为SavvyCal" src={savvycalRadiant} />
 
 ---
 
-## Powered by a CMS
+## 由CMS驱动
 
-Usually we just use MDX when adding a blog to a template, but this time we thought it would be fun to play with a headless CMS for a chance instead. We decided to give [Sanity](https://www.sanity.io/) a go for this one after [polling our audience](https://x.com/adamwathan/status/1796225062279717142) and hearing a lot of good things.
+通常我们在向模板添加博客时只是使用MDX，但这次我们想尝试使用无头CMS，尝试一下不同的东西。我们决定尝试使用[Sanity](https://www.sanity.io/) ，因为在[对我们的观众进行投票](https://x.com/adamwathan/status/1796225062279717142)后，听到了很多好评。
 
-Instead of creating files, making commits, and managing images and stuff by hand, a CMS lets you handle everything from their UI, so even non-developers can easily contribute.
+与创建文件、进行提交和手动管理图片和其他内容不同，CMS让您可以通过其UI处理所有内容，因此即使是非开发人员也可以轻松参与。
 
 <Image alt="Sanity Studio" src={sanityStudio} />
 
-One cool thing about headless CMSes like Sanity is you get your content back in a structured format, so similar to MDX you can map elements to your own custom components to handle all of your typography styles.
+像Sanity这样的无头CMS的一个很酷的功能是您获得的内容是结构化格式的，因此与MDX类似，您可以将元素映射到自己的自定义组件，以处理所有的排版样式。
 
 ```jsx
 <PortableText
@@ -270,7 +269,7 @@ One cool thing about headless CMSes like Sanity is you get your content back in 
 />
 ```
 
-Working with a CMS also means all of your assets like images are hosted for you, and you can control the size, quality, and format of the image on the fly.
+使用CMS还意味着您的所有资产，如图片，都由您托管，并且您可以动态控制图像的大小、质量和格式。
 
 {/* prettier-ignore */}
 ```jsx
@@ -294,14 +293,14 @@ Working with a CMS also means all of your assets like images are hosted for you,
 )}
 ```
 
-Like you might do with front matter in Markdown, you can also enrich content with custom fields. For example, we added a `featured` boolean field to the blog post schema so you can highlight some posts in a special section on the blog.
+正如在Markdown中使用前置内容一样，您还可以使用自定义字段丰富内容。例如，我们在博客文章架构中添加了一个`featured`布尔字段，以便您可以在博客的特殊部分突出显示某些帖子。
 
-<Image alt="Radiant Blog" src={blog} />
+<Image alt="Radiant博客" src={blog} />
 
-Sanity in particular is a paid product, but they have a pretty generous free tier which is more than enough to play around. And if you wanted to try out a different headless CMS, I think the Sanity integration we've put together here will still serve as a great informative example of how you might approach wiring things up with another tool.
+Sanity尤其是一个付费产品，但它有一个相当慷慨的免费套餐，这足以供您玩耍。如果您想尝试不同的无头CMS，我认为我们在这里设置的Sanity集成仍然是一个很好的示例，展示了如何与其他工具连接。
 
 ---
 
-And that's [Radiant](https://tailwindui.com/templates/radiant)! Have a look under the hood, kick the tires, and let us know what you think.
+这就是 [Radiant](https://tailwindui.com/templates/radiant)! 了解它的内部运作，尝试一下，告诉我们您的看法。
 
-Like all of our templates, it's included with a one-time purchase [Tailwind UI all-access](https://tailwindui.com/all-access) license, which is the best way to support our work on Tailwind CSS and make it possible for us to keep building awesome stuff for you for years to come.
+像我们所有的模板一样，它包含在一次性购买的[Tailwind UI全访问](https://tailwindui.com/all-access)许可证中，这是支持我们在Tailwind CSS上工作的最佳方式，让我们能够继续为您构建出色的产品，未来几年内不断创新。

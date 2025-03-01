@@ -10,72 +10,71 @@ import catalystButtons from "./catalyst-buttons.png";
 import catalystTable from "./catalyst-table.png";
 
 export const meta = {
-  title: "Introducing Catalyst: A modern UI kit for React",
-  description: `We just released the first development preview of Catalyst, our new fully-componentized, batteries-included application UI kit for React.`,
+  title: "介绍 Catalyst：一个现代的 React UI 套件",
+  description: `我们刚刚发布了 Catalyst 的第一个开发预览，这是我们为 React 提供的全组件化、包含全部功能的应用 UI 套件。`,
   date: "2023-12-20T20:00:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      Today's the day — we just published the first development preview of Catalyst, our first fully-componentized,
-      batteries-included application UI kit for React, just in time for your holiday hacking sessions.
+      今天是大日子 — 我们刚刚发布了 Catalyst 的第一个开发预览，这是我们为 React 提供的第一个全组件化、包含全部功能的应用 UI 套件，正好适合您假期的动手项目。
     </>
   ),
 };
 
-Today's the day — we just published the first development preview of [Catalyst](https://tailwindui.com/templates/catalyst), just in time for your holiday hacking sessions.
+今天是大日子 — 我们刚刚发布了 [Catalyst](https://tailwindui.com/templates/catalyst) 的第一个开发预览，正好适合您假期的动手项目。
 
-<Image alt="Overview of components included in Catalyst" src={catalystUiKit} />
+<Image alt="Catalyst 中包含的组件概述" src={catalystUiKit} />
 
-**Catalyst is our first fully-componentized, batteries-included application UI kit** — real React components with thoughtfully designed APIs that build on each other to create a real component architecture, the same way we'd do it in a real application.
+**Catalyst 是我们第一个全组件化、包含全部功能的应用 UI 套件** — 真正的 React 组件，设计精良的 API，彼此叠加以构建真正的组件架构，这就像我们在真实应用中所做的一样。
 
-Check out the [live demo](https://catalyst.tailwindui.com), read the [documentation](https://catalyst.tailwindui.com/docs), and if you're a Tailwind UI All-Access customer, [download it](https://tailwindui.com/templates/catalyst/download) and try it out in a new project today.
+查看 [在线演示](https://catalyst.tailwindui.com)，阅读 [文档](https://catalyst.tailwindui.com/docs)，如果您是 Tailwind UI 全访问客户，请 [下载它](https://tailwindui.com/templates/catalyst/download)，并在新项目中立即尝试它。
 
-**Catalyst is currently in development preview** and there's a lot more to come, but we're releasing it today so you can play with it right away as we continue to build new components and find ways to make it an even better experience.
+**Catalyst 目前处于开发预览阶段**，还有许多功能即将推出，但我们今天发布它是为了让您能立即体验，我们会继续构建新组件，并寻找使其体验更好的方式。
 
 ---
 
-## Your components, not ours
+## 你的组件，而不是我们的
 
-With Catalyst, we set out to build a UI kit that tomorrow's Stripe or Linear would feel good about using to build their products — design-obsessed teams who want to own their UI components, and would never choose an off-the-shelf library.
+使用 Catalyst，我们旨在构建一个 UI 套件，以便明天的 Stripe 或 Linear 可以放心地使用它来构建他们的产品 — 设计为先的团队希望拥有他们的 UI 组件，而绝不会选择现成的库。
 
-So it's not a dependency you install, instead you download the source and copy the components into your own project where they become the starting point for your own component system:
+所以这不是你安装的一个依赖项，而是你下载源代码并将组件复制到自己的项目中，它们成为您自己组件系统的起点：
 
 <Image alt="" src={catalystInstallation} />
 
-Want to change the border radius on your buttons? Just open `button.tsx` and change some classes. You don't need to open a GitHub issue and try to convince us to expose a new configuration option.
+想要更改按钮的边框半径？只需打开 `button.tsx` 并更改一些类。您无需打开 GitHub 问题并试图说服我们暴露一个新的配置选项。
 
-Catalyst is a "disappearing UI kit" — six months after you've installed it, you should almost forget it wasn't you who built the original components.
+Catalyst 是一个“消失的 UI 套件” — 在您安装六个月后，您应该几乎忘记原来的组件不是您自己构建的。
 
 ---
 
-## Design is in the details
+## 设计在于细节
 
-Getting the visual style right on a project like this is hard. We went into it with a few goals:
+在这样的项目上获得正确的视觉风格是困难的。我们设定了几个目标：
 
-- **Be competitive** — we wanted to design something that could hold its own next to some of the nicest interfaces on the web today.
-- **Be timeless** — we didn't want to design something that would look dated in 6 months because it leaned too hard into specific trends.
-- **Be productive** — whatever we designed needed to feel fast and efficient to real users, not just look great in a Dribbble shot.
+- **具有竞争力** — 我们希望设计出可以与今天一些最好界面抗衡的东西。
+- **超越时代** — 我们不想设计出在六个月内看起来过时的东西，因为它过于倾向于具体趋势。
+- **富有成效** — 无论我们设计什么，都需要让真实用户感到快速而高效，而不仅仅是在 Dribbble 的展示中看起来很棒。
 
-It took a lot of work and there were a lot of trade-offs to balance, but I'm really in love with where we ended up:
+这需要很多工作，并且有许多权衡，但我非常喜欢我们最终的成果：
 
 <Image alt="" src={catalystComponents} />
 
-**To be competitive**, we invested in lots of details like subtle backdrop blurs on dropdown menus, perfecting the way shadows and borders blend with each other on form controls, and thoughtful use of animation in things like dialogs and toggle switches.
+**为了具有竞争力**，我们投入了大量的细节，比如下拉菜单上的微妙背景模糊，完善表单控件上的阴影和边框如何混合，以及在对话框和开关等事物中巧妙地使用动画。
 
 <Image alt="" src={catalystShadowDetail} />
 
-**To be timeless**, we tried to strike the right balance between flat and skeuomorphic design, with just enough depth cues that our components will look great even if the trends change a bit in either direction.
+**为了超越时代**，我们尝试在平面和拟物设计之间找到合适的平衡，保持足够的深度感，以确保我们的组件即使趋势发生变化仍能很好地展示。
 
 <Image alt="" src={catalystButtons} />
 
-We also took inspiration from the browser, and used unopinionated blue focus rings to avoid picking a treatment that might soon look out of fashion.
+我们还从浏览器中获得灵感，使用不带偏见的蓝色焦点环，以避免选择一种可能很快就过时的处理方式。
 
-**To be productive**, we worked carefully to make sure there was still plenty of whitespace, but that the UI was still dense enough to fit plenty of information on the screen.
+**为了富有成效**，我们小心工作以确保仍然有足够的空白，但 UI 仍然密集到可以在屏幕上显示大量信息。
 
 <Image alt="" src={catalystTable} />
 
-We also limited our use of transitions and animations only to places where it felt important, and even then tried to keep them fast so it never feels like you're waiting on the UI.
+我们还限制了过渡和动画的使用，仅在感觉重要的地方使用，即使这样也确保它们速度很快，以便您永远感觉不到在等待 UI。
 
 <div className="relative my-8 overflow-hidden rounded-2xl">
   <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
@@ -89,19 +88,19 @@ We also limited our use of transitions and animations only to places where it fe
   />
 </div>
 
-**Catalyst also ships with full dark mode support**, and anything you build with Catalyst components automatically adapts between light and dark modes.
+**Catalyst 还提供了完整的暗模式支持**，使用 Catalyst 组件构建的任何东西会自动适应明暗模式。
 
 <Image alt="" src={catalystComponentsDarkMode} />
 
-It's not obvious, but there are a ton of little details we had to change to make things look their best in dark mode, like adjusting shadows, changing outer rings to inner rings to mimic the change in lighting, and more.
+这并不明显，但我们必须改变许多小细节，以在暗模式中使事情看起来最好，比如调整阴影，将外环更改为内环以模拟光线变化，等等。
 
 ---
 
-## Modeled after HTML
+## 模仿 HTML
 
-We spent a _lot_ of time working on the component APIs, trying very hard to make things really easy to drop in and use right away, without compromising on flexibility.
+我们花了很多时间在组件 API 上，努力使其真正易于直接使用，而不妥协于灵活性。
 
-It's common for UI libraries to use APIs like this:
+UI 库通常使用这样的 API：
 
 ```jsx
 // [!code filename:JSX]
@@ -109,18 +108,18 @@ function Example() {
   return (
     <TextField
       name="product_name"
-      label="Product name"
-      description="Use the name you'd like people to see in their cart."
+      label="产品名称"
+      description="使用您希望人们在购物车中看到的名称。"
     />
   );
 }
 ```
 
-But with all the props living on the same component, it starts to get difficult to do things like add a class just to the `<input>` element itself.
+但是由于所有的属性都在同一个组件上，开始变得困难，比如仅向 `<input>` 元素添加一个类。
 
-Ultimately that led us to APIs that closely mirrored HTML, where it's rare that a single component renders more than one element.
+最终这引导我们使用了与 HTML 密切相似的 API，在这种情况下，单个组件渲染多个元素是很少见的。
 
-Creating a text field with Catalyst looks like this for example:
+使用 Catalyst 创建文本字段，例如看起来像这样：
 
 ```jsx {{ filename: 'JSX', style: 'framed', color: 'indigo' }}
 import { Description, Field, Label } from "@/components/fieldset";
@@ -129,15 +128,15 @@ import { Input } from "@/components/input";
 function Example() {
   return (
     <Field>
-      <Label>Product name</Label>
-      <Description>Use the name you'd like people to see in their cart.</Description>
+      <Label>产品名称</Label>
+      <Description>使用您希望人们在购物车中看到的名称。</Description>
       <Input name="product_name" />
     </Field>
   );
 }
 ```
 
-By keeping things composable like this, it makes it really easy to do things like constrain the width of the input, without constraining the width of any of the other elements:
+通过保持组件可组合，这使得在不约束其他元素宽度的情况下，轻松地限制输入的宽度：
 
 ```jsx {{ filename: 'JSX', style: 'framed', color: 'fuchsia' }}
 import { Description, Field, Label } from "@/components/fieldset";
@@ -146,8 +145,8 @@ import { Input } from "@/components/input";
 function Example() {
   return (
     <Field>
-      <Label>Product name</Label>
-      <Description>Use the name you'd like people to see in their cart.</Description>
+      <Label>产品名称</Label>
+      <Description>使用您希望人们在购物车中看到的名称。</Description>
       <Input name="product_name" /> // [!code --]
       <Input name="product_name" className="max-w-sm" /> // [!code ++]
     </Field>
@@ -155,7 +154,7 @@ function Example() {
 }
 ```
 
-It also makes it easy to move the description _below_ the input, instead of above:
+它也使得移动描述电子 _输入_ 下面，而不是在上面变得容易：
 
 {/* prettier-ignore */}
 ```jsx {{ filename: 'JSX', style: 'framed', color: 'sky' }}
@@ -165,45 +164,45 @@ import { Input } from '@/components/input'
 function Example() {
   return (
     <Field>
-      <Label>Product name</Label>
-      <Description>Use the name you'd like people to see in their cart.</Description> // [!code --]
+      <Label>产品名称</Label>
+      <Description>使用您希望人们在购物车中看到的名称。</Description> // [!code --]
       <Input name="product_name" className="max-w-sm" />
-      <Description>Use the name you'd like people to see in their cart.</Description> // [!code ++]
+      <Description>使用您希望人们在购物车中看到的名称。</Description> // [!code ++]
     </Field>
   )
 }
 ```
 
-It took a lot of experimenting to figure out the right way to make these APIs work, especially around details like adding layout styles to the right children, but the payoff was worth it, and these components are really a delight to use.
+经过大量实验，我们找到了让这些 API 正常工作的正确方法，特别是在给正确的子元素添加布局样式等细节方面，但 payoff 是值得的，这些组件确实是使用的乐趣。
 
 ---
 
-## Powered by the next generation of Headless UI
+## 由下一代 Headless UI 提供支持
 
-We released the first version of [Headless UI](https://headlessui.com/) back in the summer of 2020, but it's been just over a year now since the last significant feature release because of all the work we've been focused on with Tailwind CSS itself.
+我们在 2020 年夏天发布了第一个版本的 [Headless UI](https://headlessui.com/)，但自上次重要功能发布以来，已经过了一年多，因为我们专注于 Tailwind CSS 本身的工作。
 
-Catalyst was the perfect excuse to get our hands dirty with Headless UI again, and we quickly found lots of ways to improve the project to simplify the code in Catalyst itself.
+Catalyst 是一个完美的借口，让我们再次深入 Headless UI 的工作，我们迅速发现了许多方法来改善项目，以简化 Catalyst 本身的代码。
 
-We just published Headless UI v2.0.0-alpha.1, which includes a ton of new stuff:
+我们刚刚发布了 Headless UI v2.0.0-alpha.1，包含大量新内容：
 
-- **Built-in anchor positioning** — using [Floating UI](https://floating-ui.com/), components like `Menu`, `Listbox`, and more can now automatically position their popovers to be anchored to their trigger, adapting as needed to changes in the viewport.
-- **Headless checkbox component** — we've added a headless `Checkbox` component to complement our existing `RadioGroup` component, making it easy to build totally custom checkbox controls.
-- **HTML form components** — we've added `Input`, `Select`, `Textarea`, `Label`, `Description`, `Fieldset`, and `Legend` components that handle all of the ID generation and `aria-*` attribute mapping you need to do to connect form fields together.
-- **Improved hover and focus-visible detection** — using hooks from the awesome [React Aria](https://react-spectrum.adobe.com/react-aria/hooks.html) library under the hood, Headless UI now adds smarter `data-hover` and `data-focus` attributes to your controls that behave more consistently across different devices than the native pseudo-classes.
-- **Combobox list virtualization** — the next version of Headless UI can now handle giant lists of combobox options with no performance issues.
+- **内置锚点定位** — 使用 [Floating UI](https://floating-ui.com/)，如 `Menu`、`Listbox` 等组件现在可以自动将其弹出框定位到触发器，并根据视口的变化进行调整。
+- **无头复选框组件** — 我们添加了一个无头的 `Checkbox` 组件，以补充我们现有的 `RadioGroup` 组件，使构建完全自定义的复选框控件变得容易。
+- **HTML 表单组件** — 我们添加了 `Input`、`Select`、`Textarea`、`Label`、`Description`、`Fieldset` 和 `Legend` 组件，处理您需要连接表单字段的所有 ID 生成和 `aria-*` 属性映射。
+- **改进的悬停和聚焦可见性检测** — 使用来自优秀的 [React Aria](https://react-spectrum.adobe.com/react-aria/hooks.html) 库的钩子，Headless UI 现在为您的控件添加了更智能的 `data-hover` 和 `data-focus` 属性，这些属性在不同设备间的表现比本地伪类更一致。
+- **组合框列表虚拟化** — 下一版本的 Headless UI 现在可以处理巨大的组合框选项列表，而不会出现性能问题。
 
-...with plenty of other improvements to come, including a date picker, tooltips, and more.
+...还有许多其他改进即将到来，包括日期选择器、工具提示等。
 
-These improvements are React-only for now during this early alpha period, but we plan to bring all of these improvements to Vue as well before tagging v2.0.
+在早期 alpha 阶段，这些改进目前仅针对 React，但我们计划在标记 v2.0 之前将所有这些改进也带到 Vue。
 
-We'll have documentation published for this stuff really soon, but couldn't resist getting Catalyst out before the holidays, even if it meant publishing the Headless UI docs a few days later.
+我们将很快发布这些内容的文档，但在假期前迫不及待地想将 Catalyst 发布出去，尽管这意味着要在几天后发布 Headless UI 文档。
 
 ---
 
-## Try it out
+## 尝试一下
 
-[Catalyst](https://tailwindui.com/templates/catalyst) is a free update for all [Tailwind UI All-Access](https://tailwindui.com/all-access) customers, and you can [download it](https://tailwindui.com/templates/catalyst/download) and start playing with this first release today.
+[Catalyst](https://tailwindui.com/templates/catalyst) 是所有 [Tailwind UI 全访问](https://tailwindui.com/all-access) 客户的免费更新，您可以 [下载它](https://tailwindui.com/templates/catalyst/download)，并开始尝试这个第一个版本。
 
-More work went into getting everything we're releasing today just right than you could ever imagine, but we're eager for feedback and ways it could be improved, so build some stuff with it and let us know what you think.
+为了确保我们今天发布的每一项内容都完美无缺，我们付出了您无法想象的努力，但我们渴望反馈以及改善建议，因此使用它构建一些项目并告诉我们您的想法。
 
-We're going to take a couple weeks to recharge over the holidays, but we'll be right back into Catalyst in the new year, working on new components like application layouts, comboboxes, command palettes, tooltips, and more.
+假期我们将花几周时间补充精力，但新的一年里我们将立即回归 Catalyst，继续致力于新的组件，如应用布局、组合框、命令面板、工具提示等。

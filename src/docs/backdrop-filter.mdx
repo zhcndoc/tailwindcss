@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, TargetingSpecificStates, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "backdrop-filter";
-export const description = "Utilities for applying backdrop filters to an element.";
+export const title = "背景滤镜";
+export const description = "对元素应用背景滤镜的工具类。";
 
 <ApiTable
   rows={[
@@ -14,11 +14,11 @@ export const description = "Utilities for applying backdrop filters to an elemen
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `backdrop-blur-xs` and `backdrop-grayscale` to apply filters to an element's backdrop:
+使用 `backdrop-blur-xs` 和 `backdrop-grayscale` 等工具类为元素的背景应用滤镜：
 
 <Figure>
 
@@ -54,7 +54,7 @@ Use utilities like `backdrop-blur-xs` and `backdrop-grayscale` to apply filters 
         </div>
         <div className="flex shrink-0 flex-col items-center">
           <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 italic dark:text-gray-400">
-            combined
+            组合效果
           </p>
           <div className="relative">
             <div className="absolute inset-6 size-20 bg-white/30 backdrop-blur-xs backdrop-grayscale"></div>
@@ -85,22 +85,22 @@ Use utilities like `backdrop-blur-xs` and `backdrop-grayscale` to apply filters 
 
 </Figure>
 
-You can combine the following backdrop filter utilities: [blur](/docs/backdrop-filter-blur), [brightness](/docs/backdrop-filter-brightness), [contrast](/docs/backdrop-filter-contrast), [grayscale](/docs/backdrop-filter-grayscale), [hue-rotate](/docs/backdrop-filter-hue-rotate), [invert](/docs/backdrop-filter-invert), [opacity](/docs/backdrop-filter-opacity), [saturate](/docs/backdrop-filter-saturate), and [sepia](/docs/backdrop-filter-sepia).
+您可以组合以下背景滤镜工具类：[模糊](/docs/backdrop-filter-blur)、[亮度](/docs/backdrop-filter-brightness)、[对比度](/docs/backdrop-filter-contrast)、[灰度](/docs/backdrop-filter-grayscale)、[色相旋转](/docs/backdrop-filter-hue-rotate)、[反转](/docs/backdrop-filter-invert)、[不透明度](/docs/backdrop-filter-opacity)、[饱和度](/docs/backdrop-filter-saturate) 和 [怀旧](/docs/backdrop-filter-sepia)。
 
-### Removing filters
+### 移除滤镜
 
-Use the `backdrop-filter-none` utility to remove all of the backdrop filters applied to an element:
+使用 `backdrop-filter-none` 工具类移除应用于元素的所有背景滤镜：
 
 ```html
 <!-- [!code classes:md:backdrop-filter-none] -->
 <div class="backdrop-blur-md backdrop-brightness-150 md:backdrop-filter-none"></div>
 ```
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="backdrop-filter" value="url('filters.svg#filter-id')" name="backdrop filter" />
+<UsingACustomValue utility="backdrop-filter" value="url('filters.svg#filter-id')" name="背景滤镜" />
 
-### Applying on hover
+### 在悬停时应用
 
 <TargetingSpecificStates
   property="backdrop-filter"
@@ -108,6 +108,6 @@ Use the `backdrop-filter-none` utility to remove all of the backdrop filters app
   featuredClass="backdrop-filter-none"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="backdrop-filter" defaultClass="backdrop-blur-sm" featuredClass="backdrop-filter-none" />

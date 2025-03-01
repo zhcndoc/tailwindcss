@@ -4,8 +4,8 @@ import { CustomizingYourSpacingScale, ResponsiveDesign, UsingACustomValue } from
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "min-width";
-export const description = "Utilities for setting the minimum width of an element.";
+export const title = "最小宽度";
+export const description = "设置元素最小宽度的工具类.";
 
 <ApiTable
   rows={[
@@ -42,11 +42,11 @@ export const description = "Utilities for setting the minimum width of an elemen
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `min-w-<number>` utilities like `min-w-24` and `min-w-64` to set an element to a fixed minimum width based on the spacing scale:
+使用 `min-w-<number>` 工具类，如 `min-w-24` 和 `min-w-64`，根据间距比例设置元素的固定最小宽度：
 
 <Figure>
 
@@ -78,9 +78,9 @@ Use `min-w-<number>` utilities like `min-w-24` and `min-w-64` to set an element 
 
 </Figure>
 
-### Using a percentage
+### 使用百分比
 
-Use `min-w-full` or `min-w-<fraction>` utilities like `min-w-1/2` and `min-w-2/5` to give an element a percentage-based minimum width:
+使用 `min-w-full` 或 `min-w-<fraction>` 工具类，如 `min-w-1/2` 和 `min-w-2/5`，给元素提供基于百分比的最小宽度：
 
 <Figure>
 
@@ -106,9 +106,9 @@ Use `min-w-full` or `min-w-<fraction>` utilities like `min-w-1/2` and `min-w-2/5
 
 </Figure>
 
-### Using the container scale
+### 使用容器比例
 
-Use utilities like `min-w-sm` and `min-w-xl` to set an element to a fixed minimum width based on the container scale:
+使用工具类，如 `min-w-sm` 和 `min-w-xl`，根据容器比例设置元素的固定最小宽度：
 
 <Figure>
 
@@ -140,14 +140,14 @@ Use utilities like `min-w-sm` and `min-w-xl` to set an element to a fixed minimu
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="min-w" value="220px" name="minimum width" variable="min-width" />
+<UsingACustomValue utility="min-w" value="220px" name="最小宽度" variable="min-width" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="min-width" defaultClass="w-24 min-w-full" featuredClass="min-w-0" />
 
-## Customizing your theme
+## 自定义你的主题
 
 <CustomizingYourSpacingScale utility="min-w" />

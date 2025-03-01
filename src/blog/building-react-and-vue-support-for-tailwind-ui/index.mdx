@@ -3,70 +3,69 @@ import stackedListExample from "./stacked-list-example.png";
 import Image from "next/image";
 export const meta = {
   private: true,
-  title: "Building React + Vue support for Tailwind UI",
-  description: `Hey! We're getting really close to releasing React + Vue support for Tailwind UI, so I thought it would be interesting to share some of the behind-the-scenes efforts that have gone into even making it possible.`,
+  title: "为 Tailwind UI 构建 React + Vue 支持",
+  description: `嘿！我们离发布 React + Vue 支持的 Tailwind UI 真是近在咫尺，所以我觉得分享一些幕后努力的过程会很有趣，这些努力让它变得可能。`,
   date: "2021-04-12T19:45:00.0Z",
   authors: [adamwathan],
   excerpt: (
     <>
-      Hey! We're getting _really_ close to releasing React + Vue support for Tailwind UI, so I thought it would be
-      interesting to share some of the behind-the-scenes efforts that have gone into even making it possible.
+      嘿！我们离发布 React + Vue 支持的 Tailwind UI 真是 _近在咫尺_，所以我觉得分享一些幕后努力的过程会很有趣，这些努力让它变得可能。
     </>
   ),
 };
 
-Hey! We're getting _really_ close to releasing React + Vue support for Tailwind UI, so I thought it would be interesting to share some of the behind-the-scenes efforts that have gone into even making it possible.
+嘿！我们离发布 _近在咫尺_ 的 React + Vue 支持的 Tailwind UI 真是非常接近，所以我觉得分享一些幕后努力的过程会很有趣，这些努力让它变得可能。
 
-Grab some popcorn...
+来点爆米花吧...
 
-## The Backstory
+## 背景故事
 
-From the day we started working on Tailwind UI somewhere in mid-2019 I knew that ultimately it would be 10x more valuable to people if they could grab fully interactive examples built using their favorite JS framework. Trying to make that happen for the first release was way too ambitious though, so we had to figure out how to get there one step at a time.
+从我们在 2019 年中期开始制作 Tailwind UI 的那天起，我就知道如果人们能够使用他们喜欢的 JS 框架来获得完全交互的示例，这对他们来说将有十倍的价值。然而，在第一次发布中实现这一点的想法实在是太雄心勃勃了，因此我们必须一步一步地找出如何到达那里。
 
-We decided to focus on vanilla HTML first because it's totally universal, and even if something like JSX would be more helpful for some people, there are lots of existing tools out there for converting HTML to JSX that people could lean on already.
+我们决定首先专注于原生 HTML，因为它是完全通用的，即使像 JSX 这样的东西对某些人来说更有帮助，仍然有很多现有工具可以将 HTML 转换为 JSX，人们本来就可以依赖这些工具。
 
-We also made the hard trade-off not to provide any JS for interactions like toggling a responsive menu or opening and closing a modal dialog in the first version. I felt like anything we provided would just do more harm than good, because there's no one JS framework that makes up the majority of the Tailwind user base. If we catered to React developers, we'd be making it harder to use for the 70% of people _not_ using React. If we catered to Vue developers, we'd be making it harder for the 70% of people _not_ using Vue. If we tried to write it in custom vanilla JS, well we'd be making it harder for literally everyone _(seriously do you have any idea how much code it takes to build a robust enter/leave transition system from scratch in JS?)_
+我们还做出了艰难的取舍，不在第一个版本中提供任何 JS 来实现响应式菜单的切换或打开和关闭模态对话框等交互。我觉得我们提供的任何东西都只会适得其反，因为没有哪个 JS 框架占据了大部分 Tailwind 用户群。如果我们迎合 React 开发者，那将使 70% 不使用 React 的人更难使用。如果我们迎合 Vue 开发者，那将使 70% 不使用 Vue 的人更难使用。如果我们试图用自定义的原生 JS 来编写，那对于每个人来说都将更难 _(你知道要从头开始用 JS 构建一个强大的进出过渡系统需要多少代码吗？)_
 
-So instead I just documented the different states using comments in the HTML, and left it to the end user to wire it up with their favorite JS framework. I know a lot of people love that about [Bulma](https://bulma.io), and I think it was a great approach for us to start with as well.
+所以我只是用 HTML 中的注释记录了不同的状态，留给最终用户自己与他们喜欢的 JS 框架进行连接。我知道很多人喜欢 [Bulma](https://bulma.io) 的这种做法，我认为这也是我们开始时的一个很好的方法。
 
-But once we felt like Tailwind UI was pretty fleshed out with hundreds of great examples, we decided it was time to tackle the JS problem and see what we could do.
+但一旦我们觉得 Tailwind UI 有了数百个很棒的示例后，我们决定是时候解决 JavaScript 问题，看我们能做些什么。
 
-## What should it even be?
+## 它究竟应该是什么？
 
-As an abstract concept adding "JavaScript support" to Tailwind UI sounds straightforward, but when you dig in to the details it is _not_. There are _so_ many decisions to make about what to even build, and so many trade-offs you have to consider when trying to make something useful for as many people as possible.
+作为一个抽象概念，为 Tailwind UI 添加“JavaScript 支持”听起来很简单，但深入细节后，它 _并不是_。关于应该构建什么，有 _这么多_ 决策需要做，尝试让某样东西对尽可能多的人有用时，有 _如此多_ 的取舍需要考虑。
 
-I tossed the whole concept around in the back of my head for a full year while working on Tailwind UI before I actually had a plan I was happy with. Ultimately, these are the core values I decided on when designing a solution:
+在过去的一年里，在为 Tailwind UI 工作期间，我在脑海中反复思考这个概念，直到真正有了我满意的计划。最终，这些是我在设计解决方案时决定的核心价值观：
 
-1. **The promise of Tailwind UI is that it's just a code snippet** — it's easy to customize and adapt by directly editing the code. Any JS examples we provide need to respect this foundational idea.
-2. **The JS needs to be updateable**. Unlike the markup which we expect people to just totally own and edit to their heart's content, the JS needs to come from `node_modules` _somehow_, because building these things right is hard, there are going to be bugs, and we want to be able to fix them for people without asking them to copy a new code snippet. On top of that, we don't want people to have to carefully transport 200 lines of JS they didn't write around their codebase, and constantly worry about accidentally breaking some small implementation detail by mistake.
-3. **It just has to be better than vanilla HTML**. At the end of the day, the most important thing is that we make the existing experience _better_ for people using the JS frameworks we decide to add support for first. Any time I found myself frustrated by two competing trade-offs that made it hard to make something _perfect_, asking myself "is this still strictly better and in no ways worse for framework X users than vanilla HTML?" provided a lot of clarity.
+1. **Tailwind UI 的承诺是它只是一个代码片段** — 它很容易通过直接编辑代码自定义和适应。我们提供的任何 JS 示例都需要尊重这个基础想法。
+2. **JS 需要是可更新的**。与我们希望人们完全拥有并随意编辑的标记不同，JS 需要从 `node_modules` _以某种方式_ 提供，因为正确构建这些东西是困难的，会出现错误，我们希望能够为人们修复这些错误，而不需要他们复制一个新的代码片段。此外，我们不希望人们必须小心翼翼地在他们的代码库中移动 200 行他们没有编写的 JS，同时不断担心意外地破坏一些小的实现细节。
+3. **它必须比原生 HTML 更好**。归根结底，最重要的是我们为了使用我们决定首先支持的 JS 框架的人改善现有体验。每当我发现自己因两者间相互竞争的取舍而感到沮丧以致难以做出 _完美_ 的东西时，问自己“对 framework X 用户来说，这仍然比原生 HTML 更好，在任何方面都不差吗？”提供了很多清晰度。
 
-The other thing that was really important to me is that none of the underlying JS stuff was proprietary or Tailwind UI-specific. To me, Tailwind UI is not a UI kit like Ant Design or Material UI — those are great projects but it's not what I wanted to build.
+对我来说，另一个非常重要的事情是，所有底层的 JS 东西都不是专有的或 Tailwind UI 特定的。对我来说，Tailwind UI 不是一个像 Ant Design 或 Material UI 那样的 UI 工具包 — 这些都是很好的项目，但这不是我想构建的。
 
-To me, Tailwind UI is a collection of _blueprints_, showing you how to build awesome stuff using tools that are _already available_ to you. If you want to use things exactly as they come off the shelf you totally can and you'll get great results. But you should also be able to use Tailwind UI as a helpful starting point, tweak it to the nines, and end up with something that feels uniquely _yours_, even if we gave you a boost at the beginning.
+在我看来，Tailwind UI 是一组 _蓝图_，展示了如何使用你 _已经可以使用_ 的工具构建出精彩的东西。如果你想按原样使用这些东西，你完全可以，并且会获得很好的结果。但你也应该能够将 Tailwind UI 作为一个有用的起点，进行大量调整，最终得到一个感觉独特的 _你自己的_ 东西，即使我们在一开始给了你帮助。
 
-So before we could add JavaScript support to Tailwind UI, we needed to build some tools.
+因此，在我们能够为 Tailwind UI 添加 JavaScript 支持之前，我们需要构建一些工具。
 
-## Building Headless UI
+## 构建 Headless UI
 
-Years ago I remember seeing Kent C. Dodds' [downshift](https://www.downshift-js.com) library and thinking _"man, this is a cool concept — all of the complex behavior is tucked away in the library, but all of the actual markup and styling is left to the user"_.
+几年前，我记得看到 Kent C. Dodds 的 [downshift](https://www.downshift-js.com) 库，并想 _“哇，这是一个很酷的概念 — 所有复杂的行为都被藏在库中，但所有实际的标记和样式都留给用户”_。
 
-This sort of approach is the perfect fit for Tailwind philosophically, because the entire goal of Tailwind is to help you build totally custom designs more quickly. Tailwind + a library of JS components that abstract away all of the keyboard navigation and accessibility logic without including any design opinions would be such a powerful combo — it would let teams building totally custom UIs move almost as fast as teams who were content to use hard-to-customize, opinionated frameworks.
+这种方法在哲学上非常适合 Tailwind，因为 Tailwind 的目标是帮助你更快速地构建完全自定义的设计。Tailwind 加上一个能够抽象掉所有键盘导航和可访问性逻辑而不包含任何设计意见的 JS 组件库将是一个强大的组合 — 它将使构建完全自定义的 UI 的团队几乎能够像使用难以自定义、有明确意见的框架的团队一样迅速。
 
-We looked to see if there were any other tools out there solving these same problems, and while there were a few awesome projects in the space ([Reach UI](https://reach.tech) and [Reakit](https://reakit.io) especially at the time, and [react-aria](https://react-spectrum.adobe.com/react-aria/) since starting on our own library, phenomenal work by all those folks), ultimately we decided that something so important for our company would be best to build and control ourselves.
+我们查看了是否有其他工具在解决这些相同的问题，尽管当时在这个领域有一些很棒的项目（尤其是 [Reach UI](https://reach.tech) 和 [Reakit](https://reakit.io)，还有 [react-aria](https://react-spectrum.adobe.com/react-aria/) 自从我们开始自己的库以来的那些出色工作），但最终我们决定自己构建和控制如此重要的东西对我们公司来说是最好的选择。
 
-There were two big reasons we ended up starting our own project:
+我们开始自己项目的两个主要原因：
 
-1. **We wanted the APIs to work well with a class-based styling solution like Tailwind.** A lot of the other tools out there expected you to write custom CSS to target the different bits of each component, which is very different than the workflow you use to style things with Tailwind. We wanted to design something that was very class-friendly.
-2. **We wanted to support multiple frameworks using a consistent API.** There are React libraries, Vue libraries, Angular libraries, and others, but each one is different, designed by different people with different tastes. We wanted something that would be as consistent as possible from framework to framework, so that the framework-specific examples in Tailwind UI wouldn't be radically different from each other.
+1. **我们希望 API 与类基础样式解决方案如 Tailwind 能很好地工作**。许多其他工具都希望你编写自定义 CSS 来定位每个组件的不同部分，这与使用 Tailwind 来样式化东西的工作流程非常不同。我们希望设计一个非常适合类的解决方案。
+2. **我们希望支持多个框架，使用一致的 API**。有 React 库、Vue 库、Angular 库等，但每个库都不同，由不同的人设计，口味不同。我们希望尽可能保持框架间的一致性，以便 Tailwind UI 中的框架特定示例彼此不会有太大差异。
 
-I was really excited about what we were going to end up with at the end, but holy crap this was going to be a lot of work.
+我对最终会得到什么感到非常兴奋，但天哪，这将是大量的工作。
 
-### Getting the ball rolling
+### 启动项目
 
-We decided to call this project "Headless UI" and in August of last year [Robin Malfait](https://twitter.com/malfaitrobin) joined the team to work on it full-time, pretty much exclusively.
+我们决定将这个项目称为“Headless UI”，并在去年 8 月 [Robin Malfait](https://twitter.com/malfaitrobin) 加入团队，专职工作几乎完全聚焦于此。
 
-The very first thing he worked on was a `Transition` component for React that would allow you to add enter/leave animations to elements, entirely using classes, and was very inspired by the [`<transition>`](https://v3.vuejs.org/guide/transitions-enterleave.html#enter-leave-transitions) component in Vue:
+他工作的第一件事情是为 React 创建一个 `Transition` 组件，使你能够为元素添加进出动画，完全使用类，并深受 [`<transition>`](https://v3.vuejs.org/guide/transitions-enterleave.html#enter-leave-transitions) 组件的启发：
 
 ```jsx
 <Transition
@@ -78,21 +77,21 @@ The very first thing he worked on was a `Transition` component for React that wo
   leaveFrom="opacity-100"
   leaveTo="opacity-0"
 >
-  I will fade in and out
+  我会渐变进出
 </Transition>
 ```
 
-This is a great example of what I meant earlier when I said we really wanted to design components that were "class-friendly". This component makes it really easy to style your enter/leave transitions with regular old Tailwind utility classes, so it feels just like styling anything else in your app. It's also _not_ coupled to Tailwind in any way though, and you can use whatever classes you want!
+这是我之前提到的我们确实希望设计出“友好类”组件的一个很好的示例。这个组件使得用传统的 Tailwind 工具类来样式化你的进出过渡变得非常简单，因此感觉与在你的应用中样式化其他任何东西一样。这也 _不_ 与 Tailwind 有任何耦合，你可以使用你想要的任何类！
 
-We published the [first public release](https://blog.tailwindcss.com/headless-ui-unstyled-accessible-ui-components) in October, and it included React and Vue libraries with the first three components:
+我们在 10 月发布了 [第一次公开发布](https://blog.tailwindcss.com/headless-ui-unstyled-accessible-ui-components)，其中包括 React 和 Vue 库，以及前两个组件：
 
-- Menu Button (or dropdown)
-- Listbox (or custom select)
-- Switch (or toggle)
+- 菜单按钮（或下拉菜单）
+- 列表框（或自定义选择框）
+- 开关（或切换开关）
 
-We landed on a set of APIs that used "compound components" to abstract away all of the complexity while communicating with each other via [context](https://reactjs.org/docs/context.html) (or [provide/inject](https://v3.vuejs.org/api/composition-api.html#provide-inject) in Vue).
+我们采用了一组使用“复合组件”的 API，抽象掉所有复杂性，同时通过 [context](https://reactjs.org/docs/context.html)（或 [provide/inject](https://v3.vuejs.org/api/composition-api.html#provide-inject）在 Vue 中）进行相互通信。
 
-Here's what a custom dropdown looks like in React:
+下面是 React 中自定义下拉菜单的样子：
 
 ```jsx
 import { Menu } from "@headlessui/react";
@@ -100,24 +99,24 @@ import { Menu } from "@headlessui/react";
 function MyDropdown() {
   return (
     <Menu as="div" className="relative">
-      <Menu.Button className="rounded bg-blue-600 px-4 py-2 text-white ...">Options</Menu.Button>
+      <Menu.Button className="rounded bg-blue-600 px-4 py-2 text-white ...">选项</Menu.Button>
       <Menu.Items className="absolute right-0 mt-1">
         <Menu.Item>
           {({ active }) => (
             <a className={`${active && "bg-blue-500 text-white"} ...`} href="/account-settings">
-              Account settings
+              账户设置
             </a>
           )}
         </Menu.Item>
         <Menu.Item>
           {({ active }) => (
             <a className={`${active && "bg-blue-500 text-white"} ...`} href="/documentation">
-              Documentation
+              文档
             </a>
           )}
         </Menu.Item>
         <Menu.Item disabled>
-          <span className="opacity-75 ...">Invite a friend (coming soon!)</span>
+          <span className="opacity-75 ...">邀请朋友（即将推出！）</span>
         </Menu.Item>
       </Menu.Items>
     </Menu>
@@ -125,83 +124,83 @@ function MyDropdown() {
 }
 ```
 
-You'll notice that to do things like style the "active" dropdown item, we use a [render prop](https://reactjs.org/docs/render-props.html) (or a [scoped slot](https://v3.vuejs.org/guide/component-slots.html#scoped-slots) in Vue):
+你会注意到，要做例如样式“活动”下拉项目之类的事情时，我们使用了一个 [render prop](https://reactjs.org/docs/render-props.html)（或在 Vue 中使用 [scoped slot](https://v3.vuejs.org/guide/component-slots.html#scoped-slots)）：
 
 ```jsx
 <Menu.Item>
   {({ active }) => (
     <a className={`${active && "bg-blue-500 text-white"} ...`} href="/documentation">
-      Documentation
+      文档
     </a>
   )}
 </Menu.Item>
 ```
 
-Render props aren't as common as they used to be because hooks have replaced the need for them in many situations. But for this sort of problem where you need access to internal state that's managed by the component you're consuming, they are still the right (only?) solution, and very elegant.
+渲染 props 的使用不如之前常见，因为 hooks 在许多情境下取代了它们的需求。但对于这种需要访问由你所消费的组件管理的内部状态的问题，它们仍然是正确的（唯一的）解决方案，并且非常优雅。
 
-### Designing the right components
+### 设计合适的组件
 
-After releasing the first version of Headless UI in October, we buckled down for a couple of months to release [Tailwind CSS v2.0](https://blog.tailwindcss.com/tailwindcss-v2), and then spent the last month of the year focused on bug fixes and lots of project house keeping before taking a break for the holidays.
+在 10 月推出 Headless UI 的第一个版本之后，我们扎实工作了几个月，发布了 [Tailwind CSS v2.0](https://blog.tailwindcss.com/tailwindcss-v2)，然后在年底的最后一个月专注于修复错误和大量项目管理工作，然后休假过节。
 
-When we came back, we buckled down hard to get to work on actually adding React + Vue support to Tailwind UI itself, and the first thing we needed to was audit all of the interactive behavior we needed for the examples in Tailwind UI and figure out what Headless UI abstractions we needed to design.
+当我们回来时，我们继续努力，开始为 Tailwind UI 本身添加 React + Vue 支持，第一件需要做的事情是审核我们需要的所有交互行为，并计算出我们需要设计的 Headless UI 抽象。
 
-This was actually a pretty interesting and challenging job, because it's really not always obvious how a certain design-specific interaction should map to an established UI pattern that has known accessibility expectations.
+这实际上是一个很有趣且具有挑战性的工作，因为某某设计特定的交互如何映射到有已知可访问性期望的既定 UI 模式并不总是显而易见的。
 
-Some are obvious:
+一些是显然的：
 
-- A modal dialog should be a [dialog](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role)
-- A toggle should be a [switch](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Switch_role)
-- A dropdown should be a [menu](https://www.w3.org/TR/wai-aria-practices/examples/menu-button/menu-button-links.html) _(well, sometimes...)_
+- 模态对话框应该是一个 [对话框](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role)
+- 切换开关应为 [开关](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Switch_role)
+- 下拉菜单应该是一个 [菜单](https://www.w3.org/TR/wai-aria-practices/examples/menu-button/menu-button-links.html) _(嗯，有时...)_
 
-But some are a lot trickier. For example, what about mobile menus, the kind of thing you open with a hamburger button?
+但有些则更棘手。例如，移动菜单怎么办，像用汉堡按钮打开的那种？
 
-_If it opens kinda like a popup, is that a menu like a dropdown?_
+_如果它像弹出窗口那样打开，那是不是像下拉菜单？_
 
-_What if it slides in from the side of the screen?_
+_如果它从屏幕侧面滑入呢？_
 
-_What if it just opens in place and pushes the rest of the page further down?_
+_如果它只是就地打开并将其他页面推得更下呢？_
 
-We worked through questions like this regularly, and landing on good solutions took a lot of research and experimentation. We're lucky to have [David Luhr](https://twitter.com/david_luhr) on the team who has specialized in accessibility for a long time, and with his help we were able to feel really good about the solutions we landed on.
+我们定期讨论这样的疑问，找到好的解决方案需要大量的研究和实验。我们很幸运有 [David Luhr](https://twitter.com/david_luhr) 在队伍中，他长期专注于可访问性，在他的帮助下，我们能够对我们找到的解决方案感到非常满意。
 
-Here's what we decided we needed in order to support the patterns that already existed in Tailwind UI:
+以下是我们决定为了支持在 Tailwind UI 中已经存在的模式所需要的：
 
-- **Menu Button**. Used for dropdown menus that only contain links or buttons, like a little actions menu at the end of a table row.
-- **Listbox**. For custom `select` implementations where you want to include extra stuff in the `option` elements. For example a country picker where you put a flag next to each country.
-- **Switch**. For custom toggle switches that behave like checkboxes.
-- **Disclosure**. For showing/hiding content in place. Think like collapsible FAQ questions. Also useful for bigger chunks of UI too though, like a mobile menu that opens in place and pushes the rest of the page down.
-- **Dialog**. For, well, modal dialogs! But also for mobile navigation that slides out from the side of the page, and other "take-over"-style UIs, even if they don't look like a traditional panel-centered-in-the-screen modal.
-- **Popover**. For panels that pop up on top of the page when you click a button. This is useful for menus where you need lots of custom content that would violate the strictness of regular `role="menu"` menu buttons. We use these for some mobile menus, flyout menus in navigation bars, and other interesting places too. It's kind of like a menu/disclosure hybrid.
-- **Radio Group**. For custom radio selection UIs, like where you want a set of clickable cards instead of a boring little radio circle.
+- **菜单按钮**。用于仅包含链接或按钮的下拉菜单，例如表格行末尾的小操作菜单。
+- **列表框**。对于自定义 `select` 实现，您希望在 `option` 元素中包含额外内容。例如一个国家选择器，你可以在每个国家旁边放一个国旗。
+- **开关**。用于像复选框一样的自定义切换开关。
+- **披露**。用于在地面上显示/隐藏内容。想想像可折叠的常见问题答案。不仅对于较大的 UI 组合也是有用的，比如在地面上展开的移动菜单，将其他页面向下推进。
+- **对话框**。用于，呃，模态对话框！但也用于从页面侧面滑出的移动导航，以及其他“接管”风格的 UI，即使它们看起来不像传统的面板式模态。
+- **弹出层**。用于在你点击按钮时在页面顶部弹出的面板。这对于需要大量自定义内容而又会违反常规 `role="menu"` 菜单按钮严格性的菜单非常有用。我们将这些用于一些移动菜单、导航栏中的弹出菜单和其他有趣的地方。它有点像菜单/披露混合。
+- **单选组**。用于自定义单选选择 UI，例如你希望一组可点击的卡片，而不是一个无聊的小单选圆圈。
 
-We ran into tons of challenges building this stuff, especially around complex stuff like focus management, and _especially_ around nested focus management.
+在构建这些东西时，我们遇到了无数挑战，尤其是在复杂的东西如焦点管理，以及 _尤其_ 在嵌套焦点管理方面。
 
-Imaging you have a modal that opens, and inside that modal there's a dropdown. You open the modal, then open the dropdown, and hit escape. What happens? Well the dropdown should close right, but the modal should stay open.
+想象一下你有一个弹出窗口，里面有一个下拉菜单。你打开弹出窗口，然后打开下拉菜单，按下 escape。会发生什么？好吧，下拉菜单应该关闭，对吧，但弹出窗口应该保持打开。
 
-I guarantee 99% of modals on the internet would close too in this case, even though they aren't supposed to. But not ours — ours works!
+我保证互联网上 99% 的弹出窗口在这种情况下也会关闭，尽管它们不应该这样。但我们的不会 — 我们的是可以正常工作的！
 
-We _(well mostly Robin)_ spent _months_ working on little details like this to make everything as bullet-proof as possible, and while I'm sure there have to be bugs hiding in there still somewhere, where we ended up feels _so_ rock solid compared to almost every UI you encounter day-to-day on the web.
+我们 _(好吧，大部分都是 Robin)_ 花了 _几个月_ 的时间在这些小细节上，以使一切尽可能坚固，虽然我相信那里仍然可能有隐藏的缺陷，但我们最终到达的感觉与几乎每天在网上遇到的每个 UI 相比， _如此_ 稳定。
 
-We still have a lot of new patterns we want to add to Headless UI like tabs, accordions, maybe even _gulp_ a datepicker, and we're looking forward to exploring other frameworks in the future (Alpine.js is next on our list), but we're super proud to call what we're releasing this week Headless UI v1.0 and commit to a stable API going forward.
+我们仍然有很多新模式想要添加到 Headless UI 中，比如制表符、手风琴，甚至可能是 _gulp_ 日期选择器，并期待未来探索其他框架（Alpine.js 是我们下一个的计划），但我们非常自豪地称本周发布的东西为 Headless UI v1.0，并承诺将来提供一个稳定的 API。
 
-We think you're gonna love it. _&lt;/TimCook&gt;_
+我们认为你会喜欢它。 _&lt;/TimCook&gt;_
 
-## Just enough abstraction
+## 适度抽象
 
-With the Headless UI stuff figured out, the next big problem was figuring out _exactly_ what a React or Vue version of an existing Tailwind UI example should look like.
+在弄清楚了 Headless UI 的事情后，下一个大问题就是准确地确定现有 Tailwind UI 示例的 React 或 Vue 版本应该是什么样子。
 
-The examples in Tailwind UI are pure HTML snippets — you find something you like, copy the HTML into your project, then tweak it as much you like, chop it up into individual components, whatever you want. We don't make any assumptions about how you're going to use it, what elements you're going to keep or delete, or how you want to abstract away any duplication with your preferred tools.
+Tailwind UI 中的示例是纯 HTML 片段 — 你找到你喜欢的东西，将 HTML 复制到你的项目中，然后根据需要调整，随意拆分成单独的组件，随你所愿。我们并不对你将如何使用它、你将保留或删除哪些元素，或你希望如何使用你喜欢的工具抽象掉任何重复内容做出任何假设。
 
-This is an easy decision when working with pure HTML — what other choice do you really even have? But when offering framework-specific examples, it gets a lot trickier to know exactly what to provide.
+在使用纯 HTML 时，这个决定很简单 — 你还有什么其他选择呢？但在提供框架特定示例时，确切地知道该提供什么变得要困难得多。
 
-The biggest question was how hard should we try to remove any duplication, and what are the right approaches to doing so?
+最大的疑问是我们该在多大程度上努力去消除任何重复，以及消除重复的正确方式是什么？
 
-Both React and Vue are _component_ frameworks, and the way you reuse code in your projects is by extracting bits of UI into components that you can use over and over again.
+无论是 React 还是 Vue，都是 _组件_ 框架，在你的项目中重用代码的方式是将 UI 的一部分提取为可以反复使用的组件。
 
-The challenge is that creating components like that is always _very_ project specific. Take this list component for example:
+挑战在于，创建这样的组件始终是 _非常_ 项目特定的。以这个列表组件为例：
 
 <Image alt="Stacked list component example from Tailwind UI" src={stackedListExample} />
 
-Fully componentized in a real app, the final code might look something like this:
+在真实应用程序中完全组件化后，最终代码可能看起来像这样：
 
 ```jsx
 <TeamList>
@@ -211,32 +210,32 @@ Fully componentized in a real app, the final code might look something like this
 </TeamList>
 ```
 
-It looks super clean sure, but it's forcing a lot of opinions on you.
+看起来超级干净，没错，但这却强加了许多意见。
 
-For example, it assumes the items are team members. What if you're building an invoicing app and you want to use this pattern for a list of clients instead? Hell, you might be using this for a sports betting app and these should be baseball teams, not even people!
+例如，它假设这些项目是团队成员。如果你正在构建一个发票应用，想用这个模式来列出客户怎么办？天哪，你可能是在为一个体育博彩应用使用这个，而这些应该是棒球队，而不是人！
 
-It also makes assumptions about the shape of a `member` object. It would have to encode that it's pulling out a `name` and an `email` property, even though your data might be different.
+它还假设了 `member` 对象的形状。它必须编码出它正在取出 `name` 和 `email` 属性，尽管你的数据可能是不同的。
 
-The other issue is that in frameworks like Vue, you can only have one component per file. This means copying an example that was made up of 4-5 subcomponents would mean you have to copy 4-5 different snippets, create files for each one, and link them all together with the correct names/paths.
+另一个问题是，在像 Vue 这样的框架中，你每个文件只能有一个组件。这意味着复制一个由 4-5 个子组件组成的示例意味着你必须复制 4-5 个不同的片段，为每一个创建文件，并用正确的名称/路径把它们全联结起来。
 
-To me, something about doing all of this for people felt like going too far, at least for the problem we're trying to solve today. When everything is super broken up like that with predefined prop APIs and deliberately chosen component names, **it feels like you aren't supposed to change it anymore**. What I love about Tailwind UI is that clicking the "code" tab feels like opening up some complex piece of electronics and seeing all of the circuitry right there in front of you. It's a learning opportunity, and you can read the markup and class names and understand how it all works together.
+对我来说，为人们做这些事情似乎是走得太远了，至少对于我们今天试图解决的问题。当一切都被打得支离破碎时，预定义的 prop API 和故意选择的组件名称，**就感觉你不应该再去更改它**。我喜欢 Tailwind UI 的原因在于，点击“代码”标签就像打开某个复杂的电子设备一样，可以看到所有的电路在你面前。这是一个学习的机会，你可以阅读标记和类名，理解它们是如何一起工作的。
 
-I wrestled with it for a long time, but ultimately decided that right now we were trying to solve two main problems:
+我苦苦挣扎了很长时间，但最终决定，目前我们正试图解决两个主要问题：
 
-1. **Give people code using the syntax they actually need**, like giving React users JSX instead of HTML so they don't have to manually convert things like `for` to `htmlFor`.
-2. **Make the interactive elements work out of the box**, so dropdowns, mobile menus, toggles, and everything else was ready to go, instead of having to write all of that boilerplate JS yourself.
+1. **给人们提供他们实际需要的代码**，比如给 React 用户 JSX 而不是 HTML，这样他们就不必手动将 `for` 转换为 `htmlFor`。
+2. **使交互元素开箱即用**，以便下拉菜单、移动菜单、切换开关和其他所有元素都可以直接使用，而不是必须自己写所有的样板 JS。
 
-I decided that the right solution was to focus on solving those problems, and be careful not to do anything that would turn Tailwind UI into a different product.
+我决定正确的解决方案是专注于解决这些问题，并小心翼翼地避免做任何将 Tailwind UI 转变为不同产品的事情。
 
-So this is what's different when you look at a React or Vue example compared to the vanilla HTML version:
+所以，当你查看 React 或 Vue 示例时，与原生 HTML 版本相比，主要不同之处在于：
 
-1. **Each framework example uses the right syntax** — React examples use JSX, and Vue examples are provided in the single-file component syntax.
-2. **Transitions are real now** — instead of comments telling you what classes to add at each phase of a transition, the transition is just there, using either a Headless UI transition component or Vue's native transition component.
-3. **Interactive elements are handled by Headless UI** — you'll see a few imports in any example that requires JS where we pull in the required Headless UI components and then those are used directly in the markup.
-4. **Any repeated chunks of markup have been converted into basic loops** — any data-driven loop stuff (like lists of people, or navigation items) are extracted into simple variables right there in the example to reduce duplication but still keep everything together in one place. In your own projects, you'd swap this out with data from an API or database or whatever, but we keep the examples simple and don't make any assumptions for you.
-5. **Icons are pulled in from the Heroicons library**. Instead of inlining the SVG directly whenever an icon is used, we pull them in from our React/Vue icon libraries instead to keep the markup simpler.
+1. **每个框架示例使用正确的语法** — React 示例使用 JSX，Vue 示例以单文件组件语法提供。
+2. **过渡现在是真实的** — 不再是注释告诉你在过渡的每个阶段要添加哪些类，而是直接使用 Headless UI 过渡组件或 Vue 的原生过渡组件。
+3. **交互元素由 Headless UI 处理** — 你会在任何需要 JS 的示例中看到一些导入，我们提取了所需的 Headless UI 组件，然后在标记中直接使用这些组件。
+4. **任何重复的标记块已转换为基本循环** — 任何数据驱动的循环内容（如人名列表或导航项）都在示例中提取为简单变量，以减少重复，同时保持所有内容在一个地方。在你自己的项目中，你会用 API 或数据库中的数据替换它，但我们保持示例简单，而不做任何假设。
+5. **图标从 Heroicons 库中提取**。在使用图标时，不再像以前那样直接嵌入 SVG，而是从我们的 React/Vue 图标库中提取，以保持标记的简洁性。
 
-Here's an example of what it actually looks like:
+以下是它实际看起来的示例：
 
 ```jsx
 import { Menu, Transition } from "@headlessui/react";
@@ -279,7 +278,7 @@ export default function Example() {
               <>
                 <div>
                   <Menu.Button className="flex items-center rounded-full bg-gray-100 text-gray-400 hover:text-gray-600 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 focus:outline-none">
-                    <span className="sr-only">Open options</span>
+                    <span className="sr-only">打开选项</span>
                     <DotsVerticalIcon className="h-5 w-5" aria-hidden="true" />
                   </Menu.Button>
                 </div>
@@ -308,7 +307,7 @@ export default function Example() {
                               "block px-4 py-2 text-sm",
                             )}
                           >
-                            View details
+                            查看详细信息
                           </a>
                         )}
                       </Menu.Item>
@@ -321,7 +320,7 @@ export default function Example() {
                               "block px-4 py-2 text-sm",
                             )}
                           >
-                            Send message
+                            发送信息
                           </a>
                         )}
                       </Menu.Item>
@@ -338,23 +337,23 @@ export default function Example() {
 }
 ```
 
-It's still a single example where you can see everything that's going on at once, and you can cut it up however makes the most sense for your project. You get to define your own prop APIs to meet your own needs, name things however makes the most sense for your domain, and fetch your data in whatever way works best with the other technologies you work with.
+它仍然是一个示例，你可以看到所有正在发生的事情，你可以以对你的项目最有意义的方式对其进行分割。你可以定义自己的 prop API，以满足自己的需求，按对你的领域最有意义的方式命名，并以对你工作使用的其他技术最有效的方式获取数据。
 
-## The machine that makes it work
+## 驱动一切的机器
 
-So that's how it all works from a customer's perspective, but if you're curious how we actually built this stuff internally, it's pretty interesting and worth talking about.
+所以，这就是从客户的角度来看一切是如何运作的，但如果你对我们内部实际是如何构建这些东西感到好奇，那也很有趣，值得谈谈。
 
-Tailwind UI is like 450 examples or something now, and converting all of that stuff to React/Vue by hand would have been absolute torture, and impossible to maintain in the long-term. So we needed some way to automate it.
+Tailwind UI 现在大约有 450 个示例，将所有这些内容转换为 React/Vue 纯手动的方法将会是绝对的折磨，并且在长期内是不可能维护的。因此，我们需要某种方式来自动化。
 
-If you're anything like me, the entire idea of automatically generating this stuff in different formats might make you cringe. For me at least, my gut reaction is just _"well there goes the human touch — it's just going to feel like machine-generated garbage now"_, and of course that is not acceptable to me at all — I want to be proud of the stuff we release, not feel like we had to make really ugly compromises.
+如果你和我一样，自动以不同格式生成这些内容的整个想法可能让你感到不适。至少对我来说，我的直觉反应是“好吧，那就失去人性了 — 现在肯定会感觉像机器生成的垃圾”，当然这对我而言是完全不可接受的 — 我想为我们发布的东西感到骄傲，而不是觉得我们不得不做出非常丑陋的妥协。
 
-So however we did this, the output had to live up to our standards. This meant we were gonna have to build a system to do this ourselves, from scratch.
+所以不管我们如何做到这一点，输出必须符合我们的标准。这意味着我们必须从头开始构建一个系统来实现这一点。
 
-For the first 2 months of the year, [Brad](https://twitter.com/bradlc) spent all of his time building a custom authoring chain specifically for Tailwind UI components that could take our HTML and turn it into React code that looked like it was hand-written by a person.
+在今年的前两个月， [Brad](https://twitter.com/bradlc) 花了所有时间为 Tailwind UI 组件构建一个定制的创作链，可以将我们的 HTML 转换为看起来像是手写的 React 代码。
 
-Here's how it works — instead of authoring our examples in vanilla HTML, we author them in a sort of custom flavor of HTML full of custom elements that we ultimately transform to vanilla HTML using [PostHTML](https://github.com/posthtml/posthtml).
+它是如何运作的 — 我们不是用原生 HTML 撰写示例，而是用一种包含自定义元素的自定义 HTML 风格撰写示例，最终我们使用 [PostHTML](https://github.com/posthtml/posthtml) 将其转换为原生 HTML。
 
-Here's what one of our dropdown examples looks like in our internal authoring format:
+以下是我们内部创作格式中的一个下拉示例：
 
 ```html
 <x-menu as="div" id="options-menu" class="relative inline-block text-left">
@@ -362,7 +361,7 @@ Here's what one of our dropdown examples looks like in our internal authoring fo
     <x-menu-button
       class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 focus:outline-none"
     >
-      Options
+      选项
       <x-heroicon type="solid" name="chevron-down" class="-mr-1 ml-2 h-5 w-5" />
     </x-menu-button>
   </div>
@@ -387,7 +386,7 @@ Here's what one of our dropdown examples looks like in our internal authoring fo
             x-active-class="bg-gray-100 text-gray-900"
             x-not-active-class="text-gray-700"
           >
-            Account settings
+            账户设置
           </a>
         </x-menu-item>
         <x-menu-item>
@@ -397,7 +396,7 @@ Here's what one of our dropdown examples looks like in our internal authoring fo
             x-active-class="bg-gray-100 text-gray-900"
             x-not-active-class="text-gray-700"
           >
-            Support
+            支持
           </a>
         </x-menu-item>
         <x-menu-item>
@@ -407,7 +406,7 @@ Here's what one of our dropdown examples looks like in our internal authoring fo
             x-active-class="bg-gray-100 text-gray-900"
             x-not-active-class="text-gray-700"
           >
-            License
+            许可证
           </a>
         </x-menu-item>
       </div>
@@ -416,27 +415,27 @@ Here's what one of our dropdown examples looks like in our internal authoring fo
 </x-menu>
 ```
 
-You can probably already see why authoring things this way makes it so much easier to convert to something like React or Vue than just writing the HTML by hand.
+你可能已经能看到，为了将这些内容转换为 React 或 Vue，使用这种方式创作简直太有利了，而不是直接手动写 HTML。
 
-We crawl this document as an AST, and actually transform it into _four_ formats:
+我们将此文档作为 AST 爬取，实际上将其转换为 _四_ 种格式：
 
-1. The vanilla HTML you get when you copy the snippet.
-2. The HTML that gets injected into the preview pane, where we use some very quick and dirty Alpine.js to demo the different interactions in the example.
-3. The React snippet for you to copy.
-4. The Vue snippet for you to copy.
+1. 你复制的原生 HTML。
+2. 注入预览窗格的 HTML，我们使用了一些非常简单的 Alpine.js 来演示示例中的不同交互。
+3. 供你复制的 React 片段。
+4. 供你复制的 Vue 片段。
 
-The key to getting sensible output is really just having total control of the input format. It's still hard work, but when you can encode the _intent_ of each example into a custom input format, converting that to another format turns out _so_ much better than trying to write something that can convert arbitrary jQuery to React or something.
+获得合理输出的关键是完全控制输入格式。这仍然是艰苦的工作，但当你能够将每个示例的 _意图_ 编码为自定义输入格式时，将其转换为其他格式的结果 _会好得多_，而不是试图把任意的 jQuery 转换为 React。
 
-There's still some dark magic in there with regular expressions and all of the other usual suspects, but ultimately by keeping things as declarative as possible and hiding the real complexity inside of Headless UI, we're mostly just transforming markup which is a lot more restricted than regular code.
+这里仍然隐藏了一些常规表达式和所有其他常见方式的黑魔法，但最终通过尽量保持声明性，我们把真正的复杂性隐藏在 Headless UI 中，我们大多只是转换标记，这比常规代码要受限得多。
 
-## When's it coming out?
+## 什么时候推出？
 
-React and Vue support for Tailwind UI is going to be available to everyone on Wednesday April 14th — two days from now! It's a completely free update for all customers, you'll just see a new little dropdown appear in the UI for changing the snippet language and you'll be ready to go.
+Tailwind UI 的 React 和 Vue 支持将在 4 月 14 日（星期三）向所有人提供 — 在两天之后！这对所有客户来说是一次完全免费的更新，你只需在 UI 中看到一个新的下拉选择框，就能更改代码片段语言，一切就绪。
 
-We'll also be releasing Headless UI v1.0 on the same day _(of course, since how else would this Tailwind UI stuff even work)_ along with a brand new documentation site, so even if you're not a Tailwind UI customer, there's gonna be lots of new free open-source goodies for you to play with.
+我们还将在同一天发布 Headless UI v1.0 _(当然了，不然这 Tailwind UI 的东西怎么可能工作)_ ，还有一个全新的文档网站，所以即使你不是 Tailwind UI 客户，也会有许多新的免费开源好东西供你玩。
 
-Thanks as always to everyone supporting our work on this stuff — it's seriously a gift to get to work on tools like this for other developers every day and it brings us a ton of fulfillment to see people benefiting from what we build.
+一如既往地感谢所有支持我们这项工作的每一个人 — 每天为其他开发者开发这样的工具真是件快乐的事，看到人们从我们构建的东西中受益让我们感到非常满足。
 
-Hope you enjoy the stuff!
+希望你喜欢这些东西！
 
 – Adam

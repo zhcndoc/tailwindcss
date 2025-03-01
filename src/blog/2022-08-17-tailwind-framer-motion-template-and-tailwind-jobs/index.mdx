@@ -8,84 +8,83 @@ import card from "./card.jpg";
 import pocketPreview from "./pocket-preview.png";
 
 export const meta = {
-  title: "New Tailwind CSS + Framer Motion template and Tailwind Jobs",
-  description: `All about the brand new Tailwind UI template we just shipped, the official Tailwind CSS job board, and a bunch of new projects coming out in the next few weeks.`,
+  title: "全新的 Tailwind CSS + Framer Motion 模板与 Tailwind Jobs",
+  description: `全部关于我们刚发布的全新 Tailwind UI 模板、官方 Tailwind CSS 招聘平台，以及未来几周即将推出的一系列新项目。`,
   date: "2022-08-19T12:45:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      All about the brand new Tailwind UI template we just shipped, the official Tailwind CSS job board, and a bunch of
-      new projects coming out in the next few weeks.
+      全部关于我们刚发布的全新 Tailwind UI 模板、官方 Tailwind CSS 招聘平台，以及未来几周即将推出的一系列新项目。
     </>
   ),
 };
 
-Got another update for you today on some cool things we've shipped, and some other things that are in the works but shipping soon!
+今天我有一些新的更新要告诉你，关于我们发布的一些酷炫的东西，以及一些正在进行中的项目，但即将发布！
 
-Since the <Link href="/blog/2022-06-23-tailwind-templates-and-all-access">Tailwind UI site templates and all-access</Link> release back in June we've been doing a lot of maintenance-focused stuff, like processing <Link href="https://github.com/search?q=is%3Aclosed+org%3Atailwindlabs+archived%3Afalse+sort%3Acreated-desc+is%3Apublic+closed%3A%3E%3D2022-06-23+-author%3Aapp%2Fdependabot+-author%3Aapp%2Fgithub-actions+-author%3Aapp%2Fdepfu&type=Issues">over 350 GitHub issues and pull requests</Link> and updating all of the new templates we released to use <Link href="https://nextjs.org/blog/next-12-2">Next.js 12.2</Link> and the new <Link href="https://nextjs.org/docs/app/api-reference/next-config-js/images">`next/future/image`</Link> component.
+自从 <Link href="/blog/2022-06-23-tailwind-templates-and-all-access">Tailwind UI 网站模板和全访问</Link> 在六月发布以来，我们一直在做很多维护方面的工作，比如处理 <Link href="https://github.com/search?q=is%3Aclosed+org%3Atailwindlabs+archived%3Afalse+sort%3Acreated-desc+is%3Apublic+closed%3A%3E%3D2022-06-23+-author%3Aapp%2Fdependabot+-author%3Aapp%2Fgithub-actions+-author%3Aapp%2Fdepfu&type=Issues">超过 350 个 GitHub 问题和拉取请求</Link>，并更新我们发布的所有新模板以使用 <Link href="https://nextjs.org/blog/next-12-2">Next.js 12.2</Link> 和新的 <Link href="https://nextjs.org/docs/app/api-reference/next-config-js/images">`next/future/image`</Link> 组件。
 
-We did find time to ship a few new things in there too though!
+不过我们也找到时间发布了一些新东西！
 
 ---
 
 ## Tailwind + Framer Motion = Pocket
 
-About a week ago we shipped a brand new Tailwind UI template, built with Next.js and (of course) Tailwind CSS.
+大约一周前，我们发布了一个全新的 Tailwind UI 模板，采用 Next.js 构建，并且（当然）使用了 Tailwind CSS。
 
-We're calling it <Link href="https://tailwindui.com/templates/pocket">Pocket</Link>, and it's a mobile app landing page loaded with tons of fun animations and interactions, powered by <Link href="https://www.framer.com/motion/">Framer Motion</Link> which is basically the coolest library anyone has ever made.
+我们称之为 <Link href="https://tailwindui.com/templates/pocket">Pocket</Link>，这是一个加载了大量有趣动画和交互的移动应用着陆页，由 <Link href="https://www.framer.com/motion/">Framer Motion</Link> 提供动力，基本上它是有史以来最酷的库。
 
 <Link href="https://tailwindui.com/templates/pocket">
-  <Image alt="Learn about the Pocket template" src={pocketPreview} />
+  <Image alt="了解 Pocket 模板" src={pocketPreview} />
 </Link>
 
-Be sure to check out <Link href="https://pocket.tailwindui.com/">the live preview</Link> for the full experience — screenshots miss all the coolest parts, like the graph that draws in on page load, the animated mobile device UI in the features section, and the Frogger-inspired testimonials animation.
+确保查看 <Link href="https://pocket.tailwindui.com/">在线预览</Link> 以获得完整体验——截图遗漏了所有最酷的部分，比如页面加载时绘制的图表、特性部分中的动画移动设备 UI，以及受到《青蛙过马路》启发的推荐动画。
 
-Funny story about this template — when we initially designed it and built it we actually didn't plan to do anything in terms of animations or interactions. We put together a static design in Figma that we were all really excited about, then built the whole thing out with a plan to ship it like three and a half weeks ago.
+关于这个模板有个有趣的故事——当我们最初设计和构建它时，实际上并没有计划在动画或交互方面做任何事情。我们在 Figma 中做了一个静态设计，大家都对此感到非常兴奋，然后按照计划大约三周半前构建了整个项目。
 
-But once we had the finished template in the browser it just kinda felt stiff. It looked great in Figma where you sort of expect everything to be still and static, but once we could see it in real life it felt more like a screenshot or something instead of a real, interactive website.
+但一旦我们在浏览器中看到完成的模板，就觉得它显得有些僵硬。它在 Figma 中看起来很好，因为你会觉得一切都是静止的，但当我们在现实中看到它时，更像是一个截图，而不是一个真实的交互式网站。
 
-Take a look at <Link href="https://tailwindui-template-wip-saas-02-7i25puvq2-tailwindlabs.vercel.app/">this earlier version of the template</Link> and maybe you'll see what I mean.
+看看 <Link href="https://tailwindui-template-wip-saas-02-7i25puvq2-tailwindlabs.vercel.app/">这个早期版本的模板</Link>，也许你会明白我的意思。
 
-We decided to delay the release for a couple of weeks while we experimented with some things we could do to breathe some life into it, and after trying a bunch of different ideas ended up with what we have today.
+我们决定推迟发布几周，同时尝试一些可以为其注入活力的东西，经过尝试许多不同的想法，最终得到了现在的风格。
 
-I'm super stoked about how this one turned out, and I think the codebase is a really interesting case study to pour over if you want to learn how to use Framer Motion to pull off some of the cool effects we landed on.
+我对这个项目的成果感到非常激动，我认为这个代码库是一个非常有趣的案例研究，如果你想学习如何使用 Framer Motion 实现我们完成的一些酷炫效果。
 
-And like all of our templates, if you've got a <Link href="https://tailwindui.com/all-access">Tailwind UI all-access</Link> license, it's included alongside all of our other components and templates at no extra cost.
+和我们所有的模板一样，如果你拥有 <Link href="https://tailwindui.com/all-access">Tailwind UI 全访问</Link> 许可证，它与我们其他组件和模板一起包含在内，没有额外费用。
 
 ---
 
 ## Tailwind Jobs
 
-We've tossed around the idea of building an official Tailwind CSS job board for about two years, and finally made the decision in the last few weeks to give it a shot and see what happens.
+我们已经讨论了大约两年的时间，考虑建立一个官方 Tailwind CSS 招聘平台，最后在过去几周决定尝试一下，看看会发生什么。
 
-If you're a company that uses Tailwind and are looking for front-end engineers or you're a developer who wants to work at a company that uses Tailwind, <Link href="https://jobs.tailwindcss.com/">check out Tailwind Jobs</Link> to learn more about it.
+如果你是一家使用 Tailwind 的公司，正在寻找前端工程师，或者你是一名想在使用 Tailwind 的公司工作的开发者，<Link href="https://jobs.tailwindcss.com/">请查看 Tailwind Jobs</Link> 以了解更多信息。
 
 <Link href="https://jobs.tailwindcss.com">
   <Image alt="Tailwind Jobs" src={tailwindJobs} />
 </Link>
 
-We broke ground on the codebase on July 14th, and launched the site to companies on August 2nd. We built it with <Link href="https://laravel.com/">Laravel</Link>, <Link href="https://inertiajs.com/">Inertia</Link>, <Link href="https://reactjs.org/">React</Link>, and of course Tailwind CSS. Pretty amazing what you can build with tools like these in just 20 days!
+我们于 7 月 14 日开始代码库的建设，并于 8 月 2 日向公司推出了网站。我们采用 <Link href="https://laravel.com/">Laravel</Link>、<Link href="https://inertiajs.com/">Inertia</Link>、<Link href="https://reactjs.org/">React</Link>，当然还有 Tailwind CSS 来构建它。在仅仅 20 天内，利用这些工具构建出这样的东西，真是相当神奇！
 
-We're still figuring out the positioning and what we can do to make it _the best_ place for companies using Tailwind to find front-end talent, so if you do any hiring at your company and have any feedback or ideas, [shoot Peter an email](mailto:peter@tailwindcss.com) — he's taking the lead on this project and is looking for people to talk to about it.
+我们仍在摸索定位以及如何让它成为使用 Tailwind 的公司寻找前端人才的最佳平台，所以如果你的公司有招聘工作，或者有任何反馈或想法，[给 Peter 发个邮件](mailto:peter@tailwindcss.com)——他在这个项目中担任主要负责人，并在寻找人们与之交谈。
 
-One thing we're trying to figure out for example is how to make it clear that jobs don't have to be strictly "styling things with Tailwind CSS all day" to be a good fit — there's really not a lot of jobs like that in the world, we don't even have any jobs like that here at the company that actually _makes_ Tailwind CSS itself!
+我们正在尝试弄清楚的一件事是，如何使其清楚地说明，职位并不一定要严格是“整天用 Tailwind CSS 进行样式设计”才合适——实际上，世界上并没有很多这样的工作，甚至在真正 _制作_ Tailwind CSS 的公司中也没有这样的职位！
 
-But man a lot of people hate wrestling with CSS, even if they're not writing it every single day.
+但是，很多人讨厌与 CSS 纠缠，尽管他们并不是每天都在编写它。
 
-There's ton of developers out there who would be ecstatic to know that whenever they _do_ have to do some styling, they'll get do it with Tailwind instead of some custom CSS spaghetti.
+有一群开发者会很高兴地知道，尽管他们_确实_必须进行样式设计时，他们会用 Tailwind，而不是某种自定义 CSS 的混乱。
 
-We want the job board to be a place to find React developers, Vue developers, Laravel developers, Rails developers, whatever — as long as the person would get to use Tailwind when it's time to style something, it's a good fit for Tailwind Jobs.
+我们希望这个招聘平台能够成为寻找 React 开发者、Vue 开发者、Laravel 开发者、Rails 开发者等的地方——只要这个人可以在设计某些东西的时候使用 Tailwind，那就适合 Tailwind Jobs。
 
 ---
 
-## Work in progress...
+## 进行中的工作...
 
-We've got a bunch of cool stuff in the works that will be coming out in the next few weeks:
+我们正在进行一些很酷的事情，将在接下来的几周内发布：
 
-- We've almost finished <Link href="https://twitter.com/steveschoger/status/1559622409136873473">Heroicons v2.0</Link>, with a <Link href="https://twitter.com/jamesm/status/1556957434194829314">new website</Link> to go along with it
-- There's a damn beautiful <Link href="https://twitter.com/jamesm/status/1560289211424595973">personal website template</Link> coming soon to Tailwind UI
-- [Headless UI v1.7](https://github.com/tailwindlabs/headlessui/blob/main/packages/@headlessui-react/CHANGELOG.md#unreleased) is almost ready for release
-- We've got a bunch of new components designed for Tailwind UI that we're going to start building next week
+- 我们几乎完成了 <Link href="https://twitter.com/steveschoger/status/1559622409136873473">Heroicons v2.0</Link>，同时有与之配套的 <Link href="https://twitter.com/jamesm/status/1556957434194829314">新网站</Link>
+- 还有一个非常美丽的 <Link href="https://twitter.com/jamesm/status/1560289211424595973">个人网站模板</Link> 即将上线 Tailwind UI
+- [Headless UI v1.7](https://github.com/tailwindlabs/headlessui/blob/main/packages/@headlessui-react/CHANGELOG.md#unreleased) 准备发布
+- 我们还有一些新的组件在为 Tailwind UI 设计，计划下周开始构建
 
-So look for another update in a couple weeks with a bunch more stuff! With the big templates/all-access release behind us I'm excited to switch gears from creating brand new products and spend the rest of the year focused on making Tailwind CSS and Headless UI even better, and adding tons of awesome new stuff to Tailwind UI.
+所以请期待几周后会有更多更新，带来更多内容！在重大的模板/全访问发布之后，我很高兴能够转换焦点，从创建全新产品转向专注于使 Tailwind CSS 和 Headless UI 更加优秀，并为 Tailwind UI 添加大量令人惊叹的新内容。

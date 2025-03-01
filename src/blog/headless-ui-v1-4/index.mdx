@@ -7,34 +7,33 @@ import { adamwathan, robinmalfait } from "@/app/blog/authors";
 import { CodeExampleGroup, CodeBlock, js, jsx, html } from "@/components/code-example";
 
 export const meta = {
-  title: "Headless UI v1.4: The One With Tabs",
-  description: `We just released Headless UI v1.4, which includes a brand new \`Tab\` component, and new APIs for manually closing \`Popover\` and \`Disclosure\` components more easily.`,
+  title: "Headless UI v1.4: 选项卡的版本",
+  description: `我们刚刚发布了 Headless UI v1.4，其中包括一个全新的 \`Tab\` 组件，以及更便于手动关闭 \`Popover\` 和 \`Disclosure\` 组件的新 API。`,
   date: "2021-07-29T12:00:00.000Z",
   authors: [adamwathan, robinmalfait],
   image: card,
   excerpt: (
     <>
-      We just released Headless UI v1.4, which includes a brand new <code>Tab</code> component, and new APIs for
-      manually closing <code>Popover</code> and <code>Disclosure</code> components more easily.
+      我们刚刚发布了 Headless UI v1.4，其中包括一个全新的 <code>Tab</code> 组件，以及更便于手动关闭 <code>Popover</code> 和 <code>Disclosure</code> 组件的新 API。
     </>
   ),
 };
 
-We just released Headless UI v1.4, which includes a brand new `Tab` component, and new APIs for manually closing `Popover` and `Disclosure` components more easily.
+我们刚刚发布了 Headless UI v1.4，其中包括一个全新的 `Tab` 组件，以及更便于手动关闭 `Popover` 和 `Disclosure` 组件的新 API。
 
 <Link href="https://headlessui.dev">
   <Image alt="Headless UI v1.4" src={banner} />
 </Link>
 
-## Tabs
+## 选项卡
 
-Earlier this year we started working on [Tailwind UI Ecommerce](https://tailwindui.com/ecommerce), and we realized pretty quickly we were going to need to support tabs in Headless UI to be able to build the new interfaces we were designing.
+今年早些时候，我们开始着手开发 [Tailwind UI Ecommerce](https://tailwindui.com/ecommerce)，并很快意识到我们需要在 Headless UI 中支持选项卡，以能够构建我们正在设计的新界面。
 
 <Link href="https://tailwindui.com/ecommerce">
-  <Image alt="Product details interface design from Tailwind UI Ecommerce." src={ecommerceScreenie} />
+  <Image alt="来自 Tailwind UI Ecommerce 的产品详情界面设计。" src={ecommerceScreenie} />
 </Link>
 
-Here's what we ended up with:
+这是我们最终得出的结果：
 
 <CodeExampleGroup filenames={['React', 'Vue']}>
   <CodeBlock
@@ -45,20 +44,19 @@ Here's what we ended up with:
         return (
           <Tab.Group>
             <Tab.List>
-              <Tab>Tab 1</Tab>
-              <Tab>Tab 2</Tab>
-              <Tab>Tab 3</Tab>
+              <Tab>选项卡 1</Tab>
+              <Tab>选项卡 2</Tab>
+              <Tab>选项卡 3</Tab>
             </Tab.List>
             <Tab.Panels>
-              <Tab.Panel>Content 1</Tab.Panel>
-              <Tab.Panel>Content 2</Tab.Panel>
-              <Tab.Panel>Content 3</Tab.Panel>
+              <Tab.Panel>内容 1</Tab.Panel>
+              <Tab.Panel>内容 2</Tab.Panel>
+              <Tab.Panel>内容 3</Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
         )
       }
     `}
-
 />
 
   <CodeBlock
@@ -66,14 +64,14 @@ Here's what we ended up with:
       <template>
         <TabGroup>
           <TabList>
-            <Tab>Tab 1</Tab>
-            <Tab>Tab 2</Tab>
-            <Tab>Tab 3</Tab>
+            <Tab>选项卡 1</Tab>
+            <Tab>选项卡 2</Tab>
+            <Tab>选项卡 3</Tab>
           </TabList>
           <TabPanels>
-            <TabPanel>Content 1</TabPanel>
-            <TabPanel>Content 2</TabPanel>
-            <TabPanel>Content 3</TabPanel>
+            <TabPanel>内容 1</TabPanel>
+            <TabPanel>内容 2</TabPanel>
+            <TabPanel>内容 3</TabPanel>
           </TabPanels>
         </TabGroup>
       </template>
@@ -92,22 +90,21 @@ Here's what we ended up with:
         }
       </script>
     `}
-
 />
 
 </CodeExampleGroup>
 
-And yep, those are tabs!
+没错，这就是选项卡！
 
-Like all Headless UI components, this totally abstracts away stuff like keyboard navigation for you so you can create custom tabs in a completely declarative way, without having to think about any of the tricky accessibility details.
+和所有 Headless UI 组件一样，它完全抽象了诸如键盘导航等内容，因此您可以以完全声明的方式创建自定义选项卡，而无需考虑任何复杂的可访问性细节。
 
-[Check out the documentation](https://headlessui.dev/react/tabs) to learn more.
+[查看文档](https://headlessui.dev/react/tabs)了解更多信息。
 
-### Closing Disclosures and Popovers
+### 关闭 Disclosure 和 Popover
 
-Up until now, there was no way to close a `Disclosure` without clicking the actual button used to open it. For typical disclosure use cases this isn't a big deal, but it often makes sense to use disclosures for things like mobile navigation, where you want to close it when someone clicks a link _inside_ of it.
+到目前为止，无法在不点击实际用于打开的按钮的情况下关闭 `Disclosure`。对于典型的披露用例，这并不是大问题，但通常在移动导航等场景中使用披露是有意义的，当您希望在有人点击其内部的链接时关闭它。
 
-Now you can use `Disclosure.Button` or (`DisclosureButton` in Vue) within your disclosure panel to close the panel, making it easy to wrap up things like links or other buttons so the panel doesn't stay open:
+现在，您可以在您的披露面板中使用 `Disclosure.Button`（在 Vue 中为 `DisclosureButton`）来关闭面板，这使得将链接或其他按钮包裹起来变得轻而易举，这样面板就不会保持开启状态：
 
 <CodeExampleGroup filenames={['React', 'Vue']}>
   <CodeBlock
@@ -118,10 +115,10 @@ Now you can use `Disclosure.Button` or (`DisclosureButton` in Vue) within your d
       function MyDisclosure() {
         return (
           <Disclosure>
-            <Disclosure.Button>Open mobile menu</Disclosure.Button>
+            <Disclosure.Button>打开移动菜单</Disclosure.Button>
             <Disclosure.Panel>
               <Disclosure.Button as={MyLink} href="/home">
-                Home
+                首页
               </Disclosure.Button>
               {/* ... */}
             </Disclosure.Panel>
@@ -129,16 +126,15 @@ Now you can use `Disclosure.Button` or (`DisclosureButton` in Vue) within your d
         )
       }
     `}
-
 />
 
   <CodeBlock
     example={html`
       <template>
         <Disclosure>
-          <DisclosureButton>Open mobile menu</DisclosureButton>
+          <DisclosureButton>打开移动菜单</DisclosureButton>
           <DisclosurePanel>
-            <DisclosureButton :as="MyLink" href="/home">Home</DisclosureButton>
+            <DisclosureButton :as="MyLink" href="/home">首页</DisclosureButton>
             <!-- ... -->
           </DisclosurePanel>
         </Disclosure>
@@ -157,12 +153,11 @@ Now you can use `Disclosure.Button` or (`DisclosureButton` in Vue) within your d
         }
       </script>
     `}
-
 />
 
 </CodeExampleGroup>
 
-The same thing works with `Popover` components, too:
+在 `Popover` 组件中也可以做到同样的事情：
 
 <CodeExampleGroup filenames={['React', 'Vue']}>
   <CodeBlock
@@ -173,10 +168,10 @@ The same thing works with `Popover` components, too:
       function MyPopover() {
         return (
           <Popover>
-            <Popover.Button>Solutions</Popover.Button>
+            <Popover.Button>解决方案</Popover.Button>
             <Popover.Panel>
               <Popover.Button as={MyLink} href="/insights">
-                Insights
+                洞见
               </Popover.Button>
               {/* ... */}
             </Popover.Panel>
@@ -184,17 +179,16 @@ The same thing works with `Popover` components, too:
         )
       }
     `}
-
 />
 
   <CodeBlock
     example={html`
       <template>
         <Popover>
-          <PopoverButton>Solutions</PopoverButton>
+          <PopoverButton>解决方案</PopoverButton>
 
           <PopoverPanel>
-            <PopoverButton :as="MyLink" href="/insights">Insights</PopoverButton>
+            <PopoverButton :as="MyLink" href="/insights">洞见</PopoverButton>
             <!-- ... -->
           </PopoverPanel>
         </Popover>
@@ -209,12 +203,11 @@ The same thing works with `Popover` components, too:
         }
       </script>
     `}
-
 />
 
 </CodeExampleGroup>
 
-If you need finer control, we also pass a `close` function via the render prop/scoped slot, so you can imperatively close the panel when you need to:
+如果您需要更细致的控制，我们还通过渲染属性/作用域插槽传递了一个 `close` 函数，以便您在需要时可以以命令式方式关闭面板：
 
 <CodeExampleGroup filenames={['React', 'Vue']}>
   <CodeBlock
@@ -224,7 +217,7 @@ If you need finer control, we also pass a `close` function via the render prop/s
       function MyPopover() {
         return (
           <Popover>
-            <Popover.Button>Terms</Popover.Button>
+            <Popover.Button>条款</Popover.Button>
             <Popover.Panel>
               {({ close }) => (
                 <button
@@ -233,7 +226,7 @@ If you need finer control, we also pass a `close` function via the render prop/s
                     close()
                   }}
                 >
-                  Read and accept
+                  阅读并接受
                 </button>
               )}
             </Popover.Panel>
@@ -241,17 +234,16 @@ If you need finer control, we also pass a `close` function via the render prop/s
         )
       }
     `}
-
 />
 
   <CodeBlock
     example={html`
       <template>
         <Popover>
-          <PopoverButton>Solutions</PopoverButton>
+          <PopoverButton>解决方案</PopoverButton>
 
           <PopoverPanel v-slot="{ close }">
-            <button @click="accept(close)">Read and accept</button>
+            <button @click="accept(close)">阅读并接受</button>
           </PopoverPanel>
         </Popover>
       </template>
@@ -272,25 +264,24 @@ If you need finer control, we also pass a `close` function via the render prop/s
         }
       </script>
     `}
-
 />
 
 </CodeExampleGroup>
 
-For more details, check out the updated [Popover](https://headlessui.dev/react/popover#closing-popovers-manually) and [Disclosure](https://headlessui.dev/react/disclosure#closing-disclosures-manually) documentation.
+有关更多详细信息，请查看更新的 [Popover](https://headlessui.dev/react/popover#closing-popovers-manually) 和 [Disclosure](https://headlessui.dev/react/disclosure#closing-disclosures-manually) 文档。
 
-## Try it out
+## 尝试一下
 
-Headless UI v1.4 is a minor update so there are no breaking changes. To upgrade, just install the latest version via npm:
+Headless UI v1.4 是一次小更新，因此没有破坏性变化。要升级，只需通过 npm 安装最新版本：
 
 ```sh
-# For React
+# 对于 React
 npm install @headlessui/react
 
-# For Vue
+# 对于 Vue
 npm install @headlessui/vue
 ```
 
-Check out [the official website](https://headlessui.dev) for the latest documentation, and check out [Tailwind UI](https://tailwindui.com) if you want to play with tons of styled examples.
+查看 [官方网站](https://headlessui.dev) 以获取最新文档，如果您想玩大量样式示例，请查看 [Tailwind UI](https://tailwindui.com)。
 
-Ready to try it out? <Link href="https://headlessui.dev">Visit the Headless UI website →</Link>
+准备好尝试了吗？<Link href="https://headlessui.dev">访问 Headless UI 网站 →</Link>

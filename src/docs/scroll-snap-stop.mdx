@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "scroll-snap-stop";
-export const description = "Utilities for controlling whether you can skip past possible snap positions.";
+export const description = "用于控制是否可以跳过可能的快照位置的工具。";
 
 <ApiTable
   rows={[
@@ -13,20 +13,20 @@ export const description = "Utilities for controlling whether you can skip past 
   ]}
 />
 
-## Examples
+## 示例
 
-### Forcing snap position stops
+### 强制快照位置停止
 
-Use the `snap-always` utility together with the [snap-mandatory](/docs/scroll-snap-type#mandatory-scroll-snapping) utility to force a snap container to always stop on an element before the user can continue scrolling to the next item:
+将 `snap-always` 工具与 [snap-mandatory](/docs/scroll-snap-type#mandatory-scroll-snapping) 工具结合使用，以强制快照容器在用户继续滚动到下一个项目之前始终停在一个元素上：
 
-<Figure hint="Scroll in the grid of images to see the expected behavior">
+<Figure hint="在图像网格中滚动以查看预期行为">
 
 <Example padding={false}>
   {
     <div className="relative">
       <div className="mb-6 ml-[50%] flex items-end justify-start pt-10">
         <div className="dark:highlight-white/10 ml-2 rounded bg-indigo-50 px-1.5 font-mono text-[0.625rem] leading-6 text-indigo-600 ring-1 ring-indigo-600 ring-inset dark:bg-indigo-500 dark:text-white dark:ring-0">
-          snap point
+          快照点
         </div>
         <div className="absolute top-0 bottom-0 left-1/2 border-l border-indigo-500"></div>
       </div>
@@ -104,18 +104,18 @@ Use the `snap-always` utility together with the [snap-mandatory](/docs/scroll-sn
 
 </Figure>
 
-### Skipping snap position stops
+### 跳过快照位置停止
 
-Use the `snap-normal` utility to allow a snap container to skip past possible scroll snap positions:
+使用 `snap-normal` 工具允许快照容器跳过可能的滚动快照位置：
 
-<Figure hint="Scroll in the grid of images to see the expected behavior">
+<Figure hint="在图像网格中滚动以查看预期行为">
 
 <Example padding={false}>
   {
     <div className="relative">
       <div className="mb-6 ml-[50%] flex items-end justify-start pt-10">
         <div className="dark:highlight-white/10 ml-2 rounded bg-indigo-50 px-1.5 font-mono text-[0.625rem] leading-6 text-indigo-600 ring-1 ring-indigo-600 ring-inset dark:bg-indigo-500 dark:text-white dark:ring-0">
-          snap point
+          快照点
         </div>
         <div className="absolute top-0 bottom-0 left-1/2 border-l border-indigo-500"></div>
       </div>
@@ -193,6 +193,6 @@ Use the `snap-normal` utility to allow a snap container to skip past possible sc
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="scroll-snap-stop" defaultClass="snap-always" featuredClass="snap-normal" />

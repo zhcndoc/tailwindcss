@@ -9,8 +9,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import colors from "./utils/colors";
 
-export const title = "text-decoration-color";
-export const description = "Utilities for controlling the color of text decorations.";
+export const title = "文本装饰颜色";
+export const description = "控制文本装饰颜色的工具类。";
 
 <ApiTable
   rows={[
@@ -26,30 +26,30 @@ export const description = "Utilities for controlling the color of text decorati
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `decoration-sky-500` and `decoration-pink-500` to change the [text decoration](/docs/text-decoration-line) color of an element:
+使用工具类 `decoration-sky-500` 和 `decoration-pink-500` 来改变元素的 [文本装饰](/docs/text-decoration-line) 颜色：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-sm gap-4 p-8 text-sm/6 text-gray-900 dark:text-gray-200">
-      I’m Derek, an astro-engineer based in Tattooine. I like to build X-Wings at{" "}
+      我是德里克，一名来自塔图因的宇航工程师。我喜欢在{" "}
       <a href="#" className="font-bold underline decoration-sky-500 decoration-2 dark:text-gray-200">
-        My Company, Inc
+        我的公司
       </a>
-      . Outside of work, I like to{" "}
+      工作。工作之外，我喜欢{" "}
       <a href="#" className="font-bold underline decoration-pink-500 decoration-2 dark:text-gray-200">
-        watch pod-racing
+        看跑车比赛
       </a>{" "}
-      and have{" "}
+      和进行{" "}
       <a href="#" className="font-bold underline decoration-indigo-500 decoration-2 dark:text-gray-200">
-        light-saber
+        光剑
       </a>{" "}
-      fights.
+      战斗。
     </p>
   }
 </Example>
@@ -58,37 +58,34 @@ Use utilities like `decoration-sky-500` and `decoration-pink-500` to change the 
 <!-- [!code classes:decoration-sky-500,decoration-pink-500,decoration-indigo-500] -->
 <!-- prettier-ignore -->
 <p>
-  I’m Derek, an astro-engineer based in Tattooine. I like to build X-Wings
-  at <a class="underline decoration-sky-500">My Company, Inc</a>. Outside
-  of work, I like to <a class="underline decoration-pink-500">watch pod-racing</a>
-  and have <a class="underline decoration-indigo-500">light-saber</a> fights.
+  我是德里克，一名来自塔图因的宇航工程师。我喜欢在 <a class="underline decoration-sky-500">我的公司</a> 工作。工作之外，我喜欢 <a class="underline decoration-pink-500">看跑车比赛</a> 和进行 <a class="underline decoration-indigo-500">光剑</a> 战斗。
 </p>
 ```
 
 </Figure>
 
-### Changing the opacity
+### 改变不透明度
 
-Use the color opacity modifier to control the text decoration color opacity of an element:
+使用颜色不透明度修饰符来控制元素的文本装饰颜色的不透明度：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-sm gap-4 p-8 text-sm/6 text-gray-900 dark:text-gray-200">
-      I’m Derek, an astro-engineer based in Tattooine. I like to build X-Wings at{" "}
+      我是德里克，一名来自塔图因的宇航工程师。我喜欢在{" "}
       <a href="#" className="font-bold underline decoration-sky-500/30 decoration-2 dark:text-gray-200">
-        My Company, Inc
+        我的公司
       </a>
-      . Outside of work, I like to{" "}
+      工作。工作之外，我喜欢{" "}
       <a href="#" className="font-bold underline decoration-pink-500/30 decoration-2 dark:text-gray-200">
-        watch pod-racing
+        看跑车比赛
       </a>{" "}
-      and have{" "}
+      和进行{" "}
       <a href="#" className="font-bold underline decoration-indigo-500/30 decoration-2 dark:text-gray-200">
-        light-saber
+        光剑
       </a>{" "}
-      fights.
+      战斗。
     </p>
   }
 </Example>
@@ -97,51 +94,48 @@ Use the color opacity modifier to control the text decoration color opacity of a
 <!-- [!code word:\/30] -->
 <!-- prettier-ignore -->
 <p>
-  I’m Derek, an astro-engineer based in Tattooine. I like to build X-Wings
-  at <a class="underline decoration-sky-500/30">My Company, Inc</a>. Outside
-  of work, I like to <a class="underline decoration-pink-500/30">watch pod-racing</a>
-  and have <a class="underline decoration-indigo-500/30">light-saber</a> fights.
+  我是德里克，一名来自塔图因的宇航工程师。我喜欢在 <a class="underline decoration-sky-500/30">我的公司</a> 工作。工作之外，我喜欢 <a class="underline decoration-pink-500/30">看跑车比赛</a> 和进行 <a class="underline decoration-indigo-500/30">光剑</a> 战斗。
 </p>
 ```
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue element="p" utility="decoration" name="text decoration color" value="#50d71e" variable="color" />
+<UsingACustomValue element="p" utility="decoration" name="文本装饰颜色" value="#50d71e" variable="color" />
 
-### Applying on hover
+### 应用于悬停
 
 <TargetingSpecificStates property="text-decoration-color">
 
-<Figure hint="Hover over the text to see the expected behavior">
+<Figure hint="将鼠标悬停在文本上以查看预期效果">
 
 <Example>
   {
     <div className="text-center text-lg font-medium text-gray-900 no-underline dark:text-gray-200">
-      The{" "}
+      快{" "}
       <a
         href="https://en.wikipedia.org/wiki/The_quick_brown_fox_jumps_over_the_lazy_dog"
         target="blank"
         className="underline hover:decoration-pink-500"
       >
-        quick brown fox
+        棕色疾走狐狸
       </a>{" "}
-      jumps over the lazy dog.
+      跃过懒狗。
     </div>
   }
 </Example>
 
 ```html
 <!-- [!code classes:hover:decoration-pink-500] -->
-<p>The <a href="..." class="underline hover:decoration-pink-500 ...">quick brown fox</a> jumps over the lazy dog.</p>
+<p>快 <a href="..." class="underline hover:decoration-pink-500 ...">棕色疾走狐狸</a> 跃过懒狗。</p>
 ```
 
 </Figure>
 
 </TargetingSpecificStates>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="p"
@@ -150,6 +144,6 @@ Use the color opacity modifier to control the text decoration color opacity of a
   featuredClass="decoration-blue-400"
 />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourThemeColors element="p" utility="decoration" />

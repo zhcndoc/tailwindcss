@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
 export const title = "transition-duration";
-export const description = "Utilities for controlling the duration of CSS transitions.";
+export const description = "用于控制 CSS 过渡持续时间的工具。";
 
 <ApiTable
   rows={[
@@ -15,13 +15,13 @@ export const description = "Utilities for controlling the duration of CSS transi
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `duration-150` and `duration-700` to set the transition duration of an element in milliseconds:
+使用类似 `duration-150` 和 `duration-700` 的工具设置元素的过渡持续时间（以毫秒为单位）：
 
-<Figure hint="Hover each button to see the expected behavior">
+<Figure hint="鼠标悬停在每个按钮上以查看预期行为">
 
 <Example>
   {
@@ -29,19 +29,19 @@ Use utilities like `duration-150` and `duration-700` to set the transition durat
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">duration-150</p>
         <button className="rounded-md bg-violet-500 px-4 py-2 text-sm font-semibold text-white duration-150 ease-in-out hover:scale-125">
-          Button A
+          按钮 A
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">duration-300</p>
         <button className="rounded-md bg-violet-500 px-4 py-2 text-sm font-semibold text-white duration-300 ease-in-out hover:scale-125">
-          Button B
+          按钮 B
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">duration-700</p>
         <button className="rounded-md bg-violet-500 px-4 py-2 text-sm font-semibold text-white duration-700 ease-in-out hover:scale-125">
-          Button C
+          按钮 C
         </button>
       </div>
     </div>
@@ -50,18 +50,18 @@ Use utilities like `duration-150` and `duration-700` to set the transition durat
 
 ```html
 <!-- [!code classes:duration-150,duration-300,duration-700] -->
-<button class="transition duration-150 ease-in-out ...">Button A</button>
-<button class="transition duration-300 ease-in-out ...">Button B</button>
-<button class="transition duration-700 ease-in-out ...">Button C</button>
+<button class="transition duration-150 ease-in-out ...">按钮 A</button>
+<button class="transition duration-300 ease-in-out ...">按钮 B</button>
+<button class="transition duration-700 ease-in-out ...">按钮 C</button>
 ```
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue element="button" utility="duration" value="1s,15s" name="transition duration" />
+<UsingACustomValue element="button" utility="duration" value="1s,15s" name="过渡持续时间" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="button"

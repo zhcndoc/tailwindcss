@@ -4,22 +4,22 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { TargetingSpecificStates } from "@/components/content.tsx";
 
-export const title = "opacity";
-export const description = "Utilities for controlling the opacity of an element.";
+export const title = "不透明度";
+export const description = "用于控制元素不透明度的工具类。";
 
 <ApiTable
   rows={[
-    ["opacity-<number>", "opacity: <number>%;"],
-    ["opacity-(<custom-property>)", "opacity: var(<custom-property>);"],
-    ["opacity-[<value>]", "opacity: <value>;"],
+    ["opacity-<数字>", "opacity: <数字>%;"],
+    ["opacity-(<自定义属性>)", "opacity: var(<自定义属性>);"],
+    ["opacity-[<值>]", "opacity: <值>;"],
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `opacity-<number>` utilities like `opacity-25` and `opacity-100` to set the opacity of an element:
+使用 `opacity-<数字>` 工具类，如 `opacity-25` 和 `opacity-100` 来设置元素的不透明度：
 
 <Figure>
 
@@ -29,25 +29,25 @@ Use `opacity-<number>` utilities like `opacity-25` and `opacity-100` to set the 
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">opacity-100</p>
         <button className="rounded-md bg-indigo-500 px-4 py-2 text-sm font-semibold text-white opacity-100">
-          Button A
+          按钮 A
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">opacity-75</p>
         <button className="rounded-md bg-indigo-500 px-4 py-2 text-sm font-semibold text-white opacity-75">
-          Button B
+          按钮 B
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">opacity-50</p>
         <button className="rounded-md bg-indigo-500 px-4 py-2 text-sm font-semibold text-white opacity-50">
-          Button C
+          按钮 C
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">opacity-25</p>
         <button className="rounded-md bg-indigo-500 px-4 py-2 text-sm font-semibold text-white opacity-25">
-          Button D
+          按钮 D
         </button>
       </div>
     </div>
@@ -64,7 +64,7 @@ Use `opacity-<number>` utilities like `opacity-25` and `opacity-100` to set the 
 
 </Figure>
 
-### Applying conditionally
+### 条件应用
 
 <TargetingSpecificStates
   element="input"
@@ -75,10 +75,10 @@ Use `opacity-<number>` utilities like `opacity-25` and `opacity-100` to set the 
   featuredClass="opacity-75"
 />
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue element="button" utility="opacity" value=".67" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="button" property="opacity" defaultClass="opacity-50" featuredClass="opacity-100" />

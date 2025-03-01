@@ -13,129 +13,128 @@ import tailwindUiNewPageExamples from "./tailwind-ui-new-page-examples.png";
 import tailwindUiDarkComponents from "./tailwind-ui-dark-components.png";
 
 export const meta = {
-  title: "New changelog template + the biggest Tailwind UI update ever",
-  description: `Over the last four months we've probably done more work on Tailwind UI than we ever have, and having finally wrapped up what we set out to achieve I'm excited to lay it all out for you.`,
+  title: "全新的变更日志模板 + 有史以来最大的 Tailwind UI 更新",
+  description: `在过去的四个月里，我们在 Tailwind UI 上的工作可能多于以往，而我们终于完成了初衷，非常期待向您展示这一切。`,
   date: "2023-04-24T14:00:00.000Z",
   authors: [adamwathan],
   image: twitterCard,
   excerpt: (
     <>
-      Over the last four months we've probably done more work on Tailwind UI than we ever have, and having finally
-      wrapped up what we set out to achieve I'm excited to lay it all out for you.
+      在过去的四个月里，我们在 Tailwind UI 上的工作可能多于以往，而我们终于完成了初衷，非常期待向您展示这一切。
     </>
   ),
 };
 
-I haven't shared a Tailwind UI update since we released the [Protocol template](https://tailwindui.com/templates/protocol) in December, but that's not because we haven't been busy.
+我自从去年十二月发布了 [Protocol 模板](https://tailwindui.com/templates/protocol) 之后就没有分享过 Tailwind UI 更新，但这并不是因为我们没有忙碌。
 
-Over the last four months we've probably done more work on Tailwind UI than we ever have, and having finally wrapped up what we set out to achieve I'm excited to lay it all out for you!
+在过去的四个月里，我们在 Tailwind UI 上的工作可能多于以往，而我们终于完成了初衷，非常期待向您展示这一切！
 
 ---
 
-## Commit: A beautiful changelog template for your next idea
+## Commit：为您的下一个想法设计的美丽变更日志模板
 
-Just a few days ago we released [Commit](https://tailwindui.com/templates/commit), a brand new changelog template we designed for Tailwind UI — built of course with Tailwind CSS and Next.js.
+就在几天前，我们发布了 [Commit](https://tailwindui.com/templates/commit)，这是我们为 Tailwind UI 设计的全新变更日志模板——当然是使用 Tailwind CSS 和 Next.js 构建的。
 
 <p>
   <Link href="https://tailwindui.com/templates/commit">
-    <Image src={commitTemplate} alt="The Commit template" />
+    <Image src={commitTemplate} alt="Commit 模板" />
   </Link>
 </p>
 
-Public changelogs have become a really popular way to keep people in the loop about what you've been working on, and to stay accountable and build your shipping muscles. They aren't a new concept by any means of course, but I don't think it was until [Linear](https://linear.app/changelog) started publishing to their changelog site that others got excited about using them almost as an alternative to a company blog.
+公共变更日志已成为一种非常流行的方式，帮助人们了解您正在进行的工作，并保持责任感、提升出货能力。当然，它们并不是一个新的概念，但我认为直到 [Linear](https://linear.app/changelog) 开始在他们的变更日志网站上发布，其他人才开始对使用它们作为公司博客的替代品感到兴奋。
 
-**Commit is our take on the modern product changelog**, designed as a single page website that can act as both your project homepage and a feed of everything you've been working on.
+**Commit 是我们对现代产品变更日志的看法**，设计成一个单页面网站，可以作为您的项目主页和您所做一切工作的展示。
 
 <Image
-  alt="The Commit template in dark mode, partially scrolled down to reveal a second post"
+  alt="夜间模式下的 Commit 模板，部分滚动以显示第二篇文章"
   src={commitTemplateDarkMode}
 />
 
-Like all of our templates, it's loaded with features and details that make it a delight to experience and a pleasure to work on:
+像我们所有的模板一样，它充满了功能和细节，令人赏心悦目、令人愉快：
 
-- **Light and dark mode support**, because you can't make anything a developer might read without optimizing it for reading at 2am with the lights off.
-- **Hand-crafted typography styles**, meticulously chosen font sizes, spacing, list styles, and more, designed specifically for this template.
-- **Built-in syntax highlighting**, powered by [Shiki](https://github.com/shikijs/shiki), and easy to customize with a few CSS variables.
-- **Single-file editing experience**, every entry lives in a single MDX file, so updating your changelog feels as lightweight as updating a `CHANGELOG.md` file in an open-source project.
-- **Beautiful animations and effects**, this time powered by [Motion One](https://motion.dev/), making it a great resource for studying how to pull off these sorts of tricks with a cutting-edge new library.
+- **支持明暗模式**，因为您不能制作开发者可能会阅读的内容，而不针对凌晨2点灭灯情况下的阅读进行优化。
+- **手工制作的排版风格**，经过精心挑选的字体大小、间距、列表样式等，专门为此模板设计。
+- **内置语法高亮**，由 [Shiki](https://github.com/shikijs/shiki) 提供支持，并可通过几个 CSS 变量轻松自定义。
+- **单文件编辑体验**，每个条目都位于一个单一的 MDX 文件中，因此更新您的变更日志就像在开源项目中更新 `CHANGELOG.md` 文件一样轻便。
+- **美丽的动画和效果**，此次由 [Motion One](https://motion.dev/) 提供支持，是研究如何使用这一尖端新库实现这些技巧的绝佳资源。
 
-As always it's easy to jump into the code and make it your own — here we've just tweaked a handful of colors and it feels like a totally different website:
+一如既往，跳入代码并使其成为自己的也很简单——在这里我们仅调整了一些颜色，它感觉就像是一个完全不同的网站：
 
 <Image
-  alt="The Commit template customized to match the branding of the Motion One open-source library"
+  alt="与 Motion One 开源库的品牌匹配的 Commit 模板"
   src={commitTemplateForMotionOne}
 />
 
-Check out the [live demo](https://commit.tailwindui.com) for the full experience, and if you're already the proud owner of a [Tailwind UI all-access](https://tailwindui.com/all-access) license, download a copy of the template to use it in your next project or just to study the source code to learn a new trick or two.
+查看 [实时演示](https://commit.tailwindui.com) 以获得完整体验，如果您已经是 [Tailwind UI 全访问](https://tailwindui.com/all-access) 许可证的骄傲拥有者，可以下载该模板的副本以用于您的下一个项目，或者仅仅为了学习源代码，掌握一两个新技巧。
 
 ---
 
-## Redesigning hundreds of components for Tailwind UI
+## 重新设计数百个组件以适应 Tailwind UI
 
-Design moves fast and with it being over three years since we first released Tailwind UI, we felt like it deserved to be put under the microscope and make sure it still felt like our best work.
+设计变化迅速，自从我们首次发布 Tailwind UI 已经过去了三年多，我们觉得它值得被重新审视，以确保它仍然是我们最好的作品。
 
-We were pleasantly surprised to discover that yes, we have actually gotten better at design over the past three years, so we spent four months heads down making every component and category as pixel-perfect as we possibly could with our newfound powers.
+我们惊喜地发现，过去三年里我们的设计水平确实有所提高，因此我们花了四个月的时间，全心投入地将每个组件和类别打磨得尽可能完美。
 
-<Image alt="A collage of redesigned page examples and components for Tailwind UI" src={tailwindUiRefresh} />
+<Image alt="Tailwind UI 重新设计的页面示例和组件的拼贴" src={tailwindUiRefresh} />
 
-Once we came out of our cave to see the sunlight again we had hundreds of redesigned components, dozens of totally new ideas put together, and a fresh batch of page examples to show them all off.
+当我们走出洞穴再度见到阳光时，我们拥有数百个重新设计的组件，数十个全新的点子，以及一批新页面示例来展示它们。
 
-Here's a run down of some of the types of improvements we made.
+以下是我们所做的一些改进类型的概述。
 
-### Redesigning existing patterns that felt dated
+### 重新设计过时的现有模式
 
-A lot of the component patterns in Tailwind UI are really timeless ideas, but as design trends change and we become better designers, the specific implementations of those patterns can start to feel like it's from another era.
+Tailwind UI 中的许多组件模式都是非常经典的理念，但随着设计趋势的变化以及我们成为更好的设计师，这些模式的具体实现可能会开始感觉像是来自另一个时代。
 
 <Image
-  alt="A comparison between an old component in Tailwind UI and it’s new redesigned version"
+  alt="Tailwind UI 中旧组件与其新设计版本的比较"
   src={tailwindUiRedesignedComponents}
 />
 
-We went through all of the components one-by-one and found lots of patterns we wanted to take another stab at and did our best to bring them into 2023.
+我们逐一查看所有组件，发现许多我们想要再次尝试的模式，并尽力将它们带入2023年。
 
-Take a look at the [Hero Sections](https://tailwindui.com/components/marketing/sections/heroes) category for some great examples of what these refreshed patterns look like.
+查看 [Hero Sections](https://tailwindui.com/components/marketing/sections/heroes) 类别的一些不错示例，看看这些更新的模式是什么样的。
 
-### Fine-tuning subtle details across the board
+### 细化全局的细微细节
 
-A lot of components didn't really need a full on redesign as much as they needed just a little bit of extra polishing.
+许多组件并不需要完全的重新设计，更多的是需要一点额外的打磨。
 
 <Image
-  alt="A comparison between an old component in Tailwind UI and it’s new fine-tuned version"
+  alt="Tailwind UI 中旧组件与其新细化版本的比较"
   src={tailwindUiSubtleImprovements}
 />
 
-We went through tons of components making subtle improvements to the spacing, typography, and contrast, and the results just feel so much sharper and cleaner.
+我们查看了大量组件，进行细微的改善，包括间距、排版和对比度，结果令人感觉更加清晰和干净。
 
-The example above is from the [Description Lists](https://tailwindui.com/components/application-ui/data-display/description-lists) category — check it out there if you want to see it in its full browser-rendered glory.
+上述示例来自 [描述列表](https://tailwindui.com/components/application-ui/data-display/description-lists) 类别——如果您想查看其完整的浏览器渲染效果，请去那儿看看。
 
-### Designing a ton of brand new examples
+### 设计大量全新示例
 
-As we were going through all of the existing components, we kept coming up with new ideas that felt like they were missing from the original set of patterns.
+在我们查看所有现有组件的过程中，我们不断产生新的点子，这些点子在原始模式集中似乎缺失。
 
-<Image alt="A collage of new component examples in Tailwind UI" src={tailwindUiNewComponents} />
+<Image alt="Tailwind UI 中新组件示例的拼贴" src={tailwindUiNewComponents} />
 
-So we designed tons of brand new components, trying to fill as many holes that stood out to us as we could.
+因此，我们设计了大量全新的组件，尽量填补我们看到的许多空白。
 
-Lots of categories more than doubled in size, like the [Feature Sections](https://tailwindui.com/components/marketing/sections/feature-sections) category which is loaded with really killer new ideas.
+许多类别的数量翻了一番，例如 [特色部分](https://tailwindui.com/components/marketing/sections/feature-sections) 类别，里面充满了许多精彩的新点子。
 
-### Adding more dark variations
+### 添加更多暗色变体
 
-It feels like almost every new website I see these days is dark by default, so it felt like we had a moral obligation to give you some more examples optimized for dark backgrounds.
+我感觉现如今几乎所有新的网站默认都是黑暗主题，因此我们觉得有责任为您提供一些为深色背景优化的示例。
 
-<Image alt="A collage of new dark component examples in Tailwind UI" src={tailwindUiDarkComponents} />
+<Image alt="Tailwind UI 中的新暗色组件示例的拼贴" src={tailwindUiDarkComponents} />
 
-One of examples I really like are these new [dark badges](https://tailwindui.com/components/application-ui/elements/badges#component-1a0b76697fe2397f5a2be799049ccd02) — there's not much to them really but that little bit of opacity on the background color is such a nice effect for dark designs.
+我特别喜欢的一个示例是这些新的 [暗色徽章](https://tailwindui.com/components/application-ui/elements/badges#component-1a0b76697fe2397f5a2be799049ccd02)——它们其实没有太多内容，但背景色上的那一点透明度为暗色设计带来了非常不错的效果。
 
-### All-new page examples
+### 全新的页面示例
 
-Finally we took all of this new stuff and put together a bunch of brand new page examples to show them off, including the application UI example everyone has been bugging us for from the screenshots in some of our marketing components.
+最后，我们将所有这些新内容整理成一系列全新的页面示例来展示它们，其中包括所有人一直在向我们询问的应用程序 UI 示例，源自我们一些市场组件的屏幕截图。
 
-<Image alt="A collage of new page examples in Tailwind UI" src={tailwindUiNewPageExamples} />
+<Image alt="Tailwind UI 中新页面示例的拼贴" src={tailwindUiNewPageExamples} />
 
-Check out the updated [Home Screens](https://tailwindui.com/components/application-ui/page-examples/home-screens) category for example to see some of these new designs.
+查看更新后的 [主页示例](https://tailwindui.com/components/application-ui/page-examples/home-screens) 类别以查看一些新设计。
 
 ---
 
-So there you go, without a doubt our biggest Tailwind UI update of all time. We've been dripping out these improvements slowly since January and it's all captured in the [Tailwind UI changelog](https://tailwindui.com/changelog) so check that out if you want to dig in to what's changed in more detail.
+所以，毫无疑问，这是我们历史上最大的 Tailwind UI 更新。从一月份开始，我们慢慢地推出这些改进，所有内容都记录在 [Tailwind UI 变更日志](https://tailwindui.com/changelog) 中，如果您想了解更详细的变化，请查看。
 
-Next up for us — digging in to a ton of ideas we have for Tailwind CSS v4.0, and exploring our first Next.js application starter kit. Excited to share more in the coming weeks!
+接下来，我们将深入探索许多关于 Tailwind CSS v4.0 的构想，并探索我们的第一个 Next.js 应用程序启动工具包。期待在接下来的几周与您分享更多信息！

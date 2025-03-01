@@ -7,47 +7,46 @@ import card from "./card.jpg";
 import banner from "./banner.jpg";
 
 export const meta = {
-  title: "Automatic Class Sorting with Prettier",
-  description: `People have been talking about the best way to sort your utility classes in Tailwind projects for at least four years. Today we’re excited to announce that you can finally stop worrying about it with the release of our official Prettier plugin for Tailwind CSS.`,
+  title: "使用 Prettier 自动排序类",
+  description: `人们在讨论如何在 Tailwind 项目中最好地排序您的实用类，已经至少有四年了。今天我们很高兴地宣布，随着我们正式发布的 Tailwind CSS 的 Prettier 插件，您终于可以不再担心这个问题。`,
   date: "2022-01-24T19:00:00.000Z",
   authors: [reinink, adamwathan],
   image: card,
   excerpt: (
     <>
-      People have been talking about the best way to sort your utility classes in Tailwind projects for{" "}
-      <Link href="https://github.com/tailwindlabs/discuss/issues/97">at least four years</Link>. Today we're excited to
-      announce that you can finally stop worrying about it with the release of our official Prettier plugin for Tailwind
-      CSS.
+      人们在讨论如何在 Tailwind 项目中最好地排序您的实用类，已经{" "}
+      <Link href="https://github.com/tailwindlabs/discuss/issues/97">至少有四年了</Link>。今天我们很高兴地
+      宣布，随着我们正式发布的 Tailwind CSS 的 <Link href="https://github.com/tailwindlabs/prettier-plugin-tailwindcss">Prettier 插件</Link>，您终于可以不再担心这个问题。
     </>
   ),
 };
 
-People have been talking about the best way to sort your utility classes in Tailwind projects for <Link href="https://github.com/tailwindlabs/discuss/issues/97">at least four years</Link>. Today we're excited to announce that you can finally stop worrying about it with the release of our official <Link href="https://github.com/tailwindlabs/prettier-plugin-tailwindcss">Prettier plugin for Tailwind CSS</Link>.
+人们在讨论如何在 Tailwind 项目中最好地排序您的实用类，已经 <Link href="https://github.com/tailwindlabs/discuss/issues/97">至少有四年了</Link>。今天我们很高兴地宣布，随着我们正式发布的 <Link href="https://github.com/tailwindlabs/prettier-plugin-tailwindcss">Prettier 插件</Link>，您终于可以不再担心这个问题。
 
 <Link href="https://github.com/tailwindlabs/prettier-plugin-tailwindcss">
   <Image alt="Tailwind CSS v3.4" src={banner} />
 </Link>
 
-This plugin scans your templates for class attributes containing Tailwind CSS classes, and then sorts those classes automatically following our [recommended class order](#how-classes-are-sorted).
+该插件扫描您的模板中的类属性，查找包含 Tailwind CSS 类的属性，然后自动按照我们的 [推荐类顺序](#how-classes-are-sorted) 对这些类进行排序。
 
 {/* prettier-ignore */}
 ```html {{ filename: 'HTML' }}
-<!-- Before -->
+<!-- 排序前 -->
 <button class="text-white px-4 sm:px-8 py-2 sm:py-3 bg-sky-700 hover:bg-sky-800">...</button>
 
-<!-- After -->
+<!-- 排序后 -->
 <button class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">...</button>
 ```
 
-It works seamlessly with custom Tailwind configurations, and because it's just a [Prettier](https://prettier.io/) plugin, it works anywhere Prettier works — including every popular editor and IDE, and of course on the command line.
+它与自定义的 Tailwind 配置无缝兼容，而且因为它仅仅是一个 [Prettier](https://prettier.io/) 插件，所以它可以在任何 Prettier 可以工作的地方工作——包括每个流行的编辑器和 IDE，当然也包括命令行。
 
-To get started, install `prettier-plugin-tailwindcss` as a dev-dependency:
+要开始使用，请将 `prettier-plugin-tailwindcss` 安装为开发依赖：
 
 ```sh {{ filename: 'Terminal' }}
 npm install -D prettier prettier-plugin-tailwindcss
 ```
 
-Then add the plugin to your [Prettier configuration file](https://prettier.io/docs/en/configuration):
+然后将插件添加到您的 [Prettier 配置文件](https://prettier.io/docs/en/configuration) 中：
 
 ```json {{ filename: '.prettierrc' }}
 {
@@ -55,24 +54,24 @@ Then add the plugin to your [Prettier configuration file](https://prettier.io/do
 }
 ```
 
-You can also [load the plugin by using the `--plugin` flag with the Prettier CLI, or by using the `plugins` option with the Prettier API](https://prettier.io/docs/en/plugins.html#using-plugins).
+您还可以 [通过使用 Prettier CLI 的 `--plugin` 标志或通过使用 Prettier API 的 `plugins` 选项加载插件](https://prettier.io/docs/en/plugins.html#using-plugins)。
 
 ---
 
-## How classes are sorted
+## 类是如何排序的
 
-At its core, all this plugin does is organize your classes in the same order that Tailwind orders them in your CSS.
+从根本上讲，该插件的功能就是按 Tailwind 在 CSS 中的顺序来组织您的类。
 
-This means that any classes in the base layer will be sorted first, followed by classes in the components layer, and then finally classes in the utilities layer.
+这意味着基础层中的任何类会首先被排序，接着是组件层中的类，最后是实用层中的类。
 
 ```html
-<!-- `container` is a component so it comes first -->
+<!-- `container` 是一个组件，所以它排在前面 -->
 <div class="container mx-auto px-6">
   <!-- ... -->
 </div>
 ```
 
-Utilities themselves are sorted in the same order we sort them in the CSS as well, which means that any classes that override other classes always appear later in the class list:
+实用类本身也是按照我们在 CSS 中对其进行排序的顺序，这意味着任何覆盖其他类的类总是出现在类列表后面：
 
 {/* prettier-ignore */}
 ```html
@@ -83,7 +82,7 @@ Utilities themselves are sorted in the same order we sort them in the CSS as wel
 </div>
 ```
 
-The actual order of the different utilities is loosely based on the box model, and tries to put high impact classes that affect the layout at the beginning and decorative classes at the end, while also trying to keep related utilities together:
+不同实用类的实际顺序大致是基于盒模型，并努力将对布局影响较大的高影响类放在前面，将装饰类放在最后，同时也努力保持相关实用类在一起：
 
 {/* prettier-ignore */}
 ```html
@@ -94,7 +93,7 @@ The actual order of the different utilities is loosely based on the box model, a
 </div>
 ```
 
-Modifiers like `hover:` and `focus:` are grouped together and sorted after any plain utilities:
+修饰符如 `hover:` 和 `focus:` 被一起分组，并在任何普通实用类之后进行排序：
 
 {/* prettier-ignore */}
 ```html
@@ -105,7 +104,7 @@ Modifiers like `hover:` and `focus:` are grouped together and sorted after any p
 </div>
 ```
 
-Responsive modifiers like `md:` and `lg:` are grouped together at the end in the same order they're configured in your theme — which is smallest to largest by default:
+响应式修饰符如 `md:` 和 `lg:` 被一起分组，按照您在主题中配置的顺序排列——默认从小到大：
 
 {/* prettier-ignore */}
 ```html
@@ -116,7 +115,7 @@ Responsive modifiers like `md:` and `lg:` are grouped together at the end in the
 </div>
 ```
 
-Any custom classes that don't come from Tailwind plugins (like classes for targeting a third-party library) are always sorted to the front, so it's easy to see when an element is using them:
+任何不来自 Tailwind 插件的自定义类（例如用于目标第三方库的类）始终排在前面，因此可以很容易地看到一个元素是否使用它们：
 
 {/* prettier-ignore */}
 ```html
@@ -129,12 +128,12 @@ Any custom classes that don't come from Tailwind plugins (like classes for targe
 
 ---
 
-## Customization
+## 自定义
 
-We think [Prettier gets it right](https://prettier.io/docs/en/option-philosophy.html) when it comes to being opinionated and offering little in terms of customizability — at the end of the day the biggest benefit to sorting your classes is that it's just one less thing to argue with your team about.
+我们认为 [Prettier 做得很好](https://prettier.io/docs/en/option-philosophy.html)，在提供有限的可定制性方面持有坚定的态度——归根结底，排序类最大的好处是，这只是让您和团队之间争论少了一件事。
 
-We've tried really hard to come up with a sort order that is easy to understand and communicates the most important information as fast as possible.
+我们很努力地尝试提出一种容易理解的排序顺序，并尽快传达最重要的信息。
 
-The plugin _will_ respect your `tailwind.config.js` file and work with any Tailwind plugins you've installed, but **there is no way to change the sort order**. Just like with Prettier, we think that the benefits of auto-formatting will quickly outweigh any stylistic preferences you have and that you'll get used to it pretty fast.
+该插件 _将_ 尊重您的 `tailwind.config.js` 文件，并与您安装的任何 Tailwind 插件一起工作，但 **没有办法更改排序顺序**。就像使用 Prettier 一样，我们认为自动格式化的好处将很快超过您所拥有的任何风格偏好，您也会很快习惯它。
 
-Ready to try it out? <a href="https://github.com/tailwindlabs/prettier-plugin-tailwindcss">Check out the full documentation on GitHub →</a>
+准备好尝试了吗？ <a href="https://github.com/tailwindlabs/prettier-plugin-tailwindcss">查看 GitHub 上的完整文档 →</a>

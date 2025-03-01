@@ -4,42 +4,42 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const meta = {
-  title: "Introducing linting for Tailwind CSS IntelliSense",
+  title: "引入针对 Tailwind CSS IntelliSense 的 linting",
   description:
-    "Today we’re releasing a new version of the Tailwind CSS IntelliSense extension for Visual Studio Code that adds Tailwind-specific linting to both your CSS and your markup.",
+    "今天我们发布了 Visual Studio Code 的 Tailwind CSS IntelliSense 扩展的新版本，向您的 CSS 和标记添加了特定于 Tailwind 的 linting。",
   date: "2020-06-23T18:52:03Z",
   authors: [bradlc],
   image,
   excerpt: (
     <>
-      Today we’re releasing a new version of the{" "}
+      今天我们发布了一个新的版本的{" "}
       <Link href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss">
-        Tailwind CSS IntelliSense extension for Visual Studio Code
+        Visual Studio Code 的 Tailwind CSS IntelliSense 扩展
       </Link>{" "}
-      that adds Tailwind-specific linting to both your CSS and your markup.
+      ，它向您的 CSS 和标记添加了特定于 Tailwind 的 linting。
     </>
   ),
 };
 
-Today we’re releasing a new version of the [Tailwind CSS IntelliSense extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) that adds Tailwind-specific linting to both your CSS and your markup.
+今天我们发布了一个新的版本的 [Visual Studio Code 的 Tailwind CSS IntelliSense 扩展](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)，它向您的 CSS 和标记添加了特定于 Tailwind 的 linting。
 
-## Detecting errors in your CSS
+## 检测 CSS 中的错误
 
-Tailwind already detects CSS errors, for example when you mistype a screen name in the `@screen` directive. The linting feature for Tailwind CSS IntelliSense surfaces these errors and displays them in context, directly inside your editor. The linter will validate your `@tailwind`, `@screen`, `@variants` and `@apply` directives, as well as any `theme` function calls:
+Tailwind 已经可以检测 CSS 错误，例如当您在 `@screen` 指令中输入错误的屏幕名称时。Tailwind CSS IntelliSense 的 linting 功能会显示这些错误，并将其上下文直接展示在您的编辑器中。linter 将验证您的 `@tailwind`、`@screen`、`@variants` 和 `@apply` 指令，以及任何 `theme` 函数调用：
 
-<Image alt="Screen capture showing CSS linting in action" src={require("./css@2x.png").default} />
+<Image alt="屏幕截图显示 CSS linting 操作" src={require("./css@2x.png").default} />
 
-## Catching conflicts in your HTML
+## 捕获 HTML 中的冲突
 
-There is one more lint rule which analyses class lists in your template files and highlights any instances where utilities seem to be in conflict. For example you probably didn’t intend to have `mt-4` and `mt-6` in the same class list!
+还有一条 lint 规则分析您模板文件中的类列表，并突出显示任何看似存在冲突的工具。例如，您可能不打算在同一个类列表中同时出现 `mt-4` 和 `mt-6`！
 
-<Image alt="Screen capture showing markup linting in action" src={require("./html@2x.png").default} />
+<Image alt="屏幕截图显示标记 linting 操作" src={require("./html@2x.png").default} />
 
-## Quick fixes included
+## 包含快速修复
 
-To make it as easy as possible to fix any issues, all of the lint rules have their own "quick fixes" which can be triggered directly within Visual Studio Code. If you accidentally typed `@screen small` instead of `@screen sm`, the editor can automatically replace `small` with `sm` for you!
+为了尽可能简化修复问题的过程，所有 lint 规则都有自己的“快速修复”，可以直接在 Visual Studio Code 中触发。如果您不小心输入了 `@screen small` 而不是 `@screen sm`，编辑器可以自动将 `small` 替换为 `sm`！
 
-As well as simple text replacements there’s also some more interesting quick fixes for the more complex lint rules. Take a look at how the extension can automatically refactor an invalid `@apply` directive:
+除了简单的文本替换外，还有一些更复杂 lint 规则的有趣快速修复。看看这个扩展如何自动重构无效的 `@apply` 指令：
 
 <div className="relative overflow-hidden rounded-2xl">
   <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
@@ -53,16 +53,16 @@ As well as simple text replacements there’s also some more interesting quick f
   />
 </div>
 
-## Configuration
+## 配置
 
-We think you’ll love the new lint feature, but if you don’t, or you just want to tweak some behavior, we’ve got you covered. You can decide how each rule violation is treated: is it an `error`, or just a `warning`, or do you want to `ignore` the rule altogether? If you really want to you can disable linting entirely using the new `tailwindCSS.validate` setting.
+我们相信您会喜欢这个新的 lint 功能，但是如果您不喜欢，或者只是想调整一些行为，我们也为您考虑到了。您可以决定每条规则违规的处理方式：是 `error`，还是只是 `warning`，或者您想完全 `ignore` 该规则？如果您真的想，也可以通过新的 `tailwindCSS.validate` 设置完全禁用 linting。
 
-Check out the [extension readme](https://github.com/tailwindcss/intellisense#tailwindcssvalidate) for more details about configuring the lint rules to suit your workflow.
+请查看 [扩展说明](https://github.com/tailwindcss/intellisense#tailwindcssvalidate)，了解更多关于配置 lint 规则以适合您的工作流程的详细信息。
 
-## Conclusion
+## 结论
 
-Linting is available now in `v0.4.0` of Tailwind CSS IntelliSense! If you already have the extension you may need to reload Visual Studio Code to get the update, and if you don’t you can install it via the [extension marketplace](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).
+Linting 现在在 Tailwind CSS IntelliSense 的 `v0.4.0` 版本中可用！如果您已经安装了该扩展，您可能需要重新加载 Visual Studio Code 以获得更新，而如果您没有，您可以通过 [扩展市场](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) 进行安装。
 
-This is the very first iteration of this feature, and we’d love to hear your feedback! Do you have an idea for a new lint rule? Let us know!
+这是该功能的第一次迭代，我们期待您的反馈！您对新的 lint 规则有想法吗？让我们知道！
 
-Want to talk about this post? <a href="https://github.com/tailwindcss/tailwindcss/discussions/1956">Discuss this on GitHub →</a>
+想讨论这篇文章吗？ <a href="https://github.com/tailwindcss/tailwindcss/discussions/1956">在 GitHub 上讨论这篇文章 →</a>

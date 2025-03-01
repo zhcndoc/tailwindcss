@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "white-space";
-export const description = "Utilities for controlling an element's white-space property.";
+export const description = "用于控制元素的 white-space 属性的工具类。";
 
 <ApiTable
   rows={[
@@ -17,11 +17,11 @@ export const description = "Utilities for controlling an element's white-space p
   ]}
 />
 
-## Examples
+## 示例
 
-### Normal
+### 正常
 
-Use the `whitespace-normal` utility to cause text to wrap normally within an element. Newlines and spaces will be collapsed:
+使用 `whitespace-normal` 工具类使文本在元素内正常换行。换行符和空格将被折叠：
 
 <Figure>
 
@@ -31,7 +31,7 @@ Use the `whitespace-normal` utility to cause text to wrap normally within an ele
       <p
         className="whitespace-normal"
         children={
-          "Hey everyone!\n\nIt’s almost 2022       and we still don’t know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.\n\nYou will never know."
+          "大家好！\n\n快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。\n\n你永远不会知道。"
         }
       />
     </div>
@@ -41,18 +41,18 @@ Use the `whitespace-normal` utility to cause text to wrap normally within an ele
 ```html
 <!-- [!code classes:whitespace-normal] -->
 <!-- prettier-ignore -->
-<p class="whitespace-normal">Hey everyone!
+<p class="whitespace-normal">大家好！
 
-It's almost 2022       and we still don't know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.
+快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。
 
-You will never know.</p>
+你永远不会知道。</p>
 ```
 
 </Figure>
 
-### No Wrap
+### 不换行
 
-Use the `whitespace-nowrap` utility to prevent text from wrapping within an element. Newlines and spaces will be collapsed:
+使用 `whitespace-nowrap` 工具类防止文本在元素内换行。换行符和空格将被折叠：
 
 <Figure>
 
@@ -62,7 +62,7 @@ Use the `whitespace-nowrap` utility to prevent text from wrapping within an elem
       <p
         className="whitespace-nowrap"
         children={
-          "Hey everyone!\n\nIt’s almost 2022       and we still don’t know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.\n\nYou will never know."
+          "大家好！\n\n快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。\n\n你永远不会知道。"
         }
       />
     </div>
@@ -72,18 +72,18 @@ Use the `whitespace-nowrap` utility to prevent text from wrapping within an elem
 ```html
 <!-- [!code classes:whitespace-nowrap] -->
 <!-- prettier-ignore -->
-<p class="overflow-auto whitespace-nowrap">Hey everyone!
+<p class="overflow-auto whitespace-nowrap">大家好！
 
-It's almost 2022       and we still don't know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.
+快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。
 
-You will never know.</p>
+你永远不会知道。</p>
 ```
 
 </Figure>
 
-### Pre
+### 保留
 
-Use the `whitespace-pre` utility to preserve newlines and spaces within an element. Text will not be wrapped:
+使用 `whitespace-pre` 工具类在元素内保留换行符和空格。文本将不会换行：
 
 <Figure>
 
@@ -93,7 +93,7 @@ Use the `whitespace-pre` utility to preserve newlines and spaces within an eleme
       <p
         className="whitespace-pre"
         children={
-          "Hey everyone!\n\nIt’s almost 2022       and we still don’t know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.\n\nYou will never know."
+          "大家好！\n\n快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。\n\n你永远不会知道。"
         }
       />
     </div>
@@ -103,18 +103,18 @@ Use the `whitespace-pre` utility to preserve newlines and spaces within an eleme
 ```html
 <!-- [!code classes:whitespace-pre] -->
 <!-- prettier-ignore -->
-<p class="overflow-auto whitespace-pre">Hey everyone!
+<p class="overflow-auto whitespace-pre">大家好！
 
-It's almost 2022       and we still don't know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.
+快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。
 
-You will never know.</p>
+你永远不会知道。</p>
 ```
 
 </Figure>
 
-### Pre Line
+### 保留行
 
-Use the `whitespace-pre-line` utility to preserve newlines but not spaces within an element. Text will be wrapped normally:
+使用 `whitespace-pre-line` 工具类保留换行符但不保留空格。文本将正常换行：
 
 <Figure>
 
@@ -124,7 +124,7 @@ Use the `whitespace-pre-line` utility to preserve newlines but not spaces within
       <p
         className="whitespace-pre-line"
         children={
-          "Hey everyone!\n\nIt’s almost 2022       and we still don’t know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.\n\nYou will never know."
+          "大家好！\n\n快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。\n\n你永远不会知道。"
         }
       />
     </div>
@@ -134,18 +134,18 @@ Use the `whitespace-pre-line` utility to preserve newlines but not spaces within
 ```html
 <!-- [!code classes:whitespace-pre-line] -->
 <!-- prettier-ignore -->
-<p class="whitespace-pre-line">Hey everyone!
+<p class="whitespace-pre-line">大家好！
 
-It's almost 2022       and we still don't know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.
+快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。
 
-You will never know.</p>
+你永远不会知道。</p>
 ```
 
 </Figure>
 
-### Pre Wrap
+### 保留换行
 
-Use the `whitespace-pre-wrap` utility to preserve newlines and spaces within an element. Text will be wrapped normally:
+使用 `whitespace-pre-wrap` 工具类在元素内保留换行符和空格。文本将正常换行：
 
 <Figure>
 
@@ -155,7 +155,7 @@ Use the `whitespace-pre-wrap` utility to preserve newlines and spaces within an 
       <p
         className="whitespace-pre-wrap"
         children={
-          "Hey everyone!\n\nIt’s almost 2022       and we still don’t know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.\n\nYou will never know."
+          "大家好！\n\n快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。\n\n你永远不会知道。"
         }
       />
     </div>
@@ -166,18 +166,18 @@ Use the `whitespace-pre-wrap` utility to preserve newlines and spaces within an 
 ```html
 <!-- [!code classes:whitespace-pre-wrap] -->
 <!-- prettier-ignore -->
-<p class="whitespace-pre-wrap">Hey everyone!
+<p class="whitespace-pre-wrap">大家好！
 
-It's almost 2022       and we still don't know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.
+快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。
 
-You will never know.</p>
+你永远不会知道。</p>
 ```
 
 </Figure>
 
-### Break Spaces
+### 换行空格
 
-Use the `whitespace-break-spaces` utility to preserve newlines and spaces within an element. White space at the end of lines will not hang, but will wrap to the next line:
+使用 `whitespace-break-spaces` 工具类在元素内保留换行符和空格。行末的空格不会悬挂，而是换到下一行：
 
 <Figure>
 
@@ -187,7 +187,7 @@ Use the `whitespace-break-spaces` utility to preserve newlines and spaces within
       <p
         className="whitespace-break-spaces"
         children={
-          "Hey everyone!\n\nIt’s almost 2022       and we still don’t know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.\n\nYou will never know."
+          "大家好！\n\n快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。\n\n你永远不会知道。"
         }
       />
     </div>
@@ -197,15 +197,15 @@ Use the `whitespace-break-spaces` utility to preserve newlines and spaces within
 ```html
 <!-- [!code classes:whitespace-break-spaces] -->
 <!-- prettier-ignore -->
-<p class="whitespace-break-spaces">Hey everyone!
+<p class="whitespace-break-spaces">大家好！
 
-It's almost 2022       and we still don't know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.
+快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。
 
-You will never know.</p>
+你永远不会知道。</p>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="p" property="white-space" defaultClass="whitespace-pre" featuredClass="whitespace-normal" />

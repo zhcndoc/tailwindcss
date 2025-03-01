@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "caption-side";
-export const description = "Utilities for controlling the alignment of a caption element inside of a table.";
+export const description = "控制表格中标题元素对齐的工具。";
 
 <ApiTable
   rows={[
@@ -13,11 +13,11 @@ export const description = "Utilities for controlling the alignment of a caption
   ]}
 />
 
-## Examples
+## 示例
 
-### Placing at top of table
+### 放置在表格顶部
 
-Use the `caption-top` utility to position a caption element at the top of a table:
+使用 `caption-top` 工具将标题元素定位在表格的顶部：
 
 <Figure>
 
@@ -26,41 +26,41 @@ Use the `caption-top` utility to position a caption element at the top of a tabl
     <div className="overflow-hidden px-4 py-8 sm:px-8">
       <table className="w-full table-auto border-collapse text-sm">
         <caption className="caption-top pb-4 text-xs text-gray-500 dark:text-gray-400">
-          Table 3.1: Professional wrestlers and their signature moves.
+          表 3.1：职业摔跤手及其标志性动作。
         </caption>
         <thead>
           <tr>
             <th className="border border-gray-200 bg-gray-50 p-4 py-3 pl-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200">
-              Wrestler
+              摔跤手
             </th>
             <th className="border border-gray-200 bg-gray-50 p-4 py-3 pr-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200">
-              Signature Move(s)
+              标志性动作
             </th>
           </tr>
         </thead>
         <tbody className="bg-white dark:bg-gray-800">
           <tr>
             <td className="border border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              "Stone Cold" Steve Austin
+              "石冷" 史蒂夫·奥斯汀
             </td>
             <td className="border border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              Stone Cold Stunner, Lou Thesz Press
+              石冷震撼，路·瑟斯压制
             </td>
           </tr>
           <tr>
             <td className="border border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              Bret "The Hitman" Hart
+              布雷特 "杀手" 哈特
             </td>
             <td className="border border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              The Sharpshooter
+              锐 shooter 技
             </td>
           </tr>
           <tr>
             <td className="border border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              Razor Ramon
+              剃刀拉蒙
             </td>
             <td className="border border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              Razor's Edge, Fallaway Slam
+              剃刀边缘，落击
             </td>
           </tr>
         </tbody>
@@ -73,26 +73,26 @@ Use the `caption-top` utility to position a caption element at the top of a tabl
 <!-- [!code classes:caption-top] -->
 <table>
   <caption class="caption-top">
-    Table 3.1: Professional wrestlers and their signature moves.
+    表 3.1：职业摔跤手及其标志性动作。
   </caption>
   <thead>
     <tr>
-      <th>Wrestler</th>
-      <th>Signature Move(s)</th>
+      <th>摔跤手</th>
+      <th>标志性动作</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>"Stone Cold" Steve Austin</td>
-      <td>Stone Cold Stunner, Lou Thesz Press</td>
+      <td>"石冷" 史蒂夫·奥斯汀</td>
+      <td>石冷震撼，路·瑟斯压制</td>
     </tr>
     <tr>
-      <td>Bret "The Hitman" Hart</td>
-      <td>The Sharpshooter</td>
+      <td>布雷特 "杀手" 哈特</td>
+      <td>锐 shooter 技</td>
     </tr>
     <tr>
-      <td>Razor Ramon</td>
-      <td>Razor's Edge, Fallaway Slam</td>
+      <td>剃刀拉蒙</td>
+      <td>剃刀边缘，落击</td>
     </tr>
   </tbody>
 </table>
@@ -100,9 +100,9 @@ Use the `caption-top` utility to position a caption element at the top of a tabl
 
 </Figure>
 
-### Placing at bottom of table
+### 放置在表格底部
 
-Use the `caption-bottom` utility to position a caption element at the bottom of a table:
+使用 `caption-bottom` 工具将标题元素定位在表格的底部：
 
 <Figure>
 
@@ -111,41 +111,41 @@ Use the `caption-bottom` utility to position a caption element at the bottom of 
     <div className="overflow-hidden px-4 py-8 sm:px-8">
       <table className="w-full table-auto border-collapse text-sm">
         <caption className="caption-bottom pt-4 text-xs text-gray-500 dark:text-gray-400">
-          Table 3.1: Professional wrestlers and their signature moves.
+          表 3.1：职业摔跤手及其标志性动作。
         </caption>
         <thead>
           <tr>
             <th className="border border-gray-200 bg-gray-50 p-4 py-3 pl-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200">
-              Wrestler
+              摔跤手
             </th>
             <th className="border border-gray-200 bg-gray-50 p-4 py-3 pr-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200">
-              Signature Move(s)
+              标志性动作
             </th>
           </tr>
         </thead>
         <tbody className="bg-white dark:bg-gray-800">
           <tr>
             <td className="border border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              "Stone Cold" Steve Austin
+              "石冷" 史蒂夫·奥斯汀
             </td>
             <td className="border border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              Stone Cold Stunner, Lou Thesz Press
+              石冷震撼，路·瑟斯压制
             </td>
           </tr>
           <tr>
             <td className="border border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              Bret "The Hitman" Hart
+              布雷特 "杀手" 哈特
             </td>
             <td className="border border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              The Sharpshooter
+              锐 shooter 技
             </td>
           </tr>
           <tr>
             <td className="border border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              Razor Ramon
+              剃刀拉蒙
             </td>
             <td className="border border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              Razor's Edge, Fallaway Slam
+              剃刀边缘，落击
             </td>
           </tr>
         </tbody>
@@ -158,26 +158,26 @@ Use the `caption-bottom` utility to position a caption element at the bottom of 
 <!-- [!code word:caption-bottom] -->
 <table>
   <caption class="caption-bottom">
-    Table 3.1: Professional wrestlers and their signature moves.
+    表 3.1：职业摔跤手及其标志性动作。
   </caption>
   <thead>
     <tr>
-      <th>Wrestler</th>
-      <th>Signature Move(s)</th>
+      <th>摔跤手</th>
+      <th>标志性动作</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>"Stone Cold" Steve Austin</td>
-      <td>Stone Cold Stunner, Lou Thesz Press</td>
+      <td>"石冷" 史蒂夫·奥斯汀</td>
+      <td>石冷震撼，路·瑟斯压制</td>
     </tr>
     <tr>
-      <td>Bret "The Hitman" Hart</td>
-      <td>The Sharpshooter</td>
+      <td>布雷特 "杀手" 哈特</td>
+      <td>锐 shooter 技</td>
     </tr>
     <tr>
-      <td>Razor Ramon</td>
-      <td>Razor's Edge, Fallaway Slam</td>
+      <td>剃刀拉蒙</td>
+      <td>剃刀边缘，落击</td>
     </tr>
   </tbody>
 </table>
@@ -185,6 +185,6 @@ Use the `caption-bottom` utility to position a caption element at the bottom of 
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="caption-side" element="caption" defaultClass="caption-top" featuredClass="caption-bottom" />

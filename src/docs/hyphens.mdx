@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "hyphens";
-export const description = "Utilities for controlling how words should be hyphenated.";
+export const title = "连字符";
+export const description = "用于控制单词如何被连字符分隔的工具。";
 
 <ApiTable
   rows={[
@@ -14,22 +14,22 @@ export const description = "Utilities for controlling how words should be hyphen
   ]}
 />
 
-## Examples
+## 示例
 
-### Preventing hyphenation
+### 防止连字符分隔
 
-Use the `hyphens-none` utility to prevent words from being hyphenated even if the line break suggestion `&shy;` is used:
+使用 `hyphens-none` 工具可以防止单词被连字符分隔，即使使用了换行建议 `&shy;`：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs border-x border-x-pink-400/30 py-8 break-normal hyphens-none text-gray-900 dark:text-gray-200">
-      Officially recognized by the Duden dictionary as the longest word in German,{" "}
+      根据 Duden 词典的官方认可，德语中最长的单词是{" "}
       <span className="font-bold" lang="de">
         Kraftfahrzeug&shy;haftpflichtversicherung
       </span>{" "}
-      is a 36 letter word for motor vehicle liability insurance.
+      ，这是一个36个字母的汽车责任保险的词。
     </p>
   }
 </Example>
@@ -39,26 +39,26 @@ Use the `hyphens-none` utility to prevent words from being hyphenated even if th
 <!-- [!code word:&shy;] -->
 <!-- prettier-ignore -->
 <p class="hyphens-none">
-  ... Kraftfahrzeug&shy;haftpflichtversicherung is a ...
+  ... Kraftfahrzeug&shy;haftpflichtversicherung 是一个 ...
 </p>
 ```
 
 </Figure>
 
-### Manual hyphenation
+### 手动连字符分隔
 
-Use the `hyphens-manual` utility to only set hyphenation points where the line break suggestion `&shy;` is used:
+使用 `hyphens-manual` 工具只在使用换行建议 `&shy;` 的地方设置连字符分隔点：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs border-x border-x-pink-400/30 py-8 break-normal hyphens-manual text-gray-900 dark:text-gray-200">
-      Officially recognized by the Duden dictionary as the longest word in German,{" "}
+      根据 Duden 词典的官方认可，德语中最长的单词是{" "}
       <span className="font-bold" lang="de">
         Kraftfahrzeug&shy;haftpflichtversicherung
       </span>{" "}
-      is a 36 letter word for motor vehicle liability insurance.
+      ，这是一个36个字母的汽车责任保险的词。
     </p>
   }
 </Example>
@@ -68,28 +68,28 @@ Use the `hyphens-manual` utility to only set hyphenation points where the line b
 <!-- [!code word:&shy;] -->
 <!-- prettier-ignore -->
 <p class="hyphens-manual">
-  ... Kraftfahrzeug&shy;haftpflichtversicherung is a ...
+  ... Kraftfahrzeug&shy;haftpflichtversicherung 是一个 ...
 </p>
 ```
 
 </Figure>
 
-This is the default browser behavior.
+这是默认的浏览器行为。
 
-### Automatic hyphenation
+### 自动连字符分隔
 
-Use the `hyphens-auto` utility to allow the browser to automatically choose hyphenation points based on the language:
+使用 `hyphens-auto` 工具允许浏览器根据语言自动选择连字符分隔点：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs border-x border-x-pink-400/30 py-8 break-normal hyphens-auto text-gray-900 dark:text-gray-200">
-      Officially recognized by the Duden dictionary as the longest word in German,{" "}
+      根据 Duden 词典的官方认可，德语中最长的单词是{" "}
       <span className="font-bold" lang="de">
         Kraftfahrzeughaftpflichtversicherung
       </span>{" "}
-      is a 36 letter word for motor vehicle liability insurance.
+      ，这是一个36个字母的汽车责任保险的词。
     </p>
   }
 </Example>
@@ -99,14 +99,14 @@ Use the `hyphens-auto` utility to allow the browser to automatically choose hyph
 <!-- [!code word:lang="de"] -->
 <!-- prettier-ignore -->
 <p class="hyphens-auto" lang="de">
-  ... Kraftfahrzeughaftpflichtversicherung is a ...
+  ... Kraftfahrzeughaftpflichtversicherung 是一个 ...
 </p>
 ```
 
 </Figure>
 
-The line break suggestion `&shy;` will be preferred over automatic hyphenation points.
+换行建议 `&shy;` 会优先于自动连字符分隔点。
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="p" property="hyphens" defaultClass="hyphens-none" featuredClass="hyphens-auto" />

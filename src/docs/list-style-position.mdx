@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "list-style-position";
-export const description = "Utilities for controlling the position of bullets and numbers in lists.";
+export const description = "用于控制列表中项目符号和数字位置的工具。";
 
 <ApiTable
   rows={[
@@ -13,11 +13,11 @@ export const description = "Utilities for controlling the position of bullets an
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `list-inside` and `list-outside` to control the position of the markers and text indentation in a list:
+使用 `list-inside` 和 `list-outside` 等工具来控制列表中标记和文本缩进的位置：
 
 <Figure>
 
@@ -28,18 +28,18 @@ Use utilities like `list-inside` and `list-outside` to control the position of t
         <div className="absolute -top-8 -bottom-8 left-8 w-px bg-pink-400/40 dark:bg-pink-400/30"></div>
         <p className="mb-3 ml-8 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">list-inside</p>
         <ul className="list-inside list-disc rounded-xl p-4 pl-8 text-gray-900 dark:text-gray-200">
-          <li>5 cups chopped Porcini mushrooms</li>
-          <li>1/2 cup of olive oil</li>
-          <li>3lb of celery</li>
+          <li>5 杯切碎的松茸</li>
+          <li>1/2 杯橄榄油</li>
+          <li>3 磅芹菜</li>
         </ul>
       </div>
       <div className="relative">
         <div className="absolute -top-0 -bottom-8 left-8 w-px bg-pink-400/40 sm:-top-8 dark:bg-pink-400/30"></div>
         <p className="mb-3 ml-8 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">list-outside</p>
         <ul className="list-outside list-disc rounded-xl p-4 pl-8 text-gray-900 dark:text-gray-200">
-          <li>5 cups chopped Porcini mushrooms</li>
-          <li>1/2 cup of olive oil</li>
-          <li>3lb of celery</li>
+          <li>5 杯切碎的松茸</li>
+          <li>1/2 杯橄榄油</li>
+          <li>3 磅芹菜</li>
         </ul>
       </div>
     </div>
@@ -49,19 +49,19 @@ Use utilities like `list-inside` and `list-outside` to control the position of t
 ```html
 <!-- [!code classes:list-inside] -->
 <ul class="list-inside">
-  <li>5 cups chopped Porcini mushrooms</li>
+  <li>5 杯切碎的松茸</li>
   <!-- ... -->
 </ul>
 
 <!-- [!code classes:list-outside] -->
 <ul class="list-outside">
-  <li>5 cups chopped Porcini mushrooms</li>
+  <li>5 杯切碎的松茸</li>
   <!-- ... -->
 </ul>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="ul" property="list-style-position" defaultClass="list-outside" featuredClass="list-inside" />

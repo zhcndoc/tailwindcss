@@ -9,55 +9,53 @@ import { ColorPalette } from "./color-palette";
 
 export const meta = {
   title: "Tailwind CSS v4.0",
-  description: `We just released Tailwind CSS v4.0 — an all-new version of the framework optimized for performance and flexibility, with a reimagined configuration and customization experience, and taking full advantage of the latest advancements the web platform has to offer.`,
+  description: `我们刚刚发布了 Tailwind CSS v4.0 - 一个全新的框架版本，经过优化以增强性能和灵活性，重新构想了配置和自定义体验，并充分利用了 Web 平台所提供的最新进展。`,
   date: "2025-01-22T22:00:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      We just released Tailwind CSS v4.0 — an all-new version of the framework optimized for performance and
-      flexibility, with a reimagined configuration and customization experience, and taking full advantage of the latest
-      advancements the web platform has to offer.
+      我们刚刚发布了 Tailwind CSS v4.0 - 一个全新的框架版本，经过优化以增强性能和灵活性，重新构想了配置和自定义体验，并充分利用了 Web 平台所提供的最新进展。
     </>
   ),
 };
 
 <Image src={card} alt="Tailwind CSS v4.0" />
 
-Holy shit it's actually done — we just tagged Tailwind CSS v4.0.
+天哪，它实际上完成了 - 我们刚刚标记了 Tailwind CSS v4.0。
 
-Tailwind CSS v4.0 is an all-new version of the framework optimized for performance and flexibility, with a reimagined configuration and customization experience, and taking full advantage of the latest advancements the web platform has to offer.
+Tailwind CSS v4.0 是一个全新的框架版本，经过优化以增强性能和灵活性，重新构想了配置和自定义体验，并充分利用了 Web 平台所提供的最新进展。
 
-- [New high-performance engine](#new-high-performance-engine) — where full builds are up to 5x faster, and incremental builds are over 100x faster — and measured in microseconds.
-- [Designed for the modern web](#designed-for-the-modern-web) — built on cutting-edge CSS features like cascade layers, registered custom properties with `@property`, and `color-mix()`.
-- [Simplified installation](#simplified-installation) — fewer dependencies, zero configuration, and just a single line of code in your CSS file.
-- [First-party Vite plugin](#first-party-vite-plugin) — tight integration for maximum performance and minimum configuration.
-- [Automatic content detection](#automatic-content-detection) — all of your template files are discovered automatically, with no configuration required.
-- [Built-in import support](#built-in-import-support) — no additional tooling necessary to bundle multiple CSS files.
-- [CSS-first configuration](#css-first-configuration) — a reimagined developer experience where you customize and extend the framework directly in CSS instead of a JavaScript configuration file.
-- [CSS theme variables](#css-theme-variables) — all of your design tokens exposed as native CSS variables so you can access them anywhere.
-- [Dynamic utility values and variants](#dynamic-utility-values-and-variants) — stop guessing what values exist in your spacing scale, or extending your configuration for things like basic data attributes.
-- [Modernized P3 color palette](#modernized-p3-color-palette) — a redesigned, more vivid color palette that takes full advantage of modern display technology.
-- [Container queries](#container-queries) — first-class APIs for styling elements based on their container size, no plugins required.
-- [New 3D transform utilities](#new-3d-transform-utilities) — transform elements in 3D space directly in your HTML.
-- [Expanded gradient APIs](#expanded-gradient-apis) — radial and conic gradients, interpolation modes, and more.
-- [@starting-style support](#starting-style-support) — a new variant you can use to create enter and exit transitions, without the need for JavaScript.
-- [not-\* variant](#not-variant) — style an element only when it doesn't match another variant, custom selector, or media or feature query.
-- [Even more new utilities and variants](#even-more-new-utilities-and-variants) — including support for `color-scheme`, `field-sizing`, complex shadows, `inert`, and more.
+- [新的高性能引擎](#new-high-performance-engine) - 完整构建速度提高了 5 倍，增量构建速度提高了 100 倍以上，且计算精度为微秒。
+- [为现代 Web 设计](#designed-for-the-modern-web) - 基于最新的 CSS 特性构建，如级联层、使用 `@property` 注册的自定义属性，以及 `color-mix()`。
+- [简化安装](#simplified-installation) - 更少的依赖、零配置和 CSS 文件中的一行代码。
+- [第一方 Vite 插件](#first-party-vite-plugin) - 紧密集成以最大限度地提高性能和最小化配置。
+- [自动内容检测](#automatic-content-detection) - 所有模板文件将自动发现，无需配置。
+- [内置导入支持](#built-in-import-support) - 无需额外工具即可捆绑多个 CSS 文件。
+- [CSS 优先配置](#css-first-configuration) - 全新的开发者体验，可以直接在 CSS 中自定义和扩展框架，而不是 JavaScript 配置文件。
+- [CSS 主题变量](#css-theme-variables) - 所有设计标记作为原生 CSS 变量公开，以便您在任何地方访问它们。
+- [动态实用程序值和变种](#dynamic-utility-values-and-variants) - 不再需要猜测您的间距比例中存在哪些值，或者扩展配置以处理基本数据属性等内容。
+- [现代化的 P3 色彩调色板](#modernized-p3-color-palette) - 全新设计的更生动色彩调色板，充分发挥了现代显示技术的优势。
+- [容器查询](#container-queries) - 第一类 API，可根据元素的容器大小进行样式设置，无需插件。
+- [新的 3D 变换实用程序](#new-3d-transform-utilities) - 直接在您的 HTML 中在 3D 空间中转换元素。
+- [扩展的渐变 API](#expanded-gradient-apis) - 径向和锥形渐变、插值模式等。
+- [@starting-style 支持](#starting-style-support) - 一种新变种，可以用于创建进入和退出过渡，无需 JavaScript。
+- [not-* 变种](#not-variant) - 仅在元素不匹配另一个变种、自定义选择器或媒体或功能查询时对其进行样式处理。
+- [更多新实用程序和变种](#even-more-new-utilities-and-variants) - 包括对 `color-scheme`、`field-sizing`、复杂阴影、`inert` 等的支持。
 
-Start using Tailwind CSS v4.0 today by [installing it in a new project](/docs/installation/), or playing with it directly in the browser on [Tailwind Play](https://play.tailwindcss.com/).
+通过 [在新项目中安装它](/docs/installation/) 或直接在浏览器中在 [Tailwind Play](https://play.tailwindcss.com/) 中测试它，今天就开始使用 Tailwind CSS v4.0。
 
-For existing projects, we've published a comprehensive [upgrade guide](/docs/upgrade-guide) and built an [automated upgrade tool](/docs/upgrade-guide#using-the-upgrade-tool) to get you on the latest version as quickly and painlessly as possible.
+对于现有项目，我们发布了全面的 [升级指南](/docs/upgrade-guide) 并构建了一种 [自动升级工具](/docs/upgrade-guide#using-the-upgrade-tool)，以尽可能快速和无痛地让您上到最新版本。
 
 ---
 
-## New high-performance engine
+## 新的高性能引擎
 
-Tailwind CSS v4.0 is a ground-up rewrite of the framework, taking everything we've learned about the architecture over the years and optimizing it to be as fast as possible.
+Tailwind CSS v4.0 是框架的从头重写，我们将多年来对架构的所有经验进行优化，使其尽可能快速。
 
-When benchmarking it on our own projects, we've found full rebuilds to be over 3.5x faster, and incremental builds to be over 8x faster.
+在我们的项目上进行基准测试时，我们发现完整重建速度提高了 3.5 倍，增量构建速度提高了 8 倍。
 
-Here are the median build times we saw when we benchmarked Tailwind CSS v4.0 against [Catalyst](https://tailwindui.com/templates/catalyst):
+以下是我们对 Tailwind CSS v4.0 和 [Catalyst](https://tailwindui.com/templates/catalyst) 进行基准测试时看到的中位构建时间：
 
 {
 
@@ -67,24 +65,24 @@ Here are the median build times we saw when we benchmarked Tailwind CSS v4.0 aga
       <th></th>
       <th>v3.4</th>
       <th>v4.0</th>
-      <th>Improvement</th>
+      <th>改善</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Full build</td>
+      <td>完整构建</td>
       <td>378ms</td>
       <td>100ms</td>
       <td>3.78x</td>
     </tr>
     <tr>
-      <td>Incremental rebuild with new CSS</td>
+      <td>带新 CSS 的增量重建</td>
       <td>44ms</td>
       <td>5ms</td>
       <td>8.8x</td>
     </tr>
     <tr>
-      <td>Incremental rebuild with no new CSS</td>
+      <td>没有新 CSS 的增量重建</td>
       <td>35ms</td>
       <td>192µs</td>
       <td>182x</td>
@@ -93,13 +91,13 @@ Here are the median build times we saw when we benchmarked Tailwind CSS v4.0 aga
 </table>
 }
 
-The most impressive improvement is on incremental builds that don't actually need to compile any new CSS — these builds are over 100x faster and complete in _microseconds_. And the longer you work on a project, the more of these builds you run into because you're just using classes you've already used before, like `flex`, `col-span-2`, or `font-bold`.
+最令人印象深刻的改进是在实际上不需要编译任何新 CSS 的增量构建 - 这些构建速度提高了 100 倍以上，并在 _微秒_ 内完成。您在项目上工作越长，就越会遇到这类构建，因为您只是使用之前已经使用过的类，比如 `flex`、`col-span-2` 或 `font-bold`。
 
 ---
 
-## Designed for the modern web
+## 为现代 Web 设计
 
-The platform has evolved a lot since we released Tailwind CSS v3.0, and v4.0 takes full advantage of many of these improvements.
+自我们发布 Tailwind CSS v3.0 以来，平台已经发生了很大变化，v4.0 充分利用了这些改进。
 
 ```css
 /* [!code filename:CSS] */
@@ -121,53 +119,53 @@ The platform has evolved a lot since we released Tailwind CSS v3.0, and v4.0 tak
 }
 ```
 
-We're leveraging modern CSS features like:
+我们正在利用现代 CSS 特性，例如：
 
-- **Native cascade layers** — giving us more control than ever over how different style rules interact with each other.
-- **Registered custom properties** — making it possible to do things like animate gradients, and significantly improving performance on large pages.
-- **color-mix()** — which lets us adjust the opacity of any color value, including CSS variables and `currentColor`.
-- **Logical properties** — simplifying RTL support and reducing the size of your generated CSS.
+- **本地级联层** - 让我们比以往任何时候都更好地控制不同样式规则之间的交互。
+- **注册的自定义属性** - 使得动画渐变成为可能，并显著提高大页面上的性能。
+- **color-mix()** - 让我们能够调整任何颜色值的透明度，包括 CSS 变量和 `currentColor`。
+- **逻辑属性** - 简化对 RTL 的支持，减少生成的 CSS 大小。
 
-Many of these features have even simplified Tailwind internally, reducing the surface area for bugs and making the framework easier for us to maintain.
+许多这些特性甚至简化了内置的 Tailwind，减少了 bug 的表面面积，使框架对我们来说更容易维护。
 
 ---
 
-## Simplified installation
+## 简化安装
 
-We've streamlined the setup process a ton in v4.0, reducing the number of steps and removing a lot of boilerplate.
+在 v4.0 中我们大幅简化了设置过程，减少了步骤并移除大量脚手架。
 
 <CodeExampleStack>
 
 ```shell
-# [!code filename:1. Install Tailwind CSS]
+# [!code filename:1. 安装 Tailwind CSS]
 npm i tailwindcss @tailwindcss/postcss;
 ```
 
 ```js
-// [!code filename:2. Add the PostCSS plugin]
+// [!code filename:2. 添加 PostCSS 插件]
 export default {
   plugins: ["@tailwindcss/postcss"],
 };
 ```
 
 ```css
-/* [!code filename:3. Import Tailwind in your CSS] */
+/* [!code filename:3. 在你的 CSS 中导入 Tailwind] */
 @import "tailwindcss";
 ```
 
 </CodeExampleStack>
 
-With the improvements we've made to this process for v4.0, Tailwind feels more light-weight than ever:
+通过我们在 v4.0 中对该过程所做的改进，Tailwind 感觉比以往任何时候都轻量：
 
-- **Just one-line of CSS** — no more `@tailwind` directives, just add `@import "tailwindcss"` and start building.
-- **Zero configuration** — you can start using the framework without configuring anything, not even the paths to your template files.
-- **No external plugins required** — we bundle `@import` rules for you out of the box, and use [Lightning CSS](https://lightningcss.dev/) under the hood for vendor prefixing and modern syntax transforms.
+- **只需一行 CSS** - 不再使用 `@tailwind` 指令，只需添加 `@import "tailwindcss"` 开始构建。
+- **零配置** - 您可以在不配置任何内容的情况下开始使用该框架，甚至不需要配置模板文件的路径。
+- **无需外部插件** - 我们为您打包 `@import` 规则，并在后台使用 [Lightning CSS](https://lightningcss.dev/) 处理供应商前缀和现代语法转换。
 
-Sure you only go through this once per project, but it adds up when you're starting and abandoning a different side-project every weekend.
+当然，在每个项目中您只需经历一次，但当您每个周末都启动和放弃不同的旁项目时，这会累积起来。
 
-## First-party Vite plugin
+## 第一方 Vite 插件
 
-If you're a Vite user, you can now integrate Tailwind using [`@tailwindcss/vite`](/docs/installation/using-vite) instead of PostCSS:
+如果您是 Vite 用户，现在可以使用 [`@tailwindcss/vite`](/docs/installation/using-vite) 集成 Tailwind，而不是 PostCSS：
 
 ```js
 // [!code filename:vite.config.ts]
@@ -183,13 +181,13 @@ export default defineConfig({
 });
 ```
 
-Tailwind CSS v4.0 is incredibly fast when used as a PostCSS plugin, but you'll get even better performance using the Vite plugin.
+Tailwind CSS v4.0 在用作 PostCSS 插件时非常快速，但使用 Vite 插件时您会获得更好的性能。
 
-## Automatic content detection
+## 自动内容检测
 
-You know how you always had to configure that annoying `content` array in Tailwind CSS v3? In v4.0, we came up with a bunch of heuristics for detecting all of that stuff automatically so you don’t have to configure it at all.
+您知道在 Tailwind CSS v3 中总是必须配置那个麻烦的 `content` 数组吗？在 v4.0 中，我们想出了很多启发式算法来自动检测所有这些内容，所以您完全不需要配置它。
 
-For example, we automatically ignore anything in your `.gitignore` file to avoid scanning dependencies or generated files that aren’t under version control:
+例如，我们自动忽略您 `.gitignore` 文件中的任何内容，以避免扫描那些不在版本控制下的依赖项或生成文件：
 
 ```shell
 # [!code filename:.gitignore]
@@ -199,9 +197,9 @@ For example, we automatically ignore anything in your `.gitignore` file to avoid
 /build
 ```
 
-We also automatically ignore all binary extensions like images, videos, .zip files, and more.
+我们还自动忽略所有二进制扩展名，如图像、视频、.zip 文件等等。
 
-And if you ever need to explicitly add a source that's excluded by default, you can always add it with the `@source` directive, right in your CSS file:
+如果您需要明确添加一个默认排除的源，您可以始终通过在 CSS 文件中使用 `@source` 指令将其添加：
 
 ```css
 /* [!code filename:CSS] */
@@ -210,17 +208,17 @@ And if you ever need to explicitly add a source that's excluded by default, you 
 @source "../node_modules/@my-company/ui-lib";
 ```
 
-The `@source` directive uses the same heuristics under the hood, so it will exclude binary file types for example as well, without you having to specify all of the extensions to scan explicitly.
+`@source` 指令在后台使用相同的启发式算法，因此它也将排除二进制文件类型，而无需您显式指定要扫描的所有扩展名。
 
-Learn more about in our new documentation on [detecting classes in source files](/docs/detecting-classes-in-source-files).
+有关如何在新文档中 [检测源文件中的类](/docs/detecting-classes-in-source-files) 的更多信息。
 
 ---
 
-## Built-in import support
+## 内置导入支持
 
-Before v4.0, if you wanted to inline other CSS files using `@import` you'd have to configure another plugin like `postcss-import` to handle it for you.
+在 v4.0 之前，如果您想使用 `@import` 内联其他 CSS 文件，您必须配置另一个例如 `postcss-import` 的插件来处理它。
 
-Now we handle this out of the box, so you don't need any other tools:
+现在我们开箱即用地处理这个，因此您不需要任何其他工具：
 
 ```js
 //  [!code filename:postcss.config.js]
@@ -232,15 +230,15 @@ export default {
 };
 ```
 
-Our import system is purpose-built for Tailwind CSS, so we've also been able to make it even faster by tightly integrating it with our engine.
+我们的导入系统专为 Tailwind CSS 打造，因此我们还能够通过与我们的引擎紧密集成来使其变得更快。
 
 ---
 
-## CSS-first configuration
+## CSS 优先配置
 
-One of the biggest changes in Tailwind CSS v4.0 is the shift from configuring your project in JavaScript to configuring it in CSS.
+Tailwind CSS v4.0 的最大变化之一是从在 JavaScript 中配置项目转向在 CSS 中配置。
 
-Instead of a `tailwind.config.js` file, you can configure all of your customizations directly in the CSS file where you import Tailwind, giving you one less file to worry about in your project:
+您可以直接在导入 Tailwind 的 CSS 文件中配置所有自定义设置，而不再需要 `tailwind.config.js` 文件，这样就减少了一个需要关注的文件：
 
 ```css
 /* [!code filename:CSS] */
@@ -265,17 +263,17 @@ Instead of a `tailwind.config.js` file, you can configure all of your customizat
 }
 ```
 
-The new CSS-first configuration lets you do just about everything you could do in your `tailwind.config.js` file, including configuring your design tokens, defining custom utilities and variants, and more.
+新的 CSS 优先配置让您能够做几乎所有可以在 `tailwind.config.js` 文件中完成的任务，包括配置设计标记、定义自定义实用程序和变种等。
 
-To learn more about how it all works, read the new [theme variables](/docs/theme) documentation.
+要了解更多信息，请阅读新的 [主题变量](/docs/theme) 文档。
 
 ---
 
-## CSS theme variables
+## CSS 主题变量
 
-Tailwind CSS v4.0 takes all of your design tokens and makes them available as CSS variables by default, so you can reference any value you need at run-time using just CSS.
+Tailwind CSS v4.0 默认将所有设计标记作为 CSS 变量公开，以便您可以使用 CSS 在运行时引用所需的任何值。
 
-Using the example `@theme` from earlier, all of these values will be added to your CSS to as regular custom properties:
+使用之前的 `@theme` 示例，所有这些值将作为常规自定义属性添加到您的 CSS 中：
 
 ```css
 /* [!code filename:Generated CSS] */
@@ -298,15 +296,15 @@ Using the example `@theme` from earlier, all of these values will be added to yo
 }
 ```
 
-This makes it easy to reuse these values as inline styles or pass them to libraries like [Motion](https://motion.dev/docs/react-animation#css-variables) to animate them.
+这让您可以轻松地将这些值重用为内联样式或传递给像 [Motion](https://motion.dev/docs/react-animation#css-variables) 这样的库以对它们进行动画处理。
 
 ---
 
-## Dynamic utility values and variants
+## 动态实用程序值和变种
 
-We've simplified the way many utilities and variants work in v4.0 by effectively allowing them to accept certain types of arbitrary values, _without_ the need for any configuration or dropping down to the arbitrary value syntax.
+我们通过有效地允许许多实用程序和变种接受某些类型的任意值简化了它们在 v4.0 中的工作方式，而无需进行任何配置或降到任意值语法。
 
-For example, in Tailwind CSS v4.0 you can create grids of any size out of the box:
+例如，在 Tailwind CSS v4.0 中，您可以轻松创建任何大小的网格：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -316,7 +314,7 @@ For example, in Tailwind CSS v4.0 you can create grids of any size out of the bo
 </div>
 ```
 
-You can also target custom boolean data attributes without needing to define them:
+您还可以在不需要定义的情况下定位自定义布尔数据属性：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -326,7 +324,7 @@ You can also target custom boolean data attributes without needing to define the
 </div>
 ```
 
-Even spacing utilities like `px-*`, `mt-*`, `w-*`, `h-*`, and more are now dynamically derived from a single spacing scale variable and accept any value out of the box:
+即使是间距实用程序，如 `px-*`、`mt-*`、`w-*`、`h-*` 等，也是动态从单个间距比例变量派生的，并且随时接受任何值：
 
 ```css
 /* [!code filename:Generated CSS] */
@@ -349,25 +347,25 @@ Even spacing utilities like `px-*`, `mt-*`, `w-*`, `h-*`, and more are now dynam
 }
 ```
 
-The upgrade tool we released alongside v4.0 will even simplify most of these utilities for you automatically if it notices you using an arbitrary value that's no longer needed.
+我们与 v4.0 一起发布的升级工具甚至会自动简化大多数不再需要的实用程序，如果它注意到您使用了一个不再需要的任意值。
 
 ---
 
-## Modernized P3 color palette
+## 现代化的 P3 色彩调色板
 
-We've upgraded the entire default color palette from `rgb` to `oklch`, taking advantage of the wider gamut to make the colors more vivid in places where we were previously limited by the sRGB color space.
+我们将整个默认色彩调色板从 `rgb` 升级到 `oklch`，利用更广泛的色域，使颜色在我们以前受限于 sRGB 色彩空间的地方更为生动。
 
 <div className="not-prose my-12">
   <ColorPalette />
 </div>
 
-We've tried to keep the balance between all the colors the same as it was in v3, so even though we've refreshed things across the board, it shouldn't feel like a breaking change when upgrading your existing projects.
+我们已经努力保持所有颜色之间的平衡与 v3 中的相同，因此即使我们全面刷新了内容，在升级您的现有项目时也不应感觉像是一个破坏性更改。
 
 ---
 
-## Container queries
+## 容器查询
 
-We've brought container query support into core for v4.0, so you don't need the `@tailwindcss/container-queries` plugin anymore:
+我们已将容器查询支持引入核心，在 v4.0 中您不再需要 `@tailwindcss/container-queries` 插件：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -379,7 +377,7 @@ We've brought container query support into core for v4.0, so you don't need the 
 </div>
 ```
 
-We've also added support for max-width container queries using the new `@max-*` variant:
+我们还添加了对最大宽度容器查询的新支持，使用新的 `@max-*` 变种：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -391,7 +389,7 @@ We've also added support for max-width container queries using the new `@max-*` 
 </div>
 ```
 
-Like our regular breakpoint variants, you can also stack `@min-*` and `@max-*` variants to define container query ranges:
+与我们常规的断点变种一样，您还可以堆叠 `@min-*` 和 `@max-*` 变种以定义容器查询范围：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -403,13 +401,13 @@ Like our regular breakpoint variants, you can also stack `@min-*` and `@max-*` v
 </div>
 ```
 
-Learn more in our all-new [container queries](/docs/responsive-design#container-queries) documentation.
+在我们全新的 [容器查询](/docs/responsive-design#container-queries) 文档中了解更多。
 
 ---
 
-## New 3D transform utilities
+## 新的 3D 变换实用程序
 
-We've finally added APIs for doing 3D transforms, like `rotate-x-*`, `rotate-y-*`, `scale-z-*`, `translate-z-*`, and tons more.
+我们终于为 3D 变换添加了 API，例如 `rotate-x-*`、`rotate-y-*`、`scale-z-*`、`translate-z-*` 等等。
 
 <Figure>
 
@@ -426,7 +424,7 @@ We've finally added APIs for doing 3D transforms, like `rotate-x-*`, `rotate-y-*
         <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-gray-900/10 ring-inset"></div>
         <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
           <time dateTime="2020-03-16" className="mr-8">
-            Mar 16, 2020
+            2020年3月16日
           </time>
           <div className="-ml-4 flex items-center gap-x-4">
             <svg view-box="0 0 2 2" className="-ml-0.5 size-0.5 flex-none fill-white/50">
@@ -444,7 +442,7 @@ We've finally added APIs for doing 3D transforms, like `rotate-x-*`, `rotate-y-*
         </div>
         <p className="mt-3 text-lg/6 font-semibold text-white">
           <span className="absolute inset-0"></span>
-          Boost your conversion rate
+          提升您的转化率
         </p>
       </article>
     </div>
@@ -462,17 +460,17 @@ We've finally added APIs for doing 3D transforms, like `rotate-x-*`, `rotate-y-*
 
 </Figure>
 
-Check out the updated [`transform-style`](/docs/transform-style), [`rotate`](/docs/rotate), [`perspective`](/docs/perspective), and [`perspective-origin`](/docs/perspective-origin) documentation to get started.
+查看更新后的 [`transform-style`](/docs/transform-style)、[`rotate`](/docs/rotate)、[`perspective`](/docs/perspective) 和 [`perspective-origin`](/docs/perspective-origin) 文档以开始使用。
 
 ---
 
-## Expanded gradient APIs
+## 扩展的渐变 API
 
-We've added a ton of new gradient features in v4.0, so you can pull off even fancier effects without having to write any custom CSS.
+我们在 v4.0 中添加了大量新的渐变特性，因此您可以更加花哨地实现效果，而无需编写任何自定义 CSS。
 
-### Linear gradient angles
+### 线性渐变角度
 
-Linear gradients now support angles as values, so you can use utilities like `bg-linear-45` to create a gradient on a 45 degree angle:
+线性渐变现在支持角度作为值，因此您可以使用实用程序如 `bg-linear-45` 创建 45 度角的渐变：
 
 <Figure>
 
@@ -491,11 +489,11 @@ Linear gradients now support angles as values, so you can use utilities like `bg
 
 </Figure>
 
-You may notice we've renamed `bg-gradient-*` to `bg-linear-*` too — you'll see why shortly!
+您可能会注意到我们已将 `bg-gradient-*` 重命名为 `bg-linear-*` - 稍后您将了解原因！
 
-### Gradient interpolation modifiers
+### 渐变插值修饰符
 
-We've added the ability to control the color interpolation mode for gradients using a modifier, so a class like `bg-linear-to-r/srgb` interpolates using sRGB, and `bg-linear-to-r/oklch` interpolates using OKLCH:
+我们添加了控制渐变的颜色插值模式的能力，因此像 `bg-linear-to-r/srgb` 这样的类将使用 sRGB 进行插值，而 `bg-linear-to-r/oklch` 将使用 OKLCH 进行插值：
 
 <Figure>
 
@@ -516,11 +514,11 @@ We've added the ability to control the color interpolation mode for gradients us
 
 </Figure>
 
-Using polar color spaces like OKLCH or HSL can lead to much more vivid gradients when the `from-*` and `to-*` colors are far apart on the color wheel. We're using OKLAB by default in v4.0 but you can always interpolate using a different color space by adding one of these modifiers.
+使用像 OKLCH 或 HSL 这样的极性颜色空间可以在 `from-*` 和 `to-*` 颜色之间的色轮相距很远时生成更生动的渐变。我们默认在 v4.0 中使用 OKLAB，但您可以随时通过添加其中一个修饰符来使用不同的颜色空间进行插值。
 
-### Conic and radial gradients
+### 锥形和径向渐变
 
-We've added new `bg-conic-*` and `bg-radial-*` utilities for creating conic and radial gradients:
+我们添加了新的 `bg-conic-*` 和 `bg-radial-*` 实用程序，以创建锥形和径向渐变：
 
 <Figure>
 
@@ -541,13 +539,13 @@ We've added new `bg-conic-*` and `bg-radial-*` utilities for creating conic and 
 
 </Figure>
 
-These new utilities work alongside the existing `from-*`, `via-*`, and `to-*` utilities to let you create conic and radial gradients the same way you create linear gradients, and include modifiers for setting the color interpolation method and arbitrary value support for controlling details like the gradient position.
+这些新实用程序可以与现有的 `from-*`、`via-*` 和 `to-*` 实用程序一起使用，以便您使用相同的方式创建锥形和径向渐变，并包括设置颜色插值方法和控制渐变位置等细节的修饰符。
 
 ---
 
-## @starting-style support
+## @starting-style 支持
 
-The new `starting` variant adds support for the new CSS [`@starting-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/@starting-style) feature, making it possible to transition element properties when an element is first displayed:
+新的 `starting` 变种添加了对新的 CSS [`@starting-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/@starting-style) 特性的支持，使得在元素首次显示时可以过渡元素属性：
 
 <Figure>
 
@@ -559,7 +557,7 @@ The new `starting` variant adds support for the new CSS [`@starting-style`](http
           popoverTarget="my-popover"
           className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2"
         >
-          Check for updates
+          检查更新
         </button>
         <div
           popover="auto"
@@ -584,13 +582,13 @@ The new `starting` variant adds support for the new CSS [`@starting-style`](http
             </div>
             <div className="mt-3 text-center sm:mt-5">
               <div className="text-base font-semibold text-gray-900 dark:text-white" id="modal-title">
-                Update available
+                有可用更新
               </div>
               <div className="mt-2">
                 <p className="text-sm text-gray-500 dark:text-gray-200">
-                  A new software update is available: <span className="font-semibold">v2.0.4.</span>
+                  有新的软件更新可用： <span className="font-semibold">v2.0.4.</span>
                   <br />
-                  Click the button below to install it.
+                  单击下方按钮进行安装。
                 </p>
               </div>
             </div>
@@ -600,7 +598,7 @@ The new `starting` variant adds support for the new CSS [`@starting-style`](http
               type="button"
               className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2"
             >
-              Install
+              安装
             </button>
           </div>
         </div>
@@ -612,7 +610,7 @@ The new `starting` variant adds support for the new CSS [`@starting-style`](http
 ```html
 <!-- [!code classes:starting:open:opacity-0,transition-discrete] -->
 <div>
-  <button popovertarget="my-popover">Check for updates</button>
+  <button popovertarget="my-popover">检查更新</button>
   <div popover id="my-popover" class="transition-discrete starting:open:opacity-0 ...">
     <!-- ... -->
   </div>
@@ -621,13 +619,13 @@ The new `starting` variant adds support for the new CSS [`@starting-style`](http
 
 </Figure>
 
-With `@starting-style`, you can finally animate elements as they appear on the page without the need for any JavaScript at all. [Browser support](https://caniuse.com/mdn-css_at-rules_starting-style) probably isn't quite there yet for most teams, but we're getting close!
+通过 `@starting-style`，您可以最终在页面上显示元素时进行动画，而无需任何 JavaScript。[浏览器支持](https://caniuse.com/mdn-css_at-rules_starting-style) 在大多数团队中可能还不够好，但我们正在接近！
 
 ---
 
-## not-\* variant
+## not-* 变种
 
-We've added a new `not-*` variant which finally adds support for the CSS `:not()` pseudo-class:
+我们添加了一种新的 `not-*` 变种，它终于为 CSS `:not()` 伪类提供了支持：
 
 <CodeExampleStack>
 
@@ -654,7 +652,7 @@ We've added a new `not-*` variant which finally adds support for the CSS `:not()
 
 </CodeExampleStack>
 
-It does double duty and also lets you negate media queries and `@supports` queries:
+它的作用还可以否定媒体查询和 `@supports` 查询：
 
 <CodeExampleStack>
 
@@ -677,30 +675,30 @@ It does double duty and also lets you negate media queries and `@supports` queri
 
 </CodeExampleStack>
 
-Check out the new [`not-*` documentation](/docs/hover-focus-and-other-states#not) to learn more.
+查看新的 [`not-*` 文档](/docs/hover-focus-and-other-states#not) 以了解更多信息。
 
 ---
 
-## Even more new utilities and variants
+## 更多新实用程序和变种
 
-We've added a ton of other new utilities and variants to v4.0 too, including:
+我们在 v4.0 中还添加了大量其他新实用程序和变种，包括：
 
-- **New [`inset-shadow-*`](/docs/box-shadow#adding-an-inset-shadow) and [`inset-ring-*`](/docs/box-shadow#adding-an-inset-ring) utilities** — making it possible to stack up to four layers of box shadows on a single element.
-- **New [`field-sizing`](/docs/field-sizing) utilities** — for auto-resizing textareas without writing a single line of JavaScript.
-- **New [`color-scheme`](/docs/color-scheme) utilities** — so you can finally get rid of those ugly light scrollbars in dark mode.
-- **New [`font-stretch`](/docs/font-stretch) utilities** — for carefully tweaking variable fonts that support different widths.
-- **New [`inert`](/docs/hover-focus-and-other-states#styling-inert-elements) variant** — for styling non-interactive elements marked with the `inert` attribute.
-- **New [`nth-*`](/docs/hover-focus-and-other-states#first-last-odd-and-even) variants** — for doing really clever things you'll eventually regret.
-- **New [`in-*`](/docs/hover-focus-and-other-states#implicit-groups) variant** — which is a lot like `group-*`, but without the need for the `group` class.
-- **Support for [`:popover-open`](/docs/hover-focus-and-other-states#openclosed-state)** — using the existing `open` variant to also target open popovers.
-- **New [descendant variant](/docs/hover-focus-and-other-states#styling-all-descendants)** — for styling all descendant elements, for better or for worse.
+- **新的 [`inset-shadow-*`](/docs/box-shadow#adding-an-inset-shadow) 和 [`inset-ring-*`](/docs/box-shadow#adding-an-inset-ring) 实用程序** - 使得在单个元素上叠加多达四层的框阴影成为可能。
+- **新的 [`field-sizing`](/docs/field-sizing) 实用程序** - 用于自动调整大小的文本区域，无需编写任何 JavaScript。
+- **新的 [`color-scheme`](/docs/color-scheme) 实用程序** - 让您可以最终摆脱黑暗模式下那些丑陋的浅色滚动条。
+- **新的 [`font-stretch`](/docs/font-stretch) 实用程序** - 用于微调支持不同宽度的可变字体。
+- **新的 [`inert`](/docs/hover-focus-and-other-states#styling-inert-elements) 变种** - 用于为标记为 `inert` 属性的非交互元素添加样式。
+- **新的 [`nth-*`](/docs/hover-focus-and-other-states#first-last-odd-and-even) 变种** - 用于做一些您最终会后悔的聪明事情。
+- **新的 [`in-*`](/docs/hover-focus-and-other-states#implicit-groups) 变种** - 与 `group-*` 非常相似，但无需 `group` 类。
+- **对 [`popover-open`](/docs/hover-focus-and-other-states#openclosed-state) 的支持** - 使用现有的 `open` 变种来定位打开的弹出层。
+- **新的 [后代变种](/docs/hover-focus-and-other-states#styling-all-descendants)** - 用于为所有后代元素添加样式，无论好坏。
 
-Check out the relevant documentation for all of these features to learn more.
+查看相关文档以了解所有这些功能的更多信息。
 
 ---
 
-**And that's it — that's Tailwind CSS v4.0.** It's been years of work to get to this point, but we're all extremely proud of this release and we can't wait to see what you build with it.
+**这就是 Tailwind CSS v4.0。** 这是多年来努力的成果，我们对这个版本感到非常自豪，迫不及待想看到您用它构建的东西。
 
-Check it out, play with it, maybe even break it, and definitely let us know what you think.
+查看一下，试用一下，甚至可能会破坏它，肯定要告诉我们您的想法。
 
-Just no bug reports until tomorrow please — let us at least enjoy one celebratory team dinner and maybe relax in the hot tub at this hotel for a bit believing that somehow we really did ship flawless software.
+只请不要在明天之前提交错误报告 - 让我们至少享受一次庆祝性的团队晚餐，也许在这个酒店的热水浴缸中放松一下，相信我们真的发货了无暇的软件。

@@ -4,8 +4,8 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "grid-column";
-export const description = "Utilities for controlling how elements are sized and placed across grid columns.";
+export const title = "网格列";
+export const description = "用于控制元素在网格列的位置和大小的工具类。";
 
 <ApiTable
   rows={[
@@ -29,11 +29,11 @@ export const description = "Utilities for controlling how elements are sized and
   ]}
 />
 
-## Examples
+## 示例
 
-### Spanning columns
+### 跨列
 
-Use `col-span-<number>` utilities like `col-span-2` and `col-span-4` to make an element span _n_ columns:
+使用 `col-span-<number>` 工具类，如 `col-span-2` 和 `col-span-4`，使元素跨越 _n_ 列：
 
 <Figure>
 
@@ -69,9 +69,9 @@ Use `col-span-<number>` utilities like `col-span-2` and `col-span-4` to make an 
 
 </Figure>
 
-### Starting and ending lines
+### 起始和结束线
 
-Use `col-start-<number>` or `col-end-<number>` utilities like `col-start-2` and `col-end-3` to make an element start or end at the _nth_ grid line:
+使用 `col-start-<number>` 或 `col-end-<number>` 工具类，如 `col-start-2` 和 `col-end-3`，使元素在 _n_ 网格线处开始或结束：
 
 <Figure>
 
@@ -102,18 +102,18 @@ Use `col-start-<number>` or `col-end-<number>` utilities like `col-start-2` and 
 
 </Figure>
 
-These can also be combined with the `col-span-<number>` utilities to span a specific number of columns.
+这些工具类也可以与 `col-span-<number>` 工具类结合使用，以跨越特定数量的列。
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   utilities={["col", "col-span", "col-start", "col-end"]}
   variable="columns"
-  name="grid column size and location"
+  name="网格列的大小和位置"
   value="16_/_span_16"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   properties={["grid-column", "grid-column-start", "grid-column-end"]}

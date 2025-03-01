@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "clear";
-export const description = "Utilities for controlling the wrapping of content around an element.";
+export const title = "清除";
+export const description = "用于控制内容包裹在元素周围的实用工具。";
 
 <ApiTable
   rows={[
@@ -17,11 +17,11 @@ export const description = "Utilities for controlling the wrapping of content ar
   ]}
 />
 
-## Examples
+## 示例
 
-### Clearing left
+### 清除左侧
 
-Use the `clear-left` utility to position an element below any preceding left-floated elements:
+使用 `clear-left` 工具将元素放置在任何前面的左浮动元素下方：
 
 <Figure>
 
@@ -53,15 +53,15 @@ Use the `clear-left` utility to position an element below any preceding left-flo
 <article>
   <img class="float-left ..." src="/img/snow-mountains.jpg" />
   <img class="float-right ..." src="/img/green-mountains.jpg" />
-  <p class="clear-left ...">Maybe we can live without libraries...</p>
+  <p class="clear-left ...">也许我们可以不依赖图书馆...</p>
 </article>
 ```
 
 </Figure>
 
-### Clearing right
+### 清除右侧
 
-Use the `clear-right` utility to position an element below any preceding right-floated elements:
+使用 `clear-right` 工具将元素放置在任何前面的右浮动元素下方：
 
 <Figure>
 
@@ -74,7 +74,7 @@ Use the `clear-right` utility to position an element below any preceding right-f
       />
       <img
         className="float-right mb-4 ml-6 aspect-16/9 w-1/4 rounded-lg object-cover outline -outline-offset-1 outline-black/10"
-        src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=formathttps://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&h=1000&q=90"
+        src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&h=1000&q=90"
       />
       <p className="clear-right text-justify">
         Maybe we can live without libraries, people like you and me. Maybe. Sure, we're too old to change the world, but
@@ -93,15 +93,15 @@ Use the `clear-right` utility to position an element below any preceding right-f
 <article>
   <img class="float-left ..." src="/img/green-mountains.jpg" />
   <img class="float-right ..." src="/img/snow-mountains.jpg" />
-  <p class="clear-right ...">Maybe we can live without libraries...</p>
+  <p class="clear-right ...">也许我们可以不依赖图书馆...</p>
 </article>
 ```
 
 </Figure>
 
-### Clearing all
+### 清除所有
 
-Use the `clear-both` utility to position an element below all preceding floated elements:
+使用 `clear-both` 工具将元素放置在所有前面的浮动元素下方：
 
 <Figure>
 
@@ -110,7 +110,7 @@ Use the `clear-both` utility to position an element below all preceding floated 
     <>
       <img
         className="float-left mr-6 mb-4 aspect-16/9 w-1/4 rounded-lg object-cover outline -outline-offset-1 outline-black/10"
-        src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=formathttps://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&h=1000&q=90"
+        src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&h=1000&q=90"
       />
       <img
         className="float-right mb-4 ml-6 aspect-6/5 w-2/5 rounded-lg object-cover outline -outline-offset-1 outline-black/10"
@@ -133,15 +133,15 @@ Use the `clear-both` utility to position an element below all preceding floated 
 <article>
   <img class="float-left ..." src="/img/snow-mountains.jpg" />
   <img class="float-right ..." src="/img/green-mountains.jpg" />
-  <p class="clear-both ...">Maybe we can live without libraries...</p>
+  <p class="clear-both ...">也许我们可以不依赖图书馆...</p>
 </article>
 ```
 
 </Figure>
 
-### Using logical properties
+### 使用逻辑属性
 
-Use the `clear-start` and `clear-end` utilities, which use [logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts) to map to either the left or right side based on the text direction:
+使用 `clear-start` 和 `clear-end` 工具，这两者使用 [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts) 根据文本方向映射到左侧或右侧：
 
 <Figure>
 
@@ -179,9 +179,9 @@ Use the `clear-start` and `clear-end` utilities, which use [logical properties](
 
 </Figure>
 
-### Disabling clears
+### 禁用清除
 
-Use the `clear-none` utility to reset any clears that are applied to an element:
+使用 `clear-none` 工具重置应用于元素的任何清除：
 
 <Figure>
 
@@ -213,12 +213,12 @@ Use the `clear-none` utility to reset any clears that are applied to an element:
 <article>
   <img class="float-left ..." src="/img/green-mountains.jpg" />
   <img class="float-right ..." src="/img/snow-mountains.jpg" />
-  <p class="clear-none ...">Maybe we can live without libraries...</p>
+  <p class="clear-none ...">也许我们可以不依赖图书馆...</p>
 </article>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="p" property="clear" defaultClass="clear-left" featuredClass="clear-none" />

@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "table-layout";
-export const description = "Utilities for controlling the table layout algorithm.";
+export const title = "表格布局";
+export const description = "用于控制表格布局算法的工具类。";
 
 <ApiTable
   rows={[
@@ -13,11 +13,11 @@ export const description = "Utilities for controlling the table layout algorithm
   ]}
 />
 
-## Examples
+## 示例
 
-### Sizing columns automatically
+### 自动调整列宽
 
-Use the `table-auto` utility to automatically size table columns to fit the contents of its cells:
+使用 `table-auto` 工具类自动调整表格列的宽度，以适应其单元格的内容：
 
 <Figure>
 
@@ -28,13 +28,13 @@ Use the `table-auto` utility to automatically size table columns to fit the cont
         <thead>
           <tr>
             <th className="border-b border-gray-200 p-4 pt-0 pb-3 pl-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">
-              Song
+              歌曲
             </th>
             <th className="border-b border-gray-200 p-4 pt-0 pb-3 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">
-              Artist
+              艺术家
             </th>
             <th className="border-b border-gray-200 p-4 pt-0 pr-8 pb-3 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">
-              Year
+              年份
             </th>
           </tr>
         </thead>
@@ -83,9 +83,9 @@ Use the `table-auto` utility to automatically size table columns to fit the cont
 <table class="table-auto">
   <thead>
     <tr>
-      <th>Song</th>
-      <th>Artist</th>
-      <th>Year</th>
+      <th>歌曲</th>
+      <th>艺术家</th>
+      <th>年份</th>
     </tr>
   </thead>
   <tbody>
@@ -110,9 +110,9 @@ Use the `table-auto` utility to automatically size table columns to fit the cont
 
 </Figure>
 
-### Using fixed column widths
+### 使用固定列宽
 
-Use the `table-fixed` utility to ignore the content of the table cells and use fixed widths for each column:
+使用 `table-fixed` 工具类忽略表格单元格的内容，并为每列设置固定宽度：
 
 <Figure>
 
@@ -123,13 +123,13 @@ Use the `table-fixed` utility to ignore the content of the table cells and use f
         <thead>
           <tr>
             <th className="border-b border-gray-200 p-4 pt-0 pb-3 pl-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">
-              Song
+              歌曲
             </th>
             <th className="border-b border-gray-200 p-4 pt-0 pb-3 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">
-              Artist
+              艺术家
             </th>
             <th className="border-b border-gray-200 p-4 pt-0 pr-8 pb-3 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">
-              Year
+              年份
             </th>
           </tr>
         </thead>
@@ -178,9 +178,9 @@ Use the `table-fixed` utility to ignore the content of the table cells and use f
 <table class="table-fixed">
   <thead>
     <tr>
-      <th>Song</th>
-      <th>Artist</th>
-      <th>Year</th>
+      <th>歌曲</th>
+      <th>艺术家</th>
+      <th>年份</th>
     </tr>
   </thead>
   <tbody>
@@ -205,8 +205,8 @@ Use the `table-fixed` utility to ignore the content of the table cells and use f
 
 </Figure>
 
-You can manually set the widths for some columns and the rest of the available width will be divided evenly amongst columns without an explicit width. The widths set in the first row will set the column width for the whole table.
+您可以手动为某些列设置宽度，其余可用的宽度将均匀分配给没有显式宽度的列。第一行设置的宽度将为整个表格的列宽设置。
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="table-layout" defaultClass="table-none" featuredClass="table-fixed" />

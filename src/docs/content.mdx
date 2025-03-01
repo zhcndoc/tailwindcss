@@ -4,8 +4,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "content";
-export const description = "Utilities for controlling the content of the before and after pseudo-elements.";
+export const title = "内容";
+export const description = "控制伪元素前后内容的工具。";
 
 <ApiTable
   rows={[
@@ -15,18 +15,18 @@ export const description = "Utilities for controlling the content of the before 
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use the `content-[<value>]` syntax, along with the `before` and `after` variants, to set the contents of the `::before` and `::after` pseudo-elements:
+使用 `content-[<value>]` 语法，以及 `before` 和 `after` 变体，设置 `::before` 和 `::after` 伪元素的内容：
 
 <Figure>
 
 <Example>
   {
     <div className="mx-auto w-full max-w-md text-gray-500 dark:text-gray-400">
-      Higher resolution means more than just a better-quality image. With a Retina 6K display,{" "}
+      更高的分辨率意味着的不仅仅是图像质量的提升。使用 Retina 6K 显示器，{" "}
       <a
         href="https://www.apple.com/pro-display-xdr/"
         className="font-medium text-blue-600 after:text-sm after:font-bold after:content-['_↗'] dark:text-sky-400"
@@ -34,7 +34,7 @@ Use the `content-[<value>]` syntax, along with the `before` and `after` variants
       >
         Pro Display XDR
       </a>{" "}
-      gives you nearly 40 percent more screen real estate than a 5K display.
+      为您提供了比 5K 显示器多近 40% 的屏幕空间。
     </div>
   }
 </Example>
@@ -42,24 +42,23 @@ Use the `content-[<value>]` syntax, along with the `before` and `after` variants
 ```html
 <!-- [!code classes:after:content-['_↗']] -->
 <!-- prettier-ignore -->
-<p>Higher resolution means more than just a better-quality image. With a
-Retina 6K display, <a class="text-blue-600 after:content-['_↗']" href="...">
-Pro Display XDR</a> gives you nearly 40 percent more screen real estate than
-a 5K display.</p>
+<p>更高的分辨率意味着的不仅仅是图像质量的提升。使用
+Retina 6K 显示器，<a class="text-blue-600 after:content-['_↗']" href="...">
+Pro Display XDR</a> 为您提供了比 5K 显示器多近 40% 的屏幕空间。</p>
 ```
 
 </Figure>
 
-### Referencing an attribute value
+### 引用属性值
 
-Use the `content-[attr(<name>)]` syntax to reference a value stored in an attribute using the `attr()` CSS function:
+使用 `content-[attr(<name>)]` 语法来引用使用 `attr()` CSS 函数存储在属性中的值：
 
 <Figure>
 
 <Example>
   {
     <p
-      before="Hello World"
+      before="你好，世界"
       className="text-center font-semibold text-gray-900 before:content-[attr(before)] dark:text-gray-200"
     />
   }
@@ -67,52 +66,52 @@ Use the `content-[attr(<name>)]` syntax to reference a value stored in an attrib
 
 ```html
 <!-- [!code classes:before:content-[attr(before)]] -->
-<p before="Hello World" class="before:content-[attr(before)] ...">
+<p before="你好，世界" class="before:content-[attr(before)] ...">
   <!-- ... -->
 </p>
 ```
 
 </Figure>
 
-### Using spaces and underscores
+### 使用空格和下划线
 
-Since whitespace denotes the end of a class in HTML, replace any spaces in an arbitrary value with an underscore:
+由于空格在 HTML 中表示类的结束，因此将任意值中的任何空格替换为下划线：
 
 <Figure>
 
 <Example>
-  {<p className="text-center font-semibold text-gray-900 before:content-['Hello_World'] dark:text-gray-200" />}
+  {<p className="text-center font-semibold text-gray-900 before:content-['你好_世界'] dark:text-gray-200" />}
 </Example>
 
 ```html
-<!-- [!code classes:before:content-['Hello_World']] -->
-<p class="before:content-['Hello_World'] ...">
+<!-- [!code classes:before:content-['你好_世界']] -->
+<p class="before:content-['你好_世界'] ...">
   <!-- ... -->
 </p>
 ```
 
 </Figure>
 
-If you need to include an actual underscore, you can do this by escaping it with a backslash:
+如果您需要包含实际的下划线，可以通过用反斜杠转义来实现这一点：
 
 <Figure>
 
 <Example>
-  {<p className="text-center font-semibold text-gray-900 before:content-['Hello\_World'] dark:text-gray-200" />}
+  {<p className="text-center font-semibold text-gray-900 before:content-['你好\_世界'] dark:text-gray-200" />}
 </Example>
 
 ```html
-<!-- [!code classes:before:content-['Hello\_World']] -->
-<p class="before:content-['Hello\_World']">
+<!-- [!code classes:before:content-['你好\_世界']] -->
+<p class="before:content-['你好\_世界']">
   <!-- ... -->
 </p>
 ```
 
 </Figure>
 
-### Using a CSS variable
+### 使用 CSS 变量
 
-Use the <code>content-{'(<custom-property>)'}</code> syntax to control the contents of the `::before` and `::after` pseudo-elements using a CSS variable:
+使用 <code>content-{'(<custom-property>)'}</code> 语法，通过 CSS 变量控制 `::before` 和 `::after` 伪元素的内容：
 
 ```html
 <!-- [!code classes:content-(--my-content)] -->
@@ -121,13 +120,13 @@ Use the <code>content-{'(<custom-property>)'}</code> syntax to control the conte
 </p>
 ```
 
-This is just a shorthand for <code>content-{'[var(<custom-property>)]'}</code> that adds the `var()` function for you automatically.
+这只是 <code>content-{'[var(<custom-property>)]'}</code> 的缩写，自动为您添加 `var()` 函数。
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="p"
   property="content"
-  defaultClass="before:content-['Mobile']"
-  featuredClass="before:content-['Desktop']"
+  defaultClass="before:content-['移动']"
+  featuredClass="before:content-['桌面']"
 />

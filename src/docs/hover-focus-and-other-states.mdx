@@ -5,20 +5,20 @@ import { Figure } from "@/components/figure.tsx";
 import { Iframe } from "@/components/iframe.tsx";
 import { TipGood, TipBad, TipInfo } from "@/components/tips";
 
-export const title = "Hover, focus, and other states";
-export const description = "Using utilities to style elements on hover, focus, and more.";
+export const title = "悬停、聚焦及其他状态";
+export const description = "使用工具类为悬停、聚焦等状态的元素进行样式设置。";
 
-Every utility class in Tailwind can be applied _conditionally_ by adding a variant to the beginning of the class name that describes the condition you want to target.
+Tailwind 中的每个工具类都可以通过在类名开头添加描述目标条件的变体来进行 _条件_ 应用。
 
-For example, to apply the `bg-sky-700` class on hover, use the `hover:bg-sky-700` class:
+例如，为了在悬停时应用 `bg-sky-700` 类，可以使用 `hover:bg-sky-700` 类：
 
-<Figure hint="Hover over this button to see the background color change">
+<Figure hint="悬停在此按钮上以查看背景颜色变化">
 
 <Example>
   {
     <div className="grid place-items-center">
       <button className="rounded-full bg-sky-500 px-5 py-2 text-sm leading-5 font-semibold text-white hover:bg-sky-700">
-        Save changes
+        保存更改
       </button>
     </div>
   }
@@ -26,17 +26,17 @@ For example, to apply the `bg-sky-700` class on hover, use the `hover:bg-sky-700
 
 ```html
 <!-- [!code classes:hover:bg-sky-700] -->
-<button class="bg-sky-500 hover:bg-sky-700 ...">Save changes</button>
+<button class="bg-sky-500 hover:bg-sky-700 ...">保存更改</button>
 ```
 
 </Figure>
 
 <details className="mb-10 rounded-xl border border-gray-200 px-6 py-3 prose open:pb-5 dark:prose-dark dark:border-gray-800">
-<summary className="font-medium cursor-default select-none text-gray-900 dark:text-gray-200">How does this compare to traditional CSS?</summary>
+<summary className="font-medium cursor-default select-none text-gray-900 dark:text-gray-200">这与传统 CSS 有什么不同？</summary>
 
-When writing CSS the traditional way, a single class name would do different things based on the current state:
+在传统书写 CSS 时，单个类名会根据当前状态应用不同的样式：
 
-<TipBad>{<>Traditionally the same class name applies different styles on hover</>}</TipBad>
+<TipBad>{<>传统上，使用同一类名在悬停时应用不同的样式</>}</TipBad>
 
 ```css
 .btn-primary {
@@ -48,9 +48,9 @@ When writing CSS the traditional way, a single class name would do different thi
 }
 ```
 
-In Tailwind, rather than adding the styles for a hover state to an existing class, you add another class to the element that _only_ does something on hover:
+在 Tailwind 中，而不是将悬停状态的样式添加到现有类中，而是向元素添加另一个类，_仅_ 在悬停时执行某些操作：
 
-<TipGood>{<>In Tailwind, separate classes are used for the default state and the hover state</>}</TipGood>
+<TipGood>{<>在 Tailwind 中，默认状态和悬停状态使用不同的类</>}</TipGood>
 
 ```css
 .bg-sky-500 {
@@ -62,36 +62,36 @@ In Tailwind, rather than adding the styles for a hover state to an existing clas
 }
 ```
 
-Notice how `hover:bg-sky-700` _only_ defines styles for the `:hover` state? It does nothing by default, but as soon as you hover over an element with that class, the background color will change to `sky-700`.
+注意 `hover:bg-sky-700` _仅_ 定义了 `:hover` 状态的样式？它默认不做任何事情，但一旦您悬停在具有该类的元素上，背景颜色将会变为 `sky-700`。
 
-This is what we mean when we say a utility class can be applied _conditionally_ — by using variants you can control exactly how your design behaves in different states, without ever leaving your HTML.
+这就是我们所说的工具类可以 _条件_ 应用的意思——通过使用变体，您可以精确控制设计在不同状态下的行为，而无需离开 HTML。
 
 </details>
 
-Tailwind includes variants for just about everything you'll ever need, including:
+Tailwind 包含了几乎所有您可能需要的变体，包括：
 
-- [Pseudo-classes](#pseudo-classes), like `:hover`, `:focus`, `:first-child`, and `:required`
-- [Pseudo-elements](#pseudo-elements), like `::before`, `::after`, `::placeholder`, and `::selection`
-- [Media and feature queries](#media-and-feature-queries), like responsive breakpoints, dark mode, and `prefers-reduced-motion`
-- [Attribute selectors](#attribute-selectors), like `[dir="rtl"]` and `[open]`
-- [Child selectors](#child-selectors), like `& > *` and `& *`
+- [伪类](#pseudo-classes)，如 `:hover`、`:focus`、`:first-child` 和 `:required`
+- [伪元素](#pseudo-elements)，如 `::before`、`::after`、`::placeholder` 和 `::selection`
+- [媒体和特性查询](#media-and-feature-queries)，如响应式断点、暗模式和 `prefers-reduced-motion`
+- [属性选择器](#attribute-selectors)，如 `[dir="rtl"]` 和 `[open]`
+- [子选择器](#child-selectors)，如 `& > *` 和 `& *`
 
-These variants can even be stacked to target more specific situations, for example changing the background color in dark mode, at the medium breakpoint, on hover:
+这些变体甚至可以叠加使用，以应对更特定的情况，例如在暗模式下、在中等断点下、在悬停时更改背景颜色：
 
 ```html
 <!-- [!code classes:dark:md:hover:bg-fuchsia-600] -->
-<button class="dark:md:hover:bg-fuchsia-600 ...">Save changes</button>
+<button class="dark:md:hover:bg-fuchsia-600 ...">保存更改</button>
 ```
 
-In this guide you'll learn about every variant available in the framework, how to use them with your own custom classes, and even how to create your own.
+在本指南中，您将了解框架中可用的每一个变体、如何将它们与您自己的自定义类一起使用，甚至如何创建自己的变体。
 
-## Pseudo-classes
+## 伪类
 
-### :hover, :focus, and :active
+### :hover、:focus 和 :active
 
-Style elements on hover, focus, and active using the `hover`, `focus`, and `active` variants:
+使用 `hover`、`focus` 和 `active` 变体在悬停、聚焦和活动状态下为元素设置样式：
 
-<Figure hint="Try interacting with this button to see the hover, focus, and active states">
+<Figure hint="尝试与此按钮互动以查看悬停、聚焦和活动状态">
 
 <Example>
   {
@@ -100,7 +100,7 @@ Style elements on hover, focus, and active using the `hover`, `focus`, and `acti
         type="button"
         className="rounded-full bg-violet-500 px-5 py-2 text-sm leading-5 font-semibold text-white hover:bg-violet-600 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700"
       >
-        Save changes
+        保存更改
       </button>
     </div>
   }
@@ -110,19 +110,19 @@ Style elements on hover, focus, and active using the `hover`, `focus`, and `acti
 <!-- [!code classes:hover:bg-violet-600,focus:outline-2,focus:outline-offset-2,focus:outline-violet-500,active:bg-violet-700] -->
 <!-- prettier-ignore -->
 <button class="bg-violet-500 hover:bg-violet-600 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700 ...">
-  Save changes
+  保存更改
 </button>
 ```
 
 </Figure>
 
-Tailwind also includes variants for other interactive states like `:visited`, `:focus-within`, `:focus-visible`, and more.
+Tailwind 也包括其他交互状态的变体，如 `:visited`、`:focus-within`、`:focus-visible` 等等。
 
-See the [pseudo-class reference](#pseudo-class-reference) for a complete list of available pseudo-class variants.
+请参见 [伪类参考](#pseudo-class-reference) 获取可用的伪类变体的完整列表。
 
-### :first, :last, :odd, and :even
+### :first、:last、:odd 和 :even
 
-Style an element when it is the first-child or last-child using the `first` and `last` variants:
+使用 `first` 和 `last` 变体为元素设置样式，当它是第一个子元素或最后一个子元素时：
 
 <Figure>
 
@@ -199,7 +199,7 @@ Style an element when it is the first-child or last-child using the `first` and 
 
 </Figure>
 
-You can also style an element when it's an odd or even child using the `odd` and `even` variants:
+您也可以使用 `odd` 和 `even` 变体为奇数和偶数子元素设置样式：
 
 <Figure>
 
@@ -309,7 +309,7 @@ You can also style an element when it's an odd or even child using the `odd` and
 
 </Figure>
 
-Use the `nth-*` and `nth-last-*` variants to style children based on their position in the list:
+使用 `nth-*` 和 `nth-last-*` 变体可以根据其在列表中的位置为子元素设置样式：
 
 ```html
 <!-- [!code classes:nth-3:underline,nth-last-5:underline,nth-of-type-4:underline,nth-last-of-type-6:underline] -->
@@ -327,17 +327,17 @@ Use the `nth-*` and `nth-last-*` variants to style children based on their posit
 </div>
 ```
 
-You can pass any number you want to these by default, and use arbitrary values for more complex expressions like `nth-[2n+1_of_li]`.
+您可以默认传递任何数字，并使用任意值来进行更复杂的表达式，例如 `nth-[2n+1_of_li]`。
 
-Tailwind also includes variants for other structural pseudo-classes like `:only-child`, `:first-of-type`, `:empty`, and more.
+Tailwind 还包括其他结构伪类的变体，如 `:only-child`、`:first-of-type`、`:empty` 等等。
 
-See the [pseudo-class reference](#pseudo-class-reference) for a complete list of available pseudo-class variants.
+请参见 [伪类参考](#pseudo-class-reference) 获取可用的伪类变体的完整列表。
 
-### :required and :disabled
+### :required 和 :disabled
 
-Style form elements in different states using variants like `required`, `invalid`, and `disabled`:
+使用 `required`、`invalid` 和 `disabled` 等变体为表单元素在不同状态下设置样式：
 
-<Figure hint="Try making the email address valid to see the styles change">
+<Figure hint="尝试使电子邮件地址有效以查看样式变化">
 
 <Example className="py-0">
   {
@@ -410,15 +410,15 @@ Style form elements in different states using variants like `required`, `invalid
 
 </Figure>
 
-Using variants for this sort of thing can reduce the amount of conditional logic in your templates, letting you use the same set of classes regardless of what state an input is in and letting the browser apply the right styles for you.
+使用这种类型的变体可以减少模板中的条件逻辑，从而让您可以无论输入处于何种状态都使用同一组类，并让浏览器为您应用正确的样式。
 
-Tailwind also includes variants for other form states like `:read-only`, `:indeterminate`, `:checked`, and more.
+Tailwind 还包括其他表单状态的变体，如 `:read-only`、`:indeterminate`、`:checked` 等等。
 
-See the [pseudo-class reference](#pseudo-class-reference) for a complete list of available pseudo-class variants.
+请参见 [伪类参考](#pseudo-class-reference) 获取可用的伪类变体的完整列表。
 
 ### :has()
 
-Use the `has-*` variant to style an element based on the state or content of its descendants:
+使用 `has-*` 变体根据后代的状态或内容为元素设置样式：
 
 <Figure>
 
@@ -502,11 +502,11 @@ Use the `has-*` variant to style an element based on the state or content of its
 
 </Figure>
 
-You can use `has-*` with a pseudo-class, like `has-[:focus]`, to style an element based on the state of its descendants. You can also use element selectors, like `has-[img]` or `has-[a]`, to style an element based on the content of its descendants.
+您可以将 `has-*` 与伪类结合使用，例如 `has-[:focus]`，根据后代的状态为元素设置样式。您也可以使用元素选择器，例如 `has-[img]` 或 `has-[a]`，根据后代的内容为元素设置样式。
 
-#### Styling based on the descendants of a group
+#### 基于父代的后代进行样式设置
 
-If you need to style an element based on the descendants of a parent element, you can mark the parent with the `group` class and use the `group-has-*` variant to style the target element:
+如果您需要根据父元素的后代为元素设置样式，可以使用 `group` 类标记父元素，并使用 `group-has-*` 变体为目标元素设置样式：
 
 <Figure>
 
@@ -616,9 +616,9 @@ If you need to style an element based on the descendants of a parent element, yo
 
 </Figure>
 
-#### Styling based on the descendants of a peer
+#### 基于兄弟的后代进行样式设置
 
-If you need to style an element based on the descendants of a sibling element, you can mark the sibling with the `peer` class and use the `peer-has-*` variant to style the target element:
+如果您需要根据一个兄弟元素的后代为元素设置样式，可以使用 `peer` 类标记该兄弟，并使用 `peer-has-*` 变体为目标元素设置样式：
 
 <Figure>
 
@@ -696,11 +696,11 @@ If you need to style an element based on the descendants of a sibling element, y
 
 ### :not()
 
-Use the `not-` variant to style an element when a condition is not true.
+使用 `not-` 变体在条件不成立时为元素设置样式。
 
-It's particularly powerful when combined with other pseudo-class variants, for example combining `not-focus:` with `hover:` to only apply hover styles when an element is not focused:
+当与其他伪类变体结合使用时，它特别强大，例如将 `not-focus:` 与 `hover:` 结合使用，仅在元素未获得焦点时应用悬停样式：
 
-<Figure hint="Try focusing on the button and then hovering over it">
+<Figure hint="尝试聚焦于按钮，然后悬停在其上">
 
 <Example>
   {
@@ -725,7 +725,7 @@ It's particularly powerful when combined with other pseudo-class variants, for e
 
 </Figure>
 
-You can also combine the `not-` variant with media query variants like `forced-colors` or `supports` to only style an element when something about the user's environment is not true:
+您还可以将 `not-` 变体与媒体查询变体（如 `forced-colors` 或 `supports`）结合使用，仅在用户环境中的某些条件不成立时为元素设定样式：
 
 ```html
 <!-- [!code classes:not-supports-[display:grid]:flex] -->
@@ -734,11 +734,11 @@ You can also combine the `not-` variant with media query variants like `forced-c
 </div>
 ```
 
-### Styling based on parent state
+### 基于父状态进行样式设置
 
-When you need to style an element based on the state of some _parent_ element, mark the parent with the `group` class, and use `group-*` variants like `group-hover` to style the target element:
+当您需要根据某个 _父_ 元素的状态为元素设置样式时，将父元素标记为 `group` 类，并使用 `group-*` 变体（如 `group-hover`）为目标元素设置样式：
 
-<Figure hint="Hover over the card to see both text elements change color">
+<Figure hint="悬停在卡片上以查看两种文本元素的颜色变化">
 
 <Example>
   {
@@ -789,11 +789,11 @@ When you need to style an element based on the state of some _parent_ element, m
 
 </Figure>
 
-This pattern works with every pseudo-class variant, for example `group-focus`, `group-active`, or even `group-odd`.
+这种模式适用于每种伪类变体，例如 `group-focus`、`group-active` 或甚至 `group-odd`。
 
-#### Differentiating nested groups
+#### 区分嵌套组
 
-When nesting groups, you can style something based on the state of a _specific_ parent group by giving that parent a unique group name using a `group/{name}` class, and including that name in variants using classes like `group-hover/{name}`:
+在嵌套组时，您可以通过使用 `group/{name}` 类给特定父组独特的组名，从而根据 _特定_ 父组的状态进行样式设置，并在变体中使用像 `group-hover/{name}` 的类中包括该名称：
 
 <Figure>
 
@@ -933,11 +933,11 @@ When nesting groups, you can style something based on the state of a _specific_ 
 
 </Figure>
 
-Groups can be named however you like and don’t need to be configured in any way — just name your groups directly in your markup and Tailwind will automatically generate the necessary CSS.
+组的命名方式可以是您喜欢的，并且不需要以任何方式进行配置——只需直接在标记中命名您的组，Tailwind 会自动生成必要的 CSS。
 
-#### Arbitrary groups
+#### 任意组
 
-You can create one-off `group-*` variants on the fly by providing your own selector as an [arbitrary value](/docs/adding-custom-styles#using-arbitrary-values) between square brackets:
+您可以通过在方括号中提供自己的选择器作为 [任意值](/docs/adding-custom-styles#using-arbitrary-values) 动态创建一次性的 `group-*` 变体：
 
 <CodeExampleGroup
   filenames={["HTML", "Generated CSS"]}
@@ -947,7 +947,7 @@ You can create one-off `group-*` variants on the fly by providing your own selec
       <!-- [!code classes:group-[.is-published]:block] -->
       <div class="group is-published">
         <div class="hidden group-[.is-published]:block">
-          Published
+          已发布
         </div>
       </div>
     `}
@@ -963,7 +963,7 @@ You can create one-off `group-*` variants on the fly by providing your own selec
   />
 </CodeExampleGroup>
 
-For more control, you can use the `&` character to mark where `.group` should end up in the final selector relative to the selector you are passing in:
+若需要更多控制，您可以使用 `&` 字符标记 `.group` 与您所传入选择器之间的最终选择器相对位置：
 
 <CodeExampleGroup
   filenames={["HTML", "Generated CSS"]}
@@ -989,9 +989,9 @@ For more control, you can use the `&` character to mark where `.group` should en
   />
 </CodeExampleGroup>
 
-#### Implicit groups
+#### 隐式组
 
-The `in-*` variant works similarly to `group` except you don't need to add `group` to the parent element:
+`in-*` 变体的工作方式与 `group` 类似，只是您不需要在父元素上添加 `group`：
 
 {/* prettier-ignore */}
 ```html
@@ -1007,13 +1007,13 @@ The `in-*` variant works similarly to `group` except you don't need to add `grou
 </div>
 ```
 
-The `in-*` variant responds to state changes in any parent, so if you want more fine-grained control you'll need to use `group` instead.
+`in-*` 变体响应于任何父元素的状态变化，因此，如果您需要更细粒度的控制，您需要使用 `group`。
 
-### Styling based on sibling state
+### 基于兄弟状态进行样式设置
 
-When you need to style an element based on the state of a _sibling_ element, mark the sibling with the `peer` class, and use `peer-*` variants like `peer-invalid` to style the target element:
+当您需要根据 _兄弟_ 元素的状态为元素设置样式时，可以通过将兄弟标记为 `peer` 类，并使用 `peer-*` 变体（如 `peer-invalid`）为目标元素设置样式：
 
-<Figure hint="Try making the email address valid to see the warning disappear">
+<Figure hint="尝试使电子邮件地址有效以查看警告消失">
 
 <Example className="py-0">
   {
@@ -1056,26 +1056,26 @@ When you need to style an element based on the state of a _sibling_ element, mar
 
 </Figure>
 
-This makes it possible to do all sorts of neat tricks, like [floating labels](https://www.youtube.com/watch?v=nJzKi6oIvBA) for example without any JS.
+这使得可以进行各种有趣的操作，例如 [浮动标签](https://www.youtube.com/watch?v=nJzKi6oIvBA) 而不需要任何 JS。
 
-This pattern works with every pseudo-class variant, for example `peer-focus`, `peer-required`, and `peer-disabled`.
+这种模式适用于每种伪类变体，例如 `peer-focus`、`peer-required` 和 `peer-disabled`。
 
-It's important to note that the `peer` marker can only be used on _previous_ siblings because of how the [subsequent-sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Subsequent-sibling_combinator) works in CSS:
+重要的是要注意，因为 [后续兄弟组合器](https://developer.mozilla.org/en-US/docs/Web/CSS/Subsequent-sibling_combinator) 的工作方式，`peer` 标记只能用于 _先前_ 的兄弟：
 
-<TipBad>{<>Won't work, only previous siblings can be marked as peers</>}</TipBad>
+<TipBad>{<>不适用，只有前面的兄弟可以标记为同伴</>}</TipBad>
 
 ```html
 <!-- [!code classes:peer-invalid:text-red-500] -->
 <!-- [!code classes:peer] -->
 <label>
-  <span class="peer-invalid:text-red-500 ...">Email</span>
+  <span class="peer-invalid:text-red-500 ...">电子邮件</span>
   <input type="email" class="peer ..." />
 </label>
 ```
 
-#### Differentiating peers
+#### 区分同伴
 
-When using multiple peers, you can style something on the state of a _specific_ peer by giving that peer a unique name using a `peer/{name}` class, and including that name in variants using classes like `peer-checked/{name}`:
+使用多个同伴时，您可以通过给特定同伴一个唯一名称，使用 `peer/{name}` 类根据 _特定_ 同伴的状态进行样式设置并在变体中包括该名称，如 `peer-checked/{name}` 的类：
 
 <Figure>
 
@@ -1138,11 +1138,11 @@ When using multiple peers, you can style something on the state of a _specific_ 
 
 </Figure>
 
-Peers can be named however you like and don’t need to be configured in any way — just name your peers directly in your markup and Tailwind will automatically generate the necessary CSS.
+同伴可以随您喜欢的方式命名，并且不需要以任何方式进行配置——只需直接在标记中命名您的同伴，Tailwind 就会自动生成必要的 CSS。
 
-#### Arbitrary peers
+#### 任意同伴
 
-You can create one-off `peer-*` variants on the fly by providing your own selector as an [arbitrary value](/docs/adding-custom-styles#using-arbitrary-values) between square brackets:
+您可以通过在方括号中提供自己的选择器作为 [任意值](/docs/adding-custom-styles#using-arbitrary-values) 动态创建一次性的 `peer-*` 变体：
 
 <CodeExampleGroup
   filenames={["HTML", "Generated CSS"]}
@@ -1171,7 +1171,7 @@ You can create one-off `peer-*` variants on the fly by providing your own select
   />
 </CodeExampleGroup>
 
-For more control, you can use the `&` character to mark where `.peer` should end up in the final selector relative to the selector you are passing in:
+若需要更多控制，可以使用 `&` 字符标记 `.peer` 在您传入选择器中的最终选择器位置：
 
 <CodeExampleGroup
   filenames={["HTML", "Generated CSS"]}
@@ -1200,11 +1200,11 @@ For more control, you can use the `&` character to mark where `.peer` should end
   />
 </CodeExampleGroup>
 
-## Pseudo-elements
+## 伪元素
 
-### ::before and ::after
+### ::before 和 ::after
 
-Style the `::before` and `::after` pseudo-elements using the `before` and `after` variants:
+使用 `before` 和 `after` 变体为 `::before` 和 `::after` 伪元素设置样式：
 
 <Figure>
 
@@ -1214,7 +1214,7 @@ Style the `::before` and `::after` pseudo-elements using the `before` and `after
       <form>
         <label className="block">
           <span className="block text-sm font-medium text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*'] dark:text-white">
-            Email
+            电子邮件
           </span>
           <input
             type="email"
@@ -1234,14 +1234,14 @@ Style the `::before` and `::after` pseudo-elements using the `before` and `after
 <!-- [!code classes:after:ml-0.5] -->
 <!-- [!code classes:after:text-red-500] -->
 <label>
-  <span class="text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*'] ...">Email</span>
+  <span class="text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*'] ...">电子邮件</span>
   <input type="email" name="email" class="..." placeholder="you@example.com" />
 </label>
 ```
 
 </Figure>
 
-When using these variants, Tailwind will automatically add `content: ''` by default so you don't have to specify it unless you want a different value:
+使用这些变体时，Tailwind 将默认自动添加 `content: ''`，因此除非您想要其他值，否则您不必指定：
 
 <Figure>
 
@@ -1250,11 +1250,11 @@ When using these variants, Tailwind will automatically add `content: ''` by defa
     <div className="px-6">
       <div className="mx-auto max-w-lg border-x border-x-gray-200 px-6 py-8 dark:border-x-gray-800 dark:bg-gray-950/10">
         <blockquote className="text-center text-2xl font-semibold text-gray-900 italic dark:text-white">
-          When you look{" "}
+          当你看起来{" "}
           <span className="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-pink-500">
-            <span className="relative text-white dark:text-gray-950">annoyed</span>
+            <span className="relative text-white dark:text-gray-950">烦恼</span>
           </span>{" "}
-          all the time, people think that you're busy.
+          时，人们会觉得你忙得不可开交。
         </blockquote>
       </div>
     </div>
@@ -1268,37 +1268,37 @@ When using these variants, Tailwind will automatically add `content: ''` by defa
 <!-- [!code classes:before:-skew-y-3] -->
 <!-- [!code classes:before:bg-pink-500] -->
 <blockquote class="text-center text-2xl font-semibold text-gray-900 italic dark:text-white">
-  When you look
+  当你看起来
   <span class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-pink-500">
-    <span class="relative text-white dark:text-gray-950">annoyed</span>
+    <span class="relative text-white dark:text-gray-950">烦恼</span>
   </span>
-  all the time, people think that you're busy.
+  时，人们会觉得你忙得不可开交。
 </blockquote>
 ```
 
 </Figure>
 
-It's worth noting that you don't really need `::before` and `::after` pseudo-elements for most things in Tailwind projects — it's usually simpler to just use a real HTML element.
+值得注意的是，在大多数 Tailwind 项目中，您实际上并不需要 `::before` 和 `::after` 伪元素——通常直接使用真实的 HTML 元素会更简单。
 
-For example, here's the same design from above but using a `<span>` instead of the `::before` pseudo-element, which is a little easier to read and is actually less code:
+例如，这里是上面相同设计的实现，但使用 `<span>` 而不是 `::before` 伪元素，这样会更容易理解并且代码量实际上更少：
 
 ```html
 <blockquote class="text-center text-2xl font-semibold text-gray-900 italic">
-  When you look
+  当你看起来
   <span class="relative">
     <!-- [!code highlight:2] -->
     <span class="absolute -inset-1 block -skew-y-3 bg-pink-500" aria-hidden="true"></span>
-    <span class="relative text-white">annoyed</span>
+    <span class="relative text-white">烦恼</span>
   </span>
-  all the time, people think that you're busy.
+  时，人们会觉得你忙得不可开交。
 </blockquote>
 ```
 
-Save `before` and `after` for situations where it's important that the content of the pseudo-element is not actually in the DOM and can't be selected by the user.
+将 `before` 和 `after` 保留用于那些内容重要到伪元素内容不实际上存在于 DOM 中并且无法被用户选择的情况。
 
 ### ::placeholder
 
-Style the placeholder text of any input or textarea using the `placeholder` variant:
+使用 `placeholder` 变体为任何输入或文本区域的占位符文本设置样式：
 
 <Figure>
 
@@ -1343,7 +1343,7 @@ Style the placeholder text of any input or textarea using the `placeholder` vari
 
 ### ::file
 
-Style the button in file inputs using the `file` variant:
+使用 `file` 变体为文件输入中的按钮设置样式：
 
 <Figure>
 
@@ -1384,7 +1384,7 @@ Style the button in file inputs using the `file` variant:
 
 ### ::marker
 
-Style the counters or bullets in lists using the `marker` variant:
+使用 `marker` 变体为列表中的计数器或项目符号设置样式：
 
 <Figure>
 
@@ -1414,13 +1414,13 @@ Style the counters or bullets in lists using the `marker` variant:
 
 </Figure>
 
-We've designed the `marker` variant to be inheritable, so although you can use it directly on an `<li>` element, you can also use it on a parent to avoid repeating yourself.
+我们设计的 `marker` 变体是可继承的，因此尽管您可以直接在 `<li>` 元素上使用它，但您还可以在父元素上使用它，以避免冗余的样式。
 
 ### ::selection
 
-Style the active text selection using the `selection` variant:
+使用 `selection` 变体为活动文本选择设置样式：
 
-<Figure hint="Try selecting some of this text with your mouse">
+<Figure hint="尝试用鼠标选择一些文本">
 
 <Example className="py-0">
   {
@@ -1450,9 +1450,9 @@ Style the active text selection using the `selection` variant:
 
 </Figure>
 
-We've designed the `selection` variant to be inheritable, so you can add it anywhere in the tree and it will be applied to all descendant elements.
+我们设计的 `selection` 变体是可继承的，因此您可以在树中的任何位置添加它，并且它将应用于所有后代元素。
 
-This makes it easy to set the selection color to match your brand across your entire site:
+这使得在整个站点上轻松设置选择颜色与品牌匹配：
 
 ```html
 <!-- [!code classes:selection:bg-pink-300] -->
@@ -1466,9 +1466,9 @@ This makes it easy to set the selection color to match your brand across your en
 </html>
 ```
 
-### ::first-line and ::first-letter
+### ::first-line 和 ::first-letter
 
-Style the first line in a block of content using the `first-line` variant, and the first letter using the `first-letter` variant:
+使用 `first-line` 变体为内容块的第一行设置样式，使用 `first-letter` 变体为第一字符设置样式：
 
 <Figure>
 
@@ -1518,7 +1518,7 @@ Style the first line in a block of content using the `first-line` variant, and t
 
 ### ::backdrop
 
-Style the backdrop of a [native `<dialog>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) using the `backdrop` variant:
+使用 `backdrop` 变体为 [原生 `<dialog>` 元素](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) 的背景设置样式：
 
 ```html
 <!-- [!code classes:backdrop:bg-gray-50] -->
@@ -1529,15 +1529,15 @@ Style the backdrop of a [native `<dialog>` element](https://developer.mozilla.or
 </dialog>
 ```
 
-If you're using native `<dialog>` elements in your project, you may also want to read about [styling open/closed states](/docs/hover-focus-and-other-states#openclosed-state) using the `open` variant.
+如果您在项目中使用原生 `<dialog>` 元素，您可能还想阅读关于 [样式开/关状态](/docs/hover-focus-and-other-states#openclosed-state) 的内容，使用 `open` 变体。
 
-## Media and feature queries
+## 媒体和特性查询
 
-### Responsive breakpoints
+### 响应式断点
 
-To style an element at a specific breakpoint, use responsive variants like `md` and `lg`.
+要为特定断点下的元素设置样式，可以使用响应式变体，如 `md` 和 `lg`。
 
-For example, this will render a 3-column grid on mobile, a 4-column grid on medium-width screens, and a 6-column grid on large-width screens:
+例如，这将在移动端渲染 3 列网格，在中等宽度的屏幕上呈现 4 列网格，在大宽度的屏幕上呈现 6 列网格：
 
 ```html
 <!-- [!code classes:md:grid-cols-4,lg:grid-cols-6] -->
@@ -1546,7 +1546,7 @@ For example, this will render a 3-column grid on mobile, a 4-column grid on medi
 </div>
 ```
 
-To style an element based on the width of a parent element instead of the viewport, use variants like `@md` and `@lg`:
+要基于父元素的宽度而不是视口来设置元素的样式，可以使用 `@md` 和 `@lg` 等变量：
 
 ```html
 <!-- [!code classes:@container,@md:flex-row] -->
@@ -1557,13 +1557,13 @@ To style an element based on the width of a parent element instead of the viewpo
 </div>
 ```
 
-Check out the [Responsive design](/docs/responsive-design) documentation for an in-depth look at how these features work.
+查看 [响应式设计](/docs/responsive-design) 文档以深入了解这些功能的工作原理。
 
 ### prefers-color-scheme
 
-The `prefers-color-scheme` media query tells you whether the user prefers a light theme or dark theme, and is usually configured at the operating system level.
+`prefers-color-scheme` 媒体查询告诉您用户是否偏好亮色主题或暗色主题，通常在操作系统级别进行配置。
 
-Use utilities with no variant to target light mode, and use the `dark` variant to provide overrides for dark mode:
+使用不带变体的工具类来定位亮色模式，并使用 `dark` 变体为暗色模式提供覆盖：
 
 <Figure>
 
@@ -1647,15 +1647,15 @@ Use utilities with no variant to target light mode, and use the `dark` variant t
 
 </Figure>
 
-Check out the [Dark Mode](/docs/dark-mode) documentation for an in-depth look at how this feature works.
+查看 [暗模式](/docs/dark-mode) 文档以深入了解此功能的工作原理。
 
 ### prefers-reduced-motion
 
-The `prefers-reduced-motion` media query tells you if the user has requested that you minimize non-essential motion.
+`prefers-reduced-motion` 媒体查询告诉您用户是否请求最小化非必要的运动。
 
-Use the `motion-reduce` variant to conditionally add styles when the user has requested reduced motion:
+使用 `motion-reduce` 变体在用户请求减少运动时条件性地添加样式：
 
-<Figure hint="Try emulating &#96;prefers-reduced-motion: reduce&#96; in your developer tools to hide the spinner">
+<Figure hint="尝试在开发工具中模拟 &#96;prefers-reduced-motion: reduce&#96; 来隐藏旋转器">
 
 <Example>
   {
@@ -1693,29 +1693,29 @@ Use the `motion-reduce` variant to conditionally add styles when the user has re
 
 </Figure>
 
-Tailwind also includes a `motion-safe` variant that only adds styles when the user has _not_ requested reduced motion. This can be useful when using the `motion-reduce` helper would mean having to "undo" a lot of styles:
+Tailwind 还包括一个 `motion-safe` 变体，仅在用户 _没有_ 请求减少运动时添加样式。当使用 `motion-reduce` 帮助程序意味着必须“撤消”很多样式时，这可能非常有用：
 
 ```html
 <!-- [!code classes:motion-reduce:hover:translate-y-0] -->
 <!-- [!code classes:motion-reduce:transition-none] -->
 <!-- [!code classes:motion-safe:hover:-translate-x-0.5] -->
 <!-- [!code classes:motion-safe:transition] -->
-<!-- Using `motion-reduce` can mean lots of "undoing" styles -->
+<!-- 使用 `motion-reduce` 可能意味着撤销很多样式 -->
 <button class="transition hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0 ...">
-  Save changes
+  保存更改
 </button>
 
-<!-- Using `motion-safe` is less code in these situations -->
-<button class="motion-safe:transition motion-safe:hover:-translate-x-0.5 ...">Save changes</button>
+<!-- 在这些情况下使用 `motion-safe` 则代码更少 -->
+<button class="motion-safe:transition motion-safe:hover:-translate-x-0.5 ...">保存更改</button>
 ```
 
 ### prefers-contrast
 
-The `prefers-contrast` media query tells you if the user has requested more or less contrast.
+`prefers-contrast` 媒体查询告诉您用户是否请求更高或更低的对比度。
 
-Use the `contrast-more` variant to conditionally add styles when the user has requested more contrast:
+使用 `contrast-more` 变体在用户请求更高对比度时条件性地添加样式：
 
-<Figure hint="Try emulating &#96;prefers-contrast: more&#96; in your developer tools to see the changes">
+<Figure hint="尝试在开发工具中模拟 &#96;prefers-contrast: more&#96; 来查看变化">
 
 <Example className="py-0">
   {
@@ -1756,15 +1756,15 @@ Use the `contrast-more` variant to conditionally add styles when the user has re
 
 </Figure>
 
-Tailwind also includes a `contrast-less` variant you can use to conditionally add styles when the user has requested less contrast.
+Tailwind 还包括一个 `contrast-less` 变体，您可以在用户请求较少对比度时使用该变体条件性地添加样式。
 
 ### forced-colors
 
-The `forced-colors` media query indicates if the user is using a forced colors mode. These modes override your site's colors with a user defined palette for text, backgrounds, links and buttons.
+`forced-colors` 媒体查询指示用户是否在使用强制颜色模式。这些模式会用用户定义的文本、背景、链接和按钮调色板覆盖您站点的颜色。
 
-Use the `forced-colors` variant to conditionally add styles when the user has enabled a forced color mode:
+使用 `forced-colors` 变体在用户启用强制色彩模式时条件性地添加样式：
 
-<Figure hint="Try emulating &#96;forced-colors: active&#96; in your developer tools to see the changes">
+<Figure hint="尝试在开发工具中模拟 &#96;forced-colors: active&#96; 来查看变化">
 
 <Example className="py-0">
   {
@@ -1846,7 +1846,7 @@ Use the `forced-colors` variant to conditionally add styles when the user has en
 
 </Figure>
 
-Use the `not-forced-colors` variant to apply styles based when the user is _not_ using a forced colors mode:
+使用 `not-forced-colors` 变体在用户 _不_ 使用强制颜色模式时应用样式：
 
 ```html
 <!-- [!code classes:not-forced-colors:appearance-none] -->
@@ -1855,11 +1855,11 @@ Use the `not-forced-colors` variant to apply styles based when the user is _not_
 </div>
 ```
 
-Tailwind also includes a [forced color adjust](/docs/forced-color-adjust) utilities to opt in and out of forced colors.
+Tailwind 还提供了 [forced color adjust](/docs/forced-color-adjust) 工具，允许您选择加入或退出强制颜色。
 
 ### orientation
 
-Use the `portrait` and `landscape` variants to conditionally add styles when the viewport is in a specific orientation:
+使用 `portrait` 和 `landscape` 变体在视口处于特定方向时条件性地添加样式：
 
 ```html
 <!-- [!code classes:portrait:hidden,landscape:hidden] -->
@@ -1868,31 +1868,31 @@ Use the `portrait` and `landscape` variants to conditionally add styles when the
     <!-- ... -->
   </div>
   <div class="landscape:hidden">
-    <p>This experience is designed to be viewed in landscape. Please rotate your device to view the site.</p>
+    <p>此体验设计为横屏查看。请旋转您的设备以查看网站。</p>
   </div>
 </div>
 ```
 
 ### print
 
-Use the `print` variant to conditionally add styles that only apply when the document is being printed:
+使用 `print` 变体在文档被打印时条件性地添加样式：
 
 ```html
 <!-- [!code classes:print:hidden] -->
 <!-- [!code classes:print:block] -->
 <div>
   <article class="print:hidden">
-    <h1>My Secret Pizza Recipe</h1>
-    <p>This recipe is a secret, and must not be shared with anyone</p>
+    <h1>我的秘密披萨食谱</h1>
+    <p>这个食谱是秘密，不能与任何人分享</p>
     <!-- ... -->
   </article>
-  <div class="hidden print:block">Are you seriously trying to print this? It's secret!</div>
+  <div class="hidden print:block">你真的想打印这东西吗？它是秘密！</div>
 </div>
 ```
 
 ### @supports
 
-Use the `supports-[...]` variant to style things based on whether a certain feature is supported in the user's browser:
+使用 `supports-[...]` 变体基于用户的浏览器是否支持某一特性来为元素设置样式：
 
 ```html
 <!-- [!code classes:supports-[display:grid]:grid] -->
@@ -1901,9 +1901,9 @@ Use the `supports-[...]` variant to style things based on whether a certain feat
 </div>
 ```
 
-Under the hood the `supports-[...]` variant generates [`@supports rules`](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports) and takes anything you’d use with `@supports (...)` between the square brackets, like a property/value pair, and even expressions using `and` and `or`.
+在内部，`supports-[...]` 变体生成 [`@supports 规则`](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports) 并将您可以与 `@supports (...)` 使用的内容放在方括号之间，例如属性/值对，甚至使用 `and` 和 `or` 的表达式。
 
-For terseness, if you only need to check if a property is supported (and not a specific value), you can just specify the property name:
+为了简洁，如果您只需要检查属性是否被支持（而不是特定值），只需指定属性名称即可：
 
 ```html
 <!-- [!code classes:supports-backdrop-filter:bg-black/25,supports-backdrop-filter:backdrop-blur] -->
@@ -1912,7 +1912,7 @@ For terseness, if you only need to check if a property is supported (and not a s
 </div>
 ```
 
-Use the `not-supports-[...]` variant to style things based on whether a certain feature is not supported in the user's browser:
+使用 `not-supports-[...]` 变体根据用户的浏览器是否不支持某一特性为元素设置样式：
 
 ```html
 <!-- [!code classes:not-supports-[display:grid]:flex] -->
@@ -1921,7 +1921,7 @@ Use the `not-supports-[...]` variant to style things based on whether a certain 
 </div>
 ```
 
-You can configure shortcuts for common `@supports` rules you're using in your project by creating a new variant in the `supports-*` namespace:
+您可以通过在 `supports-*` 命名空间中创建新变体来为项目中使用的常见 `@supports` 规则配置快捷方式：
 
 ```css
 @custom-variant supports-grid {
@@ -1931,7 +1931,7 @@ You can configure shortcuts for common `@supports` rules you're using in your pr
 }
 ```
 
-You can then use these custom `supports-*` variants in your project:
+然后，您可以在项目中使用这些自定义 `supports-*` 变体：
 
 ```html
 <!-- [!code classes:supports-grid:grid] -->
@@ -1942,7 +1942,7 @@ You can then use these custom `supports-*` variants in your project:
 
 ### @starting-style
 
-Use the `starting` variant to set the appearance of an element when it is first rendered in the DOM, or transitions from `display: none` to visible:
+使用 `starting` 变体设置元素在首次渲染到 DOM 时或从 `display: none` 过渡到可见时的外观：
 
 <Figure>
 
@@ -1993,7 +1993,7 @@ Use the `starting` variant to set the appearance of an element when it is first 
           <div className="mt-5">
             <button
               type="button"
-              className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2"
+              className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2"
             >
               Install
             </button>
@@ -2016,13 +2016,13 @@ Use the `starting` variant to set the appearance of an element when it is first 
 
 </Figure>
 
-## Attribute selectors
+## 属性选择器
 
-### ARIA states
+### ARIA 状态
 
-Use the `aria-*` variant to conditionally style things based on [ARIA attributes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes).
+使用 `aria-*` 变体根据 [ARIA 属性](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes) 条件性地设置样式。
 
-For example, to apply the `bg-sky-700` class when the `aria-checked` attribute is set to `true`, use the `aria-checked:bg-sky-700` class:
+例如，要在 `aria-checked` 属性设置为 `true` 时应用 `bg-sky-700` 类，请使用 `aria-checked:bg-sky-700` 类：
 
 ```html
 <!-- [!code classes:aria-checked:bg-sky-700] -->
@@ -2031,7 +2031,7 @@ For example, to apply the `bg-sky-700` class when the `aria-checked` attribute i
 </div>
 ```
 
-By default we've included variants for the most common boolean ARIA attributes:
+默认情况下，我们为最常见的布尔 ARIA 属性包含了变体：
 
 {
 
@@ -2138,14 +2138,14 @@ By default we've included variants for the most common boolean ARIA attributes:
 
 }
 
-You can customize which `aria-*` variants are available by creating a new variant:
+您可以通过创建新变体来自定义可用的 `aria-*` 变体：
 
 ```css
 @custom-variant aria-asc (&[aria-sort="ascending"]);
 @custom-variant aria-desc (&[aria-sort="descending"]);
 ```
 
-If you need to use a one-off `aria` variant that doesn’t make sense to include in your project, or for more complex ARIA attributes that take specific values, use square brackets to generate a property on the fly using any arbitrary value:
+如果您需要使用一次性 `aria` 变体，或者需要特定值的复杂 ARIA 属性，请使用方括号通过任何任意值动态生成属性：
 
 <Figure>
 
@@ -2261,7 +2261,7 @@ If you need to use a one-off `aria` variant that doesn’t make sense to include
   </CodeExampleGroup>
 </Figure>
 
-ARIA state variants can also target parent and sibling elements using the `group-aria-*` and `peer-aria-*` variants:
+ARIA 状态变体还可使用 `group-aria-*` 和 `peer-aria-*` 变体以目标父元素和兄弟元素：
 
 <CodeExampleGroup
   filenames={["HTML", "Generated CSS"]}
@@ -2301,41 +2301,41 @@ ARIA state variants can also target parent and sibling elements using the `group
 
 </CodeExampleGroup>
 
-### Data attributes
+### 数据属性
 
-Use the `data-*` variant to conditionally apply styles based on [data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes).
+使用 `data-*` 变体根据 [数据属性](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) 条件性地应用样式。
 
-To check if a data attribute exists (and not a specific value), you can just specify the attribute name:
+要检查数据属性是否存在（而不是特定值），您只需指定属性名称即可：
 
 ```html
-<!-- Will apply -->
+<!-- 将应用 -->
 <!-- [!code classes:data-active:border-purple-500] -->
 <div data-active class="border border-gray-300 data-active:border-purple-500">
   <!-- ... -->
 </div>
 
-<!-- Will not apply -->
+<!-- 将不应用 -->
 <div class="border border-gray-300 data-active:border-purple-500">
   <!-- ... -->
 </div>
 ```
 
-If you need to check for a specific value you may use an arbitrary value:
+如果需要检查特定值，可以使用任意值：
 
 ```html
-<!-- Will apply -->
+<!-- 将应用 -->
 <!-- [!code classes:data-[size=large]:p-8] -->
 <div data-size="large" class="data-[size=large]:p-8">
   <!-- ... -->
 </div>
 
-<!-- Will not apply -->
+<!-- 将不应用 -->
 <div data-size="medium" class="data-[size=large]:p-8">
   <!-- ... -->
 </div>
 ```
 
-Alternatively, you can configure shortcuts for common data attributes you're using in your project by creating a new variant in the `data-*` namespace:
+或者，您可以通过在 `data-*` 命名空间中创建新变体为项目中使用的常见数据属性配置快捷方式：
 
 ```css
 <!-- [!code filename:app.css] -->
@@ -2344,7 +2344,7 @@ Alternatively, you can configure shortcuts for common data attributes you're usi
 @custom-variant data-checked (&[data-ui~="checked"]);
 ```
 
-You can then use these custom `data-*` variants in your project:
+然后，您可以在项目中使用这些自定义 `data-*` 变体：
 
 ```html
 <!-- [!code classes:data-checked:underline] -->
@@ -2353,9 +2353,9 @@ You can then use these custom `data-*` variants in your project:
 </div>
 ```
 
-### RTL support
+### RTL 支持
 
-Use the `rtl` and `ltr` variants to conditionally add styles in right-to-left and left-to-right modes respectively when building multi-directional layouts:
+使用 `rtl` 和 `ltr` 变体在构建多方向布局时分别条件性地添加样式以支持从右到左和从左到右的模式：
 
 <Figure>
 
@@ -2415,13 +2415,13 @@ Use the `rtl` and `ltr` variants to conditionally add styles in right-to-left an
 
 </Figure>
 
-Remember, these variants are only useful if you are building a site that needs to support _both_ left-to-right and right-to-left layouts. If you're building a site that only needs to support a single direction, you don't need these variants — just apply the styles that make sense for your content.
+请记住，如果您正在构建仅需支持 _一种_ 方向的站点，则这些变体是没有用的——只需应用适合您内容的样式。
 
-### Open/closed state
+### 开/关状态
 
-Use the `open` variant to conditionally add styles when a `<details>` or `<dialog>` element is in an open state:
+使用 `open` 变体在 `<details>` 或 `<dialog>` 元素处于打开状态时条件性地添加样式：
 
-<Figure hint="Try toggling the disclosure to see the styles change">
+<Figure hint="尝试切换披露以查看样式变化">
 
 <Example>
   {
@@ -2453,21 +2453,21 @@ Use the `open` variant to conditionally add styles when a `<details>` or `<dialo
 
 </Figure>
 
-This variant also targets the `:popover-open` pseudo-class for popovers:
+该变体还可以针对弹出窗口的 `:popover-open` 伪类：
 
 ```html
 <!-- [!code classes:open:opacity-100] -->
 <div>
-  <button popovertarget="my-popover">Open Popover</button>
+  <button popovertarget="my-popover">打开弹出窗口</button>
   <div popover id="my-popover" class="opacity-0 open:opacity-100 ...">
     <!-- ... -->
   </div>
 </div>
 ```
 
-### Styling inert elements
+### 样式化惰性元素
 
-The `inert` variant lets you style elements marked with the `inert` attribute:
+`inert` 变体允许您为标记为 `inert` 属性的元素设置样式：
 
 <Figure>
 
@@ -2610,13 +2610,13 @@ The `inert` variant lets you style elements marked with the `inert` attribute:
 
 </Figure>
 
-This is useful for adding visual cues that make it clear that sections of content aren't interactive.
+这对于添加视觉提示以明确内容部分不具互动性非常有用。
 
-## Child selectors
+## 子选择器
 
-### Styling direct children
+### 样式化直接子元素
 
-While it's generally preferable to put utility classes directly on child elements, you can use the `*` variant in situations where you need to style direct children that you don’t have control over:
+虽然通常推荐直接将工具类放在子元素上，但您可以在无法控制的情况下使用 `*` 变体为直接子元素设置样式：
 
 <Figure>
 
@@ -2663,24 +2663,24 @@ While it's generally preferable to put utility classes directly on child element
 
 </Figure>
 
-It's important to note that overriding a style with a utility directly on the child itself won't work due to the specificity of the generated child selector:
+需要注意的是，由于生成的子选择器的特异性，直接在子元素上覆盖样式不会起作用：
 
-<TipBad>{<>Won't work, children can't override their own styling.</>}</TipBad>
+<TipBad>{<>不适用，子元素不能覆盖自己的样式。</>}</TipBad>
 
 ```html
 <!-- [!code classes:*:bg-sky-50] -->
 <!-- [!code classes:bg-red-50] -->
 <ul class="*:bg-sky-50 ...">
-  <li class="bg-red-50 ...">Sales</li>
-  <li>Marketing</li>
-  <li>SEO</li>
+  <li class="bg-red-50 ...">销售</li>
+  <li>市场营销</li>
+  <li>搜索引擎优化</li>
   <!-- ... -->
 </ul>
 ```
 
-### Styling all descendants
+### 样式化所有后代
 
-Like `*`, the `**` variant can be used to style children of an element. The main difference is that `**` will apply styles to _all_ descendants, not just the direct children. This is especially useful when you combine it with another variant for narrowing the thing you're selecting:
+像 `*` 一样，`**` 变体可用于为元素的子元素设置样式。主要区别在于 `**` 将应用样式于 _所有_ 后代，而不仅仅是直接子元素。当您将其与其他变体结合以缩小选择范围时，这特别有用：
 
 <Figure>
 
@@ -2761,13 +2761,13 @@ Like `*`, the `**` variant can be used to style children of an element. The main
 
 </Figure>
 
-## Custom variants
+## 自定义变体
 
-### Using arbitrary variants
+### 使用任意变体
 
-Just like [arbitrary values](/docs/adding-custom-styles#using-arbitrary-values) let you use custom values with your utility classes, arbitrary variants let you write custom selector variants directly in your HTML.
+与 [任意值](/docs/adding-custom-styles#using-arbitrary-values) 允许您与工具类一起使用自定义值相同，任意变体允许您直接在 HTML 中编写自定义选择器变体。
 
-Arbitrary variants are just format strings that represent the selector, wrapped in square brackets. For example, this arbitrary variant changes the cursor to `grabbing` when the element has the `is-dragging` class:
+任意变体只是格式字符串，表示选择器，包裹在方括号中。例如，这个任意变体在元素具有 `is-dragging` 类时将光标更改为 `grabbing`：
 
 <CodeExampleGroup
   filenames={["HTML", "Generated CSS"]}
@@ -2795,7 +2795,7 @@ Arbitrary variants are just format strings that represent the selector, wrapped 
   />
 </CodeExampleGroup>
 
-Arbitrary variants can be stacked with built-in variants or with each other, just like the rest of the variants in Tailwind:
+任意变体可以与内置变体或相互叠加，就像 Tailwind 中的其他变体一样：
 
 <CodeExampleGroup
   filenames={["HTML", "Generated CSS"]}
@@ -2823,7 +2823,7 @@ Arbitrary variants can be stacked with built-in variants or with each other, jus
   />
 </CodeExampleGroup>
 
-If you need spaces in your selector, you can use an underscore. For example, this arbitrary variant selects all `p` elements within the element where you've added the class:
+如果需要选择器中有空格，可以使用下划线。例如，此任意变体选择您添加了类的元素中的所有 `p` 元素：
 
 <CodeExampleGroup
   filenames={["HTML", "Generated CSS"]}
@@ -2853,7 +2853,7 @@ If you need spaces in your selector, you can use an underscore. For example, thi
   />
 </CodeExampleGroup>
 
-You can also use at-rules like `@media` or `@supports` in arbitrary variants:
+您还可以在任意变体中使用 at-rule，例如 `@media` 或 `@supports`：
 
 <CodeExampleGroup
   filenames={["HTML", "Generated CSS"]}
@@ -2877,11 +2877,11 @@ You can also use at-rules like `@media` or `@supports` in arbitrary variants:
   />
 </CodeExampleGroup>
 
-With at-rule custom variants the `&` placeholder isn't necessary, just like when nesting with a preprocessor.
+在使用 at-rule 自定义变体时，`&` 占位符不是必需的，就像与预处理器进行嵌套时一样。
 
-### Registering a custom variant
+### 注册自定义变体
 
-If you find yourself using the same arbitrary variant multiple times in your project, it might be worth creating a custom variant:
+如果您发现自己多次在项目中使用相同的任意变体，创建一个自定义变体可能是有意义的：
 
 ```css
 @custom-variant pointer-coarse {
@@ -2891,20 +2891,20 @@ If you find yourself using the same arbitrary variant multiple times in your pro
 }
 ```
 
-Now you can use the `pointer-coarse:<utility>` variant in your HTML:
+现在您可以在 HTML 中使用 `pointer-coarse:<utility>` 变体：
 
 ```html
 <!-- [!code classes:pointer-coarse:size-12] -->
 <button class="pointer-coarse:size-12 ..."></button>
 ```
 
-You can create variants using the shorthand syntax when nesting isn't required:
+当自定义变体不需要嵌套时，可以使用简写语法：
 
 ```css
 @custom-variant pointer-coarse (@media (pointer: coarse));
 ```
 
-When a custom variant has multiple rules, they can be nested within each other:
+当自定义变体有多个规则时，可以将它们嵌套在彼此内部：
 
 ```css
 @custom-variant any-hover {
@@ -2916,11 +2916,11 @@ When a custom variant has multiple rules, they can be nested within each other:
 }
 ```
 
-## Appendix
+## 附录
 
-### Quick reference
+### 快速参考
 
-A quick reference table of every single variant included in Tailwind by default.
+Tailwind 默认包含的每个变体的快速参考表。
 
 {
 
@@ -4307,13 +4307,13 @@ A quick reference table of every single variant included in Tailwind by default.
 
 }
 
-### Pseudo-class reference
+### 伪类参考
 
-This is a comprehensive list of examples for all the pseudo-class variants included in Tailwind to complement the [pseudo-classes documentation](/docs/hover-focus-and-other-states#pseudo-classes) at the beginning of this guide.
+这是 Tailwind 中包含的所有伪类变体的示例综合列表，以补充本指南开头的 [伪类文档](/docs/hover-focus-and-other-states#pseudo-classes)。
 
 #### :hover
 
-Style an element when the user hovers over it with the mouse cursor using the `hover` variant:
+在用户用鼠标悬停在元素上时使用 `hover` 变体为元素设置样式：
 
 ```html
 <!-- [!code classes:hover:bg-white] -->
@@ -4324,7 +4324,7 @@ Style an element when the user hovers over it with the mouse cursor using the `h
 
 #### :focus
 
-Style an element when it has focus using the `focus` variant:
+在元素获得焦点时使用 `focus` 变体为元素设置样式：
 
 ```html
 <!-- [!code classes:focus:border-blue-400] -->
@@ -4333,7 +4333,7 @@ Style an element when it has focus using the `focus` variant:
 
 #### :focus-within
 
-Style an element when it or one of its descendants has focus using the `focus-within` variant:
+在元素或其后代获得焦点时，使用 `focus-within` 变体为元素设置样式：
 
 ```html
 <!-- [!code classes:focus-within:shadow-lg] -->
@@ -4344,34 +4344,34 @@ Style an element when it or one of its descendants has focus using the `focus-wi
 
 #### :focus-visible
 
-Style an element when it has been focused using the keyboard using the `focus-visible` variant:
+在元素通过键盘获得焦点时，使用 `focus-visible` 变体为元素设置样式：
 
 ```html
 <!-- [!code classes:focus-visible:outline-2] -->
-<button class="focus-visible:outline-2 ...">Submit</button>
+<button class="focus-visible:outline-2 ...">提交</button>
 ```
 
 #### :active
 
-Style an element when it is being pressed using the `active` variant:
+在元素被按压时使用 `active` 变体为元素设置样式：
 
 ```html
 <!-- [!code classes:active:bg-blue-600] -->
-<button class="bg-blue-500 active:bg-blue-600 ...">Submit</button>
+<button class="bg-blue-500 active:bg-blue-600 ...">提交</button>
 ```
 
 #### :visited
 
-Style a link when it has already been visited using the `visited` variant:
+在链接被访问过后使用 `visited` 变体为元素设置样式：
 
 ```html
 <!-- [!code classes:visited:text-purple-600] -->
-<a href="https://seinfeldquotes.com" class="text-blue-600 visited:text-purple-600 ..."> Inspiration </a>
+<a href="https://seinfeldquotes.com" class="text-blue-600 visited:text-purple-600 ..."> 灵感 </a>
 ```
 
 #### :target
 
-Style an element if its ID matches the current URL fragment using the `target` variant:
+在元素的 ID 匹配当前 URL 片段时使用 `target` 变体为元素设置样式：
 
 ```html
 <!-- [!code classes:target:shadow-lg] -->
@@ -4382,7 +4382,7 @@ Style an element if its ID matches the current URL fragment using the `target` v
 
 #### :first-child
 
-Style an element if it's the first child using the `first` variant:
+如果元素是第一个子元素，使用 `first` 变体为元素设置样式：
 
 ```svelte
 <!-- [!code classes:first:pt-0] -->
@@ -4397,7 +4397,7 @@ Style an element if it's the first child using the `first` variant:
 
 #### :last-child
 
-Style an element if it's the last child using the `last` variant:
+如果元素是最后一个子元素，使用 `last` 变体为元素设置样式：
 
 ```svelte
 <!-- [!code classes:last:pb-0] -->
@@ -4412,7 +4412,7 @@ Style an element if it's the last child using the `last` variant:
 
 #### :only-child
 
-Style an element if it's the only child using the `only` variant:
+如果元素是唯一子元素，使用 `only` 变体为元素设置样式：
 
 ```svelte
 <!-- [!code classes:only:py-0] -->
@@ -4427,7 +4427,7 @@ Style an element if it's the only child using the `only` variant:
 
 #### :nth-child(odd)
 
-Style an element if it's an oddly numbered child using the `odd` variant:
+如果元素是奇数编号子元素，使用 `odd` 变体为元素设置样式：
 
 ```svelte
 <!-- [!code classes:odd:bg-gray-100] -->
@@ -4442,7 +4442,7 @@ Style an element if it's an oddly numbered child using the `odd` variant:
 
 #### :nth-child(even)
 
-Style an element if it's an evenly numbered child using the `even` variant:
+如果元素是偶数编号子元素，使用 `even` 变体为元素设置样式：
 
 ```svelte
 <!-- [!code classes:even:bg-gray-100] -->
@@ -4457,7 +4457,7 @@ Style an element if it's an evenly numbered child using the `even` variant:
 
 #### :first-of-type
 
-Style an element if it's the first child of its type using the `first-of-type` variant:
+如果元素是同类型的第一个子元素，使用 `first-of-type` 变体为元素设置样式：
 
 ```svelte
 <!-- [!code classes:first-of-type:ml-6] -->
@@ -4473,7 +4473,7 @@ Style an element if it's the first child of its type using the `first-of-type` v
 
 #### :last-of-type
 
-Style an element if it's the last child of its type using the `last-of-type` variant:
+如果元素是同类型的最后一个子元素，使用 `last-of-type` 变体为元素设置样式：
 
 ```svelte
 <!-- [!code classes:last-of-type:mr-6] -->
@@ -4484,13 +4484,13 @@ Style an element if it's the last child of its type using the `last-of-type` var
       <!-- ... -->
     </a>
   {/each}
-  <button>More</button>
+  <button>更多</button>
 </nav>
 ```
 
 #### :only-of-type
 
-Style an element if it's the only child of its type using the `only-of-type` variant:
+如果元素是同类型的唯一子元素，使用 `only-of-type` 变体为元素设置样式：
 
 ```svelte
 <!-- [!code classes:only-of-type:mx-6] -->
@@ -4501,13 +4501,13 @@ Style an element if it's the only child of its type using the `only-of-type` var
       <!-- ... -->
     </a>
   {/each}
-  <button>More</button>
+  <button>更多</button>
 </nav>
 ```
 
 #### :nth-child()
 
-Style an element at a specific position using the `nth` variant:
+使用 `nth` 变体为特定位置的元素设置样式：
 
 ```svelte
 <!-- [!code classes:nth-3:mx-6,nth-[3n+1]:mx-7] -->
@@ -4518,13 +4518,13 @@ Style an element at a specific position using the `nth` variant:
       <!-- ... -->
     </a>
   {/each}
-  <button>More</button>
+  <button>更多</button>
 </nav>
 ```
 
 #### :nth-last-child()
 
-Style an element at a specific position from the end using the `nth-last` variant:
+使用 `nth-last` 变体为特定位置的元素设置样式，从末尾计算：
 
 ```svelte
 <!-- [!code classes:nth-last-3:mx-6,nth-last-[3n+1]:mx-7] -->
@@ -4535,13 +4535,13 @@ Style an element at a specific position from the end using the `nth-last` varian
       <!-- ... -->
     </a>
   {/each}
-  <button>More</button>
+  <button>更多</button>
 </nav>
 ```
 
 #### :nth-of-type()
 
-Style an element at a specific position, of the same type using the `nth-of-type` variant:
+使用 `nth-of-type` 变体为同类型的特定位置的元素设置样式：
 
 ```svelte
 <!-- [!code classes:nth-of-type-3:mx-6,nth-of-type-[3n+1]:mx-7] -->
@@ -4552,13 +4552,13 @@ Style an element at a specific position, of the same type using the `nth-of-type
       <!-- ... -->
     </a>
   {/each}
-  <button>More</button>
+  <button>更多</button>
 </nav>
 ```
 
 #### :nth-last-of-type()
 
-Style an element at a specific position from the end, of the same type using the `nth-last-of-type` variant:
+使用 `nth-last-of-type` 变体为同类型的特定位置的元素设置样式，从末尾计算：
 
 ```svelte
 <!-- [!code classes:nth-last-of-type-3:mx-6,nth-last-of-type-[3n+1]:mx-7] -->
@@ -4569,13 +4569,13 @@ Style an element at a specific position from the end, of the same type using the
       <!-- ... -->
     </a>
   {/each}
-  <button>More</button>
+  <button>更多</button>
 </nav>
 ```
 
 #### :empty
 
-Style an element if it has no content using the `empty` variant:
+当元素没有内容时使用 `empty` 变体为元素设置样式：
 
 ```svelte
 <!-- [!code classes:empty:hidden] -->
@@ -4588,7 +4588,7 @@ Style an element if it has no content using the `empty` variant:
 
 #### :disabled
 
-Style an input when it's disabled using the `disabled` variant:
+在输入元素被禁用时使用 `disabled` 变体为元素设置样式：
 
 ```html
 <!-- [!code classes:disabled:opacity-75] -->
@@ -4597,7 +4597,7 @@ Style an input when it's disabled using the `disabled` variant:
 
 #### :enabled
 
-Style an input when it's enabled using the `enabled` variant, most helpful when you only want to apply another style when an element is not disabled:
+在输入元素被禁用时，仅在输入元素可用时使用 `enabled` 变体添加样式，这在您仅想在元素未禁用时应用其他样式时最有用：
 
 ```html
 <!-- [!code classes:enabled:hover:border-gray-400] -->
@@ -4606,7 +4606,7 @@ Style an input when it's enabled using the `enabled` variant, most helpful when 
 
 #### :checked
 
-Style a checkbox or radio button when it's checked using the `checked` variant:
+在复选框或单选按钮被选中时使用 `checked` 变体为其设置样式：
 
 ```html
 <!-- [!code classes:checked:bg-blue-500] -->
@@ -4615,7 +4615,7 @@ Style a checkbox or radio button when it's checked using the `checked` variant:
 
 #### :indeterminate
 
-Style a checkbox or radio button in an indeterminate state using the `indeterminate` variant:
+使用 `indeterminate` 变体为复选框或单选按钮设置不确定状态样式：
 
 ```html
 <!-- [!code classes:indeterminate:bg-gray-300] -->
@@ -4624,7 +4624,7 @@ Style a checkbox or radio button in an indeterminate state using the `indetermin
 
 #### :default
 
-Style an option, checkbox or radio button that was the default value when the page initially loaded using the `default` variant:
+使用 `default` 变体为初始加载页面时的默认值（选项、复选框或单选按钮）设置样式：
 
 ```html
 <!-- [!code classes:default:outline-2] -->
@@ -4633,7 +4633,7 @@ Style an option, checkbox or radio button that was the default value when the pa
 
 #### :optional
 
-Style an input when it's optional using the `optional` variant:
+使用 `optional` 变体为可选输入设置样式：
 
 ```html
 <!-- [!code classes:optional:border-red-500] -->
@@ -4642,7 +4642,7 @@ Style an input when it's optional using the `optional` variant:
 
 #### :required
 
-Style an input when it's required using the `required` variant:
+使用 `required` 变体为必填输入设置样式：
 
 ```html
 <!-- [!code classes:required:border-red-500] -->
@@ -4651,7 +4651,7 @@ Style an input when it's required using the `required` variant:
 
 #### :valid
 
-Style an input when it's valid using the `valid` variant:
+使用 `valid` 变体为有效的输入设置样式：
 
 ```html
 <!-- [!code classes:valid:border-green-500] -->
@@ -4660,7 +4660,7 @@ Style an input when it's valid using the `valid` variant:
 
 #### :invalid
 
-Style an input when it's invalid using the `invalid` variant:
+使用 `invalid` 变体为无效的输入设置样式：
 
 ```html
 <!-- [!code classes:invalid:border-red-500] -->
@@ -4669,7 +4669,7 @@ Style an input when it's invalid using the `invalid` variant:
 
 #### :in-range
 
-Style an input when its value is within a specified range limit using the `in-range` variant:
+使用 `in-range` 变体为在指定范围限制内的输入设置样式：
 
 ```html
 <!-- [!code classes:in-range:border-green-500] -->
@@ -4678,7 +4678,7 @@ Style an input when its value is within a specified range limit using the `in-ra
 
 #### :out-of-range
 
-Style an input when its value is outside of a specified range limit using the `out-of-range` variant:
+使用 `out-of-range` 变体为超出指定范围限制的输入设置样式：
 
 ```html
 <!-- [!code classes:out-of-range:border-red-500] -->
@@ -4687,7 +4687,7 @@ Style an input when its value is outside of a specified range limit using the `o
 
 #### :placeholder-shown
 
-Style an input when the placeholder is shown using the `placeholder-shown` variant:
+使用 `placeholder-shown` 变体为输入中显示占位符时的样式：
 
 ```html
 <!-- [!code classes:placeholder-shown:border-gray-500] -->
@@ -4696,7 +4696,7 @@ Style an input when the placeholder is shown using the `placeholder-shown` varia
 
 #### :autofill
 
-Style an input when it has been autofilled by the browser using the `autofill` variant:
+使用 `autofill` 变体为浏览器自动填充的输入设置样式：
 
 ```html
 <!-- [!code classes:autofill:bg-yellow-200] -->
@@ -4705,7 +4705,7 @@ Style an input when it has been autofilled by the browser using the `autofill` v
 
 #### :read-only
 
-Style an input when it is read-only using the `read-only` variant:
+使用 `read-only` 变体为只读输入设置样式：
 
 ```html
 <!-- [!code classes:read-only:bg-gray-100] -->

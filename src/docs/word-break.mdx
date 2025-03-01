@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "word-break";
-export const description = "Utilities for controlling word breaks in an element.";
+export const description = "控制元素中文字断开的工具类。";
 
 <ApiTable
   rows={[
@@ -15,83 +15,77 @@ export const description = "Utilities for controlling word breaks in an element.
   ]}
 />
 
-## Examples
+## 示例
 
-### Normal
+### 正常
 
-Use the `break-normal` utility to only add line breaks at normal word break points:
+使用 `break-normal` 工具类仅在正常单词断点处添加换行：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs border-x border-x-pink-400/30 py-8 break-normal text-gray-900 dark:text-gray-200">
-      The longest word in any of the major English language dictionaries is{" "}
-      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> a word that refers to a lung
-      disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it
-      is the same as silicosis.
+      在任何主要英语字典中最长的单词是{" "}
+      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是一种因吸入非常细小的硅颗粒而感染的肺病，尤其是来自火山的颗粒；在医学上，这和硅肺病是相同的。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:break-normal] -->
-<p class="break-normal">The longest word in any of the major...</p>
+<p class="break-normal">在任何主要英语字典中最长的单词是...</p>
 ```
 
 </Figure>
 
-### Break Words
+### 断字
 
-Use the `break-words` utility to add line breaks mid-word if needed:
+使用 `break-words` 工具类在需要时在单词中间添加换行：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs border-x border-x-pink-400/30 py-8 break-words text-gray-900 dark:text-gray-200">
-      The longest word in any of the major English language dictionaries is{" "}
-      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> a word that refers to a lung
-      disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it
-      is the same as silicosis.
+      在任何主要英语字典中最长的单词是{" "}
+      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是一种因吸入非常细小的硅颗粒而感染的肺病，尤其是来自火山的颗粒；在医学上，这和硅肺病是相同的。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:break-words] -->
-<p class="break-words">The longest word in any of the major...</p>
+<p class="break-words">在任何主要英语字典中最长的单词是...</p>
 ```
 
 </Figure>
 
-### Break All
+### 断行所有
 
-Use the `break-all` utility to add line breaks whenever necessary, without trying to preserve whole words:
+使用 `break-all` 工具类在必要时随意添加换行，而不尝试保留完整的单词：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs border-x border-x-pink-400/30 py-8 break-all text-gray-900 dark:text-gray-200">
-      The longest word in any of the major English language dictionaries is{" "}
-      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> a word that refers to a lung
-      disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it
-      is the same as silicosis.
+      在任何主要英语字典中最长的单词是{" "}
+      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是一种因吸入非常细小的硅颗粒而感染的肺病，尤其是来自火山的颗粒；在医学上，这和硅肺病是相同的。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:break-all] -->
-<p class="break-all">The longest word in any of the major...</p>
+<p class="break-all">在任何主要英语字典中最长的单词是...</p>
 ```
 
 </Figure>
 
-### Break Keep
+### 保持断行
 
-Use the `break-keep` utility to prevent line breaks from being applied to Chinese/Japanese/Korean (CJK) text:
+使用 `break-keep` 工具类防止对中文/日文/韩文 (CJK) 文本应用换行：
 
 <Figure>
 
@@ -112,8 +106,8 @@ Use the `break-keep` utility to prevent line breaks from being applied to Chines
 
 </Figure>
 
-For non-CJK text the `break-keep` utility has the same behavior as the `break-normal` utility.
+对于非 CJK 文本，`break-keep` 工具类的行为与 `break-normal` 工具类相同。
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="p" property="word-break" defaultClass="break-normal" featuredClass="break-all" />

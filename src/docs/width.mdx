@@ -3,8 +3,8 @@ import { CustomizingYourSpacingScale, ResponsiveDesign, UsingACustomValue } from
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "width";
-export const description = "Utilities for setting the width of an element.";
+export const title = "宽度";
+export const description = "用于设置元素宽度的工具。";
 
 <ApiTable
   rows={[
@@ -57,11 +57,11 @@ export const description = "Utilities for setting the width of an element.";
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `w-<number>` utilities like `w-24` and `w-64` to set an element to a fixed width based on the spacing scale:
+使用 `w-<number>` 实用工具，如 `w-24` 和 `w-64` 来根据间距比例设置元素的固定宽度：
 
 <Figure>
 
@@ -94,9 +94,9 @@ Use `w-<number>` utilities like `w-24` and `w-64` to set an element to a fixed w
 
 </Figure>
 
-### Using a percentage
+### 使用百分比
 
-Use `w-full` or `w-<fraction>` utilities like `w-1/2` and `w-2/5` to give an element a percentage-based width:
+使用 `w-full` 或 `w-<fraction>` 实用工具，如 `w-1/2` 和 `w-2/5` 给元素设置基于百分比的宽度：
 
 <Figure>
 
@@ -163,9 +163,9 @@ Use `w-full` or `w-<fraction>` utilities like `w-1/2` and `w-2/5` to give an ele
 
 </Figure>
 
-### Using the container scale
+### 使用容器比例
 
-Use utilities like `w-sm` and `w-xl` to set an element to a fixed width based on the container scale:
+使用 `w-sm` 和 `w-xl` 等工具，根据容器比例设置元素的固定宽度：
 
 <Figure>
 
@@ -198,9 +198,9 @@ Use utilities like `w-sm` and `w-xl` to set an element to a fixed width based on
 
 </Figure>
 
-### Matching the viewport
+### 匹配视口
 
-Use the `w-screen` utility to make an element span the entire width of the viewport:
+使用 `w-screen` 实用工具使元素延伸到视口的整个宽度：
 
 ```html
 <!-- [!code classes:w-screen] -->
@@ -209,11 +209,11 @@ Use the `w-screen` utility to make an element span the entire width of the viewp
 </div>
 ```
 
-Alternatively, you can match the width of the large, small or dynamic viewports using the `w-lvw`, `w-svw`, and `w-dvw` utilities.
+另外，您可以使用 `w-lvw`、`w-svw` 和 `w-dvw` 实用工具来匹配大、小或动态视口的宽度。
 
-### Resetting the width
+### 重置宽度
 
-Use the `w-auto` utility to remove an element's assigned width under a specific condition, like at a particular breakpoint:
+使用 `w-auto` 实用工具在特定条件下移除元素的指定宽度，例如在特定的断点处：
 
 ```html
 <!-- [!code classes:w-full,w-auto] -->
@@ -222,9 +222,9 @@ Use the `w-auto` utility to remove an element's assigned width under a specific 
 </div>
 ```
 
-### Setting both width and height
+### 同时设置宽度和高度
 
-Use utilities like `size-px`, `size-4`, and `size-full` to set both the width and height of an element at the same time:
+使用 `size-px`、`size-4` 和 `size-full` 等实用工具可以同时设置元素的宽度和高度：
 
 <Figure>
 
@@ -251,14 +251,14 @@ Use utilities like `size-px`, `size-4`, and `size-full` to set both the width an
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue utility="w" value="5px" name="width" variable="width" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="width" defaultClass="w-1/2" featuredClass="w-full" />
 
-## Customizing your theme
+## 定制您的主题
 
 <CustomizingYourSpacingScale utilities={["w", "size"]} />

@@ -6,7 +6,7 @@ import { Figure } from "@/components/figure.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "display";
-export const description = "Utilities for controlling the display box type of an element.";
+export const description = "控制元素的显示盒子类型的工具。";
 
 <ApiTable
   rows={[
@@ -61,36 +61,36 @@ export const description = "Utilities for controlling the display box type of an
   ]}
 />
 
-## Examples
+## 示例
 
-### Block and Inline
+### 块级和行内
 
-Use the `inline`, `inline-block`, and `block` utilities to control the flow of text and elements:
+使用 `inline`、`inline-block` 和 `block` 工具来控制文本和元素的流动：
 
 <Figure>
 
 <Example>
   {
     <div className="mx-auto max-w-xs px-4 text-sm leading-6 text-gray-500 sm:text-base sm:leading-7 dark:text-gray-300">
-      When controlling the flow of text, using the CSS property{" "}
+      控制文本流动时，使用 CSS 属性{" "}
       <span className="inline rounded bg-sky-100 font-mono text-sm font-bold text-gray-900 dark:bg-white/15 dark:text-gray-200">
         display: inline
       </span>{" "}
-      will cause the text inside the element to wrap normally.
+      会使元素内的文本正常换行。
       <br />
       <br />
-      While using the property{" "}
+      使用属性{" "}
       <span className="inline-block rounded bg-sky-100 font-mono text-sm font-bold text-gray-900 dark:bg-white/15 dark:text-gray-200">
         display: inline-block
       </span>{" "}
-      will wrap the element to prevent the text inside from extending beyond its parent.
+      会限制元素的宽度，防止文本超出其父元素。
       <br />
       <br />
-      Lastly, using the property{" "}
+      最后，使用属性{" "}
       <span className="block rounded bg-sky-100 font-mono text-sm font-bold text-gray-900 dark:bg-white/15 dark:text-gray-200">
         display: block
       </span>{" "}
-      will put the element on its own line and fill its parent.
+      会使元素独占一行并填满其父元素。
     </div>
   }
 </Example>
@@ -98,24 +98,21 @@ Use the `inline`, `inline-block`, and `block` utilities to control the flow of t
 ```html
 <!-- [!code classes:inline,inline-block,block] -->
 <p>
-  When controlling the flow of text, using the CSS property <span class="inline">display: inline</span> will cause the
-  text inside the element to wrap normally.
+  控制文本流动时，使用 CSS 属性 <span class="inline">display: inline</span> 会使元素内的文本正常换行。
 </p>
 <p>
-  While using the property <span class="inline-block">display: inline-block</span> will wrap the element to prevent the
-  text inside from extending beyond its parent.
+  使用属性 <span class="inline-block">display: inline-block</span> 会限制元素的宽度，防止文本超出其父元素。
 </p>
 <p>
-  Lastly, using the property <span class="block">display: block</span> will put the element on its own line and fill its
-  parent.
+  最后，使用属性 <span class="block">display: block</span> 会使元素独占一行并填满其父元素。
 </p>
 ```
 
 </Figure>
 
-### Flow Root
+### 流根
 
-Use the `flow-root` utility to create a block-level element with its own [block formatting context](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context):
+使用 `flow-root` 工具创建具有自己 [块格式化上下文](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context) 的块级元素：
 
 <Figure>
 
@@ -130,8 +127,7 @@ Use the `flow-root` utility to create a block-level element with its own [block 
           <Stripes border className="h-4" />
         </div>
         <div className="my-4">
-          Well, let me tell you something, funny boy. Y'know that little stamp, the one that says "New York Public
-          Library"? Well that may not mean anything to you, but that means a lot to me. One whole hell of a lot.
+          嗯，让我告诉你点什么，搞笑的小子。你知道那个小邮票吗，上面写着“纽约公共图书馆”？那对你可能没什么意义，但对我意义重大。真是太重要了。
         </div>
       </div>
       <div className="relative mt-0.5 flow-root">
@@ -142,9 +138,7 @@ Use the `flow-root` utility to create a block-level element with its own [block 
           <Stripes border className="h-4" />
         </div>
         <div className="my-4">
-          Sure, go ahead, laugh if you want to. I've seen your type before: Flashy, making the scene, flaunting
-          convention. Yeah, I know what you're thinking. What's this guy making such a big stink about old library
-          books? Well, let me give you a hint, junior.
+          当然，可以的话尽管笑。我见过你这种类型：华丽、引人注目、标榜常规。是的，我知道你在想什么。这个家伙为什么对旧图书馆书籍这么大惊小怪？好吧，让我给你一个提示，年轻人。
         </div>
       </div>
     </div>
@@ -155,10 +149,10 @@ Use the `flow-root` utility to create a block-level element with its own [block 
 <!-- [!code classes:flow-root] -->
 <div class="p-4">
   <div class="flow-root ...">
-    <div class="my-4 ...">Well, let me tell you something, ...</div>
+    <div class="my-4 ...">嗯，让我告诉你点什么，...</div>
   </div>
   <div class="flow-root ...">
-    <div class="my-4 ...">Sure, go ahead, laugh if you want...</div>
+    <div class="my-4 ...">当然，可以的话尽管笑...</div>
   </div>
 </div>
 ```
@@ -167,7 +161,7 @@ Use the `flow-root` utility to create a block-level element with its own [block 
 
 ### Flex
 
-Use the `flex` utility to create a block-level flex container:
+使用 `flex` 工具创建一个块级弹性容器：
 
 <Figure>
 
@@ -180,8 +174,8 @@ Use the `flex` utility to create a block-level flex container:
           src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80"
         />
         <div className="flex flex-col">
-          <strong className="font-medium text-gray-900 dark:text-gray-200">Andrew Alfred</strong>
-          <span className="font-medium text-gray-500 dark:text-gray-400">Technical advisor</span>
+          <strong className="font-medium text-gray-900 dark:text-gray-200">安德鲁·阿尔弗德</strong>
+          <span className="font-medium text-gray-500 dark:text-gray-400">技术顾问</span>
         </div>
       </div>
     </div>
@@ -193,35 +187,33 @@ Use the `flex` utility to create a block-level flex container:
 <div class="flex items-center">
   <img src="path/to/image.jpg" />
   <div>
-    <strong>Andrew Alfred</strong>
-    <span>Technical advisor</span>
+    <strong>安德鲁·阿尔弗德</strong>
+    <span>技术顾问</span>
   </div>
 </div>
 ```
 
 </Figure>
 
-### Inline Flex
+### 行内 Flex
 
-Use the `inline-flex` utility to create an inline flex container that flows with text:
+使用 `inline-flex` 工具创建一个与文本流动的行内弹性容器：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-lg p-4 text-sm leading-6 text-gray-500 sm:text-base/7 dark:text-gray-300">
-      Today I spent most of the day researching ways to take advantage of the fact that bottles can be returned for 10
-      cents in Michigan, but only 5 cents here.{" "}
+      今天我花了大部分时间研究如何利用在密歇根州瓶子可以退回10美分，而在这里只能退回5美分的事实。{" "}
       <span className="ml-1 inline-flex items-baseline">
         <img
           src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80"
           alt=""
           className="mr-1 size-5 self-center rounded-full"
         />
-        <span className="font-medium text-gray-900 dark:text-gray-100">Kramer</span>
+        <span className="font-medium text-gray-900 dark:text-gray-100">克雷默</span>
       </span>{" "}
-      keeps telling me there is no way to make it work, that he has run the numbers on every possible approach, but I
-      just have to believe there's a way to make it work, there's simply too much opportunity here.
+      一直告诉我没有办法让它工作，他已经对每种可能的方法进行了计算，但我只需相信一定有办法让它工作，这里机会实在太多了。
     </p>
   }
 </Example>
@@ -229,20 +221,20 @@ Use the `inline-flex` utility to create an inline flex container that flows with
 ```html
 <!-- [!code classes:inline-flex] -->
 <p>
-  Today I spent most of the day researching ways to ...
+  今天我花了大部分时间研究如何利用 ...
   <span class="inline-flex items-baseline">
     <img src="/img/kramer.jpg" class="mx-1 size-5 self-center rounded-full" />
-    <span>Kramer</span>
+    <span>克雷默</span>
   </span>
-  keeps telling me there is no way to make it work, that ...
+  一直告诉我没有办法让它工作，那 ...
 </p>
 ```
 
 </Figure>
 
-### Grid
+### 网格
 
-Use the `grid` utility to create a grid container:
+使用 `grid` 工具创建一个网格容器：
 
 <Figure>
 
@@ -274,9 +266,9 @@ Use the `grid` utility to create a grid container:
 
 </Figure>
 
-### Inline Grid
+### 行内网格
 
-Use the `inline-grid` utility to create an inline grid container:
+使用 `inline-grid` 工具创建一个行内网格容器：
 
 <Figure>
 
@@ -331,9 +323,9 @@ Use the `inline-grid` utility to create an inline grid container:
 
 </Figure>
 
-### Contents
+### 内容
 
-Use the `contents` utility to create a "phantom" container whose children act like direct children of the parent:
+使用 `contents` 工具创建一个“虚幻”容器，其子元素像父元素的直接子元素一样表现：
 
 <Figure>
 
@@ -367,9 +359,9 @@ Use the `contents` utility to create a "phantom" container whose children act li
 
 </Figure>
 
-### Table
+### 表格
 
-Use the `table`, `table-row`, `table-cell`, `table-caption`, `table-column`, `table-column-group`, `table-header-group`, `table-row-group`, and `table-footer-group` utilities to create elements that behave like their respective table elements:
+使用 `table`、`table-row`、`table-cell`、`table-caption`、`table-column`、`table-column-group`、`table-header-group`、`table-row-group` 和 `table-footer-group` 工具创建类似于相应表格元素的元素：
 
 <Figure>
 
@@ -380,23 +372,23 @@ Use the `table`, `table-row`, `table-cell`, `table-caption`, `table-column`, `ta
         <div className="table-header-group">
           <div className="table-row">
             <div className="table-cell border-b border-gray-200 p-4 pt-0 pb-3 pl-8 text-left font-medium text-gray-400 dark:border-white/20 dark:text-white">
-              Song
+              歌曲
             </div>
             <div className="table-cell border-b border-gray-200 p-4 pt-0 pb-3 text-left font-medium text-gray-400 dark:border-white/20 dark:text-white">
-              Artist
+              艺术家
             </div>
             <div className="table-cell border-b border-gray-200 p-4 pt-0 pr-8 pb-3 text-left font-medium text-gray-400 dark:border-white/20 dark:text-white">
-              Year
+              年份
             </div>
           </div>
         </div>
         <div className="table-row-group dark:bg-black/5">
           <div className="table-row">
             <div className="table-cell border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-white/10 dark:text-gray-300">
-              The Sliding Mr. Bones (Next Stop, Pottersville)
+              滑动的骨头先生 (下一站，波特斯维尔)
             </div>
             <div className="table-cell border-b border-gray-100 p-4 text-gray-500 dark:border-white/10 dark:text-gray-300">
-              Malcolm Lockyer
+              马尔科姆·洛克耶
             </div>
             <div className="table-cell border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-white/10 dark:text-gray-300">
               1961
@@ -404,10 +396,10 @@ Use the `table`, `table-row`, `table-cell`, `table-caption`, `table-column`, `ta
           </div>
           <div className="table-row">
             <div className="table-cell border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-white/10 dark:text-gray-300">
-              Witchy Woman
+              女巫女郎
             </div>
             <div className="table-cell border-b border-gray-100 p-4 text-gray-500 dark:border-white/10 dark:text-gray-300">
-              The Eagles
+              老鹰乐队
             </div>
             <div className="table-cell border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-white/10 dark:text-gray-300">
               1972
@@ -415,10 +407,10 @@ Use the `table`, `table-row`, `table-cell`, `table-caption`, `table-column`, `ta
           </div>
           <div className="table-row">
             <div className="table-cell border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-white/20 dark:text-gray-300">
-              Shining Star
+              闪亮之星
             </div>
             <div className="table-cell border-b border-gray-100 p-4 text-gray-500 dark:border-white/20 dark:text-gray-300">
-              Earth, Wind, and Fire
+              大地、风与火
             </div>
             <div className="table-cell border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-white/20 dark:text-gray-300">
               1975
@@ -435,25 +427,25 @@ Use the `table`, `table-row`, `table-cell`, `table-caption`, `table-column`, `ta
 <div class="table w-full ...">
   <div class="table-header-group ...">
     <div class="table-row">
-      <div class="table-cell text-left ...">Song</div>
-      <div class="table-cell text-left ...">Artist</div>
-      <div class="table-cell text-left ...">Year</div>
+      <div class="table-cell text-left ...">歌曲</div>
+      <div class="table-cell text-left ...">艺术家</div>
+      <div class="table-cell text-left ...">年份</div>
     </div>
   </div>
   <div class="table-row-group">
     <div class="table-row">
-      <div class="table-cell ...">The Sliding Mr. Bones (Next Stop, Pottersville)</div>
-      <div class="table-cell ...">Malcolm Lockyer</div>
+      <div class="table-cell ...">滑动的骨头先生 (下一站，波特斯维尔)</div>
+      <div class="table-cell ...">马尔科姆·洛克耶</div>
       <div class="table-cell ...">1961</div>
     </div>
     <div class="table-row">
-      <div class="table-cell ...">Witchy Woman</div>
-      <div class="table-cell ...">The Eagles</div>
+      <div class="table-cell ...">女巫女郎</div>
+      <div class="table-cell ...">老鹰乐队</div>
       <div class="table-cell ...">1972</div>
     </div>
     <div class="table-row">
-      <div class="table-cell ...">Shining Star</div>
-      <div class="table-cell ...">Earth, Wind, and Fire</div>
+      <div class="table-cell ...">闪亮之星</div>
+      <div class="table-cell ...">大地、风与火</div>
       <div class="table-cell ...">1975</div>
     </div>
   </div>
@@ -462,9 +454,9 @@ Use the `table`, `table-row`, `table-cell`, `table-caption`, `table-column`, `ta
 
 </Figure>
 
-### Hidden
+### 隐藏
 
-Use the `hidden` utility to remove an element from the document:
+使用 `hidden` 工具从文档中移除一个元素：
 
 <Figure>
 
@@ -492,32 +484,32 @@ Use the `hidden` utility to remove an element from the document:
 
 </Figure>
 
-To visually hide an element but keep it in the document, use the [visibility](/docs/visibility#making-elements-invisible) property instead.
+为了在视觉上隐藏一个元素但保持其在文档中，可以使用 [visibility](/docs/visibility#making-elements-invisible) 属性。
 
-### Screen-reader only
+### 仅限屏幕阅读器
 
-Use `sr-only` to hide an element visually without hiding it from screen readers:
+使用 `sr-only` 视觉上隐藏一个元素而不从屏幕阅读器中隐藏它：
 
 ```html
 <!-- [!code classes:sr-only] -->
 <a href="#">
   <svg><!-- ... --></svg>
-  <span class="sr-only">Settings</span>
+  <span class="sr-only">设置</span>
 </a>
 ```
 
-Use `not-sr-only` to undo `sr-only`, making an element visible to sighted users as well as screen readers:
+使用 `not-sr-only` 撤销 `sr-only`，使一个元素对视力用户以及屏幕阅读器可见：
 
 ```html
 <!-- [!code classes:sm:not-sr-only] -->
 <a href="#">
   <svg><!-- ... --></svg>
-  <span class="sr-only sm:not-sr-only">Settings</span>
+  <span class="sr-only sm:not-sr-only">设置</span>
 </a>
 ```
 
-This can be useful when you want to visually hide something on small screens but show it on larger screens for example.
+当您想在小屏幕上视觉隐藏某些内容但在较大屏幕上显示它时，这会很有用。
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="display" defaultClass="flex" featuredClass="inline-flex" />

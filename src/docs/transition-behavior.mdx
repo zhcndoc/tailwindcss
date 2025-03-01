@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "transition-behavior";
-export const description = "Utilities to control the behavior of CSS transitions.";
+export const description = "用于控制 CSS 过渡行为的工具类。";
 
 <ApiTable
   rows={[
@@ -13,13 +13,13 @@ export const description = "Utilities to control the behavior of CSS transitions
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use the `transition-discrete` utility to start transitions when changing properties with a discrete set of values, such as elements that change from `hidden` to `block`:
+使用 `transition-discrete` 工具类在更改具有离散值集的属性时启动过渡，例如从 `hidden` 更改为 `block` 的元素：
 
-<Figure hint="Interact with the checkboxes to see the expected behavior">
+<Figure hint="与复选框交互以查看预期行为">
 
 <Example>
   {
@@ -30,7 +30,7 @@ Use the `transition-discrete` utility to start transitions when changing propert
           transition-normal
         </label>
         <button className="hidden rounded-md bg-violet-500 px-4 py-2 text-sm font-semibold text-white transition-all transition-normal duration-300 not-peer-has-checked:opacity-0 peer-has-checked:block">
-          I hide
+          我隐藏
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center sm:w-1/2">
@@ -39,7 +39,7 @@ Use the `transition-discrete` utility to start transitions when changing propert
           transition-discrete
         </label>
         <button className="hidden rounded-md bg-violet-500 px-4 py-2 text-sm font-semibold text-white transition-all transition-discrete duration-300 not-peer-has-checked:opacity-0 peer-has-checked:block">
-          I fade out
+          我渐隐
         </button>
       </div>
     </div>
@@ -53,20 +53,20 @@ Use the `transition-discrete` utility to start transitions when changing propert
 </label>
 <button class="hidden transition-all not-peer-has-checked:opacity-0 peer-has-checked:block ...">
   <!-- prettier-ignore -->
-  I hide
+  我隐藏
 </button>
 
 <label class="peer ...">
   <input type="checkbox" checked />
 </label>
 <button class="hidden transition-all transition-discrete not-peer-has-checked:opacity-0 peer-has-checked:block ...">
-  I fade out
+  我渐隐
 </button>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="button"

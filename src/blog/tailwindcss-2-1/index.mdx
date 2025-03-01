@@ -6,37 +6,35 @@ import { adamwathan } from "@/app/blog/authors";
 
 export const meta = {
   title: "Tailwind CSS v2.1",
-  description: `We just released Tailwind CSS v2.1 which brings the new JIT engine to core, adds first-class CSS filter support, and more!`,
+  description: `我们刚刚发布了 Tailwind CSS v2.1，它将新的 JIT 引擎融入核心，增加了对 CSS 滤镜的一流支持，还有更多！`,
   date: "2021-04-05T19:00:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      The first new feature update since Tailwind CSS v2.0 is here and loaded with lots of cool stuff! We've merged the
-      new JIT engine to core, added first-class support for composable CSS filters, added blending mode utilities, and a
-      bunch more.
+      自 Tailwind CSS v2.0 以来的第一次新功能更新现在来了，装满了许多令人兴奋的东西！我们将新的 JIT 引擎合并到核心，增加了对可组合 CSS 滤镜的一流支持，添加了混合模式工具，还有更多。
     </>
   ),
 };
 
-The first new feature update since Tailwind CSS v2.0 is here and loaded with lots of cool stuff! We've merged the new JIT engine to core, added first-class support for composable CSS filters, added blending mode utilities, and a bunch more.
+自 Tailwind CSS v2.0 以来的第一次新功能更新现在来了，装满了许多令人兴奋的东西！我们将新的 JIT 引擎合并到核心，增加了对可组合 CSS 滤镜的一流支持，添加了混合模式工具，还有更多。
 
-Here are some of the highlights:
+以下是一些亮点：
 
-- [JIT engine in core](#jit-engine-in-core)
-- [Composable CSS filters API](#new-filter-and-backdrop-filter-utilities)
-- [New blending mode utilities](#new-blending-mode-utilities)
-- [New isolation utilities](#new-isolation-utilities)
+- [核心中的 JIT 引擎](#jit-engine-in-core)
+- [可组合 CSS 滤镜 API](#new-filter-and-backdrop-filter-utilities)
+- [新的混合模式工具](#new-blending-mode-utilities)
+- [新的隔离工具](#new-isolation-utilities)
 
-For the full details, <Link href="https://github.com/tailwindlabs/tailwindcss/releases/tag/v2.1.0">check out the release notes</Link> on GitHub.
+有关完整细节，请 <Link href="https://github.com/tailwindlabs/tailwindcss/releases/tag/v2.1.0">查看 GitHub 上的发布说明</Link>。
 
 ---
 
 <a name="jit-engine-in-core"></a>
 
-## JIT engine in core
+## 核心中的 JIT 引擎
 
-The <Link href="https://blog.tailwindcss.com/just-in-time-the-next-generation-of-tailwind-css">brand-new JIT engine we announced in March</Link> has now been merged into core, and is available as an opt-in feature using a new `mode` option in your `tailwind.config.js` file:
+我们在三月发布的 <Link href="https://blog.tailwindcss.com/just-in-time-the-next-generation-of-tailwind-css">全新 JIT 引擎</Link> 现在已经合并到核心，并可以通过在 `tailwind.config.js` 文件中使用新的 `mode` 选项来选择性启用：
 
 ```js
 module.exports = {
@@ -48,19 +46,19 @@ module.exports = {
 };
 ```
 
-**This feature is still in preview** which means some details may change as we iron out the kinks, and it's not subject to semantic versioning.
+**此功能仍处于预览阶段**，这意味着一些细节可能会在我们解决问题时有所变化，并且不受语义版本控制的约束。
 
-If you were using `@tailwindcss/jit` before, you can now migrate to Tailwind CSS v2.1 instead, as that's where all new development on the engine will happen.
+如果您之前使用过 `@tailwindcss/jit`，现在可以迁移到 Tailwind CSS v2.1，因为所有新的引擎开发将会在这里进行。
 
-Read the <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time Mode documentation</Link> to learn more.
+阅读 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">即时模式文档</Link> 以了解更多信息。
 
 <a name="new-filter-and-backdrop-filter-utilities"></a>
 
-## Composable CSS filters API
+## 可组合 CSS 滤镜 API
 
-This is a huge one — we've finally added first-class support for CSS filters!
+这是一个重要更新——我们终于添加了一流的 CSS 滤镜支持！
 
-They work a lot like our `transform` utilities, where you use `filter` to enable filters, and combine it with utilities like `grayscale`, `blur-lg`, or `saturate-200` to compose filters on the fly.
+它们的工作方式与我们的 `transform` 工具非常相似，您可以使用 `filter` 启用滤镜，并将其与像 `grayscale`、`blur-lg` 或 `saturate-200` 这样的工具组合，以便即时组合滤镜。
 
 ```html
 <div class="blur-md grayscale invert filter ...">
@@ -68,7 +66,7 @@ They work a lot like our `transform` utilities, where you use `filter` to enable
 </div>
 ```
 
-...and here's what `backdrop-filter` looks like:
+……下面是 `backdrop-filter` 的使用方式：
 
 ```html
 <div class="backdrop-blur backdrop-brightness-50 backdrop-filter ...">
@@ -76,13 +74,13 @@ They work a lot like our `transform` utilities, where you use `filter` to enable
 </div>
 ```
 
-Check out the <Link href="https://v2.tailwindcss.com/docs/filter">filter</Link> and <Link href="https://v2.tailwindcss.com/docs/backdrop-filter">backdrop-filter</Link> to learn more. We'll add a bunch of helpful visual examples there soon!
+查看 <Link href="https://v2.tailwindcss.com/docs/filter">滤镜</Link> 和 <Link href="https://v2.tailwindcss.com/docs/backdrop-filter">背景滤镜</Link> 以了解更多信息。我们很快会添加许多有用的视觉示例！
 
 <a name="new-blending-mode-utilities"></a>
 
-## New blending mode utilities
+## 新的混合模式工具
 
-We've added brand new utilities for `mix-blend-mode` and `background-blend-mode`:
+我们添加了新的 `mix-blend-mode` 和 `background-blend-mode` 工具：
 
 ```html
 <div class="mix-blend-multiply ...">
@@ -90,13 +88,13 @@ We've added brand new utilities for `mix-blend-mode` and `background-blend-mode`
 </div>
 ```
 
-Check out <Link href="https://v2.tailwindcss.com/docs/mix-blend-mode">the documentation</Link> to learn more.
+查看 <Link href="https://v2.tailwindcss.com/docs/mix-blend-mode">文档</Link> 以了解更多信息。
 
 <a name="new-isolation-utilities"></a>
 
-## New isolation utilities
+## 新的隔离工具
 
-We've added new `isolate` and `isolation-auto` utilities for working with the `isolation` property:
+我们添加了新的 `isolate` 和 `isolation-auto` 工具用于处理 `isolation` 属性：
 
 ```html
 <div class="isolate ...">
@@ -104,24 +102,24 @@ We've added new `isolate` and `isolation-auto` utilities for working with the `i
 </div>
 ```
 
-This can be really helpful for scoping blending mode features or z-index adjustments and is super powerful.
+这对于作用域混合模式特性或 z-index 调整非常有帮助，并且功能强大。
 
-Check out <Link href="https://v2.tailwindcss.com/docs/isolation">the documentation</Link> to learn more.
+查看 <Link href="https://v2.tailwindcss.com/docs/isolation">文档</Link> 以了解更多信息。
 
-I also highly recommend <Link href="https://www.joshwcomeau.com/css/stacking-contexts/#airtight-abstractions-with-isolation">this great article by Josh Comeau</Link> to see it in action.
+我还强烈推荐 <Link href="https://www.joshwcomeau.com/css/stacking-contexts/#airtight-abstractions-with-isolation">Josh Comeau 的这篇精彩文章</Link> 以查看其实际应用。
 
 ---
 
-## Upgrading
+## 升级
 
-Tailwind CSS v2.1 is an incremental upgrade with no breaking changes, so to upgrade you just need to run:
+Tailwind CSS v2.1 是一次增量升级，没有重大变更，因此要升级，您只需运行：
 
 ```bash
 npm install tailwindcss@latest
 ```
 
-If you were previously using `@tailwindcss/jit`, you can now switch back to `tailwindcss` and update your PostCSS configuration accordingly.
+如果您之前使用的是 `@tailwindcss/jit`，现在可以切换回 `tailwindcss` 并相应地更新您的 PostCSS 配置。
 
-Ready to upgrade? <Link href="https://npmjs.com/tailwindcss">Get it from npm →</Link>
+准备好升级了吗？ <Link href="https://npmjs.com/tailwindcss">从 npm 获取 →</Link>
 
-This migration ensures the content adheres to the new v4 format, utilizing the components and codes specified for examples, excerpts, and code blocks.
+此迁移确保内容符合新的 v4 格式，利用指定的组件和代码作为示例、摘要和代码块。

@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { UsingACustomValue, ResponsiveDesign, CustomizingYourTheme } from "@/components/content.tsx";
 
-export const title = "aspect-ratio";
-export const description = "Utilities for controlling the aspect ratio of an element.";
+export const title = "纵横比";
+export const description = "用于控制元素纵横比的工具。";
 
 <ApiTable
   rows={[
@@ -17,13 +17,13 @@ export const description = "Utilities for controlling the aspect ratio of an ele
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use <code>aspect-<var>&lt;ratio&gt;</var></code> utilities like `aspect-3/2` to give an element a specific aspect ratio:
+使用 <code>aspect-<var>&lt;ratio&gt;</var></code> 工具，如 `aspect-3/2`，为元素设置特定的纵横比：
 
-<Figure desktopHint="Resize the example to see the expected behavior">
+<Figure desktopHint="调整示例大小以查看预期效果">
 
 <Example resizable>
   {
@@ -41,11 +41,11 @@ Use <code>aspect-<var>&lt;ratio&gt;</var></code> utilities like `aspect-3/2` to 
 
 </Figure>
 
-### Using a video aspect ratio
+### 使用视频纵横比
 
-Use the `aspect-video` utility to give a video element a 16 / 9 aspect ratio:
+使用 `aspect-video` 工具为视频元素设置 16 / 9 纵横比：
 
-<Figure desktopHint="Resize the example to see the expected behavior">
+<Figure desktopHint="调整示例大小以查看预期效果">
 
 <Example resizable>
   {
@@ -65,18 +65,18 @@ Use the `aspect-video` utility to give a video element a 16 / 9 aspect ratio:
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   element="img"
   elementAttributes={{ src: "/img/villas.jpg" }}
   utility="aspect"
-  name="aspect ratio"
+  name="纵横比"
   value="calc(4*3+1)/3"
   variable="aspect-ratio"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="iframe"
@@ -86,13 +86,13 @@ Use the `aspect-video` utility to give a video element a 16 / 9 aspect ratio:
   featuredClass="aspect-square"
 />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourTheme
   element="iframe"
   elementAttributes={{ src: "https://www.youtube.com/embed/dQw4w9WgXcQ" }}
   utility="aspect"
-  name="aspect ratio"
-  customName="retro"
+  name="纵横比"
+  customName="复古"
   customValue="4 / 3"
 />

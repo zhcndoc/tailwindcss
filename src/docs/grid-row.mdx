@@ -5,7 +5,7 @@ import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "grid-row";
-export const description = "Utilities for controlling how elements are sized and placed across grid rows.";
+export const description = "用于控制元素在网格行中大小和位置的工具类。";
 
 <ApiTable
   rows={[
@@ -29,11 +29,11 @@ export const description = "Utilities for controlling how elements are sized and
   ]}
 />
 
-## Examples
+## 示例
 
-### Spanning rows
+### 跨行
 
-Use `row-span-<number>` utilities like `row-span-2` and `row-span-4` to make an element span _n_ rows:
+使用 `row-span-<number>` 工具类，如 `row-span-2` 和 `row-span-4`，使元素跨越 _n_ 行：
 
 <Figure>
 
@@ -63,9 +63,9 @@ Use `row-span-<number>` utilities like `row-span-2` and `row-span-4` to make an 
 
 </Figure>
 
-### Starting and ending lines
+### 起始和结束线
 
-Use `row-start-<number>` or `row-end-<number>` utilities like `row-start-2` and `row-end-3` to make an element start or end at the _nth_ grid line:
+使用 `row-start-<number>` 或 `row-end-<number>` 工具类，如 `row-start-2` 和 `row-end-3`，使元素在第 _n_ 个网格线上开始或结束：
 
 <Figure>
 
@@ -93,18 +93,18 @@ Use `row-start-<number>` or `row-end-<number>` utilities like `row-start-2` and 
 
 </Figure>
 
-These can also be combined with the `row-span-<number>` utilities to span a specific number of rows.
+这些也可以与 `row-span-<number>` 工具类结合使用，以跨越特定数量的行。
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   utilities={["row", "row-span", "row-start", "row-end"]}
   variable="rows"
-  name="grid row size and location"
+  name="网格行大小和位置"
   value="span_16_/_span_16"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   properties={["grid-row", "grid-row-start", "grid-row-end"]}

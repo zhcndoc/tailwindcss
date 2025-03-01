@@ -6,22 +6,22 @@ import Image from "next/image";
 import tshirtImage from "./img/t-shirt.jpg";
 
 export const title = "forced-color-adjust";
-export const description = "Utilities for opting in and out of forced colors.";
+export const description = "用于选择强制颜色的工具。";
 
 <ApiTable
   rows={[
-    ["forced-color-adjust-auto", "forced-color-adjust: auto;"],
-    ["forced-color-adjust-none", "forced-color-adjust: none;"],
+    ["forced-color-adjust-auto", "强制颜色调整: 自动;"],
+    ["forced-color-adjust-none", "强制颜色调整: 无;"],
   ]}
 />
 
-## Examples
+## 示例
 
-### Opting out of forced colors
+### 退出强制颜色模式
 
-Use the `forced-color-adjust-none` utility to opt an element out of the colors enforced by forced colors mode. This is useful in situations where enforcing a limited color palette will degrade usability.
+使用 `forced-color-adjust-none` 工具将元素排除在强制颜色模式强制的颜色之外。这在强制限制调色板会降低可用性的情况下非常有用。
 
-<Figure hint="Try emulating `forced-colors: active` in your developer tools to see the changes">
+<Figure hint="尝试在开发者工具中模拟 `forced-colors: active` 以查看更改">
 
 <Example>
   {
@@ -29,28 +29,28 @@ Use the `forced-color-adjust-none` utility to opt an element out of the colors e
       <div className="aspect-h-3 aspect-w-3 overflow-hidden">
         <Image
           src={tshirtImage}
-          alt="Two each of gray, white, and black shirts laying flat."
+          alt="两件灰色、白色和黑色的衬衫平铺在一起。"
           className="h-full w-full object-cover object-center"
         />
       </div>
       <div className="grid grid-cols-[1fr_auto] items-center gap-4 p-4">
         <div>
-          <p className="font-medium text-gray-900 dark:text-white">Basic Tee</p>
+          <p className="font-medium text-gray-900 dark:text-white">基础T恤</p>
           <p className="text-sm font-medium text-gray-900 dark:text-white">$35</p>
         </div>
         <fieldset>
-          <legend className="sr-only">Choose a color</legend>
+          <legend className="sr-only">选择颜色</legend>
           <div className="grid grid-flow-col items-center gap-3 forced-color-adjust-none">
             <label className="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-0 focus:outline-none has-checked:ring-1 has-checked:ring-gray-400 has-checked:ring-offset-1">
               <input
                 type="radio"
                 name="color-choice"
-                value="White"
+                value="白色"
                 className="sr-only"
                 aria-labelledby="color-choice-0-label"
               />
               <span id="color-choice-0-label" className="sr-only">
-                White
+                白色
               </span>
               <span
                 aria-hidden="true"
@@ -58,9 +58,9 @@ Use the `forced-color-adjust-none` utility to opt an element out of the colors e
               ></span>
             </label>
             <label className="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-0 focus:outline-none has-checked:ring-1 has-checked:ring-gray-400 has-checked:ring-offset-1">
-              <input type="radio" defaultChecked name="color-choice" value="Gray" className="sr-only" />
+              <input type="radio" defaultChecked name="color-choice" value="灰色" className="sr-only" />
               <span id="color-choice-1-label" className="sr-only">
-                Gray
+                灰色
               </span>
               <span
                 aria-hidden="true"
@@ -71,12 +71,12 @@ Use the `forced-color-adjust-none` utility to opt an element out of the colors e
               <input
                 type="radio"
                 name="color-choice"
-                value="Black"
+                value="黑色"
                 className="sr-only"
                 aria-labelledby="color-choice-2-label"
               />
               <span id="color-choice-2-label" className="sr-only">
-                Black
+                黑色
               </span>
               <span
                 aria-hidden="true"
@@ -95,14 +95,14 @@ Use the `forced-color-adjust-none` utility to opt an element out of the colors e
 <form>
   <img src="/img/shirt.jpg" />
   <div>
-    <h3>Basic Tee</h3>
+    <h3>基础T恤</h3>
     <h3>$35</h3>
     <fieldset>
-      <legend class="sr-only">Choose a color</legend>
+      <legend class="sr-only">选择颜色</legend>
       <div class="forced-color-adjust-none ...">
         <label>
-          <input class="sr-only" type="radio" name="color-choice" value="White" />
-          <span class="sr-only">White</span>
+          <input class="sr-only" type="radio" name="color-choice" value="白色" />
+          <span class="sr-only">白色</span>
           <span class="size-6 rounded-full border border-black/10 bg-white"></span>
         </label>
         <!-- ... -->
@@ -114,25 +114,25 @@ Use the `forced-color-adjust-none` utility to opt an element out of the colors e
 
 </Figure>
 
-You can also use the [forced colors variant](/docs/hover-focus-and-other-states#forced-colors) to conditionally add styles when the user has enabled a forced color mode.
+您还可以使用[强制颜色变体](/docs/hover-focus-and-other-states#forced-colors)在用户启用强制颜色模式时有条件地添加样式。
 
-### Restoring forced colors
+### 恢复强制颜色
 
-Use the `forced-color-adjust-auto` utility to make an element adhere to colors enforced by forced colors mode:
+使用 `forced-color-adjust-auto` 工具让元素遵循强制颜色模式强制的颜色：
 
 ```html
 <!-- [!code classes:lg:forced-color-adjust-auto] -->
 <form>
   <fieldset class="forced-color-adjust-none lg:forced-color-adjust-auto ...">
-    <legend>Choose a color:</legend>
+    <legend>选择颜色：</legend>
     <select class="hidden lg:block">
-      <option value="White">White</option>
-      <option value="Gray">Gray</option>
-      <option value="Black">Black</option>
+      <option value="白色">白色</option>
+      <option value="灰色">灰色</option>
+      <option value="黑色">黑色</option>
     </select>
     <div class="lg:hidden">
       <label>
-        <input class="sr-only" type="radio" name="color-choice" value="White" />
+        <input class="sr-only" type="radio" name="color-choice" value="白色" />
         <!-- ... -->
       </label>
       <!-- ... -->
@@ -141,9 +141,9 @@ Use the `forced-color-adjust-auto` utility to make an element adhere to colors e
 </form>
 ```
 
-This can be useful if you want to undo the `forced-color-adjust-none` utility, for example on a larger screen size.
+这在您希望撤销 `forced-color-adjust-none` 工具时非常有用，例如在较大屏幕上。
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   property="forced-color-adjust"

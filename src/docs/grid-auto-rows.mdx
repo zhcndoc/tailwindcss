@@ -2,7 +2,7 @@ import { ApiTable } from "@/components/api-table.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
 export const title = "grid-auto-rows";
-export const description = "Utilities for controlling the size of implicitly-created grid rows.";
+export const description = "用于控制隐式创建的网格行大小的工具类。";
 
 <ApiTable
   rows={[
@@ -15,11 +15,11 @@ export const description = "Utilities for controlling the size of implicitly-cre
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `auto-rows-min` and `auto-rows-max` to control the size of implicitly-created grid rows:
+使用诸如 `auto-rows-min` 和 `auto-rows-max` 的工具类来控制隐式创建的网格行的大小：
 
 ```html
 <!-- [!code classes:auto-rows-max] -->
@@ -30,11 +30,11 @@ Use utilities like `auto-rows-min` and `auto-rows-max` to control the size of im
 </div>
 ```
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="auto-rows" name="size of implicitly-created grid rows" value="minmax(0,2fr)" />
+<UsingACustomValue utility="auto-rows" name="隐式创建的网格行的大小" value="minmax(0,2fr)" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   property="grid-auto-rows"

@@ -5,7 +5,7 @@ import { ResponsiveDesign } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "box-sizing";
-export const description = "Utilities for controlling how the browser should calculate an element's total size.";
+export const description = "用于控制浏览器如何计算元素的总大小的工具。";
 
 <ApiTable
   rows={[
@@ -14,13 +14,13 @@ export const description = "Utilities for controlling how the browser should cal
   ]}
 />
 
-## Examples
+## 示例
 
-### Including borders and padding
+### 包括边框和内边距
 
-Use the `box-border` utility to set an element's `box-sizing` to `border-box`, telling the browser to include the element's borders and padding when you give it a height or width.
+使用 `box-border` 工具将元素的 `box-sizing` 设置为 `border-box`，告知浏览器在您为其指定高度或宽度时，应包括元素的边框和内边距。
 
-This means a 100px &times; 100px element with a 2px border and 4px of padding on all sides will be rendered as 100px &times; 100px, with an internal content area of 88px &times; 88px:
+这意味着一个 100px &times; 100px 的元素，如果有 2px 的边框和 4px 的内边距，将会渲染为 100px &times; 100px，内部内容区域为 88px &times; 88px：
 
 <Figure>
 
@@ -92,13 +92,13 @@ This means a 100px &times; 100px element with a 2px border and 4px of padding on
 
 </Figure>
 
-Tailwind makes this the default for all elements in our [preflight base styles](/docs/preflight).
+Tailwind 将此作为我们所有元素的默认设置，存在于 [preflight 基础样式](/docs/preflight)。
 
-### Excluding borders and padding
+### 排除边框和内边距
 
-Use the `box-content` utility to set an element's `box-sizing` to `content-box`, telling the browser to add borders and padding on top of the element's specified width or height.
+使用 `box-content` 工具将元素的 `box-sizing` 设置为 `content-box`，告知浏览器在元素指定的宽度或高度上添加边框和内边距。
 
-This means a 100px &times; 100px element with a 2px border and 4px of padding on all sides will actually be rendered as 112px &times; 112px, with an internal content area of 100px &times; 100px:
+这意味着一个 100px &times; 100px 的元素，如果有 2px 的边框和 4px 的内边距，实际上会渲染为 112px &times; 112px，内部内容区域为 100px &times; 100px：
 
 <Figure>
 
@@ -170,6 +170,6 @@ This means a 100px &times; 100px element with a 2px border and 4px of padding on
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="box-sizing" defaultClass="box-content" featuredClass="box-border" />

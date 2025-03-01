@@ -5,7 +5,7 @@ import { Figure } from "@/components/figure.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "grid-template-columns";
-export const description = "Utilities for specifying the columns in a grid layout.";
+export const description = "用于指定网格布局中的列的工具类。";
 
 <ApiTable
   rows={[
@@ -17,11 +17,11 @@ export const description = "Utilities for specifying the columns in a grid layou
   ]}
 />
 
-## Examples
+## 示例
 
-### Specifying the grid columns
+### 指定网格列
 
-Use `grid-cols-<number>` utilities like `grid-cols-2` and `grid-cols-4` to create grids with _n_ equally sized columns:
+使用 `grid-cols-<number>` 工具类，如 `grid-cols-2` 和 `grid-cols-4` 来创建具有 _n_ 个等大小列的网格：
 
 <Figure>
 
@@ -55,9 +55,9 @@ Use `grid-cols-<number>` utilities like `grid-cols-2` and `grid-cols-4` to creat
 
 </Figure>
 
-### Implementing a subgrid
+### 实现子网格
 
-Use the `grid-cols-subgrid` utility to adopt the column tracks defined by the item's parent:
+使用 `grid-cols-subgrid` 工具类来采用项目父元素定义的列轨道：
 
 <Figure>
 
@@ -92,10 +92,10 @@ Use the `grid-cols-subgrid` utility to adopt the column tracks defined by the it
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue utility="grid-cols" name="columns" value="200px_minmax(900px,_1fr)_100px" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="grid-template-columns" defaultClass="grid grid-cols-1" featuredClass="grid-cols-6" />

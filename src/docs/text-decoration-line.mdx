@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, TargetingSpecificStates } from "@/components/content.tsx";
 
-export const title = "text-decoration-line";
-export const description = "Utilities for controlling the decoration of text.";
+export const title = "文本装饰线";
+export const description = "控制文本装饰的工具类。";
 
 <ApiTable
   rows={[
@@ -15,124 +15,124 @@ export const description = "Utilities for controlling the decoration of text.";
   ]}
 />
 
-## Examples
+## 示例
 
-### Underling text
+### 添加下划线文本
 
-Use the `underline` utility to add an underline to the text of an element:
+使用 `underline` 工具类在元素的文本上添加下划线：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 underline dark:text-gray-200">
-      The quick brown fox jumps over the lazy dog.
+      敏捷的棕色狐狸跳过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:underline] -->
-<p class="underline">The quick brown fox...</p>
+<p class="underline">敏捷的棕色狐狸...</p>
 ```
 
 </Figure>
 
-### Adding an overline to text
+### 添加横线文本
 
-Use the `overline` utility to add an overline to the text of an element:
+使用 `overline` 工具类在元素的文本上添加横线：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 overline dark:text-gray-200">
-      The quick brown fox jumps over the lazy dog.
+      敏捷的棕色狐狸跳过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:overline] -->
-<p class="overline">The quick brown fox...</p>
+<p class="overline">敏捷的棕色狐狸...</p>
 ```
 
 </Figure>
 
-### Adding a line through text
+### 添加删除线文本
 
-Use the `line-through` utility to add a line through the text of an element:
+使用 `line-through` 工具类在元素的文本上添加删除线：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 line-through dark:text-gray-200">
-      The quick brown fox jumps over the lazy dog.
+      敏捷的棕色狐狸跳过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:line-through] -->
-<p class="line-through">The quick brown fox...</p>
+<p class="line-through">敏捷的棕色狐狸...</p>
 ```
 
 </Figure>
 
-### Removing a line from text
+### 从文本中移除线条
 
-Use the `no-underline` utility to remove a line from the text of an element:
+使用 `no-underline` 工具类从元素的文本中移除线条：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 no-underline dark:text-gray-200">
-      The quick brown fox jumps over the lazy dog.
+      敏捷的棕色狐狸跳过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:no-underline] -->
-<p class="no-underline">The quick brown fox...</p>
+<p class="no-underline">敏捷的棕色狐狸...</p>
 ```
 
 </Figure>
 
-### Applying on hover
+### 悬停应用
 
 <TargetingSpecificStates property="text-decoration-line">
 
-<Figure hint="Hover over the text to see the expected behavior">
+<Figure hint="将鼠标悬停在文本上查看预期行为">
 
 <Example>
   {
     <div className="text-center text-lg font-medium text-gray-900 no-underline dark:text-gray-200">
-      The{" "}
+      敏捷的{" "}
       <a
         href="https://en.wikipedia.org/wiki/The_quick_brown_fox_jumps_over_the_lazy_dog"
         target="blank"
         className="text-sky-600 no-underline hover:underline dark:text-sky-400"
       >
-        quick brown fox
+        棕色狐狸
       </a>{" "}
-      jumps over the lazy dog.
+      跳过懒狗。
     </div>
   }
 </Example>
 
 ```html
 <!-- [!code classes:hover:underline] -->
-<p>The <a href="..." class="no-underline hover:underline ...">quick brown fox</a> jumps over the lazy dog.</p>
+<p>敏捷的 <a href="..." class="no-underline hover:underline ...">棕色狐狸</a> 跳过懒狗。</p>
 ```
 
 </Figure>
 
 </TargetingSpecificStates>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="a"

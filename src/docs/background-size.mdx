@@ -5,7 +5,7 @@ import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "background-size";
-export const description = "Utilities for controlling the background size of an element's background image.";
+export const description = "用于控制元素背景图像背景大小的工具类。";
 
 <ApiTable
   rows={[
@@ -17,11 +17,11 @@ export const description = "Utilities for controlling the background size of an 
   ]}
 />
 
-## Examples
+## 示例
 
-### Filling the container
+### 填充容器
 
-Use the `bg-cover` utility to scale the background image until it fills the background layer, cropping the image if needed:
+使用 `bg-cover` 工具类缩放背景图像，使其填满背景层，必要时裁剪图像：
 
 <Figure>
 
@@ -43,9 +43,9 @@ Use the `bg-cover` utility to scale the background image until it fills the back
 
 </Figure>
 
-### Filling without cropping
+### 无裁剪填充
 
-Use the `bg-contain` utility to scale the background image to the outer edges without cropping or stretching:
+使用 `bg-contain` 工具类将背景图像缩放至外边缘，而不裁剪或拉伸：
 
 <Figure>
 
@@ -67,9 +67,9 @@ Use the `bg-contain` utility to scale the background image to the outer edges wi
 
 </Figure>
 
-### Using the default size
+### 使用默认大小
 
-Use the `bg-auto` utility to display the background image at its default size:
+使用 `bg-auto` 工具类以默认大小显示背景图像：
 
 <Figure>
 
@@ -91,16 +91,16 @@ Use the `bg-auto` utility to display the background image at its default size:
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   utility="bg"
   value="auto_100px"
-  name="background image size"
+  name="背景图像大小"
   variable="image-size"
   dataType="length"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="background-size" defaultClass="bg-auto" featuredClass="bg-contain" />

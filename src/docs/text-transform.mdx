@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "text-transform";
-export const description = "Utilities for controlling the capitalization of text.";
+export const title = "文本转换";
+export const description = "用于控制文本大写的工具。";
 
 <ApiTable
   rows={[
@@ -15,92 +15,92 @@ export const description = "Utilities for controlling the capitalization of text
   ]}
 />
 
-## Examples
+## 示例
 
-### Uppercasing text
+### 文本大写
 
-Use the `uppercase` utility to uppercase the text of an element:
+使用 `uppercase` 工具将元素的文本转换为大写：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 uppercase dark:text-gray-200">
-      The quick brown fox jumps over the lazy dog.
+      敏捷的棕色狐狸跃过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:uppercase] -->
-<p class="uppercase">The quick brown fox ...</p>
+<p class="uppercase">敏捷的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
-### Lowercasing text
+### 文本小写
 
-Use the `lowercase` utility to lowercase the text of an element:
+使用 `lowercase` 工具将元素的文本转换为小写：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 lowercase dark:text-gray-200">
-      The quick brown fox jumps over the lazy dog.
+      敏捷的棕色狐狸跃过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:lowercase] -->
-<p class="lowercase">The quick brown fox ...</p>
+<p class="lowercase">敏捷的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
-### Capitalizing text
+### 文本首字母大写
 
-Use the `capitalize` utility to capitalize text of an element:
+使用 `capitalize` 工具将元素的文本首字母大写：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 capitalize dark:text-gray-200">
-      The quick brown fox jumps over the lazy dog.
+      敏捷的棕色狐狸跃过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:capitalize] -->
-<p class="capitalize">The quick brown fox ...</p>
+<p class="capitalize">敏捷的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
-### Resetting text casing
+### 重置文本大小写
 
-Use the `normal-case` utility to preserve the original text casing of an element—typically used to reset capitalization at different breakpoints:
+使用 `normal-case` 工具来保留元素原始的文本大小写—通常用于在不同的断点重置大写：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 normal-case dark:text-gray-200">
-      The quick brown fox jumps over the lazy dog.
+      敏捷的棕色狐狸跃过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:normal-case] -->
-<p class="normal-case">The quick brown fox ...</p>
+<p class="normal-case">敏捷的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="p" property="text-transform" defaultClass="capitalize" featuredClass="uppercase" />

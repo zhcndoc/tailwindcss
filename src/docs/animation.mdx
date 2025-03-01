@@ -4,15 +4,15 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import dedent from "dedent";
 
-export const title = "animation";
-export const description = "Utilities for animating elements with CSS animations.";
+export const title = "动画";
+export const description = "用于通过 CSS 动画给元素添加动画的工具类。";
 
 <ApiTable
   rows={[
     [
       "animate-spin",
       dedent`
-        animation: var(--animate-spin); /* spin 1s linear infinite */
+        animation: var(--animate-spin); /* 旋转 1s 线性无限 */
 
         @keyframes spin {
           to {
@@ -24,7 +24,7 @@ export const description = "Utilities for animating elements with CSS animations
     [
       "animate-ping",
       dedent`
-        animation: var(--animate-ping); /* ping 1s cubic-bezier(0, 0, 0.2, 1) infinite */
+        animation: var(--animate-ping); /* 像雷达一样 ping 1s 套装 (0, 0, 0.2, 1) 无限 */
 
         @keyframes ping {
           75%, 100% {
@@ -37,7 +37,7 @@ export const description = "Utilities for animating elements with CSS animations
     [
       "animate-pulse",
       dedent`
-        animation: var(--animate-pulse); /* pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite */
+        animation: var(--animate-pulse); /* 脉冲 2s 套装 (0.4, 0, 0.6, 1) 无限 */
 
         @keyframes pulse {
           50% {
@@ -49,7 +49,7 @@ export const description = "Utilities for animating elements with CSS animations
     [
       "animate-bounce",
       dedent`
-        animation: var(--animate-bounce); /* bounce 1s infinite */
+        animation: var(--animate-bounce); /* 反弹 1s 无限 */
 
         @keyframes bounce {
           0%, 100% {
@@ -66,15 +66,14 @@ export const description = "Utilities for animating elements with CSS animations
     ["animate-none", "animation: none;"],
     ["animate-(<custom-property>)", "animation: var(<custom-property>);"],
     ["animate-[<value>]", "animation: <value>;"],
-
-]}
+  ]}
 />
 
-## Examples
+## 示例
 
-### Adding a spin animation
+### 添加旋转动画
 
-Use the `animate-spin` utility to add a linear spin animation to elements like loading indicators:
+使用 `animate-spin` 工具类为加载指示器等元素添加线性旋转动画：
 
 <Figure>
 
@@ -99,7 +98,7 @@ Use the `animate-spin` utility to add a linear spin animation to elements like l
             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
           ></path>
         </svg>
-        Processing…
+        正在处理…
       </button>
     </div>
   }
@@ -111,15 +110,15 @@ Use the `animate-spin` utility to add a linear spin animation to elements like l
   <svg class="mr-3 size-5 animate-spin ..." viewBox="0 0 24 24">
     <!-- ... -->
   </svg>
-  Processing…
+  正在处理…
 </button>
 ```
 
 </Figure>
 
-### Adding a ping animation
+### 添加 ping 动画
 
-Use the `animate-ping` utility to make an element scale and fade like a radar ping or ripple of water—useful for things like notification badges:
+使用 `animate-ping` 工具类使元素像雷达 ping 或水波一样缩放和消失——对于通知徽章等非常有用：
 
 <Figure>
 
@@ -132,7 +131,7 @@ Use the `animate-ping` utility to make an element scale and fade like a radar pi
           className="inline-flex cursor-not-allowed items-center rounded-md bg-white px-4 py-2 text-sm leading-6 font-semibold text-sky-500 ring-1 ring-gray-900/10 transition duration-150 ease-in-out dark:bg-white/5 dark:ring-white/20"
           disabled
         >
-          Transactions
+          交易
         </button>
         <span className="absolute top-0 right-0 -mt-1 -mr-1 flex size-3">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
@@ -153,9 +152,9 @@ Use the `animate-ping` utility to make an element scale and fade like a radar pi
 
 </Figure>
 
-### Adding a pulse animation
+### 添加脉冲动画
 
-Use the `animate-pulse` utility to make an element gently fade in and out—useful for things like skeleton loaders:
+使用 `animate-pulse` 工具类使元素轻柔地淡入淡出——对于骨架加载器等非常有用：
 
 <Figure>
 
@@ -202,9 +201,9 @@ Use the `animate-pulse` utility to make an element gently fade in and out—usef
 
 </Figure>
 
-### Adding a bounce animation
+### 添加反弹动画
 
-Use the `animate-bounce` utility to make an element bounce up and down—useful for things like "scroll down" indicators:
+使用 `animate-bounce` 工具类使元素上下反弹——对于“向下滚动”指示器等非常有用：
 
 <Figure>
 
@@ -237,9 +236,9 @@ Use the `animate-bounce` utility to make an element bounce up and down—useful 
 
 </Figure>
 
-### Supporting reduced motion
+### 支持减少运动
 
-For situations where the user has specified that they prefer reduced motion, you can conditionally apply animations and transitions using the `motion-safe` and `motion-reduce` variants:
+在用户指定希望减少运动的情况下，可以使用 `motion-safe` 和 `motion-reduce` 变体有条件地应用动画和过渡：
 
 ```html
 <!-- [!code classes:motion-safe:animate-spin] -->
@@ -247,19 +246,19 @@ For situations where the user has specified that they prefer reduced motion, you
   <svg class="mr-3 size-5 motion-safe:animate-spin ..." viewBox="0 0 24 24">
     <!-- ... -->
   </svg>
-  Processing
+  正在处理
 </button>
 ```
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue utility="animate" name="animation" value="wiggle_1s_ease-in-out_infinite" variable="animation" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="animation" defaultClass="animate-none" featuredClass="animate-spin" />
 
-## Customizing your theme
+## 自定义你的主题
 
 <CustomizingYourTheme
   utility="animate"
@@ -282,5 +281,4 @@ For situations where the user has specified that they prefer reduced motion, you
         }
       }
     `}
-
 />

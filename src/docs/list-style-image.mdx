@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "list-style-image";
-export const description = "Utilities for controlling the marker images for list items.";
+export const description = "用于控制列表项标记图像的工具类。";
 
 <ApiTable
   rows={[
@@ -14,11 +14,11 @@ export const description = "Utilities for controlling the marker images for list
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use the `list-image-[<value>]` syntax to control the marker image for list items:
+使用 `list-image-[<value>]` 语法来控制列表项的标记图像：
 
 <Figure>
 
@@ -27,9 +27,9 @@ Use the `list-image-[<value>]` syntax to control the marker image for list items
     <div className="px-4 sm:px-0">
       <div className="mx-auto max-w-sm p-8 text-gray-700 sm:text-base sm:leading-7 dark:text-gray-400">
         <ul className="list-image-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxNCAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSIjMzhiZGY4Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMy42ODUuMTUzYS43NTIuNzUyIDAgMCAxIC4xNDMgMS4wNTJsLTggMTAuNWEuNzUuNzUgMCAwIDEtMS4xMjcuMDc1bC00LjUtNC41YS43NS43NSAwIDAgMSAxLjA2LTEuMDZsMy44OTQgMy44OTMgNy40OC05LjgxN2EuNzUuNzUgMCAwIDEgMS4wNS0uMTQzWiIgLz48L3N2Zz4=')] pl-4 text-gray-900 dark:text-gray-200">
-          <li className="pl-2">5 cups chopped Porcini mushrooms</li>
-          <li className="pl-2">1/2 cup of olive oil</li>
-          <li className="pl-2">3lb of celery</li>
+          <li className="pl-2">5杯切碎的松露蘑菇</li>
+          <li className="pl-2">1/2杯橄榄油</li>
+          <li className="pl-2">3磅芹菜</li>
         </ul>
       </div>
     </div>
@@ -39,16 +39,16 @@ Use the `list-image-[<value>]` syntax to control the marker image for list items
 ```html
 <!-- [!code classes:list-image-[url(/img/checkmark.png)]] -->
 <ul class="list-image-[url(/img/checkmark.png)]">
-  <li>5 cups chopped Porcini mushrooms</li>
+  <li>5杯切碎的松露蘑菇</li>
   <!-- ... -->
 </ul>
 ```
 
 </Figure>
 
-### Using a CSS variable
+### 使用 CSS 变量
 
-Use the <code>list-image-{'(<custom-property>)'}</code> syntax to control the marker image for list items using a CSS variable:
+使用 <code>list-image-{'(<custom-property>)'}</code> 语法来使用 CSS 变量控制列表项的标记图像：
 
 ```html
 <!-- [!code classes:list-image-(--my-list-image)] -->
@@ -57,11 +57,11 @@ Use the <code>list-image-{'(<custom-property>)'}</code> syntax to control the ma
 </ul>
 ```
 
-This is just a shorthand for <code>list-image-{'[var(<custom-property>)]'}</code> that adds the `var()` function for you automatically.
+这只是 <code>list-image-{'[var(<custom-property>)]'}</code> 的简称，它为您自动添加 `var()` 函数。
 
-### Removing a marker image
+### 移除标记图像
 
-Use the `list-image-none` utility to remove an existing marker image from list items:
+使用 `list-image-none` 工具类从列表项中移除现有的标记图像：
 
 ```html
 <!-- [!code classes:list-image-none] -->
@@ -70,7 +70,7 @@ Use the `list-image-none` utility to remove an existing marker image from list i
 </ul>
 ```
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   property="list-style-image"

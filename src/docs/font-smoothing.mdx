@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "font-smoothing";
-export const description = "Utilities for controlling the font smoothing of an element.";
+export const title = "字体平滑";
+export const description = "控制元素字体平滑的工具类。";
 
 <ApiTable
   rows={[
@@ -13,51 +13,51 @@ export const description = "Utilities for controlling the font smoothing of an e
   ]}
 />
 
-## Examples
+## 示例
 
-### Grayscale antialiasing
+### 灰度抗锯齿
 
-Use the `antialiased` utility to render text using grayscale antialiasing:
+使用 `antialiased` 工具类来使用灰度抗锯齿渲染文本：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 antialiased dark:text-gray-200">
-      The quick brown fox jumps over the lazy dog.
+      快速的棕色狐狸跳过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:antialiased] -->
-<p class="antialiased ...">The quick brown fox ...</p>
+<p class="antialiased ...">快速的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
-### Subpixel antialiasing
+### 亚像素抗锯齿
 
-Use the `subpixel-antialiased` utility to render text using subpixel antialiasing:
+使用 `subpixel-antialiased` 工具类来使用亚像素抗锯齿渲染文本：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 subpixel-antialiased dark:text-gray-200">
-      The quick brown fox jumps over the lazy dog.
+      快速的棕色狐狸跳过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:subpixel-antialiased] -->
-<p class="subpixel-antialiased ...">The quick brown fox ...</p>
+<p class="subpixel-antialiased ...">快速的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="p"

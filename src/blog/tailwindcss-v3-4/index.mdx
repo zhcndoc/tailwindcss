@@ -7,58 +7,57 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const meta = {
-  title: "Tailwind CSS v3.4: Dynamic viewport units, :has() support, balanced headlines, subgrid, and more",
-  description: `There’s nothing like building a major new product for finding all the features you wish you had in your own tools, so we capitalized on that inspiration and turned it into this — Tailwind CSS v3.4.`,
+  title: "Tailwind CSS v3.4: 动态视口单位，:has() 支持，平衡标题，子网格等更多新特性",
+  description: `没有什么能比构建一个全新的重大产品更能让人发现自己工具所缺的功能了，因此我们受到这股灵感的推动，打造了这个 — Tailwind CSS v3.4。`,
   date: "2023-12-19T17:45:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      There's nothing like building{" "}
-      <Link href="https://twitter.com/steveschoger/status/1732143245696639167">a major new product</Link> for finding
-      all the features you wish you had in your own tools, so we capitalized on some of that inspiration and turned it
-      into this — Tailwind CSS v3.4.
+      没有什么能比构建{" "}
+      <Link href="https://twitter.com/steveschoger/status/1732143245696639167">一个重大的新产品</Link> 更能让人发现
+      自己工具所缺的功能了，因此我们抓住了一些灵感，并将其转化为此 — Tailwind CSS v3.4。
     </>
   ),
 };
 
 <Image alt="Tailwind CSS v3.4" src={card} />
 
-There's nothing like building [a major new product](https://twitter.com/steveschoger/status/1732143245696639167) for finding all the features you wish you had in your own tools, so we capitalized on some of that inspiration and turned it into this — Tailwind CSS v3.4.
+没有什么能比构建 [一个重大的新产品](https://twitter.com/steveschoger/status/1732143245696639167) 更能让人发现自己工具所缺的功能了，因此我们抓住了一些灵感，并将其转化为此 — Tailwind CSS v3.4。
 
-As always the improvements range from things you've been angry about for years, to supporting CSS features you've never even heard of and probably can't even use at work.
+和往常一样，这些改进从你多年来一直感到愤怒的事情，到支持一些你甚至从未听说过的可能在工作中用不到的 CSS 特性。
 
-- [**Dynamic viewport units:**](#dynamic-viewport-units) Full-height elements that actually work on mobile.
-- [**New `:has()` variant**:](#new-has-variant) Style parent elements based on their children.
-- [**Style children with the `*` variant**:](#style-children-with-the-variant) We'll probably regret giving you this one.
-- [**New `size-*` utilities**:](#new-size-utilities) Set width and height at the same time, finally.
-- [**Balanced headlines with `text-wrap` utilities**:](#balanced-headlines-with-text-wrap-utilities) No more max-width tweaking or responsive line breaks.
-- [**Subgrid support**:](#subgrid-support) That grid feature you struggle to understand, finally in Tailwind CSS.
-- [**Extended min-width, max-width, and min-height scales**:](#extended-min-width-max-width-and-min-height-scales) Now `min-w-12` is a real class.
-- [**Extended opacity scale**:](#extended-opacity-scale) For those moments when neither 60% or 70% were quite right.
-- [**Extended `grid-rows-*` scale**:](#extended-grid-rows-scale) Might as well make it match the column scale.
-- [**New `forced-colors` variant**:](#new-forced-colors-variant) Easily fine-tune your site for forced colors mode.
-- [**New `forced-color-adjust` utilities**:](#new-forced-color-adjust-utilities) For even more forced colors fine-tuning.
+- [**动态视口单位：**](#dynamic-viewport-units) 实际在手机上工作的全高元素。
+- [**新的 `:has()` 变体：**](#new-has-variant) 根据子元素的状态为父元素设定样式。
+- [**使用 `*` 变体为子元素设定样式：**](#style-children-with-the-variant) 你可能会后悔我们给你这个。
+- [**新的 `size-*` 工具：**](#new-size-utilities) 同时设置宽度和高度，终于来了。
+- [**使用 `text-wrap` 工具平衡标题：**](#balanced-headlines-with-text-wrap-utilities) 不再需要调整最大宽度或响应式换行。
+- [**子网格支持：**](#subgrid-support) 那个你一直无法理解的网格特性，终于在 Tailwind CSS 中实现了。
+- [**扩展的最小宽度、最大宽度和最小高度尺度：**](#extended-min-width-max-width-and-min-height-scales) 现在 `min-w-12` 真正成为一个类。
+- [**扩展的透明度尺度：**](#extended-opacity-scale) 在 60% 和 70% 都不太合适的时候。
+- [**扩展的 `grid-rows-*` 尺度：**](#extended-grid-rows-scale) 不妨让它与列尺度一致。
+- [**新的 `forced-colors` 变体：**](#new-forced-colors-variant) 轻松为你的站点调整强制颜色模式。
+- [**新的 `forced-color-adjust` 工具：**](#new-forced-color-adjust-utilities) 用于更精细的强制颜色调整。
 
-All the good stuff is in that list, but check out the [release notes](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.4.0) for a couple more details that weren't exciting enough to earn a spot in this post.
+所有这些好的功能都在该列表中，但请查看 [发布说明](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.4.0)，以获取一些在这篇文章中没有足够令人兴奋而没有提及的细节。
 
-Upgrade your projects by installing the latest version of `tailwindcss` from npm:
+通过从 npm 安装最新版本的 `tailwindcss` 来升级你的项目：
 
 ```sh
 npm install tailwindcss@latest
 ```
 
-Or try out all of the new features on [Tailwind Play](https://play.tailwindcss.com), right in your browser.
+或者直接在浏览器中试用 [Tailwind Play](https://play.tailwindcss.com) 上的所有新特性。
 
 ---
 
-## Dynamic viewport units
+## 动态视口单位
 
-When the `vh` unit was added to browsers we all got so excited — finally a way to build full-height application layouts and stuff without drilling `height: 100%` through 17 layers of DOM! But mobile devices and their damn disappearing menu bars spoiled all the fun, effectively making the `vh` unit just a cruel reminder of a future that could've been so great.
+当 `vh` 单位被添加到浏览器时，我们都非常兴奋——终于有了一种构建全高应用布局的方式，而不需要通过 17 层 DOM 来灌输 `height: 100%`！但移动设备及其那些该死的消失菜单栏破坏了所有乐趣，使得 `vh` 单位仅仅成为了未来美好愿景的残酷提醒。
 
-Well we've got a new future now — `dvh`, `lvh`, and `svh` are designed to accommodate that disappearing browser chrome and Tailwind CSS v3.4 supports them out of the box:
+现在我们有了一个新的未来——`dvh`、`lvh` 和 `svh` 被设计成适应那些消失的浏览器界面，而 Tailwind CSS v3.4 直接支持它们：
 
-<Figure hint="Scroll up and down in the viewport to hide/show the browser UI">
+<Figure hint="在视口中上下滚动以隐藏/显示浏览器 UI">
 
 <DynamicViewportExample
   unit="dvh"
@@ -75,14 +74,14 @@ Well we've got a new future now — `dvh`, `lvh`, and `svh` are designed to acco
 
 </Figure>
 
-We've added the following new classes by default:
+我们默认添加了以下新类：
 
 {
 
 <table>
   <thead>
     <tr>
-      <th>Class</th>
+      <th>类</th>
       <th>CSS</th>
     </tr>
   </thead>
@@ -164,17 +163,17 @@ We've added the following new classes by default:
 
 }
 
-If you need other values, you can always use arbitrary values too like `min-h-[75dvh]`.
+如果你需要其他值，你也可以使用任意值，比如 `min-h-[75dvh]`。
 
-Browser support is [pretty great](https://caniuse.com/viewport-unit-variants) for these nowadays, so unless you need to support Safari 14 you can start using these right away.
+这些单位目前的浏览器支持情况是 [相当不错的](https://caniuse.com/viewport-unit-variants)，所以除非你需要支持 Safari 14，否则可以立即开始使用它们。
 
 ---
 
-## New `:has()` variant
+## 新的 `:has()` 变体
 
-The [`:has()` pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:has) is the most powerful thing that's been added to CSS since flexbox. For the first time ever, you can style an element based on its _children_, not just based on its parents. It even makes it possible to style based on subsequent siblings.
+[` :has()` 伪类](https://developer.mozilla.org/en-US/docs/Web/CSS/:has) 是自 flexbox 以来添加到 CSS 中的最强大特性。首次，你可以根据元素的 _子元素_ 设置样式，而不仅仅是根据父元素。它甚至使得根据后续兄弟元素的状态进行样式设置成为可能。
 
-Here's an example where the parent gets a colored ring if the radio button inside of it is checked:
+这里有一个示例，如果其中的单选按钮被选中，父元素会获得一个彩色的边框：
 
 <Figure>
 
@@ -182,7 +181,7 @@ Here's an example where the parent gets a colored ring if the radio button insid
   {
     <div className="mx-auto max-w-md bg-white px-4 py-6 shadow">
       <fieldset>
-        <legend className="text-base font-semibold text-slate-900 dark:text-slate-200">Payment method</legend>
+        <legend className="text-base font-semibold text-slate-900 dark:text-slate-200">付款方式</legend>
         <div className="mt-4 space-y-2">
           <label
             htmlFor="apple"
@@ -222,7 +221,7 @@ Here's an example where the parent gets a colored ring if the radio button insid
                 d="M16.539 3.18591C16.0742 3.01652 15.5828 2.93152 15.088 2.93491C13.488 2.93491 12.358 3.74091 12.35 4.89791C12.34 5.74791 13.153 6.22691 13.768 6.51091C14.399 6.80291 14.61 6.98691 14.608 7.24791C14.604 7.64491 14.104 7.82491 13.639 7.82491C13 7.82491 12.651 7.73591 12.114 7.51291L11.915 7.41991L11.688 8.75191C12.077 8.91391 12.778 9.05291 13.502 9.06491C15.203 9.06491 16.315 8.26391 16.328 7.03291C16.342 6.35391 15.902 5.84091 14.976 5.41691C14.413 5.14191 14.064 4.95791 14.064 4.67891C14.064 4.43191 14.363 4.16791 14.988 4.16791C15.404 4.15785 15.8174 4.23589 16.201 4.39691L16.351 4.46391L16.578 3.17691L16.539 3.18591ZM20.691 3.04291H19.441C19.052 3.04291 18.759 3.14991 18.589 3.53591L16.185 8.98191H17.886L18.226 8.08891L20.302 8.09091C20.351 8.29991 20.501 8.98191 20.501 8.98191H22.001L20.691 3.04291ZM10.049 2.99291H11.67L10.656 8.93491H9.03705L10.049 2.99091V2.99291ZM5.93405 6.26791L6.10205 7.09291L7.68605 3.04291H9.40305L6.85205 8.97391H5.13905L3.73905 3.95191C3.71637 3.8691 3.66312 3.79798 3.59005 3.75291C3.08545 3.49225 2.55079 3.29444 1.99805 3.16391L2.02005 3.03891H4.62905C4.98305 3.05291 5.26805 3.16391 5.36305 3.54191L5.93305 6.27091L5.93405 6.26791ZM18.691 6.87391L19.337 5.21191C19.329 5.22991 19.47 4.86891 19.552 4.64591L19.663 5.15891L20.038 6.87291H18.69L18.691 6.87391Z"
               />
             </svg>
-            Credit Card
+            信用卡
             <input
               name="payment_method"
               id="credit-card"
@@ -252,9 +251,9 @@ Here's an example where the parent gets a colored ring if the radio button insid
 
 </Figure>
 
-I feel like I've found a new use-case for `:has()` every week while working on this new UI kit we've been building for the last few months, and it's replaced a crazy amount of JavaScript in our code.
+我感觉在过去几个月的 UI 套件工作中，我每周都发现 `:has()` 的新用例，并且它替代了我们代码中大量的 JavaScript。
 
-For example, our text inputs are pretty complicated design-wise and require a little wrapper element to build. Without `:has()`, we had no way of styling the wrapper based on things like the `:disabled` state of the input, but now we can:
+例如，我们的文本输入在设计上相当复杂，需要一个小的包装元素来构建。如果没有 `:has()`，我们无法根据输入的 `:disabled` 状态来样式化包装元素，但现在我们可以做到：
 
 ```jsx
 // [!code filename:input.jsx]
@@ -267,15 +266,15 @@ export function Input({ ... }) {
 }
 ```
 
-This one is pretty bleeding edge but as of literally today it's now supported in the latest version of all major browsers. Give it a few weeks for any Firefox users to install today's update and we should be able to go wild with it.
+这个功能刚刚好处于前沿，但实际上，直到今天，它现在被所有主要浏览器的最新版本支持。只需等几周，让任何 Firefox 用户安装今天的更新，我们就可以随意使用这个功能。
 
 ---
 
-## Style children with the `*` variant
+## 使用 `*` 变体为子元素设定样式
 
-Here's one people have wanted for literally ever — a way to style children from the parent using utility classes.
+这是人们一直想要的功能——一种通过父元素使用工具类为子元素设定样式的方法。
 
-We've added a new `*` variant that targets direct children, letting you do stuff like this:
+我们添加了一个新的 `*` 变体，它可以直接作用于直接子元素，这样你便能够做到这样：
 
 <Figure>
 
@@ -283,18 +282,18 @@ We've added a new `*` variant that targets direct children, letting you do stuff
   {
     <div className="mx-auto max-w-md p-6 shadow dark:bg-gray-950/50">
       <h2 className="text-base font-semibold text-gray-900 dark:text-gray-200">
-        <>Categories</>
+        <>类别</>
       </h2>
       <div className="flex flex-wrap gap-2 pt-4 text-sm text-sky-600 *:rounded-full *:border *:border-sky-100 *:bg-sky-50 *:px-2 *:py-0.5 dark:text-sky-300 dark:*:border-sky-500/15 dark:*:bg-sky-500/10">
-        <div>Sales</div>
-        <div>Marketing</div>
+        <div>销售</div>
+        <div>市场营销</div>
         <div>SEO</div>
-        <div>Analytics</div>
-        <div>Design</div>
-        <div>Strategy</div>
-        <div>Security</div>
-        <div>Growth</div>
-        <div>Mobile</div>
+        <div>分析</div>
+        <div>设计</div>
+        <div>战略</div>
+        <div>安全</div>
+        <div>增长</div>
+        <div>移动</div>
         <div>UX/UI</div>
       </div>
     </div>
@@ -303,11 +302,11 @@ We've added a new `*` variant that targets direct children, letting you do stuff
 
 ```html
 <div>
-  <h2>Categories:<h2>
+  <h2>类别:<h2>
   <!-- [!code highlight:2] -->
   <ul class="*:rounded-full *:border *:border-sky-100 *:bg-sky-50 *:px-2 *:py-0.5 dark:text-sky-300 dark:*:border-sky-500/15 dark:*:bg-sky-500/10 ...">
-    <li>Sales</li>
-    <li>Marketing</li>
+    <li>销售</li>
+    <li>市场营销</li>
     <li>SEO</li>
     <!-- ... -->
   </ul>
@@ -316,11 +315,11 @@ We've added a new `*` variant that targets direct children, letting you do stuff
 
 </Figure>
 
-Generally I'd recommend just styling the children directly, but this can be useful when you don't control those elements or need to make a conditional tweak because of the context the element is used in.
+通常我建议直接为子元素设置样式，但当你不控制这些元素或由于元素使用的上下文需要做条件调整时，这种方法可能会很有用。
 
-It can be composed with other variants too, for instance `hover:*:underline` will style any child when the child is hovered.
+它还可以与其他变体组合，比如 `hover:*:underline` 将在鼠标悬停时样式化任何子元素。
 
-Here's a cool way we're using that to conditionally add layout styles to different child elements in the new UI kit we're working on:
+这是我们在新 UI 套件中使用的一个酷方式，用于有条件的为不同子元素添加布局样式：
 
 ```jsx
 // [!code filename:JSX]
@@ -341,27 +340,27 @@ function Description({ children }) {
 function Example() {
   return (
     <Field>
-      <Label>First name</Label>
+      <Label>名字</Label>
       <Input />
-      <Description>Please tell me you know your own name.</Description>
+      <Description>请告诉我你知道你自己的名字。</Description>
     </Field>
   )
 }
 ```
 
-See that crazy `data-[slot=description]:*:mt-4` class? It first targets all direct children (that's the `*:` part), then filters them down to just items with a `data-slot="description"` attribute using `data-[slot=description]`.
+看到那个疯狂的 `data-[slot=description]:*:mt-4` 类了吗？它首先作用于所有直接子元素（这是 `*:` 部分），然后将其细分为仅具有 `data-slot="description"` 属性的项，使用 `data-[slot=description]`。
 
-This makes it easy to target only specific children, without having to drop all the way down to a raw arbitrary variant.
+这使得只根据特定的子元素进行定位变得简单，而无需深入使用任意变体。
 
-Looking forward to seeing all the horrible stuff everyone does to make me regret adding this feature.
+期待看到每个人所做的可怕的事情，让我后悔添加这个功能。
 
 ---
 
-## New `size-*` utilities
+## 新的 `size-*` 工具
 
-You're sick of typing `h-5 w-5` every time you need to size an avatar, you know it and I know it.
+每当你需要调整头像的大小时，你就厌倦了输入 `h-5 w-5`，你我都知道。
 
-In Tailwind CSS v3.4 we've finally added a new `size-*` utility that sets width and height at the same time:
+在 Tailwind CSS v3.4 中，我们终于添加了新的 `size-*` 工具，可以同时设置宽度和高度：
 
 <Figure>
 
@@ -405,15 +404,15 @@ In Tailwind CSS v3.4 we've finally added a new `size-*` utility that sets width 
 
 </Figure>
 
-We've wanted to add this forever but have always been hung up on the exact name — `size-*` felt like so much to type compared to `w-*` or `h-*` and `s-*` felt way too cryptic.
+我们想了很久要添加这个功能，但一直在犹豫到底该用什么名称——`size-*` 相比于 `w-*` 或 `h-*` 看起来确实有些太长，而 `s-*` 又显得太隐晦。
 
-After using it for a few weeks though I can say decisively that even with the longer name, it's way better than separate width and height utilities. Super convenient, especially if you're combining it with variants or using a complex arbitrary value.
+然而在使用了几周后，我可以明确说，即便名字较长，但它比分开的宽度和高度工具方便得多。超级方便，尤其是当你与变体结合使用或使用复杂的任意值时。
 
 ---
 
-## Balanced headlines with `text-wrap` utilities
+## 使用 `text-wrap` 工具平衡标题
 
-How much time have you spent fiddling with `max-width` or inserting responsive line breaks to try and make those little section headings wrap nicely on your landing pages? Well now you can spend zero time on it, because the browser can do it for you with `text-wrap: balance`:
+你花了多少时间调试 `max-width` 或插入响应式换行来尝试让这些小节标题在着陆页上完美换行？现在你可以将所有时间都省下来，因为浏览器可以通过 `text-wrap: balance` 为你完成这项工作：
 
 <Figure>
 
@@ -422,11 +421,11 @@ How much time have you spent fiddling with `max-width` or inserting responsive l
     <div className="px-4 sm:px-0">
       <div className="mx-auto grid max-w-sm gap-4 bg-white p-8 text-slate-700 shadow-xl dark:bg-slate-800 dark:text-slate-400">
         <h3 className="text-xl font-semibold text-balance text-slate-900 dark:text-white">
-          Beloved Manhattan soup stand closes
+          备受喜爱的曼哈顿汤摊闭店
         </h3>
         <p className="text-sm/6">
-          New Yorkers are facing the winter chill with less warmth this year as the city's most revered soup stand
-          unexpectedly shutters, following a series of events that have left the community puzzled.
+          纽约人在这个冬天面临着寒风，更少的温暖，因为城市中最受推崇的汤摊意外关门，经过一系列事件后
+          社区充满困惑。
         </p>
       </div>
     </div>
@@ -436,14 +435,14 @@ How much time have you spent fiddling with `max-width` or inserting responsive l
 ```html
 <article>
   <!-- [!code word:text-balance] -->
-  <h3 class="text-balance ...">Beloved Manhattan soup stand closes<h3>
-  <p>New Yorkers are facing the winter chill...</p>
+  <h3 class="text-balance ...">备受喜爱的曼哈顿汤摊闭店<h3>
+  <p>纽约人在这个冬天面临着寒风...</p>
 </article>
 ```
 
 </Figure>
 
-We've also added `text-pretty` which tries to avoid orphaned words at the end of paragraphs using `text-wrap: pretty`:
+我们还添加了 `text-pretty`，试图使用 `text-wrap: pretty` 来避免段落结尾的孤立词：
 
 <Figure>
 
@@ -451,10 +450,10 @@ We've also added `text-pretty` which tries to avoid orphaned words at the end of
   {
     <div className="px-4 sm:px-0">
       <div className="mx-auto grid max-w-sm gap-4 bg-white p-8 text-pretty text-slate-700 shadow-xl dark:bg-slate-800 dark:text-slate-400">
-        <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Beloved Manhattan soup stand closes</h3>
+        <h3 className="text-xl font-semibold text-slate-900 dark:text-white">备受喜爱的曼哈顿汤摊闭店</h3>
         <p className="text-sm/6">
-          New Yorkers are facing the winter chill with less warmth this year as the city's most revered soup stand
-          unexpectedly shutters, following a series of events that have left the community puzzled.
+          纽约人在这个冬天面临着寒风，更少的温暖，因为城市中最受推崇的汤摊意外关门，经过一系列事件后
+          社区充满困惑。
         </p>
       </div>
     </div>
@@ -464,20 +463,20 @@ We've also added `text-pretty` which tries to avoid orphaned words at the end of
 ```html
 <!-- [!code word:text-pretty] -->
 <article class="text-pretty ...">
-  <h3>Beloved Manhattan soup stand closes<h3>
-  <p>New Yorkers are facing the winter chill...</p>
+  <h3>备受喜爱的曼哈顿汤摊闭店<h3>
+  <p>纽约人在这个冬天面临着寒风...</p>
 </article>
 ```
 
 </Figure>
 
-The nice thing about these features is that even if someone visits your site with an older browser, they'll just fallback to the regular wrapping behavior so it's totally safe to start using these today.
+这些功能的好处是，即使有人使用较旧的浏览器访问您的网站，他们也会回退到常规换行行为，因此今天开始使用这些功能完全安全。
 
 ---
 
-## Subgrid support
+## 子网格支持
 
-Subgrid is a fairly recent CSS feature that lets an element sort of inherit the grid columns or rows from its parent, make it possible to place its child elements in the parent grid.
+子网格是一项相对较新的 CSS 特性，它允许元素在某种程度上继承父元素的网格列或行，使其子元素能够放置在父网格中。
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -491,7 +490,7 @@ Subgrid is a fairly recent CSS feature that lets an element sort of inherit the 
 </div>
 ```
 
-We're using subgrid in the new UI kit we're working on for example in [dropdown menus](https://twitter.com/adamwathan/status/1717576154008240615), so that if any item has an icon, all of the other items are indented to keep the text aligned:
+我们在新UI套件中使用子网格，例如在 [下拉菜单](https://twitter.com/adamwathan/status/1717576154008240615) 中，这样如果任何项目有一个图标，所有其他项目都将缩进以保持文本对齐：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -499,27 +498,27 @@ We're using subgrid in the new UI kit we're working on for example in [dropdown 
   <!-- [!code word:grid-cols-subgrid] -->
   <a href="#" class="col-span-2 grid-cols-subgrid">
     <svg class="mr-2">...</svg>
-    <span class="col-start-2">Account</span>
+    <span class="col-start-2">账户</span>
   </a>
   <a href="#" class="col-span-2 grid-cols-subgrid">
     <svg class="mr-2">...</svg>
-    <span class="col-start-2">Settings</span>
+    <span class="col-start-2">设置</span>
   </a>
   <a href="#" class="col-span-2 grid-cols-subgrid">
-    <span class="col-start-2">Sign out</span>
+    <span class="col-start-2">注销</span>
   </a>
 </div>
 ```
 
-When none of the items have an icon, the first column shrinks to 0px and the text is aligned all the way to left.
+当没有项目带有图标时，第一个列将收缩到 0px，文本将完全向左对齐。
 
-Check out the [MDN documentation on subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Subgrid) for a full primer — it's a bit of a tricky feature to wrap your head around at first, but once it clicks it's a game-changer.
+查看 [MDN 上关于子网格的文档](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Subgrid) 以获取完整的入门指南——在开始时有点棘手，但一旦理解，就会成为游戏规则的改变者。
 
 ---
 
-## Extended min-width, max-width, and min-height scales
+## 扩展的最小宽度、最大宽度和最小高度尺度
 
-We've finally extended the `min-width`, `max-width`, and `min-height` scales to include the full spacing scale, so classes like `min-w-12` are actually a real thing now:
+我们终于扩展了 `min-width`、`max-width` 和 `min-height` 的尺度，包含完整的间距尺度，因此类如 `min-w-12` 现在真的成为了一个真实的类：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -529,13 +528,13 @@ We've finally extended the `min-width`, `max-width`, and `min-height` scales to 
 </div>
 ```
 
-We should've just done this for v3.0 but never really got around to it — I'm sorry and you're welcome.
+我们本应该在 v3.0 中做到这一点，但从未真正完成——我很抱歉，同时也感谢你。
 
 ---
 
-## Extended opacity scale
+## 扩展的透明度尺度
 
-We've also extended the opacity scale to include every step of 5 out of the box:
+我们还扩展了透明度尺度，包括每 5 的步骤：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -545,13 +544,13 @@ We've also extended the opacity scale to include every step of 5 out of the box:
 </div>
 ```
 
-Hopefully that means a few less arbitrary values in your markup. I'm coming for you next 2.5%.
+希望这能减少你的标记中一些任意值。我下一个目标是解决 2.5%。
 
 ---
 
-## Extended `grid-rows-*` scale
+## 扩展的 `grid-rows-*` 尺度
 
-We've also bumped the baked-in number of grid rows from 6 to 12 because why not:
+我们还将内建的网格行数从 6 增加到 12，反正为什么不呢：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -561,15 +560,15 @@ We've also bumped the baked-in number of grid rows from 6 to 12 because why not:
 </div>
 ```
 
-Maybe we'll get even crazier and bump it to 16 in the next release.
+也许在下一个版本中，我们会更加疯狂，增加到 16。
 
 ---
 
-## New `forced-colors` variant
+## 新的 `forced-colors` 变体
 
-Ever heard of [forced colors mode](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors)? Your site probably looks pretty bad in it.
+你听说过 [强制颜色模式](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors) 吗？你的站点在这个模式下可能看起来相当糟糕。
 
-Well now you can't blame us at least, because Tailwind CSS v3.4 includes a `forced-colors` variant for adjusting styles for forced colors mode:
+好吧，现在你至少不能怪我们，因为 Tailwind CSS v3.4 包含一个 `forced-colors` 变体，可调整强制颜色模式的样式：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -579,28 +578,28 @@ Well now you can't blame us at least, because Tailwind CSS v3.4 includes a `forc
 </form>
 ```
 
-It's really useful for fine-tuning totally custom controls, especially combined with arbitrary values and a working knowledge of [CSS system colors](https://developer.mozilla.org/en-US/docs/Web/CSS/system-color).
+对于微调完全自定义控制非常有用，尤其是与任意值和对 [CSS 系统颜色](https://developer.mozilla.org/en-US/docs/Web/CSS/system-color) 的工作知识相结合。
 
 ---
 
-## New `forced-color-adjust` utilities
+## 新的 `forced-color-adjust` 工具
 
-We've also added new `forced-color-adjust-auto` and `forces-color-adjust-none` utilities to control how forced colors mode affects your design:
+我们还添加了新的 `forced-color-adjust-auto` 和 `forces-color-adjust-none` 工具，以控制强制颜色模式如何影响你的设计：
 
 ```html
 <!-- [!code filename:HTML] -->
 <fieldset>
-  <legend>Choose a color</legend>
+  <legend>选择颜色</legend>
   <!-- [!code word:forced-color-adjust-none] -->
   <div class="forced-color-adjust-none ...">
     <label>
       <input class="sr-only" type="radio" name="color-choice" value="white" />
-      <span class="sr-only">White</span>
+      <span class="sr-only">白色</span>
       <span class="size-6 rounded-full bg-white"></span>
     </label>
     <label>
       <input class="sr-only" type="radio" name="color-choice" value="gray" />
-      <span class="sr-only">Gray</span>
+      <span class="sr-only">灰色</span>
       <span class="size-6 rounded-full bg-gray-300"></span>
     </label>
     <!-- ... -->
@@ -608,20 +607,20 @@ We've also added new `forced-color-adjust-auto` and `forces-color-adjust-none` u
 </fieldset>
 ```
 
-These should be used pretty sparingly, but they can be useful when it's critical that something is rendered in a specific color no matter what, like choosing the color of something someone is buying in an online store.
+这些工具应该被适度使用，但在某些情况下，当某些东西的色彩渲染至关重要时，它们会非常有用，例如在在线商店中选择某样商品的颜色。
 
-To learn more about all this forced colors stuff, I recommend reading ["Forced colors explained: A practical guide"](https://polypane.app/blog/forced-colors-explained-a-practical-guide/) on the Polypane blog — by far the most useful post I've found on this topic.
+要了解更多关于所有这些强制颜色的内容，我建议阅读 [“强制颜色解释：实用指南”](https://polypane.app/blog/forced-colors-explained-a-practical-guide/) 在 Polypane 博客上的文章——这是我找到的关于这个主题最有用的文章。
 
 ---
 
-If you've been paying close attention, you might be wondering about [Oxide](https://youtu.be/CLkxRnRQtDE?t=2146), the engine improvements we previewed at [Tailwind Connect](https://tailwindcss.com/blog/2023-07-18-tailwind-connect-2023-recap) this summer.
+如果你一直在密切关注，你可能会想起 [Oxide](https://youtu.be/CLkxRnRQtDE?t=2146)，我们在这个夏天的 [Tailwind Connect](https://tailwindcss.com/blog/2023-07-18-tailwind-connect-2023-recap) 预览的引擎改进。
 
-We'd originally slated those improvements for v3.4, but we have a few things still to iron out and so many of these other improvements had been piling up that we felt it made sense to get it all out the door instead of holding it back. The Oxide stuff is still coming, and will be the headlining improvement for the next Tailwind CSS release in the new year.
+我们最初将这些改进安排在 v3.4，但我们还有一些事情需要解决，而且这么多其他的改进累计在一起，因此我们觉得将所有这些先推出会更合适，而不是继续推迟。Oxide 的内容仍在进行中，并将成为明年新一年 Tailwind CSS 发布的头条改进。
 
-In the mean time, dig in to Tailwind CSS v3.4 by updating to the latest version with npm:
+在此期间，通过使用 npm 升级到最新版本，深入了解 Tailwind CSS v3.4：
 
 ```bash
 $ npm install tailwindcss@latest
 ```
 
-With `:has()` and the new `*` variant, your HTML is about to get more out of control than ever.
+使用 `:has()` 和新的 `*` 变体，你的 HTML 将比以往更加出色。

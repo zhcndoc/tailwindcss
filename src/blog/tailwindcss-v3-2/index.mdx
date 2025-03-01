@@ -7,57 +7,56 @@ import card from "./card.jpg";
 import { adamwathan } from "@/app/blog/authors";
 
 export const meta = {
-  title: "Tailwind CSS v3.2: Dynamic breakpoints, multi-config, and container queries, oh my!",
-  description: "...and nested group support, `aria-*` variants, `data-*` variants, `@supports` support, and more.",
+  title: "Tailwind CSS v3.2: 动态断点、多配置和容器查询，太棒了！",
+  description: "...以及嵌套组支持，`aria-*` 变体，`data-*` 变体，`@supports` 支持等。",
   date: "2022-10-19T15:30:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      Well it's that time again! The time where we quickly go from{" "}
-      <em>"I really have no idea what we could even add to a new Tailwind release"</em> to{" "}
+      哦，又到了这个时间！从{" "}
+      <em>"我真的不知道我们可以为新的 Tailwind 版本添加什么"</em> 到{" "}
       <em>
-        "wow, well this is actually a ridiculous amount of new stuff — we better tag a release before things get
-        completely out of hand"
+        "哇，这实际上是一个令人难以置信的新内容 — 我们最好在事情失控之前标记一个版本"
       </em>
-      .
+      。
     </>
   ),
 };
 
 <Image alt="Tailwind CSS v3.2" src={card} />
 
-Tailwind CSS v3.2 is here with an absolutely _massive_ amount of new stuff, including support for dynamic breakpoints, multiple config files in a single project, nested groups, parameterized variants, container queries, and more.
+Tailwind CSS v3.2 以绝对 _庞大的_ 新内容到来，包括对动态断点、单个项目中的多个配置文件、嵌套组、参数化变体、容器查询等的支持。
 
-As always check out the <Link href="https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.2.0">release notes</Link> for every nitty-gritty fix and improvement, but here's the highlight reel:
+一如既往，请查看 <Link href="https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.2.0">发布说明</Link> 以获取每一个琐碎的修复和改进，但这里是重点回顾：
 
 - <Link href="#multiple-config-files-in-one-project-using-config">
-    Multiple config files in one project using `@config`
+    使用 `@config` 在一个项目中多个配置文件
   </Link>
-- <Link href="#browser-support-based-styling-with-supports">Browser-support-based styling with `supports-*`</Link>
-- <Link href="#aria-attribute-variants">ARIA attribute variants</Link>
-- <Link href="#data-attribute-variants">Data attribute variants</Link>
-- <Link href="#max-width-and-dynamic-breakpoints">Max-width and dynamic breakpoints</Link>
-- <Link href="#dynamic-group-and-peer-variants">Dynamic `group-*` and `peer-*` variants</Link>
-- <Link href="#dynamic-variants-with-match-variant">Dynamic variants with `matchVariant`</Link>
+- <Link href="#browser-support-based-styling-with-supports">基于浏览器支持的样式与 `supports-*`</Link>
+- <Link href="#aria-attribute-variants">ARIA 属性变体</Link>
+- <Link href="#data-attribute-variants">数据属性变体</Link>
+- <Link href="#max-width-and-dynamic-breakpoints">最大宽度和动态断点</Link>
+- <Link href="#dynamic-group-and-peer-variants">动态 `group-*` 和 `peer-*` 变体</Link>
+- <Link href="#dynamic-variants-with-match-variant">使用 `matchVariant` 的动态变体</Link>
 - <Link href="#nested-group-and-multiple-peer-support-using-variant-modifiers">
-    Nested `group` and multiple `peer` support using variant modifiers
+    使用变体修饰符的嵌套 `group` 和多个 `peer` 支持
   </Link>
-- <Link href="#container-queries">Container queries</Link>
+- <Link href="#container-queries">容器查询</Link>
 
-Upgrade your projects by installing the latest version of `tailwindcss` from npm:
+通过从 npm 安装最新版本的 `tailwindcss` 来升级你的项目：
 
 ```sh
 npm install -D tailwindcss@latest
 ```
 
-Or play with the new features in <Link href="https://play.tailwindcss.com">Tailwind Play</Link> where you can try everything out instantly, right in the browser.
+或在 <Link href="https://play.tailwindcss.com">Tailwind Play</Link> 中尝试新功能，你可以立即在浏览器中尝试一切。
 
 ---
 
-## Multiple config files in one project using @config
+## 使用 @config 在一个项目中多个配置文件
 
-We've added a new `@config` directive that you can use in a CSS file to specify which Tailwind CSS config to use for that file:
+我们添加了一个新的 `@config` 指令，你可以在 CSS 文件中使用它来指定该文件要使用的 Tailwind CSS 配置：
 
 <CodeExampleGroup filenames={["./styles/admin.css", "./styles/client.css"]}>
   <CodeBlock
@@ -78,15 +77,15 @@ We've added a new `@config` directive that you can use in a CSS file to specify 
   />
 </CodeExampleGroup>
 
-This makes it a lot easier to build multiple stylesheets in a single project that have separate Tailwind configurations. For example, you might have one config file for the customer-facing part of your site, and another config for the admin/backend area.
+这使得在单一项目中构建多个具有独立 Tailwind 配置的样式表变得容易。例如，你可能为网站面向客户的部分有一个配置文件，而为管理员/后端区域有另一个配置文件。
 
-You've always technically been able to do this with enough webpack wizardry, but the new `@config` directive makes it super easy and accessible to everyone, even in projects where you don't have as much control over the build tool configuration.
+你总是可以通过足够的 webpack 巫术来做到这一点，但新的 `@config` 指令让每个人都能轻松使用，即使在你对构建工具配置没有太多控制的项目中也是如此。
 
 ---
 
-## Browser-support-based styling with supports-\*
+## 基于支持的样式与 supports-\*
 
-You can now conditionally style things based on whether a certain feature is supported in the user's browser with the `supports-[...]` variant, which generates [@supports rules](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports) under the hood.
+你现在可以根据用户浏览器是否支持某个特性有条件地样式化内容，使用 `supports-[...]` 变体，该变体在底层生成 [@supports 规则](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)。
 
 ```html
 <!-- [!code word:supports-[display\:grid\]\:grid] -->
@@ -95,9 +94,9 @@ You can now conditionally style things based on whether a certain feature is sup
 </div>
 ```
 
-The `supports-[...]` variant takes anything you'd use with `@supports (...)` between the square brackets, like a property/value pair, and even expressions using `and` and `or`.
+`supports-[...]` 变体接受你在方括号中可以使用的任何内容，如属性/值对，甚至使用 `and` 和 `or` 的表达式。
 
-If you only need to check if a property itself is supported, you can even just specify the property name and Tailwind will fill in the blanks for you:
+如果你只需要检查某个属性本身是否受支持，你甚至可以仅指定属性名称，Tailwind 会为你自动填充：
 
 ```html
 <!-- [!code word:supports-[backdrop-filter\]\:bg-black/25] -->
@@ -109,11 +108,11 @@ If you only need to check if a property itself is supported, you can even just s
 
 ---
 
-## ARIA attribute variants
+## ARIA 属性变体
 
-You can now conditionally style things based on [ARIA attributes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes) with the new `aria-*` variants.
+你现在可以根据 [ARIA 属性](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes) 使用新的 `aria-*` 变体有条件地样式化内容。
 
-For example, you can update the background color of an element based on whether the `aria-checked` state is `true`:
+例如，你可以根据 `aria-checked` 状态是否为 `true` 更新元素的背景颜色：
 
 ```html
 <!-- [!code word:aria-checked\:bg-blue-600] -->
@@ -122,14 +121,13 @@ For example, you can update the background color of an element based on whether 
 </span>
 ```
 
-By default we've included modifiers for the most common boolean ARIA attributes:
+默认情况下，我们为最常用的布尔 ARIA 属性包含了修饰符：
 
 {
-
 <table>
   <thead>
     <tr>
-      <th>Modifier</th>
+      <th>修饰符</th>
       <th>CSS</th>
     </tr>
   </thead>
@@ -218,8 +216,7 @@ By default we've included modifiers for the most common boolean ARIA attributes:
 </table>
 }
 
-You can customize which `aria-*` modifiers are available by editing `theme.aria` or `theme.extend.aria` in your
-`tailwind.config.js` file:
+你可以通过编辑 `tailwind.config.js` 文件中的 `theme.aria` 或 `theme.extend.aria` 来自定义可用的 `aria-*` 修饰符：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -235,7 +232,7 @@ module.exports = {
 };
 ```
 
-If you need to use a one-off `aria` modifier that doesn’t make sense to include in your theme, or for more complex ARIA attributes that take specific values, use square brackets to generate a property on the fly using any arbitrary value.
+如果你需要使用一次性的 `aria` 修饰符，这个修饰符在你的主题中没有意义，或者用于需要特定值的更复杂的 ARIA 属性，请使用方括号通过任何任意值动态生成属性。
 
 <Figure>
 
@@ -250,7 +247,7 @@ If you need to use a one-off `aria` modifier that doesn’t make sense to includ
               aria-sort="ascending"
             >
               <span className="flex w-full items-center justify-between gap-2">
-                Invoice #
+                发票 #
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
@@ -265,10 +262,10 @@ If you need to use a one-off `aria` modifier that doesn’t make sense to includ
               </span>
             </th>
             <th className="border border-slate-300 px-4 py-3 text-left font-semibold text-slate-900 first:border-l-0 last:border-r-0 dark:border-slate-600 dark:text-slate-200">
-              Client
+              客户
             </th>
             <th className="border border-slate-300 px-4 py-3 text-right font-semibold text-slate-900 first:border-l-0 last:border-r-0 dark:border-slate-600 dark:text-slate-200">
-              Amount
+              金额
             </th>
           </tr>
         </thead>
@@ -288,7 +285,7 @@ If you need to use a one-off `aria` modifier that doesn’t make sense to includ
             <td className="border border-slate-300 px-4 py-3 text-slate-500 first:border-l-0 last:border-r-0 dark:border-slate-700 dark:text-slate-400">
               #101
             </td>
-            <td className="border border-slate-300 px-4 py-3 text-slate-500 first:border-l-0 last:border-r-0 dark:border-slate-700 dark:text-slate-400">
+            <td className="border border-slate-300 px-4 py-3 text-slate-500 first:border-l-0 last:border-r-0 dark;border-slate-700 dark:text-slate-400">
               Kruger Industrial Smoothing
             </td>
             <td className="border border-slate-300 px-4 py-3 text-right text-slate-500 tabular-nums first:border-l-0 last:border-r-0 dark:border-slate-700 dark:text-slate-400">
@@ -324,7 +321,7 @@ If you need to use a one-off `aria` modifier that doesn’t make sense to includ
               aria-sort="ascending"
               class="aria-[sort=ascending]:bg-[url('/img/down-arrow.svg')] aria-[sort=descending]:bg-[url('/img/up-arrow.svg')]"
             >
-              Invoice #
+              发票 #
             </th>
             <!-- ... -->
           </tr>
@@ -343,14 +340,13 @@ If you need to use a one-off `aria` modifier that doesn’t make sense to includ
       background-image: url("/img/up-arrow.svg");
       }
     `}
-
 />
 
 </CodeExampleGroup>
 
 </Figure>
 
-ARIA state modifiers can also target parent and sibling elements using the `group-aria-*` and `peer-aria-*` modifiers:
+ARIA 状态修饰符还可以通过 `group-aria-*` 和 `peer-aria-*` 修饰符来定位父级和兄弟元素：
 
 <CodeExampleGroup filenames={['HTML', 'Generated CSS']}>
   <CodeBlock
@@ -361,7 +357,7 @@ ARIA state modifiers can also target parent and sibling elements using the `grou
         <thead>
           <tr>
             <th aria-sort="ascending" class="group">
-              Invoice #
+              发票 #
               <svg
                 class="group-aria-[sort=ascending]:rotate-0 group-aria-[sort=descending]:rotate-180"
               >
@@ -398,24 +394,24 @@ ARIA state modifiers can also target parent and sibling elements using the `grou
 
 ---
 
-## Data attribute variants
+## 数据属性变体
 
-You can now conditionally style things based on [data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) with the new `data-*` variants.
+你现在可以根据 [数据属性](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) 使用新的 `data-*` 变体有条件地样式化内容。
 
-Since there are no standard `data-*` attributes by definition, we only support arbitrary values out of the box, for example:
+由于按定义没有标准的 `data-*` 属性，我们仅支持任意值，例如：
 
 ```html
-<!-- Will apply -->
+<!-- 将应用 -->
 <div data-size="large" class="data-[size=large]:p-8">
   <!-- ... -->
 </div>
 
-<!-- Will not apply -->
+<!-- 不会应用 -->
 <div data-size="medium" class="data-[size=large]:p-8">
   <!-- ... -->
 </div>
 
-<!-- Generated CSS -->
+<!-- 生成的 CSS -->
 <style>
   .data-\[size\=large\]\:p-8[data-size="large"] {
     padding: 2rem;
@@ -423,7 +419,7 @@ Since there are no standard `data-*` attributes by definition, we only support a
 </style>
 ```
 
-You can configure shortcuts for common data attribute selectors you're using in your project under the `data` key in the `theme` section of your `tailwind.config.js` file:
+你可以在 `tailwind.config.js` 文件的 `theme` 部分下，根据项目中使用的常见数据属性选择器配置快捷方式：
 
 ```js
 // tailwind.config.js
@@ -443,37 +439,37 @@ module.exports = {
 </div>
 ```
 
-These variants also work as `group-*` and `peer-*` variants like many other variants in the framework:
+这些变体也像框架中的许多其他变体一样，支持 `group-*` 和 `peer-*` 变体：
 
 ```html
 <div data-size="large" class="group">
   <div class="group-data-[size=large]:p-8">
-    <!-- Will apply `p-8` -->
+    <!-- 将应用 `p-8` -->
   </div>
 </div>
 
 <div data-size="medium" class="group">
   <div class="group-data-[size=large]:p-8">
-    <!-- Will not apply `p-8` -->
+    <!-- 将不会应用 `p-8` -->
   </div>
 </div>
 ```
 
 ---
 
-## Max-width and dynamic breakpoints
+## 最大宽度和动态断点
 
-We've added a new `max-*` variant that lets you apply max-width media queries based on your configured breakpoints:
+我们添加了一个新的 `max-*` 变体，让你可以根据配置的断点应用最大宽度媒体查询：
 
 ```html
 <div class="max-lg:p-8">
-  <!-- Will apply `p-8` until the `lg` breakpoint kicks in -->
+  <!-- 在 `lg` 断点生效之前将应用 `p-8` -->
 </div>
 ```
 
-As a general rule I would still recommend using min-width breakpoints personally, but this feature does unlock one useful workflow benefit which is not having to _undo_ some style at a different breakpoint.
+作为一般规则，我个人仍然建议使用最小宽度断点，但此功能确实解锁了一个有用的工作流好处，即不必在不同的断点上 _撤消_ 某些样式。
 
-For example, without this feature you often end up doing things like this:
+例如，没有此功能时，你经常会这样做：
 
 ```html
 <div class="md:sr-only xl:not-sr-only">
@@ -481,7 +477,7 @@ For example, without this feature you often end up doing things like this:
 </div>
 ```
 
-With this feature, you can avoid undoing that style by stacking a `max-*` variant on the original declaration:
+有了这个功能，你可以通过在原始声明上堆叠 `max-*` 变体来避免撤消该样式：
 
 ```html
 <div class="md:max-xl:sr-only">
@@ -489,7 +485,7 @@ With this feature, you can avoid undoing that style by stacking a `max-*` varian
 </div>
 ```
 
-Along with this, we've added support for arbitrary values, and a new `min-*` variant that only accepts arbitrary values, so you can do things like this:
+此外，我们还添加了对任意值的支持，以及只接受任意值的新 `min-*` 变体，因此你可以这样使用：
 
 ```html
 <div class="min-[712px]:max-[877px]:right-16 ...">
@@ -497,9 +493,9 @@ Along with this, we've added support for arbitrary values, and a new `min-*` var
 </div>
 ```
 
-It's important to note that **these features will only be available if your project uses a simple `screens` configuration.**
+重要的是要注意，**这些功能仅在你的项目使用简单的 `screens` 配置时可用。**
 
-These features are a lot more complicated than they look due to needing to ensure that all of these media queries are sorted in the final CSS in a way that gives you the expected behavior in the browser. So for now, they will only work if your `screens` configuration is a simple object with string values, like the default configuration:
+这些功能比看起来复杂得多，因为需要确保所有这些媒体查询在最终的 CSS 中按预期的方式进行排序，以便在浏览器中获得期望的行为。因此，目前，它们仅在你的 `screens` 配置是简单的字符串值对象时有效，如默认配置：
 
 ```js
 // tailwind.config.js
@@ -516,22 +512,22 @@ module.exports = {
 };
 ```
 
-If you have a complex configuration where you already have `max-width` breakpoints defined, or range-based media queries, or _anything_ other than just strings, these features won't be available. We might be able to figure that out in the future but it just creates so many questions about how the CSS should be ordered that we don't have answers for yet.
+如果你有一个复杂的配置，其中已经定义了最大宽度断点，或者基于范围的媒体查询，或 _任何_ 其他内容，而不仅仅是字符串，这些功能将不可用。我们可能将来能够解决这个问题，但这确实引发了许多关于 CSS 应该如何排序的问题，而我们目前没有答案。
 
-So for now (and possibly forever), if you want to use these features, your `screens` configuration needs to be simple. My hope is that these features make complex `screens` configurations unnecessary anyways.
+因此，目前（也可能永远如此），如果你想使用这些功能，你的 `screens` 配置需要简单。我的希望是这些功能能让复杂的 `screens` 配置变得不必要。
 
 ---
 
-## Dynamic group-\* and peer-\* variants
+## 动态 group-* 和 peer-* 变体
 
-It's now possible to create custom `group-*` and `peer-*` variants on the fly by passing your own selector to be "groupified" or "peerified" between square brackets:
+现在可以动态创建自定义 `group-*` 和 `peer-*` 变体，只需在方括号之间传递你自己的选择器以“分组”或“同侪化”：
 
 <CodeExampleGroup filenames={['HTML', 'Generated CSS']}>
   <CodeBlock
     example={html`
       <!-- [!code word:group-[.is-published\]\:block] -->
       <div class="group is-published">
-        <div class="group-[.is-published]:block hidden">Published</div>
+        <div class="group-[.is-published]:block hidden">已发布</div>
       </div>
     `}
   />
@@ -544,7 +540,7 @@ It's now possible to create custom `group-*` and `peer-*` variants on the fly by
   />
 </CodeExampleGroup>
 
-For more control, you can use the `&` character to mark where `.group` or `.peer` should end up in the final selector relative to the selector you are passing in:
+为了获得更多控制，您可以使用 `&` 字符标记 `.group` 或 `.peer` 在最终选择器中与您传递的选择器的相对位置：
 
 <CodeExampleGroup filenames={['HTML', 'Generated CSS']}>
   <CodeBlock
@@ -567,15 +563,15 @@ For more control, you can use the `&` character to mark where `.group` or `.peer
   />
 </CodeExampleGroup>
 
-Let's be serious you're probably going to use these features like three times in your entire life but it's still pretty cool. Hoping we can use this as a building block to make `group` and `peer` work more automatically with variants registered by third-party plugins in the future.
+说真的，你可能一辈子只会用到这些功能三次，但这仍然非常酷。希望我们能够将此作为一个构建模块，使 `group` 和 `peer` 在将来能够更自动地与第三方插件注册的变体一起使用。
 
 ---
 
-## Dynamic variants with matchVariant
+## 使用 matchVariant 的动态变体
 
-You've probably noticed this new `variant-[...]` syntax in a lot of these new features — this is all powered by a new `matchVariant` plugin API that makes it possible to create what we're calling "dynamic variants".
+你可能注意到了这些新功能中有很多新的 `variant-[...]` 语法 — 这一切都是通过新的 `matchVariant` 插件 API 提供的，使创建我们所称的“动态变体”成为可能。
 
-Here's an example of creating a `placement-*` variant for some imaginary tooltip library that uses a `data-placement` attribute to tell you where the tooltip is currently positioned:
+以下是为某个想象中的工具提示库创建 `placement-*` 变体的示例，该库使用 `data-placement` 属性告诉你工具提示当前的位置：
 
 ```js
 // [!code word:js]
@@ -604,7 +600,7 @@ module.exports = {
 };
 ```
 
-The variant defined above would give you variants like `placement-t` and `placement-b`, but would also support the arbitrary portion in square brackets, so if this imaginary tooltip library had other potential values that you didn't feel the need to create built-in values for, you could still do stuff like this:
+上述定义的变体将为你提供类似 `placement-t` 和 `placement-b` 的变体，但也会支持方括号中的任意部分，因此，如果这个虚构的工具提示库还有其他潜在值，你又不觉得需要为其创建内置值，你仍然可以这样做：
 
 ```html
 <div class="placement-[top-start]:mb-2 ...">
@@ -612,7 +608,7 @@ The variant defined above would give you variants like `placement-t` and `placem
 </div>
 ```
 
-When defining a custom variant with this API, it's often important that you have some control over which order the CSS is generated in to make sure each class has the right precedence with respect to other values that come from the same variant. To support this, there's a `sort` function you can provide when defining your variant:
+在使用此 API 定义自定义变体时，通常很重要的是你对生成的 CSS 的顺序有一些控制，以确保每个类相对于来自同一变体的其他值具有正确的优先级。为此，你可以在定义变体时提供一个 `sort` 函数：
 
 ```js
 // [!code word:js]
@@ -625,13 +621,13 @@ matchVariant("min", (value) => `@media (min-width: ${value})`, {
 
 ---
 
-## Nested group and multiple peer support using variant modifiers
+## 使用变体修饰符的嵌套组和多个同侪支持
 
-Sometimes you can run into problems when you have multiple `group` chunks nested within each other because Tailwind has no real way to disambiguate between them.
+有时，当你拥有多个嵌套的 `group` 块时，可能会遇到问题，因为 Tailwind 没有真正的方法来区分它们。
 
-To solve this, we're adding support for _variant modifiers_, which are a new dynamic chunk that you can add to the end of a variant (inspired by our optional opacity modifier syntax) that you can use to give each group/peer your own identifier.
+为了解决这个问题，我们添加了对 _变体修饰符_ 的支持，这是你可以添加到变体末尾的新的动态块（灵感来自我们可选的不透明度修饰符语法），你可以使用它来给每个组/同侪一个自己的标识符。
 
-Here's what it looks like:
+这看起来是这样的：
 
 ```html
 <!-- [!code word:group/sidebar] -->
@@ -649,17 +645,17 @@ Here's what it looks like:
 </div>
 ```
 
-This lets you give each group a clear name that makes sense for that context on the fly, and Tailwind will generate the necessary CSS to make it work.
+这让你可以在飞行中为每个组提供一个清晰的名称，这在上下文中是有意义的，Tailwind 会生成必要的 CSS 使其工作。
 
-I'm really excited to have a solution out there for this because it's something I've been trying to land on a good approach for solving for several years, and this is the first thing we've come up with that really feels like it offers the power and flexibility I think it should.
+我非常高兴能够为此提供解决方案，因为这是我多年来一直尝试解决的一个好方法，这是我们首次提出真正能提供我认为应该有的力量和灵活性的方法。
 
 ---
 
-## Container queries
+## 容器查询
 
-I can barely believe it but [container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries) are finally real and the browser support is dangerously close to making these ready for production — in fact if you're building an [Electron](https://www.electronjs.org/) app you could use these today.
+我几乎不敢相信，但 [容器查询](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries) 终于真实存在，浏览器支持接近于使这些准备好投入生产 — 实际上，如果您正在构建一个 [Electron](https://www.electronjs.org/) 应用程序，您今天就可以使用这些功能。
 
-Today we're releasing `@tailwindcss/container-queries` which is a new first-party plugin that adds container query support to the framework, using a new `@` syntax to differentiate them from normal media queries:
+今天，我们发布了 `@tailwindcss/container-queries`，这是一个新的第一方插件，它为框架添加了容器查询支持，使用新的 `@` 语法将其与正常媒体查询区分开来：
 
 ```html
 <div class="@container">
@@ -669,15 +665,14 @@ Today we're releasing `@tailwindcss/container-queries` which is a new first-part
 </div>
 ```
 
-Out-of-the-box we include a set of container sizes that match our default `max-width` scale:
+开箱即用，我们包括了一组与我们的默认 `max-width` 比例相匹配的容器大小：
 
 {
-
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Value</th>
+      <th>名称</th>
+      <th>值</th>
     </tr>
   </thead>
   <tbody>
@@ -729,7 +724,7 @@ Out-of-the-box we include a set of container sizes that match our default `max-w
 </table>
 }
 
-You can configure which values are available using the `containers` key in your `tailwind.config.js` file:
+你可以使用 `tailwind.config.js` 文件中的 `containers` 键配置可用的值：
 
 ```js
 // tailwind.config.js
@@ -738,14 +733,14 @@ module.exports = {
     extend: {
       containers: {
         "2xs": "16rem",
-        // etc...
+        // 等等...
       },
     },
   },
 };
 ```
 
-We also include support for arbitrary values, using the `@[...]` syntax:
+我们还支持任意值，使用 `@[...]` 语法：
 
 ```html
 <div class="@container">
@@ -755,7 +750,7 @@ We also include support for arbitrary values, using the `@[...]` syntax:
 </div>
 ```
 
-...and named containers using the same variant modifier syntax we're now shipping for `group-*` and `peer-*` variants:
+...和使用与我们现在为 `group-*` 和 `peer-*` 变体提供的相同变体修饰符语法的命名容器：
 
 ```html
 <div class="@container/main">
@@ -768,16 +763,16 @@ We also include support for arbitrary values, using the `@[...]` syntax:
 </div>
 ```
 
-Right now we're starting with simple `min-width` based container queries, but we plan to expand the scope over time, and when it feels like we've really nailed the APIs we'll bring it all into core.
+现在我们从简单的基于最小宽度的容器查询开始，但我们计划逐渐扩展范围，当我们感觉我们真的解决了这些 API 时，所有内容将被纳入核心。
 
-For complete documentation, check out the plugin <Link href="https://github.com/tailwindlabs/tailwindcss-container-queries">on GitHub</Link>.
+有关完整的文档，请查看 <Link href="https://github.com/tailwindlabs/tailwindcss-container-queries">Github 上的插件</Link>。
 
 ---
 
-So there you have it — Tailwind CSS v3.2! Major improvements but just a minor version change, so no breaking changes and you should be able to update your project by just updating your dependency:
+所以你看，这就是 Tailwind CSS v3.2！重大改进但只是小版本更改，因此没有重大更改，你应该能够通过简单地更新依赖项来更新项目：
 
 ```sh
 npm install -D tailwindcss@latest
 ```
 
-Yeah I hear you in the back, still no text shadows, but hey at least you can style the sibling of a checkbox when the checkbox's parent is the third child in a list without leaving your HTML. Priorities people.
+是的，我听到你在后面说，仍然没有文本阴影，但嘿，至少你可以在不离开 HTML 的情况下样式化复选框的兄弟元素，当复选框的父元素是列表中的第三个子元素。优先事项，朋友们。

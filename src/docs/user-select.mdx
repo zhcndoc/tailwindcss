@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "user-select";
-export const description = "Utilities for controlling whether the user can select text in an element.";
+export const description = "控制用户是否可以选择元素中文本的实用工具。";
 
 <ApiTable
   rows={[
@@ -15,19 +15,19 @@ export const description = "Utilities for controlling whether the user can selec
   ]}
 />
 
-## Examples
+## 示例
 
-### Disabling text selection
+### 禁用文本选择
 
-Use the `select-none` utility to prevent selecting text in an element and its children:
+使用 `select-none` 工具来防止在一个元素及其子元素中选择文本：
 
-<Figure hint="Try selecting the text to see the expected behavior">
+<Figure hint="尝试选择文本以查看预期行为">
 
 <Example>
   {
     <div className="flex justify-center">
       <div className="dark:highlight-white/5 inline-flex rounded-lg bg-white px-4 py-3 text-center font-sans text-sm font-semibold text-gray-900 ring-1 ring-gray-900/5 select-none dark:bg-gray-800 dark:text-gray-200 dark:ring-0">
-        The quick brown fox jumps over the lazy dog.
+        快速的棕色狐狸跳过懒惰的狗。
       </div>
     </div>
   }
@@ -35,22 +35,22 @@ Use the `select-none` utility to prevent selecting text in an element and its ch
 
 ```html
 <!-- [!code classes:select-none] -->
-<div class="select-none ...">The quick brown fox jumps over the lazy dog.</div>
+<div class="select-none ...">快速的棕色狐狸跳过懒惰的狗。</div>
 ```
 
 </Figure>
 
-### Allowing text selection
+### 允许文本选择
 
-Use the `select-text` utility to allow selecting text in an element and its children:
+使用 `select-text` 工具允许在一个元素及其子元素中选择文本：
 
-<Figure hint="Try selecting the text to see the expected behavior">
+<Figure hint="尝试选择文本以查看预期行为">
 
 <Example>
   {
     <div className="flex justify-center">
       <div className="dark:highlight-white/5 inline-flex rounded-lg bg-white px-4 py-3 text-center font-sans text-sm font-semibold text-gray-900 ring-1 ring-gray-900/5 select-text dark:bg-gray-800 dark:text-gray-200 dark:ring-0">
-        The quick brown fox jumps over the lazy dog.
+        快速的棕色狐狸跳过懒惰的狗。
       </div>
     </div>
   }
@@ -58,22 +58,22 @@ Use the `select-text` utility to allow selecting text in an element and its chil
 
 ```html
 <!-- [!code classes:select-text] -->
-<div class="select-text ...">The quick brown fox jumps over the lazy dog.</div>
+<div class="select-text ...">快速的棕色狐狸跳过懒惰的狗。</div>
 ```
 
 </Figure>
 
-### Selecting all text in one click
+### 一次点击选择所有文本
 
-Use the `select-all` utility to automatically select all the text in an element when a user clicks:
+使用 `select-all` 工具，在用户点击时自动选择元素中的所有文本：
 
-<Figure hint="Try clicking the text to see the expected behavior">
+<Figure hint="尝试点击文本以查看预期行为">
 
 <Example>
   {
     <div className="flex justify-center">
       <div className="dark:highlight-white/5 inline-flex rounded-lg bg-white px-4 py-3 text-center font-sans text-sm font-semibold text-gray-900 ring-1 ring-gray-900/5 select-all dark:bg-gray-800 dark:text-gray-200 dark:ring-0">
-        The quick brown fox jumps over the lazy dog.
+        快速的棕色狐狸跳过懒惰的狗。
       </div>
     </div>
   }
@@ -81,22 +81,22 @@ Use the `select-all` utility to automatically select all the text in an element 
 
 ```html
 <!-- [!code classes:select-all] -->
-<div class="select-all ...">The quick brown fox jumps over the lazy dog.</div>
+<div class="select-all ...">快速的棕色狐狸跳过懒惰的狗。</div>
 ```
 
 </Figure>
 
-### Using auto select behavior
+### 使用自动选择行为
 
-Use the `select-auto` utility to use the default browser behavior for selecting text:
+使用 `select-auto` 工具来使用浏览器对于选择文本的默认行为：
 
-<Figure hint="Try selecting the text to see the expected behavior">
+<Figure hint="尝试选择文本以查看预期行为">
 
 <Example>
   {
     <div className="flex justify-center">
       <div className="dark:highlight-white/5 inline-flex rounded-lg bg-white px-4 py-3 text-center font-sans text-sm font-semibold text-gray-900 ring-1 ring-gray-900/5 select-auto dark:bg-gray-800 dark:text-gray-200 dark:ring-0">
-        The quick brown fox jumps over the lazy dog.
+        快速的棕色狐狸跳过懒惰的狗。
       </div>
     </div>
   }
@@ -104,11 +104,11 @@ Use the `select-auto` utility to use the default browser behavior for selecting 
 
 ```html
 <!-- [!code classes:select-auto] -->
-<div class="select-auto ...">The quick brown fox jumps over the lazy dog.</div>
+<div class="select-auto ...">快速的棕色狐狸跳过懒惰的狗。</div>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="user-select" defaultClass="select-none" featuredClass="select-all" />

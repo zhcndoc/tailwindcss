@@ -7,27 +7,26 @@ import image from "./card.jpg";
 
 export const meta = {
   title: "Tailwind CSS v1.7.0",
-  description: `Tailwind CSS v1.7.0 is now available, with gradients and more!`,
+  description: `Tailwind CSS v1.7.0 现已发布，支持渐变等新功能！`,
   date: "2020-08-18T19:15:00.000Z",
   authors: [adamwathan],
   image,
   excerpt: (
     <>
-      Another new Tailwind release is here! This time with support for gradients, background-clip, experimental support
-      for using <code>@apply</code> with variant utilities, and tons more. Let's dig in!
+      另一个新的 Tailwind 发布来了！这次增加了对渐变、背景裁剪的支持，实验性支持使用 <code>@apply</code> 与变体工具，以及更多功能。让我们来深入探讨一下吧！
     </>
   ),
 };
 
-Another new Tailwind release is here! This time with support for gradients, background-clip, experimental support for using `@apply` with variant utilities, and tons more. Let's dig in!
+另一个新的 Tailwind 发布来了！这次增加了对渐变、背景裁剪的支持，实验性支持使用 `@apply` 与变体工具，以及更多功能。让我们来深入探讨一下吧！
 
-## New features
+## 新特性
 
-### Gradients
+### 渐变
 
-The big one for this release — Tailwind now ships with built-in support for background gradients!
+这次发布的重头戏——Tailwind 现在提供对背景渐变的内置支持！
 
-Gradients are designed with a highly composable API that lets you specify up to three color stops in one of 8 directions by default:
+渐变使用高度可组合的 API 设计，允许您默认在 8 个方向中指定最多三个颜色停止：
 
 ```html
 <div class="bg-gradient-to-r from-orange-400 via-red-500 to-pink-500">
@@ -37,9 +36,9 @@ Gradients are designed with a highly composable API that lets you specify up to 
 
 ![](https://user-images.githubusercontent.com/4323180/90427639-ce57e280-e090-11ea-8611-53a64707fafc.png)
 
-This is made possible by a new `backgroundImage` core plugin (which you can use for any background images you like!) and a new `gradientColorStops` core plugin.
+这得益于一个新的 `backgroundImage` 核心插件（您可以将其用于任何背景图像！）和一个新的 `gradientColorStops` 核心插件。
 
-The default configuration for these plugins looks like this:
+这些插件的默认配置看起来如下：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -64,20 +63,20 @@ module.exports = {
 };
 ```
 
-Learn more [the original pull request](https://github.com/tailwindlabs/tailwindcss/pull/2176).
+了解更多信息请访问 [原始拉取请求](https://github.com/tailwindlabs/tailwindcss/pull/2176)。
 
-### New background-clip utilities
+### 新的背景裁剪工具
 
-We've also added a new `backgroundClip` core plugin that you can use to control how background are rendered within an element.
+我们还增加了一个新的 `backgroundClip` 核心插件，可以控制元素内背景的渲染方式。
 
-It includes 4 new utilities:
+它包括 4 个新工具：
 
 {
 
 <table>
   <thead>
     <tr>
-      <th>Class</th>
+      <th>类</th>
       <th>CSS</th>
     </tr>
   </thead>
@@ -118,19 +117,19 @@ It includes 4 new utilities:
 </table>
 }
 
-Combined with the new gradient features, you can use this to do cool gradient text stuff like this:
+结合新的渐变功能，您可以这样做一些很酷的渐变文本效果：
 
 ```html
 <h1 class="text-6xl font-bold">
   <span class="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
-    Greetings from Tailwind v1.7.
+    来自 Tailwind v1.7 的问候。
   </span>
 </h1>
 ```
 
 ![](https://user-images.githubusercontent.com/4323180/90427567-b54f3180-e090-11ea-988b-c95ed716866f.png)
 
-Only responsive variants are enabled for the `backgroundClip` plugin by default:
+默认情况下，`backgroundClip` 插件仅启用响应式变体：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -141,17 +140,17 @@ module.exports = {
 };
 ```
 
-### New gap utility aliases
+### 新的 gap 工具别名
 
-For some dumb reason I named the `column-gap` and `row-gap` utilities `col-gap-{n}` and `row-gap-{n}` respectively, which isn't terrible but it's not consistent with how other things in Tailwind are named.
+出于某种愚蠢的原因，我将 `column-gap` 和 `row-gap` 工具命名为 `col-gap-{n}` 和 `row-gap-{n}`，这虽然不是 terrible，但与 Tailwind 中其他事物的命名不一致。
 
-I was finding myself getting them wrong all the time — is `row-gap` the gaps in a row, or the gap between rows?
+我总是搞错它们——`row-gap` 是行中的间隙，还是行之间的间隙？
 
-Tailwind v1.7 introduces new `gap-x-{n}` and `gap-y-{n}` utilities that do the exact same thing but have names that don't suck. They make way more sense than the actual CSS names now that gap for flexbox is starting to roll out too, since flexbox has no "columns".
+Tailwind v1.7 引入了新的 `gap-x-{n}` 和 `gap-y-{n}` 工具，它们的功能完全相同，但命名方式更合理。随着 flexbox 的推行，gap 对 flexbox 的适用性更好，因为 flexbox 没有“列”。
 
-These utilities will replace the old ones in v2.0, but for now they both exist together.
+这些工具将在 v2.0 中替换旧的工具，但目前它们会共存。
 
-**We recommend migrating to the new names now, and disabling the old names using this feature flag:**
+**我们建议现在迁移到新的命名，并使用此功能标志禁用旧的命名：**
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -163,16 +162,16 @@ module.exports = {
 };
 ```
 
-Tailwind will issue a warning in the console to remind you that you are including deprecated classes in your build until you enable this flag.
+在您启用此标志之前，Tailwind 将在控制台发出警告，以提醒您在构建中包含了弃用的类。
 
-### New `contents` display utility
+### 新的 `contents` 显示工具
 
-We've added a new `contents` class for the recent `display: contents` CSS feature.
+我们为最近的 `display: contents` CSS 特性添加了新的 `contents` 类。
 
 ```html
 <div class="flex">
   <div><!-- ... --></div>
-  <!-- This container will act as a phantom container, and its children will be treated as part of the parent flex container -->
+  <!-- 这个容器将作为一个幻影容器，其子项将被视为父弹性容器的一部分 -->
   <div class="contents">
     <div><!-- ... --></div>
     <div><!-- ... --></div>
@@ -181,11 +180,11 @@ We've added a new `contents` class for the recent `display: contents` CSS featur
 </div>
 ```
 
-Learn more about it in [this great article by Rachel Andrew](https://rachelandrew.co.uk/archives/2016/01/29/vanishing-boxes-with-display-contents/).
+可以在 [Rachel Andrew 的这篇精彩文章](https://rachelandrew.co.uk/archives/2016/01/29/vanishing-boxes-with-display-contents/) 中了解更多信息。
 
-### Default letter-spacing per font-size
+### 每个字体大小的默认字间距
 
-You can now configure a default letter-spacing value for each font-size in your `tailwind.config.js` theme, using a tuple syntax:
+您现在可以在 `tailwind.config.js` 主题中为每个字体大小配置默认字间距值，使用元组语法：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -195,7 +194,7 @@ module.exports = {
       2xl: ['24px', {
         letterSpacing: '-0.01em',
       }],
-      // Or with a default line-height as well
+      // 也可以设置默认行高
       3xl: ['32px', {
         letterSpacing: '-0.02em',
         lineHeight: '40px',
@@ -205,11 +204,11 @@ module.exports = {
 }
 ```
 
-This new syntax is supported in addition to the simpler `[{fontSize}, {lineHeight}]` syntax that was recently introduced.
+这种新语法是对最近引入的更简单 `[{fontSize}, {lineHeight}]` 语法的支持。
 
-### Divide border styles
+### 分隔边框样式
 
-We've added utilities for setting the border style on the `divide` utilities:
+我们为在 `divide` 工具上设置边框样式添加了工具：
 
 ```html
 <div class="divide-y divide-dashed">
@@ -220,7 +219,7 @@ We've added utilities for setting the border style on the `divide` utilities:
 </div>
 ```
 
-These utilities include `responsive` variants by default:
+这些工具默认包括响应式变体：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -231,51 +230,51 @@ module.exports = {
 };
 ```
 
-### Access entire config object from plugins
+### 从插件访问整个配置对象
 
-The `config` function passed to the plugin API now returns the entire config option when invoked with no arguments:
+传递给插件 API 的 `config` 函数现在可以在没有参数的情况下返回整个配置选项：
 
 ```js
 tailwind.plugin(function ({ config, addUtilities, /* ... */ })) {
-  // Returns entire config object
+  // 返回整个配置对象
   config()
 })
 ```
 
-### Define colors as closures
+### 将颜色定义为闭包
 
-You can now define your colors as callbacks, which receive a bag of parameters you can use to generate your color value.
+您现在可以将颜色定义为回调，这些回调接收一堆参数，您可以用来生成颜色值。
 
-This is particularly useful when trying to make your custom colors work with the `backgroundOpacity`, `textOpacity`, etc. utilities
+这在尝试使您的自定义颜色与 `backgroundOpacity`、`textOpacity` 等工具相兼容时特别有用：
 
 ```js
 // [!code filename:tailwind.config.js]
 module.exports = {
   theme: {
     colors: {
-      primary: ({ opacityVariable }) => `rgba(var(--color-primary), var(${variable}, 1))`,
+      primary: ({ opacityVariable }) => `rgba(var(--color-primary), var(${opacityVariable}, 1))`,
     },
   },
 };
 ```
 
-Currently the only thing passed through is an `opacityVariable` property, which contains the name of the current opacity variable (`--background-opacity`, `--text-opacity`, etc.) depending on which plugin is using the color.
+当前唯一传递的是一个 `opacityVariable` 属性，它包含当前不透明度变量的名称（`--background-opacity`、`--text-opacity` 等），具体取决于使用颜色的插件。
 
-## Deprecations
+## 弃用
 
-Tailwind v1.7 introduces a new feature flagging and deprecation system designed to make upgrades as painless as possible.
+Tailwind v1.7 引入了一种新的特性标记和弃用系统，旨在使升级尽可能简单。
 
-Any time we deprecate functionality or introduce new (stable) breaking changes, they will be available in Tailwind v1.x under a `future` property in your `tailwind.config.js` file.
+每当我们弃用功能或引入新（稳定的）重大更改时，它们将在 Tailwind v1.x 中通过 `future` 属性在您的 `tailwind.config.js` 文件中提供。
 
-Whenever there are deprecations or breaking changes available, Tailwind will warn you in the console on every build until you adopt the new changes and enable the flag in your config file:
+每当有弃用或重大更改可用时，Tailwind 会在每次构建时在控制台中警告您，直到您采用新更改并在配置文件中启用该标志：
 
 ```txt
-risk - There are upcoming breaking changes: removeDeprecatedGapUtilities
-risk - We highly recommend opting-in to these changes now to simplify upgrading Tailwind in the future.
-risk - https://tailwindcss.com/docs/upcoming-changes
+警告 - 即将出现的重大更改：removeDeprecatedGapUtilities
+警告 - 我们强烈建议您现在选择加入这些更改，以简化未来升级 Tailwind 的过程。
+警告 - https://tailwindcss.com/docs/upcoming-changes
 ```
 
-You can opt-in to a breaking change by setting that flag to `true` in your `tailwind.config.js` file:
+您可以通过在 `tailwind.config.js` 文件中将该标志设置为 `true` 来选择加入重大更改：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -286,7 +285,7 @@ module.exports = {
 };
 ```
 
-If you'd prefer not to opt-in but would like to silence the warning, explicitly set the flag to `false`:
+如果您不想选择加入，但希望消除警告，请将标志显式设置为 `false`：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -297,15 +296,15 @@ module.exports = {
 };
 ```
 
-**We do not recommend this**, as it will make upgrading to Tailwind v2.0 more difficult.
+**我们不推荐这样做**，因为这将使升级到 Tailwind v2.0 更加困难。
 
-### Deprecated gap utilities
+### 弃用的间隔工具
 
-As mentioned previously, Tailwind v1.7.0 introduces new `gap-x-{n}` and `gap-y-{n}` utilities to replace the current `col-gap-{n}` and `row-gap-{n}` utilities.
+如前所述，Tailwind v1.7.0 引入了新的 `gap-x-{n}` 和 `gap-y-{n}` 工具，以替换当前的 `col-gap-{n}` 和 `row-gap-{n}` 工具。
 
-By default both classes will exist, but the old utilities will be removed in Tailwind v2.0.
+默认情况下，这两个类将共存，但旧的工具将在 Tailwind v2.0 中被移除。
 
-To migrate to the new class names, simply replace any existing usage of the old names with the new names:
+要迁移到新的类名，只需用新的名称替换旧名称的任何现有用法：
 
 {/* prettier-ignore */}
 ```html
@@ -314,7 +313,7 @@ To migrate to the new class names, simply replace any existing usage of the old 
 </div>
 ```
 
-To opt-in to the new names now, enable the `removeDeprecatedGapUtilities` flag in your `tailwind.config.js` file:
+要现在选择加入新名称，请在您的 `tailwind.config.js` 文件中启用 `removeDeprecatedGapUtilities` 标志：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -325,13 +324,13 @@ module.exports = {
 };
 ```
 
-## Experimental features
+## 实验性功能
 
-Tailwind v1.7.0 introduces a new experimental feature system that allows you to opt-in to new functionality that is coming to Tailwind soon but isn't quite stable yet.
+Tailwind v1.7.0 引入了一种新的实验性功能系统，允许您选择加入即将添加到 Tailwind 中但尚不稳定的新功能。
 
-It's important to note that **experimental features may introduce breaking changes, do not follow semver, and can change at any time**.
+需要注意的是 **实验性功能可能引入重大更改，不遵循语义版本控制，并且可能随时发生更改**。
 
-If you like to live on the wild side though, you can enable all of them like so:
+但如果您喜欢冒险，可以像这样启用所有功能：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -340,11 +339,11 @@ module.exports = {
 };
 ```
 
-With that out of the way, here is some of the fun stuff we're working on that we're pumped you can finally play with...
+说完这些，这里是我们正在开发的一些有趣功能，您可以最终体验到...
 
-### Use `@apply` with variants and other complex classes
+### 使用 `@apply` 结合变体和其他复杂类
 
-This is a huge one — you can finally use `@apply` with responsive variants, pseudo-class variants, and other complex classes!
+这是一个重磅消息——您终于可以将 `@apply` 与响应式变体、伪类变体和其他复杂类一起使用！
 
 ```css
 .btn {
@@ -352,11 +351,11 @@ This is a huge one — you can finally use `@apply` with responsive variants, ps
 }
 ```
 
-There are a lot of details to understand with this one, so I recommend [reading the pull request](https://github.com/tailwindlabs/tailwindcss/pull/2159) to learn about how it all works.
+与这个功能有关的细节很多，因此我建议[阅读拉取请求](https://github.com/tailwindlabs/tailwindcss/pull/2159)以了解它的工作原理。
 
-This introduces breaking changes to how `@apply` worked before, so be sure to read all of the details before just flipping the switch.
+这引入了之前 `@apply` 工作方式的重大变化，所以，请确保在切换之前阅读所有细节。
 
-To enable this feature, use the `applyComplexClasses` flag:
+要启用此功能，请使用 `applyComplexClasses` 标志：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -367,9 +366,9 @@ module.exports = {
 };
 ```
 
-### New color palette
+### 新的颜色调色板
 
-We've added a teaser of the new Tailwind 2.0 color palette that you can start playing with today using the `uniformColorPalette` flag:
+我们增加了一些 Tailwind 2.0 新颜色调色板的预览，您可以现在通过 `uniformColorPalette` 标志开始使用：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -380,15 +379,15 @@ module.exports = {
 };
 ```
 
-The idea behind the new palette is that every color at every shade has a similar perceived brightness. So you can swap `indigo-600` with `blue-600` and expect the same color contrast.
+新调色板的理念是，每种颜色在每个色调上都具有类似的感知亮度。因此，您可以将 `indigo-600` 与 `blue-600` 进行交换，并期望获得相同的颜色对比度。
 
-We do expect these colors to continue to change a lot as we iterate on them, so use these at your own risk.
+我们预计这些颜色随着迭代将继续变化，因此使用它们需谨慎。
 
-### Extended spacing scale
+### 扩展的间距比例
 
-We've added a much bigger spacing scale that includes new micro values like `0.5`, `1.5`, `2.5`, and `3.5`, as well as new large values like `72`, `80`, and `96`, _and_ added percentage-based fractional values to the whole spacing scale (`1/2`, `5/6`, `7/12`, etc.)
+我们增加了一个更大的间距比例，其中包括新的微小值，如 `0.5`、`1.5`、`2.5` 和 `3.5`，以及新的大值，如 `72`、`80` 和 `96`，_并_ 为整个间距比例增加了基于百分比的分数值（`1/2`、`5/6`、`7/12` 等）。
 
-You can enable the extended spacing scale using the `extendedSpacingScale` flag:
+您可以使用 `extendedSpacingScale` 标志启用扩展的间距比例：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -399,11 +398,11 @@ module.exports = {
 };
 ```
 
-This is pretty stable, I would be surprised if we change this.
+这相对稳定，我会感到惊讶如果我们对此进行更改。
 
-### Default line-heights per font-size by default
+### 默认行高按字体大小
 
-We've added recommended default line-heights to every built-in font-size, which can be enabled using the `defaultLineHeights` flag:
+我们为每个内置字体大小增加了推荐的默认行高，可以使用 `defaultLineHeights` 标志启用：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -414,13 +413,13 @@ module.exports = {
 };
 ```
 
-This is a breaking change and will impact your designs, as previously all font sizes had a default line-height of `1.5`.
+这是一个重大变更，将影响您的设计，因为之前所有字体大小的默认行高为 `1.5`。
 
-### Extended font size scale
+### 扩展字体大小比例
 
-We've added three new font sizes (`7xl`, `8xl`, and `9xl`) to keep up with the latest huge-as-hell-hero-text trends. They include default line-heights as well.
+我们增加了三个新的字体大小（`7xl`、`8xl` 和 `9xl`），以跟上最新的巨大标题文本趋势。它们也包括默认的行高。
 
-You can enable them under the `extendedFontSizeScale` flag:
+您可以在 `extendedFontSizeScale` 标志下启用它们：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -431,4 +430,4 @@ module.exports = {
 };
 ```
 
-Want to talk about this post? <a href="https://github.com/tailwindcss/tailwindcss/discussions/2183">Discuss this on GitHub →</a>
+想要讨论这篇文章吗？ <a href="https://github.com/tailwindcss/tailwindcss/discussions/2183">在 GitHub 上讨论 →</a>

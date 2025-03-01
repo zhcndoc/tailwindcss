@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "background-position";
-export const description = "Utilities for controlling the position of an element's background image.";
+export const title = "背景位置";
+export const description = "用于控制元素背景图像位置的工具类。";
 
 <ApiTable
   rows={[
@@ -22,13 +22,13 @@ export const description = "Utilities for controlling the position of an element
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `bg-center`, `bg-right`, and `bg-left-top` to control the position of an element's background image:
+使用 `bg-center`、`bg-right` 和 `bg-left-top` 等工具来控制元素的背景图像位置：
 
-<Figure hint="Hover over these examples to see the full image">
+<Figure hint="鼠标悬停在这些示例上以查看完整图像">
 
 <Example padding={false}>
   {
@@ -162,16 +162,16 @@ Use utilities like `bg-center`, `bg-right`, and `bg-left-top` to control the pos
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   utility="bg"
   value="center_top_1rem"
-  name="background position"
+  name="背景位置"
   variable="bg-position"
   dataType="position"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="background-position" defaultClass="bg-center" featuredClass="bg-top" />

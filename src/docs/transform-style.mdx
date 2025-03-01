@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "transform-style";
-export const description = "Utilities for controlling if an elements children are placed in 3D space.";
+export const description = "控制元素子项在 3D 空间中放置的工具类。";
 
 <ApiTable
   rows={[
@@ -13,11 +13,11 @@ export const description = "Utilities for controlling if an elements children ar
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `transform-3d` to position children in 3D space:
+使用 `transform-3d` 将子项定位在 3D 空间中：
 
 <Figure>
 
@@ -84,7 +84,7 @@ Use `transform-3d` to position children in 3D space:
 <!-- [!code classes:transform-flat,transform-3d] -->
 <div class="size-20 transform-flat ...">
   <div class="translate-z-12 rotate-x-0 bg-sky-300/75 ...">1</div>
-  <div class="-translate-z-12 rotate-y-18 bg-sky-300/75 ...">2</div>
+  <div class="-translate-z-12 rotate-y-180 bg-sky-300/75 ...">2</div>
   <div class="translate-x-12 rotate-y-90 bg-sky-300/75 ...">3</div>
   <div class="-translate-x-12 -rotate-y-90 bg-sky-300/75 ...">4</div>
   <div class="-translate-y-12 rotate-x-90 bg-sky-300/75 ...">5</div>
@@ -93,7 +93,7 @@ Use `transform-3d` to position children in 3D space:
 
 <div class="size-20 transform-3d ...">
   <div class="translate-z-12 rotate-x-0 bg-sky-300/75 ...">1</div>
-  <div class="-translate-z-12 rotate-y-18 bg-sky-300/75 ...">2</div>
+  <div class="-translate-z-12 rotate-y-180 bg-sky-300/75 ...">2</div>
   <div class="translate-x-12 rotate-y-90 bg-sky-300/75 ...">3</div>
   <div class="-translate-x-12 -rotate-y-90 bg-sky-300/75 ...">4</div>
   <div class="-translate-y-12 rotate-x-90 bg-sky-300/75 ...">5</div>
@@ -103,8 +103,8 @@ Use `transform-3d` to position children in 3D space:
 
 </Figure>
 
-Without this, any children will only be transformed in 2D space and not in 3D space.
+没有这样，任何子项将只在 2D 空间中进行转换，而不会在 3D 空间中进行。
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="transform-style" defaultClass="transform-3d" featuredClass="transform-flat" />

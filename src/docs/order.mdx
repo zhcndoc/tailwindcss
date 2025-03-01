@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "order";
-export const description = "Utilities for controlling the order of flex and grid items.";
+export const title = "顺序";
+export const description = "用于控制弹性盒子和网格项顺序的工具。";
 
 <ApiTable
   rows={[
@@ -18,11 +18,11 @@ export const description = "Utilities for controlling the order of flex and grid
   ]}
 />
 
-## Examples
+## 示例
 
-### Explicitly setting a sort order
+### 显式设置排序顺序
 
-Use `order-<number>` utilities like `order-1` and `order-3` to render flex and grid items in a different order than they appear in the document:
+使用 `order-<number>` 工具，如 `order-1` 和 `order-3`，以不同于它们在文档中出现的顺序渲染弹性盒子和网格项：
 
 <Figure>
 
@@ -47,9 +47,9 @@ Use `order-<number>` utilities like `order-1` and `order-3` to render flex and g
 
 </Figure>
 
-### Ordering items first or last
+### 使项位于第一或最后
 
-Use the `order-first` and `order-last` utilities to render flex and grid items first or last:
+使用 `order-first` 和 `order-last` 工具将弹性盒子和网格项渲染为第一或最后：
 
 <Figure>
 
@@ -74,9 +74,9 @@ Use the `order-first` and `order-last` utilities to render flex and grid items f
 
 </Figure>
 
-### Using negative values
+### 使用负值
 
-To use a negative order value, prefix the class name with a dash to convert it to a negative value:
+要使用负的顺序值，请在类名之前加上连字符以将其转换为负值：
 
 ```html
 <!-- [!code classes:-order-1] -->
@@ -85,10 +85,10 @@ To use a negative order value, prefix the class name with a dash to convert it t
 </div>
 ```
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue utility="order" value="min(var(--total-items),10)" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="order" defaultClass="order-first" featuredClass="order-last" />

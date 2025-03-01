@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "background-clip";
-export const description = "Utilities for controlling the bounding box of an element's background.";
+export const title = "背景裁剪";
+export const description = "用于控制元素背景边界框的工具。";
 
 <ApiTable
   rows={[
@@ -15,11 +15,11 @@ export const description = "Utilities for controlling the bounding box of an ele
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use the `bg-clip-border`, `bg-clip-padding`, and `bg-clip-content` utilities to control the bounding box of an element's background:
+使用 `bg-clip-border`、`bg-clip-padding` 和 `bg-clip-content` 工具来控制元素背景的边界框：
 
 <Figure>
 
@@ -57,16 +57,16 @@ Use the `bg-clip-border`, `bg-clip-padding`, and `bg-clip-content` utilities to 
 
 </Figure>
 
-### Cropping to text
+### 裁剪到文本
 
-Use the `bg-clip-text` utility to crop an element's background to match the shape of the text:
+使用 `bg-clip-text` 工具将元素的背景裁剪以匹配文本的形状：
 
 <Figure>
 
 <Example>
   {
     <p className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-center text-4xl leading-none font-extrabold tracking-tight text-transparent sm:text-5xl">
-      Hello world
+      你好，世界
     </p>
   }
 </Example>
@@ -74,12 +74,12 @@ Use the `bg-clip-text` utility to crop an element's background to match the shap
 ```html
 <!-- [!code classes:bg-clip-text] -->
 <p class="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-5xl font-extrabold text-transparent ...">
-  Hello world
+  你好，世界
 </p>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="background-clip" defaultClass="bg-clip-border" featuredClass="bg-clip-padding" />

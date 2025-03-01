@@ -6,33 +6,31 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const meta = {
-  title: `Headless UI: Unstyled, Accessible UI Components`,
-  description: `Headless UI is a set of completely unstyled, fully accessible UI components for React, Vue, and Alpine.js that make it easy to build fully accessible custom UI components, without sacrificing the ability to style them from scratch with simple utility classes.`,
+  title: `无样式的 UI: 可访问的 UI 组件`,
+  description: `无样式的 UI 是一组完全无样式、完全可访问的 UI 组件，适用于 React、Vue 和 Alpine.js，使您能够轻松构建完全可访问的自定义 UI 组件，而无需牺牲使用简单的实用工具类从头开始进行样式设置的能力。`,
   date: "2020-10-06T18:30:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      One of the biggest pain points when building modern web applications is building custom components like select
-      menus, dropdowns, toggles, modals, tabs, radio groups — components that are pretty similar from project to
-      project, but never quite the <em>same</em>.
+      在构建现代 Web 应用程序时，最大的问题之一是构建自定义组件，例如选择菜单、下拉菜单、切换、模态框、选项卡、单选组——这些组件在项目之间非常相似，但从未完全相同。
     </>
   ),
 };
 
-One of the biggest pain points when building modern web applications is building custom components like select menus, dropdowns, toggles, modals, tabs, radio groups — components that are pretty similar from project to project, but never quite the _same_.
+在构建现代 Web 应用程序时，最大的问题之一是构建自定义组件，例如选择菜单、下拉菜单、切换、模态框、选项卡、单选组——这些组件在项目之间非常相似，但从未完全相同。
 
-You could use an off-the-shelf package, but they usually come tightly coupled with their own provided styles. It ends up being very hard to get them to match the look and feel of your own project, and almost always involves writing a bunch of CSS overrides, which feels like a big step backwards when working Tailwind CSS.
+您可以使用现成的包，但它们通常与自己提供的样式紧密耦合。这使得使它们与您自己的项目的外观和感觉相匹配变得非常困难，并且几乎总是需要编写一堆 CSS 覆盖，这在使用 Tailwind CSS 时感觉像是一个巨大的退步。
 
-The other option is building your own components from scratch. At first it seems easy, but then you remember you need to add support for keyboard navigation, managing ARIA attributes, focus trapping, and all of a sudden you're spending 3-4 weeks trying to build a truly bullet-proof dropdown menu.
+另一个选择是从头开始构建自己的组件。开始时看起来很简单，但随后您会记得您需要添加键盘导航支持、管理 ARIA 属性、聚焦限制，突然间您花费了 3-4 周的时间尝试构建一个真正强大的下拉菜单。
 
-We think there's a better option, so we're building it.
+我们认为有更好的选择，因此我们正在构建它。
 
-**[Headless UI](https://headlessui.dev) is a set of completely unstyled, fully accessible UI components for React and Vue** _(and soon Alpine.js)_ that make it easy to build these sorts of custom components without worrying about any of the complex implementation details yourself, and without sacrificing the ability to style them from scratch with simple utility classes.
+**[无样式的 UI](https://headlessui.dev) 是一组完全无样式、完全可访问的 UI 组件，适用于 React 和 Vue** _(并即将支持 Alpine.js)_，使您能够轻松构建这些自定义组件，而无需担心任何复杂的实现细节，并且仍然能够使用简单的实用工具类从头开始进行样式设置。
 
-<Image alt="Headless UI Logo" src={headlessUiCard} />
+<Image alt="无样式的 UI 标志" src={headlessUiCard} />
 
-Here's what it looks like to build a custom dropdown _(one of many components the library includes)_ using `@headlessui/react`, with complete keyboard navigation support and ARIA attribute management, styled with simple Tailwind CSS utilities:
+以下是使用 `@headlessui/react` 构建自定义下拉菜单的样子 _(这是库中许多组件之一)_，具有完整的键盘导航支持和 ARIA 属性管理，并使用简单的 Tailwind CSS 工具进行样式设置：
 
 ```jsx
 import { Menu } from "@headlessui/react";
@@ -40,24 +38,24 @@ import { Menu } from "@headlessui/react";
 function MyDropdown() {
   return (
     <Menu as="div" className="relative">
-      <Menu.Button className="rounded bg-blue-600 px-4 py-2 text-white ...">Options</Menu.Button>
+      <Menu.Button className="rounded bg-blue-600 px-4 py-2 text-white ...">选项</Menu.Button>
       <Menu.Items className="absolute right-0 mt-1">
         <Menu.Item>
           {({ active }) => (
             <a className={`${active && "bg-blue-500 text-white"} ...`} href="/account-settings">
-              Account settings
+              帐户设置
             </a>
           )}
         </Menu.Item>
         <Menu.Item>
           {({ active }) => (
             <a className={`${active && "bg-blue-500 text-white"} ...`} href="/documentation">
-              Documentation
+              文档
             </a>
           )}
         </Menu.Item>
         <Menu.Item disabled>
-          <span className="opacity-75 ...">Invite a friend (coming soon!)</span>
+          <span className="opacity-75 ...">邀请朋友（即将推出！）</span>
         </Menu.Item>
       </Menu.Items>
     </Menu>
@@ -65,82 +63,82 @@ function MyDropdown() {
 }
 ```
 
-Here's what you're getting for free in that example, without having to write a single line of code related to it yourself:
+以下是您在该示例中免费获得的功能，而无需自己编写任何相关代码：
 
-- The dropdown panel opens on click, spacebar, enter, or when using the arrow keys
-- The dropdown closes when you press escape, or click outside of it
-- You can navigate the items using the up and down arrow keys
-- You can jump the first item using the `Home` key, and the last item using the `End` key
-- Disabled items are automatically skipped when navigating with the keyboard
-- Hovering over an item with your mouse after navigating with the keyboard will switch to mouse position based focusing
-- Items are announced properly to screen readers while navigating them with the keyboard
-- The dropdown button is properly announced to screenreaders as controlling a menu
-- ...and probably tons more that I'm forgetting.
+- 下拉面板可通过点击、空格键、回车或使用箭头键打开
+- 下拉菜单在按下 Esc 键或点击外部时关闭
+- 您可以使用上箭头和下箭头键导航项目
+- 您可以使用 `Home` 键跳转到第一个项目，使用 `End` 键跳转到最后一个项目
+- 在使用键盘导航时，禁用的项目会被自动跳过
+- 在使用键盘导航后，使用鼠标悬停在项目上将切换到基于鼠标位置的焦点
+- 使用键盘导航时，项目会正确传递给屏幕阅读器
+- 下拉按钮被正确地传递给屏幕阅读器，作为控制菜单的元素
+- ...还有很多我忘记的功能。
 
-All without writing the letters `aria` anywhere in your own code, and without writing a single event listener. And you still have complete control over the design!
+这一切都不需要在您自己的代码中写一字 `aria`，也不需要写一个事件监听器。并且您仍然对设计有完全的控制权！
 
-There are [over 3000 lines of tests for this component](https://github.com/tailwindlabs/headlessui/blob/c7b91dc7315b1f49c1a469f70eb1f6eba6a2e31c/packages/%40headlessui-react/src/components/menu/menu.test.tsx). Pretty nice that you didn't have to do that yourself, right?
+该组件有 [超过 3000 行的测试](https://github.com/tailwindlabs/headlessui/blob/c7b91dc7315b1f49c1a469f70eb1f6eba6a2e31c/packages/%40headlessui-react/src/components/menu/menu.test.tsx)。您不需要亲自完成这些测试，真不错吧？
 
-Here's a fully-styled live demo _(taken from [Tailwind UI](https://tailwindui.com))_ so you can see it in action:
+这是一个完整样式的实时演示 _(取自 [Tailwind UI](https://tailwindui.com))_，让您看到它的实际效果：
 
 <iframe
   src="https://codesandbox.io/embed/headlessuireact-menu-example-b6xje?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark"
   className="w-full overflow-hidden rounded border-0"
   style={{ height: "480px" }}
-  title="@headlessui/react Menu Example"
+  title="@headlessui/react 菜单示例"
   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-Make sure to try it with the keyboard or a screen reader to really appreciate it!
+确保尝试使用键盘或屏幕阅读器真正体验它！
 
-We just tagged v0.2.0, which currently includes the following components:
+我们刚刚发布了 v0.2.0，目前包括以下组件：
 
-- [Menu Button](https://codesandbox.io/s/headlessuivue-menu-example-70br3?file=/src/App.vue) (or dropdown)
-- [Listbox](https://codesandbox.io/s/headlessuivue-listbox-example-mi67g?file=/src/App.vue) (or custom select)
-- [Switch](https://codesandbox.io/s/headlessuivue-switch-example-8ycp6?file=/src/App.vue) (or toggle)
-- ...with many more on the way.
+- [菜单按钮](https://codesandbox.io/s/headlessuivue-menu-example-70br3?file=/src/App.vue) (或下拉)
+- [列表框](https://codesandbox.io/s/headlessuivue-listbox-example-mi67g?file=/src/App.vue) (或自定义选择)
+- [开关](https://codesandbox.io/s/headlessuivue-switch-example-8ycp6?file=/src/App.vue) (或切换)
+- ...还有更多正在开发中。
 
-To learn more and dive in, [**head over to the Headless UI website**](https://headlessui.dev) and read the documentation.
+要了解更多并深入研究，请访问 [**无样式的 UI 网站**](https://headlessui.dev) 并阅读文档。
 
 ---
 
-If you've followed my work online for the last few years, you might remember my fascination with [renderless UI components](https://adamwathan.me/renderless-components-in-vuejs/) — something I was really started getting into towards the [end of 2017](https://fullstackradio.com/79). I've wanted a library like this to exist for years, but until we started growing the team we just didn't have the resources to make it happen.
+如果您在过去几年的工作中关注过我，您可能会记得我对 [无渲染 UI 组件](https://adamwathan.me/renderless-components-in-vuejs/) 的着迷——这是我在 [2017 年底](https://fullstackradio.com/79) 开始真正探索的东西。我多年来一直希望有这样一个库的存在，但在我们开始扩展团队之前，我们没有足够的资源来实现它。
 
-Earlier this year [we hired Robin Malfait](https://blog.tailwindcss.com/from-900-to-1-how-we-hired-robin-malfait), and he's been working on Headless UI full-time ever since.
+今年早些时候 [我们聘请了 Robin Malfait](https://blog.tailwindcss.com/from-900-to-1-how-we-hired-robin-malfait)，自那时起，他一直全职致力于无样式的 UI。
 
-The biggest motivation for this project is that we'd really like to add production-ready JS examples to [Tailwind UI](https://tailwindui.com), which is currently an HTML-only, bring-your-own-JavaScript sort of project. This is great for lots of our customers who want full control over how everything works, but for many others it's a point of friction.
+这个项目的最大动机是我们真的希望为 [Tailwind UI](https://tailwindui.com) 添加生产就绪的 JavaScript 示例，目前这只是一个仅支持 HTML 的项目，需自带 JavaScript。这对于许多希望全面控制一切工作方式的客户来说很好，但对许多其他客户来说，这是一个摩擦点。
 
-We didn't want to add 200 lines of gnarly JS to every component example, so we started working on Headless UI as a way to _extract_ all of that noise, without giving up any flexibility in the actual UI design.
+我们不想在每个组件示例中添加 200 行复杂的 JavaScript，因此我们开始开发无样式的 UI，以便提取所有的噪音，而无需放弃实际 UI 设计中的灵活性。
 
-## Why reinvent the wheel?
+## 为什么要重新发明轮子？
 
-We're not the first people to try and tackle this problem. [Downshift](https://github.com/downshift-js/downshift) was the first library I saw that got me excited about this idea back in 2017, [Reach UI](https://reach.tech/) and [Reakit](https://reakit.io/) started development in 2018, and [React Aria](https://react-spectrum.adobe.com/react-aria/getting-started.html) was released most recently, just earlier this year.
+我们并不是第一个尝试解决这个问题的人。[Downshift](https://github.com/downshift-js/downshift) 是我在 2017 年首次看到的让我对这个想法感到兴奋的库，[Reach UI](https://reach.tech/) 和 [Reakit](https://reakit.io/) 于 2018 年开始开发，而 [React Aria](https://react-spectrum.adobe.com/react-aria/getting-started.html) 最近发布，就在今年早些时候。
 
-We decided to try our own take on the problem for a few reasons:
+我们决定以自己的方式尝试解决这个问题，原因有几个：
 
-- Existing solutions are focused almost entirely on React, and we'd like to bring these ideas to other ecosystems like Vue, Alpine, and hopefully more in the future.
-- These libraries are going to be foundational for adding JS support to Tailwind UI, and since that's what keeps the business running it felt important to have complete decision-making power over how the libraries worked and what they supported.
-- We have our own ideas on what the APIs should look like for these components, and want to be able to explore those ideas freely.
-- We want to make sure it is always super easy to style these components with Tailwind, rather than having to write custom CSS.
+- 现有解决方案几乎完全专注于 React，我们希望将这些想法带到其他生态系统，比如 Vue、Alpine，以及未来希望能支持更多生态系统。
+- 这些库将成为为 Tailwind UI 添加 JavaScript 支持的基础，因为这维持着业务运转，因此我们觉得在库的工作原理和支持内容上拥有完整的决策权是很重要的。
+- 我们对这些组件的 API 应该是什么样子有自己的想法，希望能够自由探索这些想法。
+- 我们希望确保总是可以轻松使用 Tailwind 为这些组件进行样式设置，而不是必须编写自定义 CSS。
 
-We think what we've come up with so far hits a great balance between flexibility and developer experience, and we're grateful there are other people working on similar problems that we can learn from and share our ideas with.
+我们认为我们目前得到的结果在灵活性和开发者体验之间达到了良好的平衡，我们感激有其他人在处理类似的问题，我们可以从他们身上学习并分享我们的想法。
 
-## What's next
+## 接下来是什么
 
-We've got quite a few more components to develop for Headless UI, including:
+我们还有相当多的组件需要为无样式的 UI 开发，包括：
 
-- Modal
-- Radio group
-- Tabs
-- Accordion
-- Combobox
-- Datepicker
+- 模态框
+- 单选组
+- 选项卡
+- 手风琴
+- 组合框
+- 日期选择器
 
-...and likely many more. We're also about to start on Alpine.js support, and we're hoping to be able to tag a v1.0 for React, Vue, and Alpine near the end of the year.
+...并可能还有更多。我们还即将开始支持 Alpine.js，并希望能在年底之前为 React、Vue 和 Alpine 发布 v1.0。
 
-After that we'll start exploring other frameworks, with the hope that we can eventually offer the same tools for ecosystems like Svelte, Angular, and Ember, either first-class or with community partners.
+在此之后，我们将开始探索其他框架，希望最终能够为 Svelte、Angular 和 Ember 等生态系统提供相同的工具，无论是作为第一方支持还是与社区合作伙伴合作。
 
-If you'd like to keep up with what we're doing, be sure to [follow the project on GitHub](https://github.com/tailwindlabs/headlessui).
+如果您想跟上我们的工作，请确保 [关注 GitHub 上的项目](https://github.com/tailwindlabs/headlessui)。
 
-Want to talk about this post? <a href="https://github.com/tailwindcss/tailwindcss/discussions/2508">Discuss this on GitHub →</a>
+想讨论这篇文章吗？ <a href="https://github.com/tailwindcss/tailwindcss/discussions/2508">在 GitHub 上讨论 →</a>

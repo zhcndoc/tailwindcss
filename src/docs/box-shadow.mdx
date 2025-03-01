@@ -10,11 +10,11 @@ import { Figure } from "@/components/figure.tsx";
 import colors from "./utils/colors";
 
 export const title = "box-shadow";
-export const description = "Utilities for controlling the box shadow of an element.";
+export const description = "控制元素盒子阴影的实用工具。";
 
 <ApiTable
   rows={[
-    // Shadows
+    // 阴影
     ["shadow-2xs", "box-shadow: var(--shadow-2xs); /* 0 1px rgb(0 0 0 / 0.05) */"],
     ["shadow-xs", "box-shadow: var(--shadow-xs); /* 0 1px 2px 0 rgb(0 0 0 / 0.05) */"],
     ["shadow-sm", "box-shadow: var(--shadow-sm); /* 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) */"],
@@ -35,7 +35,7 @@ export const description = "Utilities for controlling the box shadow of an eleme
     ["shadow-(<custom-property>)", "box-shadow: var(<custom-property>);"],
     ["shadow-(color:<custom-property>)", "--tw-shadow-color var(<custom-property>);"],
     ["shadow-[<value>]", "box-shadow: <value>;"],
-    // Shadow colors
+    // 阴影颜色
     ["shadow-inherit", "--tw-shadow-color inherit;"],
     ["shadow-current", "--tw-shadow-color currentColor;"],
     ["shadow-transparent", "--tw-shadow-color transparent;"],
@@ -43,14 +43,14 @@ export const description = "Utilities for controlling the box shadow of an eleme
       `shadow-${name}`,
       `--tw-shadow-color var(--color-${name}); /* ${value} */`,
     ]),
-    // Inset shadows
+    // 内嵌阴影
     ["inset-shadow-2xs", "box-shadow: var(--inset-shadow-2xs); /* inset 0 1px rgb(0 0 0 / 0.05) */"],
     ["inset-shadow-xs", "box-shadow: var(--inset-shadow-xs); /* inset 0 1px 1px rgb(0 0 0 / 0.05) */"],
     ["inset-shadow-sm", "box-shadow: var(--inset-shadow-sm); /* inset 0 2px 4px rgb(0 0 0 / 0.05) */"],
     ["inset-shadow-none", "box-shadow: inset 0 0 #0000;"],
     ["inset-shadow-(<custom-property>)", "box-shadow: var(<custom-property>);"],
     ["inset-shadow-[<value>]", "box-shadow: <value>;"],
-    // Inset shadow colors
+    // 内嵌阴影颜色
     ["inset-shadow-inherit", "--tw-inset-shadow-color inherit;"],
     ["inset-shadow-current", "--tw-inset-shadow-color currentColor;"],
     ["inset-shadow-transparent", "--tw-inset-shadow-color transparent;"],
@@ -58,12 +58,12 @@ export const description = "Utilities for controlling the box shadow of an eleme
       `inset-shadow-${name}`,
       `--tw-inset-shadow-color var(--color-${name}); /* ${value} */`,
     ]),
-    // Rings
+    // 光环
     ["ring", "--tw-ring-shadow: 0 0 0 1px;"],
     ["ring-<number>", "--tw-ring-shadow: 0 0 0 <number>px;"],
     ["ring-(<custom-property>)", "--tw-ring-shadow: 0 0 0 var(<custom-property>);"],
     ["ring-[<value>]", "--tw-ring-shadow: 0 0 0 <value>;"],
-    // Ring colors
+    // 光环颜色
     ["ring-inherit", "--tw-ring-color: inherit;"],
     ["ring-current", "--tw-ring-color: currentColor;"],
     ["ring-transparent", "--tw-ring-color: transparent;"],
@@ -71,12 +71,12 @@ export const description = "Utilities for controlling the box shadow of an eleme
       `ring-${name}`,
       `--tw-ring-color: var(--color-${name}); /* ${value} */`,
     ]),
-    // Inset rings
+    // 内嵌光环
     ["inset-ring", "--tw-inset-ring-shadow: inset 0 0 0 1px"],
     ["inset-ring-<number>", "--tw-inset-ring-shadow: inset 0 0 0 <number>px"],
     ["inset-ring-(<custom-property>)", "--tw-inset-ring-shadow: inset 0 0 0 var(<custom-property>);"],
     ["inset-ring-[<value>]", "--tw-inset-ring-shadow: inset 0 0 0 <value>;"],
-    // Inset ring colors
+    // 内嵌光环颜色
     ["inset-ring-inherit", "--tw-inset-ring-color: inherit;"],
     ["inset-ring-current", "--tw-inset-ring-color: currentColor;"],
     ["inset-ring-transparent", "--tw-inset-ring-color: transparent;"],
@@ -87,11 +87,11 @@ export const description = "Utilities for controlling the box shadow of an eleme
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `shadow-sm` and `shadow-lg` to apply different sized outer box shadows to an element:
+使用 `shadow-sm` 和 `shadow-lg` 这样的实用工具为元素应用不同大小的外部盒子阴影：
 
 <Figure>
 
@@ -123,9 +123,9 @@ Use utilities like `shadow-sm` and `shadow-lg` to apply different sized outer bo
 
 </Figure>
 
-### Setting the shadow color
+### 设置阴影颜色
 
-Use utilities like `shadow-indigo-500` and `shadow-cyan-500/50` to change the color of a box shadow:
+使用 `shadow-indigo-500` 和 `shadow-cyan-500/50` 这样的实用工具更改盒子阴影的颜色：
 
 <Figure>
 
@@ -137,7 +137,7 @@ Use utilities like `shadow-indigo-500` and `shadow-cyan-500/50` to change the co
           shadow-cyan-500/50
         </p>
         <button className="rounded-md bg-cyan-500 px-3 py-2 text-sm font-semibold text-white shadow-lg shadow-cyan-500/50 focus:outline-none">
-          Subscribe
+          订阅
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
@@ -145,7 +145,7 @@ Use utilities like `shadow-indigo-500` and `shadow-cyan-500/50` to change the co
           shadow-blue-500/50
         </p>
         <button className="rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-500/50 focus:outline-none">
-          Subscribe
+          订阅
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
@@ -153,7 +153,7 @@ Use utilities like `shadow-indigo-500` and `shadow-cyan-500/50` to change the co
           shadow-indigo-500/50
         </p>
         <button className="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-500/50 focus:outline-none">
-          Subscribe
+          订阅
         </button>
       </div>
     </div>
@@ -162,18 +162,18 @@ Use utilities like `shadow-indigo-500` and `shadow-cyan-500/50` to change the co
 
 ```html
 <!-- [!code classes:shadow-cyan-500/50,shadow-blue-500/50,shadow-indigo-500/50] -->
-<button class="bg-cyan-500 shadow-lg shadow-cyan-500/50 ...">Subscribe</button>
-<button class="bg-blue-500 shadow-lg shadow-blue-500/50 ...">Subscribe</button>
-<button class="bg-indigo-500 shadow-lg shadow-indigo-500/50 ...">Subscribe</button>
+<button class="bg-cyan-500 shadow-lg shadow-cyan-500/50 ...">订阅</button>
+<button class="bg-blue-500 shadow-lg shadow-blue-500/50 ...">订阅</button>
+<button class="bg-indigo-500 shadow-lg shadow-indigo-500/50 ...">订阅</button>
 ```
 
 </Figure>
 
-By default colored shadows have an opacity of 100% but you can adjust this using the opacity modifier.
+默认情况下，彩色阴影的透明度为 100%，但您可以使用透明度修饰符进行调整。
 
-### Adding an inset shadow
+### 添加内嵌阴影
 
-Use utilities like `inset-shadow-xs` and `inset-shadow-sm` to apply an inset box shadow to an element:
+使用 `inset-shadow-xs` 和 `inset-shadow-sm` 这样的实用工具为元素应用内嵌盒子阴影：
 
 <Figure>
 
@@ -205,11 +205,11 @@ Use utilities like `inset-shadow-xs` and `inset-shadow-sm` to apply an inset box
 
 </Figure>
 
-These utilities can be useful for things like form controls or wells.
+这些实用工具对于表单控件或井等事物非常有用。
 
-### Setting the inset shadow color
+### 设置内嵌阴影颜色
 
-Use utilities like `inset-shadow-indigo-500` and `inset-shadow-cyan-500/50` to change the color of an inset box shadow:
+使用 `inset-shadow-indigo-500` 和 `inset-shadow-cyan-500/50` 这样的实用工具更改内嵌盒子阴影的颜色：
 
 <Figure>
 
@@ -236,11 +236,11 @@ Use utilities like `inset-shadow-indigo-500` and `inset-shadow-cyan-500/50` to c
 
 </Figure>
 
-By default colored shadows have an opacity of 100% but you can adjust this using the opacity modifier.
+默认情况下，彩色阴影的透明度为 100%，但您可以使用透明度修饰符进行调整。
 
-### Adding a ring
+### 添加光环
 
-Use `ring` or `ring-<number>` utilities like `ring-2` and `ring-4` to apply a solid box-shadow to an element:
+使用 `ring` 或 `ring-<number>` 实用工具，如 `ring-2` 和 `ring-4` 为元素应用实心盒子阴影：
 
 <Figure>
 
@@ -250,19 +250,19 @@ Use `ring` or `ring-<number>` utilities like `ring-2` and `ring-4` to apply a so
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">ring</p>
         <button className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-700 ring dark:bg-white/15 dark:text-gray-200">
-          Subscribe
+          订阅
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">ring-2</p>
         <button className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-700 ring-2 dark:bg-white/15 dark:text-gray-200">
-          Subscribe
+          订阅
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">ring-4</p>
         <button className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-700 ring-4 dark:bg-white/15 dark:text-gray-200">
-          Subscribe
+          订阅
         </button>
       </div>
     </div>
@@ -271,18 +271,18 @@ Use `ring` or `ring-<number>` utilities like `ring-2` and `ring-4` to apply a so
 
 ```html
 <!-- [!code classes:ring,ring-2,ring-4] -->
-<button class="ring ...">Subscribe</button>
-<button class="ring-2 ...">Subscribe</button>
-<button class="ring-4 ...">Subscribe</button>
+<button class="ring ...">订阅</button>
+<button class="ring-2 ...">订阅</button>
+<button class="ring-4 ...">订阅</button>
 ```
 
 </Figure>
 
-By default rings match the `currentColor` of the element they are applied to.
+默认情况下，光环与应用于其上的元素的 `currentColor` 匹配。
 
-### Setting the ring color
+### 设置光环颜色
 
-Use utilities like `ring-indigo-500` and `ring-cyan-500/50` to change the color of a ring:
+使用 `ring-indigo-500` 和 `ring-cyan-500/50` 这样的实用工具更改光环的颜色：
 
 <Figure>
 
@@ -292,7 +292,7 @@ Use utilities like `ring-indigo-500` and `ring-cyan-500/50` to change the color 
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">ring-blue-500</p>
         <button className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-700 ring-2 ring-blue-500 dark:bg-white/15 dark:text-gray-200">
-          Subscribe
+          订阅
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
@@ -300,7 +300,7 @@ Use utilities like `ring-indigo-500` and `ring-cyan-500/50` to change the color 
           ring-blue-500/50
         </p>
         <button className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-700 ring-2 ring-blue-500/50 dark:bg-white/15 dark:text-gray-200">
-          Subscribe
+          订阅
         </button>
       </div>
     </div>
@@ -309,17 +309,17 @@ Use utilities like `ring-indigo-500` and `ring-cyan-500/50` to change the color 
 
 ```html
 <!-- [!code classes:ring-blue-500,ring-blue-500/50] -->
-<button class="ring-2 ring-blue-500 ...">Subscribe</button>
-<button class="ring-2 ring-blue-500/50 ...">Subscribe</button>
+<button class="ring-2 ring-blue-500 ...">订阅</button>
+<button class="ring-2 ring-blue-500/50 ...">订阅</button>
 ```
 
 </Figure>
 
-By default rings have an opacity of 100% but you can adjust this using the opacity modifier.
+默认情况下，光环的透明度为 100%，但您可以使用透明度修饰符进行调整。
 
-### Adding an inset ring
+### 添加内嵌光环
 
-Use `inset-ring` or `inset-ring-<number>` utilities like `inset-ring-2` and `inset-ring-4` to apply a solid inset box-shadow to an element:
+使用 `inset-ring` 或 `inset-ring-<number>` 实用工具，如 `inset-ring-2` 和 `inset-ring-4` 为元素应用实心内嵌盒子阴影：
 
 <Figure>
 
@@ -329,19 +329,19 @@ Use `inset-ring` or `inset-ring-<number>` utilities like `inset-ring-2` and `ins
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">inset-ring</p>
         <button className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-700 inset-ring dark:bg-white/15 dark:text-gray-200">
-          Subscribe
+          订阅
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">inset-ring-2</p>
         <button className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-700 inset-ring-2 dark:bg-white/15 dark:text-gray-200">
-          Subscribe
+          订阅
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">inset-ring-4</p>
         <button className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-700 inset-ring-4 dark:bg-white/15 dark:text-gray-200">
-          Subscribe
+          订阅
         </button>
       </div>
     </div>
@@ -350,18 +350,18 @@ Use `inset-ring` or `inset-ring-<number>` utilities like `inset-ring-2` and `ins
 
 ```html
 <!-- [!code classes:inset-ring,inset-ring-2,inset-ring-4] -->
-<button class="inset-ring ...">Subscribe</button>
-<button class="inset-ring-2 ...">Subscribe</button>
-<button class="inset-ring-4 ...">Subscribe</button>
+<button class="inset-ring ...">订阅</button>
+<button class="inset-ring-2 ...">订阅</button>
+<button class="inset-ring-4 ...">订阅</button>
 ```
 
 </Figure>
 
-By default inset rings match the `currentColor` of the element they are applied to.
+默认情况下，内嵌光环与应用于其上的元素的 `currentColor` 匹配。
 
-### Setting the inset ring color
+### 设置内嵌光环颜色
 
-Use utilities like `inset-ring-indigo-500` and `inset-ring-cyan-500/50` to change the color of an inset ring:
+使用 `inset-ring-indigo-500` 和 `inset-ring-cyan-500/50` 这样的实用工具更改内嵌光环的颜色：
 
 <Figure>
 
@@ -373,7 +373,7 @@ Use utilities like `inset-ring-indigo-500` and `inset-ring-cyan-500/50` to chang
           inset-ring-blue-500
         </p>
         <button className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-700 inset-ring-2 inset-ring-blue-500 dark:bg-white/15 dark:text-gray-200">
-          Subscribe
+          订阅
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
@@ -381,7 +381,7 @@ Use utilities like `inset-ring-indigo-500` and `inset-ring-cyan-500/50` to chang
           inset-ring-blue-500/50
         </p>
         <button className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-700 inset-ring-2 inset-ring-blue-500/50 dark:bg-white/15 dark:text-gray-200">
-          Subscribe
+          订阅
         </button>
       </div>
     </div>
@@ -390,17 +390,17 @@ Use utilities like `inset-ring-indigo-500` and `inset-ring-cyan-500/50` to chang
 
 ```html
 <!-- [!code classes:inset-ring-blue-500,inset-ring-blue-500/50] -->
-<button class="inset-ring-2 inset-ring-blue-500 ...">Subscribe</button>
-<button class="inset-ring-2 inset-ring-blue-500/50 ...">Subscribe</button>
+<button class="inset-ring-2 inset-ring-blue-500 ...">订阅</button>
+<button class="inset-ring-2 inset-ring-blue-500/50 ...">订阅</button>
 ```
 
 </Figure>
 
-By default inset rings have an opacity of 100% but you can adjust this using the opacity modifier.
+默认情况下，内嵌光环的透明度为 100%，但您可以使用透明度修饰符进行调整。
 
-### Removing a box shadow
+### 移除盒子阴影
 
-Use the `shadow-none`, `inset-shadow-none`,`ring-0`, and `inset-ring-0` utilities to remove an existing box shadow from an element:
+使用 `shadow-none`、`inset-shadow-none`、`ring-0` 和 `inset-ring-0` 实用工具从元素中移除现有的盒子阴影：
 
 <Figure>
 
@@ -422,40 +422,40 @@ Use the `shadow-none`, `inset-shadow-none`,`ring-0`, and `inset-ring-0` utilitie
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   utilities={["shadow", "inset-shadow", "ring", "inset-ring"]}
-  name="box shadow"
+  name="盒子阴影"
   value="0_35px_35px_rgba(0,0,0,0.25)"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="box-shadow" defaultClass="shadow-none" featuredClass="shadow-lg" />
 
-## Customizing your theme
+## 自定义您的主题
 
-### Customizing shadows
+### 自定义阴影
 
 <CustomizingYourTheme
   utility="shadow"
   themeKey="shadow"
-  name="box shadow"
+  name="盒子阴影"
   customName="3xl"
   customValue="0 35px 35px rgba(0, 0, 0, 0.25)"
 />
 
-### Customizing inset shadows
+### 自定义内嵌阴影
 
 <CustomizingYourTheme
   utility="inset-shadow"
   themeKey="inset-shadow"
-  name="inset box shadow"
+  name="内嵌盒子阴影"
   customName="md"
   customValue="inset 0 2px 3px rgba(0, 0, 0, 0.25)"
 />
 
-### Customizing shadow colors
+### 自定义阴影颜色
 
 <CustomizingYourThemeColors utilities={["shadow", "inset-shadow", "ring", "inset-ring"]} />

@@ -3,8 +3,8 @@ import { CustomizingYourThemeColors, ResponsiveDesign, UsingACustomValue } from 
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "background-image";
-export const description = "Utilities for controlling an element's background image.";
+export const title = "背景图像";
+export const description = "用于控制元素背景图像的工具类。";
 
 <svg className="hidden">
   <symbol id="gradient-color-stop" viewBox="0 0 32 34">
@@ -63,11 +63,11 @@ export const description = "Utilities for controlling an element's background im
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use the `bg-[<value>]` syntax to set the background image of an element:
+使用 `bg-[<value>]` 语法设置元素的背景图像：
 
 <Figure>
 
@@ -86,9 +86,9 @@ Use the `bg-[<value>]` syntax to set the background image of an element:
 
 </Figure>
 
-### Adding a linear gradient
+### 添加线性渐变
 
-Use utilities like `bg-linear-to-r` and `bg-linear-<angle>` with the [color stop utilities](#setting-gradient-color-stops) to add a linear gradient to an element:
+使用像 `bg-linear-to-r` 和 `bg-linear-<angle>` 这样的工具类与 [颜色停止工具](#setting-gradient-color-stops) 一起为元素添加线性渐变：
 
 <Figure>
 
@@ -113,9 +113,9 @@ Use utilities like `bg-linear-to-r` and `bg-linear-<angle>` with the [color stop
 
 </Figure>
 
-### Adding a radial gradient
+### 添加放射状渐变
 
-Use the `bg-radial` and `bg-radial-[<position>]` utilities with the [color stop utilities](#setting-gradient-color-stops) to add a radial gradient to an element:
+使用 `bg-radial` 和 `bg-radial-[<position>]` 工具类与 [颜色停止工具](#setting-gradient-color-stops) 一起为元素添加放射状渐变：
 
 <Figure>
 
@@ -138,9 +138,9 @@ Use the `bg-radial` and `bg-radial-[<position>]` utilities with the [color stop 
 
 </Figure>
 
-### Adding a conic gradient
+### 添加锥形渐变
 
-Use the `bg-conic` and `bg-conic-<angle>` utilities with the [color stop utilities](#setting-gradient-color-stops) to add a conic gradient to an element:
+使用 `bg-conic` 和 `bg-conic-<angle>` 工具类与 [颜色停止工具](#setting-gradient-color-stops) 一起为元素添加锥形渐变：
 
 <Figure>
 
@@ -163,9 +163,9 @@ Use the `bg-conic` and `bg-conic-<angle>` utilities with the [color stop utiliti
 
 </Figure>
 
-### Setting gradient color stops
+### 设置渐变颜色停止
 
-Use utilities like `from-indigo-500`, `via-purple-500`, and `to-pink-500` to set the colors of the gradient stops:
+使用像 `from-indigo-500`、`via-purple-500` 和 `to-pink-500` 这样的工具类设置渐变停止的颜色：
 
 <Figure>
 
@@ -204,9 +204,9 @@ Use utilities like `from-indigo-500`, `via-purple-500`, and `to-pink-500` to set
 
 </Figure>
 
-### Setting gradient stop positions
+### 设置渐变停止位置
 
-Use utilities like `from-10%`, `via-30%`, and `to-90%` to set more precise positions for the gradient color stops:
+使用像 `from-10%`、`via-30%` 和 `to-90%` 这样的工具类为渐变颜色停止设置更精确的位置：
 
 <Figure>
 
@@ -254,9 +254,9 @@ Use utilities like `from-10%`, `via-30%`, and `to-90%` to set more precise posit
 
 </Figure>
 
-### Changing interpolation mode
+### 更改插值模式
 
-Use the interpolation modifier to control the interpolation mode of a gradient:
+使用插值修饰符控制渐变的插值模式：
 
 <Figure>
 
@@ -320,30 +320,30 @@ Use the interpolation modifier to control the interpolation mode of a gradient:
 
 </Figure>
 
-By default gradients are interpolated in the `oklab` color space.
+默认情况下，渐变在 `oklab` 颜色空间中插值。
 
-### Removing background images
+### 移除背景图像
 
-Use the `bg-none` utility to remove an existing background image from an element:
+使用 `bg-none` 工具类从元素中移除现有的背景图像：
 
 ```html
 <!-- [!code classes:bg-none] -->
 <div class="bg-none"></div>
 ```
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   utilities={["bg-linear", "from"]}
-  name="gradient"
+  name="渐变"
   value="25deg,red_5%,yellow_60%,lime_90%,teal"
   variable="gradient"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="background-image" defaultClass="from-purple-400" featuredClass="from-yellow-500" />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourThemeColors utilities={["from", "via", "to"]} />

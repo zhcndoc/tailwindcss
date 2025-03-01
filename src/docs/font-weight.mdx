@@ -3,8 +3,8 @@ import { CustomizingYourTheme, ResponsiveDesign, UsingACustomValue } from "@/com
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "font-weight";
-export const description = "Utilities for controlling the font weight of an element.";
+export const title = "字体粗细";
+export const description = "用于控制元素字体粗细的工具类。";
 
 <ApiTable
   rows={[
@@ -22,11 +22,11 @@ export const description = "Utilities for controlling the font weight of an elem
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `font-thin` and `font-bold` to set the font weight of an element:
+使用像 `font-thin` 和 `font-bold` 这样的工具类来设置元素的字体粗细：
 
 <Figure>
 
@@ -36,31 +36,31 @@ Use utilities like `font-thin` and `font-bold` to set the font weight of an elem
       <div>
         <span className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-light</span>
         <p className="text-lg font-light text-gray-900 dark:text-gray-200">
-          The quick brown fox jumps over the lazy dog.
+          迅速的棕色狐狸跳过懒狗。
         </p>
       </div>
       <div>
         <span className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-normal</span>
         <p className="text-lg font-normal text-gray-900 dark:text-gray-200">
-          The quick brown fox jumps over the lazy dog.
+          迅速的棕色狐狸跳过懒狗。
         </p>
       </div>
       <div>
         <span className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-medium</span>
         <p className="text-lg font-medium text-gray-900 dark:text-gray-200">
-          The quick brown fox jumps over the lazy dog.
+          迅速的棕色狐狸跳过懒狗。
         </p>
       </div>
       <div>
         <span className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-semibold</span>
         <p className="text-lg font-semibold text-gray-900 dark:text-gray-200">
-          The quick brown fox jumps over the lazy dog.
+          迅速的棕色狐狸跳过懒狗。
         </p>
       </div>
       <div>
         <span className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-bold</span>
         <p className="text-lg font-bold text-gray-900 dark:text-gray-200">
-          The quick brown fox jumps over the lazy dog.
+          迅速的棕色狐狸跳过懒狗。
         </p>
       </div>
     </div>
@@ -69,29 +69,29 @@ Use utilities like `font-thin` and `font-bold` to set the font weight of an elem
 
 ```html
 <!-- [!code classes:font-light,font-normal,font-medium,font-semibold,font-bold] -->
-<p class="font-light ...">The quick brown fox ...</p>
-<p class="font-normal ...">The quick brown fox ...</p>
-<p class="font-medium ...">The quick brown fox ...</p>
-<p class="font-semibold ...">The quick brown fox ...</p>
-<p class="font-bold ...">The quick brown fox ...</p>
+<p class="font-light ...">迅速的棕色狐狸 ...</p>
+<p class="font-normal ...">迅速的棕色狐狸 ...</p>
+<p class="font-medium ...">迅速的棕色狐狸 ...</p>
+<p class="font-semibold ...">迅速的棕色狐狸 ...</p>
+<p class="font-bold ...">迅速的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue element="p" utility="font" value="1000" name="font weight" variable="font-weight" />
+<UsingACustomValue element="p" utility="font" value="1000" name="字体粗细" variable="font-weight" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="p" property="font-weight" defaultClass="font-normal" featuredClass="font-bold" />
 
-## Customizing your theme
+## 自定义你的主题
 
 <CustomizingYourTheme
   utility="font"
   themeKey="font-weight"
-  name="font weight"
+  name="字体粗细"
   customValue="1000"
-  customName="extrablack"
+  customName="超黑"
 />

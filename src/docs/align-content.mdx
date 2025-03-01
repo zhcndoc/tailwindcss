@@ -5,7 +5,7 @@ import { ResponsiveDesign } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "align-content";
-export const description = "Utilities for controlling how rows are positioned in multi-row flex and grid containers.";
+export const description = "控制多行 Flex 和 Grid 容器中行的位置的工具类。";
 
 <ApiTable
   rows={[
@@ -21,11 +21,11 @@ export const description = "Utilities for controlling how rows are positioned in
   ]}
 />
 
-## Examples
+## 示例
 
-### Start
+### 开始
 
-Use `content-start` to pack rows in a container against the start of the cross axis:
+使用 `content-start` 将容器中的行靠交叉轴的开始位置排列：
 
 <Figure>
 
@@ -57,9 +57,9 @@ Use `content-start` to pack rows in a container against the start of the cross a
 
 </Figure>
 
-### Center
+### 中心
 
-Use `content-center` to pack rows in a container in the center of the cross axis:
+使用 `content-center` 将容器中的行靠交叉轴的中心位置排列：
 
 <Figure>
 
@@ -91,9 +91,9 @@ Use `content-center` to pack rows in a container in the center of the cross axis
 
 </Figure>
 
-### End
+### 结束
 
-Use `content-end` to pack rows in a container against the end of the cross axis:
+使用 `content-end` 将容器中的行靠交叉轴的结束位置排列：
 
 <Figure>
 
@@ -125,9 +125,9 @@ Use `content-end` to pack rows in a container against the end of the cross axis:
 
 </Figure>
 
-### Space between
+### 行间距
 
-Use `content-between` to distribute rows in a container such that there is an equal amount of space between each line:
+使用 `content-between` 在容器中分配行，使每一行之间的间距相等：
 
 <Figure>
 
@@ -159,9 +159,9 @@ Use `content-between` to distribute rows in a container such that there is an eq
 
 </Figure>
 
-### Space around
+### 环绕
 
-Use `content-around` to distribute rows in a container such that there is an equal amount of space around each line:
+使用 `content-around` 在容器中分配行，使每一行周围的间距相等：
 
 <Figure>
 
@@ -193,9 +193,9 @@ Use `content-around` to distribute rows in a container such that there is an equ
 
 </Figure>
 
-### Space evenly
+### 均匀间距
 
-Use `content-evenly` to distribute rows in a container such that there is an equal amount of space around each item, but also accounting for the doubling of space you would normally see between each item when using `content-around`:
+使用 `content-evenly` 在容器中分配行，使每个项目周围的间距相等，同时考虑使用 `content-around` 时通常看到的每个项目之间的双倍间距：
 
 <Figure>
 
@@ -227,9 +227,9 @@ Use `content-evenly` to distribute rows in a container such that there is an equ
 
 </Figure>
 
-### Stretch
+### 拉伸
 
-Use `content-stretch` to allow content items to fill the available space along the container’s cross axis:
+使用 `content-stretch` 使内容项充满容器的交叉轴上的可用空间：
 
 <Figure>
 
@@ -261,9 +261,9 @@ Use `content-stretch` to allow content items to fill the available space along t
 
 </Figure>
 
-### Normal
+### 正常
 
-Use `content-normal` to pack content items in their default position as if no `align-content` value was set:
+使用 `content-normal` 将内容项打包在其默认位置，就像没有设置 `align-content` 的值一样：
 
 <Figure>
 
@@ -295,6 +295,6 @@ Use `content-normal` to pack content items in their default position as if no `a
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="align-content" defaultClass="grid content-start" featuredClass="content-around" />

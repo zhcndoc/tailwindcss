@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "border-style";
-export const description = "Utilities for controlling the style of an element's borders.";
+export const title = "边框样式";
+export const description = "用于控制元素边框样式的工具类。";
 
 <ApiTable
   rows={[
@@ -23,11 +23,11 @@ export const description = "Utilities for controlling the style of an element's 
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `border-solid` and `border-dotted` to control an element's border style:
+使用 `border-solid` 和 `border-dotted` 等工具类来控制元素的边框样式：
 
 <Figure>
 
@@ -37,25 +37,25 @@ Use utilities like `border-solid` and `border-dotted` to control an element's bo
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">border-solid</p>
         <button className="rounded-md border-2 border-solid border-indigo-500 bg-white px-4 py-2 text-sm font-semibold text-gray-700 dark:border-sky-500 dark:bg-gray-700 dark:text-white">
-          Button A
+          按钮 A
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">border-dashed</p>
         <button className="rounded-md border-2 border-dashed border-indigo-500 bg-white px-4 py-2 text-sm font-semibold text-gray-700 dark:border-sky-500 dark:bg-gray-700 dark:text-white">
-          Button A
+          按钮 A
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">border-dotted</p>
         <button className="rounded-md border-2 border-dotted border-indigo-500 bg-white px-4 py-2 text-sm font-semibold text-gray-700 dark:border-sky-500 dark:bg-gray-700 dark:text-white">
-          Button A
+          按钮 A
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">border-double</p>
         <button className="rounded-md border-4 border-double border-indigo-500 bg-white px-4 py-2 text-sm font-semibold text-gray-700 dark:border-sky-500 dark:bg-gray-700 dark:text-white">
-          Button A
+          按钮 A
         </button>
       </div>
     </div>
@@ -72,9 +72,9 @@ Use utilities like `border-solid` and `border-dotted` to control an element's bo
 
 </Figure>
 
-### Removing a border
+### 移除边框
 
-Use the `border-none` utility to remove an existing border from an element:
+使用 `border-none` 工具类从元素中移除现有边框：
 
 <Figure>
 
@@ -82,7 +82,7 @@ Use the `border-none` utility to remove an existing border from an element:
   {
     <div className="flex justify-center gap-4 text-center text-sm leading-6 font-bold text-white">
       <button className="rounded-md border-2 border-none border-indigo-500 bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-700 dark:bg-gray-700 dark:text-white">
-        Save Changes
+        保存更改
       </button>
     </div>
   }
@@ -90,16 +90,16 @@ Use the `border-none` utility to remove an existing border from an element:
 
 ```html
 <!-- [!code classes:border-none] -->
-<button class="border-none ...">Save Changes</button>
+<button class="border-none ...">保存更改</button>
 ```
 
 </Figure>
 
-This is most commonly used to remove a border style that was applied at a smaller breakpoint.
+这通常用于移除在较小断点应用的边框样式。
 
-### Setting the divider style
+### 设置分隔符样式
 
-Use utilities like `divide-dashed` and `divide-dotted` control the border style between child elements
+使用 `divide-dashed` 和 `divide-dotted` 等工具类来控制子元素之间的边框样式
 
 <Figure>
 
@@ -124,6 +124,6 @@ Use utilities like `divide-dashed` and `divide-dotted` control the border style 
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="border-style" defaultClass="border-solid" featuredClass="border-dotted" />

@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { UsingACustomValue, ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "z-index";
-export const description = "Utilities for controlling the stack order of an element.";
+export const description = "用于控制元素堆叠顺序的工具类。";
 
 <ApiTable
   rows={[
@@ -15,11 +15,11 @@ export const description = "Utilities for controlling the stack order of an elem
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use the `z-<number>` utilities like `z-10` and `z-50` to control the stack order (or three-dimensional positioning) of an element, regardless of the order it has been displayed:
+使用 `z-<number>` 工具类，如 `z-10` 和 `z-50`，来控制元素的堆叠顺序（或三维定位），而不管它的显示顺序：
 
 <Figure>
 
@@ -56,9 +56,9 @@ Use the `z-<number>` utilities like `z-10` and `z-50` to control the stack order
 
 </Figure>
 
-### Using negative values
+### 使用负值
 
-To use a negative z-index value, prefix the class name with a dash to convert it to a negative value:
+要使用负的 z-index 值，请在类名之前添加一个负号，以将其转换为负值：
 
 <Figure>
 
@@ -95,10 +95,10 @@ To use a negative z-index value, prefix the class name with a dash to convert it
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="z" name="stack order" value="calc(var(--index)+1)" />
+<UsingACustomValue utility="z" name="堆叠顺序" value="calc(var(--index)+1)" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="z-index" defaultClass="z-0" featuredClass="z-50" />

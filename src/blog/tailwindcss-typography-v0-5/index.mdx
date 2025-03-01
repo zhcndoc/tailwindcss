@@ -5,22 +5,20 @@ import Image from "next/image";
 import card from "./card.jpg";
 
 export const meta = {
-  title: "Effortless Typography, Even in Dark Mode",
-  description: `Today we're announcing the next version of the Tailwind CSS Typography plugin, which brings easy dark mode support and a brand new customization API.`,
+  title: "无缝排版，即使在深色模式下",
+  description: `今天我们宣布 Tailwind CSS Typography 插件的下一个版本，它带来了简单的深色模式支持和全新的自定义 API。`,
   date: "2021-12-17T18:50:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      Today we're announcing the next version of the{" "}
-      <Link href="https://v3.tailwindcss.com/docs/typography-plugin">Tailwind CSS Typography plugin</Link>, which brings
-      easy dark mode support, a brand new customization API, and the `not-prose` class I wasn't sure we'd ever figure
-      out how to support.
+      今天我们宣布了{" "}
+      <Link href="https://v3.tailwindcss.com/docs/typography-plugin">Tailwind CSS Typography 插件</Link> 的下一个版本，该版本带来了简单的深色模式支持、全新的自定义 API，以及我曾不确定我们是否能支持的 `not-prose` 类。
     </>
   ),
 };
 
-Today we're announcing the next version of the [Tailwind CSS Typography plugin](https://v3.tailwindcss.com/docs/typography-plugin), which brings easy dark mode support, a brand new customization API, and the `not-prose` class I wasn't sure we'd ever figure out how to support.
+今天我们宣布了 [Tailwind CSS Typography 插件](https://v3.tailwindcss.com/docs/typography-plugin) 的下一个版本，该版本带来了简单的深色模式支持、全新的自定义 API，以及我曾不确定我们是否能支持的 `not-prose` 类。
 
 <iframe
   src="https://www.youtube.com/embed/Aa2RjxU-BCw"
@@ -30,21 +28,21 @@ Today we're announcing the next version of the [Tailwind CSS Typography plugin](
   className="aspect-video w-full"
 ></iframe>
 
-For a full tour of everything that's new, check out [the official release video](https://www.youtube.com/watch?v=GEYkwfYytAM) on our YouTube channel.
+要全面了解新功能，请查看我们 YouTube 频道上的 [官方发布视频](https://www.youtube.com/watch?v=GEYkwfYytAM)。
 
-Tailwind CSS Typography v0.5 is designed for Tailwind CSS v3.0, so make sure you're on the latest version of Tailwind, then install the new plugin release from npm:
+Tailwind CSS Typography v0.5 为 Tailwind CSS v3.0 设计，因此请确保您使用的是最新版本的 Tailwind，然后从 npm 安装新插件版本：
 
 ```sh
 npm install -D @tailwindcss/typography@latest
 ```
 
-To learn more about everything the plugin provides, check out our update [typography plugin](https://v3.tailwindcss.com/docs/typography-plugin) documentation.
+要了解插件提供的所有内容，请查看我们的更新 [typography plugin](https://v3.tailwindcss.com/docs/typography-plugin) 文档。
 
 ---
 
-## Easy dark mode support
+## 简单的深色模式支持
 
-We've added a `prose-invert` class you can use to easily swap out your typography colors in dark mode:
+我们增加了一个 `prose-invert` 类，您可以用它轻松切换深色模式下的排版颜色：
 
 ```html
 <!-- [!code word:dark\:prose-invert] -->
@@ -53,28 +51,28 @@ We've added a `prose-invert` class you can use to easily swap out your typograph
 </body>
 ```
 
-The dark themes are hand-crafted by our expert design team, and automatically adapt to whatever gray scale you're using.
+深色主题由我们的专业设计团队精心制作，自动适应您使用的任何灰度。
 
 ---
 
-## Pick your gray scale
+## 选择您的灰度
 
-Tailwind CSS v3.0 ships with five different sets of grays by default, and the updated typography plugin includes classes for each one, making it easy to match your typography to the rest of your site:
+默认情况下，Tailwind CSS v3.0 提供五组不同的灰色，而更新后的排版插件包含每组的类，使您可以轻松将排版与网站的其余部分匹配：
 
 ```html
 <!-- [!code word:prose-slate] -->
 <article class="prose prose-slate">{{ markdown }}</article>
 ```
 
-We've simplified how we define color themes internally too, which makes it easier to add your own if you need to.
+我们也简化了内部定义颜色主题的方式，这使得如果您需要添加自己的主题变得更容易。
 
-Check out the [documentation](https://v3.tailwindcss.com/docs/typography-plugin#choosing-a-gray-scale) to learn more.
+查看 [文档](https://v3.tailwindcss.com/docs/typography-plugin#choosing-a-gray-scale) 以了解更多信息。
 
 ---
 
-## HTML-based customization API
+## 基于 HTML 的自定义 API
 
-We've added tons of modifiers you can use to tweak specific elements in your prose styles, directly in your HTML:
+我们增加了大量修饰符，您可以直接在 HTML 中用于调整排版样式中的特定元素：
 
 {/* prettier-ignore */}
 ```html
@@ -86,24 +84,24 @@ We've added tons of modifiers you can use to tweak specific elements in your pro
 </article>
 ```
 
-This makes it easy to do things like style links to match your brand, add a border radius to images, and tons more.
+这使得像为链接添加与您的品牌匹配的样式、为图像添加边框半径等变得简单。
 
-Check out the [element modifiers](https://v3.tailwindcss.com/docs/typography-plugin#element-modifiers) documentation to learn more.
+查看 [element modifiers](https://v3.tailwindcss.com/docs/typography-plugin#element-modifiers) 文档以了解更多。
 
 ---
 
-## Undo prose styles
+## 撤销排版样式
 
-Ever needed to stick some non-content HTML in the middle of your content? Now you can wrap that with `not-prose` to make sure the prose styles don't interfere with it:
+是否曾需要在内容中间插入一些非内容的 HTML？现在您可以用 `not-prose` 包裹它，以确保排版样式不会干扰：
 
 ```html
 <!-- [!code word:not-prose] -->
 <article class="prose">
-  <h1>My Heading</h1>
+  <h1>我的标题</h1>
   <p>...</p>
 
   <div class="not-prose">
-    <!-- Some HTML that needs to be prose-free -->
+    <!-- 一些需要无排版的 HTML -->
   </div>
 
   <p>...</p>
@@ -113,4 +111,4 @@ Ever needed to stick some non-content HTML in the middle of your content? Now yo
 
 ---
 
-Ready to try it out? Check out the [typography plugin documentation](https://v3.tailwindcss.com/docs/typography-plugin) to learn more and get started.
+准备好试试了吗？请查看 [排版插件文档](https://v3.tailwindcss.com/docs/typography-plugin) 以了解更多信息并开始使用。

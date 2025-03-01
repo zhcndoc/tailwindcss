@@ -9,34 +9,33 @@ import { CodeExampleGroup, CodeBlock, js, jsx, html } from "@/components/code-ex
 import Demo from "./demo";
 
 export const meta = {
-  title: "Headless UI v1.5: The One With Comboboxes",
-  description: `We just released Headless UI v1.5, which includes a brand new \`Combobox\` component.`,
+  title: "Headless UI v1.5: 拥有组合框的版本",
+  description: `我们刚刚发布了 Headless UI v1.5，其中包含全新的\`Combobox\`组件。`,
   date: "2022-02-24T12:00:00.000Z",
   authors: [reinink, adamwathan],
   image: card,
   excerpt: (
     <>
-      We just released Headless UI v1.5, which includes a brand new <code>Combobox</code> component. Comboboxes are like
-      select controls but with autocomplete/typeahead functionality.
+      我们刚刚发布了 Headless UI v1.5，其中包含全新的 <code>Combobox</code> 组件。组合框类似于选择控件，但具有自动完成/前置功能，适合处理大数据集时快速筛选正确选项。
     </>
   ),
 };
 
-We just released Headless UI v1.5, which includes a brand new `Combobox` component. Comboboxes are like select controls but with autocomplete/typeahead functionality, and are a great alternative to a regular select when you're working with large datasets and want to quickly filter for the right option.
+我们刚刚发布了 Headless UI v1.5，其中包含全新的 `Combobox` 组件。组合框类似于选择控件，但具有自动完成/前置功能，当您处理大数据集并希望快速筛选出正确选项时，它是常规选择控件的绝佳替代品。
 
 <Link href="https://headlessui.dev">
   <Image alt="Headless UI v1.5" src={banner} />
 </Link>
 
-Like all other Headless UI components, the combobox abstracts away all of the complex accessibility considerations but leaves the styling completely up to you, giving you total control to design exactly the combobox you want without worrying about things like keyboard navigation or screen reader support.
+与所有其他 Headless UI 组件一样，组合框抽象了所有复杂的可访问性考虑，但将样式完全交给您，让您可以完全控制设计所需的组合框，而不必担心键盘导航或屏幕阅读器支持等问题。
 
-Here's a quick demo if you'd like to see it in action:
+如果您想查看它的实际效果，这里有一个快速演示：
 
 <Demo />
 
-We've intentionally designed it so that you have full control over filtering the actual results. You can do basic string comparisons, use a fuzzy search library like <Link href="https://fusejs.io/">Fuse.js</Link>, or even make server-side requests to an API — whatever makes sense for your project.
+我们故意设计这样，让您完全控制过滤实际结果。您可以进行基本的字符串比较，使用像 <Link href="https://fusejs.io/">Fuse.js</Link> 这样的模糊搜索库，甚至可以向 API 发起服务器请求 — 只要对您的项目有意义即可。
 
-Here's what it looks like to filter the results using a basic string comparison:
+以下是使用基本字符串比较过滤结果的示例：
 
 <CodeExampleGroup filenames={['React', 'Vue']}>
   <CodeBlock
@@ -78,8 +77,7 @@ Here's what it looks like to filter the results using a basic string comparison:
         )
       }
     `}
-
-/>
+  />
 
   <CodeBlock
     example={html`
@@ -117,40 +115,38 @@ Here's what it looks like to filter the results using a basic string comparison:
           </ComboboxOptions>
         </Combobox>
       </template>
-
-`}
-/>
-
+    `}
+  />
 </CodeExampleGroup>
 
-## Command palettes
+## 命令面板
 
-Comboboxes are not only great as standalone inputs, but they can also be used as a lower-level primitive for building more complex components, such as command palettes.
+组合框不仅适合作为独立输入，还可以用作构建更复杂组件（如命令面板）的低级原语。
 
-This is actually what originally motivated us to create the combobox component in the first place — we wanted to add a new command palettes category to Tailwind UI and needed this component to make that happen.
+实际上，这正是我们最初创建组合框组件的动机 — 我们希望向 Tailwind UI 添加一个新的命令面板类别，并需要这个组件来实现这点。
 
-If you happen to have a Tailwind UI license, be sure to browse the new <Link href="https://tailwindui.com/components/application-ui/navigation/command-palettes">Command Palettes</Link> category to see how these turned out. And if you're wondering, we also added a new <Link href="https://tailwindui.com/components/application-ui/forms/comboboxes">Comboboxes</Link> category as well.
+如果您恰好拥有 Tailwind UI 许可证，请务必浏览新的 <Link href="https://tailwindui.com/components/application-ui/navigation/command-palettes">命令面板</Link> 类别，以查看它们的实现效果。如果您想知道，我们还添加了一个新的 <Link href="https://tailwindui.com/components/application-ui/forms/comboboxes">组合框</Link> 类别。
 
 <Link href="https://tailwindui.com/components/application-ui/navigation/command-palettes">
-  <Image alt="Command palette from Tailwind UI" src={commandPalette} />
+  <Image alt="来自 Tailwind UI 的命令面板" src={commandPalette} />
 </Link>
 
-Riding on the excitement of the new command palettes, we also just published a new <Link href="https://www.youtube.com/watch?v=-jix4KyxLuQ">in-depth screencast</Link> on building a command palette from scratch with Tailwind CSS, React and Headless UI.
+借着新命令面板的兴奋，我们还发布了一个新的 <Link href="https://www.youtube.com/watch?v=-jix4KyxLuQ">深度演示视频</Link>，展示了如何使用 Tailwind CSS、React 和 Headless UI 从零开始构建命令面板。
 
-It covers tons of interesting Tailwind tricks for getting the design and animations just right, and teaches you a ton about how to use the new combobox component and wire it into your app.
+它涵盖了大量关于如何将设计和动画调整到合适状态的有趣 Tailwind 技巧，并教会您如何使用新的组合框组件并将其连接到您的应用程序。
 
-{/* Command palettes video */}
+{/* 命令面板视频 */}
 
-## Try it out
+## 尝试一下
 
-If you already have Headless UI installed in your project, be sure to upgrade to v1.5 to get the new `Combobox` component. This is a minor update so there are no breaking changes.
+如果您已经在项目中安装了 Headless UI，请确保升级到 v1.5 来获取新的 `Combobox` 组件。这是一个小幅更新，因此没有破坏性变更。
 
 ```sh
-# For React
+# 对于 React
 npm install @headlessui/react
 
-# For Vue
+# 对于 Vue
 npm install @headlessui/vue
 ```
 
-Be sure to also check out <Link href="https://headlessui.dev">the official website</Link> for the latest documentation.
+请务必查看 <Link href="https://headlessui.dev">官方网站</Link> 以获取最新文档。

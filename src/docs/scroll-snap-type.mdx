@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "scroll-snap-type";
-export const description = "Utilities for controlling how strictly snap points are enforced in a snap container.";
+export const description = "控制快照容器中快照点严格程度的实用工具。";
 
 <ApiTable
   rows={[
@@ -17,20 +17,20 @@ export const description = "Utilities for controlling how strictly snap points a
   ]}
 />
 
-## Examples
+## 示例
 
-### Horizontal scroll snapping
+### 水平滚动快照
 
-Use the `snap-x` utility to enable horizontal scroll snapping within an element:
+使用 `snap-x` 实用工具在元素内启用水平滚动快照：
 
-<Figure hint="Scroll in the grid of images to see the expected behavior">
+<Figure hint="在图片网格中滚动以查看预期行为">
 
 <Example padding={false}>
   {
     <div className="relative">
       <div className="mb-6 ml-[50%] flex items-end justify-start pt-10">
         <div className="dark:highlight-white/10 ml-2 rounded bg-indigo-50 px-1.5 font-mono text-[0.625rem] leading-6 text-indigo-600 ring-1 ring-indigo-600 ring-inset dark:bg-indigo-500 dark:text-white dark:ring-0">
-          snap point
+          快照点
         </div>
         <div className="absolute top-0 bottom-0 left-1/2 border-l border-indigo-500"></div>
       </div>
@@ -108,20 +108,20 @@ Use the `snap-x` utility to enable horizontal scroll snapping within an element:
 
 </Figure>
 
-For scroll snapping to work, you need to also set the [scroll snap alignment](/docs/scroll-snap-align) on the children.
+要使滚动快照工作，您还需要在子元素上设置 [滚动快照对齐](/docs/scroll-snap-align)。
 
-### Mandatory scroll snapping
+### 强制滚动快照
 
-Use the `snap-mandatory` utility to force a snap container to always come to rest on a snap point:
+使用 `snap-mandatory` 实用工具强制快照容器始终停靠在快照点上：
 
-<Figure hint="Scroll in the grid of images to see the expected behavior">
+<Figure hint="在图片网格中滚动以查看预期行为">
 
 <Example padding={false}>
   {
     <div className="relative">
       <div className="mb-6 ml-[50%] flex items-end justify-start pt-10">
         <div className="dark:highlight-white/10 ml-2 rounded bg-indigo-50 px-1.5 font-mono text-[0.625rem] leading-6 text-indigo-600 ring-1 ring-indigo-600 ring-inset dark:bg-indigo-500 dark:text-white dark:ring-0">
-          snap point
+          快照点
         </div>
         <div className="absolute top-0 bottom-0 left-1/2 border-l border-indigo-500"></div>
       </div>
@@ -199,18 +199,18 @@ Use the `snap-mandatory` utility to force a snap container to always come to res
 
 </Figure>
 
-### Proximity scroll snapping
+### 邻近滚动快照
 
-Use the `snap-proximity` utility to make a snap container come to rest on snap points that are close in proximity:
+使用 `snap-proximity` 实用工具使快照容器停驻在靠近的快照点上：
 
-<Figure hint="Scroll in the grid of images to see the expected behavior">
+<Figure hint="在图片网格中滚动以查看预期行为">
 
 <Example padding={false}>
   {
     <div className="relative">
       <div className="mb-6 ml-[50%] flex items-end justify-start pt-10">
         <div className="dark:highlight-white/10 ml-2 rounded bg-indigo-50 px-1.5 font-mono text-[0.625rem] leading-6 text-indigo-600 ring-1 ring-indigo-600 ring-inset dark:bg-indigo-500 dark:text-white dark:ring-0">
-          snap point
+          快照点
         </div>
         <div className="absolute top-0 bottom-0 left-1/2 border-l border-indigo-500"></div>
       </div>
@@ -279,6 +279,6 @@ Use the `snap-proximity` utility to make a snap container come to rest on snap p
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="scroll-snap-type" defaultClass="snap-none" featuredClass="snap-x" />

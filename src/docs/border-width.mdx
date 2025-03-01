@@ -4,8 +4,8 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import dedent from "dedent";
 
-export const title = "border-width";
-export const description = "Utilities for controlling the width of an element's borders.";
+export const title = "边框宽度";
+export const description = "控制元素边框宽度的工具类。";
 
 <ApiTable
   rows={[
@@ -122,11 +122,11 @@ export const description = "Utilities for controlling the width of an element's 
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `border` or `border-<number>` utilities like `border-2` and `border-4` to set the border width for all sides of an element:
+使用 `border` 或 `border-<number>` 工具类，如 `border-2` 和 `border-4` 来设置元素所有边的边框宽度：
 
 <Figure>
 
@@ -163,9 +163,9 @@ Use `border` or `border-<number>` utilities like `border-2` and `border-4` to se
 
 </Figure>
 
-### Individual sides
+### 单个边
 
-Use utilities like `border-r` and `border-t-4` to set the border width for one side of an element:
+使用 `border-r` 和 `border-t-4` 等工具类来设置元素一个边的边框宽度：
 
 <Figure>
 
@@ -202,9 +202,9 @@ Use utilities like `border-r` and `border-t-4` to set the border width for one s
 
 </Figure>
 
-### Horizontal and vertical sides
+### 水平和垂直边
 
-Use utilities like `border-x` and `border-y-4` to set the border width on two sides of an element at the same time:
+使用 `border-x` 和 `border-y-4` 等工具类同时设置元素两个边的边框宽度：
 
 <Figure>
 
@@ -231,9 +231,9 @@ Use utilities like `border-x` and `border-y-4` to set the border width on two si
 
 </Figure>
 
-### Using logical properties
+### 使用逻辑属性
 
-Use utilities like `border-s` and `border-e-4` to set the `border-inline-start-width` and `border-inline-end-width` [logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts), which map to either the left or right border based on the text direction:
+使用 `border-s` 和 `border-e-4` 等工具类来设置 `border-inline-start-width` 和 `border-inline-end-width` [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)，这些逻辑属性根据文本方向映射到左边或右边：
 
 <Figure>
 
@@ -241,11 +241,11 @@ Use utilities like `border-s` and `border-e-4` to set the `border-inline-start-w
   {
     <div className="grid grid-cols-2 place-items-center gap-x-4">
       <div className="flex flex-col items-start gap-y-4" dir="ltr">
-        <p className="text-sm font-medium">Left-to-right</p>
+        <p className="text-sm font-medium">从左到右</p>
         <div className="size-16 border-s-4 border-indigo-500 p-4 outline-1 -outline-offset-1 outline-gray-900/20 outline-dashed dark:outline-white/20"></div>
       </div>
       <div className="flex flex-col items-start gap-y-4" dir="rtl">
-        <p className="text-sm font-medium">Right-to-left</p>
+        <p className="text-sm font-medium">从右到左</p>
         <div className="size-16 border-s-4 border-indigo-500 p-4 outline-1 -outline-offset-1 outline-gray-900/20 outline-dashed dark:outline-white/20"></div>
       </div>
     </div>
@@ -266,9 +266,9 @@ Use utilities like `border-s` and `border-e-4` to set the `border-inline-start-w
 
 </Figure>
 
-### Between children
+### 在子元素之间
 
-Use utilities like `divide-x` and `divide-y-4` to add borders between child elements:
+使用 `divide-x` 和 `divide-y-4` 等工具类在子元素之间添加边框：
 
 <Figure>
 
@@ -293,9 +293,9 @@ Use utilities like `divide-x` and `divide-y-4` to add borders between child elem
 
 </Figure>
 
-#### Reversing children order
+#### 反转子元素顺序
 
-If your elements are in reverse order (using say `flex-row-reverse` or `flex-col-reverse`), use the `divide-x-reverse` or `divide-y-reverse` utilities to ensure the border is added to the correct side of each element:
+如果你的元素顺序反转（使用如 `flex-row-reverse` 或 `flex-col-reverse`），使用 `divide-x-reverse` 或 `divide-y-reverse` 工具类来确保边框添加到每个元素的正确边：
 
 <Figure>
 
@@ -320,10 +320,10 @@ If your elements are in reverse order (using say `flex-row-reverse` or `flex-col
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="border" name="border width" value="2vw" dataType="length" variable="border-width" />
+<UsingACustomValue utility="border" name="边框宽度" value="2vw" dataType="length" variable="border-width" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="border-width" defaultClass="border-2" featuredClass="border-t-4" />

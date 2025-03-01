@@ -8,19 +8,18 @@ import { adamwathan } from "@/app/blog/authors";
 export const meta = {
   title: "Tailwind CSS v3.0",
   description:
-    "Tailwind CSS v3.0 is here — bringing incredible performance gains, huge workflow improvements, and a seriously ridiculous number of new features.",
+    "Tailwind CSS v3.0 已经来临 — 带来了令人难以置信的性能提升、巨大的工作流程改进，以及大量荒唐的新特性。",
   date: "2021-12-09T16:00:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      Tailwind CSS v3.0 is here — bringing incredible performance gains, huge workflow improvements, and a seriously
-      ridiculous number of new features.
+      Tailwind CSS v3.0 已经来临 — 带来了令人难以置信的性能提升、巨大的工作流程改进，以及大量荒唐的新特性。
     </>
   ),
 };
 
-Tailwind CSS v3.0 is here — bringing incredible performance gains, huge workflow improvements, and a seriously ridiculous number of new features.
+Tailwind CSS v3.0 已经来临 — 带来了令人难以置信的性能提升、巨大的工作流程改进，以及大量荒唐的新特性。
 
 <iframe
   src="https://www.youtube.com/embed/TmWIrBPE6Bc"
@@ -30,60 +29,46 @@ Tailwind CSS v3.0 is here — bringing incredible performance gains, huge workfl
   className="aspect-video w-full"
 ></iframe>
 
-For a tour of some of the coolest new features, check out the {" "}<Link href="https://www.youtube.com/watch?v=mSC6GwizOag">"What's new in Tailwind CSS v3.0"</Link> video on our YouTube
-channel.
+想要了解一些最酷的新特性，请查看我们YouTube频道上的{" "}<Link href="https://www.youtube.com/watch?v=mSC6GwizOag">"Tailwind CSS v3.0 新特性"</Link> 视频。
 
-Tailwind CSS v3.0 has got to be our most exciting release ever, including improvements like:
+Tailwind CSS v3.0 绝对是我们有史以来最令人兴奋的版本，包含了诸如：
 
-- [Just-in-Time, all the time](#just-in-time-all-the-time) — lightning fast build times, stackable
-  variants, arbitrary value support, better browser performance, and more.
-- [Every color out of the box](#every-color-out-of-the-box) — including all of the extended palette
-  colors like cyan, rose, fuchsia, and lime, and fifty shades of ~~grey~~ gray.
-- [Colored box shadows](#colored-box-shadows) — for fun glow and reflection effects, and more natural
-  shadows on colored backgrounds.
-- [Scroll snap API](#scroll-snap-api) — a comprehensive and composable set of utilities for CSS-only
-  scroll snapping.
-- [Multi-column layout](#multi-column-layout) — so you can finally build that online newspaper you've
-  been dreaming about.
-- [Native form control styling](#native-form-control-styling) — make checkboxes, radio buttons, and
-  file inputs match your brand without reinventing the wheel.
-- [Print modifier](#print-modifier) — control how your site looks when someone prints it, right from
-  your HTML.
-- [Modern aspect ratio API](#modern-aspect-ratio-api) — no more padding hacks, well unless you need to
-  support Safari 14, which you probably do, but still.
-- [Fancy underline styles](#fancy-underline-styles) — the missing piece to making that side-project of
-  yours finally take off.
-- [RTL and LTR modifiers](#rtl-and-ltr-modifiers) — for complete control when building
-  multi-directional websites.
-- [Portrait and landscape modifiers](#portrait-and-landscape-modifiers) — honestly just because they
-  were really easy to add.
-- [Arbitrary properties](#arbitrary-properties) — now Tailwind supports CSS properties we've never even
-  heard of.
-- [Play CDN](#play-cdn) — the new Just-in-Time engine squeezed into a CDN script that runs right in the
-  browser.
-- **Tons of other utilities** — including support for touch-action, will-change, flex-basis, text-indent, scroll-behavior, and more.
+- [时刻即刻](#just-in-time-all-the-time) — 闪电般的构建时间、可叠加变体、任意值支持、更好的浏览器性能等等。
+- [开箱即用的每一种颜色](#every-color-out-of-the-box) — 包括所有扩展调色板颜色，如青色、玫瑰、洋红色和石灰色，以及五十种灰色。
+- [彩色盒阴影](#colored-box-shadows) — 用于有趣的光晕和反射效果，以及在彩色背景上更自然的阴影。
+- [滚动捕捉 API](#scroll-snap-api) — 一套全面且可组合的工具，用于仅使用 CSS 进行滚动捕捉。
+- [多列布局](#multi-column-layout) — 让你终于可以构建你梦想中的在线报纸。
+- [原生表单控件样式](#native-form-control-styling) — 让复选框、单选按钮和文件输入与您的品牌相匹配，而无需重新发明轮子。
+- [打印修饰符](#print-modifier) — 在用户打印页面时控制您网站的样子，直接从 HTML 中设置。
+- [现代宽高比 API](#modern-aspect-ratio-api) — 不再需要填充黑客，除非你需要支持 Safari 14，您可能需要，但仍然。
+- [花哨的下划线样式](#fancy-underline-styles) — 让你的侧项目最终腾飞的缺失部分。
+- [RTL 和 LTR 修饰符](#rtl-and-ltr-modifiers) — 在构建双向网站时提供完整的控制。
+- [纵向和横向修饰符](#portrait-and-landscape-modifiers) — 说实话，因为它们很容易添加。
+- [任意属性](#arbitrary-properties) — 现在 Tailwind 支持我们从未听说过的 CSS 属性。
+- [Play CDN](#play-cdn) — 新的即刻引擎被压缩到一个可以在浏览器中运行的 CDN 脚本中。
+- **大量其他工具** — 包括对 touch-action、will-change、flex-basis、text-indent、scroll-behavior 等的支持。
 
-Plus a beautiful, brand-spanking new [documentation website](https://tailwindcss.com), loaded with improved content and examples on every page.
+此外，一个美丽崭新的 [文档网站](https://tailwindcss.com)，每一页都配备了改进的内容和示例。
 
-To start playing with Tailwind CSS v3.0 today, grab the latest release from npm:
+要开始使用 Tailwind CSS v3.0，您可以从 npm 获取最新的版本：
 
 ```sh
 npm install -D tailwindcss@latest postcss autoprefixer
 ```
 
-...or head over to [Tailwind Play](https://play.tailwindcss.com) to try out the latest features right in the browser.
+...或访问 [Tailwind Play](https://play.tailwindcss.com) 来直接在浏览器中试用最新功能。
 
-Tailwind CSS v3.0 is a new major version of the framework and there are some minor breaking changes, but we've worked really hard to make the upgrade process as smooth as possible, and for most projects you should be able to install v3.0 without making any changes.
+Tailwind CSS v3.0 是框架的新主要版本，并且有一些小的破坏性更改，但我们努力使升级过程尽可能顺利，对于大多数项目，您应该可以在不进行任何更改的情况下安装 v3.0。
 
-For example, [Tailwind UI](https://tailwindui.com) is probably the biggest Tailwind project on earth and every template is totally compatible with both v2 and v3 with no changes required.
+例如， [Tailwind UI](https://tailwindui.com) 可能是地球上最大的 Tailwind 项目，每个模板在 v2 和 v3 中都是完全兼容的，且不需要任何更改。
 
-For more details and step-by-step instructions on migrating to v3.0, check out the <Link href="https://v3.tailwindcss.com/docs/upgrade-guide">upgrade guide</Link>.
+有关迁移到 v3.0 的更多详细信息和逐步说明，请查看 <Link href="https://v3.tailwindcss.com/docs/upgrade-guide">升级指南</Link>。
 
 ---
 
-## Just-in-Time, all the time
+## 时刻即刻
 
-Back in March we introduced the brand new <Link href="/blog/just-in-time-the-next-generation-of-tailwind-css">Just-in-Time engine</Link> which brought huge performance gains, unlocked exciting new features like <Link href="https://v3.tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values">arbitrary values</Link>, and made complex variant configurations a thing of the past.
+在三月，我们推出了全新的 <Link href="/blog/just-in-time-the-next-generation-of-tailwind-css">即刻引擎</Link>，它带来了巨大的性能提升，解锁了令人兴奋的新特性，如 <Link href="https://v3.tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values">任意值</Link>，并使复杂的变体配置成为过去。
 
 <iframe
   src="https://www.youtube.com/embed/3O_3X7InOw8"
@@ -93,25 +78,25 @@ Back in March we introduced the brand new <Link href="/blog/just-in-time-the-nex
   className="aspect-video w-full"
 ></iframe>
 
-In Tailwind CSS v3.0, the new engine has gone stable and replaced the classic engine, so every Tailwind project can benefit from these improvements out of the box.
+在 Tailwind CSS v3.0 中，这个新引擎已经稳定并替代了经典引擎，因此每一个 Tailwind 项目都能够立即受益于这些改进。
 
 ---
 
-## Every color out of the box
+## 开箱即用的每一种颜色
 
-Before the new engine, we always had to be careful with CSS file size in development, and one of the biggest trade-offs we had to make was carefully limiting the color palette.
+在新引擎推出之前，我们在开发过程中总是需要小心控制 CSS 文件的大小，而我们必须做出的最大的权衡之一是仔细限制颜色调色板。
 
-In v3.0, every single color in the extended color palette is enabled by default, including lime, cyan, sky, fuchsia, rose, and fifty shades of gray.
+在 v3.0 中，扩展色调色板中的每种颜色默认启用，包括石灰色、青色、天空、洋红色、玫瑰和五十种灰色。
 
-Check out the <Link href="https://v3.tailwindcss.com/docs/customizing-colors">color palette reference</Link> to learn more.
+查看 <Link href="https://v3.tailwindcss.com/docs/customizing-colors">颜色调色板参考</Link> 以了解更多信息。
 
 ---
 
-## Colored box shadows
+## 彩色盒阴影
 
-People have been asking us for colored shadows for years, but supporting it in a composable way that actually made sense was way harder than I expected it to be.
+多年来人们一直在要求我们实现有色阴影，但以一种真正有意义的可组合方式支持它比我预期的要困难得多。
 
-After about five false starts, we finally figured out an approach we liked, and now Tailwind CSS v3.0 includes colored shadows:
+经过大约五次的失败尝试，我们终于找到了一个我们喜欢的方法，现在 Tailwind CSS v3.0 包含有色阴影：
 
 <Figure>
 
@@ -123,7 +108,7 @@ After about five false starts, we finally figured out an approach we liked, and 
           <>shadow-cyan-500/50</>
         </p>
         <button className="rounded-md bg-cyan-500 px-3 py-2 text-sm font-semibold text-white shadow-lg shadow-cyan-500/50 focus:outline-none">
-          <>Subscribe</>
+          <>订阅</>
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
@@ -131,7 +116,7 @@ After about five false starts, we finally figured out an approach we liked, and 
           <>shadow-blue-500/50</>
         </p>
         <button className="rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-500/50 focus:outline-none">
-          <>Subscribe</>
+          <>订阅</>
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
@@ -139,7 +124,7 @@ After about five false starts, we finally figured out an approach we liked, and 
           <>shadow-indigo-500/50</>
         </p>
         <button className="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-500/50 focus:outline-none">
-          <>Subscribe</>
+          <>订阅</>
         </button>
       </div>
     </div>
@@ -148,31 +133,31 @@ After about five false starts, we finally figured out an approach we liked, and 
 
 ```html
 <!-- [!code word:shadow-lg shadow-cyan-500/50] -->
-<button class="bg-cyan-500 shadow-lg shadow-cyan-500/50 ...">Subscribe</button>
+<button class="bg-cyan-500 shadow-lg shadow-cyan-500/50 ...">订阅</button>
 <!-- [!code word:shadow-lg shadow-blue-500/50] -->
-<button class="bg-blue-500 shadow-lg shadow-blue-500/50 ...">Subscribe</button>
+<button class="bg-blue-500 shadow-lg shadow-blue-500/50 ...">订阅</button>
 <!-- [!code word:shadow-lg shadow-indigo-500/50] -->
-<button class="bg-indigo-500 shadow-lg shadow-indigo-500/50 ...">Subscribe</button>
+<button class="bg-indigo-500 shadow-lg shadow-indigo-500/50 ...">订阅</button>
 ```
 
 </Figure>
 
-Learn more in the <Link href="https://v3.tailwindcss.com/docs/box-shadow-color">Box Shadow Color</Link> documentation.
+在 <Link href="https://v3.tailwindcss.com/docs/box-shadow-color">盒阴影颜色</Link> 文档中了解更多信息。
 
 ---
 
-## Scroll snap API
+## 滚动捕捉 API
 
-We've added a comprehensive set of utilities for the CSS Scroll Snap module, giving you the power to build very rich scroll snapping experiences directly in your HTML:
+我们添加了一套全面的 CSS 滚动捕捉模块的工具，使您能够直接在 HTML 中构建非常丰富的滚动捕捉体验：
 
-<Figure hint="Scroll in the grid of images to see the expected behavior">
+<Figure hint="在图像网格中滚动以查看预期行为">
 
 <Example padding={false}>
   {
     <div className="relative">
       <div className="mb-6 ml-[50%] flex items-end justify-start pt-10">
         <div className="dark:highlight-white/10 ml-2 rounded bg-indigo-50 px-1.5 font-mono text-[0.625rem] leading-6 text-indigo-600 ring-1 ring-indigo-600 ring-inset dark:bg-indigo-500 dark:text-white dark:ring-0">
-          <>snap point</>
+          <>捕捉点</>
         </div>
         <div className="absolute top-0 bottom-0 left-1/2 border-l border-indigo-500"></div>
       </div>
@@ -242,23 +227,23 @@ We've added a comprehensive set of utilities for the CSS Scroll Snap module, giv
     <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=320&h=160&q=80" />
   </div>
   <div class="snap-center ...">
-    <img src="https://images.unsplash.com/photo-1575424909138-46b05e5919ec?auto=format&fit=crop&w=320&h=160&q=80" />
+    <img src="https://images.unsplash.com/photo-1575424909138-46b05e5919ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80" />
   </div>
   <div class="snap-center ...">
-    <img src="https://images.unsplash.com/photo-1559333086-b0a56225a93c?auto=format&fit=crop&w=320&h=160&q=80" />
+    <img src="https://images.unsplash.com/photo-1559333086-b0a56225a93c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80" />
   </div>
 </div>
 ```
 
 </Figure>
 
-Start with the new <Link href="https://v3.tailwindcss.com/docs/scroll-margin">Scroll Margin</Link> utilities and work your way through the whole API to learn more.
+从新的 <Link href="https://v3.tailwindcss.com/docs/scroll-margin">滚动边距</Link> 工具开始，逐步了解整个 API，获取更多信息。
 
 ---
 
-## Multi-column layout
+## 多列布局
 
-We've added support for <Link href="https://developer.mozilla.org/en-US/docs/Web/CSS/columns">columns</Link> — the newspaper layout kind. These are actually super useful, and are great for things like footer navigation layouts too.
+我们添加了对 <Link href="https://developer.mozilla.org/en-US/docs/Web/CSS/columns">列</Link> 的支持 — 报纸布局类型。这些实际上非常有用，也非常适合导航栏布局等场景。
 
 <Figure>
 
@@ -314,13 +299,13 @@ We've added support for <Link href="https://developer.mozilla.org/en-US/docs/Web
 
 </Figure>
 
-Learn more in the <Link href="https://v3.tailwindcss.com/docs/columns">columns</Link> documentation — and check out the new <Link href="https://v3.tailwindcss.com/docs/break-after">break-after/inside/before</Link> utilities as well.
+在 <Link href="https://v3.tailwindcss.com/docs/columns">列</Link> 文档中了解更多信息 — 并查看新的 <Link href="https://v3.tailwindcss.com/docs/break-after">break-after/inside/before</Link> 工具。
 
 ---
 
-## Native form control styling
+## 原生表单控件样式
 
-We've added support for the new accent-color property, as well as a modifier for styling file input buttons to make it easier than ever to put your own touch on native form controls:
+我们为新的 accent-color 属性添加了支持，并增加了样式文件输入按钮的修饰符，使您更容易为原生表单控件添加自己的风格：
 
 <Figure>
 
@@ -334,11 +319,11 @@ We've added support for the new accent-color property, as well as a modifier for
               <img
                 className="h-16 w-16 rounded-full object-cover"
                 src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1361&q=80"
-                alt="Current profile photo"
+                alt="当前个人资料照片"
               />
             </div>
             <label className="block">
-              <span className="sr-only">Choose profile photo</span>
+              <span className="sr-only">选择个人资料照片</span>
               <input
                 type="file"
                 className="block w-full text-sm text-slate-500 file:mr-4 file:rounded-full file:border-0 file:bg-violet-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-violet-700 hover:file:bg-violet-100"
@@ -347,7 +332,7 @@ We've added support for the new accent-color property, as well as a modifier for
           </div>
           <label className="mt-6 flex items-center justify-center space-x-2 text-sm font-medium text-slate-600">
             <input type="checkbox" className="accent-violet-500" defaultChecked />
-            <span>Yes, send me all your stupid updates</span>
+            <span>是的，请给我发送所有更新信息</span>
           </label>
         </form>
       </div>
@@ -372,11 +357,11 @@ We've added support for the new accent-color property, as well as a modifier for
       <img
         class="h-16 w-16 rounded-full object-cover"
         src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1361&q=80"
-        alt="Current profile photo"
+        alt="当前个人资料照片"
       />
     </div>
     <label class="block">
-      <span class="sr-only">Choose profile photo</span>
+      <span class="sr-only">选择个人资料照片</span>
       <input
         type="file"
         class="block w-full text-sm text-slate-500 file:mr-4 file:rounded-full file:border-0 file:bg-violet-50 file:py-2 file:text-sm file:font-semibold file:text-violet-700 hover:file:bg-violet-100"
@@ -386,41 +371,41 @@ We've added support for the new accent-color property, as well as a modifier for
   <label class="mt-6 flex items-center justify-center space-x-2 text-sm font-medium text-slate-600">
     <!-- [!code word:accent-violet-500] -->
     <input type="checkbox" class="accent-violet-500" checked />
-    <span>Yes, send me all your stupid updates</span>
+    <span>是的，请给我发送所有更新信息</span>
   </label>
 </form>
 ```
 
 </Figure>
 
-Learn more in the <Link href="https://v3.tailwindcss.com/docs/accent-color">accent color</Link> and <Link href="https://v3.tailwindcss.com/docs/hover-focus-and-other-states#file-input-buttons">file input buttons</Link> documentation.
+在 <Link href="https://v3.tailwindcss.com/docs/accent-color">accent color</Link> 和 <Link href="https://v3.tailwindcss.com/docs/hover-focus-and-other-states#file-input-buttons">文件输入按钮</Link> 文档中了解更多信息。
 
 ---
 
-## Print modifier
+## 打印修饰符
 
-The new `print` modifier lets you style how your site should look when ~~animals~~ people print it:
+新的 `print` 修饰符让您可以控制您的网站在用户打印时的外观：
 
 ```html
 <div>
   <!-- [!code word:print\:hidden] -->
   <article class="print:hidden">
-    <h1>My Secret Pizza Recipe</h1>
-    <p>This recipe is a secret, and must not be shared with anyone</p>
+    <h1>我的秘密披萨食谱</h1>
+    <p>这个食谱是秘密，不得与任何人分享</p>
     <!-- ... -->
   </article>
   <!-- [!code word:print\:block] -->
-  <div class="hidden print:block">Are you seriously trying to print this? It's secret!</div>
+  <div class="hidden print:block">你真的想打印这个吗？这是秘密！</div>
 </div>
 ```
 
-I'd say "learn more in the <Link href="https://v3.tailwindcss.com/docs/hover-focus-and-other-states#print-styles">print styles documentation</Link>" but it wouldn't be true.
+我本来想说 "在 <Link href="https://v3.tailwindcss.com/docs/hover-focus-and-other-states#print-styles">打印样式文档中了解更多信息</Link>"，但这并不是事实。
 
 ---
 
-## Modern aspect ratio API
+## 现代宽高比 API
 
-We've added support for the new native `aspect-ratio` property, which is starting to see solid browser support:
+我们添加了对新的原生 `aspect-ratio` 属性的支持，浏览器支持也越来越好：
 
 <Figure>
 
@@ -443,13 +428,13 @@ We've added support for the new native `aspect-ratio` property, which is startin
 
 </Figure>
 
-Learn more in the <Link href="https://v3.tailwindcss.com/docs/aspect-ratio">aspect ratio</Link> documentation.
+在 <Link href="https://v3.tailwindcss.com/docs/aspect-ratio">宽高比</Link> 文档中了解更多信息。
 
 ---
 
-## Fancy underline styles
+## 花哨的下划线样式
 
-Now you can change underline colors, thickness, and more:
+现在您可以更改下划线的颜色、厚度等：
 
 <Figure>
 
@@ -457,19 +442,19 @@ Now you can change underline colors, thickness, and more:
   {
     <div className="mx-auto max-w-md bg-white p-8 text-sm leading-6 text-slate-900 shadow-lg sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-200">
       <p className="text-base leading-6">
-        I’m Derek, an astro-engineer based in Tatooine. I like to build X-Wings at{" "}
+        我是德里克，一名在塔图因的天文工程师。我喜欢在{" "}
         <a href="#" className="font-semibold underline decoration-sky-500 decoration-2">
           My Company, Inc
         </a>
-        . Outside of work, I like to{" "}
+        . 在工作之外，我喜欢{" "}
         <a href="#" className="font-semibold underline decoration-pink-500 decoration-dotted decoration-2">
-          watch pod-racing
+          观看飞船比赛
         </a>{" "}
-        and have{" "}
+        和进行{" "}
         <a href="#" className="font-semibold underline decoration-indigo-500 decoration-wavy decoration-2">
-          light-saber
+          光剑
         </a>{" "}
-        fights.
+        战斗。
       </p>
     </div>
   }
@@ -477,31 +462,31 @@ Now you can change underline colors, thickness, and more:
 
 ```html
 <p>
-  I’m Derek, an astro-engineer based in Tatooine. I like to build X-Wings at
+  我是德里克，一名在塔图因的天文工程师。我喜欢在
   <!-- [!code word:decoration-sky-500 decoration-2] -->
-  <a href="#" class="underline decoration-sky-500 decoration-2"> My Company, Inc </a>. Outside of work, I like to{" "}
+  <a href="#" class="underline decoration-sky-500 decoration-2"> My Company, Inc </a>工作。 在工作之外，我喜欢{" "}
   <!-- [!code word:decoration-pink-500 decoration-dotted decoration-2] -->
-  <a href="#" class="underline decoration-pink-500 decoration-dotted decoration-2"> watch pod-racing </a> and have
+  <a href="#" class="underline decoration-pink-500 decoration-dotted decoration-2"> 观看飞船比赛 </a> 和进行
   <!-- [!code word:decoration-indigo-500 decoration-wavy decoration-2] -->
-  <a href="#" class="underline decoration-indigo-500 decoration-wavy decoration-2"> light-saber </a>{" "} fights.
+  <a href="#" class="underline decoration-indigo-500 decoration-wavy decoration-2"> 光剑 </a>{" "} 战斗。
 </p>
 ```
 
 </Figure>
 
-Learn more in the <Link href="https://v3.tailwindcss.com/docs/text-decoration-color">text decoration color</Link>, <Link href="https://v3.tailwindcss.com/docs/text-decoration-style">text decoration style</Link>, <Link href="https://v3.tailwindcss.com/docs/text-decoration-thickness">text decoration thickness</Link>, and <Link href="https://v3.tailwindcss.com/docs/text-underline-offset">text underline offset</Link> documentation.
+在 <Link href="https://v3.tailwindcss.com/docs/text-decoration-color">文本装饰颜色</Link>、<Link href="https://v3.tailwindcss.com/docs/text-decoration-style">文本装饰样式</Link>、<Link href="https://v3.tailwindcss.com/docs/text-decoration-thickness">文本装饰厚度</Link> 和 <Link href="https://v3.tailwindcss.com/docs/text-underline-offset">文本下划线偏移</Link> 文档中了解更多信息。
 
 ---
 
-## RTL and LTR modifiers
+## RTL 和 LTR 修饰符
 
-We've added experimental support for multi-directional layouts with new `rtl` and `ltr` modifiers:
+我们为多方向布局添加了实验性支持，提供新的 `rtl` 和 `ltr` 修饰符：
 
 <Example>
   {
     <div className="mx-auto grid max-w-lg grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2">
       <div dir="ltr">
-        <p className="mb-4 text-sm font-medium text-slate-500 dark:text-slate-400">Left-to-right</p>
+        <p className="mb-4 text-sm font-medium text-slate-500 dark:text-slate-400">从左到右</p>
         <div className="group flex items-center">
           <img
             className="h-12 w-12 shrink-0 rounded-full"
@@ -510,16 +495,16 @@ We've added experimental support for multi-directional layouts with new `rtl` an
           />
           <div className="ml-3 rtl:mr-3 rtl:ml-0">
             <p className="text-sm font-medium text-slate-700 group-hover:text-slate-900 dark:text-slate-300 dark:group-hover:text-white">
-              <>Tom Cook</>
+              <>汤姆·库克</>
             </p>
             <p className="text-sm font-medium text-slate-500 group-hover:text-slate-700 dark:group-hover:text-slate-300">
-              <>Director of Operations</>
+              <>运营总监</>
             </p>
           </div>
         </div>
       </div>
       <div dir="rtl">
-        <p className="mb-4 text-sm font-medium text-slate-500 dark:text-slate-400">Right-to-left</p>
+        <p className="mb-4 text-sm font-medium text-slate-500 dark:text-slate-400">从右到左</p>
         <div className="group flex items-center">
           <img
             className="h-12 w-12 shrink-0 rounded-full"
@@ -552,13 +537,13 @@ We've added experimental support for multi-directional layouts with new `rtl` an
 </div>
 ```
 
-Learn more in the <Link href="https://v3.tailwindcss.com/docs/hover-focus-and-other-states#rtl-support">RTL support</Link> documentation.
+在 <Link href="https://v3.tailwindcss.com/docs/hover-focus-and-other-states#rtl-support">RTL 支持</Link> 文档中了解更多信息。
 
 ---
 
-## Portrait and landscape modifiers
+## 纵向和横向修饰符
 
-Use the new `portrait` and `landscape` modifiers to conditionally add styles when the viewport is in a specific orientation:
+使用新的 `portrait` 和 `landscape` 修饰符，在视口以特定方向时有条件地添加样式：
 
 ```html
 <div>
@@ -566,18 +551,18 @@ Use the new `portrait` and `landscape` modifiers to conditionally add styles whe
     <!-- ... -->
   </div>
   <div class="landscape:hidden">
-    <p>This experience is designed to be viewed in landscape. Please rotate your device to view the site.</p>
+    <p>这个体验是为了在横屏中查看。请旋转设备以查看网站。</p>
   </div>
 </div>
 ```
 
-The <Link href="https://v3.tailwindcss.com/docs/hover-focus-and-other-states#viewport-orientation">documentation for this feature</Link> has even less content than this section of this post does.
+该功能的 <Link href="https://v3.tailwindcss.com/docs/hover-focus-and-other-states#viewport-orientation">文档</Link> 的内容甚至比这部分内容还少。
 
 ---
 
-## Arbitrary properties
+## 任意属性
 
-This might be illegal but we've made it possible to add totally arbitrary CSS that you can combine with modifiers like `hover`, `lg`, and whatever else:
+这可能是非法的，但我们已经可以添加完全任意的 CSS，并可以与 `hover`、`lg` 等修饰符结合使用：
 
 ```html
 <div class="[mask-type:luminance] hover:[mask-type:alpha]">
@@ -585,13 +570,13 @@ This might be illegal but we've made it possible to add totally arbitrary CSS th
 </div>
 ```
 
-This is what inline styles want to be when they grow up. Learn more in the <Link href="https://v3.tailwindcss.com/docs/adding-custom-styles#arbitrary-properties">arbitrary properties</Link> documentation.
+这是内联样式希望长大后成为的样子。了解更多信息请参见 <Link href="https://v3.tailwindcss.com/docs/adding-custom-styles#arbitrary-properties">任意属性</Link> 文档。
 
 ---
 
 ## Play CDN
 
-There's no way to make a sensible CSS-based CDN build for Tailwind CSS v3.0 so we had to do something different — we built a JavaScript library.
+没有办法为 Tailwind CSS v3.0 创建一个合理的基于 CSS 的 CDN 构建，因此我们不得不做些不同的事情 — 我们构建了一个 JavaScript 库。
 
 {/* prettier-ignore */}
 ```html
@@ -600,7 +585,7 @@ There's no way to make a sensible CSS-based CDN build for Tailwind CSS v3.0 so w
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Example</title>
+    <title>示例</title>
     <script src="https://cdn.tailwindcss.com/"></script> <!-- [!code ++] -->
   </head>
   <body>
@@ -609,12 +594,12 @@ There's no way to make a sensible CSS-based CDN build for Tailwind CSS v3.0 so w
 </html>
 ```
 
-Add that script tag to any HTML document and you can use every Tailwind feature, right in the browser. It's meant for development purposes only, but it sure is a fun way to build little demos or hack on a new idea.
+将该脚本标签添加到任何 HTML 文档中，您就可以在浏览器中使用所有 Tailwind 特性。这仅用于开发目的，但确实是构建小型演示或探索新创意的有趣方式。
 
-Learn more in the <Link href="https://v3.tailwindcss.com/docs/installation/play-cdn">Play CDN</Link> documentation.
+了解更多信息请查看 <Link href="https://v3.tailwindcss.com/docs/installation/play-cdn">Play CDN</Link> 文档。
 
 ---
 
-So there it is — Tailwind CSS v3.0! Head over to the new <Link href="/">documentation site</Link> to get started with it today.
+所以它来了 — Tailwind CSS v3.0！访问新的 <Link href="/">文档网站</Link>，今天就开始使用它。
 
-For a comprehensive list of every single change, check out the <Link href="https://github.com/tailwindlabs/tailwindcss/blob/master/CHANGELOG.md">changelog</Link> on GitHub.
+要查看每一个变化的完整列表，请查看 <Link href="https://github.com/tailwindlabs/tailwindcss/blob/master/CHANGELOG.md">变更日志</Link> 在 GitHub 上。

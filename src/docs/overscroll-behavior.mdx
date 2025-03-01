@@ -5,7 +5,7 @@ import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "overscroll-behavior";
 export const description =
-  "Utilities for controlling how the browser behaves when reaching the boundary of a scrolling area.";
+  "用于控制浏览器在到达滚动区域边界时的行为的实用工具。";
 
 <ApiTable
   rows={[
@@ -21,37 +21,35 @@ export const description =
   ]}
 />
 
-## Examples
+## 示例
 
-### Preventing parent overscrolling
+### 防止父元素过度滚动
 
-Use the `overscroll-contain` utility to prevent scrolling in the target area from triggering scrolling in the parent element, but preserve "bounce" effects when scrolling past the end of the container in operating systems that support it:
+使用 `overscroll-contain` 实用工具来防止目标区域的滚动触发父元素的滚动，同时在支持此效果的操作系统中，当滚动超出容器末端时保留“反弹”效果：
 
-<Figure hint="Scroll to see behavior">
+<Figure hint="滚动以查看行为">
 
 <Example padding={false}>
   {
     <div className="h-48 space-y-4 overflow-auto overscroll-contain p-8 text-gray-600 dark:bg-gray-800 dark:text-gray-400">
       <p
         children={`
-      Well, let me tell you something, funny boy. Y'know that little stamp, the
-      one that says "New York Public Library"? Well that may not mean anything
-      to you, but that means a lot to me. One whole hell of a lot.`}
+      好吧，让我告诉你一件事，搞笑的家伙。你知道那个小邮票，
+      上面写着“纽约公共图书馆”吗？这对你来说可能没什么意义，
+      但对我来说意义重大。实在是太重要了。`}
       />
       <p
         children={`
-      Sure, go ahead, laugh if you want to. I've seen your type before: Flashy,
-      making the scene, flaunting convention. Yeah, I know what you're thinking.
-      What's this guy making such a big stink about old library books? Well, let
-      me give you a hint, junior.`}
+      当然，随便你笑。如果你想的话。我见过你这种人：炫耀，
+      显摆，蔑视常规。是的，我知道你在想什么。
+      这个家伙为什么对旧图书这样大惊小怪？好吧，让我给你个提示，小子。`}
       />
       <p
         children={`
-      Maybe we can live without libraries, people like you and me. Maybe. Sure,
-      we're too old to change the world, but what about that kid, sitting down,
-      opening a book, right now, in a branch at the local library and finding
-      drawings of pee-pees and wee-wees on the Cat in the Hat and the Five
-      Chinese Brothers? Doesn't HE deserve better?`}
+      也许我们可以没有图书馆，而像你和我这样的人。也许。
+      当然，我们已经太老无法改变世界，但那个孩子呢，正坐着，
+      现在在本地图书馆的一个分馆打开一本书，
+      找到了《帽子里的猫》和《五兄弟》上的小便图画？难道他不应该得到更好的吗？`}
       />
     </div>
   }
@@ -59,40 +57,38 @@ Use the `overscroll-contain` utility to prevent scrolling in the target area fro
 
 ```html
 <!-- [!code classes:overscroll-contain] -->
-<div class="overscroll-contain ...">Well, let me tell you something, ...</div>
+<div class="overscroll-contain ...">好吧，让我告诉你一件事，...</div>
 ```
 
 </Figure>
 
-### Preventing overscroll bouncing
+### 防止过度滚动反弹
 
-Use the `overscroll-none` utility to prevent scrolling in the target area from triggering scrolling in the parent element, and also prevent "bounce" effects when scrolling past the end of the container:
+使用 `overscroll-none` 实用工具来防止目标区域的滚动触发父元素的滚动，同时也防止在滚动超出容器末端时的“反弹”效果：
 
-<Figure hint="Scroll to see behavior">
+<Figure hint="滚动以查看行为">
 
 <Example padding={false}>
   {
     <div className="h-48 space-y-4 overflow-auto overscroll-none p-8 text-gray-600 dark:bg-gray-800 dark:text-gray-400">
       <p
         children={`
-      Well, let me tell you something, funny boy. Y'know that little stamp, the
-      one that says "New York Public Library"? Well that may not mean anything
-      to you, but that means a lot to me. One whole hell of a lot.`}
+      好吧，让我告诉你一件事，搞笑的家伙。你知道那个小邮票，
+      上面写着“纽约公共图书馆”吗？这对你来说可能没什么意义，
+      但对我来说意义重大。实在是太重要了。`}
       />
       <p
         children={`
-      Sure, go ahead, laugh if you want to. I've seen your type before: Flashy,
-      making the scene, flaunting convention. Yeah, I know what you're thinking.
-      What's this guy making such a big stink about old library books? Well, let
-      me give you a hint, junior.`}
+      当然，随便你笑。如果你想的话。我见过你这种人：炫耀，
+      显摆，蔑视常规。是的，我知道你在想什么。
+      这个家伙为什么对旧图书这样大惊小怪？好吧，让我给你个提示，小子。`}
       />
       <p
         children={`
-      Maybe we can live without libraries, people like you and me. Maybe. Sure,
-      we're too old to change the world, but what about that kid, sitting down,
-      opening a book, right now, in a branch at the local library and finding
-      drawings of pee-pees and wee-wees on the Cat in the Hat and the Five
-      Chinese Brothers? Doesn't HE deserve better?`}
+      也许我们可以没有图书馆，而像你和我这样的人。也许。
+      当然，我们已经太老无法改变世界，但那个孩子呢，正坐着，
+      现在在本地图书馆的一个分馆打开一本书，
+      找到了《帽子里的猫》和《五兄弟》上的小便图画？难道他不应该得到更好的吗？`}
       />
     </div>
   }
@@ -100,40 +96,38 @@ Use the `overscroll-none` utility to prevent scrolling in the target area from t
 
 ```html
 <!-- [!code classes:overscroll-none] -->
-<div class="overscroll-none ...">Well, let me tell you something, ...</div>
+<div class="overscroll-none ...">好吧，让我告诉你一件事，...</div>
 ```
 
 </Figure>
 
-### Using the default overscroll behavior
+### 使用默认的过度滚动行为
 
-Use the `overscroll-auto` utility to make it possible for the user to continue scrolling a parent scroll area when they reach the boundary of the primary scroll area:
+使用 `overscroll-auto` 实用工具来让用户在达到主要滚动区域的边界时继续滚动父滚动区域：
 
-<Figure hint="Scroll to see behavior">
+<Figure hint="滚动以查看行为">
 
 <Example padding={false}>
   {
     <div className="h-48 space-y-4 overflow-auto overscroll-auto p-8 text-gray-600 dark:bg-gray-800 dark:text-gray-400">
       <p
         children={`
-      Well, let me tell you something, funny boy. Y'know that little stamp, the
-      one that says "New York Public Library"? Well that may not mean anything
-      to you, but that means a lot to me. One whole hell of a lot.`}
+      好吧，让我告诉你一件事，搞笑的家伙。你知道那个小邮票，
+      上面写着“纽约公共图书馆”吗？这对你来说可能没什么意义，
+      但对我来说意义重大。实在是太重要了。`}
       />
       <p
         children={`
-      Sure, go ahead, laugh if you want to. I've seen your type before: Flashy,
-      making the scene, flaunting convention. Yeah, I know what you're thinking.
-      What's this guy making such a big stink about old library books? Well, let
-      me give you a hint, junior.`}
+      当然，随便你笑。如果你想的话。我见过你这种人：炫耀，
+      显摆，蔑视常规。是的，我知道你在想什么。
+      这个家伙为什么对旧图书这样大惊小怪？好吧，让我给你个提示，小子。`}
       />
       <p
         children={`
-      Maybe we can live without libraries, people like you and me. Maybe. Sure,
-      we're too old to change the world, but what about that kid, sitting down,
-      opening a book, right now, in a branch at the local library and finding
-      drawings of pee-pees and wee-wees on the Cat in the Hat and the Five
-      Chinese Brothers? Doesn't HE deserve better?`}
+      也许我们可以没有图书馆，而像你和我这样的人。也许。
+      当然，我们已经太老无法改变世界，但那个孩子呢，正坐着，
+      现在在本地图书馆的一个分馆打开一本书，
+      找到了《帽子里的猫》和《五兄弟》上的小便图画？难道他不应该得到更好的吗？`}
       />
     </div>
   }
@@ -141,11 +135,11 @@ Use the `overscroll-auto` utility to make it possible for the user to continue s
 
 ```html
 <!-- [!code classes:overscroll-auto] -->
-<div class="overscroll-auto ...">Well, let me tell you something, ...</div>
+<div class="overscroll-auto ...">好吧，让我告诉你一件事，...</div>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="overscroll-behavior" defaultClass="overscroll-auto" featuredClass="overscroll-contain" />

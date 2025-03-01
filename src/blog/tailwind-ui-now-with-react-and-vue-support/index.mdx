@@ -4,40 +4,37 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const meta = {
-  title: "Tailwind UI: Now with React + Vue support",
-  description: `Last year we released Tailwind UI — a huge directory of professionally designed UI examples built with Tailwind CSS. Today we’re excited to add first class support for React and Vue 3 to all of the examples in Tailwind UI, which makes it even easier to adapt them for your projects.`,
+  title: "Tailwind UI：现在支持 React 和 Vue",
+  description: `去年我们发布了 Tailwind UI - 一个由 Tailwind CSS 构建的专业设计的 UI 示例的大型目录。今天，我们很高兴为 Tailwind UI 中的所有示例添加对 React 和 Vue 3 的一流支持，这使得它们更容易在您的项目中进行调整。`,
   date: "2021-04-14T16:01:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      Last year we released <Link href="https://tailwindui.com">Tailwind UI</Link> — a huge directory of professionally
-      designed UI examples built with Tailwind CSS. Up until now, all of the examples in Tailwind UI have been pure HTML
-      which is sort of the lowest common denominator for all web developers, and makes it possible to adapt them to any
-      templating language or JavaScript framework.
+      去年我们发布了 <Link href="https://tailwindui.com">Tailwind UI</Link> - 一个由 Tailwind CSS 构建的专业设计的 UI 示例的大型目录。在此之前，Tailwind UI 中的所有示例都是纯 HTML，这对于所有 Web 开发人员来说是一个最低公分母，并使其能够适应任何模板语言或 JavaScript 框架。
     </>
   ),
 };
 
-Last year we released <Link href="https://tailwindui.com">Tailwind UI</Link> — a huge directory of professionally designed UI examples built with Tailwind CSS. Up until now, all of the examples in Tailwind UI have been pure HTML which is sort of the lowest common denominator for all web developers, and makes it possible to adapt them to any templating language or JavaScript framework.
+去年我们发布了 <Link href="https://tailwindui.com">Tailwind UI</Link> - 一个由 Tailwind CSS 构建的专业设计的 UI 示例的大型目录。在此之前，Tailwind UI 中的所有示例都是纯 HTML，这对于所有 Web 开发人员来说是一个最低公分母，并使其能够适应任何模板语言或 JavaScript 框架。
 
-Today we’re excited to add first class support for React and Vue 3 to all of the examples in Tailwind UI, which makes it even easier to adapt them for your projects.
+今天，我们很高兴为 Tailwind UI 中的所有示例添加对 React 和 Vue 3 的一流支持，这使得它们更容易在您的项目中进行调整。
 
 <Link href="https://tailwindui.com">
-  <Image alt="Tailwind UI: Now for React and Vue" src={card} />
+  <Image alt="Tailwind UI：现在支持 React 和 Vue" src={card} />
 </Link>
 
-It’s been <Link href="https://blog.tailwindcss.com/building-react-and-vue-support-for-tailwind-ui">a long journey</Link> but I am super proud of where we ended up on this one, and really think it’s going to make Tailwind UI a useful tool for a whole new group of Tailwind CSS users.
+这是一段 <Link href="https://blog.tailwindcss.com/building-react-and-vue-support-for-tailwind-ui">漫长的旅程</Link>，但我非常自豪我们在这个方面取得的成就，并真的认为这将使 Tailwind UI 成为一整新组 Tailwind CSS 用户的有用工具。
 
-## Functional and accessible
+## 功能齐全且可访问
 
-All of the React and Vue examples in Tailwind UI are powered <Link href="https://headlessui.dev">Headless UI</Link> which is a library of components we developed to decouple all of the complicated JS behavior you need to build complex components like modals and dropdowns from the actual styles and markup.
+Tailwind UI 中所有的 React 和 Vue 示例都基于 <Link href="https://headlessui.dev">Headless UI</Link>，这是一套我们开发的组件库，用于将构建复杂组件（例如模态框和下拉列表）所需的所有复杂 JS 行为与实际的样式和标记解耦。
 
-Headless UI handles all of the ARIA attribute management, keyboard interactions, focus handling, and more for you, meaning all of the React and Vue examples provided in Tailwind UI are fully functional, with no need to write any of that complex JS stuff yourself. All of that gnarly complexity is safely tucked away in your `node_modules` folder where we can make improvements and fix bugs on your behalf, without you ever having to change your own code.
+Headless UI 为您处理所有的 ARIA 属性管理、键盘交互、焦点处理等，这意味着 Tailwind UI 中提供的所有 React 和 Vue 示例都是功能齐全的，无需自己编写那些复杂的 JS 代码。所有这些棘手的复杂性都被安全地封装在您的 `node_modules` 文件夹中，我们可以代表您进行改进和修复错误，而您根本不需要更改自己的代码。
 
-## Fully customizable
+## 完全可自定义
 
-With Headless UI, we’ve managed to abstract away all of the complicated JS functionality without taking away any control over the actual markup. That means that the entire design is still in entirely under your control.
+通过 Headless UI，我们成功地抽象出所有复杂的 JS 功能，而不影响对实际标记的控制。这意味着整个设计仍然完全由您掌控。
 
 ```jsx
 import { useState } from "react";
@@ -59,7 +56,7 @@ export default function Example() {
         "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none",
       )}
     >
-      <span className="sr-only">Use setting</span>
+      <span className="sr-only">使用设置</span>
       <span
         aria-hidden="true"
         className={classNames(
@@ -72,12 +69,12 @@ export default function Example() {
 }
 ```
 
-You can copy a React or Vue example from Tailwind UI and change absolutely everything about it, from the border radius to the padding to the box shadows to the font-size, all by simply adding utility classes like you’re used to.
+您可以从 Tailwind UI 复制一个 React 或 Vue 示例，并完全更改其中的所有内容，从边框半径到填充、再到盒阴影和字体大小，只需像往常一样添加实用类即可。
 
-## Get started
+## 开始使用
 
-If you’re already a Tailwind UI customer, all of this stuff is available to you today as a totally free update. Just log into your account, select between HTML, React, or Vue in the dropdown above any component, and grab the code in the format you want.
+如果您已经是 Tailwind UI 的客户，所有这些内容今天都可以作为完全免费的更新使用。只需登录您的账户，在任何组件上方的下拉菜单中选择 HTML、React 或 Vue，即可获取您想要格式的代码。
 
-If you haven’t checked out Tailwind UI yet, browse the free preview components to get a feel for how it all works. It’s an awesome tool for moving fast on a new side-project idea, finding inspiration for a new feature you need to build at work, or learning how to implement a specific little UI trick with Tailwind, and a great way to support our work on open-source projects like Tailwind CSS, Headless UI, and Heroicons.
+如果您还没有查看过 Tailwind UI，可以浏览免费预览组件，以了解它是如何工作的。这是一个在新的副项目构思上快速行动的绝佳工具，可以为您在工作中需要构建的新功能寻找灵感，或者学习如何用 Tailwind 实现特定的小 UI 技巧，同时也是支持我们在开源项目（如 Tailwind CSS、Headless UI 和 Heroicons）上的工作的好方法。
 
-Want to check it out? <Link href="https://tailwindui.com">Visit the Tailwind UI website →</Link>
+想要查看吗？ <Link href="https://tailwindui.com">访问 Tailwind UI 网站 →</Link>

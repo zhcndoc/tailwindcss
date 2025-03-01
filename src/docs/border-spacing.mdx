@@ -3,8 +3,8 @@ import { CustomizingYourSpacingScale, ResponsiveDesign, UsingACustomValue } from
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "border-spacing";
-export const description = "Utilities for controlling the spacing between table borders.";
+export const title = "边框间距";
+export const description = "控制表格边框之间间距的工具。";
 
 <ApiTable
   rows={[
@@ -20,11 +20,11 @@ export const description = "Utilities for controlling the spacing between table 
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `border-spacing-<number>` utilities like `border-spacing-2` and `border-spacing-x-3` to control the space between the borders of table cells with [separate borders](/docs/border-collapse#separating-table-borders):
+使用 `border-spacing-<number>` 工具类，例如 `border-spacing-2` 和 `border-spacing-x-3`，来控制具有 [分离边框](/docs/border-collapse#separating-table-borders) 的表格单元格之间的间距：
 
 <Figure>
 
@@ -35,34 +35,34 @@ Use `border-spacing-<number>` utilities like `border-spacing-2` and `border-spac
         <thead className="bg-gray-50 dark:bg-gray-700">
           <tr>
             <th className="w-1/2 border border-gray-300 p-4 text-left font-semibold text-gray-900 dark:border-gray-600 dark:text-gray-200">
-              State
+              州
             </th>
             <th className="w-1/2 border border-gray-300 p-4 text-left font-semibold text-gray-900 dark:border-gray-600 dark:text-gray-200">
-              City
+              城市
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Indiana
+              印第安纳
             </td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Indianapolis
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">Ohio</td>
-            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Columbus
+              印第安纳波利斯
             </td>
           </tr>
           <tr>
+            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">俄亥俄</td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Michigan
+              哥伦布
+            </td>
+          </tr>
+          <tr>
+            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
+              密歇根
             </td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Detroit
+              底特律
             </td>
           </tr>
         </tbody>
@@ -76,22 +76,22 @@ Use `border-spacing-<number>` utilities like `border-spacing-2` and `border-spac
 <table class="border-separate border-spacing-2 border border-gray-400 dark:border-gray-500">
   <thead>
     <tr>
-      <th class="border border-gray-300 dark:border-gray-600">State</th>
-      <th class="border border-gray-300 dark:border-gray-600">City</th>
+      <th class="border border-gray-300 dark:border-gray-600">州</th>
+      <th class="border border-gray-300 dark:border-gray-600">城市</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="border border-gray-300 dark:border-gray-700">Indiana</td>
-      <td class="border border-gray-300 dark:border-gray-700">Indianapolis</td>
+      <td class="border border-gray-300 dark:border-gray-700">印第安纳</td>
+      <td class="border border-gray-300 dark:border-gray-700">印第安纳波利斯</td>
     </tr>
     <tr>
-      <td class="border border-gray-300 dark:border-gray-700">Ohio</td>
-      <td class="border border-gray-300 dark:border-gray-700">Columbus</td>
+      <td class="border border-gray-300 dark:border-gray-700">俄亥俄</td>
+      <td class="border border-gray-300 dark:border-gray-700">哥伦布</td>
     </tr>
     <tr>
-      <td class="border border-gray-300 dark:border-gray-700">Michigan</td>
-      <td class="border border-gray-300 dark:border-gray-700">Detroit</td>
+      <td class="border border-gray-300 dark:border-gray-700">密歇根</td>
+      <td class="border border-gray-300 dark:border-gray-700">底特律</td>
     </tr>
   </tbody>
 </table>
@@ -99,11 +99,11 @@ Use `border-spacing-<number>` utilities like `border-spacing-2` and `border-spac
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue element="table" utility="border-spacing" value="7px" name="border spacing" />
+<UsingACustomValue element="table" utility="border-spacing" value="7px" name="边框间距" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="table"
@@ -112,6 +112,6 @@ Use `border-spacing-<number>` utilities like `border-spacing-2` and `border-spac
   featuredClass="border-spacing-4"
 />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourSpacingScale utility="border-spacing" />

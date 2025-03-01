@@ -5,7 +5,7 @@ import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "gap";
-export const description = "Utilities for controlling gutters between grid and flexbox items.";
+export const description = "用于控制网格和弹性盒子项目之间间隙的工具类。";
 
 <ApiTable
   rows={[
@@ -21,11 +21,11 @@ export const description = "Utilities for controlling gutters between grid and f
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `gap-<number>` utilities like `gap-2` and `gap-4` to change the gap between both rows and columns in grid and flexbox layouts:
+使用 `gap-<number>` 工具类，如 `gap-2` 和 `gap-4` 来改变网格和弹性盒子布局中行与列之间的间隙：
 
 <Figure>
 
@@ -55,9 +55,9 @@ Use `gap-<number>` utilities like `gap-2` and `gap-4` to change the gap between 
 
 </Figure>
 
-### Changing row and column gaps independently
+### 独立更改行和列间隙
 
-Use `gap-x-<number>` or `gap-y-<number>` utilities like `gap-x-8` and `gap-y-4` to change the gap between columns and rows independently:
+使用 `gap-x-<number>` 或 `gap-y-<number>` 工具类，如 `gap-x-8` 和 `gap-y-4` 来独立更改列和行之间的间隙：
 
 <Figure>
 
@@ -91,10 +91,10 @@ Use `gap-x-<number>` or `gap-y-<number>` utilities like `gap-x-8` and `gap-y-4` 
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue utilities={["gap", "gap-x", "gap-y"]} value="10vw" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign properties={["gap", "column-gap", "row-gap"]} defaultClass="grid gap-4" featuredClass="gap-6" />

@@ -4,8 +4,8 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "mix-blend-mode";
-export const description = "Utilities for controlling how an element should blend with the background.";
+export const title = "混合模式（mix-blend-mode）";
+export const description = "控制元素如何与背景混合的工具类。";
 
 <ApiTable
   rows={[
@@ -30,11 +30,11 @@ export const description = "Utilities for controlling how an element should blen
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `mix-blend-overlay` and `mix-blend-soft-light` to control how an element's content and background is blended with other content in the same stacking context:
+使用像 `mix-blend-overlay` 和 `mix-blend-soft-light` 这样的工具类来控制元素的内容和背景与同一堆叠上下文中的其他内容如何混合：
 
 <Figure>
 
@@ -59,9 +59,9 @@ Use utilities like `mix-blend-overlay` and `mix-blend-soft-light` to control how
 
 </Figure>
 
-### Isolating blending
+### 隔离混合
 
-Use the `isolate` utility on the parent element to create a new stacking context and prevent blending with content behind it:
+在父元素上使用 `isolate` 工具类来创建一个新的堆叠上下文，并防止与其后面的内容混合：
 
 <Figure>
 
@@ -98,6 +98,6 @@ Use the `isolate` utility on the parent element to create a new stacking context
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="mix-blend-mode" defaultClass="mix-blend-multiply" featuredClass="mix-blend-overlay" />

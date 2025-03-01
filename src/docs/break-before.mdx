@@ -2,7 +2,7 @@ import { ApiTable } from "@/components/api-table.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "break-before";
-export const description = "Utilities for controlling how a column or page should break before an element.";
+export const description = "用于控制列或页面在元素之前如何换行的工具。";
 
 <ApiTable
   rows={[
@@ -17,22 +17,22 @@ export const description = "Utilities for controlling how a column or page shoul
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基础示例
 
-Use utilities like `break-before-column` and `break-before-page` to control how a column or page break should behave before an element:
+使用 `break-before-column` 和 `break-before-page` 等工具来控制在元素之前列或页面换行的行为：
 
 ```html
 <!-- [!code classes:break-before-column] -->
 <div class="columns-2">
-  <p>Well, let me tell you something, ...</p>
-  <p class="break-before-column">Sure, go ahead, laugh...</p>
-  <p>Maybe we can live without...</p>
-  <p>Look. If you think this is...</p>
+  <p>好吧，让我告诉你一些事情，...</p>
+  <p class="break-before-column">当然，可以笑啊...</p>
+  <p>也许我们可以不需要...</p>
+  <p>听着。如果你认为这是...</p>
 </div>
 ```
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="break-before" defaultClass="break-before-column" featuredClass="break-before-auto" />

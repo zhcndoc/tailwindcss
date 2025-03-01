@@ -7,12 +7,12 @@ import { MultiCursorAnimation, MultiCursorPreview } from "@/components/multi-cur
 import { MultiCursorCode } from "@/components/multi-cursor/example.tsx";
 import erinLindford from "./img/erin-lindford.jpg";
 
-export const title = "Styling with utility classes";
-export const description = "Building complex components from a constrained set of primitive utilities.";
+export const title = "使用实用类进行样式设置";
+export const description = "从一组受限的原始实用工具构建复杂组件。";
 
-## Overview
+## 概述
 
-You style things with Tailwind by combining many single-purpose presentational classes _(utility classes)_ directly in your markup:
+您可以通过在标记中直接组合多个单一目的的表现类 _(实用类)_ 来使用 Tailwind 进行样式设置：
 
 <Figure>
 
@@ -68,36 +68,36 @@ You style things with Tailwind by combining many single-purpose presentational c
 
 </Figure>
 
-For example, in the UI above we've used:
+例如，在上面的 UI 中，我们使用了：
 
-- The [display](/docs/display#flex) and [padding](/docs/padding) utilities (`flex`, `shrink-0`, and `p-6`) to control the overall layout
-- The [max-width](/docs/max-width) and [margin](/docs/margin) utilities (`max-w-sm` and `mx-auto`) to constrain the card width and center it horizontally
-- The [background-color](/docs/background-color), [border-radius](/docs/border-radius), and [box-shadow](/docs/box-shadow) utilities (`bg-white`, `rounded-xl`, and `shadow-lg`) to style the card's appearance
-- The [width](/docs/width) and [height](/docs/height) utilities (`size-12`) to set the width and height of the logo image
-- The [gap](/docs/gap) utilities (`gap-x-4`) to handle the spacing between the logo and the text
-- The [font-size](/docs/font-size), [color](/docs/text-color), and [font-weight](/docs/font-weight) utilities (`text-xl`, `text-black`, `font-medium`, etc.) to style the card text
+- [display](/docs/display#flex) 和 [padding](/docs/padding) 工具 (`flex`, `shrink-0`, 和 `p-6`) 来控制整体布局
+- [max-width](/docs/max-width) 和 [margin](/docs/margin) 工具 (`max-w-sm` 和 `mx-auto`) 来限制卡片宽度并使其水平居中
+- [background-color](/docs/background-color)、[border-radius](/docs/border-radius) 和 [box-shadow](/docs/box-shadow) 工具 (`bg-white`, `rounded-xl` 和 `shadow-lg`) 来设置卡片的外观
+- [width](/docs/width) 和 [height](/docs/height) 工具 (`size-12`) 来设置 logo 图片的宽度和高度
+- [gap](/docs/gap) 工具 (`gap-x-4`) 来处理 logo 和文本之间的间距
+- [font-size](/docs/font-size)、[color](/docs/text-color) 和 [font-weight](/docs/font-weight) 工具 (`text-xl`, `text-black`, `font-medium`, 等等) 来设置卡片文本的样式
 
-Styling things this way contradicts a lot of traditional best practices, but once you try it you'll quickly notice some really important benefits:
+以这种方式设置样式与许多传统最佳实践相悖，但一旦您尝试了，您会很快注意到一些非常重要的好处：
 
-- **You get things done faster** — you don't spend any time coming up with class names, making decisions about selectors, or switching between HTML and CSS files, so your designs come together very fast.
-- **Making changes feels safer** — adding or removing a utility class to an element only ever affects that element, so you never have to worry about accidentally breaking something another page that's using the same CSS.
-- **Maintaining old projects is easier** — changing something just means finding that element in your project and changing the classes, not trying to remember how all of that custom CSS works that you haven't touched in six months.
-- **Your code is more portable** — since both the structure and styling live in the same place, you can easily copy and paste entire chunks of UI around, even between different projects.
-- **Your CSS stops growing** — since utility classes are so reusable, your CSS doesn't continue to grow linearly with every new feature you add to a project.
+- **您可以更快地完成事情** — 您无需花时间想出类名、做选择器的决定，或在 HTML 和 CSS 文件之间切换，因此您的设计迅速成型。
+- **更改感觉更安全** — 向元素添加或删除一个实用类只会影响该元素，因此您永远不必担心意外破坏使用相同 CSS 的其他页面。
+- **维护旧项目更容易** — 改变某些内容只需在项目中找到该元素并更改类名，而无需尝试记住六个月未触碰的所有自定义 CSS 是如何工作的。
+- **您的代码更加便携** — 由于结构和样式都存在于同一个地方，您可以轻松地在不同项目之间复制和粘贴整个 UI 块。
+- **您的 CSS 不再增长** — 因为实用类如此可重用，您的 CSS 不会随着您向项目添加的新功能线性增长。
 
-These benefits make a big difference on small projects, but they are even more valuable for teams working on long-running projects at scale.
+这些好处在小型项目上有很大的区别，但对于大型项目上开展长期工作的团队价值更高。
 
-### Why not just use inline styles?
+### 为什么不直接使用内联样式？
 
-A common reaction to this approach is wondering, “isn’t this just inline styles?” and in some ways it is — you’re applying styles directly to elements instead of assigning them a class name and then styling that class.
+对这种方法的常见反应是想知道，“这不就是内联样式吗？”从某种意义上来说，它确实是——您是直接将样式应用于元素，而不是分配一个类名然后再对该类进行样式设置。
 
-But using utility classes has many important advantages over inline styles, for example:
+但使用实用类与内联样式相比，有很多重要的优势，例如：
 
-- **Designing with constraints** — using inline styles, every value is a magic number. With utilities, you’re choosing styles from a [predefined design system](/docs/theme), which makes it much easier to build visually consistent UIs.
-- **Hover, focus, and other states** — inline styles can’t target states like hover or focus, but Tailwind’s [state variants](/docs/hover-focus-and-other-states) make it easy to style those states with utility classes.
-- **Media queries** — you can’t use media queries in inline styles, but you can use Tailwind’s [responsive variants](/docs/responsive-design) to build fully responsive interfaces easily.
+- **在约束中设计** — 使用内联样式，每个值都是一个魔法数字。而使用实用类，您是从一个 [预定义设计系统](/docs/theme) 中选择样式，这使得构建视觉一致的 UI 更加容易。
+- **悬停、焦点和其他状态** — 内联样式无法针对悬停或焦点等状态，但 Tailwind 的 [状态变体](/docs/hover-focus-and-other-states) 使之能够轻松使用实用类来为这些状态设置样式。
+- **媒体查询** — 您无法在内联样式中使用媒体查询，但您可以使用 Tailwind 的 [响应式变体](/docs/responsive-design) 轻松构建完全响应的接口。
 
-This component is fully responsive and includes a button with hover and active styles, and is built entirely with utility classes:
+这个组件是完全响应的，包含一个具有悬停和活动样式的按钮，完全由实用类构建：
 
 <Figure>
 
@@ -142,19 +142,19 @@ This component is fully responsive and includes a button with hover and active s
 
 </Figure>
 
-## Thinking in utility classes
+## 以实用类的思维
 
-### Styling hover and focus states
+### 为悬停和焦点状态设置样式
 
-To style an element on states like hover or focus, prefix any utility with the state you want to target, for example `hover:bg-sky-700`:
+要为诸如悬停或焦点等状态为元素设置样式，只需在任何工具前加上您要定位的状态前缀，例如 `hover:bg-sky-700`：
 
-<Figure hint="Hover over this button to see the background color change">
+<Figure hint="悬停在这个按钮上以查看背景颜色变化">
 
 <Example>
   {
     <div className="grid place-items-center">
       <button className="rounded-full bg-sky-500 px-5 py-2 text-sm leading-5 font-semibold text-white hover:bg-sky-700">
-        Save changes
+        保存更改
       </button>
     </div>
   }
@@ -162,14 +162,14 @@ To style an element on states like hover or focus, prefix any utility with the s
 
 ```html
 <!-- [!code word:hover\:bg-sky-700] -->
-<button class="bg-sky-500 hover:bg-sky-700 ...">Save changes</button>
+<button class="bg-sky-500 hover:bg-sky-700 ...">保存更改</button>
 ```
 
 </Figure>
 
-These prefixes are called [variants](/docs/hover-focus-and-other-states) in Tailwind, and they only apply the styles from a utility class when the condition for that variant matches.
+这些前缀在 Tailwind 中称为 [变体](/docs/hover-focus-and-other-states)，它们仅在条件匹配时应用实用类的样式。
 
-Here's what the generated CSS looks like for the `hover:bg-sky-700` class:
+对于类 `hover:bg-sky-700` 生成的 CSS 如下所示：
 
 ```css
 /* [!code filename: Generated CSS] */
@@ -180,13 +180,13 @@ Here's what the generated CSS looks like for the `hover:bg-sky-700` class:
 }
 ```
 
-Notice how this class does nothing _unless_ the element is hovered? Its _only_ job is to provide hover styles — nothing else.
+注意此类在元素被悬停时才会生效吗？它的 _唯一_ 作用是提供悬停样式——没有其他。
 
-This is different from how you'd write traditional CSS, where a single class would usually provide the styles for many states:
+这与您编写传统 CSS 的方式不同，传统 CSS 通常一个类会为许多状态提供样式：
 
 ```html
 /* [!code filename:HTML] */
-<button class="btn">Save changes</button>
+<button class="btn">保存更改</button>
 
 <style>
   .btn {
@@ -198,20 +198,20 @@ This is different from how you'd write traditional CSS, where a single class wou
 </style>
 ```
 
-You can even stack variants in Tailwind to apply a utility when multiple conditions match, like combining `hover:` and `disabled:`
+您甚至可以在 Tailwind 中叠加变体，以在多个条件匹配时应用一个实用类，如结合 `hover:` 和 `disabled:`：
 
 ```html
 <!-- [!code classes:disabled:hover:bg-sky-500] -->
-<button class="bg-sky-500 disabled:hover:bg-sky-500 ...">Save changes</button>
+<button class="bg-sky-500 disabled:hover:bg-sky-500 ...">保存更改</button>
 ```
 
-Learn more in the documentation styling elements on [hover, focus, and other states](/docs/hover-focus-and-other-states).
+在文档中了解有关在 [悬停、焦点和其他状态](/docs/hover-focus-and-other-states) 上样式化元素的更多信息。
 
-### Media queries and breakpoints
+### 媒体查询和断点
 
-Just like hover and focus states, you can style elements at different breakpoints by prefixing any utility with the breakpoint where you want that style to apply:
+就像悬停和焦点状态一样，您可以通过在任何工具前加上您希望样式应用的断点前缀，在不同的断点处为元素设置样式：
 
-<Figure hint="Resize this example to see the layout change">
+<Figure hint="调整此示例的大小以查看布局更改">
 
 <Example className="@container" resizable>
   {
@@ -235,7 +235,7 @@ Just like hover and focus states, you can style elements at different breakpoint
 
 </Figure>
 
-In the example above, the `sm:` prefix makes sure that `grid-cols-3` only triggers at the `sm` breakpoint and above, which is 40rem out of the box:
+在上面的示例中，`sm:` 前缀确保 `grid-cols-3` 仅在 `sm` 断点及以上触发，默认值为 40rem：
 
 ```css
 /* [!code filename: Generated CSS] */
@@ -246,11 +246,11 @@ In the example above, the `sm:` prefix makes sure that `grid-cols-3` only trigge
 }
 ```
 
-Learn more in the [responsive design](/docs/responsive-design) documentation.
+在 [响应式设计](/docs/responsive-design) 文档中了解更多信息。
 
-### Targeting dark mode
+### 针对暗模式
 
-Styling an element in dark mode is just a matter of adding the `dark:` prefix to any utility you want to apply when dark mode is active:
+在暗模式中设置元素样式只需在您希望在暗模式激活时应用的任何工具前添加 `dark:` 前缀：
 
 <Figure>
 
@@ -354,7 +354,7 @@ Styling an element in dark mode is just a matter of adding the `dark:` prefix to
 
 </Figure>
 
-Just like with hover states or media queries, the important thing to understand is that a single utility class will never include _both_ the light and dark styles — you style things in dark mode by using multiple classes, one for the light mode styles and another for the dark mode styles.
+和悬停状态或媒体查询一样，重要的事情是要理解单个实用类永远不会包含 _两者_ 的亮模式和暗模式样式——您使用多个类来在暗模式中设置样式，一个用于亮模式样式，另一个用于暗模式样式。
 
 ```css
 /* [!code filename: Generated CSS] */
@@ -365,11 +365,11 @@ Just like with hover states or media queries, the important thing to understand 
 }
 ```
 
-Learn more in the [dark mode](/docs/dark-mode) documentation.
+在 [暗模式](/docs/dark-mode) 文档中了解更多信息。
 
-### Using class composition
+### 使用类组合
 
-A lot of the time with Tailwind you'll even use multiple classes to build up the value for a single CSS property, for example adding multiple filters to an element:
+在 Tailwind 中，您经常可以使用多个类来构建单个 CSS 属性的值，例如向元素添加多个滤镜：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -379,7 +379,7 @@ A lot of the time with Tailwind you'll even use multiple classes to build up the
 </div>
 ```
 
-Both of these effects rely on the `filter` property in CSS, so Tailwind uses CSS variables to make it possible to compose these effects together:
+这两种效果都依赖于 CSS 中的 `filter` 属性，因此 Tailwind 使用 CSS 变量使其能够组合这些效果：
 
 ```css
 /* [!code filename:Generated CSS] */
@@ -393,26 +393,26 @@ Both of these effects rely on the `filter` property in CSS, so Tailwind uses CSS
 }
 ```
 
-The generated CSS above is slightly simplified, but the trick here is that each utility sets a CSS variable just for the effect it's meant to apply. Then the `filter` property looks at all of these variables, falling back to nothing if the variable hasn't been set.
+上面生成的 CSS 略微简化，但这里的诀窍是每个实用类仅设置针对其要应用的效果的 CSS 变量。然后 `filter` 属性检查所有这些变量，如果变量未设置，则回退到无。
 
-Tailwind uses this same approach for [gradients](/docs/background-image#adding-a-linear-gradient), [shadow colors](/docs/box-shadow#setting-the-shadow-color), [transforms](/docs/translate), and more.
+Tailwind 对 [渐变](/docs/background-image#adding-a-linear-gradient)、[阴影颜色](/docs/box-shadow#setting-the-shadow-color)、[变换](/docs/translate) 等使用相同的方法。
 
-### Using arbitrary values
+### 使用任意值
 
-Many utilities in Tailwind are driven by [theme variables](/docs/theme), like `bg-blue-500`, `text-xl`, and `shadow-md`, which map to your underlying color palette, type scale, and shadows.
+Tailwind 中的许多实用类由 [主题变量](/docs/theme) 驱动，如 `bg-blue-500`、`text-xl` 和 `shadow-md`，它们映射到您的基本颜色调色板、字体尺度和阴影。
 
-When you need to use a one-off value outside of your theme, use the special square bracket syntax for specifying arbitrary values:
+当您需要使用主题之外的一次性值时，请使用专门的方括号语法来指定任意值：
 
 ```html
 <!-- [!code filename:HTML] -->
 <!-- [!code classes:bg-[#316ff6]] -->
 <!-- prettier-ignore -->
 <button class="bg-[#316ff6] ...">
-  Sign in with Facebook
+  使用 Facebook 登录
 </button>
 ```
 
-This can be useful for one-off colors outside of your color palette _(like the Facebook blue above)_, but also when you need a complex custom value like a very specific grid:
+这对于调色板外的一次性颜色 _(如上面的 Facebook 蓝色)_ 非常有用，但当您需要一个非常特定网格等复杂自定义值时也有用：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -422,7 +422,7 @@ This can be useful for one-off colors outside of your color palette _(like the F
 </div>
 ```
 
-It's also useful when you need to use CSS features like `calc()`, even if you are using your theme values:
+当您需要使用 CSS 特性如 `calc()` 时，它也很有用，即使您使用的是主题值：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -432,7 +432,7 @@ It's also useful when you need to use CSS features like `calc()`, even if you ar
 </div>
 ```
 
-There's even a syntax for generating completely arbitrary CSS including an arbitrary property name, which can be useful for setting CSS variables:
+甚至还有一种语法，用于生成完全任意的 CSS，包括任意属性名，这在设置 CSS 变量时非常有用：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -442,13 +442,13 @@ There's even a syntax for generating completely arbitrary CSS including an arbit
 </div>
 ```
 
-Learn more in the documentation on [using arbitrary values](/docs/adding-custom-styles#using-arbitrary-values).
+在 [使用任意值](/docs/adding-custom-styles#using-arbitrary-values) 的文档中了解更多信息。
 
-#### How does this even work?
+#### 这究竟是如何工作的？
 
-Tailwind CSS isn't one big static stylesheet like you might be used to with other CSS frameworks — it generates the CSS needed based on the classes you're actually using when you compile your CSS.
+Tailwind CSS 并不是像您可能熟悉的其他 CSS 框架那样的一个大的静态样式表——它根据您编译 CSS 时实际使用的类生成所需的 CSS。
 
-It does this by scanning all of the files in your project looking for any symbol that looks like it could be a class name:
+它通过扫描您项目中的所有文件，寻找任何看起来像类名的符号来实现：
 
 ```jsx
 // [!code filename:Button.jsx]
@@ -475,17 +475,17 @@ export default function Button({ size, children }) {
 }
 ```
 
-After it's found all of the potential classes, Tailwind generates the CSS for each one and compiles it all into one stylesheet of just the styles you actually need.
+在找到所有潜在的类后，Tailwind 会为每个类生成 CSS，并将其编译为一份仅包含您实际需要的样式的样式表。
 
-Since the CSS is generated based on the class name, Tailwind can recognize classes using arbitrary values like `bg-[#316ff6]` and generate the necessary CSS, even when the value isn't part of your theme.
+由于 CSS 是基于类名生成的，Tailwind 可以识别使用任意值的类，如 `bg-[#316ff6]` 并生成所需的 CSS，即使该值不是您主题的一部分。
 
-Learn more about how this works in [detecting classes in source files](/docs/detecting-classes-in-source-files).
+在 [检测源文件中的类](/docs/detecting-classes-in-source-files) 中了解更多关于这方面的工作原理。
 
-### Complex selectors
+### 复杂选择器
 
-Sometimes you need to style an element under a combination of conditions, for example in dark mode, at a specific breakpoint, when hovered, and when the element has a specific data attribute.
+有时您需要在多个条件下为元素设置样式，例如在暗模式中，在特定断点时，当悬停时，以及元素具有特定数据属性时。
 
-Here's an example of what that looks like with Tailwind:
+以下是使用 Tailwind 的示例：
 
 <CodeExampleStack>
 
@@ -508,7 +508,7 @@ Here's an example of what that looks like with Tailwind:
 
 </CodeExampleStack>
 
-Tailwind also supports things like `group-hover`, which let you style an element when a specific parent is hovered:
+Tailwind 还支持像 `group-hover` 这样的功能，允许您在特定父级被悬停时为元素设置样式：
 
 <CodeExampleStack>
 
@@ -517,7 +517,7 @@ Tailwind also supports things like `group-hover`, which let you style an element
 <!-- [!code classes:group,group-hover:underline] -->
 <a href="#" class="group rounded-lg p-8">
   <!-- ... -->
-  <span class="group-hover:underline">Read more…</span>
+  <span class="group-hover:underline">阅读更多…</span>
 </a>
 ```
 
@@ -532,9 +532,9 @@ Tailwind also supports things like `group-hover`, which let you style an element
 
 </CodeExampleStack>
 
-This `group-*` syntax works with other variants too, like `group-focus`, `group-active`, and [many more](/docs/hover-focus-and-other-states#styling-based-on-parent-state).
+这个 `group-*` 语法也适用于其他变体，例如 `group-focus`、`group-active` 和 [更多](/docs/hover-focus-and-other-states#styling-based-on-parent-state)。
 
-For really complex scenarios _(especially when styling HTML you don't control)_, Tailwind supports [arbitrary variants](/docs/adding-custom-styles#arbitrary-variants) which let you write any selector you want, directly in a class name:
+对于非常复杂的情况 _(尤其是样式设置您无法控制的 HTML)_, Tailwind 支持 [任意变体](/docs/adding-custom-styles#arbitrary-variants)，它允许您直接在类名中编写任何选择器：
 
 <CodeExampleStack>
 
@@ -544,7 +544,7 @@ For really complex scenarios _(especially when styling HTML you don't control)_,
 <div class="[&>[data-active]+span]:text-blue-600 ...">
   <span data-active><!-- ... --></span>
   <!-- [!code highlight:2] -->
-  <span>This text will be blue</span>
+  <span>这段文字将变为蓝色</span>
 </div>
 ```
 
@@ -557,9 +557,9 @@ div > [data-active] + span {
 
 </CodeExampleStack>
 
-### When to use inline styles
+### 何时使用内联样式
 
-Inline styles are still very useful in Tailwind CSS projects, particularly when a value is coming from a dynamic source like a database or API:
+在 Tailwind CSS 项目中，当值来自动态源（如数据库或 API）时，内联样式仍然非常有用：
 
 ```jsx
 // [!code filename:branded-button.jsx]
@@ -579,7 +579,7 @@ export function BrandedButton({ buttonColor, textColor, children }) {
 }
 ```
 
-You might also reach for an inline style for very complicated arbitrary values that are difficult to read when formatted as a class name:
+对于当类名格式化时很难阅读的非常复杂的任意值，您也可能会使用内联样式：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -591,7 +591,7 @@ You might also reach for an inline style for very complicated arbitrary values t
 </div>
 ```
 
-Another useful pattern is setting CSS variables based on dynamic sources using inline styles, then referencing those variables with utility classes:
+另一种有用的模式是基于使用内联样式从动态源设置 CSS 变量，然后使用实用类引用这些变量：
 
 ```jsx
 // [!code filename:branded-button.jsx]
@@ -613,11 +613,11 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
 }
 ```
 
-## Managing duplication
+## 管理重复
 
-When you build entire projects with just utility classes, you'll inevitably find yourself repeating certain patterns to recreate the same design in different places.
+当您仅使用实用类构建整个项目时，您不可避免地会发现某些模式在不同的地方重复以重现相同的设计。
 
-For example, here the utility classes for each avatar image are repeated five separate times:
+例如，这里每个头像图像的实用类被重复五次：
 
 <Figure>
 
@@ -691,13 +691,13 @@ For example, here the utility classes for each avatar image are repeated five se
 
 </Figure>
 
-Don't panic! In practice this isn't the problem you might be worried it is, and the strategies for dealing with it are things you already do every day.
+不要慌张！实际上，这并不是您可能担心的问题，而是处理它的策略是您每天都在做的事情。
 
-### Using loops
+### 使用循环
 
-A lot of the time a design element that shows up more than once in the rendered page is only actually authored once because the actual markup is rendered in a loop.
+许多时候，渲染页面中显示多次的设计元素实际上只被编写了一次，因为实际标记是在循环中渲染的。
 
-For example, the duplicate avatars at the beginning of this guide would almost certainly be rendered in a loop in a real project:
+例如，这个指南开头的重复头像几乎肯定会在真实项目中以循环方式渲染：
 
 <Figure>
 
@@ -765,13 +765,13 @@ For example, the duplicate avatars at the beginning of this guide would almost c
 
 </Figure>
 
-When elements are rendered in a loop like this, the actual class list is only written once so there's no actual duplication problem to solve.
+当元素像这样以循环方式渲染时，实际的类列表只写了一次，所以并没有实际的重复问题需要解决。
 
-### Using multi-cursor editing
+### 使用多光标编辑
 
-When duplication is localized to a group of elements in a single file, the easiest way to deal with it is to use [multi-cursor editing](https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor) to quickly select and edit the class list for each element at once:
+当重复局限于单个文件中一组元素时，处理它的最简单方法是使用 [多光标编辑](https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor) 快速选择并同时编辑每个元素的类列表：
 
-You'd be surprised at how often this ends up being the best solution. If you can quickly edit all of the duplicated class lists simultaneously, there's no benefit to introducing any additional abstraction.
+您会惊讶于这通常会成为最佳解决方案。如果您可以快速同时编辑所有重复的类列表，那么引入任何额外的抽象就没有意义。
 
 <MultiCursorAnimation>
   <Figure>
@@ -784,9 +784,9 @@ You'd be surprised at how often this ends up being the best solution. If you can
   </Figure>
 </MultiCursorAnimation>
 
-### Using components
+### 使用组件
 
-If you need to reuse some styles across multiple files, the best strategy is to create a _component_ if you're using a front-end framework like React, Svelte, or Vue, or a _template partial_ if you're using a templating language like Blade, ERB, Twig, or Nunjucks.
+如果您需要在多个文件中重用一些样式，最佳策略是创建一个 _组件_，如果您使用的是 React、Svelte 或 Vue 等前端框架，或是 _模板部分_，如果您使用的是 Blade、ERB、Twig 或 Nunjucks 等模板语言。
 
 <Figure>
 
@@ -835,15 +835,15 @@ export function VacationCard({ img, imgAlt, eyebrow, title, pricing, url }) {
 
 </Figure>
 
-Now you can use this component in as many places as you like, while still having a single source of truth for the styles so they can easily be updated together in one place.
+现在您可以在任意位置使用此组件，同时仍然拥有样式的单一真实来源，这样它们就可以在一个地方轻松更新。
 
-### Using custom CSS
+### 使用自定义 CSS
 
-If you're using a templating language like ERB or Twig instead of something like React or Vue, creating a template partial for something as small as a button can feel like overkill compared to a simple CSS class like `btn`.
+如果您使用的是诸如 ERB 或 Twig 的模板语言，而不是 React 或 Vue 等框架，为一个小到按钮的东西创建模板部分可能会感觉很重，而一简单的 CSS 类如 `btn`。
 
-While it's highly recommended that you create proper template partials for more complex components, writing some custom CSS is totally fine when a template partial feels heavy-handed.
+虽然强烈建议您为更复杂的组件创建适当的模板部分，但在模板部分感觉笨重时编写一些自定义 CSS 是完全可以的。
 
-Here's what a `btn-primary` class might look like, using [theme variables](/docs/theme#with-custom-css) to keep the design consistent:
+以下是可能看起来像的 `btn-primary` 类，使用 [主题变量](/docs/theme#with-custom-css) 来保持设计一致性：
 
 <Figure>
 
@@ -854,7 +854,7 @@ Here's what a `btn-primary` class might look like, using [theme variables](/docs
     type="button"
     className="rounded-full bg-violet-500 px-5 py-2 font-semibold text-white shadow-md hover:bg-violet-700"
   >
-    Save changes
+    保存更改
   </button>
 </div>
 
@@ -864,7 +864,7 @@ Here's what a `btn-primary` class might look like, using [theme variables](/docs
 
 ```html
 <!-- [!code filename:HTML] -->
-<button class="btn-primary">Save changes</button>
+<button class="btn-primary">保存更改</button>
 ```
 
 ```css
@@ -893,20 +893,20 @@ Here's what a `btn-primary` class might look like, using [theme variables](/docs
 
 </Figure>
 
-Again though, for anything that's more complicated than just a single HTML element, we highly recommend using template partials so the styles and structure can be encapsulated in one place.
+再次强调，对于任何复杂于单个 HTML 元素的内容，我们强烈建议使用模板部分，以便样式和结构可以在一个地方封装。
 
-## Managing style conflicts
+## 管理样式冲突
 
-### Conflicting utility classes
+### 冲突的实用类
 
-When you add two classes that target the same CSS property, the class that appears later in the stylesheet wins. So in this example, the element will receive `display: grid` even though `flex` comes last in the actual `class` attribute:
+当您添加两个针对相同 CSS 属性的类时，样式表中位置较后的类会赢。因此在这个示例中，尽管 `flex` 在实际的 `class` 属性中最后出现，元素将会接收 `display: grid`：
 
 <CodeExampleStack>
 
 ```html
 <!-- [!code filename:HTML] -->
 <!-- prettier-ignore -->
-<div class="grid flex">
+<div class="grid">
   <!-- ... -->
 </div>
 ```
@@ -923,7 +923,7 @@ When you add two classes that target the same CSS property, the class that appea
 
 </CodeExampleStack>
 
-In general, you should just never add two conflicting classes to the same element — only ever add the one you actually want to take effect:
+一般来说，您应该永远不要向同一元素添加两个冲突的类——只添加您希望生效的那个：
 
 ```jsx
 // [!code filename:example.jsx]
@@ -933,11 +933,11 @@ export function Example({ gridLayout }) {
 }
 ```
 
-Using component-based libraries like React or Vue, this often means exposing specific props for styling customizations instead of letting consumers add extra classes from outside of a component, since those styles will often conflict.
+使用如 React 或 Vue 的基于组件的库，这通常意味着公开特定的属性以进行样式自定义，而不是让消费者从外部添加额外的类，因为这些样式往往会冲突。
 
-### Using the important modifier
+### 使用重要修饰符
 
-When you really need to force a specific utility class to take effect and have no other means of managing the specificity, you can add `!` to the end of the class name to make all of the declarations `!important`:
+当您确实需要强制特定的实用类生效，而没有其他管理特异性的办法时，可以向类名的末尾添加 `!`，使所有声明为 `!important`：
 
 <CodeExampleStack>
 
@@ -945,7 +945,7 @@ When you really need to force a specific utility class to take effect and have n
 <!-- [!code filename:HTML] -->
 <!-- [!code classes:bg-red-500!] -->
 <!-- prettier-ignore -->
-<div class="bg-teal-500 bg-red-500!">
+<div class="bg-red-500!">
   <!-- ... -->
 </div>
 ```
@@ -963,9 +963,9 @@ When you really need to force a specific utility class to take effect and have n
 
 </CodeExampleStack>
 
-### Using the important flag
+### 使用重要标志
 
-If you're adding Tailwind to a project that has existing complex CSS with high specificity rules, you can use the `important` flag when importing Tailwind to mark _all_ utilities as `!important`:
+如果您正在向具有复杂 CSS 及高特异性规则的项目添加 Tailwind，则可以在导入 Tailwind 时使用 `important` 标志将 _所有_ 实用类标记为 `!important`：
 
 <CodeExampleStack>
 
@@ -993,9 +993,9 @@ If you're adding Tailwind to a project that has existing complex CSS with high s
 
 </CodeExampleStack>
 
-### Using the prefix option
+### 使用前缀选项
 
-If your project has class names that conflict with Tailwind CSS utilities, you can prefix all Tailwind-generated classes and CSS variables using the `prefix` option:
+如果您的项目具有与 Tailwind CSS 工具冲突的类名，可以使用 `prefix` 选项为所有生成的 Tailwind 类和 CSS 变量添加前缀：
 
 <CodeExampleStack>
 

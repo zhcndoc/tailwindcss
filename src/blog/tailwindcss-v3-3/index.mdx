@@ -9,87 +9,84 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure";
 
 export const meta = {
-  title: "Tailwind CSS v3.3: Extended color palette, ESM/TS support, logical properties, and more",
-  description: `Tailwind CSS v3.3 is here — bringing a bunch of new features people have been asking for forever, and a bunch of new stuff you didn't even know you wanted.`,
+  title: "Tailwind CSS v3.3：扩展的色彩调色板，ESM/TS支持，逻辑属性，等等",
+  description: `Tailwind CSS v3.3来了——带来了众多人们期待已久的新特性，以及一些你甚至不知道自己想要的新东西。`,
   date: "2023-03-28T14:30:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      Tailwind CSS v3.3 is here — bringing a bunch of new features people have been asking for forever, and a bunch of
-      new stuff you didn't even know you wanted.
+      Tailwind CSS v3.3来了——带来了众多人们期待已久的新特性，以及一些你甚至不知道自己想要的新东西。
     </>
   ),
 };
 
 <Image alt="Tailwind CSS v3.3" src={card} />
 
-Tailwind CSS v3.3 is here — bringing a bunch of new features people have been asking for forever, and a bunch of new stuff you didn't even know you wanted.
+Tailwind CSS v3.3来了——带来了众多人们期待已久的新特性，以及一些你甚至不知道自己想要的新东西。
 
-- [Extended color palette for darker darks:](#extended-color-palette-for-darker-darks) New darker 950 shades for every color.
-- [ESM and TypeScript support:](#esm-and-type-script-support) Write your config file using ESM or TypeScript.
-- [Simplified RTL support with logical properties:](#simplified-rtl-support-with-logical-properties) Build layouts that adapt to htmlerent directions.
-- [Fine-tune gradient color stop positions:](#fine-tune-gradient-color-stop-positions) Specify exactly where you want each color stop to go.
-- [Line-clamp out of the box:](#line-clamp-out-of-the-box) Truncate multi-line text without a plugin.
-- [New line-height modifier:](#new-line-height-shorthand-for-font-size-utilities) Set your font-size and line-height with one class.
-- [CSS variables without the var()](#css-variables-without-the-var): New shorthand syntax for arbitrary values.
-- [Configurable `font-variation-settings`:](#configure-font-variation-settings-for-custom-font-families) Baked directly into your `font-*` utilities.
-- [New `list-style-image` utilities:](#new-list-style-image-utilities) So you can use horrible clip art for bullet points.
-- [New `hyphens` utilities:](#new-hyphens-utilities) For fine-tuning hyphenation behavior.
-- [New `caption-side` utilities:](#new-caption-side-utilities) Title your tables with style.
+- [扩展色彩调色板，以更深的深色：](#extended-color-palette-for-darker-darks) 为每种颜色新增的更深950色调。
+- [ESM和TypeScript支持：](#esm-and-type-script-support) 使用ESM或TypeScript编写配置文件。
+- [使用逻辑属性简化RTL支持：](#simplified-rtl-support-with-logical-properties) 构建可以适应不同方向的布局。
+- [微调渐变色停止位置：](#fine-tune-gradient-color-stop-positions) 精确指定每个颜色停靠点的位置。
+- [开箱即用的文本行限制：](#line-clamp-out-of-the-box) 无需插件即可截断多行文本。
+- [新的行高修饰符：](#new-line-height-shorthand-for-font-size-utilities) 使用一个类同时设置字体大小和行高。
+- [不用var()的CSS变量：](#css-variables-without-the-var) 新的任意值简写语法。
+- [可配置的`font-variation-settings`：](#configure-font-variation-settings-for-custom-font-families) 直接嵌入到你的`font-*`工具中。
+- [新的`list-style-image`工具：](#new-list-style-image-utilities) 让你可以使用可怕的剪贴画作为项目符号。
+- [新的`hyphens`工具：](#new-hyphens-utilities) 用于微调连字符行为。
+- [新的`caption-side`工具：](#new-caption-side-utilities) 以风格标题你的表格。
 
-That covers the most exciting stuff, but check out the [release notes](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.3.0) for an exhaustive list of every single little improvement we've made since the last release.
+这涵盖了最令人激动的内容，但请查看[发布说明](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.3.0)，了解自上次发布以来我们所做的每一个小改进的详细列表。
 
-Upgrading your projects is as easy as installing the latest version of `tailwindcss` from npm:
+升级你的项目就像从npm安装最新版本的`tailwindcss`一样简单：
 
 ```sh
 npm install -D tailwindcss@latest
 ```
 
-You can also try out all of the new features on [Tailwind Play](https://play.tailwindcss.com), right in your browser.
+你也可以在浏览器中直接在[Tailwind Play](https://play.tailwindcss.com)上试用所有新特性。
 
 ---
 
-## Extended color palette for darker darks
+## 扩展色彩调色板，以更深的深色
 
-One of the most common feature requests we've had over the years is to add darker shades for every color — usually because someone is building a dark UI and just wants more options down in that dark end of the spectrum.
+多年来，我们收到的最常见特性请求之一就是为每种颜色添加更深的色调——通常是因为有人正在构建深色UI，只想在该深色调范围内获得更多选项。
 
-Well wish granted — in Tailwind CSS v3.3 we've added a new `950` shade for every single color.
+愿望成真——在Tailwind CSS v3.3中，我们为每种颜色添加了新的`950`色调。
 
-In the grays they act as basically a tinted black, which is great for ultra dark UIs:
+在灰色中，它们几乎表现为加Tint的黑色，这对于超深的UI来说非常好：
 
 <Image
-  alt="Comparison between two dark user interfaces, one using slate-900 as the darkest color and the other using slate-950 as the darkest color"
+  alt="对比两个黑暗用户界面，一个使用Slate-900作为最深颜色，另一个使用Slate-950作为最深颜色"
   src={Image950Slate}
 />
 
-And in the rest of the color spectrum we optimized `950` for high contrast text and tinted control backgrounds:
+在其余的色彩范围内，我们优化了`950`以支持高对比文本和有色控件背景：
 
 <div className="contents dark:hidden">
   <Image
-    alt="Comparison between two light user interfaces, one using sky-900 as the darkest color and the other using sky-950 as
-  the darkest color"
+    alt="对比两个亮色用户界面，一个使用Sky-900作为最深颜色，另一个使用Sky-950作为最深颜色"
     src={Image950Sky}
   />
 </div>
 
 <div className="hidden dark:contents">
   <Image
-    alt="Comparison between two light user interfaces, one using sky-900 as the darkest color and the other using sky-950 as
-  the darkest color"
+    alt="对比两个亮色用户界面，一个使用Sky-900作为最深颜色，另一个使用Sky-950作为最深颜色"
     src={Image950SkyDark}
   />
 </div>
 
-Believe it or not the hardest part about this project was convincing ourselves to be okay with having 11 shades per color. Trying to make that look good in the [color palette documentation](https://v3.tailwindcss.com/docs/customizing-colors) was a nightmare.
+信不信由你，这个项目最难的部分是说服我们自己接受为每种颜色使用11个色调。尝试将其美化在[色彩调色板文档](https://v3.tailwindcss.com/docs/customizing-colors)中真是一场噩梦。
 
-Also pour one out for the 50 shades of gray jokes we used to be able to make.
+还要为我们曾经能够开玩笑的50种灰色笑话倒一杯酒。
 
 ---
 
-## ESM and TypeScript support
+## ESM和TypeScript支持
 
-Now you can configure Tailwind CSS in ESM, or even in TypeScript:
+现在你可以在ESM中配置Tailwind CSS，甚至可以使用TypeScript：
 
 <CodeExampleGroup filenames={["ES Module", "TypeScript"]}>
   <CodeBlock
@@ -116,38 +113,37 @@ Now you can configure Tailwind CSS in ESM, or even in TypeScript:
         plugins: [],
       } satisfies Config
     `}
-
-/>
+  />
 
 </CodeExampleGroup>
 
-When you run `npx tailwindcss init`, we'll detect if your project is an ES Module and automatically generate your config file with the right syntax.
+当你运行`npx tailwindcss init`时，我们会检测你的项目是否为ES模块，并自动生成正确语法的配置文件。
 
-You can also generate an ESM config file explicitly by using the `--esm` flag:
+你也可以通过使用`--esm`标志显式生成ESM配置文件：
 
 ```sh
 npx tailwindcss init --esm
 ```
 
-To generate a TypeScript config file, use the `--ts` flag:
+要生成TypeScript配置文件，请使用`--ts`标志：
 
 ```sh
 npx tailwindcss init --ts
 ```
 
-A lot of people assume this is easy because they're writing their own code in ESM already (even if it's being transpiled by their build tool) but it's actually pretty tricky — we literally have to transpile the config file for you on the fly.
+很多人认为这是很简单的，因为他们自己已经在使用ESM编写代码（即使它被构建工具转译），但实际上这相当复杂——我们实际上必须为你动态转译配置文件。
 
-It's a bit easier to understand why this has to happen when you think of the TypeScript case, because of course Tailwind is distributed as JavaScript, and it can't magically import an uncompiled TypeScript file.
+当你考虑TypeScript的情况时，你会更容易理解为什么必须这样做，因为Tailwind当然是作为JavaScript分发的，它不可能神奇地导入一个未编译的TypeScript文件。
 
-We're handling this with the wonderful [jiti](https://github.com/unjs/jiti) library under the hood, and using [Sucrase](https://github.com/alangpierce/sucrase) to transpile the code with the best possible performance while keeping the installation footprint small.
+我们在后台使用了令人惊叹的[jiti](https://github.com/unjs/jiti)库，并使用[Sucrase](https://github.com/alangpierce/sucrase)以尽可能好的性能转译代码，同时保持安装占用空间小。
 
 ---
 
-## Simplified RTL support with logical properties
+## 使用逻辑属性简化RTL支持
 
-We've made it possible to style multi-directional websites using our [LTR and RTL variants](https://v3.tailwindcss.com/docs/hover-focus-and-other-states#rtl-support) for a while, but now you can use [logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts) to do most of this styling more easily and automatically.
+我们已经可以使用我们的[LTR和RTL变体](https://v3.tailwindcss.com/docs/hover-focus-and-other-states#rtl-support)为多方向网站样式了，但现在你可以使用[逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)更轻松、更自动地完成大部分样式设置。
 
-Using new utilities like `ms-3` and `me-3`, you can style the _start_ and _end_ of an element so that your styles automatically adapt in RTL, instead of writing code like `ltr:ml-3 rtl:mr-3`:
+使用新工具例如`ms-3`和`me-3`，你可以样式化一个元素的_开始_和_结束_，以便你的样式在RTL时自动适应，而无需编写像`ltr:ml-3 rtl:mr-3`这样的代码：
 
 <Figure>
 
@@ -155,7 +151,7 @@ Using new utilities like `ms-3` and `me-3`, you can style the _start_ and _end_ 
   {
     <div className="mx-auto grid max-w-lg grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2">
       <div dir="ltr">
-        <p className="mb-4 text-sm font-medium">Left-to-right</p>
+        <p className="mb-4 text-sm font-medium">从左到右</p>
         <div className="group flex items-center">
           <img
             className="h-12 w-12 shrink-0 rounded-full"
@@ -164,16 +160,16 @@ Using new utilities like `ms-3` and `me-3`, you can style the _start_ and _end_ 
           />
           <div className="ms-3">
             <p className="text-sm font-medium text-slate-700 group-hover:text-slate-900 dark:text-slate-300 dark:group-hover:text-white">
-              <>Tom Cook</>
+              <>汤姆·库克</>
             </p>
             <p className="text-sm font-medium text-slate-500 group-hover:text-slate-700 dark:group-hover:text-slate-300">
-              <>Director of Operations</>
+              <>运营总监</>
             </p>
           </div>
         </div>
       </div>
       <div dir="rtl">
-        <p className="mb-4 text-sm font-medium">Right-to-left</p>
+        <p className="mb-4 text-sm font-medium">从右到左</p>
         <div className="group flex items-center">
           <img
             className="h-12 w-12 shrink-0 rounded-full"
@@ -219,9 +215,9 @@ Using new utilities like `ms-3` and `me-3`, you can style the _start_ and _end_ 
 
 </Figure>
 
-We've added new logical property utilities for [inset](https://v3.tailwindcss.com/docs/top-right-bottom-left), [margin](https://v3.tailwindcss.com/docs/margin), [padding](https://v3.tailwindcss.com/docs/padding), [border-radius](https://v3.tailwindcss.com/docs/border-radius), [scroll-margin](https://v3.tailwindcss.com/docs/scroll-margin), and [scroll-padding](https://v3.tailwindcss.com/docs/scroll-padding).
+我们为[inset](https://v3.tailwindcss.com/docs/top-right-bottom-left)、[margin](https://v3.tailwindcss.com/docs/margin)、[padding](https://v3.tailwindcss.com/docs/padding)、[border-radius](https://v3.tailwindcss.com/docs/border-radius)、[scroll-margin](https://v3.tailwindcss.com/docs/scroll-margin)和[scroll-padding](https://v3.tailwindcss.com/docs/scroll-padding)添加了新的逻辑属性工具。
 
-Here's a full list of all of the new utilities we've added and what they map to:
+这是我们添加的所有新工具及其映射关系的完整列表：
 
 {
 
@@ -230,9 +226,9 @@ Here's a full list of all of the new utilities we've added and what they map to:
     <table>
       <thead>
         <tr>
-          <th className="pl-4 sm:pl-0">New class</th>
-          <th>Properties</th>
-          <th className="pr-4 sm:pr-0">Physical counterpart (LTR)</th>
+          <th className="pl-4 sm:pl-0">新类</th>
+          <th>属性</th>
+          <th className="pr-4 sm:pr-0">物理对应（LTR）</th>
         </tr>
       </thead>
       <tbody>
@@ -466,13 +462,13 @@ Here's a full list of all of the new utilities we've added and what they map to:
 </div>
 }
 
-These should save you a ton of code if you regularly build sites that need to support both LTR and RTL languages, and you can always combine these with the `ltr` and `rtl` variants when you need more control.
+这些工具可以为你节省大量代码，特别是当你定期构建需要同时支持LTR和RTL语言的网站时，当然你也可以在需要更多控制时将这些与`ltr`和`rtl`变体结合使用。
 
 ---
 
-## Fine-tune gradient color stop positions
+## 微调渐变色停止位置
 
-We've added new utilities like `from-5%`, `via-35%`, and `to-85%` that let you adjust the actual position of each color stop in your gradients:
+我们添加了新工具如`from-5%`、`via-35%`和`to-85%`，让你可以调整渐变中每个颜色停止的实际位置：
 
 <svg className="hidden" hidden>
   <symbol id="gradient-color-stop" viewBox="0 0 32 34">
@@ -535,7 +531,7 @@ We've added new utilities like `from-5%`, `via-35%`, and `to-85%` that let you a
 
 </Figure>
 
-We've included every value from 0% to 100% in steps of 5 out of the box, but you can of course use arbitrary values to get exactly the effect you want:
+我们包含了从0%到100%的所有值，步长为5，但是当然你也可以使用任意值，以获得你想要的确切效果：
 
 ```html
 <!-- [!code word:from-[21.56%\]] -->
@@ -544,13 +540,13 @@ We've included every value from 0% to 100% in steps of 5 out of the box, but you
 </div>
 ```
 
-For more details, check out the [gradient color stops documentation](https://v3.tailwindcss.com/docs/gradient-color-stops#specifying-stop-positions).
+有关更多详细信息，请查看[渐变色停止文档](https://v3.tailwindcss.com/docs/gradient-color-stops#specifying-stop-positions)。
 
 ---
 
-## Line-clamp out of the box
+## 开箱即用的文本行限制
 
-We released our [official line-clamp plugin](/blog/multi-line-truncation-with-tailwindcss-line-clamp) just over two years ago and even though it uses a bunch of weird deprecated `-webkit-*` stuff, it works in every browser and it's going to work forever, so we decided to just bake it into the framework itself.
+我们在两年前发布了我们的[官方行限制插件](/blog/multi-line-truncation-with-tailwindcss-line-clamp)，尽管它使用了一些奇怪的已弃用的`-webkit-*`内容，但它在每个浏览器中都能工作，并且将永远有效，因此我们决定直接将其融入到框架中。
 
 <Figure>
 
@@ -559,9 +555,9 @@ We released our [official line-clamp plugin](/blog/multi-line-truncation-with-ta
     <div className="px-4 sm:px-0">
       <article className="mx-auto max-w-sm bg-white p-8 text-sm leading-6 text-slate-700 shadow-xl sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
         <time dateTime="2020-03-16" className="block text-sm leading-6 text-slate-500 dark:text-slate-400">
-          Mar 10, 2020
+          2020年3月10日
         </time>
-        <h2 className="mt-2 text-lg font-semibold text-slate-900 dark:text-slate-200">Boost your conversion rate</h2>
+        <h2 className="mt-2 text-lg font-semibold text-slate-900 dark:text-slate-200">提升你的转化率</h2>
         <p className="mt-4 line-clamp-3 text-sm leading-6 text-slate-500 dark:text-slate-400">
           <>
             Nulla dolor velit adipisicing duis excepteur esse in duis nostrud occaecat mollit incididunt deserunt sunt.
@@ -577,7 +573,7 @@ We released our [official line-clamp plugin](/blog/multi-line-truncation-with-ta
             src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
             alt=""
           />
-          <>Lindsay Walton</>
+          <>林赛·沃尔顿</>
         </div>
       </article>
     </div>
@@ -588,8 +584,8 @@ We released our [official line-clamp plugin](/blog/multi-line-truncation-with-ta
 <!-- [!code word:line-clamp-3] -->
 <article>
   <div>
-    <time datetime="2020-03-16" class="block text-sm/6 text-gray-600">Mar 10, 2020</time>
-    <h2 class="mt-2 text-lg font-semibold text-gray-900">Boost your conversion rate</h2>
+    <time datetime="2020-03-16" class="block text-sm/6 text-gray-600">2020年3月10日</time>
+    <h2 class="mt-2 text-lg font-semibold text-gray-900">提升你的转化率</h2>
     >
     <p class="mt-4 line-clamp-3 text-sm/6 text-gray-600">
       Nulla dolor velit adipisicing duis excepteur esse in duis nostrud occaecat mollit incididunt deserunt sunt. Ut ut
@@ -601,14 +597,14 @@ We released our [official line-clamp plugin](/blog/multi-line-truncation-with-ta
   </div>
   <div class="mt-4 flex gap-x-2.5 text-sm leading-6 font-semibold text-gray-900">
     <img src="..." class="h-6 w-6 flex-none rounded-full bg-gray-50" />
-    Lindsay Walton
+    林赛·沃尔顿
   </div>
 </article>
 ```
 
 </Figure>
 
-So when you upgrade to v3.3, you can safely remove the line-clamp plugin if you were using it:
+所以当你升级到v3.3时，如果你在使用行限制插件，可以安全地将其移除：
 
 {/* prettier-ignore */}
 ```js
@@ -621,17 +617,17 @@ module.exports = {
 }
 ```
 
-Don't let the door hit you in the ass on the way out, plugin.
+在你离开的时候，不妨关上门。
 
-Check out the new [line-clamp documentation](https://v3.tailwindcss.com/docs/line-clamp) to learn more about how it all works if you haven't played with it before.
+如果你之前没有使用过，请查看新的[line-clamp文档](https://v3.tailwindcss.com/docs/line-clamp)，了解更多关于其工作原理的信息。
 
 ---
 
-## New line-height shorthand for font-size utilities
+## 字体大小工具的新行高缩写
 
-One thing we've found over years and years of designing beautiful stuff with Tailwind is that we literally _never_ set a line-height without also setting the font-size at the same time.
+多年来我们发现，设计美丽事物的过程中，我们几乎从未在设置行高时不同时设置字体大小。
 
-So inspired by our color opacity modifier syntax, we decided to make it possible to save a few characters by setting them together with a single utility:
+因此受到我们的颜色不透明度修饰符语法的启发，我们决定能够通过一个工具同时设置它们以节省一些字符：
 
 {/* prettier-ignore */}
 ```html
@@ -641,26 +637,24 @@ So inspired by our color opacity modifier syntax, we decided to make it possible
 <!-- [!code word:text-lg] -->
 <p class="text-lg leading-7 ..."><!-- [!code --] -->
 <p class="text-lg/7 ..."><!-- [!code ++] -->
-  So I started to walk into the water. I won't lie to you boys, I was terrified. But I pressed on, and as I made my way
-  past the breakers a strange calm came over me. I don't know if it was divine intervention or the kinship of all living
-  things but I tell you Jerry at that moment, I <em>was</em> a marine biologist.
+  于是我开始走进水中。我不会对你们撒谎，伙计们，我是害怕的。但我继续前进，当我越过破波时，一种奇怪的平静降临到我身上。我不知道那是神的干预，还是所有生物之间的亲密关系，但我告诉你，杰瑞，在那一刻，我<em>是</em>一名海洋生物学家。
 </p>
 ```
 
-You can use any value defined in your [line-height scale](https://v3.tailwindcss.com/docs/line-height), or use arbitrary values if you need to deviate from your design tokens:
+你可以使用在你的[行高规模](https://v3.tailwindcss.com/docs/line-height)中定义的任何值，或者使用任意值，如果你需要偏离你的设计令牌：
 
 ```html
 <!-- [!code word:/[17px\]] -->
 <p class="text-sm/[17px] ..."></p>
 ```
 
-Check out the [font size documentation](https://v3.tailwindcss.com/docs/font-size#setting-the-line-height) for a few more examples.
+请查看[字体大小文档](https://v3.tailwindcss.com/docs/font-size#setting-the-line-height)，了解更多示例。
 
 ---
 
-## CSS variables without the `var()`
+## 不用`var()`的CSS变量
 
-In the spirit of typing less, we've also made it possible to omit the `var()` when using a CSS variable as an arbitrary value:
+为了减少输入，我们还可以在使用CSS变量作为任意值时省略`var()`：
 
 ```js
 // [!code filename:my-component.jsx]
@@ -678,15 +672,15 @@ export function MyComponent({ company }) {
 }
 ```
 
-That's a pretty cool trick right there for using things like `hover:` with styles that come from the database or something by the way.
+这是一种非常酷的技巧，可以使用像`hover:`这样的样式，来自数据库或其他地方的样式。
 
 ---
 
-## Configure `font-variation-settings` for custom font families
+## 配置自定义字体族的`font-variation-settings`
 
-When using custom fonts, you'll often want to configure things like `font-feature-settings` or `font-variation-settings` to opt-in to specific tweaks the font offers.
+在使用自定义字体时，你通常希望配置像`font-feature-settings`或`font-variation-settings`这样的内容，以选择字体提供的特定调整。
 
-We've made it easy to do this for `font-feature-settings` for a while, but now you can do the same thing with `font-variation-settings` by providing a value for it in the sort-of options object you can plop after the font list in your config file:
+我们已经很容易为`font-feature-settings`实现了这一点，但现在你可以通过在配置文件中的字体列表后提供值，来对`font-variation-settings`执行相同操作：
 
 ```js
 // [!code filename:tailwind.config.js]
@@ -706,13 +700,13 @@ module.exports = {
 };
 ```
 
-In the example above we're using a recent release of [Inter](https://github.com/rsms/inter/releases/tag/v4.0-beta7) that supports using the optical size axis to trigger the "Display" variation of the font, optimized for larger sizes like headlines.
+在上述示例中，我们使用了[Inter](https://github.com/rsms/inter/releases/tag/v4.0-beta7)的最新发行版，支持使用光学尺寸轴触发字体的“显示”变体，优化于标题这样较大的尺寸。
 
 ---
 
-## New `list-style-image` utilities
+## 新的`list-style-image`工具
 
-Ever wanted to use a picture of a carrot as your list item marker? Well now you can, with the new `list-image-*` utilities.
+你是否曾想过用一张胡萝卜的图片作为你的列表项标记？现在你可以使用新的`list-image-*`工具完成这一点。
 
 <Figure>
 
@@ -721,9 +715,9 @@ Ever wanted to use a picture of a carrot as your list item marker? Well now you 
     <div className="px-4 sm:px-0">
       <div className="mx-auto max-w-sm bg-white p-8 text-sm leading-6 text-slate-700 shadow-xl sm:text-base sm:leading-7 dark:bg-slate-800 dark:text-slate-400">
         <ul className="list-image-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBmaWxsPSIjZjk3MzE2Ij48cGF0aCBkPSJNMzQ2LjcgNkMzMzcuNiAxNyAzMjAgNDIuMyAzMjAgNzJjMCA0MCAxNS4zIDU1LjMgNDAgODBzNDAgNDAgODAgNDBjMjkuNyAwIDU1LTE3LjYgNjYtMjYuN2M0LTMuMyA2LTguMiA2LTEzLjNzLTItMTAtNi0xMy4yYy0xMS40LTkuMS0zOC4zLTI2LjgtNzQtMjYuOGMtMzIgMC00MCA4LTQwIDhzOC04IDgtNDBjMC0zNS43LTE3LjctNjIuNi0yNi44LTc0QzM3MCAyIDM2NS4xIDAgMzYwIDBzLTEwIDItMTMuMyA2ek0yNDQuNiAxMzZjLTQwIDAtNzcuMSAxOC4xLTEwMS43IDQ4LjJsNjAuNSA2MC41YzYuMiA2LjIgNi4yIDE2LjQgMCAyMi42cy0xNi40IDYuMi0yMi42IDBsLTU1LjMtNTUuMyAwIC4xTDIuMiA0NzcuOUMtMiA0ODctLjEgNDk3LjggNyA1MDVzMTcuOSA5IDI3LjEgNC44bDEzNC43LTYyLjQtNTIuMS01Mi4xYy02LjItNi4yLTYuMi0xNi40IDAtMjIuNnMxNi40LTYuMiAyMi42IDBMMTk5LjcgNDMzbDEwMC4yLTQ2LjRjNDYuNC0yMS41IDc2LjItNjggNzYuMi0xMTkuMkMzNzYgMTk0LjggMzE3LjIgMTM2IDI0NC42IDEzNnoiLz48L3N2Zz4=')] pl-4 text-slate-900 marker:text-2xl dark:text-slate-200">
-          <li className="pl-2">5 cups chopped Porcini mushrooms</li>
-          <li className="pl-2">1/2 cup of olive oil</li>
-          <li className="pl-2">3lb of celery</li>
+          <li className="pl-2">5杯切碎的牛肝菌</li>
+          <li className="pl-2">1/2杯橄榄油</li>
+          <li className="pl-2">3磅芹菜</li>
         </ul>
       </div>
     </div>
@@ -733,24 +727,24 @@ Ever wanted to use a picture of a carrot as your list item marker? Well now you 
 ```html
 <!-- [!code word:list-image-[url(/carrot.png)\]] -->
 <ul class="list-image-[url(/carrot.png)] ...">
-  <li>5 cups chopped Porcini mushrooms</li>
+  <li>5杯切碎的牛肝菌</li>
   <!-- ... -->
 </ul>
 ```
 
 </Figure>
 
-We're not going to start shipping vegetable clip art with the framework, but you can use any image you want either as an arbitrary value or configuring it in the `listStyleImage` section of your theme.
+我们不会开始随框架一起提供蔬菜剪贴画，但你可以使用任何你想要的图片，无论是作为任意值还是在主题的`listStyleImage`部分进行配置。
 
-Check out the [list style image documentation](https://v3.tailwindcss.com/docs/list-style-image) to learn more.
+请查看[列表样式图像文档](https://v3.tailwindcss.com/docs/list-style-image)，了解更多信息。
 
 ---
 
-## New `hyphens` utilities
+## 新的`hyphens`工具
 
-Ever heard of the `&shy;` HTML entity? Me neither until we added support for these `hyphens-*` utilities.
+你听说过`&shy;`HTML实体吗？我在我们添加对这些`hyphens-*`工具的支持之前也没听说过。
 
-Using `hyphens-manual` and a carefully placed `&shy;`, you can tell the browser where to insert a hyphen when it needs to break a word across multiple lines:
+使用`hyphens-manual`和一个巧妙放置的`&shy;`，你可以告诉浏览器在哪里插入连字符，当它需要将一个单词跨越多行时：
 
 <Figure>
 
@@ -759,11 +753,11 @@ Using `hyphens-manual` and a carefully placed `&shy;`, you can tell the browser 
     <div className="overflow-x-scroll px-4 sm:overflow-x-visible">
       <div className="mx-auto max-w-xs bg-white p-12 text-slate-500 shadow-xl dark:bg-slate-800 dark:text-slate-400">
         <p className="hyphens-manual">
-          <>Officially recognized by the Duden dictionary as the longest word in German, </>
+          <>被Duden字典正式认可为德语中最长的词， </>
           <span className="font-medium text-slate-900 dark:text-slate-200" lang="de">
             <>Kraftfahrzeug&shy;haftpflichtversicherung</>
           </span>
-          <> is a 36 letter word for motor vehicle liability insurance.</>
+          <>是一个由36个字母组成的汽车责任保险词汇。</>
         </p>
       </div>
     </div>
@@ -773,20 +767,20 @@ Using `hyphens-manual` and a carefully placed `&shy;`, you can tell the browser 
 ```html
 <!-- [!code word:hyphens-manual] -->
 <!-- [!code word:&shy;] -->
-<p class="hyphens-manual ...">... Kraftfahrzeug&shy;haftpflichtversicherung is a ...</p>
+<p class="hyphens-manual ...">... Kraftfahrzeug&shy;haftpflichtversicherung 是一个 ...</p>
 ```
 
 </Figure>
 
-Maybe a code snippet like this would be useful to include as part of your unpronounceable death metal band's press kit so the journalists don't screw up the hyphenation in the article that finally breaks you on to the scene.
+也许这样的代码片段会对你的不可发音的死亡金属乐队的新闻资料有用，以便记者不会在最终使你走红的文章中弄错连字符。
 
-Check out the [hyphens documentation](https://v3.tailwindcss.com/docs/hyphens) to learn more.
+请查看[连字符文档](https://v3.tailwindcss.com/docs/hyphens)，以了解更多信息。
 
 ---
 
-## New `caption-side` utilities
+## 新的`caption-side`工具
 
-Another new one for me — the `<caption>` element! We've got new `caption-*` utilities you can use on table captions to control whether they appear at the top or bottom of the table they're attached to.
+另一个我新的——`<caption>`元素！我们有新的`caption-*`工具可以在表格标题上使用，以确定它们是出现在表格的顶部还是底部。
 
 <Figure>
 
@@ -795,41 +789,41 @@ Another new one for me — the `<caption>` element! We've got new `caption-*` ut
     <div className="overflow-hidden px-4 py-8 shadow-sm sm:px-8">
       <table className="w-full table-auto border-collapse text-sm">
         <caption className="caption-bottom pt-4 text-xs text-slate-500 dark:text-slate-400">
-          <>Table 3.1: Professional wrestlers and their signature moves.</>
+          <>表3.1：职业摔跤运动员及其标志性动作。</>
         </caption>
         <thead>
           <tr>
             <th className="border border-slate-200 p-4 pt-3 pb-3 pl-8 text-left font-medium text-slate-400 dark:border-slate-600 dark:text-slate-200">
-              <>Wrestler</>
+              <>摔跤手</>
             </th>
             <th className="border border-slate-200 p-4 pt-3 pr-8 pb-3 text-left font-medium text-slate-400 dark:border-slate-600 dark:text-slate-200">
-              <>Signature Move(s)</>
+              <>招牌动作</>
             </th>
           </tr>
         </thead>
         <tbody className="bg-white dark:bg-slate-800">
           <tr>
             <td className="border border-slate-200 p-4 pl-8 text-slate-500 dark:border-slate-600 dark:text-slate-400">
-              <>"Stone Cold" Steve Austin</>
+              <>"冷石"史蒂夫·奥斯汀</>
             </td>
             <td className="border border-slate-200 p-4 pr-8 text-slate-500 dark:border-slate-600 dark:text-slate-400">
-              <>Stone Cold Stunner, Lou Thesz Press</>
+              <>冷石惊人、卢·泰斯斯压制</>
             </td>
           </tr>
           <tr>
             <td className="border border-slate-200 p-4 pl-8 text-slate-500 dark:border-slate-600 dark:text-slate-400">
-              <>Bret "The Hitman" Hart</>
+              <>“击手”布雷特·哈特</>
             </td>
             <td className="border border-slate-200 p-4 pr-8 text-slate-500 dark:border-slate-600 dark:text-slate-400">
-              <>The Sharpshooter</>
+              <>锐利射手</>
             </td>
           </tr>
           <tr>
             <td className="border border-slate-200 p-4 pl-8 text-slate-500 dark:border-slate-600 dark:text-slate-400">
-              <>Razor Ramon</>
+              <>拉佐·拉蒙</>
             </td>
             <td className="border border-slate-200 p-4 pr-8 text-slate-500 dark:border-slate-600 dark:text-slate-400">
-              <>Razor's Edge, Fallaway Slam</>
+              <>拉佐边缘、落下重击</>
             </td>
           </tr>
         </tbody>
@@ -842,26 +836,26 @@ Another new one for me — the `<caption>` element! We've got new `caption-*` ut
 <!-- [!code word:caption-bottom] -->
 <table>
   <caption class="caption-bottom">
-    Table 3.1: Professional wrestlers and their signature moves.
+    表3.1：职业摔跤运动员及其标志性动作。
   </caption>
   <thead>
     <tr>
-      <th>Wrestler</th>
-      <th>Signature Move(s)</th>
+      <th>摔跤手</th>
+      <th>招牌动作</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>"Stone Cold" Steve Austin</td>
-      <td>Stone Cold Stunner, Lou Thesz Press</td>
+      <td>"冷石"史蒂夫·奥斯汀</td>
+      <td>冷石惊人、卢·泰斯斯压制</td>
     </tr>
     <tr>
-      <td>Bret "The Hitman" Hart</td>
-      <td>The Sharpshooter</td>
+      <td>“击手”布雷特·哈特</td>
+      <td>锐利射手</td>
     </tr>
     <tr>
-      <td>Razor Ramon</td>
-      <td>Razor's Edge, Fallaway Slam</td>
+      <td>拉佐·拉蒙</td>
+      <td>拉佐边缘、落下重击</td>
     </tr>
   </tbody>
 </table>
@@ -869,14 +863,14 @@ Another new one for me — the `<caption>` element! We've got new `caption-*` ut
 
 </Figure>
 
-Check out the [caption side documentation](https://v3.tailwindcss.com/docs/caption-side) for some more examples.
+请查看[标题侧文档](https://v3.tailwindcss.com/docs/caption-side)以获取更多示例。
 
 ---
 
-So that's Tailwind CSS v3.3! No breaking changes, just a bunch of fun new stuff. Give it a try in your projects today by updating to the latest version with npm:
+所以这就是Tailwind CSS v3.3！没有破坏性更改，只是许多有趣的新东西。通过更新到最新版本，今天就在你的项目中尝试一下：
 
 ```sh
 npm install -D tailwindcss@latest
 ```
 
-Yep, another release without `text-shadow` utilities. Remember that episode of Seinfeld where Kramer tries to see how far he can drive without stopping for gas? That's my favorite episode.
+是的，又一次发布，没有`text-shadow`工具。还记得《老友记》那一集，克莱默试图看看他能开多远而不加油吗？那是我最喜欢的一集。

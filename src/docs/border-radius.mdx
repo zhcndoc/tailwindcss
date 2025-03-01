@@ -3,8 +3,8 @@ import { CustomizingYourTheme, ResponsiveDesign, UsingACustomValue } from "@/com
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "border-radius";
-export const description = "Utilities for controlling the border radius of an element.";
+export const title = "边框半径";
+export const description = "用于控制元素边框半径的工具。";
 
 <ApiTable
   rows={[
@@ -44,11 +44,11 @@ export const description = "Utilities for controlling the border radius of an el
   ])}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `rounded-sm` and `rounded-md` to apply different border radius sizes to an element:
+使用诸如 `rounded-sm` 和 `rounded-md` 的工具为元素应用不同的边框半径大小：
 
 <Figure>
 
@@ -85,9 +85,9 @@ Use utilities like `rounded-sm` and `rounded-md` to apply different border radiu
 
 </Figure>
 
-### Rounding sides separately
+### 单独圆角处理
 
-Use utilities like `rounded-t-md` and `rounded-r-lg` to only round one side of an element:
+使用诸如 `rounded-t-md` 和 `rounded-r-lg` 的工具仅对元素的一侧进行圆角处理：
 
 <Figure>
 
@@ -124,9 +124,9 @@ Use utilities like `rounded-t-md` and `rounded-r-lg` to only round one side of a
 
 </Figure>
 
-### Rounding corners separately
+### 单独划分角落
 
-Use utilities like `rounded-tr-md` and `rounded-tl-lg` utilities to only round one corner of an element:
+使用诸如 `rounded-tr-md` 和 `rounded-tl-lg` 的工具仅对元素的一个角进行圆角处理：
 
 <Figure>
 
@@ -163,9 +163,9 @@ Use utilities like `rounded-tr-md` and `rounded-tl-lg` utilities to only round o
 
 </Figure>
 
-### Using logical properties
+### 使用逻辑属性
 
-Use utilities like `rounded-s-md` and `rounded-se-xl` to set the border radius using [logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts), which map to the appropriate corners based on the text direction:
+使用诸如 `rounded-s-md` 和 `rounded-se-xl` 的工具，使用 [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts) 设置边框半径，这将根据文本方向映射到适当的角落：
 
 <Figure>
 
@@ -173,11 +173,11 @@ Use utilities like `rounded-s-md` and `rounded-se-xl` to set the border radius u
   {
     <div className="grid grid-cols-2 place-items-center gap-x-4">
       <div className="flex flex-col items-start gap-y-4" dir="ltr">
-        <p className="text-sm font-medium">Left-to-right</p>
+        <p className="text-sm font-medium">从左到右</p>
         <div className="size-16 rounded-s-lg bg-blue-500 p-4"></div>
       </div>
       <div className="flex flex-col items-start gap-y-4" dir="rtl">
-        <p className="text-sm font-medium">Right-to-left</p>
+        <p className="text-sm font-medium">从右到左</p>
         <div className="size-16 rounded-s-lg bg-blue-500 p-4"></div>
       </div>
     </div>
@@ -199,16 +199,16 @@ Use utilities like `rounded-s-md` and `rounded-se-xl` to set the border radius u
 
 </Figure>
 
-Here are all the available border radius logical property utilities and their physical property equivalents in both LTR and RTL modes.
+这里是所有可用的边框半径逻辑属性工具及其在 LTR 和 RTL 模式下的物理属性等价物。
 
 {
 
 <table>
   <thead>
     <tr>
-      <th>Class</th>
-      <th>Left-to-right</th>
-      <th>Right-to-left</th>
+      <th>类</th>
+      <th>从左到右</th>
+      <th>从右到左</th>
     </tr>
   </thead>
   <tbody>
@@ -283,11 +283,11 @@ Here are all the available border radius logical property utilities and their ph
 
 }
 
-For more control, you can also use the [LTR and RTL modifiers](/docs/hover-focus-and-other-states#rtl-support) to conditionally apply specific styles depending on the current text direction.
+为了获得更多控制，您还可以使用 [LTR 和 RTL 修饰符](/docs/hover-focus-and-other-states#rtl-support) 根据当前文本方向有条件地应用特定样式。
 
-### Creating pill buttons
+### 创建药丸按钮
 
-Use the `rounded-full` utility to create pill buttons:
+使用 `rounded-full` 工具创建药丸按钮：
 
 <Figure>
 
@@ -296,7 +296,7 @@ Use the `rounded-full` utility to create pill buttons:
     <div className="flex justify-center gap-4 text-center text-sm leading-6 font-bold text-white">
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">rounded-full</p>
-        <button className="rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold text-white">Save Changes</button>
+        <button className="rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold text-white">保存更改</button>
       </div>
     </div>
   }
@@ -304,14 +304,14 @@ Use the `rounded-full` utility to create pill buttons:
 
 ```html
 <!-- [!code classes:rounded-full] -->
-<button class="rounded-full ...">Save Changes</button>
+<button class="rounded-full ...">保存更改</button>
 ```
 
 </Figure>
 
-### Removing the border radius
+### 移除边框半径
 
-Use the `rounded-none` utility to remove an existing border radius from an element:
+使用 `rounded-none` 工具从元素中移除现有的边框半径：
 
 <Figure>
 
@@ -320,7 +320,7 @@ Use the `rounded-none` utility to remove an existing border radius from an eleme
     <div className="flex justify-center gap-4 text-center text-sm leading-6 font-bold text-white">
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">rounded-none</p>
-        <button className="rounded-none bg-sky-500 px-4 py-2 text-sm font-semibold text-white">Save Changes</button>
+        <button className="rounded-none bg-sky-500 px-4 py-2 text-sm font-semibold text-white">保存更改</button>
       </div>
     </div>
   }
@@ -328,19 +328,19 @@ Use the `rounded-none` utility to remove an existing border radius from an eleme
 
 ```html
 <!-- [!code classes:rounded-none] -->
-<button class="rounded-none ...">Save Changes</button>
+<button class="rounded-none ...">保存更改</button>
 ```
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="rounded" name="border radius" value="2vw" variable="radius" />
+<UsingACustomValue utility="rounded" name="边框半径" value="2vw" variable="radius" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="border-radius" defaultClass="rounded" featuredClass="rounded-lg" />
 
-## Customizing your theme
+## 自定义主题
 
-<CustomizingYourTheme utility="rounded" themeKey="radius" name="border radius" customName="5xl" customValue="3rem" />
+<CustomizingYourTheme utility="rounded" themeKey="radius" name="边框半径" customName="5xl" customValue="3rem" />

@@ -6,8 +6,8 @@ import { Figure } from "@/components/figure.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 import { UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "columns";
-export const description = "Utilities for controlling the number of columns within an element.";
+export const title = "列";
+export const description = "用于控制元素内列数的实用工具。";
 
 <ApiTable
   rows={[
@@ -31,11 +31,11 @@ export const description = "Utilities for controlling the number of columns with
   ]}
 />
 
-## Examples
+## 示例
 
-### Setting by number
+### 按数量设置
 
-Use `columns-<number>` utilities like `columns-3` to set the number of columns that should be created for the content within an element:
+使用 `columns-<number>` 实用工具，如 `columns-3` 来设置元素内应创建的列数：
 
 <Figure>
 
@@ -101,13 +101,13 @@ Use `columns-<number>` utilities like `columns-3` to set the number of columns t
 
 </Figure>
 
-The column width will automatically adjust to accommodate the specified number of columns.
+列的宽度将自动调整以满足指定数量的列。
 
-### Setting by width
+### 按宽度设置
 
-Use utilities like `columns-xs` and `columns-sm` to set the ideal column width for the content within an element:
+使用 `columns-xs` 和 `columns-sm` 等实用工具来为元素内的内容设置理想的列宽：
 
-<Figure desktopHint="Resize the example to see the expected behavior">
+<Figure desktopHint="调整示例大小以查看预期行为">
 
 <Example resizable>
   {
@@ -151,11 +151,11 @@ Use utilities like `columns-xs` and `columns-sm` to set the ideal column width f
 
 </Figure>
 
-When setting the column width, the number of columns automatically adjusts to ensure they don't get too narrow.
+设置列宽时，列数会自动调整以确保它们不会变得太窄。
 
-### Setting the column gap
+### 设置列间距
 
-Use the `gap-<width>` utilities to specify the width between columns:
+使用 `gap-<width>` 实用工具来指定列之间的宽度：
 
 <Figure>
 
@@ -223,17 +223,17 @@ Use the `gap-<width>` utilities to specify the width between columns:
 
 </Figure>
 
-Learn more about the gap utilities in the [gap documentation](/docs/gap).
+了解有关间距实用工具的更多信息，请参阅 [间距文档](/docs/gap)。
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue utility="columns" value="30vw" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="columns" breakpoint="sm" featuredClass="aspect-square">
 
-<Figure desktopHint="Resize the example to see the expected behavior">
+<Figure desktopHint="调整示例大小以查看预期行为">
 
 <Example resizable>
   {
@@ -299,12 +299,12 @@ Learn more about the gap utilities in the [gap documentation](/docs/gap).
 
 </ResponsiveDesign>
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourTheme
   utility="columns"
   themeKey="container"
-  name="fixed-width column"
+  name="固定宽度列"
   customName="4xs"
   customValue="14rem"
 />

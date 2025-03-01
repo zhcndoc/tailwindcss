@@ -5,7 +5,7 @@ import { Figure } from "@/components/figure.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "scroll-padding";
-export const description = "Utilities for controlling an element's scroll offset within a snap container.";
+export const description = "用于控制元素在快照容器内的滚动偏移的工具类。";
 
 <ApiTable
   rows={[
@@ -26,13 +26,13 @@ export const description = "Utilities for controlling an element's scroll offset
   ])}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use the `scroll-pt-<number>`, `scroll-pr-<number>`, `scroll-pb-<number>`, and `scroll-pl-<number>` utilities like `scroll-pl-4` and `scroll-pt-6` to set the scroll offset of an element within a snap container:
+使用 `scroll-pt-<number>`, `scroll-pr-<number>`, `scroll-pb-<number>`, 和 `scroll-pl-<number>` 工具类，例如 `scroll-pl-4` 和 `scroll-pt-6`，设置元素在快照容器内的滚动偏移：
 
-<Figure hint="Scroll in the grid of images to see the expected behavior">
+<Figure hint="在图像网格中滚动以查看预期行为">
 
 <Example padding={false}>
   {
@@ -97,16 +97,16 @@ Use the `scroll-pt-<number>`, `scroll-pr-<number>`, `scroll-pb-<number>`, and `s
 
 </Figure>
 
-### Using logical properties
+### 使用逻辑属性
 
-Use the `scroll-ps-<number>` and `scroll-pe-<number>` utilities to set the `scroll-padding-inline-start` and `scroll-padding-inline-end` logical properties, which map to either the left or right side based on the text direction:
+使用 `scroll-ps-<number>` 和 `scroll-pe-<number>` 工具类设置 `scroll-padding-inline-start` 和 `scroll-padding-inline-end` 逻辑属性，这些属性根据文本方向映射到左或右侧：
 
-<Figure hint="Scroll in the grid of images to see the expected behavior">
+<Figure hint="在图像网格中滚动以查看预期行为">
 
 <Example padding={false}>
   {
     <>
-      <p className="mb-4 pt-8 pl-6 text-sm font-medium">Left-to-right</p>
+      <p className="mb-4 pt-8 pl-6 text-sm font-medium">从左到右</p>
       <div className="relative" dir="ltr">
         <Stripes border className="absolute start-0 top-0 bottom-10 w-6" />
         <div className="flex w-full snap-x scroll-ps-6 gap-8 overflow-x-auto pb-10">
@@ -137,43 +137,43 @@ Use the `scroll-ps-<number>` and `scroll-pe-<number>` utilities to set the `scro
           <div className="shrink-0 snap-start first:ps-6 last:pe-[calc(100%-21.5rem)]">
             <img
               className="h-40 w-80 shrink-0 rounded-lg bg-white"
-              src="https://images.unsplash.com/photo-1575424909138-46b05e5919ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGV8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
+              src="https://images.unsplash.com/photo-1575424909138-46b05e5919ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
             />
           </div>
         </div>
       </div>
-      <p className="mt-4 mb-4 pl-6 text-sm font-medium">Right-to-left</p>
+      <p className="mt-4 mb-4 pl-6 text-sm font-medium">从右到左</p>
       <div className="relative" dir="rtl">
         <Stripes border className="absolute start-0 top-0 bottom-10 w-6" />
         <div className="flex w-full snap-x scroll-ps-6 gap-8 overflow-x-auto pb-10">
           <div className="shrink-0 snap-start first:ps-6 last:pe-[calc(100%-21.5rem)]">
             <img
               className="h-40 w-80 shrink-0 rounded-lg bg-white"
-              src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGV8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
+              src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
             />
           </div>
           <div className="shrink-0 snap-start first:ps-6 last:pe-[calc(100%-21.5rem)]">
             <img
               className="h-40 w-80 shrink-0 rounded-lg bg-white"
-              src="https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGV8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
+              src="https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
             />
           </div>
           <div className="shrink-0 snap-start first:ps-6 last:pe-[calc(100%-21.5rem)]">
             <img
               className="h-40 w-80 shrink-0 rounded-lg bg-white"
-              src="https://images.unsplash.com/photo-1622890806166-111d7f6c7c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGV8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
+              src="https://images.unsplash.com/photo-1622890806166-111d7f6c7c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
             />
           </div>
           <div className="shrink-0 snap-start first:ps-6 last:pe-[calc(100%-21.5rem)]">
             <img
               className="h-40 w-80 shrink-0 rounded-lg bg-white"
-              src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGV8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
+              src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
             />
           </div>
           <div className="shrink-0 snap-start first:ps-6 last:pe-[calc(100%-21.5rem)]">
             <img
               className="h-40 w-80 shrink-0 rounded-lg bg-white"
-              src="https://images.unsplash.com/photo-1575424909138-46b05e5919ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGV8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
+              src="https://images.unsplash.com/photo-1575424909138-46b05e5919ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
             />
           </div>
         </div>
@@ -201,9 +201,9 @@ Use the `scroll-ps-<number>` and `scroll-pe-<number>` utilities to set the `scro
 
 </Figure>
 
-### Using negative values
+### 使用负值
 
-To use a negative scroll padding value, prefix the class name with a dash to convert it to a negative value:
+要使用负的滚动填充值，请在类名前面加上一个短横线以将其转换为负值：
 
 ```html
 <!-- [!code classes:-scroll-ps-6] -->
@@ -212,20 +212,20 @@ To use a negative scroll padding value, prefix the class name with a dash to con
 </div>
 ```
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   utilities={["scroll-pl", "scroll-pe"]}
   value="24rem"
-  name="scroll padding"
+  name="滚动填充"
   variable="scroll-padding"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="scroll-padding" defaultClass="scroll-p-8" featuredClass="scroll-p-0" />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourSpacingScale
   utilities={[

@@ -1,15 +1,15 @@
 import { CodeExampleStack } from "@/components/code-example";
 
-export const title = "Functions and directives";
-export const description = "A reference for the custom functions and directives Tailwind exposes to your CSS.";
+export const title = "函数和指令";
+export const description = "Tailwind 提供给你的 CSS 参考自定义函数和指令。";
 
-## Directives
+## 指令
 
-Directives are custom Tailwind-specific [at-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule) you can use in your CSS that offer special functionality for Tailwind CSS projects.
+指令是特定于 Tailwind 的自定义 [at-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)，你可以在 CSS 中使用它们，为 Tailwind CSS 项目提供特殊功能。
 
 <h3 id="import-directive">@import</h3>
 
-Use the `@import` directive to inline import CSS files, including Tailwind itself:
+使用 `@import` 指令内联导入 CSS 文件，包括 Tailwind 自身：
 
 ```css
 /* [!code filename:CSS] */
@@ -18,7 +18,7 @@ Use the `@import` directive to inline import CSS files, including Tailwind itsel
 
 <h3 id="theme-directive">@theme</h3>
 
-Use the `@theme` directive to define your project's custom design tokens, like fonts, colors, and breakpoints:
+使用 `@theme` 指令定义项目的自定义设计变量，如字体、颜色和断点：
 
 ```css
 /* [!code filename:CSS] */
@@ -41,22 +41,22 @@ Use the `@theme` directive to define your project's custom design tokens, like f
 }
 ```
 
-Learn more about customizing your theme in the [theme variables documentation](/docs/theme).
+了解更多关于自定义主题的信息，请参阅 [主题变量文档](/docs/theme)。
 
 <h3 id="source-directive">@source</h3>
 
-Use the `@source` directive to explicitly specify source files that aren't picked up by Tailwind's automatic content detection:
+使用 `@source` 指令显式指定不被 Tailwind 自动内容检测识别的源文件：
 
 ```css
 /* [!code filename:CSS] */
 @source "../node_modules/@my-company/ui-lib";
 ```
 
-Learn more about automatic content detection in the [detecting classes in source files documentation](/docs/detecting-classes-in-source-files).
+了解更多关于自动内容检测的信息，请参阅 [源文件中的类检测文档](/docs/detecting-classes-in-source-files)。
 
 <h3 id="utility-directive">@utility</h3>
 
-Use the `@utility` directive to add custom utilities to your project that work with variants like `hover`, `focus` and `lg`:
+使用 `@utility` 指令向项目中添加自定义工具类，支持 `hover`、`focus` 和 `lg` 等变体：
 
 ```css
 /* [!code filename:CSS] */
@@ -65,11 +65,11 @@ Use the `@utility` directive to add custom utilities to your project that work w
 }
 ```
 
-Learn more about registering custom utilities in the [adding custom utilities documentation](/docs/adding-custom-styles#adding-custom-utilities).
+了解更多关于注册自定义工具类的信息，请参阅 [添加自定义工具类文档](/docs/adding-custom-styles#adding-custom-utilities)。
 
 <h3 id="variant-directive">@variant</h3>
 
-Use the `@variant` directive to apply a Tailwind variant to styles in your CSS:
+使用 `@variant` 指令将 Tailwind 变体应用于 CSS 中的样式：
 
 ```css
 /* [!code filename:CSS] */
@@ -83,7 +83,7 @@ Use the `@variant` directive to apply a Tailwind variant to styles in your CSS:
 }
 ```
 
-If you need to apply multiple variants at the same time, use nesting:
+如果需要同时应用多个变体，可以使用嵌套：
 
 ```css
 /* [!code filename:CSS] */
@@ -99,11 +99,11 @@ If you need to apply multiple variants at the same time, use nesting:
 }
 ```
 
-Learn more about variants in the [hover, focus, and other states documentation](/docs/hover-focus-and-other-states).
+了解更多关于变体的信息，请参阅 [hover、focus 和其他状态文档](/docs/hover-focus-and-other-states)。
 
 <h3 id="custom-variant-directive">@custom-variant</h3>
 
-Use the `@custom-variant` directive to add a custom variant in your project:
+使用 `@custom-variant` 指令添加项目中的自定义变体：
 
 ```css
 /* [!code filename:CSS] */
@@ -111,13 +111,13 @@ Use the `@custom-variant` directive to add a custom variant in your project:
 @custom-variant theme-midnight (&:where([data-theme="midnight"] *));
 ```
 
-This lets you write utilities like `pointer-coarse:size-48` and `theme-midnight:bg-slate-900`.
+这让你可以像 `pointer-coarse:size-48` 和 `theme-midnight:bg-slate-900` 一样书写工具类。
 
-Learn more about adding custom variants in the [registering a custom variant documentation](/docs/hover-focus-and-other-states#registering-a-custom-variant).
+了解更多关于添加自定义变体的信息，请参阅 [注册自定义变体文档](/docs/hover-focus-and-other-states#registering-a-custom-variant)。
 
 <h3 id="apply-directive">@apply</h3>
 
-Use the `@apply` directive to inline any existing utility classes into your own custom CSS:
+使用 `@apply` 指令将任何现有的工具类内联到你自己的自定义 CSS 中：
 
 ```css
 /* [!code filename:CSS] */
@@ -137,13 +137,13 @@ Use the `@apply` directive to inline any existing utility classes into your own 
 }
 ```
 
-This is useful when you need to write custom CSS (like to override the styles in a third-party library) but still want to work with your design tokens and use the same syntax you’re used to using in your HTML.
+当你需要编写自定义 CSS（比如覆盖第三方库中的样式）但仍希望使用你的设计变量和保持在 HTML 中使用的相同语法时，这是很有用的。
 
 <h3 id="reference-directive">@reference</h3>
 
-If you want to use `@apply` or `@variant` in the `<style>` block of a Vue or Svelte component, or within CSS modules, you will need to import your theme variables, custom utilities, and custom variants to make those values available in that context.
+如果你想在 Vue 或 Svelte 组件的 `<style>` 块中，或在 CSS 模块中使用 `@apply` 或 `@variant`，你需要导入你的主题变量、自定义工具类和自定义变体，以使这些值在该上下文中可用。
 
-To do this without duplicating any CSS in your output, use the `@reference` directive to import your main stylesheet for reference without actually including the styles:
+为了在输出中不重复任何 CSS，可以使用 `@reference` 指令导入你的主样式表作为参考，而不实际包含样式：
 
 ```html
 <!-- [!code filename:Vue] -->
@@ -161,7 +161,7 @@ To do this without duplicating any CSS in your output, use the `@reference` dire
 </style>
 ```
 
-If you’re just using the default theme with no customizations, you can import `tailwindcss` directly:
+如果你只是使用没有自定义的默认主题，你可以直接导入 `tailwindcss`：
 
 ```html
 <!-- [!code filename:Vue] -->
@@ -179,13 +179,13 @@ If you’re just using the default theme with no customizations, you can import 
 </style>
 ```
 
-## Functions
+## 函数
 
-Tailwind provides the following build-time functions to make working with colors and the spacing scale easier.
+Tailwind 提供了以下构建时函数，以便更轻松地处理颜色和间距比例。
 
 <h3 id="alpha-function">--alpha()</h3>
 
-Use the `--alpha()` function to adjust the opacity of a color:
+使用 `--alpha()` 函数调整颜色的透明度：
 
 <CodeExampleStack>
 
@@ -208,7 +208,7 @@ Use the `--alpha()` function to adjust the opacity of a color:
 
 <h3 id="spacing-function">--spacing()</h3>
 
-Use the `--spacing()` function to generate a spacing value based on your theme:
+使用 `--spacing()` 函数根据你的主题生成间距值：
 
 <CodeExampleStack>
 
@@ -229,7 +229,7 @@ Use the `--spacing()` function to generate a spacing value based on your theme:
 
 </CodeExampleStack>
 
-This can also be useful in arbitrary values, especially in combination with `calc()`:
+这在任意值中也很有用，尤其是在与 `calc()` 结合使用时：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -239,35 +239,35 @@ This can also be useful in arbitrary values, especially in combination with `cal
 </div>
 ```
 
-## Compatibility
+## 兼容性
 
-The following directives and functions exist solely for compatibility with Tailwind CSS v3.x.
+以下指令和函数仅为与 Tailwind CSS v3.x 的兼容性而存在。
 
 <h3 id="config-directive">@config</h3>
 
-Use the `@config` directive to load a legacy JavaScript-based configuration file:
+使用 `@config` 指令加载一个基于 JavaScript 的旧配置文件：
 
 ```css
 /* [!code filename:CSS] */
 @config "../../tailwind.config.js";
 ```
 
-The `corePlugins`, `safelist`, and `separator` options from the JavaScript-based config are not supported in v4.0.
+JavaScript 基于的配置中的 `corePlugins`、`safelist` 和 `separator` 选项在 v4.0 中不受支持。
 
 <h3 id="plugin-directive">@plugin</h3>
 
-Use the `@plugin` directive to load a legacy JavaScript-based plugin:
+使用 `@plugin` 指令加载一个基于 JavaScript 的旧插件：
 
 ```css
 /* [!code filename:CSS] */
 @plugin "@tailwindcss/typography";
 ```
 
-The `@plugin` directive accepts either a package name or a local path.
+`@plugin` 指令接受包名称或本地路径。
 
 <h3 id="theme-function">theme()</h3>
 
-Use the `theme()` function to access your Tailwind theme values using dot notation:
+使用 `theme()` 函数通过点符号访问你的 Tailwind 主题值：
 
 ```css
 /* [!code filename:CSS] */
@@ -277,4 +277,4 @@ Use the `theme()` function to access your Tailwind theme values using dot notati
 }
 ```
 
-This function is deprecated, and we recommend [using CSS theme variables](/docs/theme#using-your-theme-variables) instead.
+此函数已被弃用，我们建议 [使用 CSS 主题变量](/docs/theme#using-your-theme-variables)。

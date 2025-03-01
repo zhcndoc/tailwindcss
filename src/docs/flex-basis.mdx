@@ -4,7 +4,7 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
 export const title = "flex-basis";
-export const description = "Utilities for controlling the initial size of flex items.";
+export const description = "用于控制 flex 项目的初始大小的工具类。";
 
 <ApiTable
   rows={[
@@ -30,11 +30,11 @@ export const description = "Utilities for controlling the initial size of flex i
   ]}
 />
 
-## Examples
+## 示例
 
-### Using the spacing scale
+### 使用间距比例
 
-Use `basis-<number>` utilities like `basis-64` and `basis-128` to set the initial size of flex items based on the spacing scale:
+使用 `basis-<number>` 工具类，如 `basis-64` 和 `basis-128`，根据间距比例设置 flex 项目的初始大小：
 
 <Figure>
 
@@ -59,9 +59,9 @@ Use `basis-<number>` utilities like `basis-64` and `basis-128` to set the initia
 
 </Figure>
 
-### Using the container scale
+### 使用容器比例
 
-Use utilities like `basis-xs` and `basis-sm` to set the initial size of flex items based on the container scale:
+使用工具类，如 `basis-xs` 和 `basis-sm`，根据容器比例设置 flex 项目的初始大小：
 
 <Figure>
 
@@ -88,9 +88,9 @@ Use utilities like `basis-xs` and `basis-sm` to set the initial size of flex ite
 
 </Figure>
 
-### Using percentages
+### 使用百分比
 
-Use `basis-<fraction>` utilities like `basis-1/2` and `basis-2/3` to set the initial size of flex items:
+使用 `basis-<fraction>` 工具类，如 `basis-1/2` 和 `basis-2/3`，设置 flex 项目的初始大小：
 
 <Figure>
 
@@ -113,11 +113,11 @@ Use `basis-<fraction>` utilities like `basis-1/2` and `basis-2/3` to set the ini
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue utility="basis" value="30vw" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="flex-basis">
 
@@ -132,12 +132,12 @@ Use `basis-<fraction>` utilities like `basis-1/2` and `basis-2/3` to set the ini
 
 </ResponsiveDesign>
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourTheme
   utility="basis"
   themeKey="container"
-  name="fixed-width basis"
+  name="固定宽度的基础"
   customName="4xs"
   customValue="14rem"
   includeSpacingNote

@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
 export const title = "transition-delay";
-export const description = "Utilities for controlling the delay of CSS transitions.";
+export const description = "用于控制 CSS 转换延迟的工具类。";
 
 <ApiTable
   rows={[
@@ -14,13 +14,13 @@ export const description = "Utilities for controlling the delay of CSS transitio
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `delay-150` and `delay-700` to set the transition delay of an element in milliseconds:
+使用诸如 `delay-150` 和 `delay-700` 的工具类来设置元素的转换延迟（以毫秒为单位）：
 
-<Figure hint="Hover each button to see the expected behavior">
+<Figure hint="悬停每个按钮以查看预期的行为">
 
 <Example>
   {
@@ -28,19 +28,19 @@ Use utilities like `delay-150` and `delay-700` to set the transition delay of an
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">delay-150</p>
         <button className="rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white delay-150 duration-300 ease-in-out hover:scale-125">
-          Button A
+          按钮 A
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">delay-300</p>
         <button className="rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white delay-300 duration-300 ease-in-out hover:scale-125">
-          Button B
+          按钮 B
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">delay-700</p>
         <button className="rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white delay-700 duration-300 ease-in-out hover:scale-125">
-          Button C
+          按钮 C
         </button>
       </div>
     </div>
@@ -49,17 +49,17 @@ Use utilities like `delay-150` and `delay-700` to set the transition delay of an
 
 ```html
 <!-- [!code classes:delay-150,delay-300,delay-700] -->
-<button class="transition delay-150 duration-300 ease-in-out ...">Button A</button>
-<button class="transition delay-300 duration-300 ease-in-out ...">Button B</button>
-<button class="transition delay-700 duration-300 ease-in-out ...">Button C</button>
+<button class="transition delay-150 duration-300 ease-in-out ...">按钮 A</button>
+<button class="transition delay-300 duration-300 ease-in-out ...">按钮 B</button>
+<button class="transition delay-700 duration-300 ease-in-out ...">按钮 C</button>
 ```
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue element="button" utility="delay" value="1s,250ms" name="transition delay" />
+<UsingACustomValue element="button" utility="delay" value="1s,250ms" name="转换延迟" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="button" property="transition-delay" defaultClass="delay-150" featuredClass="delay-300" />

@@ -11,38 +11,35 @@ import tailwindcssLanguageMode from "./tailwindcss-language-mode.png";
 import documentationTemplateTeaser from "./documentation-template-teaser.jpg";
 
 export const meta = {
-  title: "Headless UI v1.6, Tailwind UI team management, Tailwind Play improvements, and more",
-  description: `It's been a while since I've written about what we've been working on so I have a lot to share! Too much honestly — so put your swim suit on, sit back in your lounge chair, and prepare to soak up some vitamin CSS.`,
+  title: "Headless UI v1.6，Tailwind UI 团队管理，Tailwind Play 改进，以及更多",
+  description: `距离我上次写我们正在做的工作已经有一段时间了，所以我有很多内容要分享！老实说太多了——所以穿上你的泳衣，坐在你的躺椅上，准备吸收一些维生素 CSS。`,
   date: "2022-05-27T15:00:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      It's been a while since I've written about what we've been working on so I have a lot to share! Too much honestly
-      — my main motivator for even getting this update out is that we've got even more stuff coming next week, and I
-      feel like I'm not allowed to share that stuff until I share all of the stuff we've already shipped. So put your
-      swim suit on, sit back in your lounge chair, and prepare to soak up some vitamin CSS.
+      距离我上次写我们正在做的工作已经有一段时间了，所以我有很多内容要分享！老实说太多了——我发布更新的主要动机是因为我们下周还有更多的内容要推出，我觉得在分享我们已经推出的所有内容之前，我不能分享那些内容。于是穿上你的泳衣，坐在你的躺椅上，准备吸收一些维生素 CSS。
     </>
   ),
 };
 
-It's been a while since I've written about what we've been working on so I have a lot to share! Too much honestly — my main motivator for even getting this update out is that we've got even more stuff coming next week, and I feel like I'm not allowed to share that stuff until I share all of the stuff we've already shipped.
+距离我上次写我们正在做的工作已经有一段时间了，所以我有很多内容要分享！老实说太多了——我发布更新的主要动机是因为我们下周还有更多的内容要推出，我觉得在分享我们已经推出的所有内容之前，我不能分享那些内容。
 
-So put your swim suit on, sit back in your lounge chair, and prepare to soak up some vitamin CSS.
+所以穿上你的泳衣，坐在你的躺椅上，准备吸收一些维生素 CSS。
 
 ---
 
-## Headless UI v1.6 is out
+## Headless UI v1.6 已发布
 
-A few weeks ago we released a new minor version of <Link href="https://headlessui.dev/">Headless UI</Link>, the unstyled UI library we built to make it possible to add React and Vue support to Tailwind UI.
+几周前，我们发布了 <Link href="https://headlessui.dev/">Headless UI</Link> 的新小版本，这是我们构建的未样式 UI 库，使其可以为 Tailwind UI 添加 React 和 Vue 支持。
 
-Check out <Link href="https://github.com/tailwindlabs/headlessui/releases/tag/%40headlessui%2Freact%40v1.6.0">the release notes</Link> for all of the details, but here are some of the highlights.
+查看 <Link href="https://github.com/tailwindlabs/headlessui/releases/tag/%40headlessui%2Freact%40v1.6.0">发布说明</Link> 获取所有细节，但这里有一些亮点。
 
-### Multiselect support
+### 多选支持
 
-We've added a new `multiple` prop to both the `Combobox` and `Listbox` components so people can select more than one option.
+我们为 `Combobox` 和 `Listbox` 组件添加了新的 `multiple` 属性，以便人们可以选择多个选项。
 
-Just add the `multiple` prop and bind an array as your `value` and you are ready to go:
+只需添加 `multiple` 属性并将一个数组绑定为您的 `value`，您就可以开始了：
 
 ```jsx
 function MyCombobox({ items }) {
@@ -72,13 +69,13 @@ function MyCombobox({ items }) {
 }
 ```
 
-Check out <Link href="https://headlessui.dev/react/combobox#selecting-multiple-values">the combobox documentation</Link> and <Link href="https://headlessui.dev/react/listbox">listbox documentation</Link> for more.
+查看 <Link href="https://headlessui.dev/react/combobox#selecting-multiple-values">combobox 文档</Link> 和 <Link href="https://headlessui.dev/react/listbox">listbox 文档</Link> 获取更多信息。
 
-### Nullable comboboxes
+### 可为空的组合框
 
-Prior to v1.6, if you deleted the contents of a combobox and tabbed away, it would restore the previously selected option. This makes sense a lot of the time, but sometimes you really do want to clear the value of a combobox.
+在 v1.6 之前，如果您删除组合框的内容并切换到其他地方，它将恢复之前选择的选项。这在许多情况下是有意义的，但有时您确实希望清除组合框的值。
 
-We've added a new `nullable` prop that makes this possible — just add the prop and now you can delete the value without the previous value being restored:
+我们添加了一个新的 `nullable` 属性，使这变得可能——只需添加该属性，您现在就可以删除值而无需恢复先前的值：
 
 ```jsx
 function MyCombobox({ items }) {
@@ -100,11 +97,11 @@ function MyCombobox({ items }) {
 }
 ```
 
-### Easy HTML form support
+### 轻松的 HTML 表单支持
 
-Now if you add a `name` prop to form components like `Listbox`, `Combobox`, `Switch`, and `RadioGroup`, we'll automatically create a hidden input that syncs with the component's value.
+现在，如果您为 `Listbox`、`Combobox`、`Switch` 和 `RadioGroup` 等表单组件添加 `name` 属性，我们将自动创建一个隐藏输入，该输入与组件的值同步。
 
-This makes it super easy to send that data to the server with a regular form submission, or with something like the `<Form>` component in <Link href="https://remix.run/docs/en/v1/guides/data-writes#graduate-to-form-and-add-pending-ui">Remix</Link>.
+这使得通过常规表单提交或使用 <Link href="https://remix.run/docs/en/v1/guides/data-writes#graduate-to-form-and-add-pending-ui">Remix</Link> 中的 `<Form>` 组件将数据发送到服务器变得非常简单。
 
 ```jsx
 <form action="/projects/1/assignee" method="post">
@@ -116,28 +113,28 @@ This makes it super easy to send that data to the server with a regular form sub
   >
     {/* ... */}
   </Listbox>
-  <button>Submit</button>
+  <button>提交</button>
 </form>
 ```
 
-This works with simple values like numbers and string, but also with objects — we automatically serialize them into multiple fields using that square bracket notation from 1996:
+这适用于数字和字符串等简单值，也适用于对象——我们会自动将它们序列化为使用那个1996年的方括号表示法的多个字段：
 
 ```html
 <input type="hidden" name="assignee[id]" value="1" />
 <input type="hidden" name="assignee[name]" value="Durward Reynolds" />
 ```
 
-Check out <Link href="https://headlessui.dev/react/listbox#using-with-html-forms">the documentation</Link> if you want to read exactly what I just wrote all over again but on a different domain.
+如果您想要再次阅读我刚刚写的内容，您可以查看 <Link href="https://headlessui.dev/react/listbox#using-with-html-forms">文档</Link>。
 
-### Scrollable dialog improvements
+### 可滚动对话框改进
 
-Dialogs are literally the hardest thing to build on the planet. We've been wrestling with gnarly <Link href="https://github.com/tailwindlabs/headlessui/issues/1132">scrolling</Link> <Link href="https://github.com/tailwindlabs/headlessui/issues/1056">issues</Link> for a while now, and think we've finally got it all sorted out in v1.6.
+对话框是地球上构建的最难的东西。我们一直在与棘手的 <Link href="https://github.com/tailwindlabs/headlessui/issues/1132">滚动</Link> <Link href="https://github.com/tailwindlabs/headlessui/issues/1056">问题</Link> 摔跤，认为我们终于在 v1.6 中解决了所有问题。
 
-The crux of it is that we've changed how "click outside to close" works. We used to use this `Dialog.Overlay` component that you put behind your actual dialog, and we had a click handler on that that would close the dialog on click. I actually really love the simplicity of this in principle — it's a lot less quirky to detect when a specific element is clicked than it is to detect when anything _other than_ a specific element is clicked, especially when you have things rendered inside your dialog that themselves are rendering other things in portals and stuff.
+关键是我们改变了“点击外部关闭”的工作方式。我们之前使用这个 `Dialog.Overlay` 组件，您将其放在实际对话框的后面，我们在它上面有一个点击处理程序，点击时关闭对话框。实际上，我真的很喜欢这种简单性——检测特定元素是否被点击比检测是否点击了特定元素以外的内容要简单得多，尤其是在您在对话框中渲染的东西本身在门户中渲染时。
 
-The problem with this approach is that if you had a long dialog that required scrolling, your overlay would sit _on top_ of your scrollbar, and trying to click the scrollbar would close the dialog. Not what you want!
+这种方法的问题是，如果您有一个长对话框需要滚动，您的覆盖层将位于滚动条的 _上方_，尝试单击滚动条时会关闭对话框。这可不是什么您想要的！
 
-So to fix this in a non-breaking way, we've added a new `Dialog.Panel` component you can use instead, and now we close the dialog any time you click outside of that component, rather than closing it specifically when the overlay is clicked:
+因此，为了以非破坏性的方式解决此问题，我们添加了一个新的 `Dialog.Panel` 组件，您可以改为使用它，现在只要点击该组件之外的任何地方，我们就会关闭对话框，而不是仅在点击覆盖层时关闭对话框：
 
 {/* prettier-ignore */}
 ```jsx
@@ -151,58 +148,58 @@ So to fix this in a non-breaking way, we've added a new `Dialog.Panel` component
 
    <div className="bg-white shadow-xl rounded-2xl ..."> /* [!code --] */
    <Dialog.Panel className="bg-white shadow-xl rounded-2xl ..."> /* [!code ++] */
-    <Dialog.Title>Payment successful</Dialog.Title>
+    <Dialog.Title>付款成功</Dialog.Title>
     {/* ... */}
   </div> /* [!code --] */
   </Dialog.Panel> /* [!code ++] */
 </Dialog>
 ```
 
-Check out <Link href="https://headlessui.dev/react/dialog">the updated dialog documentation</Link> for more complete examples using the new panel component instead of the overlay.
+查看 <Link href="https://headlessui.dev/react/dialog">更新的对话框文档</Link> 以获取更多使用新面板组件而不是覆盖层的完整示例。
 
-### Better focus trapping
+### 更好的焦点捕获
 
-One of the many reasons dialogs are the hardest thing to build on the planet is because of focus trapping. Our first attempt at this involved hijacking the tab key and manually focusing the next/previous element, so that we could circle back to the first item in the focus trap when you get to the end.
+对话框是地球上构建的最难的东西之一，原因之一是焦点捕获。我们第一次尝试涉及劫持 Tab 键并手动聚焦下一个/上一个元素，以便我们可以在到达焦点捕获的末尾时循环回第一个项目。
 
-This works okay until people start using portals inside the focus trap. Now it's basically impossible to manage because you could tab to a datepicker or something that is conceptually inside the dialog, but isn't _actually_ because it's rendered in a portal for styling reasons.
+这还好，直到人们开始在焦点捕获内部使用门户。现在基本上管理变得不可能，因为您可以 Tab 到一个日期选择器或类似的东西，这在概念上在对话框内部，但实际上并不是因为它是为了样式原因在门户中渲染的。
 
-[Robin](https://twitter.com/malfaitrobin) came up with a [really cool solution](https://github.com/tailwindlabs/headlessui/pull/1432) for this that is super simple — instead of trying to manually control how tabbing works, just throw an invisible focusable element at the beginning of the focus trap and another one at the end. Now whenever one of these sentinel elements receives focus you just move focus to where it actually should be, based on whether you're at the first element or the last element and whether the user was tabbing forwards or backwards.
+[Robin](https://twitter.com/malfaitrobin) 想出了一个 [非常酷的解决方案](https://github.com/tailwindlabs/headlessui/pull/1432)，非常简单——不再试图手动控制 Tab 键的工作方式，只需在焦点捕获开始处抛出一个不可见的可聚焦元素，并在末尾再抛出一个。现在每当这些哨兵元素之一获得焦点时，您只需根据您是否在第一个元素或最后一个元素以及用户是向前 Tab 还是向后 Tab 来移动焦点到它应该去的地方。
 
-With this approach, you don't have to hijack the tab key at all — you just let the browser do all of the work and only move focus manually when one of your sentinel elements receives focus.
+采用这种方法，您根本不需要劫持 Tab 键——您只需让浏览器完成所有工作，仅在您的哨兵元素获得焦点时手动移动焦点。
 
-After figuring this out we noticed a couple of other libraries already doing the same thing so it's nothing groundbreaking or new, but I thought it was pretty damn clever and worth sharing for anyone who hadn't thought of this technique.
-
----
-
-## Team management features for Tailwind UI
-
-When we first released <Link href="https://tailwindui.com">Tailwind UI</Link>, the "team" was just me and <Link href="https://twitter.com/steveschoger">Steve</Link>, so we had to keep a lot of things simple if we wanted any chance of actually getting the thing out the door with just the two of us working on it.
-
-One of those things was team licensing. We didn't ship with any fancy team member invitation flow or anything, we just asked people to share their Tailwind UI credentials with their team. This was good enough for us to get things out the door, because Tailwind UI doesn't really do anything in a user-specific way, and every member of your team gets the same experience anyways.
-
-Plus to us, having to get the email addresses of everyone on your team, enter them into some form, send each person an invitation email, and have them accept the invitation felt like administrative hell, especially when every single person gets the same experience after they sign in.
-
-At the same time though, sharing credentials for anything is pretty low-end, and it's not a design decision we took a lot of pride in. I use the same password (`slayerfan1234`) for Tailwind UI as I do for my bank account — I don't want to share that with anyone!
-
-So a couple of weeks ago we decided to figure it out and build something.
-
-<Image alt="Interface with a copyable invite URL and list of team members" src={teamManagement} />
-
-What we landed on was a purely link-based invitation system, where you could just copy your invite link, share it with your team in Slack/Discord/whatever, and reset your link if needed. You can also give people either "Member" or "Owner" permissions, which control whether they can manage team members or view billing history.
-
-This makes it super easy to invite your team without a bunch of tedious data entry, and revoke access if someone leaves right in the UI instead of by changing your shared password.
-
-This is available now for anyone with a Tailwind UI team account — just open the dropdown menu and click "My Team" to name your team and start inviting your co-workers.
-
-You can <Link href="https://tailwindui.com/pricing">purchase a license for your team</Link> on the Tailwind UI website, or <Link href="https://tailwindui.com/upgrade-team">upgrade to a team license</Link> if you have a personal license and want to start using Tailwind UI with your team.
+在弄清楚这一点后，我们注意到其他几个库已经在做同样的事情，因此这并不是什么突破或新鲜事，但我觉得这非常聪明，值得分享给没有想过这种技术的人。
 
 ---
 
-## Updating the Vue examples in Tailwind UI to `<script setup>`
+## Tailwind UI 的团队管理特性
 
-Since releasing Vue support for Tailwind UI, the new `<script setup>` syntax in Vue 3 has become the recommended way to write your single-file components.
+当我们第一次发布 <Link href="https://tailwindui.com">Tailwind UI</Link> 时，"团队" 只是我和 <Link href="https://twitter.com/steveschoger">Steve</Link>，所以如果我们想让这两个人能顺利推出这个项目，我们必须保持很多事情简单。
 
-We've updated all of the Vue examples in Tailwind UI to use this new format, which cuts out a _ton_ of boilerplate:
+其中一件事情就是团队许可。我们在发布时没有任何华丽的团队成员邀请流程，我们只是要求人们与他们的团队分享 Tailwind UI 的凭据。这对我们来说已经足够好了，因为 Tailwind UI 并不以用户特定的方式进行任何操作，而且您团队的每个成员都获得相同的体验。
+
+而且对我们来说，获取您团队每个人的电子邮件地址，将它们输入某个表单，向每个人发送邀请电子邮件，并让他们接受邀请感到像是行政地狱，尤其是在每个人在登录后获得相同的体验时。
+
+但与此同时，分享任何事物的凭据感觉很低端，这并不是我们自豪的设计决定。我用的 Tailwind UI 密码（`slayerfan1234`）和我银行账户的密码是一样的——我不想与任何人分享这些！
+
+因此几周前，我们决定搞定这件事情并构建一些东西。
+
+<Image alt="带有可复制的邀请链接和团队成员列表的界面" src={teamManagement} />
+
+我们最终确定的是一个纯链接的邀请系统，您只需复制您的邀请链接，与您的团队在 Slack/Discord/其他地方分享，并在需要时重置您的链接。您还可以给人们赋予“成员”或“拥有者”权限，这些权限控制他们是否可以管理团队成员或查看账单历史。
+
+这使得邀请您的团队变得超级简单，而无需重复繁琐的数据输入，并且在需要时直接在 UI 中撤销访问，而不是通过更改共享密码来做到这一点。
+
+现在，持有 Tailwind UI 团队帐户的任何人都可以使用此功能——只需打开下拉菜单并单击“我的团队”即可命名您的团队并开始邀请您的同事。
+
+您可以在 Tailwind UI 网站上 <Link href="https://tailwindui.com/pricing">为您的团队购买许可证</Link>，或者 <Link href="https://tailwindui.com/upgrade-team">升级为团队许可证</Link>，如果您拥有个人许可证并希望与您的团队一起使用 Tailwind UI。
+
+---
+
+## 更新 Vue 示例以使用 `<script setup>`
+
+自从发布 Tailwind UI 的 Vue 支持以来，Vue 3 中新的 `<script setup>` 语法已成为编写单文件组件的推荐方式。
+
+我们已更新 Tailwind UI 中的所有 Vue 示例，以使用这种新的格式，减少了大量的样板代码：
 
 ```html
 <template>
@@ -225,75 +222,75 @@ We've updated all of the Vue examples in Tailwind UI to use this new format, whi
 </script>
 ```
 
-To me, the absolute best part is that you don't have to explicitly register anything under `components` anymore — any components that are in scope are automatically available to the template.
+对我来说，最好的部分是您不再需要显式注册任何内容到 `components` 下——作用域中的任何组件都自动可用于模板。
 
-Using `<script setup>` also lets you use <Link href="https://vuejs.org/api/sfc-script-setup.html#using-components">namespaced components</Link> like `Listbox.Button` like we do in the React flavor of Headless UI. We haven't updated Headless UI to expose the components this way yet, but we're probably going to do it soon, which will let you shave off a ton of imports.
+使用 `<script setup>` 还允许您使用像 `Listbox.Button` 这样的 <Link href="https://vuejs.org/api/sfc-script-setup.html#using-components">命名空间组件</Link>，就像我们在 Headless UI 的 React 版本中所做的一样。我们尚未更新 Headless UI 以通过这种方式暴露组件，但我们可能会很快做到这一点，这将使您可以大幅减少导入。
 
 ---
 
-## New Tailwind CSS language mode for VS Code
+## VS Code 的新 Tailwind CSS 语言模式
 
-Tailwind uses a bunch of non-standard at-rules like `@tailwind` and `@apply`, so you get lint warnings in VS Code if you use the regular CSS language mode.
+Tailwind 使用了一 bunch 非标准的 at-rules，比如 `@tailwind` 和 `@apply`，因此如果您使用常规的 CSS 语言模式，您会在 VS Code 中收到 lint 警告。
 
-To get around this, we've always recommended people use the <Link href="https://marketplace.visualstudio.com/items?itemName=csstools.postcss">PostCSS Language Support</Link> plugin, which gets rid of those warnings but also removes all of the other CSS IntelliSense support.
+为了绕过这个问题，我们一直建议人们使用 <Link href="https://marketplace.visualstudio.com/items?itemName=csstools.postcss">PostCSS 语言支持</Link> 插件，这样可以消除那些警告，但也会删除所有其他 CSS IntelliSense 支持。
 
-So a few weeks ago, we released a first-party Tailwind CSS language mode as part of our <Link href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss">Tailwind CSS IntelliSense</Link> extension, which builds on the built-in CSS language mode to add Tailwind-specific syntax highlighting and fix the lint warnings you'd usually see, without losing any of CSS IntelliSense features you _do_ want to keep.
+因此几周前，我们作为我们 <Link href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss">Tailwind CSS IntelliSense</Link> 扩展的一部分发布了一个第一方 Tailwind CSS 语言模式，它基于内置的 CSS 语言模式，添加了特定于 Tailwind 的语法高亮，并修复了您通常会看到的 lint 警告，而不会失去您希望保留的任何 CSS IntelliSense 功能。
 
 <Image
-  alt="Sample CSS code shown with lint warnings when using a built-in CSS language mode, and no lint warnings when using the Tailwind CSS language mode."
+  alt="示例 CSS 代码，当使用内置的 CSS 语言模式时会显示 lint 警告，而使用 Tailwind CSS 语言模式时没有 lint 警告。"
   src={tailwindcssLanguageMode}
 />
 
-Try it out by downloading the latest version of Tailwind CSS IntelliSense and choosing "Tailwind CSS" as the language mode for your CSS files.
+通过下载最新版本的 Tailwind CSS IntelliSense 并选择“Tailwind CSS”作为您的 CSS 文件的语言模式来尝试一下。
 
 ---
 
-## “Generated CSS” panel in Tailwind Play
+## Tailwind Play 中的 “生成的 CSS” 面板
 
-We've made a bunch of little improvements to <Link href="https://play.tailwindcss.com">Tailwind Play</Link> over the last couple of months, with my favorite being the new "Generated CSS" panel.
+在过去的几个月中，我们对 <Link href="https://play.tailwindcss.com">Tailwind Play</Link> 进行了一些小改进，我最喜欢的是新的“生成的 CSS”面板。
 
 <Image
-  alt="Tailwind Play interface with a panel showing the CSS generated for that playground."
+  alt="Tailwind Play 界面，带有显示该游乐场生成的 CSS 的面板。"
   src={playGeneratedCss}
 />
 
-It shows you all of the CSS that was generated from your HTML and lets you filter by layer, which is incredibly useful for troubleshooting. Internally, we are using this _all the time_ to debug weird issues around classes not being detected so we can perform whatever <Link href="https://github.com/tailwindlabs/tailwindcss/blob/c4e443acc093d8980bf476f14255b793c5065b9a/src/lib/defaultExtractor.js#L22-L95">horrific regex surgery</Link> is necessary to make it work.
+它显示了从您的 HTML 生成的所有 CSS，并允许您按层过滤，这对故障排除非常有用。在内部，我们一直在使用这一功能来调试有关类未被检测到的问题，以便我们可以进行必要的 <Link href="https://github.com/tailwindlabs/tailwindcss/blob/c4e443acc093d8980bf476f14255b793c5065b9a/src/lib/defaultExtractor.js#L22-L95">可怕的正则表达式修复</Link>。
 
-We also added a "Tidy" button (<kbd>Cmd</kbd> + <kbd>S</kbd>) to each pane that will automatically format your code (and sort your classes!) and a "Copy" button (<kbd>Cmd</kbd> + <kbd>A</kbd> <kbd>Cmd</kbd> + <kbd>C</kbd>, but you already know that) too.
-
----
-
-## Redesigning the Refactoring UI website
-
-When we released <Link href="https://refactoringui.com">Refactoring UI</Link> back in December 2018, Steve and I literally designed and built the final landing page the night before launch at like 1am.
-
-What happened is we had this whole sexy landing page designed, then I was writing up the announcement email to send to everyone on our mailing list and we both thought "man the content in this email is great and a lot more compelling than what we have in this landing page design".
-
-But that content didn't really fit into what we had designed, so at the eleventh hour we scrapped everything we had designed and whipped together a much simpler page based on the new content. It looked _fine_ but it wasn't the super beautiful experience we really wanted it to be.
-
-So a few weeks ago, we decided to finally design <Link href="https://refactoringui.com">something new</Link>.
-
-<Image alt="Header section of redesigned Refactoring UI website." src={refactoringUiHomepage} />
-
-I'm still extremely proud of this book — probably more so than anything we've ever made. It's got a 4.68 rating on <Link href="https://www.goodreads.com/en/book/show/43190966-refactoring-ui">Goodreads</Link> with over 1100 ratings and almost 200 reviews, which feels pretty incredible to me for a self-published ebook.
-
-Looking forward to doing a second edition one day with everything we've learned since!
+我们还为每个面板添加了一个“整理”按钮 (<kbd>Cmd</kbd> + <kbd>S</kbd>)，该按钮将自动格式化您的代码（并对您的类进行排序！），还添加了一个“复制”按钮 (<kbd>Cmd</kbd> + <kbd>A</kbd> <kbd>Cmd</kbd> + <kbd>C</kbd>，但您已经知道了)。
 
 ---
 
-## Tailwind CSS templates are coming soon
+## 重新设计 Refactoring UI 网站
 
-We've teased this a bit <Link href="https://twitter.com/adamwathan/status/1526925883625328641">on Twitter</Link>, but for the last couple of months we've been working really hard on a bunch of full-fledged Tailwind CSS website templates.
+当我们在 2018 年 12 月发布 <Link href="https://refactoringui.com">Refactoring UI</Link> 时，Steve 和我实际上是在发布前的晚上大约凌晨 1 点设计并构建了最终的着陆页。
 
-Here's a sneak peek at one of them — a documentation site template built with <Link href="https://nextjs.org/">Next.js</Link> and Stripe's new <Link href="https://markdoc.io/">Markdoc</Link> library:
+发生的事情是我们设计了整个性感的着陆页，然后我在写给我们邮件列表上每个人的公告电子邮件时，我们都觉得“这一邮件中的内容很棒，而且比我们在这个着陆页设计中拥有的内容要引人注目得多”。
+
+但这些内容并不太适合我们设计的内容，所以在最后一刻，我们放弃了我们设计的一切，迅速制作了一个基于新内容的简单页面。它看起来 _还不错_，但不是我们真正想要的超级美丽的体验。
+
+所以几周前，我们决定最终设计 <Link href="https://refactoringui.com">一些新东西</Link>。
+
+<Image alt="重新设计的 Refactoring UI 网站的头部部分。" src={refactoringUiHomepage} />
+
+我仍然对这本书感到非常自豪——可能比我们所做的任何事情都要自豪。它在 <Link href="https://www.goodreads.com/en/book/show/43190966-refactoring-ui">Goodreads</Link> 上有 4.68 的评分，超过 1100 条评分和近 200 条评论，这对我来说感觉非常令人难以置信，因为这是一本自我出版的电子书。
+
+期待有一天发行第二版，分享我们从中学到的所有内容！
+
+---
+
+## Tailwind CSS 模板即将推出
+
+我们在 <Link href="https://twitter.com/adamwathan/status/1526925883625328641">Twitter</Link> 上对此做了一些预告，但在过去的几个月中，我们一直在努力制作一组完整的 Tailwind CSS 网站模板。
+
+这里有一个它们的预览——一个使用 <Link href="https://nextjs.org/">Next.js</Link> 和 Stripe 的新 <Link href="https://markdoc.io/">Markdoc</Link> 库构建的文档网站模板：
 
 <Image
-  alt="Artboards for a documentation site design that includes mobile and desktop layouts, and light and dark color schemes."
+  alt="包括移动和桌面布局以及浅色和深色配色方案的文档网站设计的画板。"
   src={documentationTemplateTeaser}
 />
 
-I'm unreasonably excited about getting these out. I'm really proud of Tailwind UI as a product, but one of the limitations of the _copy-and-pasteable-code-snippet_ format is that we don't get an opportunity to really show you how to componentize things, minimize duplication, and architect things as a complete, production-ready website.
+我对推出这些内容感到不合理的兴奋。我为 Tailwind UI 作为一款产品感到非常自豪，但 _可复制粘贴的代码片段_ 格式的一个局限是，我们无法真正向您展示如何组件化、最小化重复和构筑完整的生产就绪网站。
 
-The templates we're working on now are going to be amazing at filling that gap. On top of just getting beautiful templates to use as a starting point for your own projects, you'll be able to dig through the code and study exactly how we build websites with Tailwind CSS ourselves.
+我们现在正在开发的模板将在填补这一差距方面表现出色。除了获得美观的模板作为您自己项目的起点外，您还可以深入研究代码，研究我们自己如何使用 Tailwind CSS 构建网站。
 
-We haven't set an exact release date on these yet but we're hoping to have something out next month. Will share more as we make more progress!
+我们尚未确定这些模板的确切发布日期，但希望下个月收到一些内容。我们会在进展更新时分享更多信息！

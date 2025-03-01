@@ -4,27 +4,25 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const meta = {
-  title: `Just-In-Time: The Next Generation of Tailwind CSS`,
-  description: `One of the hardest constraints we've had to deal with as we've improved Tailwind CSS over the years is the generated file size in development. Today I'm super excited to share a new project that makes this constraint a thing of the past: a just-in-time compiler for Tailwind CSS.`,
+  title: `即时编译：下一代 Tailwind CSS`,
+  description: `随着我们多年来逐步改进 Tailwind CSS，最困难的限制之一就是开发中生成的文件大小。今天我非常高兴地分享一个新的项目，让这个限制成为过去：一个 Tailwind CSS 的即时编译器。`,
   date: "2021-03-15T16:30:00.000Z",
   authors: [adamwathan],
   image,
   excerpt: (
     <>
-      One of the hardest constraints we've had to deal with as we've improved Tailwind CSS over the years is the
-      generated file size in development. With enough customizations to your config file, the generated CSS can reach
-      10mb or more, and there's only so much CSS that build tools and even the browser itself will comfortably tolerate.
+      随着我们多年来逐步改进 Tailwind CSS，最困难的限制之一就是开发中生成的文件大小。通过对配置文件进行大量自定义，生成的 CSS 可能会达到 10MB 或更多，而构建工具甚至浏览器本身只能容忍有限的 CSS。
     </>
   ),
 };
 
-_**Update**: As of Tailwind CSS v2.1, the new Just-in-Time engine is included right in Tailwind CSS itself, so you don't need the `@tailwindcss/jit` package anymore. <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Learn more in the documentation</Link>._
+_**更新**: 从 Tailwind CSS v2.1 起，新的即时编译引擎已直接包含在 Tailwind CSS 本身中，因此您不再需要 `@tailwindcss/jit` 包。 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">在文档中了解更多</Link>._
 
-One of the hardest constraints we've had to deal with as we've improved Tailwind CSS over the years is the generated file size in development. With enough customizations to your config file, the generated CSS can reach 10mb or more, and there's only so much CSS that build tools and even the browser itself will comfortably tolerate.
+随着我们多年来逐步改进 Tailwind CSS，最困难的限制之一就是开发中生成的文件大小。通过对配置文件进行大量自定义，生成的 CSS 可能会达到 10MB 或更多，而构建工具甚至浏览器本身只能容忍有限的 CSS。
 
-For that reason, you've always had to be careful about expensive changes to your config file like adding too many extra breakpoints or enabling extra variants like `disabled` or `focus-visible`.
+出于这个原因，您总是需要小心像添加太多额外断点或启用 `disabled` 或 `focus-visible` 等额外变体这样的昂贵更改。
 
-Today I'm super excited to share a new project we've been working on that makes these considerations a thing of the past: <Link href="https://github.com/tailwindlabs/tailwindcss-jit">**a just-in-time compiler for Tailwind CSS**</Link>.
+今天我非常高兴地分享我们正在努力的新项目，让这些顾虑成为过去：<Link href="https://github.com/tailwindlabs/tailwindcss-jit">**一个 Tailwind CSS 的即时编译器**</Link>。
 
 <iframe
   src="https://www.youtube.com/embed/3O_3X7InOw8"
@@ -34,17 +32,17 @@ Today I'm super excited to share a new project we've been working on that makes 
   className="aspect-video w-full"
 ></iframe>
 
-[@tailwindcss/jit](https://github.com/tailwindlabs/tailwindcss-jit) is a new experimental library that compiles all of your CSS _on-demand_ as you author your template files, instead of generating your entire stylesheet up front.
+[@tailwindcss/jit](https://github.com/tailwindlabs/tailwindcss-jit) 是一个新的实验性库，它在您编写模板文件时按需编译您所有的 CSS，而不是事先生成整个样式表。
 
-This comes with a lot of advantages:
+这带来了很多好处：
 
-- **Lightning fast build times**. Tailwind can take 3–8s to initially compile using our CLI, and upwards of 30–45s in webpack projects because webpack struggles with large CSS files. This library can compile even the biggest projects in about 800ms _(with incremental rebuilds as fast as 3ms)_, no matter what build tool you're using.
-- **Every variant is enabled out of the box**. Variants like `focus-visible`, `active`, `disabled`, and others are not normally enabled by default due to file-size considerations. Since this library generates styles on demand, you can use any variant you want, whenever you want. You can even stack them like `sm:hover:active:disabled:opacity-75`. Never configure your variants again.
-- **Generate arbitrary styles without writing custom CSS.** Ever needed some ultra-specific value that wasn't part of your design system, like `top: -113px` for a quirky background image? Since styles are generated on demand, you can just generate a utility for this as needed using square bracket notation like `top-[-113px]`. Works with variants too, like `md:top-[-113px]`.
-- **Your CSS is identical in development and production**. Since styles are generated as they are needed, you don't need to purge unused styles for production, which means you see the exact same CSS in all environments. Never worry about accidentally purging an important style in production again.
-- **Better browser performance in development**. Since development builds are as small as production builds, the browser doesn't have to parse and manage multiple megabytes of pre-generated CSS. In projects with heavily extended configurations this makes dev tools a lot more responsive.
+- **闪电般的构建时间**。使用我们的 CLI，Tailwind 在最初编译时可能需要 3–8 秒，而在 webpack 项目中可能需要超过 30–45 秒，因为 webpack 对大型 CSS 文件处理得很吃力。这个库可以在约 800 毫秒内编译即使是最大的项目 _(增量重建的速度快至 3 毫秒)_，无论您使用的是哪种构建工具。
+- **每种变体开箱即用**。像 `focus-visible`、`active`、`disabled` 等变体因文件大小的考虑通常不会默认启用。由于这个库按需生成样式，您可以随时使用任何您想要的变体。您甚至可以像 `sm:hover:active:disabled:opacity-75` 这样堆叠它们。再也不用配置您的变体了。
+- **无需编写自定义 CSS 即可生成任意样式。** 是否曾经需要一些超具体的值，而该值并不是设计系统的一部分，比如对于奇怪背景图像的 `top: -113px`？由于样式是按需生成的，您可以使用方括号符号如 `top-[-113px]` 根据需要生成一个工具。也可以与变体一起使用，例如 `md:top-[-113px]`。
+- **您的 CSS 在开发和生产环境中是完全相同的**。由于样式是按需生成的，您无需为生产环境清除未使用的样式，这意味着您在所有环境中看到的 CSS 完全相同。再也无需担心在生产环境中意外清除重要样式。
+- **开发中更好的浏览器性能**。由于开发构建的大小与生产构建相同，浏览器无需解析和处理多个 MB 的预生成 CSS。在配置大量自定义的项目中，这使得开发工具变得更加响应。
 
-Try it today by installing `@tailwindcss/jit` and swapping it into your PostCSS configuration:
+今天就尝试安装 `@tailwindcss/jit`，并将其替换到您的 PostCSS 配置中：
 
 ```sh
 npm install -D @tailwindcss/jit tailwindcss postcss autoprefixer
@@ -60,9 +58,8 @@ module.exports = {
 };
 ```
 
-We're shipping it as a separate library for now, but once we've worked out all the kinks we're going to roll it right back into `tailwindcss` behind a configuration option, and we're aiming to make it the default in Tailwind CSS v3.0 later this year.
+目前我们将其作为一个独立的库发布，但一旦我们解决了所有问题，我们将把它直接整合回 `tailwindcss`，并提供配置选项，我们还计划在今年晚些时候的 Tailwind CSS v3.0 中将其设为默认选项。
 
-<Link href="https://github.com/tailwindlabs/tailwindcss-jit">Learn more about the project on GitHub</Link>, then install
-it, play with it, bend it, break it, and let us know what you think!
+<Link href="https://github.com/tailwindlabs/tailwindcss-jit">在 GitHub 上了解更多该项目</Link>，然后安装它，玩弄它，弯曲它，打破它，并告诉我们您的想法！
 
-Ready to try it out? <Link href="https://github.com/tailwindlabs/tailwindcss-jit">Get started →</Link>
+准备好尝试了吗？ <Link href="https://github.com/tailwindlabs/tailwindcss-jit">开始使用 →</Link>

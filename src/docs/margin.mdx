@@ -5,8 +5,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "margin";
-export const description = "Utilities for controlling an element's margin.";
+export const title = "外边距";
+export const description = "控制元素外边距的工具类。";
 
 <ApiTable
   rows={[
@@ -30,8 +30,8 @@ export const description = "Utilities for controlling an element's margin.";
       [`${prefix}-[<value>]`, `${property}: <value>;`],
     ]),
     ...[
-      ["space-x", "margin-inline"],
-      ["space-y", "margin-block"],
+      ["space-x", "内联外边距"],
+      ["space-y", "块级外边距"],
     ].flatMap(([prefix, property]) => [
       [
         `${prefix}-<number>`,
@@ -84,13 +84,13 @@ export const description = "Utilities for controlling an element's margin.";
     ]),
     [
       "space-x-reverse",
-      dedent`& > :not(:last-child)) {
+      dedent`& > :not(:last-child) {
         --tw-space-x-reverse: 1;
       }`,
     ],
     [
       "space-y-reverse",
-      dedent`& > :not(:last-child)) {
+      dedent`& > :not(:last-child) {
         --tw-space-y-reverse: 1;
       }`,
     ],
@@ -98,11 +98,11 @@ export const description = "Utilities for controlling an element's margin.";
 ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `m-<number>` utilities like `m-4` and `m-8` to control the margin on all sides of an element:
+使用 `m-<number>` 工具类，如 `m-4` 和 `m-8` 来控制元素四周的外边距：
 
 <Figure>
 
@@ -126,9 +126,9 @@ Use `m-<number>` utilities like `m-4` and `m-8` to control the margin on all sid
 
 </Figure>
 
-### Adding margin to a single side
+### 单侧添加外边距
 
-Use `mt-<number>`, `mr-<number>`, `mb-<number>`, and `ml-<number>` utilities like `ml-2` and `mt-6` to control the margin on one side of an element:
+使用 `mt-<number>`、`mr-<number>`、`mb-<number>` 和 `ml-<number>` 工具类，如 `ml-2` 和 `mt-6` 来控制元素一侧的外边距：
 
 <Figure>
 
@@ -173,9 +173,9 @@ Use `mt-<number>`, `mr-<number>`, `mb-<number>`, and `ml-<number>` utilities lik
 
 </Figure>
 
-### Adding horizontal margin
+### 添加水平外边距
 
-Use `mx-<number>` utilities like `mx-4` and `mx-8` to control the horizontal margin of an element:
+使用 `mx-<number>` 工具类，如 `mx-4` 和 `mx-8` 控制元素的水平外边距：
 
 <Figure>
 
@@ -199,9 +199,9 @@ Use `mx-<number>` utilities like `mx-4` and `mx-8` to control the horizontal mar
 
 </Figure>
 
-### Adding vertical margin
+### 添加垂直外边距
 
-Use `my-<number>` utilities like `my-4` and `my-8` to control the vertical margin of an element:
+使用 `my-<number>` 工具类，如 `my-4` 和 `my-8` 来控制元素的垂直外边距：
 
 <Figure>
 
@@ -225,9 +225,9 @@ Use `my-<number>` utilities like `my-4` and `my-8` to control the vertical margi
 
 </Figure>
 
-### Using negative values
+### 使用负值
 
-To use a negative margin value, prefix the class name with a dash to convert it to a negative value:
+要使用负的外边距值，在类名前面加上短横线，使其变为负值：
 
 <Figure>
 
@@ -250,9 +250,9 @@ To use a negative margin value, prefix the class name with a dash to convert it 
 
 </Figure>
 
-### Using logical properties
+### 使用逻辑属性
 
-Use `ms-<number>` or `me-<number>` utilities like `ms-4` and `me-8` to set the `margin-inline-start` and `margin-inline-end` logical properties:
+使用 `ms-<number>` 或 `me-<number>` 工具类，如 `ms-4` 和 `me-8` 来设置 `margin-inline-start` 和 `margin-inline-end` 逻辑属性：
 
 <Figure>
 
@@ -260,7 +260,7 @@ Use `ms-<number>` or `me-<number>` utilities like `ms-4` and `me-8` to set the `
   {
     <div className="grid grid-cols-2 place-items-center gap-x-4">
       <div className="flex flex-col items-start gap-y-4" dir="ltr">
-        <p className="text-sm font-medium">Left-to-right</p>
+        <p className="text-sm font-medium">从左到右</p>
         <div className="relative flex rounded-lg font-mono text-sm leading-6 font-bold text-white">
           <Stripes border className="absolute min-h-full w-full rounded-lg" />
           <div className="relative ms-8 rounded-lg bg-indigo-500 p-4">ms-8</div>
@@ -271,7 +271,7 @@ Use `ms-<number>` or `me-<number>` utilities like `ms-4` and `me-8` to set the `
         </div>
       </div>
       <div className="flex flex-col items-start gap-y-4" dir="rtl">
-        <p className="text-sm font-medium">Right-to-left</p>
+        <p className="text-sm font-medium">从右到左</p>
         <div className="relative flex rounded-lg font-mono text-sm leading-6 font-bold text-white">
           <Stripes border className="absolute min-h-full w-full rounded-lg" />
           <div className="relative ms-8 rounded-lg bg-indigo-500 p-4">ms-8</div>
@@ -303,9 +303,9 @@ Use `ms-<number>` or `me-<number>` utilities like `ms-4` and `me-8` to set the `
 
 </Figure>
 
-### Adding space between children
+### 在子元素之间添加空间
 
-Use `space-x-<number>` or `space-y-<number>` utilities like `space-x-4` and `space-y-8` to control the space between elements:
+使用 `space-x-<number>` 或 `space-y-<number>` 工具类，如 `space-x-4` 和 `space-y-8` 来控制元素之间的空间：
 
 <Figure>
 
@@ -335,9 +335,9 @@ Use `space-x-<number>` or `space-y-<number>` utilities like `space-x-4` and `spa
 
 </Figure>
 
-#### Reversing children order
+#### 反转子元素顺序
 
-If your elements are in reverse order (using say `flex-row-reverse` or `flex-col-reverse`), use the `space-x-reverse` or `space-y-reverse` utilities to ensure the space is added to the correct side of each element:
+如果你的元素处于反向顺序（使用例如 `flex-row-reverse` 或 `flex-col-reverse`），使用 `space-x-reverse` 或 `space-y-reverse` 工具类，以确保空间被添加到每个元素的正确侧面：
 
 <Figure>
 
@@ -367,22 +367,22 @@ If your elements are in reverse order (using say `flex-row-reverse` or `flex-col
 
 </Figure>
 
-#### Limitations
+#### 限制
 
-The space utilities are really just a shortcut for adding margin to all-but-the-last-item in a group, and aren't designed to handle complex cases like grids, layouts that wrap, or situations where the children are rendered in a complex custom order rather than their natural DOM order.
+空间工具实际上只是为一组中的倒数第二个元素添加外边距的快捷方式，并且不设计用于处理复杂情况，例如网格、换行的布局，或在复杂订单中渲染的子元素，而不是它们的自然 DOM 顺序。
 
-For those situations, it's better to use the [gap utilities](/docs/gap) when possible, or add margin to every element with a matching negative margin on the parent.
+对于这些情况，最好在可能的情况下使用 [gap 工具](/docs/gap)，或者在每个元素上添加外边距，并在父元素上设置匹配的负边距。
 
-Additionally, the space utilities are not designed to work together with the [divide utilities](/docs/border-width#between-children). For those situations, consider adding margin/padding utilities to the children instead.
+此外，空间工具不设计用于与 [divide 工具](/docs/border-width#between-children) 一起使用。在这些情况下，考虑在子元素上添加外边距/内边距工具。
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utilities={["m", "mx", "mb"]} name="margin" variable="margin" value="5px" />
+<UsingACustomValue utilities={["m", "mx", "mb"]} name="外边距" variable="margin" value="5px" />
 
-### Responsive design
+### 响应设计
 
-<ResponsiveDesign property="margin" defaultClass="mt-4" featuredClass="mt-8" />
+<ResponsiveDesign property="外边距" defaultClass="mt-4" featuredClass="mt-8" />
 
-## Customizing your theme
+## 自定义你的主题
 
 <CustomizingYourSpacingScale utilities={["m", "mx", "my", "ms", "me", "mt", "mr", "mb", "ml"]} />

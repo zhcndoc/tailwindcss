@@ -3,21 +3,21 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "border-collapse";
-export const description = "Utilities for controlling whether table borders should collapse or be separated.";
+export const title = "边框合并";
+export const description = "控制表格边框是否应合并或分开的工具类。";
 
 <ApiTable
   rows={[
-    ["border-collapse", "border-collapse: collapse;"],
-    ["border-separate", "border-collapse: separate;"],
+    ["边框合并", "border-collapse: collapse;"],
+    ["边框分隔", "border-collapse: separate;"],
   ]}
 />
 
-## Examples
+## 示例
 
-### Collapsing table borders
+### 合并表格边框
 
-Use the `border-collapse` utility to combine adjacent cell borders into a single border when possible:
+使用 `border-collapse` 工具类在可能的情况下将相邻单元格的边框合并为一个边框：
 
 <Figure>
 
@@ -28,34 +28,34 @@ Use the `border-collapse` utility to combine adjacent cell borders into a single
         <thead className="bg-gray-50 dark:bg-gray-700">
           <tr>
             <th className="w-1/2 border border-gray-300 p-4 text-left font-semibold text-gray-900 dark:border-gray-600 dark:text-gray-200">
-              State
+              州
             </th>
             <th className="w-1/2 border border-gray-300 p-4 text-left font-semibold text-gray-900 dark:border-gray-600 dark:text-gray-200">
-              City
+              城市
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Indiana
+              印第安纳州
             </td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Indianapolis
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">Ohio</td>
-            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Columbus
+              印第安纳波利斯
             </td>
           </tr>
           <tr>
+            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">俄亥俄州</td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Michigan
+              哥伦布
+            </td>
+          </tr>
+          <tr>
+            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
+              密歇根州
             </td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Detroit
+              底特律
             </td>
           </tr>
         </tbody>
@@ -69,22 +69,22 @@ Use the `border-collapse` utility to combine adjacent cell borders into a single
 <table class="border-collapse border border-gray-400 ...">
   <thead>
     <tr>
-      <th class="border border-gray-300 ...">State</th>
-      <th class="border border-gray-300 ...">City</th>
+      <th class="border border-gray-300 ...">州</th>
+      <th class="border border-gray-300 ...">城市</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="border border-gray-300 ...">Indiana</td>
-      <td class="border border-gray-300 ...">Indianapolis</td>
+      <td class="border border-gray-300 ...">印第安纳州</td>
+      <td class="border border-gray-300 ...">印第安纳波利斯</td>
     </tr>
     <tr>
-      <td class="border border-gray-300 ...">Ohio</td>
-      <td class="border border-gray-300 ...">Columbus</td>
+      <td class="border border-gray-300 ...">俄亥俄州</td>
+      <td class="border border-gray-300 ...">哥伦布</td>
     </tr>
     <tr>
-      <td class="border border-gray-300 ...">Michigan</td>
-      <td class="border border-gray-300 ...">Detroit</td>
+      <td class="border border-gray-300 ...">密歇根州</td>
+      <td class="border border-gray-300 ...">底特律</td>
     </tr>
   </tbody>
 </table>
@@ -92,11 +92,11 @@ Use the `border-collapse` utility to combine adjacent cell borders into a single
 
 </Figure>
 
-Note that this includes collapsing borders on the top-level `<table>` tag.
+注意，这包括了顶层 `<table>` 标签上的合并边框。
 
-### Separating table borders
+### 分隔表格边框
 
-Use the `border-separate` utility to force each cell to display its own separate borders:
+使用 `border-separate` 工具类强制每个单元格显示自己的分隔边框：
 
 <Figure>
 
@@ -107,34 +107,34 @@ Use the `border-separate` utility to force each cell to display its own separate
         <thead className="bg-gray-50 dark:bg-gray-700">
           <tr>
             <th className="w-1/2 border border-gray-300 p-4 text-left font-semibold text-gray-900 dark:border-gray-600 dark:text-gray-200">
-              State
+              州
             </th>
             <th className="w-1/2 border border-gray-300 p-4 text-left font-semibold text-gray-900 dark:border-gray-600 dark:text-gray-200">
-              City
+              城市
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Indiana
+              印第安纳州
             </td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Indianapolis
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">Ohio</td>
-            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Columbus
+              印第安纳波利斯
             </td>
           </tr>
           <tr>
+            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">俄亥俄州</td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Michigan
+              哥伦布
+            </td>
+          </tr>
+          <tr>
+            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
+              密歇根州
             </td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Detroit
+              底特律
             </td>
           </tr>
         </tbody>
@@ -148,22 +148,22 @@ Use the `border-separate` utility to force each cell to display its own separate
 <table class="border-separate border border-gray-400 ...">
   <thead>
     <tr>
-      <th class="border border-gray-300 ...">State</th>
-      <th class="border border-gray-300 ...">City</th>
+      <th class="border border-gray-300 ...">州</th>
+      <th class="border border-gray-300 ...">城市</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="border border-gray-300 ...">Indiana</td>
-      <td class="border border-gray-300 ...">Indianapolis</td>
+      <td class="border border-gray-300 ...">印第安纳州</td>
+      <td class="border border-gray-300 ...">印第安纳波利斯</td>
     </tr>
     <tr>
-      <td class="border border-gray-300 ...">Ohio</td>
-      <td class="border border-gray-300 ...">Columbus</td>
+      <td class="border border-gray-300 ...">俄亥俄州</td>
+      <td class="border border-gray-300 ...">哥伦布</td>
     </tr>
     <tr>
-      <td class="border border-gray-300 ...">Michigan</td>
-      <td class="border border-gray-300 ...">Detroit</td>
+      <td class="border border-gray-300 ...">密歇根州</td>
+      <td class="border border-gray-300 ...">底特律</td>
     </tr>
   </tbody>
 </table>
@@ -171,7 +171,7 @@ Use the `border-separate` utility to force each cell to display its own separate
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="table"

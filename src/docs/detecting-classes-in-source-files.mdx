@@ -3,20 +3,20 @@ import { Iframe } from "@/components/iframe";
 import { Example } from "@/components/example";
 import { Figure } from "@/components/figure";
 
-export const title = "Detecting classes in source files";
-export const description = "Understanding and customizing how Tailwind scans your source files.";
+export const title = "检测源文件中的类";
+export const description = "理解和自定义 Tailwind 如何扫描你的源文件。";
 
-## Overview
+## 概述
 
-Tailwind works by scanning your project for utility classes, then generating all of the necessary CSS based on the classes you've actually used.
+Tailwind 通过扫描你的项目以查找实用类，然后生成所有必要的 CSS，基于你实际使用的类。
 
-This makes sure your CSS is as small as possible, and is also what makes features like [arbitrary values](/docs/adding-custom-styles#using-arbitrary-values) possible.
+这确保了你的 CSS 尽可能小，并且也是使得像 [任意值](/docs/adding-custom-styles#using-arbitrary-values) 这样功能成为可能的原因。
 
-### How classes are detected
+### 类是如何被检测的
 
-Tailwind treats all of your source files as plain text, and doesn't attempt to actually parse your files as code in any way.
+Tailwind 将你的所有源文件视为普通文本，并且不试图以任何方式解析你的文件作为代码。
 
-Instead it just looks for any tokens in your file that could be classes based on which characters Tailwind is expecting in class names:
+相反，它只查找你文件中可能是类的任何标记，基于 Tailwind 对类名中预期字符的判断：
 
 ```jsx
 // [!code filename:JSX]
@@ -59,24 +59,24 @@ export function Button({ color, children }) {
 }
 ```
 
-Then it tries to generate the CSS for all of these tokens, throwing away any tokens that don't map to a utility class the framework knows about.
+然后它试图为所有这些标记生成 CSS，丢弃任何不映射到框架所知道的实用类的标记。
 
-### Dynamic class names
+### 动态类名
 
-Since Tailwind scans your source files as plain text, it has no way of understanding string concatenation or interpolation in the programming language you're using.
+由于 Tailwind 将你的源文件视为普通文本，因此无法理解你正在使用的编程语言中的字符串拼接或插值。
 
-<TipBad>{<>Don't construct class names dynamically</>}</TipBad>
+<TipBad>{<>不要动态构建类名</>}</TipBad>
 
 ```html
 <!-- [!code filename:HTML] -->
 <div class="text-{{ error ? 'red' : 'green' }}-600"></div>
 ```
 
-In the example above, the strings `text-red-600` and `text-green-600` do not exist, so Tailwind will not generate those classes.
+在上面的例子中，字符串 `text-red-600` 和 `text-green-600` 不存在，因此 Tailwind 不会生成这些类。
 
-Instead, make sure any class names you’re using exist in full:
+相反，请确保你使用的任何类名都完整存在：
 
-<TipGood>{<>Always use complete class names</>}</TipGood>
+<TipGood>{<>始终使用完整的类名</>}</TipGood>
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -85,9 +85,9 @@ Instead, make sure any class names you’re using exist in full:
 <div class="{{ error ? 'text-red-600' : 'text-green-600' }}"></div>
 ```
 
-If you're using a component library like React or Vue, this means you shouldn't use props to dynamically construct classes:
+如果你使用的是像 React 或 Vue 这样的组件库，这意味着你不应该使用 props 来动态构建类：
 
-<TipBad>Don't use props to build class names dynamically</TipBad>
+<TipBad>不要使用 props 动态构建类名</TipBad>
 
 ```jsx
 // [!code filename:JSX]
@@ -96,9 +96,9 @@ function Button({ color, children }) {
 }
 ```
 
-Instead, map props to complete class names that are statically detectable at build-time:
+相反，将 props 映射到在构建时静态可检测的完整类名：
 
-<TipGood>Always map props to static class names</TipGood>
+<TipGood>始终将 props 映射到静态类名</TipGood>
 
 ```jsx
 // [!code filename:JSX]
@@ -112,7 +112,7 @@ function Button({ color, children }) {
 }
 ```
 
-This has the added benefit of letting you map different prop values to different color shades for example:
+这还可以让你将不同的 prop 值映射到不同的颜色阴影，例如：
 
 ```jsx
 // [!code filename:JSX]
@@ -127,22 +127,22 @@ function Button({ color, children }) {
 }
 ```
 
-As long as you always use complete class names in your code, Tailwind will generate all of your CSS perfectly every time.
+只要你在代码中始终使用完整的类名，Tailwind 将每次完美生成你所有的 CSS。
 
-### Which files are scanned
+### 哪些文件会被扫描
 
-Tailwind will scan every file in your project for class names, except in the following cases:
+Tailwind 将扫描项目中每个文件的类名，除了以下情况：
 
-- Files that are in your `.gitignore` file
-- Binary files like images, videos, or zip files
-- CSS files
-- Common package manager lock files
+- 在你的 `.gitignore` 文件中的文件
+- 二进制文件，如图像、视频或压缩文件
+- CSS 文件
+- 常见的包管理器锁文件
 
-If you need to scan any files that Tailwind is ignoring by default, you can [explicitly register](#explicitly-registering-sources) those sources.
+如果你需要扫描 Tailwind 默认忽略的任何文件，你可以 [显式注册](#explicitly-registering-sources) 这些源。
 
-## Explicitly registering sources
+## 显式注册源
 
-Use `@source` to explicitly register source paths relative to the stylesheet:
+使用 `@source` 显式注册相对于样式表的源路径：
 
 ```css
 /* [!code filename:CSS] */
@@ -151,13 +151,13 @@ Use `@source` to explicitly register source paths relative to the stylesheet:
 @source "../node_modules/@acmecorp/ui-lib";
 ```
 
-This is especially useful when you need to scan an external library that is built with Tailwind, since dependencies are usually listed in your `.gitignore` file and ignored by Tailwind by default.
+当你需要扫描一个使用 Tailwind 的外部库时，这一点尤其有用，因为依赖项通常列在你的 `.gitignore` 文件中，并且默认被 Tailwind 忽略。
 
-### Setting your base path
+### 设置基础路径
 
-Tailwind uses the current working directory as its starting point when scanning for class names by default.
+Tailwind 默认使用当前工作目录作为扫描类名的起始点。
 
-To set the base path for source detection explicitly, use the `source()` function when importing Tailwind in your CSS:
+要显式设置源检测的基础路径，在 CSS 中导入 Tailwind 时使用 `source()` 函数：
 
 ```css
 /* [!code filename:CSS] */
@@ -165,11 +165,11 @@ To set the base path for source detection explicitly, use the `source()` functio
 @import "tailwindcss" source("../src");
 ```
 
-This can be useful when working with monorepos where your build commands run from the root of the monorepo instead of the root of each project.
+当在 monorepos 工作时，这可能很有用，因为你的构建命令从 monorepo 的根目录运行，而不是每个项目的根目录。
 
-### Disabling automatic detection
+### 禁用自动检测
 
-Use `source(none)` to completely disable automatic source detection if you want to register all of your sources explicitly:
+使用 `source(none)` 完全禁用自动源检测，如果你想显式注册所有源：
 
 ```css
 /* [!code filename:CSS] */
@@ -180,4 +180,4 @@ Use `source(none)` to completely disable automatic source detection if you want 
 @source "../shared";
 ```
 
-This can be useful in projects that have multiple Tailwind stylesheets where you want to make sure each one only includes the classes each stylesheet needs.
+在有多个 Tailwind 样式表的项目中，这可能很有用，在这些项目中，你要确保每个样式表仅包括每个样式表所需的类。

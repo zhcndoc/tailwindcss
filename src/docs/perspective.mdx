@@ -3,8 +3,8 @@ import { CustomizingYourTheme, ResponsiveDesign, UsingACustomValue } from "@/com
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "perspective";
-export const description = "Utilities for controlling an element'ss perspective when placed in 3D space.";
+export const title = "透视";
+export const description = "控制元素在三维空间中透视的工具。";
 
 <ApiTable
   rows={[
@@ -19,11 +19,11 @@ export const description = "Utilities for controlling an element'ss perspective 
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `perspective-normal` and `perspective-distant` to control how close or how far away the z-plane is from the screen:
+使用诸如 `perspective-normal` 和 `perspective-distant` 这样的工具来控制 z 平面与屏幕之间的距离：
 
 <Figure>
 
@@ -92,7 +92,7 @@ Use utilities like `perspective-normal` and `perspective-distant` to control how
 <!-- [!code classes:perspective-dramatic,perspective-normal] -->
 <div class="size-20 perspective-dramatic ...">
   <div class="translate-z-12 rotate-x-0 bg-sky-300/75 ...">1</div>
-  <div class="-translate-z-12 rotate-y-18 bg-sky-300/75 ...">2</div>
+  <div class="-translate-z-12 rotate-y-180 bg-sky-300/75 ...">2</div>
   <div class="translate-x-12 rotate-y-90 bg-sky-300/75 ...">3</div>
   <div class="-translate-x-12 -rotate-y-90 bg-sky-300/75 ...">4</div>
   <div class="-translate-y-12 rotate-x-90 bg-sky-300/75 ...">5</div>
@@ -101,7 +101,7 @@ Use utilities like `perspective-normal` and `perspective-distant` to control how
 
 <div class="size-20 perspective-normal ...">
   <div class="translate-z-12 rotate-x-0 bg-sky-300/75 ...">1</div>
-  <div class="-translate-z-12 rotate-y-18 bg-sky-300/75 ...">2</div>
+  <div class="-translate-z-12 rotate-y-180 bg-sky-300/75 ...">2</div>
   <div class="translate-x-12 rotate-y-90 bg-sky-300/75 ...">3</div>
   <div class="-translate-x-12 -rotate-y-90 bg-sky-300/75 ...">4</div>
   <div class="-translate-y-12 rotate-x-90 bg-sky-300/75 ...">5</div>
@@ -111,11 +111,11 @@ Use utilities like `perspective-normal` and `perspective-distant` to control how
 
 </Figure>
 
-This is like moving a camera closer to or further away from an object.
+这就像将相机移近或移远物体。
 
-### Removing a perspective
+### 移除透视
 
-Use the `perspective-none` utility to remove a perspective transform from an element:
+使用 `perspective-none` 工具从元素中移除透视变换：
 
 ```html
 <!-- [!code classes:perspective-none] -->
@@ -124,14 +124,14 @@ Use the `perspective-none` utility to remove a perspective transform from an ele
 </div>
 ```
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue utility="perspective" value="750px" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="perspective" defaultClass="perspective-midrange" featuredClass="perspective-dramatic" />
 
-## Customizing your theme
+## 自定义主题
 
-<CustomizingYourTheme utility="perspective" name="perspective" customName="remote" customValue="1800px" />
+<CustomizingYourTheme utility="perspective" name="perspective" customName="远程" customValue="1800px" />

@@ -12,96 +12,95 @@ import { Example, Figure } from "@/components/example.tsx";
 import { CodeExampleGroup, CodeBlock, js, ts } from "@/components/code-example";
 
 export const meta = {
-  title: "We built you a new personal website + Heroicons v2.0, Headless UI v1.7, and more",
-  description: `We just released a stunning new personal website template for Tailwind UI, redesigned Heroicons from scratch, tagged a new version of Headless UI with some exciting new features, and more.`,
+  title: "我们为您打造了一个全新的个人网站 + Heroicons v2.0，Headless UI v1.7 及更多",
+  description: `我们刚刚发布了一个令人惊叹的新个人网站模板，为 Tailwind UI 重新设计了 Heroicons，发布了带有一些令人兴奋的新特性的 Headless UI 新版本等。`,
   date: "2022-09-09T16:24:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      We just released a stunning new personal website template for Tailwind UI, redesigned Heroicons from scratch,
-      tagged a new version of Headless UI with some exciting new features, and more.
+      我们刚刚发布了一个令人惊叹的新个人网站模板，为 Tailwind UI 重新设计了 Heroicons，发布了带有一些令人兴奋的新特性的 Headless UI 新版本等。
     </>
   ),
 };
 
-It's been a busy week wrapping up a bunch of projects we've been working on, but everything is finally out the door so it feels like a good time for another update.
+这一周很忙，我们结束了一些项目，但一切终于都完成了，所以现在是时候进行另一次更新了。
 
-We triaged and resolved another <Link href="https://github.com/search?q=is%3Aclosed+org%3Atailwindlabs+archived%3Afalse+sort%3Acreated-desc+is%3Apublic+closed%3A%3E%3D2022-08-19+-author%3Aapp%2Fdependabot+-author%3Aapp%2Fgithub-actions+-author%3Aapp%2Fdepfu&type=Issues">226 GitHub issues and pull requests</Link> since my last post, and we're finally at under 50 open issues/PRs across our entire organization for the first time ever. So please stop finding bugs I just want to design and build beautiful stuff with Tailwind CSS for a while.
+自我上次发布以来，我们处理并解决了另一个 <Link href="https://github.com/search?q=is%3Aclosed+org%3Atailwindlabs+archived%3Afalse+sort%3Acreated-desc+is%3Apublic+closed%3A%3E%3D2022-08-19+-author%3Aapp%2Fdependabot+-author%3Aapp%2Fgithub-actions+-author%3Aapp%2Fdepfu&type=Issues">226个 GitHub 问题和拉取请求</Link>，我们组织内的开放问题/PR 数量终于首次降至50个以下。所以请不要再找错误了，我只想用 Tailwind CSS 设计和构建美丽的东西一段时间。
 
-Speaking of beautiful stuff, here's what shipped over the last couple of weeks!
+说到美丽的东西，以下是过去几周发布的内容！
 
 ---
 
-## Spotlight: Your new personal website
+## 聚光灯：您的新个人网站
 
-A couple of days ago we released <Link href="https://tailwindui.com/templates/spotlight">Spotlight</Link>, a stunning new personal website template we designed for Tailwind UI.
+几天前，我们发布了 <Link href="https://tailwindui.com/templates/spotlight">Spotlight</Link>，这是一个我们为 Tailwind UI 设计的令人惊叹的新个人网站模板。
 
 <Link href="https://tailwindui.com/templates/spotlight">
-  <Image alt="Learn about the Spotlight template" src={spotlightPreview} />
+  <Image alt="了解 Spotlight 模板" src={spotlightPreview} />
 </Link>
 
-Like our other templates, it's built with [Next.js](https://nextjs.org/), and this time we're using [MDX](https://mdxjs.com/) to power all of the markdown-driven stuff like the blog section.
+和我们的其他模板一样，它是使用 [Next.js](https://nextjs.org/) 构建的，这一次我们使用 [MDX](https://mdxjs.com/) 来支持所有的基于 markdown 的内容，比如博客部分。
 
-Designing this template was a pretty fun and interesting challenge — we wanted to come up with something that was really beautiful and inspiring, but that was also unopinionated enough to feel like a good fit for almost anyone. We landed on a pretty minimalist design that gets its personality from little touches like rotated images, hints of color for links, and some subtle depth from shadows and layering in places like the top navigation.
+设计这个模板是一个相当有趣和有趣的挑战——我们想要创建一个既美丽又鼓舞人心的东西，同时又使其足够不带偏见，以便几乎适合任何人。我们最终选择了一种非常简约的设计，通过旋转的图像、链接的色彩提示，以及在顶部导航等地方的阴影和层次感来赋予其个性。
 
 <Link href="https://spotlight.tailwindui.com">
-  <Image alt="Preview the Spotlight template" src={spotlightDetail} />
+  <Image alt="预览 Spotlight 模板" src={spotlightDetail} />
 </Link>
 
-As always, I recommend checking out <Link href="https://spotlight.tailwindui.com">the live preview</Link> for the full experience — especially pay attention to the way the avatar and navigation works on the home page as you scroll, it's very _*chef's kiss*_ when you're playing with the real site.
+和往常一样，我推荐查看 <Link href="https://spotlight.tailwindui.com">现场预览</Link>，以获得完整体验——特别注意主页面上头像和导航的滚动效果，真正的网站上玩起来会让你感受到 _*大厨之吻*_。
 
-We tried to structure the site the way we'd structure our own personal sites, so it includes a dedicated blog, a page for you to list some of your favorite projects you've worked on, an area for you to link to things like conference talks you've given, and a <Link href="https://spotlight.tailwindui.com/uses">"uses" page</Link> to list all of your favorite tools and gear.
+我们试图以一种我们会构建自己个人网站的方式来组织这个网站，因此它包括一个专门的博客，一个页面供您列出您工作过的一些最喜欢的项目，一个区域供您链接到您所做的会议演讲，以及一个 <Link href="https://spotlight.tailwindui.com/uses">"使用" 页面</Link>，列出您所有喜爱的工具和装备。
 
-If you've got a <Link href="https://tailwindui.com/all-access">Tailwind UI all-access</Link> license then you've already got access to this template! And if you don't, consider it — it's the best way to support our work on open-source projects like Tailwind CSS, Headless UI, and Heroicons.
+如果您拥有 <Link href="https://tailwindui.com/all-access">Tailwind UI 全通行证</Link> 许可证，那么您已经可以访问这个模板了！如果您没有，考虑一下——这是支持我们在 Tailwind CSS、Headless UI 和 Heroicons 等开源项目上工作的最佳方式。
 
 ---
 
 ## Heroicons v2.0
 
-Last year we released <Link href="/blog/heroicons-v1">Heroicons v1.0</Link>. Well last week we released <Link href="https://heroicons.com/">Heroicons v2.0</Link>, which is a brand new icon set, illustrated from scratch that Steve has been working on for about a year.
+去年我们发布了 <Link href="/blog/heroicons-v1">Heroicons v1.0</Link>。上周我们发布了 <Link href="https://heroicons.com/">Heroicons v2.0</Link>，这是一个全新从零开始绘制的图标集，Steve 已经在上面工作了大约一年。
 
 <Link href="https://heroicons.com">
   <Image alt="Heroicons v2.0" src={heroiconsCover} />
 </Link>
 
-It includes 280 icons drawn in three distinct styles:
+它包括280个以三种不同风格绘制的图标：
 
-- **Outline** — line icons with a 1.5px stroke, drawn in a 24px view box.
-- **Solid** — solid icons with filled shapes, drawn in a 24px view box.
-- **Mini** — solid icons with filled shapes, drawn in a 20px view box.
+- **轮廓** — 1.5px 线条的线性图标，绘制在24px视口中。
+- **实心** — 填充形状的实心图标，绘制在24px视口中。
+- **迷你** — 填充形状的实心图标，绘制在20px视口中。
 
-The biggest differences from v1 are that the outline set uses a thinner stroke, which feels a bit more modern and fashionable these days, and visually the icons are a bit more playful in style.
+与v1相比最大的区别是轮廓集使用了更细的笔划，这在现在看起来更现代和时尚，视觉上图标的风格也更具趣味性。
 
-Even though these have "v2" in the name, it's better to think of Heroicons v2 more like Terminator 2 than OpenSSL 2 — we feel like they represent our best work but it's a new icon set, not strictly an upgrade from the original icon set. Don't feel pressured to upgrade existing projects like you would with a real application dependency, but if you want to migrate, <Link href="https://github.com/tailwindlabs/heroicons/releases/tag/v2.0.0">check out the release notes</Link> for everything you need to switch.
+尽管这些名称中有“v2”，但我们认为 Heroicons v2 更像是终结者 2 而不是 OpenSSL 2——我们觉得它们代表了我们的最佳作品，但它是一个新的图标集，而不仅仅是原始图标集的升级。无需感到压力去升级现有项目，就像处理真实的应用程序依赖性一样，但如果您想迁移，请 <Link href="https://github.com/tailwindlabs/heroicons/releases/tag/v2.0.0">查看发布说明</Link> 以获取所需的所有信息。
 
-To explore all of the new icons, visit the totally <Link href="https://heroicons.com/">redesigned Heroicons website</Link> we launched with the new set.
+要探索所有新图标，请访问我们与新图标集一起推出的完全 <Link href="https://heroicons.com/">重新设计的 Heroicons 网站</Link>。
 
 ---
 
 ## Headless UI v1.7
 
-Earlier this week we tagged a new release of <Link href="https://headlessui.com/">Headless UI</Link>, our React and Vue libraries of unstyled UI components.
+本周早些时候，我们发布了 <Link href="https://headlessui.com/">Headless UI</Link> 的新版本，这是我们未样式化的 UI 组件的 React 和 Vue 库。
 
 <Link href="https://headlessui.com/">
   <Image alt="Headless UI v1.7" src={headlessuiV17} />
 </Link>
 
-Headless UI v1.7 includes the usual slew of bug fixes and improvements, but also some really useful new features!
+Headless UI v1.7 包含了一系列常规的错误修复和改进，但也带来了一些非常有用的新特性！
 
-### Added "by" prop for controlling object comparisons
+### 添加 "by" 属性以控制对象比较
 
-We've added a new `by` prop to the `Listbox`, `Combobox`, and `RadioGroup` components that make it a lot less cumbersome to bind an object as the form value.
+我们向 `Listbox`、`Combobox` 和 `RadioGroup` 组件添加了一个新的 `by` 属性，使绑定一个对象作为表单值变得不那么繁琐。
 
 ```jsx
 import { Listbox } from "@headlessui/react";
 
 const departments = [
-  { id: 1, name: "Marketing", contact: "Durward Reynolds" },
-  { id: 2, name: "HR", contact: "Kenton Towne" },
-  { id: 3, name: "Sales", contact: "Therese Wunsch" },
-  { id: 4, name: "Finance", contact: "Benedict Kessler" },
-  { id: 5, name: "Customer service", contact: "Katelyn Rohan" },
+  { id: 1, name: "市场部", contact: "Durward Reynolds" },
+  { id: 2, name: "人力资源", contact: "Kenton Towne" },
+  { id: 3, name: "销售部", contact: "Therese Wunsch" },
+  { id: 4, name: "财务部", contact: "Benedict Kessler" },
+  { id: 5, name: "客户服务", contact: "Katelyn Rohan" },
 ];
 
 function DepartmentPicker({ selectedDepartment, onChange }) {
@@ -120,13 +119,13 @@ function DepartmentPicker({ selectedDepartment, onChange }) {
 }
 ```
 
-This makes it a lot easier for the value to come from outside the component, and saves you having to just bind the `id` or similar and do a bunch of lookups yourself to find the full object when needed.
+这使得值来自组件外部变得更加简便，并且节省了您仅绑定 `id` 或类似值的需要，也不必在需要时自己查找完整对象。
 
-Check out the updated <Link href="https://headlessui.com/react/listbox#binding-objects-as-values">"Binding objects as values" documentation</Link> for each component for some more detail.
+请查看更新的 <Link href="https://headlessui.com/react/listbox#binding-objects-as-values">"将对象作为值绑定" 文档</Link> 以获取更多详细信息。
 
-### Use form controls as uncontrolled components
+### 将表单控件用作非受控组件
 
-The `Listbox`, `Combobox`, and `RadioGroup` components now let you optionally pass a `defaultValue` instead of a `value`, allowing you to use them as an uncontrolled component.
+`Listbox`、`Combobox` 和 `RadioGroup` 组件现在让您可以选择性地传递 `defaultValue` 而不是 `value`，允许您将它们用作非受控组件。
 
 ```jsx
 import { Listbox } from "@headlessui/react";
@@ -152,23 +151,23 @@ function Example() {
           ))}
         </Listbox.Options>
       </Listbox>
-      <button>Submit</button>
+      <button>提交</button>
     </form>
   );
 }
 ```
 
-This can simplify your code when using traditional HTML forms or form APIs that collect their state using `FormData` instead of tracking it using React state.
+当使用传统的 HTML 表单或通过 `FormData` 收集状态的表单 API 时，这可以简化您的代码，而不是使用 React 状态跟踪。
 
-Check out the <Link href="https://headlessui.com/react/listbox#using-as-an-uncontrolled-component">"Using as an uncontrolled component" documentation</Link> for each component to see some more examples.
+请查看各组件的 <Link href="https://headlessui.com/react/listbox#using-as-an-uncontrolled-component">"作为非受控组件使用" 文档</Link> 来查看更多示例。
 
-### Data attributes for CSS-only state styling
+### 数据属性用于仅 CSS 状态样式
 
-Historically, you've always had to style the different states of a Headless UI component by inspecting arguments passed through a render prop and conditionally rendering whatever classes or content made sense. This could feel like a lot of boilerplate when just trying to tweak a background color or make some other CSS-only change.
+历史上，您总是需要通过检查传递给渲染属性的参数来样式化 Headless UI 组件的不同状态，并条件性地渲染适合的类或内容。当您仅仅想调整背景颜色或进行其他仅 CSS 的更改时，这可能会感觉很繁琐。
 
-In Headless UI v1.7, we've added a `data-headlessui-state` attribute to the rendered HTML that includes information about the current state so you can target it with just CSS.
+在 Headless UI v1.7 中，我们向渲染的 HTML 添加了一个 `data-headlessui-state` 属性，其中包含有关当前状态的信息，因此您可以仅使用 CSS 进行目标样式设置。
 
-We've also released a new <Link href="https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-tailwindcss">@headlessui/tailwindcss</Link> plugin that gives you variants for these states so they are super easy to style with just Tailwind CSS classes:
+我们还发布了一个新的 <Link href="https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-tailwindcss">@headlessui/tailwindcss</Link> 插件，为这些状态提供变体，因此可以仅使用 Tailwind CSS 类进行样式设置：
 
 ```jsx
 <Listbox.Option
@@ -181,38 +180,38 @@ We've also released a new <Link href="https://github.com/tailwindlabs/headlessui
 </Listbox.Option>
 ```
 
-Check out the new documentation on <Link href="https://headlessui.com/react/listbox#using-data-attributes">styling using data attributes</Link> for some more details.
+请查看关于 <Link href="https://headlessui.com/react/listbox#using-data-attributes">使用数据属性进行样式设置</Link>的新文档以获取更多详细信息。
 
 ---
 
-### Insiders support on Tailwind Play
+### 在 Tailwind Play 上支持 Insider
 
-Not everyone knows this but we ship an `insiders` build of Tailwind CSS to npm that is automatically built and deployed every single time a new commit lands in the repository. This makes it really easy to test out new features and fixes before they are actually tagged in a proper release.
+并不是每个人都知道，我们会将 Tailwind CSS 的 `insiders` 版本发布到 npm 上，每当新的提交在仓库中落地时，都会自动构建和部署。这使得在正式发布之前测试新功能和修复变得非常简单。
 
-Well now we include access to the insiders build in <Link href="https://play.tailwindcss.com/">Tailwind Play</Link> as well, so you can play with bleeding edge stuff without even setting up a project:
+现在，我们也在 <Link href="https://play.tailwindcss.com/">Tailwind Play</Link> 中包括对 Insider 版本的访问，因此您可以在无需设置项目的情况下玩出尖端的东西：
 
 <Link href="https://play.tailwindcss.com">
-  <Image alt="Tailwind Play insiders option" src={playInsiders} />
+  <Image alt="Tailwind Play insider 选项" src={playInsiders} />
 </Link>
 
-We only keep the _latest_ insiders build on Play, so if you create a demo using an insiders build know that it might break if the next insiders build changes something in some unreleased feature you were using. You shouldn't be putting important things there anyways, come on be a professional.
+我们只在 Play 上保留最新的 Insider 版本，所以如果您使用 Insider 版本创建演示，请知道如果下一个 Insider 版本改变了您使用的一些未发布功能，它可能会崩溃。您不应该将重要内容放在那里，增加专业素养。
 
 ---
 
 ### Tailwind CSS + Phoenix v1.7
 
-A while ago we started talking with the <Link href="https://www.phoenixframework.org/">Phoenix</Link> team because they wanted to ship Tailwind CSS by default in a future release. I thought this was super exciting, and wanted to work with them to make the out-of-the-box experience really beautiful.
+不久前，我们开始与 <Link href="https://www.phoenixframework.org/">Phoenix</Link> 团队进行交谈，因为他们希望在未来的版本中默认发行 Tailwind CSS。我觉得这是非常令人激动的，并希望与他们合作以使开箱体验更加美丽。
 
-We designed a new splash screen and all of the necessary scaffolding for their generator system, which will ship as part of Phoenix v1.7.
+我们设计了一个新的启动界面和他们生成器系统所需的所有必要支架，这将在 Phoenix v1.7 中发布。
 
-<Image alt="New designs for Phoenix v1.7" src={phoenix} />
+<Image alt="Phoenix v1.7 的新设计" src={phoenix} />
 
-Chris McCord the creator of Phoenix gave <Link href="https://www.youtube.com/watch?v=9-rqBLjr5Eo">a great talk</Link> last week that walks through all of the Tailwind CSS stuff they are shipping, worth a watch if you're curious to learn more.
+Phoenix 的创建者 Chris McCord 上周进行了一次很棒的 <Link href="https://www.youtube.com/watch?v=9-rqBLjr5Eo">演讲</Link>，详细讲述了他们所发布的所有 Tailwind CSS 内容，如果您想了解更多，值得一看。
 
 ---
 
-So there you go, that's all of the coolest stuff we've been working on over the last few weeks!
+所以，这就是我们过去几周所做的所有酷炫的事情！
 
-Over the next month or so I'm excited to build a bunch of new Tailwind UI components we've been designing, explore some <Link href="https://caniuse.com/?search=container%20queries">new feature ideas</Link> for Tailwind CSS, and start doing some R&D on what it would look like to create a sort of application starter kit template with Tailwind + Next.js — think it could be pretty cool if we can nail it.
+在接下来的一个月左右的时间里，我期待构建一批我们正在设计的新 Tailwind UI 组件，探索一些 <Link href="https://caniuse.com/?search=container%20queries">Tailwind CSS 的新特性想法</Link>，并开始对使用 Tailwind + Next.js 创建一种应用程序启动工具包模板的样子进行一些研发——如果我们能做到这一点，我想它会非常酷。
 
-Catch you in the next update!
+下次更新见！

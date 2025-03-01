@@ -10,7 +10,7 @@ import { Figure } from "@/components/figure.tsx";
 import colors from "./utils/colors";
 
 export const title = "accent-color";
-export const description = "Utilities for controlling the accented color of a form control.";
+export const description = "用于控制表单控件的强调颜色的工具类。";
 
 <ApiTable
   rows={[
@@ -26,11 +26,11 @@ export const description = "Utilities for controlling the accented color of a fo
   ]}
 />
 
-## Examples
+## 示例
 
-### Setting the accent color
+### 设置强调颜色
 
-Use utilities like `accent-rose-500` and `accent-lime-600` to change the accent color of an element:
+使用 `accent-rose-500` 和 `accent-lime-600` 等工具类来改变元素的强调颜色：
 
 <Figure>
 
@@ -39,11 +39,11 @@ Use utilities like `accent-rose-500` and `accent-lime-600` to change the accent 
     <div className="flex flex-wrap justify-center gap-6">
       <label className="flex items-center space-x-2">
         <input type="checkbox" defaultChecked />
-        <div className="text-sm font-semibold text-gray-900 dark:text-gray-200">Browser default</div>
+        <div className="text-sm font-semibold text-gray-900 dark:text-gray-200">浏览器默认</div>
       </label>
       <label className="flex items-center space-x-2">
         <input type="checkbox" className="accent-pink-500" defaultChecked />
-        <div className="text-sm font-semibold text-gray-900 dark:text-gray-200">Customized</div>
+        <div className="text-sm font-semibold text-gray-900 dark:text-gray-200">自定义</div>
       </label>
     </div>
   }
@@ -53,21 +53,21 @@ Use utilities like `accent-rose-500` and `accent-lime-600` to change the accent 
 <!-- [!code classes:accent-pink-500] -->
 <label>
   <input type="checkbox" checked />
-  Browser default
+  浏览器默认
 </label>
 <label>
   <input class="accent-pink-500" type="checkbox" checked />
-  Customized
+  自定义
 </label>
 ```
 
 </Figure>
 
-This is helpful for styling elements like checkboxes and radio groups by overriding the browser's default color.
+这对于通过覆盖浏览器的默认颜色来样式化复选框和单选组等元素非常有用。
 
-### Changing the opacity
+### 改变不透明度
 
-Use the color opacity modifier to control the opacity of an element's accent color:
+使用颜色不透明度修饰符来控制元素的强调颜色的不透明度：
 
 <Figure>
 
@@ -95,20 +95,20 @@ Use the color opacity modifier to control the opacity of an element's accent col
 
 </Figure>
 
-Setting the accent color opacity has limited browser-support and only works in Firefox at this time.
+设置强调颜色的不透明度在浏览器支持方面有限，目前仅在 Firefox 中有效。
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   element="input"
   elementAttributes={{ type: "checkbox" }}
   utility="accent"
   value="#50d71e"
-  name="accent color"
+  name="强调颜色"
   variable="accent-color"
 />
 
-### Applying on hover
+### 在悬停时应用
 
 <TargetingSpecificStates property="accent-color">
 
@@ -119,7 +119,7 @@ Setting the accent color opacity has limited browser-support and only works in F
     <div className="flex flex-wrap justify-center gap-6">
       <label className="flex items-center space-x-2">
         <input type="checkbox" className="accent-black hover:accent-pink-500" defaultChecked />
-        <div className="text-sm font-semibold text-gray-900 dark:text-gray-200">Agree to terms</div>
+        <div className="text-sm font-semibold text-gray-900 dark:text-gray-200">同意条款</div>
       </label>
     </div>
   }
@@ -134,7 +134,7 @@ Setting the accent color opacity has limited browser-support and only works in F
 
 </TargetingSpecificStates>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="input"
@@ -144,6 +144,6 @@ Setting the accent color opacity has limited browser-support and only works in F
   featuredClass="accent-pink-500"
 />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourThemeColors element="input" elementAttributes={{ type: "checkbox" }} utility="accent" />

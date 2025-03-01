@@ -10,21 +10,20 @@ import graysImage from "./announcement-tailwind-grays.jpg";
 
 export const meta = {
   title: "Tailwind CSS v2.0",
-  description: `Today we're finally releasing Tailwind CSS v2.0, including an all-new color palette, dark mode support, and tons more!`,
+  description: `今天我们终于发布了 Tailwind CSS v2.0，包括全新的配色方案、深色模式支持等等！`,
   date: "2020-11-18T17:45:00.000Z",
   authors: [adamwathan],
   image,
   excerpt: (
     <>
-      Almost exactly 18 months ago we released Tailwind CSS v1.0, which signalled a commitment to stability while
-      continuing to push the boundaries with exciting new features in every minor release.
+      几乎准确地说，18 个月前我们发布了 Tailwind CSS v1.0，这标志着我们对稳定性的承诺，同时持续推动每个小版本的激动人心的新特性。
     </>
   ),
 };
 
-Almost exactly 18 months ago we released Tailwind CSS v1.0, which signalled a commitment to stability while continuing to push the boundaries with exciting new features in every minor release.
+几乎准确地说，18 个月前我们发布了 Tailwind CSS v1.0，这标志着我们对稳定性的承诺，同时持续推动每个小版本的激动人心的新特性。
 
-Today we're finally releasing Tailwind CSS v2.0.
+今天我们终于发布了 Tailwind CSS v2.0。
 
 <iframe
   className="aspect-video w-full"
@@ -34,53 +33,53 @@ Today we're finally releasing Tailwind CSS v2.0.
   allowFullScreen
 ></iframe>
 
-Tailwind CSS v2.0 is the first major update ever, including:
+Tailwind CSS v2.0 是有史以来第一次主要更新，包括：
 
-- [**All-new color palette**](#all-new-color-palette), featuring 220 total colors and a new workflow for building your own color schemes
-- [**Dark mode support**](#dark-mode), making it easier than ever to dynamically change your design when dark mode is enabled
-- [**Extra wide 2XL breakpoint**](#extra-wide-2-xl-breakpoint), for designing at 1536px and above
-- [**New outline ring utilities**](#new-outline-ring-utilities), which are almost as good as if they would just make `outline-radius` a real thing
-- [**Utility-friendly form styles**](#utility-friendly-form-styles), a new form reset that makes it easy to customize form elements (even checkboxes) with just utility classes
-- [**Default line-heights per font-size**](#default-line-heights-per-font-size), because if we can't make using a 1.5 line-height with a 48px font illegal we should at least make it not the default
-- [**Extended spacing, typography, and opacity scales**](#extended-spacing-typography-and-opacity-scales), for fine-tuning things at the micro level, making an even bigger impact with huge headlines, and for when `opacity-25` wasn't enough and `opacity-50` was too much
-- [**Use @apply with anything**](#use-apply-with-anything), including responsive, hover, focus, and other variants
-- [**New text overflow utilities**](#new-text-overflow-utilities), for controlling things more precisely than you can with `truncate` alone
-- [**Extend variants**](#extend-variants), so you can enable extra variants like `focus-visible` without redeclaring the entire list or thinking about order
-- [**Group-hover and focus-within by default**](#group-hover-and-focus-within-by-default), because you were enabling them on every project anyways
-- [**Default transition duration and easing curve**](#default-transition-duration-and-easing-curve), so you only have to add 17 classes to make a button instead of 19
-- [**Incompatibility with IE11**](#incompatibility-with-ie-11), so you can tell the person in charge _"sorry boss it's out of my hands, blame Tailwind"_
+- [**全新的配色方案**](#all-new-color-palette)，包括 220 种颜色和为构建自己的配色方案而设计的新工作流程
+- [**深色模式支持**](#dark-mode)，让你在启用深色模式时更容易动态更改设计
+- [**超宽 2XL 断点**](#extra-wide-2-xl-breakpoint)，用于在 1536px 及以上进行设计
+- [**新的轮廓环工具**](#new-outline-ring-utilities)，几乎就像真的让 `outline-radius` 变为现实
+- [**实用工具友好的表单样式**](#utility-friendly-form-styles)，一种新的表单重置，使自定义表单元素（甚至复选框）变得简单，只需使用工具类
+- [**每个字体大小的默认行高**](#default-line-heights-per-font-size)，因为如果我们不能让 48px 字体与 1.5 行高不可用，我们至少应该让它不是默认值
+- [**扩展的间距、排版和不透明度比例**](#extended-spacing-typography-and-opacity-scales)，用于微观调优，更大影响的巨大标题，以及在 `opacity-25` 不够和 `opacity-50` 太多的情况下
+- [**与任何内容一起使用 @apply**](#use-apply-with-anything)，包括响应式、悬停、聚焦和其他变体
+- [**新的文本溢出工具**](#new-text-overflow-utilities)，用于比单独使用 `truncate` 更精确地控制内容
+- [**扩展变体**](#extend-variants)，因此你可以启用额外的变体，比如 `focus-visible`，而无需重新声明整个列表或考虑顺序
+- [**默认的组悬停和聚焦内**](#group-hover-and-focus-within-by-default)，因为你在每个项目中都启用了它们
+- [**默认过渡持续时间和缓动曲线**](#default-transition-duration-and-easing-curve)，因此你只需添加 17 个类来制作按钮，而不是 19 个
+- [**与 IE11 不兼容**](#incompatibility-with-ie-11)，因此你可以告诉负责人 _“对不起老板，这超出了我的控制，怪 Tailwind”_
 
-...and [a bunch of other little things](https://github.com/tailwindlabs/tailwindcss/blob/master/CHANGELOG.md) too.
+...还有 [一堆其他小东西](https://github.com/tailwindlabs/tailwindcss/blob/master/CHANGELOG.md)。
 
-Even though Tailwind CSS v2.0 is a new major version, **we've worked really hard to minimize significant breaking changes**, especially ones that would force you to edit tons of your templates. We've renamed two classes, removed three that are no longer relevant in modern browsers, and replaced two with more powerful alternatives. Any other breaking changes that might impact you can be remedied with a couple small additions to your `tailwind.config.js` file. Upgrading shouldn't take more than about 30 minutes.
+尽管 Tailwind CSS v2.0 是一个新的主要版本，**我们努力减少重大不兼容的变化**，尤其是那些会迫使你编辑大量模板的变化。我们重命名了两个类，移除三个在现代浏览器中不再相关的类，并用更强大的替代方案替换了两个类。任何其他可能影响你的不兼容变化可以通过在 `tailwind.config.js` 文件中添加几个小的补丁来解决。升级不应超过大约 30 分钟。
 
-[Check out the upgrade guide](https://v2.tailwindcss.com/docs/upgrading-to-v2) for more details and step-by-step instructions on migrating your project to Tailwind CSS v2.0.
+[查看升级指南](https://v2.tailwindcss.com/docs/upgrading-to-v2)以获取更多细节和逐步说明，将项目迁移到 Tailwind CSS v2.0。
 
-If you'd like to start a brand new project with v2.0, [head over to our updated installation documentation](https://v2.tailwindcss.com/docs/installation) to get started fast.
+如果你想用 v2.0 开始一个全新项目，[请前往我们更新的安装文档](https://v2.tailwindcss.com/docs/installation) 快速入门。
 
-Also how about that [brand new website](https://v2.tailwindcss.com) eh? Hot damn.
+还有那个 [全新的网站](https://v2.tailwindcss.com) 如何？哇哦。
 
 ---
 
-## All-new color palette
+## 全新的配色方案
 
-We've learned a lot about color since the first time we tried to design a general purpose color palette back in the Tailwind CSS v0.1.0 days, and v2.0 represents our best attempt so far.
+自从我们第一次尝试在 Tailwind CSS v0.1.0 时代设计一个通用配色方案以来，我们学到了很多关于色彩的知识，而 v2.0 则代表了我们迄今为止最好的尝试。
 
-The new color palette includes 22 colors _(compared to 10 previously)_ with 10 shades each _(instead of 9_) for a total of 220 values.
+新的配色方案包括 22 种颜色 _(与之前的 10 种相比)_，每种颜色有 10 种阴影 _(而不是 9 种)_，总共 220 个值。
 
-<img src={colorsImage.src} alt="New Tailwind CSS color palette" />
+<img src={colorsImage.src} alt="新 Tailwind CSS 配色方案" />
 
-We've added an extra light `50` shade for every color, so they go from 50–900 now:
+我们为每种颜色添加了额外浅的 `50` 阴影，因此它们现在从 50 到 900：
 
 ```html
-<div class="bg-gray-50">I can't believe it's not white.</div>
+<div class="bg-gray-50">我简直不敢相信这不是白色。</div>
 ```
 
-The palette even includes 5 different shades of gray now, so you can choose "blue gray" if you want something really cool, or go all the way to "warm gray" for something with a lot more brown in it.
+调色板现在甚至包括 5 种不同的灰色阴影，因此如果你想要一些很酷的东西，可以选择“蓝灰色”，或者对于一些包含更多棕色的东西，可以选择“暖灰色”。
 
-<img src={graysImage.src} alt="New Tailwind CSS alternate gray" />
+<img src={graysImage.src} alt="新 Tailwind CSS 替代灰色" />
 
-We configure a well-balanced 8-color palette for you out of the box, but the complete color palette lives in a new `tailwindcss/colors` module that you can import at the top of your config file to curate your own custom palette however you like:
+我们为你配置了一个平衡良好的 8 色调色板，完整的配色方案存在新的 `tailwindcss/colors` 模块中，你可以在配置文件的顶部导入，以便根据需要策划自己的自定义调色板：
 
 ```js {{ filename: 'tailwind.config.js' }}
 const colors = require("tailwindcss/colors");
@@ -97,15 +96,15 @@ module.exports = {
 };
 ```
 
-Learn more in the new [customizing colors documentation](https://v2.tailwindcss.com/docs/customizing-colors).
+在新的 [自定义颜色文档](https://v2.tailwindcss.com/docs/customizing-colors) 中了解更多。
 
 ---
 
-## Dark mode
+## 深色模式
 
-Ever since iOS added native dark mode all you dark mode nerds haven't been able to leave me alone about adding it to Tailwind. Well you did it, it's here, you win.
+自从 iOS 添加了原生深色模式以来，所有热爱深色模式的程序员就一直没有让我安宁地加入它到 Tailwind。好吧，你们赢了，它来了。
 
-Open up your `tailwind.config.js` file and flip `darkMode` to `media`:
+打开你的 `tailwind.config.js` 文件，将 `darkMode` 设置为 `media`：
 
 ```js {{ filename: 'tailwind.config.js' }}
 module.exports = {
@@ -114,16 +113,16 @@ module.exports = {
 };
 ```
 
-Boom — now just add `dark:` to the beginning of a class like `bg-black` and it'll only take effect when dark mode is enabled:
+砰——现在只需在类名的开头添加 `dark:`，像 `bg-black` 这样的类将仅在启用深色模式时生效：
 
 ```html
 <div class="bg-white dark:bg-black">
-  <h1 class="text-gray-900 dark:text-white">Dark mode</h1>
-  <p class="text-gray-500 dark:text-gray-300">The feature you've all been waiting for.</p>
+  <h1 class="text-gray-900 dark:text-white">深色模式</h1>
+  <p class="text-gray-500 dark:text-gray-300">你们期待已久的功能。</p>
 </div>
 ```
 
-Works with hover and stuff too:
+悬停和其他状态也可以使用：
 
 ```html
 <button class="bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-50">
@@ -131,7 +130,7 @@ Works with hover and stuff too:
 </button>
 ```
 
-And responsive stuff:
+以及响应式的：
 
 ```html
 <div class="lg:bg-white lg:dark:bg-black ...">
@@ -139,7 +138,7 @@ And responsive stuff:
 </div>
 ```
 
-And responsive hover stuff:
+和响应式悬停：
 
 ```html
 <button class="lg:dark:bg-white lg:dark:hover:bg-gray-50 ...">
@@ -147,29 +146,29 @@ And responsive hover stuff:
 </button>
 ```
 
-Check out the [dark mode docs](https://v2.tailwindcss.com/docs/dark-mode) for all the gory details.
+查看 [深色模式文档](https://v2.tailwindcss.com/docs/dark-mode) 获取所有详细信息。
 
 ---
 
-## Extra wide 2XL breakpoint
+## 超宽 2XL 断点
 
-I'm pretty sure they make an iPhone that is 1280px wide now, so it's time to step it up.
+我敢肯定现在有一种宽度为 1280 像素的 iPhone，因此是时候升级了。
 
-We've added a new `2xl` breakpoint out-of-the-box that lets you target things at 1536px and above:
+我们新增了一个 `2xl` 断点，可以让你针对 1536 像素及以上的设备：
 
 ```html
-<h1 class="2xl:text-9xl ...">Godzilla</h1>
+<h1 class="2xl:text-9xl ...">哥斯拉</h1>
 ```
 
-Exciting I know but also let's be serious [you've been able to add this yourself](https://v2.tailwindcss.com/docs/responsive-design#customizing-breakpoints) for like three years. Now it's blessed though, I get it.
+我知道很兴奋，但说真的，你已经能自己加这个了（[自定义断点](https://v2.tailwindcss.com/docs/responsive-design#customizing-breakpoints)）大约三年了。现在它被批准了，我明白。
 
 ---
 
-## New outline ring utilities
+## 新的轮廓环工具
 
-You know how the `outline` property ignores border radius and pretty much just always looks bad? The `ring` utilities are our attempt to will a better solution into existence through blood, sweat, and tears.
+你知道 `outline` 属性忽略边框半径，几乎总是看起来很糟糕吗？`ring` 工具是我们试图通过血汗与泪水赋予一个更好解决方案的努力。
 
-They work a lot like the `border` utilities, except they add a solid box-shadow rather than a border so they don't impact the layout:
+它们的工作方式与 `border` 工具类似，但它们添加的是实心的盒子阴影而不是边框，因此不会影响布局：
 
 ```html
 <button class="focus:ring-opacity-50 focus:ring-2 focus:ring-blue-300 focus:outline-none ...">
@@ -177,7 +176,7 @@ They work a lot like the `border` utilities, except they add a solid box-shadow 
 </button>
 ```
 
-You can even offset them to create a sort of halo effect with `ring-offset-{width}` utilities:
+你甚至可以使用 `ring-offset-{width}` 工具进行偏移，从而创建一种光环效果：
 
 ```html
 <button class="focus:ring-opacity-50 focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:outline-none ...">
@@ -185,35 +184,35 @@ You can even offset them to create a sort of halo effect with `ring-offset-{widt
 </button>
 ```
 
-Using a bunch of CSS custom property voodoo we've even made them automatically combine with regular box-shadows, too:
+通过使用一堆 CSS 自定义属性的技术，我们甚至使它们与常规盒子阴影自动结合在一起：
 
 ```html
 <button class="shadow-sm focus:ring-2 ...">
-  <!-- Both the shadow and ring will render together -->
+  <!-- 阴影和环会一起呈现 -->
 </button>
 ```
 
-The [ring width documentation](https://v2.tailwindcss.com/docs/ring-width) is the best starting point for learning these new APIs. They seriously turned out so cool, more useful than you probably think.
+新的 [环宽文档](https://v2.tailwindcss.com/docs/ring-width) 是学习这些新 API 的最佳起点。它们真的很酷，比你想象的更有用。
 
 ---
 
-## Utility-friendly form styles
+## 实用工具友好的表单样式
 
-One thing I am constantly surprised by is how few people complain about how unbelievably useless form elements are out of the box with Tailwind. They literally look awful and you can't do anything about it without writing custom CSS full of weird background-image SVG tricks and worrying about obscure edge cases that require CSS properties you've never heard of before like `color-adjust`.
+我总是惊讶于有多少人抱怨 Tailwind 的表单元素太无用。它们看起来简直糟糕透顶，除了编写充满奇怪背景图像 SVG 伎俩的自定义 CSS 外，你无能为力，还得担心 obscure edge cases，使用你之前没听说过的 CSS 属性，如 `color-adjust`。
 
-I tried to solve this a while back with the [@tailwindcss/custom-forms](https://github.com/tailwindlabs/tailwindcss-custom-forms) plugin, but something about adding a bunch of classes like `form-input` and `form-checkbox` just didn't feel quite right so we didn't really promote it and didn't even link to it from the Tailwind documentation. This time though I think we figured it out.
+我之前尝试用 [@tailwindcss/custom-forms](https://github.com/tailwindlabs/tailwindcss-custom-forms) 插件解决这个问题，但添加像 `form-input` 和 `form-checkbox` 这样的类感觉总是不太对，所以我们没有真正推广它，甚至在 Tailwind 文档中没有链接。这一次，我觉得我们找到了答案。
 
-Alongside Tailwind CSS v2.0, we're releasing a brand new official plugin called `@tailwindcss/forms` that normalizes and resets all of the basic form controls across browsers to a state that is super easy to style with pure utility classes:
+伴随 Tailwind CSS v2.0，我们发布了一个全新的官方插件 `@tailwindcss/forms`，它在不同浏览器之间标准化并重置所有基本表单控件，使其处于一个非常容易用纯工具类进行样式处理的状态：
 
 ```html
-<!-- This will be a nice rounded checkbox with an indigo focus ring and an indigo checked state -->
+<!-- 这将是一个漂亮的圆角复选框，带有靛蓝焦点环和靛蓝选中状态 -->
 <input
   type="checkbox"
   class="focus:ring-opacity-50 h-4 w-4 rounded border-gray-300 text-indigo-500 focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200"
 />
 ```
 
-It's not included out of the box but you can add it to your `tailwind.config.js` file with a single line:
+它不包含在默认包中，但你可以通过一行将其添加到你的 `tailwind.config.js` 文件中：
 
 ```js {{ filename: 'tailwind.config.js' }}
 module.exports = {
@@ -222,16 +221,16 @@ module.exports = {
 };
 ```
 
-Check out [the @tailwindcss/forms documentation](https://github.com/tailwindlabs/tailwindcss-forms) for more information.
+查看 [@tailwindcss/forms 文档](https://github.com/tailwindlabs/tailwindcss-forms) 获取更多信息。
 
 ---
 
-## Default line-heights per font-size
+## 每个字体大小的默认行高
 
-Every font-size utility in Tailwind now comes paired with a sensible default line-height:
+Tailwind 中的每个字体大小工具现在都配有合理的默认行高：
 
 ```js
-// Tailwind's default theme
+// Tailwind 的默认主题
 module.exports = {
   theme: {
     // ...
@@ -254,37 +253,37 @@ module.exports = {
 };
 ```
 
-So now when you add a utility like `text-xl`, the corresponding default line-height (`1.75rem` in this case) is added automatically:
+因此，当你添加 `text-xl` 这样的工具时，相应的默认行高（在这种情况下是 `1.75rem`）会自动添加：
 
 ```html
-<p class="text-xl">This will have a line-height of 1.75rem automatically.</p>
+<p class="text-xl">这将自动具有 1.75rem 的行高。</p>
 ```
 
-If you want to override this, you can still do it by layering on a `leading` utility:
+如果你想覆盖这个，你仍然可以通过叠加一个 `leading` 工具来实现：
 
 ```html
-<p class="text-3xl leading-normal">Come on don't do this to me.</p>
+<p class="text-3xl leading-normal">来吧，不要这样对我。</p>
 ```
 
-Check out the [font size documentation](https://v2.tailwindcss.com/docs/font-size#providing-a-default-line-height) for some additional details.
+查看 [字体大小文档](https://v2.tailwindcss.com/docs/font-size#providing-a-default-line-height) 获取一些额外的细节。
 
 ---
 
-## Extended spacing, typography, and opacity scales
+## 扩展间距、排版和不透明度比例
 
-We've extended the default spacing scale to include a bunch of micro values like `0.5`, `1.5`, `2.5`, and `3.5`:
-
-```html
-<span class="ml-0.5">Just a little nudge.</span>
-```
-
-...as well as a bunch of new values at the top end as well like `72`, `80`, and `96`:
+我们扩展了默认的间距比例，以包括一系列微小的值如 `0.5`、`1.5`、`2.5` 和 `3.5`：
 
 ```html
-<div class="p-96">This is too much padding.</div>
+<span class="ml-0.5">只是一点小推动。</span>
 ```
 
-We've also extended the `inset` (that's top/right/bottom/left for you dinosaurs) and `translate` plugins to include the full spacing scale, so now you can do things like this:
+...以及许多新的顶端值如 `72`、`80` 和 `96`：
+
+```html
+<div class="p-96">这个填充太多了。</div>
+```
+
+我们还扩展了 `inset`（你们这些老爷子懂的，上/右/下/左）和 `translate` 插件，以包含完整的间距比例，因此现在你可以这样做：
 
 ```html
 <div class="top-8">
@@ -292,32 +291,32 @@ We've also extended the `inset` (that's top/right/bottom/left for you dinosaurs)
 </div>
 ```
 
-We've extended the default typography scale with new `7xl`, `8xl`, and `9xl` values:
+我们扩展了默认的排版比例，增加了新的 `7xl`、`8xl` 和 `9xl` 值：
 
 ```html
-<h1 class="text-9xl font-bold">What is this, an Apple website?</h1>
+<h1 class="text-9xl font-bold">这是什么，苹果的网站吗？</h1>
 ```
 
-And we've also extended the default opacity scale with steps of 10, as well as 5 and 95 values:
+我们还扩展了默认的不透明度比例，增加了 10 步，比如 5 和 95 的值：
 
 ```html
 <figure class="opacity-5">
-  <blockquote>You can't see me.</blockquote>
-  <figcaption>John Cena</figcaption>
+  <blockquote>你看不见我。</blockquote>
+  <figcaption>约翰·塞纳</figcaption>
 </figure>
 ```
 
-Peruse the entire [default config file](https://unpkg.com/browse/tailwindcss@^2/stubs/defaultConfig.stub.js) to see exactly what's available.
+查阅完整的 [默认配置文件](https://unpkg.com/browse/tailwindcss@^2/stubs/defaultConfig.stub.js) 来查看可用的内容。
 
 ---
 
-## Use @apply with anything
+## 与任何内容一起使用 @apply
 
-By far the most common question I've gotten over the years is "why doesn't `@apply hover:bg-black` work?"
+多年来，我收到的最常见问题是“为什么 `@apply hover:bg-black` 不工作？”
 
-And it's a fair question, it's stupid that it ~~doesn't~~ didn't work.
+这是一个合理的问题，这太傻了，它 ~~并没有~~ 没有工作。
 
-It took some serious engineering muscle but we figured it out — now you can `@apply` literally anything:
+经过一番严谨的工程努力，我们搞定了——现在你可以 `@apply` 任何东西：
 
 ```css
 .btn {
@@ -325,27 +324,27 @@ It took some serious engineering muscle but we figured it out — now you can `@
 }
 ```
 
-Check out [the updated @apply documentation](https://v2.tailwindcss.com/docs/functions-and-directives#apply) to learn more.
+查看 [更新的 @apply 文档](https://v2.tailwindcss.com/docs/functions-and-directives#apply) 以了解更多信息。
 
 ---
 
-## New text overflow utilities
+## 新的文本溢出工具
 
-Up until v2.0, if you wanted to control overflowing text all we really gave you was the fairly heavy-handed `truncate` utility.
+直到 v2.0，如果你想控制溢出的文本，我们给你的解决方案只有相对笨重的 `truncate` 工具。
 
-Now we've added dedicated `overflow-ellipsis` and `overflow-clip` utilities to control _just_ the `text-overflow` property, in case you wanted to add ellipsis to overflowing text without restricting that text to one line.
+现在我们添加了专门的 `overflow-ellipsis` 和 `overflow-clip` 工具，以便仅控制 `text-overflow` 属性，以便你可以在不限制文本为一行的情况下为溢出文本添加省略号。
 
 ```html
-<p class="overflow-hidden overflow-ellipsis">Look ma no whitespace-nowrap ipsum...</p>
+<p class="overflow-hidden overflow-ellipsis">看，妈，不要空格包裹就能实现了...</p>
 ```
 
-Check out the new [text overflow documentation](https://v2.tailwindcss.com/docs/text-overflow) to see it in action.
+查看新的 [文本溢出文档](https://v2.tailwindcss.com/docs/text-overflow) 了解其实际应用。
 
 ---
 
-## Extend variants
+## 扩展变体
 
-You know what sucks? Wanting to enable `focus-visible` for `backgroundColor` but having to list _every single default variant_ just to add one extra one:
+你知道什么让人失望吗？想要为 `backgroundColor` 启用 `focus-visible`，却不得不列出 _每一个默认变体_ 只为添加一个额外的变体：
 
 ```js {{ filename: 'tailwind.config.js' }}
 module.exports = {
@@ -356,7 +355,7 @@ module.exports = {
 };
 ```
 
-You know what's better? Just adding the one you want to enable:
+你知道更好的是什么吗？只需添加你想启用的一个：
 
 ```js {{ filename: 'tailwind.config.js' }}
 module.exports = {
@@ -369,15 +368,15 @@ module.exports = {
 };
 ```
 
-[Giddy up](https://v2.tailwindcss.com/docs/configuring-variants#enabling-extra-variants).
+[加油](https://v2.tailwindcss.com/docs/configuring-variants#enabling-extra-variants)。
 
 ---
 
-## Group-hover and focus-within by default
+## 默认组悬停和聚焦内
 
-One of the things we learned working on [Tailwind UI](https://tailwindui.com/components) is that `group-hover` and `focus-within` aren't nice-to-haves, they're must-haves.
+我们在 [Tailwind UI](https://tailwindui.com/components) 上工作时学到的一件事是，`group-hover` 和 `focus-within` 不是可有可无的，而是必须具备的。
 
-Anywhere where we enabled hover or focus by default previously now has `group-hover` and `focus-within` enabled by default too:
+在我们之前启用悬停或聚焦的任何地方，现在也默认启用了 `group-hover` 和 `focus-within`：
 
 ```html
 <div class="group ...">
@@ -385,19 +384,19 @@ Anywhere where we enabled hover or focus by default previously now has `group-ho
 </div>
 ```
 
-Check out [the default variants reference](https://v2.tailwindcss.com/docs/configuring-variants#default-variants-reference) for a full list of what's enabled where in v2.0.
+查看 [默认变体参考](https://v2.tailwindcss.com/docs/configuring-variants#default-variants-reference) 获取 v2.0 中已启用的完整列表。
 
 ---
 
-## Default transition duration and easing curve
+## 默认过渡持续时间和缓动曲线
 
-Until now, any time you wanted to add a transition in Tailwind you typically needed to add three classes:
+到目前为止，每当你想在 Tailwind 中添加过渡时，通常需要添加三个类：
 
 ```html
-<button class="transition duration-150 ease-in-out ...">Count them</button>
+<button class="transition duration-150 ease-in-out ...">数一数</button>
 ```
 
-In v2.0, we've made it possible to specify a default duration and timing function that is used automatically any time any `transitionProperty` utility is added:
+在 v2.0 中，我们使得可以指定默认的持续时间和时间函数，这些在任何 `transitionProperty` 工具被添加时自动使用：
 
 ```js {{ filename: 'tailwind.config.js' }}
 module.exports = {
@@ -416,34 +415,34 @@ module.exports = {
 };
 ```
 
-So now you only need to write a single class if you have a common duration and timing function that you use really frequently:
+因此现在，如果你有一个经常使用的常见持续时间和时间函数，你只需写一个类：
 
 ```html
-<button class="transition ...">Count them again</button>
+<button class="transition ...">再数一次</button>
 ```
 
-Of course you can override this by layering on separate duration or timing function utilities:
+当然，你可以通过添加单独的持续时间或时间函数工具来覆盖这个：
 
 ```html
-<button class="transition duration-300 ease-out ...">We're back baby</button>
+<button class="transition duration-300 ease-out ...">我们回来了，宝贝</button>
 ```
 
-Learn more about transitions in the [transition property documentation](https://v2.tailwindcss.com/docs/transition-property).
+在 [过渡属性文档](https://v2.tailwindcss.com/docs/transition-property) 中了解更多关于过渡的信息。
 
 ---
 
-## Incompatibility with IE11
+## 与 IE11 不兼容
 
-We've decided to unburden ourselves with caring about IE11 at all, which has allowed us to fully embrace CSS custom properties for [all sorts of crazy stuff](https://adamwathan.me/composing-the-uncomposable-with-css-variables/) and is what makes things like the new `ring` utilities even possible.
+我们决定不再关心 IE11，这使我们能够完全拥抱 CSS 自定义属性，以便实施 [各种疯狂的东西](https://adamwathan.me/composing-the-uncomposable-with-css-variables/)，这使得像新的 `ring` 工具成为可能。
 
-Dropping IE11 support means smaller builds even when using PurgeCSS, because we don't have to ship any CSS variable fallbacks which adds up more than you'd expect.
+放弃 IE11 支持意味着即使使用 PurgeCSS，构建体积也会更小，因为我们不必交付任何 CSS 变量的回退，这样的支出超出你的预期。
 
-Cheers to Bootstrap for having the cojones to [do this first](https://github.com/twbs/bootstrap/pull/30377) — I don't think we would have been so bold if they hadn't decided to pave the way.
+感谢 Bootstrap 首先有勇气 [这样做](https://github.com/twbs/bootstrap/pull/30377)——如果他们没有铺平道路，我们可能不会这么大胆。
 
-The good news is that if you need to support IE11, you can always use Tailwind CSS v1.9 which is still an amazingly productive framework.
+好消息是，如果你需要支持 IE11，你仍然可以使用 Tailwind CSS v1.9，它仍然是一个极具生产力的框架。
 
 ---
 
-So there you have it folks, that's Tailwind CSS v2.0 in a _(pretty big)_ nutshell!
+所以伙计们，这就是 Tailwind CSS v2.0 的 _(相当大的)_ 概述！
 
-What are you waiting for? [Go build something awesome](https://v2.tailwindcss.com).
+你还等什么？ [去构建一些了不起的东西吧](https://v2.tailwindcss.com)。

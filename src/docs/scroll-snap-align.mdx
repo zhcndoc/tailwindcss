@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "scroll-snap-align";
-export const description = "Utilities for controlling the scroll snap alignment of an element.";
+export const description = "用于控制元素滚动捕捉对齐的工具。";
 
 <ApiTable
   rows={[
@@ -15,20 +15,20 @@ export const description = "Utilities for controlling the scroll snap alignment 
   ]}
 />
 
-## Examples
+## 示例
 
-### Snapping to the center
+### 中间捕捉
 
-Use the `snap-center` utility to snap an element to its center when being scrolled inside a snap container:
+使用 `snap-center` 工具在滚动到捕捉容器内部时将元素捕捉到其中心：
 
-<Figure hint="Scroll in the grid of images to see the expected behavior">
+<Figure hint="在图像网格中滚动以查看预期行为">
 
 <Example padding={false}>
   {
     <div className="relative">
       <div className="mb-6 ml-[50%] flex items-end justify-start pt-10">
         <div className="dark:highlight-white/10 ml-2 rounded bg-indigo-50 px-1.5 font-mono text-[0.625rem] leading-6 text-indigo-600 ring-1 ring-indigo-600 ring-inset dark:bg-indigo-500 dark:text-white dark:ring-0">
-          snap point
+          捕捉点
         </div>
         <div className="absolute top-0 bottom-0 left-1/2 border-l border-indigo-500"></div>
       </div>
@@ -106,18 +106,18 @@ Use the `snap-center` utility to snap an element to its center when being scroll
 
 </Figure>
 
-### Snapping to the start
+### 开始捕捉
 
-Use the `snap-start` utility to snap an element to its start when being scrolled inside a snap container:
+使用 `snap-start` 工具在滚动到捕捉容器内部时将元素捕捉到其开始位置：
 
-<Figure hint="Scroll in the grid of images to see the expected behavior">
+<Figure hint="在图像网格中滚动以查看预期行为">
 
 <Example padding={false}>
   {
     <div className="relative">
       <div className="mb-6 ml-6 flex items-end justify-start pt-10">
         <div className="dark:highlight-white/10 ml-2 rounded bg-indigo-50 px-1.5 font-mono text-[0.625rem] leading-6 text-indigo-600 ring-1 ring-indigo-600 ring-inset dark:bg-indigo-500 dark:text-white dark:ring-0">
-          snap point
+          捕捉点
         </div>
         <div className="absolute top-0 bottom-0 left-6 border-l border-indigo-500"></div>
       </div>
@@ -190,18 +190,18 @@ Use the `snap-start` utility to snap an element to its start when being scrolled
 
 </Figure>
 
-### Snapping to the end
+### 结束捕捉
 
-Use the `snap-end` utility to snap an element to its end when being scrolled inside a snap container:
+使用 `snap-end` 工具在滚动到捕捉容器内部时将元素捕捉到其结束位置：
 
-<Figure hint="Scroll in the grid of images to see the expected behavior">
+<Figure hint="在图像网格中滚动以查看预期行为">
 
 <Example padding={false}>
   {
     <div className="relative">
       <div className="mr-6 mb-6 flex items-end justify-end pt-10">
         <div className="dark:highlight-white/10 mr-2 rounded bg-indigo-50 px-1.5 font-mono text-[0.625rem] leading-6 text-indigo-600 ring-1 ring-indigo-600 ring-inset dark:bg-indigo-500 dark:text-white dark:ring-0">
-          snap point
+          捕捉点
         </div>
         <div className="absolute top-0 right-6 bottom-0 border-l border-indigo-500"></div>
       </div>
@@ -276,6 +276,6 @@ Use the `snap-end` utility to snap an element to its end when being scrolled ins
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="scroll-snap-align" defaultClass="snap-center" featuredClass="snap-start" />

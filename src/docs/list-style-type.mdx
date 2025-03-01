@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "list-style-type";
-export const description = "Utilities for controlling the marker style of a list.";
+export const title = "列表样式类型";
+export const description = "控制列表标记样式的工具类。";
 
 <ApiTable
   rows={[
@@ -16,11 +16,11 @@ export const description = "Utilities for controlling the marker style of a list
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `list-disc` and `list-decimal` to control the style of the markers in a list:
+使用 `list-disc` 和 `list-decimal` 等工具类来控制列表中标记的样式：
 
 <Figure>
 
@@ -30,25 +30,25 @@ Use utilities like `list-disc` and `list-decimal` to control the style of the ma
       <div>
         <span className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">list-disc</span>
         <ul className="list-inside list-disc text-gray-900 dark:text-gray-200">
-          <li>Now this is a story all about how, my life got flipped-turned upside down</li>
-          <li>And I'd like to take a minute just sit right there</li>
-          <li>I'll tell you how I became the prince of a town called Bel-Air</li>
+          <li>现在这是一个关于我的生活被彻底颠覆的故事</li>
+          <li>我想花一点时间让你坐在那儿</li>
+          <li>我会告诉你我是如何成为贝尔艾尔镇的王子的</li>
         </ul>
       </div>
       <div>
         <span className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">list-decimal</span>
         <ul className="list-inside list-decimal text-gray-900 dark:text-gray-200">
-          <li>Now this is a story all about how, my life got flipped-turned upside down</li>
-          <li>And I'd like to take a minute just sit right there</li>
-          <li>I'll tell you how I became the prince of a town called Bel-Air</li>
+          <li>现在这是一个关于我的生活被彻底颠覆的故事</li>
+          <li>我想花一点时间让你坐在那儿</li>
+          <li>我会告诉你我是如何成为贝尔艾尔镇的王子的</li>
         </ul>
       </div>
       <div>
         <span className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">list-none</span>
         <ul className="list-inside list-none text-gray-900 dark:text-gray-200">
-          <li>Now this is a story all about how, my life got flipped-turned upside down</li>
-          <li>And I'd like to take a minute just sit right there</li>
-          <li>I'll tell you how I became the prince of a town called Bel-Air</li>
+          <li>现在这是一个关于我的生活被彻底颠覆的故事</li>
+          <li>我想花一点时间让你坐在那儿</li>
+          <li>我会告诉你我是如何成为贝尔艾尔镇的王子的</li>
         </ul>
       </div>
     </div>
@@ -58,29 +58,29 @@ Use utilities like `list-disc` and `list-decimal` to control the style of the ma
 ```html
 <!-- [!code classes:list-disc] -->
 <ul class="list-disc">
-  <li>Now this is a story all about how, my life got flipped-turned upside down</li>
+  <li>现在这是一个关于我的生活被彻底颠覆的故事</li>
   <!-- ... -->
 </ul>
 
 <!-- [!code classes:list-decimal] -->
 <ol class="list-decimal">
-  <li>Now this is a story all about how, my life got flipped-turned upside down</li>
+  <li>现在这是一个关于我的生活被彻底颠覆的故事</li>
   <!-- ... -->
 </ol>
 
 <!-- [!code classes:list-none] -->
 <ul class="list-none">
-  <li>Now this is a story all about how, my life got flipped-turned upside down</li>
+  <li>现在这是一个关于我的生活被彻底颠覆的故事</li>
   <!-- ... -->
 </ul>
 ```
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue element="ol" utility="list" name="marker" value="upper-roman" variable="marker" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="ul" property="list-style-type" defaultClass="list-none" featuredClass="list-disc" />

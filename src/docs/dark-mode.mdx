@@ -3,14 +3,14 @@ import { Iframe } from "@/components/iframe";
 import { Example } from "@/components/example";
 import { Figure } from "@/components/figure";
 
-export const title = "Dark mode";
-export const description = "Using variants to style your site in dark mode.";
+export const title = "黑暗模式";
+export const description = "使用变体为您的网站设置黑暗模式样式。";
 
-## Overview
+## 概述
 
-Now that dark mode is a first-class feature of many operating systems, it's becoming more and more common to design a dark version of your website to go along with the default design.
+现在黑暗模式是许多操作系统的一个重要特性，因此为您的网站设计黑暗版本变得越来越普遍，以与默认设计相匹配。
 
-To make this as easy as possible, Tailwind includes a `dark` variant that lets you style your site differently when dark mode is enabled:
+为了尽可能简化这一过程，Tailwind 包含了一个 `dark` 变体，允许您在启用黑暗模式时以不同的方式为您的网站设置样式：
 
 <Figure>
 
@@ -18,7 +18,7 @@ To make this as easy as possible, Tailwind includes a `dark` variant that lets y
   {
     <div className="grid grid-cols-1 sm:grid-cols-2">
       <div className="p-8 pt-7">
-        <p className="mb-2 text-sm font-medium text-gray-500">Light mode</p>
+        <p className="mb-2 text-sm font-medium text-gray-500">亮色模式</p>
         <div className="rounded-lg bg-white px-6 py-8 shadow-xl ring ring-gray-900/5">
           <div>
             <span className="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
@@ -39,16 +39,16 @@ To make this as easy as possible, Tailwind includes a `dark` variant that lets y
               </svg>
             </span>
           </div>
-          <p className="mt-5 text-base font-medium tracking-tight text-gray-900">Writes upside-down</p>
+          <p className="mt-5 text-base font-medium tracking-tight text-gray-900">可以倒写</p>
           <p
             className="mt-2 text-sm text-gray-500"
-            children={`The Zero Gravity Pen can be used to write in any orientation,
-          including upside-down. It even works in outer space.`}
+            children={`零重力笔可以用于任何方向书写，
+          包括倒写。它甚至也能在外太空中使用。`}
           />
         </div>
       </div>
       <div className="bg-gray-900 p-8 pt-7">
-        <p className="mb-2 text-sm font-medium text-gray-400">Dark mode</p>
+        <p className="mb-2 text-sm font-medium text-gray-400">黑暗模式</p>
         <div className="rounded-lg bg-gray-800 px-6 py-8 shadow-xl ring ring-gray-900/5">
           <div>
             <span className="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
@@ -69,11 +69,11 @@ To make this as easy as possible, Tailwind includes a `dark` variant that lets y
               </svg>
             </span>
           </div>
-          <p className="mt-5 text-base font-medium tracking-tight text-white">Writes upside-down</p>
+          <p className="mt-5 text-base font-medium tracking-tight text-white">可以倒写</p>
           <p
             className="mt-2 text-sm text-gray-400"
-            children={`The Zero Gravity Pen can be used to write in any orientation,
-          including upside-down. It even works in outer space.`}
+            children={`零重力笔可以用于任何方向书写，
+          包括倒写。它甚至也能在外太空中使用。`}
           />
         </div>
       </div>
@@ -94,22 +94,22 @@ To make this as easy as possible, Tailwind includes a `dark` variant that lets y
   </div>
   <!-- prettier-ignore -->
   <!-- [!code word:dark\:text-white] -->
-  <h3 class="text-gray-900 dark:text-white mt-5 text-base font-medium tracking-tight ">Writes upside-down</h3>
+  <h3 class="text-gray-900 dark:text-white mt-5 text-base font-medium tracking-tight ">可以倒写</h3>
   <!-- prettier-ignore -->
   <!-- [!code word:dark\:text-gray-400] -->
   <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm ">
-    The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in outer space.
+    零重力笔可以用于任何方向书写，包括倒写。它甚至能在外太空中使用。
   </p>
 </div>
 ```
 
 </Figure>
 
-By default this uses the `prefers-color-scheme` CSS media feature, but you can also build sites that support [toggling dark mode manually](#toggling-dark-mode-manually) by overriding the dark variant.
+默认情况下，这使用 `prefers-color-scheme` CSS 媒体特性，但您还可以通过覆盖黑暗变体构建支持 [手动切换黑暗模式](#toggling-dark-mode-manually) 的网站。
 
-## Toggling dark mode manually
+## 手动切换黑暗模式
 
-If you want your dark theme to be driven by a CSS selector instead of the `prefers-color-scheme` media query, override the `dark` variant to use your custom selector:
+如果您希望您的黑暗主题由 CSS 选择器驱动，而不是 `prefers-color-scheme` 媒体查询，请覆盖 `dark` 变体以使用您的自定义选择器：
 
 ```css
 /* [!code filename:app.css] */
@@ -119,7 +119,7 @@ If you want your dark theme to be driven by a CSS selector instead of the `prefe
 @custom-variant dark (&:where(.dark, .dark *));
 ```
 
-Now instead of `dark:*` utilities being applied based on `prefers-color-scheme`, they will be applied whenever the `dark` class is present earlier in the HTML tree:
+现在，而不是基于 `prefers-color-scheme` 应用 `dark:*` 工具，当 `dark` 类在 HTML 树中较早出现时，它们将被应用：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -134,11 +134,11 @@ Now instead of `dark:*` utilities being applied based on `prefers-color-scheme`,
 </html>
 ```
 
-How you add the `dark` class to the `html` element is up to you, but a common approach is to use a bit of JavaScript that updates the `class` attribute and syncs that preference to somewhere like `localStorage`.
+如何将 `dark` 类添加到 `html` 元素取决于您，但一种常见的方法是使用少量 JavaScript 更新 `class` 属性，并将该首选项同步到 `localStorage`。
 
-### Using a data attribute
+### 使用数据属性
 
-To use a data attribute instead of a class to activate dark mode, just override the `dark` variant with an attribute selector instead:
+要使用数据属性而不是类来激活黑暗模式，只需使用属性选择器覆盖 `dark` 变体即可：
 
 ```css
 /* [!code filename:app.css] */
@@ -148,7 +148,7 @@ To use a data attribute instead of a class to activate dark mode, just override 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 ```
 
-Now dark mode utilities will be applied whenever the `data-theme` attribute is set to `dark` somewhere up the tree:
+现在，只要在树的某个地方将 `data-theme` 属性设置为 `dark`，黑暗模式实用工具将应用：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -163,29 +163,29 @@ Now dark mode utilities will be applied whenever the `data-theme` attribute is s
 </html>
 ```
 
-### With system theme support
+### 使用系统主题支持
 
-To build three-way theme toggles that support light mode, dark mode, and your system theme, use a custom dark mode selector and the [`window.matchMedia()` API](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) to detect the system theme and update the `html` element when needed.
+要构建支持亮色模式、黑暗模式和系统主题的三方主题切换器，请使用自定义黑暗模式选择器和 [`window.matchMedia()` API](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) 来检测系统主题并在需要时更新 `html` 元素。
 
-Here's a simple example of how you can support light mode, dark mode, as well as respecting the operating system preference:
+以下是一个简单示例，展示如何支持亮色模式、黑暗模式，以及尊重操作系统的首选项：
 
 ```js
 // [!code filename:spaghetti.js]
-// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+// 在页面加载时或更改主题时，最好将其内联添加到 `head` 以避免 FOUC
 document.documentElement.classList.toggle(
   "dark",
   localStorage.theme === "dark" ||
     (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
 );
 
-// Whenever the user explicitly chooses light mode
+// 每当用户明确选择亮色模式
 localStorage.theme = "light";
 
-// Whenever the user explicitly chooses dark mode
+// 每当用户明确选择黑暗模式
 localStorage.theme = "dark";
 
-// Whenever the user explicitly chooses to respect the OS preference
+// 每当用户明确选择尊重操作系统的首选项
 localStorage.removeItem("theme");
 ```
 
-Again you can manage this however you like, even storing the preference server-side in a database and rendering the class on the server — it's totally up to you.
+您可以根据需要自行管理这一切，甚至可以在服务器端数据库中存储首选项，并在服务器上渲染类——这完全取决于您。

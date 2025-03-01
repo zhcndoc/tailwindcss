@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "appearance";
-export const description = "Utilities for suppressing native form control styling.";
+export const title = "外观";
+export const description = "用于抑制原生表单控件样式的工具。";
 
 <ApiTable
   rows={[
@@ -13,11 +13,11 @@ export const description = "Utilities for suppressing native form control stylin
   ]}
 />
 
-## Examples
+## 示例
 
-### Removing default appearance
+### 移除默认外观
 
-Use `appearance-none` to reset any browser specific styling on an element:
+使用 `appearance-none` 重置元素上的任何浏览器特定样式：
 
 <Figure>
 
@@ -26,12 +26,12 @@ Use `appearance-none` to reset any browser specific styling on an element:
     <div className="mx-auto max-w-sm items-center">
       <div className="my-6 flex">
         <select className="w-20">
-          <option>Yes</option>
-          <option>No</option>
-          <option>Maybe</option>
+          <option>是</option>
+          <option>否</option>
+          <option>也许</option>
         </select>
         <div className="mx-6 text-sm font-semibold text-gray-900 dark:text-gray-200">
-          Default browser styles applied
+          应用的默认浏览器样式
         </div>
       </div>
       <div className="my-6 flex items-center">
@@ -49,12 +49,12 @@ Use `appearance-none` to reset any browser specific styling on an element:
             />
           </svg>
           <select className="col-start-1 row-start-1 w-20 appearance-none rounded-lg border border-gray-300 bg-gray-50 px-2 text-gray-700 hover:border-cyan-500 hover:bg-white dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:border-cyan-700 dark:hover:bg-gray-700 forced-colors:appearance-auto">
-            <option>Yes</option>
-            <option>No</option>
-            <option>Maybe</option>
+            <option>是</option>
+            <option>否</option>
+            <option>也许</option>
           </select>
         </div>
-        <div className="mx-6 text-sm font-semibold text-gray-900 dark:text-gray-200">Remove default browser styles</div>
+        <div className="mx-6 text-sm font-semibold text-gray-900 dark:text-gray-200">移除默认浏览器样式</div>
       </div>
     </div>
   }
@@ -63,16 +63,16 @@ Use `appearance-none` to reset any browser specific styling on an element:
 ```html
 <!-- [!code classes:appearance-none] -->
 <select>
-  <option>Yes</option>
-  <option>No</option>
-  <option>Maybe</option>
+  <option>是</option>
+  <option>否</option>
+  <option>也许</option>
 </select>
 
 <div class="grid">
   <select class="col-start-1 row-start-1 appearance-none bg-gray-50 dark:bg-gray-800 ...">
-    <option>Yes</option>
-    <option>No</option>
-    <option>Maybe</option>
+    <option>是</option>
+    <option>否</option>
+    <option>也许</option>
   </select>
   <svg class="pointer-events-none col-start-1 row-start-1 ...">
     <!-- ... -->
@@ -82,13 +82,13 @@ Use `appearance-none` to reset any browser specific styling on an element:
 
 </Figure>
 
-This utility is often used when creating custom form components.
+该工具常用于创建自定义表单组件。
 
-### Restoring default appearance
+### 恢复默认外观
 
-Use `appearance-auto` to restore the default browser specific styling on an element:
+使用 `appearance-auto` 恢复元素上的默认浏览器特定样式：
 
-<Figure hint="Try emulating `forced-colors: active` in your developer tools to see the difference">
+<Figure hint="尝试在开发者工具中模拟 `forced-colors: active` 以查看差异">
 
 <Example>
   {
@@ -113,7 +113,7 @@ Use `appearance-auto` to restore the default browser specific styling on an elem
               <path d="M3 8L6 11L11 3.5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
             </svg>
           </div>
-          Falls back to default appearance
+          回退至默认外观
         </label>
       </div>
       <div className="flex items-center">
@@ -136,7 +136,7 @@ Use `appearance-auto` to restore the default browser specific styling on an elem
               <path d="M3 8L6 11L11 3.5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
             </svg>
           </div>
-          Keeps custom appearance
+          保持自定义外观
         </label>
       </div>
     </div>
@@ -152,7 +152,7 @@ Use `appearance-auto` to restore the default browser specific styling on an elem
       <!-- ... -->
     </svg>
   </div>
-  Falls back to default appearance
+  回退至默认外观
 </label>
 
 <label>
@@ -162,15 +162,15 @@ Use `appearance-auto` to restore the default browser specific styling on an elem
       <!-- ... -->
     </svg>
   </div>
-  Keeps custom appearance
+  保持自定义外观
 </label>
 ```
 
 </Figure>
 
-This is useful for reverting to the standard browser controls in certain accessibility modes.
+这在某些可及性模式中恢复标准浏览器控件时非常有用。
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="select"

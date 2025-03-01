@@ -6,145 +6,144 @@ import robinImage from "./robin.jpg";
 import cardImage from "./card.jpg";
 
 export const meta = {
-  title: "From Nine Hundred to One: How We Hired Robin Malfait",
-  description: `Back in May we published our first job posting for a full-stack developer to join our team. This is the story of how we worked through almost 900 applications, and eventually hired Robin Malfait, a talented developer from Belgium who is starting with us today.`,
+  title: "从900到1：我们是如何聘请Robin Malfait的",
+  description: `在五月，我们发布了我们的第一份全栈开发者的招聘信息，邀请加入我们的团队。这是我们如何处理接近900份申请，最终聘请来自比利时的优秀开发者Robin Malfait的故事，他今天正式加入我们。`,
   date: "2020-08-10T13:30:00.000Z",
   authors: [adamwathan],
   image: cardImage,
   excerpt: (
     <>
-      Back in May we published{" "}
-      <Link href="https://jobs.tailwindui.com/full-stack-developer">our first job posting</Link> to help us find a
-      full-stack developer to join our team. After receiving almost 900 applications and interviewing dozens of talented
-      people, we're excited to finally share that <Link href="https://twitter.com/malfaitrobin">Robin Malfait</Link>{" "}
-      accepted our offer for the position and is officially part of the Tailwind Labs team as of today!
+      在五月，我们发布了{" "}
+      <Link href="https://jobs.tailwindui.com/full-stack-developer">我们的第一份招聘信息</Link>，以帮助我们寻找全栈开发者加入我们的团队。经过将近900份申请和对几十位优秀人才的面试，我们很高兴地分享，{" "}
+      <Link href="https://twitter.com/malfaitrobin">Robin Malfait</Link>{" "}
+      接受了我们的职位邀请，今天正式成为Tailwind Labs团队的一员！
     </>
   ),
 };
 
-Back in May we published [our first job posting](https://jobs.tailwindui.com/full-stack-developer) to help us find a full-stack developer to join our team.
+在五月，我们发布了 [我们的第一份招聘信息](https://jobs.tailwindui.com/full-stack-developer)，以帮助我们寻找全栈开发者加入我们的团队。
 
-After receiving almost 900 applications and interviewing dozens of talented people, we're excited to finally share that [Robin Malfait](https://twitter.com/malfaitrobin) accepted our offer for the position and is officially part of the Tailwind Labs team as of today!
+经过将近900份申请和对几十位优秀人才的面试，我们很高兴地分享， [Robin Malfait](https://twitter.com/malfaitrobin) 接受了我们的职位邀请，今天正式成为Tailwind Labs团队的一员！
 
 <Image alt="Robin Malfait" src={robinImage} />
 
-Robin is a talented developer from Belgium, and has been an active member of the Tailwind community for a long time. If you're a Tailwind UI customer and have ever asked a question in the `#react` channel on our Discord server, there's a 90% chance he's the helpful person who answered your question. He even built a [bookmarklet](https://gist.github.com/RobinMalfait/a90e8651196c273dfa51eec0f43e1676) to help people convert Tailwind UI components to JSX!
+Robin是一位来自比利时的优秀开发者，长期以来一直是Tailwind社区的活跃成员。如果你是Tailwind UI的用户，并曾在我们Discord服务器的`#react`频道提问过，那么他有90%的可能性就是回答你问题的那位热心人士。他甚至制作了一个 [bookmarklet](https://gist.github.com/RobinMalfait/a90e8651196c273dfa51eec0f43e1676)，帮助人们将Tailwind UI组件转换为JSX！
 
-Robin is a seriously experienced React developer, and is joining us to help spearhead the open-source [renderless UI libraries](https://twitter.com/adamwathan/status/1265815748917813248) we are working on that will be the foundation for official React and Vue _(to start anyways)_ support in Tailwind UI.
+Robin是一位非常有经验的React开发者，正在加入我们，帮助领导我们正在开发的开源 [无渲染UI库](https://twitter.com/adamwathan/status/1265815748917813248)，这些将成为Tailwind UI中官方React和Vue支持（暂时而言）的基础。
 
-We're super excited that he is finally starting with us today, and can't wait to watch his contributions enable people to build awesome UIs even faster and with more confidence. Welcome to the team dude!
+我们非常激动他今天终于加入我们，迫不及待想要看到他的贡献将如何让人们更快、更有信心地构建出色的用户界面。欢迎加入团队，伙计！
 
-What follows is the story of how we went about hiring for this role, and how we narrowed down the candidates from almost 900 initial applications to finally making an offer to Robin.
+接下来是我们如何进行这个职位的招聘，以及我们如何从接近900份初始申请中筛选出候选人，并最终向Robin发出邀请的故事。
 
 ---
 
-## The Job Posting
+## 招聘信息
 
-Before this role, we had only hired [Brad](https://blog.tailwindcss.com/welcoming-brad-cornes-to-the-tailwind-team) who we already knew and trusted, so we didn't need a job posting or any sort of rigorous application process.
+在这个角色之前，我们只雇佣过[Brad](https://blog.tailwindcss.com/welcoming-brad-cornes-to-the-tailwind-team)——我们已经认识并信任他，所以我们不需要发布招聘信息或进行任何严格的申请流程。
 
-I knew that if we wanted to get really great candidates, we had to write a compelling job posting. After about 3-4 days of working on it, this is where we ended up:
+我知道，如果我们想要获得真正出色的候选人，我们必须撰写一份引人注目的招聘信息。在大约3-4天的工作后，我们最终得到了这样的内容：
 
-[**Read the job posting &rarr;**](https://jobs.tailwindui.com/full-stack-developer)
+[**查看招聘信息 &rarr;**](https://jobs.tailwindui.com/full-stack-developer)
 
-Here are the important things I focused on when writing it:
+在撰写招聘信息时，我专注于以下重要事项：
 
-- Be specific about the projects the applicant would be working on after they started
-- Be clear that we are a small team, so everyone has to do a bit of everything, including customer support
-- Give concrete examples of projects we just finished that the applicant would have worked on if they were already at the company
-- Go into detail about specific hard problems we expect to run into on the next major upcoming project, to help the applicant understand the sort of expertise that would be valuable to us
-- Share concrete salary and benefit information. I would never apply for a job without a clear understanding of the salary, so why should I expect talented people to apply for our posting without it?
+- 对申请人入职后所从事的项目要具体说明
+- 清楚表明我们是一个小团队，每个人都必须参与到各种工作中，包括客户支持
+- 提供我们刚刚完成的项目的具体例子，申请人在加入公司后会参与这些项目
+- 详细说明我们预期在下一个即将到来的重大项目中可能遇到的具体难题，以帮助申请人理解哪些专业知识对我们来说是有价值的
+- 分享具体的薪资和福利信息。我从来不会申请一份没有清晰薪资理解的工作，那么我为什么要期望优秀人才在没有薪资信息的情况下申请我们的职位呢？
 
-We got _tons_ of positive feedback about this posting, and I'm really proud of how it turned out. I think it was very applicant-centric, and I think it made a big difference in the quality of submissions we got.
+我们收到了大量关于这份招聘信息的积极反馈，我为其最终效果感到自豪。我认为这非常以申请人为中心，也极大提升了我们获得提交的质量。
 
-## The Application Process
+## 申请流程
 
-One thing we did a bit differently from other companies is that we didn't ask for a resume or give applicants a big list of questions to answer. All we asked for was an "application", in whatever form the person decided. It could be a cover letter, a small website, a video, a slide deck, whatever.
+与其他公司不同的是，我们没有要求提交简历或向申请者提供一大堆问题供其回答。我们只要求提供“一份申请”，申请的形式由申请人自由选择。可以是求职信、小型网站、视频、幻灯片等等。
 
-I decided to ask for applications this way for a few reasons:
+我决定以这种方式请求申请有几个原因：
 
-- I just don't think resumes are that important
-- I wanted to filter for people with some inherent marketing sensibilities, we're a tiny company so we need [T-shaped](https://en.wikipedia.org/wiki/T-shaped_skills) people more than we need specialists
-- I wanted to filter for people who can ship things, and making the application completely free-form tells you a lot about someone's ability to take something from nothing to polished product on their own
-- I wanted to find someone who talked about the stuff we were looking for without being prompted for it — finding someone who was naturally well-aligned with what we are trying to do would be a big advantage for us
-- I expected a lot of applications, and I thought asking for applications this way would make it easy to filter people out who were using a shotgun approach to job-searching and not specifically interested in working with us
+- 我觉得简历并不是那么重要
+- 我想过滤出一些具备内在营销能力的人，我们是一家小公司，因此，我们更需要[T型](https://en.wikipedia.org/wiki/T-shaped_skills)人才，而不是专家
+- 我希望能找到能够独立完成工作的候选人，让申请完全自由格式能够很大程度上反映出某人将一项工作从无到有打磨成最终产品的能力
+- 我想找到在没有被提示的情况下就能谈论我们所寻找的东西的人—找到一个自然与我们目标一致的人对我们来说将是巨大优势
+- 我预期会有大量申请，我认为以这种方式请求申请可以轻松筛选出那些使用散弹枪方式找工作的、对与我们合作并不特别感兴趣的人
 
-Even with what I think was a fairly intimidating application process, we got well over 100 applications where there was clearly a lot of time spent crafting something very specific for our posting, including Robin's of course:
+即便我认为申请流程相当具有威慑力，但我们收到了超过100份申请，显然每份申请都花了很多时间为我们的招聘信息量身定制，包括Robin的申请：
 
-[**Read Robin's application &rarr;**](https://robin-malfait-tailwind-job-application.now.sh/)
+[**查看Robin的申请 &rarr;**](https://robin-malfait-tailwind-job-application.now.sh/)
 
-Some people did some _really_ out there and creative things in their applications _(one person even made an interactive game!)_ but Robin's stood out to us for a few reasons:
+有些人做了一些非常离奇和创意十足的申请内容（甚至有个人做了一个互动游戏！），但Robin的申请在几个方面让我们印象深刻：
 
-- The visual design was great. We're a very design-focused company, so having good taste in design is really important to us.
-- His story about learning to program and getting into the Laravel community told me we had a rich shared history, even if we had never met.
-- He took a chance and shared some strong opinions he had about component design that were _extremely_ relevant to some work we'll be doing very soon, and I agreed with what he was saying and even learned a few things.
-- He shared a super interesting [open-source library](https://github.com/RobinMalfait/lazy-collections) he authored, which despite being very unknown, still had very well thought-out and complete documentation that was presented in a very well-structured way. It was clear he thinks about visual design even when authoring a markdown file.
-- He shared lots of concrete ideas for projects he'd like to work on with us, and a lot of them were things I was already excited about doing.
-- He capitalized the "H" in "GitHub" _(holy shit I hate when people don't do that)_.
+- 视觉设计很棒。我们是一家非常注重设计的公司，因此，对设计的良好品味对我们来说非常重要。
+- 他讲述了学习编程和加入Laravel社区的故事，让我感到我们有着丰富的共同历史，尽管我们从未见过面。
+- 他大胆地分享了一些关于组件设计的强烈意见，这些意见与我们即将开展的工作高度相关，我对于他所说的观点表示赞同，甚至获益良多。
+- 他分享了一个非常有趣的[开源库](https://github.com/RobinMalfait/lazy-collections)，尽管鲜为人知，但文档经过深思熟虑且编写得结构非常清晰。很明显，他在编写markdown文件时也考虑了视觉设计。
+- 他分享了很多具体的项目想法，我对其中许多项目已经感到兴奋。
+- 他在“GitHub”中的“H”大写了（天呐，我真讨厌人们不这样做）。
 
-Robin's was one of maybe 40-50 that _really_ stood out from a content perspective.
+Robin的申请是大约40-50份完全突出于内容的申请之一。
 
-## Filtering the Applications
+## 筛选申请
 
-Dealing with almost 900 job applications is a lot of work. Over half of them we were able to discard immediately because they just provided a link to their LinkedIn profile or a generic resume, but filtering through the rest was really tough.
+处理近900份工作申请是一项艰巨的工作。我们能够立即淘汰超过一半的申请，因为他们只是提供了LinkedIn个人资料链接或一份普通的简历，但筛选出剩下的申请真的很困难。
 
-I've never hired anyone this way before, and at first I really felt like we needed to meet with and interview _everyone_ who submitted a quality application. As the applications poured in though, I realized this was just not practical, and that we had to put some sort of cap on it.
+我从未以这种方式雇佣过任何人，刚开始我真的觉得我们需要与所有提交优质申请的人会面并进行面试。然而，随着申请的涌入，我意识到这是不实际的，因此我们必须设置一些限制。
 
-I decided to sort the good applications as best I could, then just slice off the top 20 and start there. It meant there were lots of great people we wouldn't talk to and that maybe we even missed out on the absolute best applicant, but the reality is that we only have so much time we can dedicate to this, and I had to believe that out of the ~20 best applications, there would certainly be _multiple_ people we wouldn't regret hiring at all, even if there was a chance that the absolute best person was somewhere in the other 30.
+我决定尽可能将合格的申请进行排序，然后从中切削出前20个，作为我们的起点。这意味着有很多优秀的人我们不会与之交谈，也许我们甚至错过了绝对最优秀的申请者，但现实是，我们只能投入有限的时间在这件事情上，我必须相信在大约20个最好的申请中，肯定会有多个我们不会后悔雇佣的人，即使有可能绝对最优秀的人在另外30人中。
 
-## The Interview Process
+## 面试流程
 
-We started by scheduling video interviews with the top ~20 applicants, which took about 3 weeks to get through.
+我们首先与约20名顶尖申请者安排了视频面试，这耗费了约三周的时间。
 
-These were 30-45 minute calls where we had a pretty casual conversation about a few topics:
+这些面试是30-45分钟的通话，我们Casual地讨论了几个主题：
 
-- What the person had been working on recently, and where they think their strengths are
-- Why they applied for the job, and what about the role was interesting to them
-- What we as a company are going to be doing over the next year or so, and digging into a few projects in detail
-- Answering any questions the person had about the job or our company
+- 该申请者最近在做的事情，以及他们认为自己的优势所在
+- 他们为什么申请这份工作，以及这项角色对他们的吸引之处
+- 作为公司我们在接下来一年左右将做的事情，并详细讨论一些项目
+- 回答任何申请者关于工作或公司的问题
 
-This was a great way just to get to know the people who applied and get a gut sense for who stood out the most. We really enjoyed meeting with every single person we talked to, but made the hard decision to filter down again to about 10 people for the next phase.
+这是一种很好的方式，可以让我们了解申请者，并对谁最突出有个直观的判断。我们与每一个人交谈时都非常愉快，但最终还是做出了艰难的决定，筛选出约10人进入下一阶段。
 
-## Take-Home Project
+## 带回家项目
 
-The next step in the application process was a take-home project, where the applicant had to build out a design Steve had created using either Vue or React. We estimated it to be about a 4-8 hour project.
+申请流程的下一步是一个带回家的项目，申请者必须使用Vue或React构建Steve创建的设计。我们估计这是一个4-8小时的项目。
 
-We provided a zip file containing all of the instructions, the design as a Figma file, and a walk-through video of a working implementation outlining any behavior that was hard to capture in Figma.
+我们提供了一个zip文件，里面包含了所有指令、作为Figma文件的设计，以及一个描述难以在Figma中捕捉行为的工作实现的演示视频。
 
-[**See the take-home project on GitHub &rarr;**](https://github.com/adamwathan/tailwind-take-home-project)
+[**查看GitHub上的带回家项目 &rarr;**](https://github.com/adamwathan/tailwind-take-home-project)
 
-We tried to give very clear instructions, and made sure to point out where we wanted people to focus their time, and what areas we didn't want them to overthink or spend too much time on.
+我们尽量给出非常明确的指示，并确保强调出我们希望申请者集中时间的地方，以及哪些领域我们不希望他们过度思考或花费太多时间。
 
-We gave each candidate about two weeks to complete the project, just to make sure they had the opportunity to fit it into their schedule without it being disruptive.
+我们给每位候选人大约两周的时间来完成项目，确保他们有机会将其适应到自己的时间表中，而不会造成干扰。
 
-All of the submissions we got back were great, but again we forced ourselves to limit the candidates for the next phase, this time down to 6 people.
+我们收到的所有提交都很棒，但我们再次强迫自己将候选人缩减到下一阶段，这次缩减到6人。
 
-One thing we really loved about Robin's submission was that he spent a lot of time guiding us through his solution with comments in the code. For regular production code I would say it was definitely overkill, but as part of a job application I thought it was extremely helpful to get a behind-the-scenes look into how he actually _thinks_ about the code he is writing. He also spent a lot of time describing alternate solutions to certain problems and why he didn't go with those approaches, which was very beneficial as well.
+我们非常喜欢Robin的提交，因为他花了大量时间通过代码中的注释引导我们理解他的解决方案。对于常规的生产代码，我会说这绝对是多余的，但作为一次求职申请，它让我得以深入了解他实际是如何思考自己所写的代码。他还花了很多时间描述某些问题的替代解决方案，以及他为何没有选择这些方法，这一点也非常有益。
 
-## Pairing Session
+## 配对环节
 
-The final step in the application process was a two-hour pair programming session with me.
+申请流程的最后一步是与我进行两小时的配对编程环节。
 
-When pairing as part of an interview process like this, there's a really high risk of the inherent power dynamic coloring how the whole thing goes. I _really_ wanted to avoid that as much as possible, so I did two things:
+在这样的面试过程中，固有的权力动态极易影响整个过程。我特别想尽量避免这一点，因此我做了两件事：
 
-- I made sure whatever we were pairing on was something completely new, that I had no prior experience with
-- I let the candidate suggest a few things for us to pair on, and picked something from their list
+- 确保我们一起配对的内容是完全新的，我在此之前没有经验
+- 让我选择一些候选人建议我们一起进行配对的内容，并挑选他们清单中的一个项目
 
-I absolutely didn't want to pair on something where I knew all the answers and I was just watching to see if the candidate could figure out something I already knew. That is absolutely not representative of real work and I don't think it would've been useful at all.
+我绝对不想一起配对一个我知道所有答案的项目，仅仅是旁观候选人是否能够想出我已经知道的解决方案。这根本不能代表真实的工作，我认为也毫无用处。
 
-Instead, by choosing a problem that neither of us had significant experience with, we got to put the power dynamic aside (as much as possible at least), and just focus on learning something new together, and seeing how we helped each other get unstuck.
+相反，通过选择一个我们都没有重大经验的问题，我们能够尽量撇开权力动态的影响，专注于一起学习新事物，并观察我们如何帮助彼此摆脱困境。
 
-Some of the things I paired on included:
+一些我参与配对的项目包括：
 
-- Building a date picker from scratch
-- Learning XState
-- Building a modal dialog with the Vue 3 composition API
+- 从头开始构建一个日期选择器
+- 学习XState
+- 用Vue 3组合API构建模态对话框
 
-I really enjoyed this process and am very proud of how we put it together. It was definitely the most informative part of the interview process and really gave me a ton of confidence that we were offering the job to the right person.
+我非常喜欢这个过程，并对我们是如何组织这一切感到自豪。这绝对是面试过程中信息量最大的一部分，并给了我巨大的信心，确保我们将职位提供给了合适的人。
 
-For Robin's session, we decided to build an SVG charting library from scratch _(something neither of us had ever done before)_, in Svelte _(a framework neither of us had ever used before)_. This was Robin's idea, and that he had the courage to tackle two completely new problems at the same time _in an interview context_ really impressed me. We had a great time pairing together on this, and not once in the session did it ever feel like either of us was ahead of the other person or trying to catch them up on something. We had really great chemistry and it felt very energizing and productive, and reminded me of some of the best pairing sessions I've had in my career, which is pretty incredible given we'd never worked together before, and that he was being evaluated for a job.
+在Robin的环节中，我们决定从头开始构建一个SVG图表库（这是我们都从未做过的事情），使用Svelte（我们都从未使用过的框架）。这是Robin的主意，而他在面试背景下勇敢地同时解决两个全新问题，令我印象深刻。我们在这个过程中相处得很愉快，整个环节中没有一次感觉到任何一方处于高于对方的地位。我们之间的化学反应非常好，感觉非常有活力和高效，让我想起了我职业生涯中一些最好的配对环节，这实在是令人难以置信，因为我们之前从未一起工作过，而他正在被评估一个职位。
 
-## Making the offer
+## 发出邀请
 
-This whole process took about 1.5 months, and at the end we had a very hard time choosing between the top few candidates. Realistically we could've hired any of them and not regretted it, but my experience interviewing and pairing with Robin stood out just a bit more and I was really excited to be able to offer him the role. We know he's going to be an amazing fit for the team, and I can't wait to dig in to some hard problems with him in the coming months.
+整个过程大约持续了1.5个月，最后我们在顶尖候选人之间很难选择。实际上，我们本可以雇佣他们中的任何一位而毫不后悔，但我与Robin的面试和配对体验显得略为突出，我非常兴奋能够向他提供这个职位。我们知道他将会是团队的绝佳契合，我迫不及待想与他一起深入探讨未来几个月的一些难题。
 
-Want to talk about this post? <a href="https://github.com/tailwindcss/tailwindcss/discussions/2153">Discuss this on GitHub →</a>
+想讨论这篇文章吗？ <a href="https://github.com/tailwindcss/tailwindcss/discussions/2153">在GitHub上讨论 →</a>

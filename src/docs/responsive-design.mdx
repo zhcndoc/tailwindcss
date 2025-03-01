@@ -3,39 +3,39 @@ import { Iframe } from "@/components/iframe";
 import { Example } from "@/components/example";
 import { Figure } from "@/components/figure";
 
-export const title = "Responsive design";
-export const description = "Using responsive utility variants to build adaptive user interfaces.";
+export const title = "响应式设计";
+export const description = "使用响应式工具变体构建适应性用户界面。";
 
-## Overview
+## 概述
 
-Every utility class in Tailwind can be applied conditionally at different breakpoints, which makes it a piece of cake to build complex responsive interfaces without ever leaving your HTML.
+Tailwind中的每个工具类都可以在不同的断点有条件地应用，这使得构建复杂的响应式界面变得相当简单，而无需离开HTML。
 
-First, make sure you've added the [viewport meta tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) to the `<head>` of your document:
+首先，确保您已将[视口元标签](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag)添加到文档的`<head>`中：
 
 ```html
 <!-- [!code filename:index.html] -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
-Then to add a utility but only have it take effect at a certain breakpoint, all you need to do is prefix the utility with the breakpoint name, followed by the `:` character:
+然后，要添加一个工具类，但仅在特定断点生效，您只需在工具名前加上断点名称，然后加上`:`字符：
 
 ```html
 <!-- [!code filename:HTML]  -->
 <!-- [!code word:md\:w-32] -->
 <!-- [!code word:lg\:w-48] -->
-<!-- Width of 16 by default, 32 on medium screens, and 48 on large screens -->
+<!-- 默认宽度为16，在中等屏幕上为32，在大屏幕上为48 -->
 <img class="w-16 md:w-32 lg:w-48" src="..." />
 ```
 
-There are five breakpoints by default, inspired by common device resolutions:
+默认情况下有五个断点，受常见设备分辨率的启发：
 
 {
 
 <table>
   <thead>
     <tr>
-      <th>Breakpoint prefix</th>
-      <th>Minimum width</th>
+      <th>断点前缀</th>
+      <th>最小宽度</th>
       <th>CSS</th>
     </tr>
   </thead>
@@ -99,9 +99,9 @@ There are five breakpoints by default, inspired by common device resolutions:
 </table>
 }
 
-This works for **every utility class in the framework**, which means you can change literally anything at a given breakpoint — even things like letter spacing or cursor styles.
+这适用于**框架中的每个工具类**，这意味着您可以在给定断点上更改任何内容 — 甚至是字母间距或光标样式等。
 
-Here's a simple example of a marketing page component that uses a stacked layout on small screens, and a side-by-side layout on larger screens:
+这是一个简单的示例，展示了一个使用堆叠布局的小屏幕营销页面组件，以及在大屏幕上并排布局：
 
 <Figure>
 
@@ -117,19 +117,18 @@ Here's a simple example of a marketing page component that uses a stacked layout
                 src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80"
                 width="202"
                 height="192"
-                alt="Beautiful abstract building in the sun"
+                alt="阳光下美丽的抽象建筑"
               />
             </div>
             <div className="space-y-2 p-6 2xl:p-8">
-              <div className="text-sm leading-6 font-medium text-indigo-600">Company retreats</div>
+              <div className="text-sm leading-6 font-medium text-indigo-600">公司度假</div>
               <a href="#" className="block text-base leading-6 font-semibold text-gray-900 hover:underline">
-                Incredible accommodation for your team
+                为您的团队提供令人难以置信的住宿
               </a>
               <p
                 className="text-sm leading-6 text-gray-600"
-                children={`Looking to take your team away on a retreat to enjoy awesome food
-              and take in some sunshine? We have a list of places to do just
-              that.`}
+                children={`想带着团队去度假，享受美食，晒晒太阳吗？
+              我们有一些地方的清单可以做到这一点。`}
               ></p>
             </div>
           </div>
@@ -151,17 +150,16 @@ Here's a simple example of a marketing page component that uses a stacked layout
       <img
         class="h-48 w-full object-cover md:h-full md:w-48"
         src="/img/building.jpg"
-        alt="Modern building architecture"
+        alt="现代建筑风格"
       />
     </div>
     <div class="p-8">
-      <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Company retreats</div>
+      <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">公司度假</div>
       <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
-        Incredible accommodation for your team
+        为您的团队提供令人难以置信的住宿
       </a>
       <p class="mt-2 text-gray-500">
-        Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
-        places to do just that.
+        想带着团队去度假，享受美食，晒晒太阳吗？我们有一些地方的清单可以做到这一点。
       </p>
     </div>
   </div>
@@ -170,53 +168,53 @@ Here's a simple example of a marketing page component that uses a stacked layout
 
 </Figure>
 
-Here's how the example above works:
+上面示例的工作原理如下：
 
-- By default, the outer `div` is `display: block`, but by adding the `md:flex` utility, it becomes `display: flex` on medium screens and larger.
-- When the parent is a flex container, we want to make sure the image never shrinks, so we've added `md:shrink-0` to prevent shrinking on medium screens and larger. Technically we could have just used `shrink-0` since it would do nothing on smaller screens, but since it only matters on `md` screens, it's a good idea to make that clear in the class name.
-- On small screens the image is automatically full width by default. On medium screens and up, we've constrained the width to a fixed size and ensured the image is full height using `md:h-full md:w-48`.
+- 默认情况下，外部`div`的`display`为`block`，但通过添加`md:flex`工具类，它在中等屏幕及更大屏幕上变为`flex`。
+- 当父元素是flex容器时，我们希望确保图像从不缩小，因此我们添加了`md:shrink-0`以防止在中等屏幕及更大屏幕上缩小。从技术上讲，我们只需使用`shrink-0`，因为它在小屏幕上不会产生任何效果，但由于它仅在`md`屏幕上有效，因此最好在类名中说明这一点。
+- 在小屏幕上，图像默认情况下自动为全宽。在中等屏幕及更大屏幕上，我们将宽度限制为固定大小，并确保图像用`md:h-full md:w-48`填充整个高度。
 
-We've only used one breakpoint in this example, but you could easily customize this component at other sizes using the `sm`, `lg`, `xl`, or `2xl` responsive prefixes as well.
+在这个示例中我们只使用了一个断点，但您可以轻松使用`sm`、`lg`、`xl`或`2xl`响应前缀自定义此组件的其他尺寸。
 
-## Working mobile-first
+## 移动优先工作
 
-Tailwind uses a mobile-first breakpoint system, similar to what you might be used to in other frameworks like Bootstrap.
+Tailwind使用移动优先的断点系统，类似于您在Bootstrap等其他框架中可能习惯的方式。
 
-What this means is that unprefixed utilities (like `uppercase`) take effect on all screen sizes, while prefixed utilities (like `md:uppercase`) only take effect at the specified breakpoint _and above_.
+这意味着未加前缀的工具（如`uppercase`）在所有屏幕尺寸上生效，而带前缀的工具（如`md:uppercase`）仅在指定的断点_及以上_生效。
 
-### Targeting mobile screens
+### 针对移动屏幕
 
-Where this approach surprises people most often is that to style something for mobile, you need to use the unprefixed version of a utility, not the `sm:` prefixed version. Don't think of `sm:` as meaning "on small screens", think of it as "at the small _breakpoint_".
+这种方法最常让人感到惊讶的地方是，要为移动样式设置某些元素，您需要使用未加前缀的工具版本，而不是`sm:`前缀版本。不要将`sm:`视为“在小屏幕上”，而要理解为“在小_断点_”上。
 
 <TipBad>
   {
     <>
-      Don't use <code>sm:</code> to target mobile devices
+      不要使用 <code>sm:</code> 来针对移动设备
     </>
   }
 </TipBad>
 
 ```html
 <!-- [!code filename:HTML]  -->
-<!-- This will only center text on screens 640px and wider, not on small screens -->
+<!-- 这将在640px及更宽的屏幕上居中文本，而不是在小屏幕上 -->
 <div class="sm:text-center"></div>
 ```
 
-<TipGood>{<>Use unprefixed utilities to target mobile, and override them at larger breakpoints</>}</TipGood>
+<TipGood>{<>使用未加前缀的工具来针对移动设备，并在更大的断点上覆盖它们</>}</TipGood>
 
 ```html
 <!-- [!code filename:HTML]  -->
-<!-- This will center text on mobile, and left align it on screens 640px and wider -->
+<!-- 这将在移动设备上居中文本，并在640px及更宽的屏幕上左对齐 -->
 <div class="text-center sm:text-left"></div>
 ```
 
-For this reason, it's often a good idea to implement the mobile layout for a design first, then layer on any changes that make sense for `sm` screens, followed by `md` screens, etc.
+为此，通常最好先实现设计的移动布局，然后逐步添加适合`sm`屏幕的更改，再逐步添加`md`屏幕等的更改。
 
-### Targeting a breakpoint range
+### 针对断点范围
 
-By default, styles applied by rules like `md:flex` will apply at that breakpoint and stay applied at larger breakpoints.
+默认情况下，通过诸如`md:flex`等规则应用的样式将在该断点生效并保持在更大的断点上生效。
 
-If you'd like to apply a utility _only_ when a specific breakpoint range is active, stack a responsive variant like `md` with a `max-*` variant to limit that style to a specific range:
+如果您希望仅在特定断点范围激活时应用某个工具，可以将响应变体如`md`与`max-*`变体叠加，以限制样式到特定范围：
 
 ```html
 <!-- [!code filename:HTML]  -->
@@ -225,15 +223,15 @@ If you'd like to apply a utility _only_ when a specific breakpoint range is acti
 </div>
 ```
 
-Tailwind generates a corresponding `max-*` variant for each breakpoint, so out of the box the following variants are available:
+Tailwind为每个断点生成相应的`max-*`变体，因此开箱即用的可用变体有：
 
 {
 
 <table>
   <thead>
     <tr>
-      <th>Variant</th>
-      <th>Media query</th>
+      <th>变体</th>
+      <th>媒体查询</th>
     </tr>
   </thead>
   <tbody>
@@ -281,9 +279,9 @@ Tailwind generates a corresponding `max-*` variant for each breakpoint, so out o
 </table>
 }
 
-### Targeting a single breakpoint
+### 针对单个断点
 
-To target a single breakpoint, target the range for that breakpoint by stacking a responsive variant like `md` with the `max-*` variant for the next breakpoint:
+要针对单个断点，可以通过将响应变体如`md`与下一个断点的`max-*`变体叠加来针对该断点的范围：
 
 ```html
 <!-- [!code filename:HTML]  -->
@@ -292,13 +290,13 @@ To target a single breakpoint, target the range for that breakpoint by stacking 
 </div>
 ```
 
-Read about [targeting breakpoint ranges](#targeting-a-breakpoint-range) to learn more.
+阅读[针对断点范围](#targeting-a-breakpoint-range)以了解更多信息。
 
-## Using custom breakpoints
+## 使用自定义断点
 
-### Customizing your theme
+### 自定义主题
 
-Use the `--breakpoint-*` theme variables to customize your breakpoints:
+使用`--breakpoint-*`主题变量自定义您的断点：
 
 ```css
 /* [!code filename:app.css] */
@@ -312,7 +310,7 @@ Use the `--breakpoint-*` theme variables to customize your breakpoints:
 }
 ```
 
-This updates the `2xl` breakpoint to use `100rem` instead of the default `96rem`, and creates new `xs` and `3xl` breakpoints that can be used in your markup:
+这将把`2xl`断点更新为使用`100rem`而不是默认的`96rem`，并创建新的`xs`和`3xl`断点，可以在您的标记中使用：
 
 ```html
 <!-- [!code filename:HTML]  -->
@@ -324,15 +322,15 @@ This updates the `2xl` breakpoint to use `100rem` instead of the default `96rem`
 </div>
 ```
 
-Note that it's important to always use the same unit for defining your breakpoints or the generated utilities may be sorted in an unexpected order, causing breakpoint classes to override each other in unexpected ways.
+请注意，在定义断点时始终使用相同的单位很重要，否则生成的工具可能会以意外的顺序排序，导致断点类相互覆盖。
 
-Tailwind uses `rem` for the default breakpoints, so if you are adding additional breakpoints to the defaults, make sure you use `rem` as well.
+Tailwind对默认断点使用`rem`，因此如果您向默认值添加其他断点，请确保使用`rem`。
 
-Learn more about customizing your theme in the [theme documentation](/docs/theme).
+在[主题文档](/docs/theme)中了解有关自定义主题的更多信息。
 
-### Removing default breakpoints
+### 移除默认断点
 
-To remove a default breakpoint, reset its value to the `initial` keyword:
+要移除默认断点，请将其值重置为`initial`关键字：
 
 ```css
 /* [!code filename:app.css] */
@@ -344,7 +342,7 @@ To remove a default breakpoint, reset its value to the `initial` keyword:
 }
 ```
 
-You can also reset all of the default breakpoints using `--breakpoint-*: initial`, then define all of your breakpoints from scratch:
+您还可以使用`--breakpoint-*: initial`重置所有默认断点，然后从头开始定义所有断点：
 
 ```css
 /* [!code filename:app.css] */
@@ -359,11 +357,11 @@ You can also reset all of the default breakpoints using `--breakpoint-*: initial
 }
 ```
 
-Learn more removing default theme values in the [theme documentation](/docs/theme).
+在[主题文档](/docs/theme)中了解更多有关移除默认主题值的信息。
 
-### Using arbitrary values
+### 使用任意值
 
-If you need to use a one-off breakpoint that doesn’t make sense to include in your theme, use the `min` or `max` variants to generate a custom breakpoint on the fly using any arbitrary value.
+如果您需要使用一个不适合包含在主题中的单次断点，请使用`min`或`max`变体，根据任何任意值动态生成自定义断点。
 
 ```html
 <!-- [!code word:min-\[320px\]\:text-center] -->
@@ -373,17 +371,17 @@ If you need to use a one-off breakpoint that doesn’t make sense to include in 
 </div>
 ```
 
-Learn more about arbitrary value support in the [arbitrary values](/docs/adding-custom-styles#using-arbitrary-values) documentation.
+在[任意值](/docs/adding-custom-styles#using-arbitrary-values)文档中了解更多有关任意值支持的信息。
 
-## Container queries
+## 容器查询
 
-### What are container queries?
+### 什么是容器查询？
 
-[Container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries) are a modern CSS feature that let you style something based on the size of a parent element instead of the size of the entire viewport. They let you build components that are a lot more portable and reusable because they can change based on the actual space available for that component.
+[容器查询](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries)是一个现代CSS功能，它允许您根据父元素的大小而不是整个视口的大小来样式某个元素。它们使您能够构建更加可移植和可重用的组件，因为它们可以根据该组件可用的实际空间进行更改。
 
-### Basic example
+### 基本示例
 
-Use the `@container` class to mark an element as a container, then use variants like `@sm` and `@md` to style child elements based on the size of the container:
+使用`@container`类将元素标记为容器，然后使用像`@sm`和`@md`这样的变体根据容器的大小来样式子元素：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -396,11 +394,11 @@ Use the `@container` class to mark an element as a container, then use variants 
 </div>
 ```
 
-Just like breakpoint variants, container queries are mobile-first in Tailwind CSS and apply at the target container size and up.
+与断点变体一样，Tailwind CSS中的容器查询是移动优先的，并在目标容器大小及以上时应用。
 
-### Max-width container queries
+### 最大宽度的容器查询
 
-Use variants like `@max-sm` and `@max-md` to apply a style below a specific container size:
+使用像`@max-sm`和`@max-md`这样的变体在小于特定容器大小的情况下应用样式：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -412,9 +410,9 @@ Use variants like `@max-sm` and `@max-md` to apply a style below a specific cont
 </div>
 ```
 
-### Container query ranges
+### 容器查询范围
 
-Stack a regular container query variant with a max-width container query variant to target a specific range:
+将常规容器查询变体与最大宽度容器查询变体叠加，以针对特定范围：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -426,9 +424,9 @@ Stack a regular container query variant with a max-width container query variant
 </div>
 ```
 
-### Named containers
+### 命名容器
 
-For complex designs that use multiple nested containers, you can name containers using `@container/{name}` and target specific containers with variants like `@sm/{name}` and `@md/{name}`:
+对于使用多个嵌套容器的复杂设计，您可以使用`@container/{name}`命名容器，并使用像`@sm/{name}`和`@md/{name}`这样的变体定位特定容器：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -442,11 +440,11 @@ For complex designs that use multiple nested containers, you can name containers
 </div>
 ```
 
-This makes it possible to style something based on the size of a distant container, rather than just the nearest container.
+这使得可以根据遥远容器的大小样式，而不仅仅是最近的容器。
 
-### Using custom container sizes
+### 使用自定义容器大小
 
-Use the `--container-*` theme variables to customize your container sizes:
+使用`--container-*`主题变量自定义您的容器大小：
 
 ```css
 /* [!code filename:app.css] */
@@ -458,7 +456,7 @@ Use the `--container-*` theme variables to customize your container sizes:
 }
 ```
 
-This adds a new `8xl` container query variant that can be used in your markup:
+这将在您的标记中添加一个新的`8xl`容器查询变体：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -471,13 +469,13 @@ This adds a new `8xl` container query variant that can be used in your markup:
 </div>
 ```
 
-Learn more about customizing your theme in the [theme documentation](/docs/theme).
+在[主题文档](/docs/theme)中了解更多有关自定义主题的信息。
 
 <h3 id="using-arbitrary-container-query-values">
-  <a href="#using-arbitrary-container-query-values">Using arbitrary values</a>
+  <a href="#using-arbitrary-container-query-values">使用任意值</a>
 </h3>
 
-Use variants like `@min-[475px]` and `@max-[960px]` for one-off container query sizes you don't want to add to your theme:
+使用像`@min-[475px]`和`@max-[960px]`这样的变体进行一次性容器查询大小，而不想添加到您的主题中：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -489,9 +487,9 @@ Use variants like `@min-[475px]` and `@max-[960px]` for one-off container query 
 </div>
 ```
 
-### Using container query units
+### 使用容器查询单位
 
-Use [container query length units](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries#container_query_length_units) like `cqw` as arbitrary values in other utility classes to reference the container size:
+使用[容器查询长度单位](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries#container_query_length_units)如`cqw`，作为其他工具类中的任意值来引用容器大小：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -503,17 +501,17 @@ Use [container query length units](https://developer.mozilla.org/en-US/docs/Web/
 </div>
 ```
 
-### Container size reference
+### 容器大小参考
 
-By default, Tailwind includes container sizes ranging from 16rem _(256px)_ to 80rem _(1280px)_:
+默认情况下，Tailwind包括范围从16rem _(256px)_ 到 80rem _(1280px)_ 的容器大小：
 
 {
 
 <table>
   <thead>
     <tr>
-      <th>Variant</th>
-      <th>Minimum width</th>
+      <th>变体</th>
+      <th>最小宽度</th>
       <th>CSS</th>
     </tr>
   </thead>

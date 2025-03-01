@@ -2,7 +2,7 @@ import { ApiTable } from "@/components/api-table.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "break-after";
-export const description = "Utilities for controlling how a column or page should break after an element.";
+export const description = "用于控制元素之后如何换行的工具类。";
 
 <ApiTable
   rows={[
@@ -17,22 +17,22 @@ export const description = "Utilities for controlling how a column or page shoul
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `break-after-column` and `break-after-page` to control how a column or page break should behave after an element:
+使用 `break-after-column` 和 `break-after-page` 等工具类来控制元素之后的列或页面的换行行为：
 
 ```html
 <!-- [!code classes:break-after-column] -->
 <div class="columns-2">
-  <p>Well, let me tell you something, ...</p>
-  <p class="break-after-column">Sure, go ahead, laugh...</p>
-  <p>Maybe we can live without...</p>
-  <p>Look. If you think this is...</p>
+  <p>好吧，让我告诉你一些事情，...</p>
+  <p class="break-after-column">当然，继续，笑吧...</p>
+  <p>也许我们可以没有...</p>
+  <p>看。如果你觉得这是...</p>
 </div>
 ```
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="break-after" defaultClass="break-after-column" featuredClass="break-after-auto" />

@@ -6,26 +6,25 @@ import { robinmalfait } from "@/app/blog/authors";
 import image from "./card.jpg";
 
 export const meta = {
-  title: "Utility-Friendly Transitions with @tailwindui/react",
-  description: `Announcing the first release of @tailwindui/react, which introduces a <Transition> component for utility-first enter/leave transitions.`,
+  title: "适用于 @tailwindui/react 的实用友好过渡效果",
+  description: `宣布首次发布 @tailwindui/react，引入了 <Transition> 组件用于实用优先的进入/离开过渡效果。`,
   date: "2020-08-27T18:30:00.000Z",
   authors: [robinmalfait],
   image,
   excerpt: (
     <>
-      Back in February we released <Link href="https://tailwindui.com">Tailwind UI</Link>, a directory of HTML component
-      examples designed for you to copy and paste into your Tailwind projects as a starting point for your own designs.
+      在二月份，我们发布了 <Link href="https://tailwindui.com">Tailwind UI</Link>，这是一个 HTML 组件示例目录，旨在让你复制并粘贴到自己的 Tailwind 项目中，作为自定义设计的起点。
     </>
   ),
 };
 
-Back in February we released [Tailwind UI](https://tailwindui.com), a directory of HTML component examples designed for you to copy and paste into your Tailwind projects as a starting point for your own designs.
+在二月份，我们发布了 [Tailwind UI](https://tailwindui.com)，这是一个 HTML 组件示例目录，旨在让你复制并粘贴到自己的 Tailwind 项目中，作为自定义设计的起点。
 
-We built Tailwind UI as an HTML-only, bring-your-own-JS product to make it as universal as possible, but many designs are inherently interactive and porting those interactive behaviors between JavaScript frameworks is unfortunately not always very easy.
+我们将 Tailwind UI 构建为仅限 HTML 的、带你自己的 JS 的产品，尽可能使其通用，但许多设计本质上是交互式的，而在 JavaScript 框架之间迁移这些交互行为不幸的是并不总是那么简单。
 
-One example of this is enter/leave transitions, like when you toggle a dropdown menu and see it fade in and out.
+一个这样的例子是进入/离开过渡，比如当你切换下拉菜单时看到它的淡入淡出效果。
 
-Vue.js has a really neat `<transition>` component for enter/leave transitions with a very utility-friendly API:
+Vue.js 有一个非常 neat 的 `<transition>` 组件，用于进入/离开过渡，提供了一个非常实用友好的 API：
 
 ```html
 <transition
@@ -37,18 +36,18 @@ Vue.js has a really neat `<transition>` component for enter/leave transitions wi
   leave-to-class="opacity-0"
 >
   <div v-show="isShowing">
-    <!-- Will fade in and out -->
+    <!-- 将淡入淡出 -->
   </div>
 </transition>
 ```
 
-But replicating this in React turns out to be much more difficult, because until now there hasn't been a library designed to support utility-driven transition styling.
+但在 React 中复制这一点要困难得多，因为到目前为止还没有一个库专门设计用于支持实用驱动的过渡样式。
 
-**So earlier this week, we released the very first version of [@tailwindui/react](https://github.com/tailwindlabs/tailwindui-react), a library that provides low-level primitives for turning utility-first HTML into fully interactive UIs.**
+**所以在本周初，我们发布了第一个版本的 [@tailwindui/react](https://github.com/tailwindlabs/tailwindui-react)，一个提供低级原语，让实用优先的 HTML 转变为完全互动 UI 的库。**
 
-We'll be adding many more components in the coming months _(like dropdowns, toggles, modals, and more, and for Vue too!)_ but thought we'd start with a `<Transition>` component to at least get the current Tailwind UI experience for React users up to par with what's possible in Vue and Alpine.js.
+我们将在接下来的几个月中添加更多组件 _(如下拉菜单、开关、模态框等，Vue 也会有!)_，但我们想先从 `<Transition>` 组件开始，让当前的 Tailwind UI 使用体验与 Vue 和 Alpine.js 的可能性相匹配。
 
-Here's what it looks like to use:
+这是使用后呈现的样子：
 
 ```jsx
 import { Transition } from "@tailwindui/react";
@@ -59,7 +58,7 @@ function MyComponent() {
 
   return (
     <div>
-      <button onClick={() => setIsOpen(!isOpen)}>Toggle</button>
+      <button onClick={() => setIsOpen(!isOpen)}>切换</button>
       <Transition
         show={isOpen}
         enter="transition-opacity duration-75"
@@ -69,20 +68,20 @@ function MyComponent() {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        {/* Will fade in and out */}
+        {/* 将淡入淡出 */}
       </Transition>
     </div>
   );
 }
 ```
 
-[Read the documentation](https://github.com/tailwindlabs/tailwindui-react) to learn more about advanced functionality, like:
+[查看文档](https://github.com/tailwindlabs/tailwindui-react)以了解更多高级功能，比如：
 
-- Rendering without an extra DOM element
-- Co-ordinating related transitions
-- Transitioning on initial mount.
+- 没有额外的 DOM 元素进行渲染
+- 协调相关的过渡
+- 初始挂载时的过渡。
 
-Check it out in action in this CodeSandbox demo:
+在这个 CodeSandbox 演示中查看实际效果：
 
 <iframe
   src="https://codesandbox.io/embed/dreamy-villani-1lz49?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&view=preview"
@@ -93,6 +92,6 @@ Check it out in action in this CodeSandbox demo:
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 />
 
-Try it out on your projects, and if you run into any problems, [report an issue on GitHub](https://github.com/tailwindlabs/tailwindui-react).
+在你的项目中试试看，如果遇到任何问题，[在 GitHub 上报告问题](https://github.com/tailwindlabs/tailwindui-react)。
 
-Want to talk about this post? <a href="https://github.com/tailwindcss/tailwindcss/discussions/2262">Discuss this on GitHub →</a>
+想讨论这篇文章吗？ <a href="https://github.com/tailwindcss/tailwindcss/discussions/2262">在 GitHub 上讨论 →</a>

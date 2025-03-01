@@ -3,8 +3,8 @@ import { CustomizingYourTheme, ResponsiveDesign, UsingACustomValue } from "@/com
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "transition-timing-function";
-export const description = "Utilities for controlling the easing of CSS transitions.";
+export const title = "过渡时间函数";
+export const description = "用于控制 CSS 过渡的缓动的实用工具。";
 
 <ApiTable
   rows={[
@@ -18,13 +18,13 @@ export const description = "Utilities for controlling the easing of CSS transiti
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `ease-in` and `ease-out` to control the easing curve of an element's transition:
+使用 `ease-in` 和 `ease-out` 等实用工具来控制元素过渡的缓动曲线：
 
-<Figure hint="Hover each button to see the expected behavior">
+<Figure hint="悬停每个按钮以查看预期的行为">
 
 <Example>
   {
@@ -32,19 +32,19 @@ Use utilities like `ease-in` and `ease-out` to control the easing curve of an el
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">ease-in</p>
         <button className="rounded-md bg-sky-500 px-4 py-2 text-sm font-semibold text-white duration-300 ease-in hover:scale-125">
-          Button A
+          按钮 A
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">ease-out</p>
         <button className="rounded-md bg-sky-500 px-4 py-2 text-sm font-semibold text-white duration-300 ease-out hover:scale-125">
-          Button B
+          按钮 B
         </button>
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">ease-in-out</p>
         <button className="rounded-md bg-sky-500 px-4 py-2 text-sm font-semibold text-white duration-300 ease-in-out hover:scale-125">
-          Button C
+          按钮 C
         </button>
       </div>
     </div>
@@ -53,23 +53,23 @@ Use utilities like `ease-in` and `ease-out` to control the easing curve of an el
 
 ```html
 <!-- [!code classes:ease-in,ease-out,ease-in-out] -->
-<button class="duration-300 ease-in ...">Button A</button>
-<button class="duration-300 ease-out ...">Button B</button>
-<button class="duration-300 ease-in-out ...">Button C</button>
+<button class="duration-300 ease-in ...">按钮 A</button>
+<button class="duration-300 ease-out ...">按钮 B</button>
+<button class="duration-300 ease-in-out ...">按钮 C</button>
 ```
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   element="button"
   utility="ease"
   value="cubic-bezier(0.95,0.05,0.795,0.035)"
-  name="transition timing function"
+  name="过渡时间函数"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="button"
@@ -78,12 +78,12 @@ Use utilities like `ease-in` and `ease-out` to control the easing curve of an el
   featuredClass="ease-in"
 />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourTheme
   element="button"
   utility="ease"
-  name="transition timing function"
+  name="过渡时间函数"
   customName="in-expo"
   customValue="cubic-bezier(0.95, 0.05, 0.795, 0.035)"
 />

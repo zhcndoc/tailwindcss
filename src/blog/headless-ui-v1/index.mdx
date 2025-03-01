@@ -6,36 +6,33 @@ import { Example } from "@/components/example";
 
 export const meta = {
   title: "Headless UI v1.0",
-  description: `Last fall we announced Headless UI, a library of completely unstyled, fully accessible UI components, designed to pair perfectly with Tailwind CSS. Today we’re super excited to release Headless UI v1.0, which more than doubles the amount of included components for both React and Vue.`,
+  description: `去年秋天，我们宣布了 Headless UI，一个完全未定制、功能全面的可访问 UI 组件库，旨在与 Tailwind CSS 完美配对。今天我们非常兴奋地发布 Headless UI v1.0，该版本的组件数量是 React 和 Vue 的多了两倍。`,
   date: "2021-04-14T16:00:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      Last fall we announced{" "}
-      <Link href="https://blog.tailwindcss.com/headless-ui-unstyled-accessible-ui-components">Headless UI</Link>, a
-      library of completely unstyled, fully accessible UI components, designed to pair perfectly with Tailwind CSS.
-      Today we’re super excited to release <Link href="https://headlessui.dev">Headless UI v1.0</Link>, which more than
-      doubles the amount of included components for both React and Vue.
+      去年秋天我们宣布了{" "}
+      <Link href="https://blog.tailwindcss.com/headless-ui-unstyled-accessible-ui-components">Headless UI</Link>，这是一个完全未定制、功能全面的可访问 UI 组件库，旨在与 Tailwind CSS 完美配对。今天我们非常兴奋地发布 <Link href="https://headlessui.dev">Headless UI v1.0</Link>，该版本的组件数量是 React 和 Vue 的多了两倍。
     </>
   ),
 };
 
-Last fall we announced <Link href="https://blog.tailwindcss.com/headless-ui-unstyled-accessible-ui-components">Headless UI</Link>, a library of completely unstyled, fully accessible UI components, designed to pair perfectly with Tailwind CSS.
+去年秋天我们宣布了 <Link href="https://blog.tailwindcss.com/headless-ui-unstyled-accessible-ui-components">Headless UI</Link>，这是一个完全未定制、功能全面的可访问 UI 组件库，旨在与 Tailwind CSS 完美配对。
 
-Today we’re super excited to release <Link href="https://headlessui.dev">Headless UI v1.0</Link>, which more than doubles the amount of included components for both React and Vue.
+今天我们非常兴奋地发布 <Link href="https://headlessui.dev">Headless UI v1.0</Link>，该版本的组件数量是 React 和 Vue 的多了两倍。
 
 <Link href="https://headlessui.dev">
   <Image alt="Headless UI" src={card} />
 </Link>
 
-## What’s new
+## 有什么新内容
 
-We’ve added four new components to the React library, and five new components for Vue.
+我们为 React 库添加了四个新组件，为 Vue 添加了五个新组件。
 
-### Dialog (modal)
+### 对话框 (模态)
 
-Headless UI now includes a robust dialog implementation you can use to build traditional modal dialogs, mobile slide-out menus, or any other take-over-style UI that needs to capture the focus of the entire page.
+Headless UI 现在包括一个强大的对话框实现，您可以使用它构建传统的模态对话框、移动滑出菜单，或者任何其他需要捕获整个页面焦点的占用式 UI。
 
 ```jsx
 import { useState } from "react";
@@ -48,30 +45,29 @@ function MyDialog() {
     <Dialog open={isOpen} onClose={setIsOpen}>
       <Dialog.Overlay />
 
-      <Dialog.Title>Deactivate account</Dialog.Title>
-      <Dialog.Description>This will permanently deactivate your account</Dialog.Description>
+      <Dialog.Title>停用帐户</Dialog.Title>
+      <Dialog.Description>这将永久停用您的帐户</Dialog.Description>
 
       <p>
-        Are you sure you want to deactivate your account? All of your data will be permanently removed. This action
-        cannot be undone.
+        您确定要停用帐户吗？您的所有数据将被永久删除。此操作无法撤回。
       </p>
 
-      <button onClick={() => setIsOpen(false)}>Deactivate</button>
-      <button onClick={() => setIsOpen(false)}>Cancel</button>
+      <button onClick={() => setIsOpen(false)}>停用</button>
+      <button onClick={() => setIsOpen(false)}>取消</button>
     </Dialog>
   );
 }
 ```
 
-### Disclosure
+### 披露
 
-We’ve added a new `Disclosure` component that makes it easy to show/hide inline content accessibly. This is useful for things like collapsible FAQ questions, "show more" interfaces, or even hamburger menus that open up and push the rest of the page content away.
+我们添加了一个新的 `Disclosure` 组件，使得以可访问的方式显示/隐藏内联内容变得简单。这对于可折叠的常见问题、"显示更多" 接口，或者甚至是开放并推走其他页面内容的汉堡菜单都很有用。
 
 ```html
 <template>
   <Disclosure>
-    <DisclosureButton> Is team pricing available? </DisclosureButton>
-    <DisclosurePanel> Yes! You can purchase a license that you can share with your entire team. </DisclosurePanel>
+    <DisclosureButton> 是否提供团队定价？ </DisclosureButton>
+    <DisclosurePanel> 是的！您可以购买一个许可证，您可以与整个团队共享。 </DisclosurePanel>
   </Disclosure>
 </template>
 
@@ -84,9 +80,9 @@ We’ve added a new `Disclosure` component that makes it easy to show/hide inlin
 </script>
 ```
 
-### Radio Group
+### 单选组
 
-There’s now a `RadioGroup` component that you can use to build totally custom radio button UIs, like when you want to use fancy cards or something instead of a simple little radio circle.
+现在有一个 `RadioGroup` 组件，您可以使用它来构建完全自定义的单选按钮 UI，比如当您想使用精美的卡片或其他元素，而不是简单的小圆圈。
 
 ```jsx
 import { useState } from "react";
@@ -97,36 +93,36 @@ function MyRadioGroup() {
 
   return (
     <RadioGroup value={plan} onChange={setPlan}>
-      <RadioGroup.Label>Plan</RadioGroup.Label>
+      <RadioGroup.Label>计划</RadioGroup.Label>
       <RadioGroup.Option value="startup">
-        {({ checked }) => <span className={checked ? "bg-blue-200" : ""}>Startup</span>}
+        {({ checked }) => <span className={checked ? "bg-blue-200" : ""}>初创</span>}
       </RadioGroup.Option>
       <RadioGroup.Option value="business">
-        {({ checked }) => <span className={checked ? "bg-blue-200" : ""}>Business</span>}
+        {({ checked }) => <span className={checked ? "bg-blue-200" : ""}>商务</span>}
       </RadioGroup.Option>
       <RadioGroup.Option value="enterprise">
-        {({ checked }) => <span className={checked ? "bg-blue-200" : ""}>Enterprise</span>}
+        {({ checked }) => <span className={checked ? "bg-blue-200" : ""}>企业</span>}
       </RadioGroup.Option>
     </RadioGroup>
   );
 }
 ```
 
-### Popover
+### 弹出菜单
 
-The new `Popover` component lets you build custom dropdown UIs that don’t have any content restrictions like a regular `Menu` component would. Great for fly-out menus on marketing sites, dropdowns that have form fields in them, and tons more.
+新的 `Popover` 组件允许您构建自定义下拉 UI，而没有像常规 `Menu` 组件那样的内容限制。非常适合市场网站上的飞出菜单、包含表单字段的下拉菜单等等。
 
 ```html
 <template>
   <Popover class="relative">
-    <PopoverButton>Solutions</PopoverButton>
+    <PopoverButton>解决方案</PopoverButton>
 
     <PopoverPanel class="absolute z-10">
       <div>
-        <a href="/analytics">Analytics</a>
-        <a href="/engagement">Engagement</a>
-        <a href="/security">Security</a>
-        <a href="/integrations">Integrations</a>
+        <a href="/analytics">分析</a>
+        <a href="/engagement">互动</a>
+        <a href="/security">安全</a>
+        <a href="/integrations">集成</a>
       </div>
 
       <img src="/solutions.jpg" alt="" />
@@ -143,17 +139,17 @@ The new `Popover` component lets you build custom dropdown UIs that don’t have
 </script>
 ```
 
-### TransitionRoot and TransitionChild (for Vue)
+### TransitionRoot 和 TransitionChild（适用于 Vue）
 
-Headless UI already had a `Transition` component for React, but we’ve always recommended the native `<transition>` that already ships with Vue for Vue users. There are some limitations to the native transition though, and things can get complicated when trying to co-ordinate nested transitions that are supposed to run in parallel.
+Headless UI 已经有一个用于 React 的 `Transition` 组件，但我们一直推荐 Vue 用户使用原生的 `<transition>`，它已经随 Vue 一起提供。然而，原生过渡有一些局限性，要协调应该并行运行的嵌套过渡时会变得复杂。
 
-Headless UI v1.0 brings our React `Transition` component to Vue as well, which makes it a lot easier to transition things like modal dialogs.
+Headless UI v1.0 将我们的 React `Transition` 组件引入 Vue，这使过渡模态对话框等事物变得更加容易。
 
 ```html
 <template>
-  <!-- This `show` prop controls all nested `Transition.Child` components. -->
+  <!-- 此 `show` 属性控制所有嵌套的 `Transition.Child` 组件。 -->
   <TransitionRoot :show="isOpen">
-    <!-- Background overlay -->
+    <!-- 背景叠加 -->
     <TransitionChild
       enter="transition-opacity"
       ease-linear
@@ -169,7 +165,7 @@ Headless UI v1.0 brings our React `Transition` component to Vue as well, which m
       <!-- … -->
     </TransitionChild>
 
-    <!-- Sliding sidebar -->
+    <!-- 滑动侧边栏 -->
     <TransitionChild
       enter="transition"
       ease-in-out
@@ -207,8 +203,8 @@ export default {
 </script>
 ```
 
-## Try it out
+## 试试看
 
-Head over to our <Link href="https://headlessui.dev">brand new documentation website</Link> to pull Headless UI into your projects and play with it! It’s MIT licensed and open-source, so if you’d like to poke around the code or you need to report an issue, <Link href="https://github.com/tailwindlabs/headlessui">visit the GitHub repository</Link>.
+前往我们的 <Link href="https://headlessui.dev">全新文档网站</Link>，将 Headless UI 引入您的项目并进行试用！它是 MIT 许可的开源项目，因此如果您想查看代码或需要报告问题，请 <Link href="https://github.com/tailwindlabs/headlessui">访问 GitHub 仓库</Link>。
 
-Want to try it out? <Link href="https://headlessui.dev">Visit the Headless UI website →</Link>
+想试试看吗？ <Link href="https://headlessui.dev">访问 Headless UI 网站 →</Link>

@@ -4,76 +4,74 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const meta = {
-  title: "Open-sourcing our progress on Tailwind CSS v4.0",
-  description: `We just tagged the first public v4.0.0-alpha so you can start experimenting with it and help us get to a stable release later this year.`,
+  title: "开源我们在 Tailwind CSS v4.0 的进展",
+  description: `我们刚刚标记了第一个公开的 v4.0.0-alpha，这样你就可以开始尝试并帮助我们在今年晚些时候推出稳定版。`,
   date: "2024-03-06T16:30:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      Last summer at Tailwind Connect{" "}
-      <Link href="https://www.youtube.com/watch?v=CLkxRnRQtDE&t=2146s">I shared a preview of Oxide</Link> — a new
-      high-performance engine for Tailwind CSS that we've been working on, designed to simplify the developer experience
-      and take advantage of how the web platform has evolved since Tailwind was first released.
+      去年夏天在 Tailwind Connect{" "}
+      <Link href="https://www.youtube.com/watch?v=CLkxRnRQtDE&t=2146s">我分享了 Oxide 的预览</Link>——这是一个我们一直在开发的新的高性能引擎，旨在简化开发者体验，并利用自 Tailwind 发布以来，网络平台的发展变化。
     </>
   ),
 };
 
 <Image src={card} alt="Tailwind CSS v4.0-alpha" />
 
-Last summer at Tailwind Connect [I shared a preview of Oxide](https://www.youtube.com/watch?v=CLkxRnRQtDE&t=2146s) — a new high-performance engine for Tailwind CSS that we've been working on, designed to simplify the developer experience and take advantage of how the web platform has evolved in recent years.
+去年夏天在 Tailwind Connect [我分享了 Oxide 的预览](https://www.youtube.com/watch?v=CLkxRnRQtDE&t=2146s)——这是一个我们一直在开发的新的高性能引擎，旨在简化开发者体验，并利用近年来网络平台的发展变化。
 
-The new engine was originally going to ship as a v3.x release, but even though we're committed to backwards compatibility, this feels so clearly like a new generation of the framework that it deserves to be v4.0.
+这个新引擎最初打算作为 v3.x 版本发布，但尽管我们承诺向后兼容，感觉这显然是该框架的新一代，值得标记为 v4.0。
 
-It's still early and we've got [a lot of work to do](#roadmap-to-v4-0), but today we're [open-sourcing our progress](https://github.com/tailwindlabs/tailwindcss/tree/next) and tagging the first public [v4.0.0-alpha](https://www.npmjs.com/package/tailwindcss/v/4.0.0-alpha.3) so you can start experimenting with it and help us get to a stable release later this year.
+现在还为时已早，我们还有 [很多工作要做](#roadmap-to-v4-0)，但今天我们正在 [开源我们的进展](https://github.com/tailwindlabs/tailwindcss/tree/next)，并标记第一个公开的 [v4.0.0-alpha](https://www.npmjs.com/package/tailwindcss/v/4.0.0-alpha.3)，这样你就可以开始尝试并帮助我们在今年晚些时候推出稳定版。
 
-I'll try keep it brief to save some of the excitement for the stable release, but if you like to play with very early and experimental stuff, there should be plenty of information here to get you going.
-
----
-
-## A new engine, built for speed
-
-The new engine is a ground-up rewrite, using everything we know about the framework now to better model the problem space, making things faster with a lot less code.
-
-- **Up to 10x faster** — we can do a full build of the Tailwind CSS website in 105ms instead of 960ms, or our Catalyst UI kit in 55ms instead of 341ms.
-- **Smaller footprint** — the new engine is over 35% smaller installed, even with the heavier native packages we ship like the parts we've rewritten in Rust and Lightning CSS.
-- **Rust where it counts** — we've migrated some of the most expensive and parallelizable parts of the framework to Rust, while keeping the core of the framework in TypeScript for extensibility.
-- **One dependency** — the only thing the new engine depends on is Lightning CSS.
-- **Custom parser** — we wrote our own CSS parser and designed our own data structures tailored to our needs, making parsing over 2x as fast for us as it was with PostCSS.
+我会尝试简要说明，以保留一些激动人心的内容给稳定版，但如果你喜欢玩非常早期和实验性的东西，这里应该有很多信息可以帮助你入门。
 
 ---
 
-## Unified toolchain
+## 一个为速度构建的新引擎
 
-Tailwind CSS v4 isn't just a plugin anymore — it's an all-in-one tool for processing your CSS. We've integrated [Lightning CSS](https://lightningcss.dev/) directly into the framework so you don't have to configure anything about your CSS pipeline.
+这个新引擎是从头开始重写的，利用我们现在对框架的全部了解，更好地模型问题空间，减少代码，让事情运行得更快。
 
-- **Built-in `@import` handling** — no need to setup and configure a tool like `postcss-import`.
-- **Built-in vendor prefixing** — you don't have to add `autoprefixer` to your projects anymore.
-- **Built-in nesting support** — no plugins needed to flatten nested CSS, it works out of the box.
-- **Syntax transforms** — modern CSS features like `oklch()` colors and media query ranges are transpiled to syntax with better browser support.
-
-We're still shipping a PostCSS plugin, but we're also exploring first-party bundler plugins, and we're shipping an official Vite plugin with this first alpha release that you can try out today.
-
----
-
-## Designed for the modern web
-
-We're looking into the future with Tailwind CSS v4 and trying to build a framework that's going to feel cutting edge for years to come.
-
-- **Native cascade layers** — we're using real `@layer` rules now, which solves a ton of specificity problems we've wrestled with in the past.
-- **Explicitly defined custom properties** — we use `@property` to define our internal custom properties with proper types and constraints, making it possible to do things like transition background gradients.
-- **Using `color-mix` for opacity modifiers** — making it easier than ever to use our opacity modifier syntax when using CSS variables for colors, or even adjusting the opacity of `currentColor`.
-- **Container queries in core** — we've added support for container queries directly to core, with new `@min-*` and `@max-*` variants to support container query ranges.
-
-We're also working on refreshing our color palette with wide gamut colors, and introducing support for other modern CSS features like `@starting-style`, anchor positioning, and more.
+- **速度提升高达 10 倍**——我们可以在 105 毫秒内完成 Tailwind CSS 网站的完整构建，而之前需要 960 毫秒，或者我们的 Catalyst UI 套件在 55 毫秒内完成，而之前需要 341 毫秒。
+- **更小的占用空间**——新引擎的安装体积减少了 35% 以上，即使我们仍然提供像 Rust 和 Lightning CSS 重写的那部分较重的原生包。
+- **重要部分使用 Rust**——我们已将框架中一些最昂贵且可并行处理的部分迁移到 Rust，同时将框架核心保留在 TypeScript 中，以便扩展性。
+- **只有一个依赖**——新引擎只依赖于 Lightning CSS。
+- **自定义解析器**——我们编写了自己的 CSS 解析器，并设计了适合我们需求的数据结构，使得解析速度比使用 PostCSS 快了 2 倍以上。
 
 ---
 
-## Composable variants
+## 统一工具链
 
-The new architecture makes it possible to compose together variants that act on other selectors, like `group-*`, `peer-*`, `has-*`, and a new `not-*` variant we're introducing for v4.
+Tailwind CSS v4 不再只是一个插件——它是一个一体化的 CSS 处理工具。我们将 [Lightning CSS](https://lightningcss.dev/) 直接集成到框架中，因此你无需配置任何有关 CSS 流水线的内容。
 
-In earlier releases, variants like `group-has-*` were explicitly defined in the framework, but now `group-*` can compose with the existing `has-*` variant, which can compose with other variants like `focus`:
+- **内置 `@import` 处理**——无需设置和配置像 `postcss-import` 这样的工具。
+- **内置厂商前缀处理**——你再也不用将 `autoprefixer` 添加到你的项目中。
+- **内置嵌套支持**——无须插件即可展平嵌套 CSS，开箱即用。
+- **语法转换**——像 `oklch()` 颜色和媒体查询范围等现代 CSS 特性被转译为具有更好浏览器支持的语法。
+
+我们仍在提供一个 PostCSS 插件，但也在探索第一方打包器插件，并在这个第一个 alpha 版本中发布了官方 Vite 插件，你可以今天就尝试。
+
+---
+
+## 针对现代网页设计
+
+我们在展望 Tailwind CSS v4 的未来，试图构建一个将在未来几年内感觉尖端的框架。
+
+- **原生层叠层**——我们现在使用真实的 `@layer` 规则，解决了过去的许多特指性问题。
+- **明确定义自定义属性**——我们使用 `@property` 正确类型化和约束地定义内部自定义属性，使得实现像背景渐变过渡等功能成为可能。
+- **使用 `color-mix` 进行不透明度修饰**——在使用 CSS 变量进行颜色时，使用我们的不透明度修饰语法变得比以往任何时候都容易，甚至可以调整 `currentColor` 的不透明度。
+- **核心中的容器查询**——我们直接在核心中添加了对容器查询的支持，并引入了新的 `@min-*` 和 `@max-*` 变体以支持容器查询范围。
+
+我们还在努力刷新我们的调色板，引入宽色域颜色，并支持其他现代 CSS 特性，例如 `@starting-style`、锚点定位等。
+
+---
+
+## 可组合变体
+
+新架构使得可以组合作用于其他选择器的变体，例如 `group-*`、`peer-*`、`has-*`，以及我们为 v4 引入的新 `not-*` 变体。
+
+在早期版本中，像 `group-has-*` 的变体在框架中是明确定义的，但现在 `group-*` 可以与现有的 `has-*` 变体组合，并且可以与像 `focus` 这样的其他变体组合：
 
 {/* prettier-ignore */}
 ```html
@@ -87,36 +85,36 @@ In earlier releases, variants like `group-has-*` were explicitly defined in the 
 </div>
 ```
 
-There's no limits to this composability, and you can even write stuff like `group-not-has-peer-not-data-active:underline` if for some horrible reason that's what you need to do.
+这种组合性没有限制，你甚至可以写出像 `group-not-has-peer-not-data-active:underline` 这样的东西，假如出于某种可怕的原因这是你需要做的。
 
 ---
 
-## Zero-configuration content detection
+## 零配置内容检测
 
-You'll notice that at least in these early alpha releases, it's not even possible to configure your `content` paths. For most projects, you're never going to need to do this ever again — Tailwind just finds your template files for you.
+你会注意到，至少在这些早期的 alpha 版本中，甚至连配置你的 `content` 路径都是不可能的。对于大多数项目，你永远不需要再这样做——Tailwind 会自动找到你的模板文件。
 
-We do this using one of two ways depending on how you've integrated Tailwind into your project:
+我们通过两种方法之一来实现此功能，具体取决于你如何将 Tailwind 集成到项目中：
 
-- **Using the PostCSS plugin or the CLI**, Tailwind will crawl your entire project looking for template files, using a bunch of heuristics we've built in to keep things fast, like not crawling directories that are in your `.gitignore` file, and ignoring binary file formats.
+- **使用 PostCSS 插件或 CLI**，Tailwind 会爬取你整个项目查找模板文件，使用我们内置的许多启发式规则来保持快速，比如不爬取在 `.gitignore` 文件中的目录，并忽略二进制文件格式。
 
-- **Using the Vite plugin**, we rely on the module graph. This is amazing because we know exactly what files you're actually using, so it's maximally performant, and with no false positives or negatives. We're hoping to expand this approach outside of the Vite ecosystem with other bundler plugins in the future.
+- **使用 Vite 插件**，我们依赖于模块图。这一点很神奇，因为我们确切知道你实际上在使用哪些文件，因此它具有最大的性能，并且没有假阳性或假阴性。我们希望在未来将这种方法扩展到 Vite 生态系统以外的其他打包器插件。
 
-We'll introduce a way to configure content paths explicitly in the future for sure, but we're curious to see how well this automatic approach works for everyone — it's working awesome in our own projects.
+我们将来一定会引入显式配置内容路径的方法，但我们很想看到这种自动方法在大家中的运行效果如何——在我们自己的项目中效果很好。
 
 ---
 
-## CSS-first configuration
+## CSS 优先的配置
 
-A major goal of Tailwind CSS v4.0 is making the framework feel CSS-native, and less like a JavaScript library.
+Tailwind CSS v4.0 的一个主要目标是让框架感觉更像是 CSS 原生，而不是像一个 JavaScript 库。
 
-Once you've installed it, you add it to your project with a regular CSS `@import` statement:
+安装后，你可以通过常规的 CSS `@import` 语句将其添加到你的项目中：
 
 ```css
 /* [!code filename:main.css] */
 @import "tailwindcss";
 ```
 
-And instead of setting up all of your customizations in a JavaScript configuration file, you just use CSS variables:
+而不再是在 JavaScript 配置文件中设置所有自定义配置，你只需使用 CSS 变量：
 
 ```css
 /* [!code filename:main.css] */
@@ -133,7 +131,7 @@ And instead of setting up all of your customizations in a JavaScript configurati
 }
 ```
 
-The special `@theme` directive tells Tailwind to make new utilities and variants available based on those variables, letting you use classes like `3xl:text-neon-lime` in your markup:
+特殊的 `@theme` 指令告诉 Tailwind 根据这些变量生成新的实用类和变体，让你可以在标记中使用像 `3xl:text-neon-lime` 这样的类：
 
 {/* prettier-ignore */}
 ```html
@@ -143,12 +141,12 @@ The special `@theme` directive tells Tailwind to make new utilities and variants
 <!-- [!code word:text-neon-cyan] -->
 <div class="max-w-lg 3xl:max-w-xl">
   <h1 class="font-display text-4xl">
-    Data to <span class="text-neon-cyan">enrich</span> your online business
+    用于 <span class="text-neon-cyan">丰富</span> 你的在线业务的数据
   </h1>
 </div>
 ```
 
-Adding new CSS variables behaves like `extend` did in earlier versions of the framework, but you can override a whole set of variables by clearing the namespace with syntax like `--color-*: initial` before defining all of your custom values:
+添加新的 CSS 变量的行为就像早期版本中 `extend` 的行为，但你可以通过使用像 `--color-*: initial` 的语法在定义所有自定义值之前清空整个变量命名空间来覆盖一整套变量：
 
 ```css
 /* [!code filename:main.css] */
@@ -167,9 +165,9 @@ Adding new CSS variables behaves like `extend` did in earlier versions of the fr
 }
 ```
 
-We're still fine-tuning some of the naming conventions, but you can [explore the default theme on GitHub](https://github.com/tailwindlabs/tailwindcss/blob/next/packages/tailwindcss/theme.css) to see what's available to customize.
+我们仍在微调一些名称约定，但你可以 [在 GitHub 上探索默认主题](https://github.com/tailwindlabs/tailwindcss/blob/next/packages/tailwindcss/theme.css)，以查看可自定义的内容。
 
-If you don't want to explicitly clear the default theme and would rather start from scratch, you can import `"tailwindcss/preflight"` and `"tailwindcss/utilities"` directly to skip importing the default theme:
+如果你不想显式清除默认主题，而宁愿从头开始，你可以直接导入 `"tailwindcss/preflight"` 和 `"tailwindcss/utilities"` 来跳过导入默认主题：
 
 ```css
 /* [!code filename:main.css] */
@@ -189,7 +187,7 @@ If you don't want to explicitly clear the default theme and would rather start f
 }
 ```
 
-We also make all of your theme values available as native CSS variables in your custom CSS:
+我们还会将所有的主题值作为原生 CSS 变量提供在你的自定义 CSS 中：
 
 ```css
 /* [!code filename:dist/main.css] */
@@ -204,7 +202,7 @@ We also make all of your theme values available as native CSS variables in your 
 }
 ```
 
-This makes it easy to reference any of your theme values in arbitrary values without needing the `theme()` function:
+这使得在任意值中引用任何主题值变得容易，无需使用 `theme()` 函数：
 
 ```html
 <!-- [!code filename:index.html] -->
@@ -213,7 +211,7 @@ This makes it easy to reference any of your theme values in arbitrary values wit
 </div>
 ```
 
-It also makes it possible to use your theme values when working with UI libraries like Framer Motion, without having to use the `resolveConfig()` function:
+它还使得在使用 UI 库（如 Framer Motion）时，可以使用你的主题值，而无需使用 `resolveConfig()` 函数：
 
 ```jsx
 // [!code filename:JSX]
@@ -228,58 +226,58 @@ export const MyComponent = () => (
 
 ---
 
-## What's changed
+## 已变更内容
 
-We don't take breaking changes lightly, but there are a few things we're doing differently in v4 so far that are worth sharing:
+我们不轻易采取破坏性更改，但在 v4 中我们有一些不同的做法值得分享：
 
-- **Removed deprecated utilities** — we've removed utilities we stopped documenting a long time ago like `text-opacity-*`, `flex-grow-*`, and `decoration-slice` in favor of their modern replacements like `text-{color}/*`, `grow-*`, and `box-decoration-slice`.
-- **PostCSS plugin and CLI are separate packages** — the main `tailwindcss` package doesn't include these anymore since not everyone needs them, instead they should be installed separately using `@tailwindcss/postcss` and `@tailwindcss/cli`.
-- **No default border color** — the `border` utility used to default to `gray-200`, but now it defaults to `currentColor` like the browser does. We made this change to make it harder to accidentally introduce a wrong gray into your project if you're using `zinc` or `slate` or something else as your main gray.
-- **Rings are 1px by default** — the `ring` utility used to be a 3px blue ring by default, now it's a 1px ring using `currentColor`. We find ourselves using the `ring-*` utilities as an alternative to borders in our projects, and using `outline-*` for focus rings, so we think making things consistent here is a helpful change.
+- **移除弃用的实用类**——我们移除了很久没有记录的实用类，比如 `text-opacity-*`、`flex-grow-*` 和 `decoration-slice`，取而代之的是它们的现代替代品，如 `text-{color}/*`、`grow-*` 和 `box-decoration-slice`。
+- **PostCSS 插件和 CLI 是单独的包**——主要的 `tailwindcss` 包不再包含这些，因为并非每个人都需要它们，而是应使用 `@tailwindcss/postcss` 和 `@tailwindcss/cli` 单独安装。
+- **没有默认的边框颜色**——`border` 工具曾默认使用 `gray-200`，但现在它默认使用 `currentColor`，就像浏览器一样。我们进行了这个更改，以使得在你的项目中意外引入错误的灰色更困难，尤其是在使用 `zinc`、`slate` 或其他用作主灰色的颜色时。
+- **默认的环宽为 1px**——`ring` 工具的默认值以前是 3px 的蓝色环，现在它是 1px 的 `currentColor` 环。我们发现自己在项目中使用 `ring-*` 工具作为边框的替代，同时使用 `outline-*` 来表示焦点环，因此我们认为在这里保持一致是一个有益的更改。
 
-There are a handful of other really low-level implementation detail changes that might surface in some way in your projects, but nothing deliberate like these changes. If you bump into anything surprising, let us know.
-
----
-
-## Roadmap to v4.0
-
-This new engine is a ground-up rewrite, and up until now we've been focused entirely on this reimagined developer experience using the new configuration approach.
-
-**We put an enormous amount of value in backwards compatibility**, and that's where the bulk of the work lies before we can tag a stable v4.0 release later this year.
-
-- **Support for JavaScript configuration files** — reintroducing compatibility with the classic `tailwind.config.js` file to make migrating to v4 easy.
-- **Explicit content path configuration** — making it possible to tell Tailwind exactly where your templates are when automatic content detection isn't good enough for your setup.
-- **Support for other dark modes** — right now we only support dark mode using media queries, and still need to reimplement the selector and variant strategies.
-- **Plugins and custom utilities** — we don't have support for plugins, or for writing custom utilities that automatically work with variants yet. Obviously we will make this work before a stable release.
-- **Prefix support** — there's no way to configure a prefix for your classes yet, but we'll bring it back for sure.
-- **Safelists and blocklists** — can't force Tailwind to generate certain classes or prevent it from generating other classes yet.
-- **Support for `important` configuration** — there's no way to make utilities all generate with `!important` right now, but we plan to implement it.
-- **Support for the `theme()` function** — this isn't needed for new projects because you can use `var()` now, but we'll implement it for backwards compatibility.
-- **Standalone CLI** — we haven't worked on a standalone CLI for the new engine yet, but will absolutely have it before the v4.0 release.
-
-Aside from that, I'm sure we'll find a lot of bugs to fix, some exciting new CSS features to sneak in, and refine some of these new APIs that need some more polish before a proper release.
-
-I don't want to make promises on a specific release timeline, but I'd personally love to mark v4.0 as stable before the summer holiday season kicks in.
+还有一些其他非常低级的实现细节更改可能在某种程度上出现在你的项目中，但没有像这些更改那样有意。如果你碰到任何意外的情况，请告知我们。
 
 ---
 
-## Try out the alpha
+## v4.0 的路线图
 
-We've tagged a couple alpha releases already, and you can start playing with it in your projects today.
+这个新引擎是从头重写的，直到现在我们一直专注于重新构想的开发者体验，采用新的配置方法。
 
-If you're using the Tailwind CSS IntelliSense extension for VS Code, make sure you switch to the prerelease version from the extension page, and if you're using our Prettier plugin, make sure you install the latest version.
+**我们对向后兼容性非常重视**，这是我们在标记稳定的 v4.0 版本之前的大部分工作所在。
 
-If you find an issue, please [let us know on GitHub](https://github.com/tailwindlabs/tailwindcss/issues/new/choose). We really want this thing to be bullet-proof before we tag a stable release and reporting any problems you find will help us a lot.
+- **支持 JavaScript 配置文件**——重新引入与经典的 `tailwind.config.js` 文件的兼容性，以便顺利移步至 v4。
+- **显式内容路径配置**——让 Tailwind 知道你的模板确切位置，当自动内容检测不适合你的配置时。
+- **支持其他深色模式**——目前我们只支持使用媒体查询的深色模式，仍需重新实现选择器和变体策略。
+- **插件和自定义实用工具**——我们尚未支持插件，或为变体自动工作的自定义实用工具。显然，在稳定版本之前，我们会使这一点有效。
+- **前缀支持**——目前尚无法配置类的前缀，但我们肯定会将其带回。
+- **安全列表和阻止列表**——现在无法强制 Tailwind 生成某些类或阻止生成其他类。
+- **支持 `important` 配置**——目前无法让所有实用工具生成带 `!important` 的样式，但我们计划将其实现。
+- **支持 `theme()` 函数**——对新项目来说这并不需要，因为你现在可以使用 `var()`，但我们会为向后兼容实现它。
+- **独立 CLI**——我们尚未为新引擎开发独立的 CLI，但肯定会在 v4.0 发布之前推出。
 
-### Using Vite
+除此之外，我相信我们会发现许多需要修复的错误，一些激动人心的新 CSS 功能可以悄然加入，并对一些需要进一步打磨的新 API 进行精细化处理，以便发布正式版本。
 
-Install the Tailwind CSS v4 alpha and our new Vite plugin:
+我不想对具体的发布时间表做出承诺，但我个人希望在夏季假期来到之前将 v4.0 标记为稳定版本。
+
+---
+
+## 尝试 alpha 版本
+
+我们已经标记了几个 alpha 版本，你可以立即在你的项目中开始使用。
+
+如果你正在使用 VS Code 的 Tailwind CSS IntelliSense 扩展，请确保从扩展页面切换到预发布版本，如果你在使用我们的 Prettier 插件，请确保安装最新版本。
+
+如果你发现了问题，请 [在 GitHub 上告诉我们](https://github.com/tailwindlabs/tailwindcss/issues/new/choose)。我们真的希望在标记稳定版本之前确保这个东西绝对可靠，因此你报告的任何问题都会对我们有很大帮助。
+
+### 使用 Vite
+
+安装 Tailwind CSS v4 alpha 及我们的新 Vite 插件：
 
 ```sh
 npm install tailwindcss@next @tailwindcss/vite@next
 ```
 
-Then add our plugin to your `vite.config.ts` file:
+然后将我们的插件添加到你的 `vite.config.ts` 文件中：
 
 ```ts
 // [!code filename:vite.config.ts]
@@ -291,22 +289,22 @@ export default defineConfig({
 });
 ```
 
-Finally, import Tailwind in your main CSS file:
+最后，在你的主要 CSS 文件中导入 Tailwind：
 
 ```css
 /* [!code filename:app.css]
 @import "tailwindcss";
 ```
 
-### Using PostCSS
+### 使用 PostCSS
 
-Install the Tailwind CSS v4 alpha and the separate PostCSS plugin package:
+安装 Tailwind CSS v4 alpha 和单独的 PostCSS 插件包：
 
 ```sh
 npm install tailwindcss@next @tailwindcss/postcss@next
 ```
 
-Then add our plugin to your `postcss.config.js` file:
+然后将我们的插件添加到你的 `postcss.config.js` 文件中：
 
 ```js
 // [!code filename:postcss.config.js]
@@ -317,30 +315,30 @@ module.exports = {
 };
 ```
 
-Finally, import Tailwind in your main CSS file:
+最后，在你的主要 CSS 文件中导入 Tailwind：
 
 ```css
 /* [!code filename:app.css] */
 @import "tailwindcss";
 ```
 
-### Using the CLI
+### 使用 CLI
 
-Install the Tailwind CSS v4 alpha and the separate CLI package:
+安装 Tailwind CSS v4 alpha 和单独的 CLI 包：
 
 ```sh
 npm install tailwindcss@next @tailwindcss/cli@next
 ```
 
-Next, import Tailwind in your main CSS file:
+接下来，在你的主要 CSS 文件中导入 Tailwind：
 
 ```css
 /* [!code filename:app.css] */
 @import "tailwindcss";
 ```
 
-Finally, compile your CSS using the CLI tool:
+最后，使用 CLI 工具编译你的 CSS：
 
 ```sh
 npx @tailwindcss/cli@next -i app.css -o dist/app.css
-```
+``` 

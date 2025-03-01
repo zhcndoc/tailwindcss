@@ -5,8 +5,8 @@ import { Figure } from "@/components/figure.tsx";
 import { DynamicViewportExample } from "@/components/dynamic-viewport-example.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "height";
-export const description = "Utilities for setting the height of an element.";
+export const title = "高度";
+export const description = "设置元素高度的工具类。";
 
 <ApiTable
   rows={[
@@ -46,11 +46,11 @@ export const description = "Utilities for setting the height of an element.";
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `h-<number>` utilities like `h-24` and `h-64` to set an element to a fixed height based on the spacing scale:
+使用 `h-<number>` 工具类，如 `h-24` 和 `h-64` 来设置元素的固定高度，基于间距比例：
 
 <Figure>
 
@@ -95,9 +95,9 @@ Use `h-<number>` utilities like `h-24` and `h-64` to set an element to a fixed h
 
 </Figure>
 
-### Using a percentage
+### 使用百分比
 
-Use `h-full` or `h-<fraction>` utilities like `h-1/2` and `h-2/5` to give an element a percentage-based height:
+使用 `h-full` 或 `h-<fraction>` 工具类，如 `h-1/2` 和 `h-2/5` 来给元素设置基于百分比的高度：
 
 <Figure>
 
@@ -149,9 +149,9 @@ Use `h-full` or `h-<fraction>` utilities like `h-1/2` and `h-2/5` to give an ele
 
 </Figure>
 
-### Matching viewport
+### 匹配视口
 
-Use the `h-screen` utility to make an element span the entire height of the viewport:
+使用 `h-screen` 工具类使元素跨越整个视口的高度：
 
 ```html
 <!-- [!code classes:h-screen] -->
@@ -160,11 +160,11 @@ Use the `h-screen` utility to make an element span the entire height of the view
 </div>
 ```
 
-### Matching dynamic viewport
+### 匹配动态视口
 
-Use the `h-dvh` utility to make an element span the entire height of the viewport, which changes as the browser UI expands or contracts:
+使用 `h-dvh` 工具类使元素跨越整个视口的高度，随着浏览器 UI 的展开或收缩而变化：
 
-<Figure hint="Scroll the viewport to see the viewport height change">
+<Figure hint="滚动视口以查看视口高度变化">
 
 <Example padding={false}>
   {<DynamicViewportExample unit="dvh" colorStyles="dark:bg-pink-500 bg-pink-500 border border-pink-400" />}
@@ -179,11 +179,11 @@ Use the `h-dvh` utility to make an element span the entire height of the viewpor
 
 </Figure>
 
-### Matching large viewport
+### 匹配大视口
 
-Use the `h-lvh` utility to set an element's height to the largest possible height of the viewport:
+使用 `h-lvh` 工具类设置元素的高度为视口可能的最大高度：
 
-<Figure hint="Scroll the viewport to see the viewport height change">
+<Figure hint="滚动视口以查看视口高度变化">
 
 <Example padding={false}>
   {<DynamicViewportExample unit="lvh" colorStyles="dark:bg-indigo-500 bg-indigo-500 border border-indigo-400" />}
@@ -198,11 +198,11 @@ Use the `h-lvh` utility to set an element's height to the largest possible heigh
 
 </Figure>
 
-### Matching small viewport
+### 匹配小视口
 
-Use the `h-svh` utility to set an element's height to the smallest possible height of the viewport:
+使用 `h-svh` 工具类设置元素的高度为视口可能的最小高度：
 
-<Figure hint="Scroll the viewport to see the viewport height change">
+<Figure hint="滚动视口以查看视口高度变化">
 
 <Example padding={false}>
   {<DynamicViewportExample unit="svh" colorStyles="dark:bg-purple-500 bg-purple-500 border border-purple-400" />}
@@ -217,9 +217,9 @@ Use the `h-svh` utility to set an element's height to the smallest possible heig
 
 </Figure>
 
-### Setting both width and height
+### 同时设置宽度和高度
 
-Use utilities like `size-px`, `size-4`, and `size-full` to set both the width and height of an element at the same time:
+使用工具类如 `size-px`、`size-4` 和 `size-full` 同时设置元素的宽度和高度：
 
 <Figure>
 
@@ -246,14 +246,14 @@ Use utilities like `size-px`, `size-4`, and `size-full` to set both the width an
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue utility="h" value="32rem" name="height" variable="height" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="height" defaultClass="h-1/2" featuredClass="h-full" />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourSpacingScale utilities={["h", "size"]} />

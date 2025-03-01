@@ -3,71 +3,70 @@ import image from "./card.jpg";
 
 export const meta = {
   title: "Tailwind CSS v1.9.0",
-  description: `We just released Tailwind CSS v1.9 which adds support for configuration presets, useful new CSS grid utilities, extended border radius, rotate, and skew scales, helpful accessibility improvements, and more!`,
+  description: `我们刚刚发布了 Tailwind CSS v1.9，新增了配置预设的支持、实用的新 CSS 网格工具、扩展的边框半径、旋转和倾斜比例、方便的可访问性改进等等！`,
   date: "2020-10-13T18:30:00.000Z",
   authors: [adamwathan],
   image,
   excerpt: (
     <>
-      We just released Tailwind CSS v1.9 which adds support for configuration presets, useful new CSS grid utilities,
-      extended border radius, rotate, and skew scales, helpful accessibility improvements, and more!
+      我们刚刚发布了 Tailwind CSS v1.9，新增了配置预设的支持、实用的新 CSS 网格工具、扩展的边框半径、旋转和倾斜比例、方便的可访问性改进等等！
     </>
   ),
 };
 
-We just released Tailwind CSS v1.9 which adds support for configuration presets, useful new CSS grid utilities, extended border radius, rotate, and skew scales, helpful accessibility improvements, and more!
+我们刚刚发布了 Tailwind CSS v1.9，新增了配置预设的支持、实用的新 CSS 网格工具、扩展的边框半径、旋转和倾斜比例、方便的可访问性改进等等！
 
-Let's dig in to the highlights...
+让我们深入了解一下亮点...
 
-- [Configuration presets](#configuration-presets)
-- [Utilities for `grid-auto-columns` and `grid-auto-rows`](#utilities-for-grid-auto-columns-and-grid-auto-rows)
-- [Focus indicator improvements and configurable outlines](#focus-indicator-improvements-and-configurable-outlines)
-- [Extended border radius, rotate, and skew scales](#extended-border-radius-rotate-and-skew-scales)
-- [Upgrading to v1.9](#upgrading)
+- [配置预设](#配置预设)
+- [grid-auto-columns 和 grid-auto-rows 的工具](#grid-auto-columns和grid-auto-rows的工具)
+- [焦点指示器改进和可配置轮廓](#焦点指示器改进和可配置轮廓)
+- [扩展的边框半径、旋转和倾斜比例](#扩展的边框半径-旋转和倾斜比例)
+- [升级到 v1.9](#升级)
 
-For the complete summary of changes [check out the release notes on GitHub](https://github.com/tailwindlabs/tailwindcss/releases/tag/v1.9.0).
+有关更改的完整摘要 [请查看 GitHub 上的发布说明](https://github.com/tailwindlabs/tailwindcss/releases/tag/v1.9.0)。
 
 ---
 
-## Configuration presets
+## 配置预设
 
-Tailwind CSS v1.9 adds a new `presets` key to the `tailwind.config.js` file that makes it possible to configure a custom "base configuration" for your projects.
+Tailwind CSS v1.9 为 `tailwind.config.js` 文件添加了一个新的 `presets` 键，使您能够为项目配置自定义的“基本配置”。
 
 ```js
 module.exports = {
   presets: [require("@my-company/tailwind-base")],
   theme: {
     extend: {
-      // Project specific overrides...
+      // 项目特定的覆盖...
     },
   },
 };
 ```
 
-Whatever you provide under `presets` _replaces_ the default Tailwind base configuration, so you can define your own totally custom starting point. This is really helpful if you're part of a team that works on multiple different Tailwind projects that all need to share the same brand colors, font customizations, or spacing scale.
+您在 `presets` 下提供的内容将 _替换_ 默认的 Tailwind 基本配置，因此您可以定义自己完全自定义的起始点。这在您所在的团队处理多个不同的 Tailwind 项目且都需要共享相同的品牌颜色、字体自定义或间距比例时非常有用。
 
-You can even list multiple presets, which are merged together from top to bottom:
+您甚至可以列出多个预设，这些预设会从上到下合并在一起：
 
 ```js
 module.exports = {
   presets: [require("@my-company/tailwind-base"), require("@my-company/tailwind-marketing")],
   theme: {
     extend: {
-      // Project specific overrides...
+      // 项目特定的覆盖...
     },
   },
 };
 ```
 
-The logic to merge your project-specific configuration with your custom base configuration is exactly the same as how things work with the default configuration, so all of the features you're used to like `extend` still work exactly the way you'd expect.
+将您的项目特定配置与自定义基本配置合并的逻辑与默认配置的工作方式完全相同，因此您习惯的所有功能，例如 `extend`，仍然会以您所期望的方式正常工作。
 
 ---
 
-## Utilities for grid-auto-columns and grid-auto-rows
+## grid-auto-columns 和 grid-auto-rows 的工具
 
-We've added new `gridAutoColumns` and `gridAutoRows` core plugins that add new utilities for the `grid-auto-columns` and `grid-auto-rows` CSS properties respectively.
+我们新增了 `gridAutoColumns` 和 `gridAutoRows` 核心插件，分别为 `grid-auto-columns` 和 `grid-auto-rows` CSS 属性添加了新工具。
 
-These utilities let you control the size of implicitly-created grid columns and rows. Use them to set a default column/row size whenever you don't specify a number of columns/rows for your grid.
+这些工具让您可以控制隐式创建的网格列和行的大小。当您没有为网格指定列/行数时，可以使用它们来设置默认的列/行大小。
 
 ```html
 <div class="grid auto-cols-max grid-flow-col">
@@ -77,14 +76,14 @@ These utilities let you control the size of implicitly-created grid columns and 
 </div>
 ```
 
-Here's a list of the new utilities that are included out of the box:
+以下是默认包含的新工具列表：
 
 {
 
 <table>
   <thead>
     <tr>
-      <th>Class</th>
+      <th>类</th>
       <th>CSS</th>
     </tr>
   </thead>
@@ -158,15 +157,15 @@ Here's a list of the new utilities that are included out of the box:
 
 }
 
-We include `responsive` variants for these utilities by default, and they can be configured just like you'd expect under the `gridAutoColumns` and `gridAutoRows` sections of your `tailwind.config.js` file.
+我们为这些工具默认包含了 `responsive` 变体，并且它们可以像您所期望的那样，在 `tailwind.config.js` 文件的 `gridAutoColumns` 和 `gridAutoRows` 部分中进行配置。
 
 ---
 
-## Focus indicator improvements and configurable outlines
+## 焦点指示器改进和可配置轮廓
 
-We've updated the `outline-none` class to render a _transparent_ outline by default instead of rendering _no_ outline. This is really helpful for people who use [Windows high contrast mode](https://blogs.windows.com/msedgedev/2020/09/17/styling-for-windows-high-contrast-with-new-standards-for-forced-colors/), where custom box-shadow-based focus styles are completely invisible.
+我们更新了 `outline-none` 类，默认渲染一个 _透明_ 的轮廓，而不是渲染 _没有_ 轮廓。这对使用 [Windows 高对比度模式](https://blogs.windows.com/msedgedev/2020/09/17/styling-for-windows-high-contrast-with-new-standards-for-forced-colors/) 的人非常有帮助，因为基于自定义 box-shadow 的焦点样式完全不可见。
 
-Now you can create custom focus styles using box shadows _safely_, without making your sites difficult to use for people with low vision.
+现在，您可以使用 box shadows _安全_ 地创建自定义的焦点样式，而不会让您的网站对视力低下的人难以使用。
 
 ```html
 <button class="focus:shadow-outline focus:outline-none ...">
@@ -174,21 +173,21 @@ Now you can create custom focus styles using box shadows _safely_, without makin
 </button>
 ```
 
-We've also added two new outline styles: `outline-white` and `outline-black`.
+我们还新增了两种轮廓样式：`outline-white` 和 `outline-black`。
 
-These utilities render a 2px dotted outline in their respective color, with a 2px offset. They work great as general purpose unobtrusive focus indicators that make it easy for keyboard users to see which element on the screen is selected, without clashing too much with your design.
+这些工具在各自颜色中渲染 2px 的虚线轮廓，并具有 2px 的偏移。它们作为通用的不突兀的焦点指示器非常有效，使键盘用户可以轻松看到屏幕上哪个元素被选中，而不会过于冲突您的设计。
 
-We've included both `white` and `black` variations so you can always be sure to have an option available that has sufficient contrast against whatever background color you're using.
+我们包括了 `white` 和 `black` 的变体，因此您可以始终确保拥有足够对比度的选项，无论您使用什么背景色。
 
 ```html
-<!-- Use `outline-white` on dark backgrounds -->
+<!-- 在深色背景上使用 `outline-white` -->
 <div class="bg-gray-900">
   <button class="focus:outline-white ...">
     <!-- ... -->
   </button>
 </div>
 
-<!-- Use `outline-black` on light backgrounds -->
+<!-- 在浅色背景上使用 `outline-black` -->
 <div class="bg-white">
   <button class="focus:outline-black ...">
     <!-- ... -->
@@ -196,9 +195,9 @@ We've included both `white` and `black` variations so you can always be sure to 
 </div>
 ```
 
-Of course, you're also free to create whatever custom focus styles you like using background colors, box shadows, borders, whatever. These are great if you don't want to get too fancy though.
+当然，您也可以根据自己的喜好使用背景颜色、box shadows、边框等创建任何自定义的焦点样式。不过这些在不想过于花哨的情况下非常不错。
 
-We've made the `outline` property configurable as well, so you can now define custom outlines in your `tailwind.config.js` file:
+我们也使 `outline` 属性可配置，您现在可以在 `tailwind.config.js` 文件中定义自定义的轮廓：
 
 ```js
 module.exports = {
@@ -212,7 +211,7 @@ module.exports = {
 };
 ```
 
-You can also provide an `outline-offset` value for any custom outline utilities using a tuple of the form `[outline, outlineOffset]`:
+您还可以使用元组形式的 `[outline, outlineOffset]` 为任何自定义的轮廓工具提供 `outline-offset` 值：
 
 ```js
 module.exports = {
@@ -228,17 +227,17 @@ module.exports = {
 
 ---
 
-## Extended border radius, rotate, and skew scales
+## 扩展的边框半径、旋转和倾斜比例
 
-We've added three new border radius utilities by default:
+我们默认添加了三种新的边框半径工具：
 
 {
 
 <table>
   <thead>
     <tr>
-      <th>Class</th>
-      <th>Value</th>
+      <th>类</th>
+      <th>值</th>
     </tr>
   </thead>
   <tbody>
@@ -270,15 +269,15 @@ We've added three new border radius utilities by default:
 </table>
 }
 
-...and an extended set of smaller values for both the `rotate` and `skew` utilities:
+...以及为 `rotate` 和 `skew` 工具扩展了一组较小的值：
 
 {
 
 <table>
   <thead>
     <tr>
-      <th>Class</th>
-      <th>Value</th>
+      <th>类</th>
+      <th>值</th>
     </tr>
   </thead>
   <tbody>
@@ -342,13 +341,13 @@ We've added three new border radius utilities by default:
 </table>
 }
 
-Negative versions are included for all of these as well. Super handy for more subtle rotate and skew effects!
+所有这些还包括负版本，非常适合更微妙的旋转和倾斜效果！
 
 ---
 
-## Upgrading
+## 升级
 
-Tailwind CSS v1.9 is a non-breaking minor release, so to upgrade all you need to do is run:
+Tailwind CSS v1.9 是一个非破坏性的次要版本，因此要升级，您只需运行：
 
 ```bash
 # npm
@@ -358,6 +357,6 @@ npm install tailwindcss@^1.9
 yarn add tailwindcss@^1.9
 ```
 
-We have promoted two previously experimental features (`defaultLineHeights` and `standardFontWeights`) to `future`, so we also recommend [opting-in to those changes now](https://v1.tailwindcss.com/docs/upcoming-changes#default-line-heights-for-font-size-utilities) to simplify the upgrade to Tailwind CSS v2.0 later this fall.
+我们已将两个之前的实验性功能 (`defaultLineHeights` 和 `standardFontWeights`) 提升到 `future`，因此我们还建议 [现在选择这些更改](https://v1.tailwindcss.com/docs/upcoming-changes#default-line-heights-for-font-size-utilities)，以简化今秋稍后升级到 Tailwind CSS v2.0。
 
-Want to talk about this post? <a href="https://github.com/tailwindcss/tailwindcss/discussions/2552">Discuss this on GitHub →</a>
+想讨论这篇文章吗？ <a href="https://github.com/tailwindcss/tailwindcss/discussions/2552">在 GitHub 上讨论 →</a>

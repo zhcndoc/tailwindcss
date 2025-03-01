@@ -6,8 +6,8 @@ import { ResponsiveDesign } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 import { UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "padding";
-export const description = "Utilities for controlling an element's padding.";
+export const title = "内边距";
+export const description = "用于控制元素内边距的工具类。";
 
 <ApiTable
   rows={[
@@ -28,11 +28,11 @@ export const description = "Utilities for controlling an element's padding.";
   ])}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `p-<number>` utilities like `p-4` and `p-8` to control the padding on all sides of an element:
+使用 `p-<number>` 工具类，如 `p-4` 和 `p-8` 来控制元素四周的内边距：
 
 <Figure>
 
@@ -54,9 +54,9 @@ Use `p-<number>` utilities like `p-4` and `p-8` to control the padding on all si
 
 </Figure>
 
-### Adding padding to one side
+### 为一侧添加内边距
 
-Use `pt-<number>`, `pr-<number>`, `pb-<number>`, and `pl-<number>` utilities like `pt-6` and `pr-4` to control the padding on one side of an element:
+使用 `pt-<number>`、`pr-<number>`、`pb-<number>` 和 `pl-<number>` 工具类，如 `pt-6` 和 `pr-4` 来控制元素一侧的内边距：
 
 <Figure>
 
@@ -105,9 +105,9 @@ Use `pt-<number>`, `pr-<number>`, `pb-<number>`, and `pl-<number>` utilities lik
 
 </Figure>
 
-### Adding horizontal padding
+### 添加水平内边距
 
-Use `px-<number>` utilities like `px-4` and `px-8` to control the horizontal padding of an element:
+使用 `px-<number>` 工具类，如 `px-4` 和 `px-8` 来控制元素的水平内边距：
 
 <Figure>
 
@@ -130,9 +130,9 @@ Use `px-<number>` utilities like `px-4` and `px-8` to control the horizontal pad
 
 </Figure>
 
-### Adding vertical padding
+### 添加垂直内边距
 
-Use `py-<number>` utilities like `py-4` and `py-8` to control the vertical padding of an element:
+使用 `py-<number>` 工具类，如 `py-4` 和 `py-8` 来控制元素的垂直内边距：
 
 <Figure>
 
@@ -155,9 +155,9 @@ Use `py-<number>` utilities like `py-4` and `py-8` to control the vertical paddi
 
 </Figure>
 
-### Using logical properties
+### 使用逻辑属性
 
-Use `ps-<number>` or `pe-<number>` utilities like `ps-4` and `pe-8` to set the `padding-inline-start` and `padding-inline-end` logical properties, which map to either the left or right side based on the text direction:
+使用 `ps-<number>` 或 `pe-<number>` 工具类，如 `ps-4` 和 `pe-8` 来设置 `padding-inline-start` 和 `padding-inline-end` 逻辑属性，这些逻辑属性根据文本方向映射到左侧或右侧：
 
 <Figure>
 
@@ -165,7 +165,7 @@ Use `ps-<number>` or `pe-<number>` utilities like `ps-4` and `pe-8` to set the `
   {
     <div className="grid grid-cols-2 place-items-center gap-x-4">
       <div className="flex flex-col items-start gap-y-4">
-        <p className="text-sm font-medium">Left-to-right</p>
+        <p className="text-sm font-medium">从左到右</p>
         <div className="flex overflow-hidden rounded-lg bg-indigo-500 font-mono text-sm leading-6 font-bold text-white">
           <Stripes noColor className="min-h-full w-8 rounded-s-lg text-white/50" />
           <div className="p-4">ps-8</div>
@@ -176,7 +176,7 @@ Use `ps-<number>` or `pe-<number>` utilities like `ps-4` and `pe-8` to set the `
         </div>
       </div>
       <div className="flex flex-col items-end gap-y-4">
-        <p className="text-sm font-medium">Right-to-left</p>
+        <p className="text-sm font-medium">从右到左</p>
         <div className="flex overflow-hidden rounded-lg bg-indigo-500 font-mono text-sm leading-6 font-bold text-white">
           <div className="p-4">ps-8</div>
           <Stripes noColor className="min-h-full w-8 rounded-e-lg text-white/50" />
@@ -208,16 +208,16 @@ Use `ps-<number>` or `pe-<number>` utilities like `ps-4` and `pe-8` to set the `
 
 </Figure>
 
-For more control, you can also use the [LTR and RTL modifiers](/docs/hover-focus-and-other-states#rtl-support) to conditionally apply specific styles depending on the current text direction.
+为了获得更多的控制，你还可以使用 [LTR 和 RTL 修饰符](/docs/hover-focus-and-other-states#rtl-support) 根据当前文本方向有条件地应用特定样式。
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utilities={["p", "px", "pb"]} name="padding" variable="padding" value="5px" />
+<UsingACustomValue utilities={["p", "px", "pb"]} name="内边距" variable="padding" value="5px" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="padding" defaultClass="py-4" featuredClass="py-8" />
 
-## Customizing your theme
+## 自定义你的主题
 
 <CustomizingYourSpacingScale utilities={["p", "px", "py", "ps", "pe", "pt", "pr", "pb", "pl"]} />

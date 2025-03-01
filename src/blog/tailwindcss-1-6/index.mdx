@@ -6,22 +6,22 @@ import { Example, Figure, CodeExampleGroup, CodeBlock } from "@/components/examp
 
 export const meta = {
   title: "Tailwind CSS v1.6.0",
-  description: `Tailwind CSS v1.6.0 is now available, with animations and more!`,
+  description: `Tailwind CSS v1.6.0 现已发布，新增动画等功能！`,
   date: "2020-07-28T16:58:33.714Z",
   authors: [adamwathan],
   image: card,
-  excerpt: <>It's like Tailwind CSS v1.5 except now there's animation support, overscroll utilities, and more!</>,
+  excerpt: <>它就像 Tailwind CSS v1.5，只不过现在支持动画、超滚动工具等更多功能！</>,
 };
 
-It's like Tailwind CSS v1.5 except now there's animation support, overscroll utilities, and more!
+它就像 Tailwind CSS v1.5，只不过现在支持动画、超滚动工具等更多功能！
 
-There aren't supposed to be any breaking changes here, but I thought that [last time](https://github.com/tailwindlabs/tailwindcss/releases/tag/v1.5.0) too. If I _did_ break something, first person to report it gets a Tailwind shirt.
+这里应该没有重大更改，但我也以为 [上次](https://github.com/tailwindlabs/tailwindcss/releases/tag/v1.5.0) 也是。如果我 _确实_ 破坏了什么，第一位报告的人将获得一件 Tailwind T 恤。
 
-## New Features
+## 新功能
 
-### Animation support
+### 动画支持
 
-Tailwind CSS v1.6 adds a brand new `animation` core plugin, with 4 general purpose animations included out of the box:
+Tailwind CSS v1.6 增加了全新的 `animation` 核心插件，内置 4 种通用动画：
 
 - `animate-spin`
 - `animate-ping`
@@ -33,11 +33,11 @@ Tailwind CSS v1.6 adds a brand new `animation` core plugin, with 4 general purpo
   <svg class="mr-3 h-5 w-5 animate-spin ..." viewBox="0 0 24 24">
     <!-- ... -->
   </svg>
-  Processing
+  处理中
 </button>
 ```
 
-These are completely customizable as always, using the `animation` and `keyframes` sections of your `tailwind.config.js` theme:
+这些动画像往常一样可以完全自定义，使用 `tailwind.config.js` 主题的 `animation` 和 `keyframes` 部分：
 
 ```js {{ filename: 'tailwind.config.js' }}
 module.exports = {
@@ -57,38 +57,38 @@ module.exports = {
 };
 ```
 
-For more information and a live demo, [read the new animation documentation](https://v1.tailwindcss.com/docs/animation). For behind the scenes details about the design rationale, [check out the pull request](https://github.com/tailwindlabs/tailwindcss/pull/2068).
+有关更多信息和实时演示，请 [阅读新的动画文档](https://v1.tailwindcss.com/docs/animation)。有关设计基本原理的详细信息，请 [查看拉取请求](https://github.com/tailwindlabs/tailwindcss/pull/2068)。
 
-### New `prefers-reduced-motion` variants
+### 新的 `prefers-reduced-motion` 变体
 
-To go along with the new animation features, we've also added new `motion-safe` and `motion-reduce` variants that allow you to conditionally apply CSS based on the [`prefers-reduced-motion` media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion).
+为配合新的动画功能，我们还添加了新的 `motion-safe` 和 `motion-reduce` 变体，允许您根据 [`prefers-reduced-motion` 媒体特性](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) 有条件地应用 CSS。
 
-These can be useful in conjunction with transition and animation utilities to disable problematic motion for users who are sensitive to it:
+这些可以与过渡和动画工具结合使用，以禁用对敏感用户有问题的运动：
 
 ```html
 <div class="transition duration-150 ease-in-out motion-reduce:transition-none ... ..."></div>
 ```
 
-...or to explicitly opt-in to motion to make sure it's only being shown to users who haven't opted out:
+...或者明确选择运动，以确保仅向未选择退出的用户显示：
 
 ```html
 <div class="duration-150 ease-in-out motion-safe:transition ... ..."></div>
 ```
 
-These can be combined with responsive variants and pseudo-class variants as well:
+这些可以与响应式变体和伪类变体相结合：
 
 ```html
-<!-- With responsive variants -->
+<!-- 使用响应式变体 -->
 <div class="sm:motion-reduce:translate-y-0"></div>
 
-<!-- With pseudo-class variants -->
+<!-- 使用伪类变体 -->
 <div class="motion-reduce:hover:translate-y-0"></div>
 
-<!-- With responsive and pseudo-class variants -->
+<!-- 同时使用响应式和伪类变体 -->
 <div class="sm:motion-reduce:hover:translate-y-0"></div>
 ```
 
-These are currently not enabled for any utilities by default, but you can enabled them as needed in the `variants` section of your `tailwind.config.js` file:
+这些变体当前默认不启用，但您可以根据需要在 `tailwind.config.js` 文件的 `variants` 部分启用：
 
 ```js {{ filename: 'tailwind.config.js' }}
 module.exports = {
@@ -99,13 +99,13 @@ module.exports = {
 };
 ```
 
-For more details, check out [the updated variants documentation](https://v1.tailwindcss.com/docs/pseudo-class-variants).
+有关更多详细信息，请查看 [更新后的变体文档](https://v1.tailwindcss.com/docs/pseudo-class-variants)。
 
-### New `overscroll-behavior` utilities
+### 新的 `overscroll-behavior` 工具
 
-We've also added new utilities for the [`overscroll-behavior`](https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior) property.
+我们还为 [`overscroll-behavior`](https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior) 属性添加了新的工具。
 
-You can use these utilities to control how "scroll chaining" works in your sites, and avoid scrolling the whole page when you reach the top or bottom of an embedded scrollable area.
+您可以使用这些工具控制您的网站上“滚动链”的工作方式，并避免在到达嵌入的可滚动区域的顶部或底部时滚动整个页面。
 
 ```html
 <div class="overscroll-y-contain ...">
@@ -113,29 +113,29 @@ You can use these utilities to control how "scroll chaining" works in your sites
 </button>
 ```
 
-Note that this is currently **not supported in Safari**, but in my opinion it's not a huge deal to treat this as a progressive enhancement anyways, since it falls back fairly gracefully.
+请注意，目前 **不支持 Safari**，但在我看来，将此视为渐进增强并不算大事，因为它的回退效果相当不错。
 
-This plugin can be configured in your `tailwind.config.js` file as `overscrollBehavior`:
+这个插件可以在您的 `tailwind.config.js` 文件中配置为 `overscrollBehavior`：
 
 ```js {{ filename: 'tailwind.config.js' }}
 module.exports = {
   // ...
-
-  // Disabling the plugin
+  
+  // 禁用插件
   corePlugins: {
     overscrollBehavior: false,
   },
 
-  // Customizing the enabled variants
+  // 自定义启用的变体
   variants: {
     overscrollBehavior: ["responsive", "hover"],
   },
 };
 ```
 
-### Generate your CSS without an input file
+### 无需输入文件生成您的 CSS
 
-If you never write any custom CSS and you're sick of creating this file all the time...
+如果您从不编写任何自定义 CSS，并且厌倦了总是创建这个文件……
 
 ```css
 @tailwind base;
@@ -143,14 +143,14 @@ If you never write any custom CSS and you're sick of creating this file all the 
 @tailwind utilities;
 ```
 
-...then I've got news for you baby — if you're using our `tailwindcss` CLI tool you can start depositing those 58 characters into your savings account instead of wasting them on a pointless CSS file.
+……那么我有好消息告诉你，宝贝——如果您正在使用我们的 `tailwindcss` CLI 工具，您可以开始把那 58 个字符存入您的储蓄账户，而不是浪费在一个无意义的 CSS 文件上。
 
-The input file argument is now optional in the CLI tool, so if you don't actually _need_ a custom CSS file, you can just write this:
+输入文件参数现在在 CLI 工具中是可选的，因此如果您实际上不 _需要_ 自定义 CSS 文件，您只需编写：
 
 ```bash
 npx tailwindcss build -o compiled.css
 ```
 
-Your kids are going to be so grateful for the extra time you get to spend together.
+您的孩子们将会非常感激您可以和他们一起度过的额外时间。
 
-Want to talk about this post? <a href="https://github.com/tailwindcss/tailwindcss/discussions/2088">Discuss this on GitHub →</a>
+想讨论这篇文章吗？ <a href="https://github.com/tailwindcss/tailwindcss/discussions/2088">在 GitHub 上讨论 →</a>

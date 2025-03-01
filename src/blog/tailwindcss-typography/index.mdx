@@ -5,54 +5,51 @@ import Link from "next/link";
 import image from "./card.jpg";
 
 export const meta = {
-  title: "Introducing Tailwind CSS Typography",
-  description: `Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS. That's why today we're excited to release @tailwindcss/typography — a plugin that lets you easily style vanilla HTML content with beautiful typographic defaults.`,
+  title: "介绍 Tailwind CSS 排版",
+  description: `到目前为止，使用 Tailwind 样式化文章、文档或博客帖子一直是一项繁琐的任务，这需要对排版有敏锐的眼光和大量复杂的自定义 CSS。这就是为什么今天我们很高兴地发布 @tailwindcss/typography — 一个插件，可以让您轻松地使用美丽的排版默认样式来样式化普通的 HTML 内容。`,
   date: "2020-07-13T16:35:02.037Z",
   authors: [adamwathan],
   image,
   excerpt: (
     <>
-      Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required
-      a keen eye for typography and a lot of complex custom CSS.
+      到目前为止，使用 Tailwind 样式化文章、文档或博客帖子一直是一项繁琐的任务，这需要对排版有敏锐的眼光和大量复杂的自定义 CSS。
       <br />
-      That's why today we're excited to release{" "}
-      <Link href="https://github.com/tailwindcss/typography">@tailwindcss/typography</Link> — a plugin that lets you
-      easily style vanilla HTML content with beautiful typographic defaults.
+      这就是为什么今天我们很高兴地发布{" "}
+      <Link href="https://github.com/tailwindcss/typography">@tailwindcss/typography</Link> — 一个插件，可以让您
+      容易地使用美丽的排版默认样式来样式化普通的 HTML 内容。
     </>
   ),
 };
 
-Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.
+到目前为止，使用 Tailwind 样式化文章、文档或博客帖子一直是一项繁琐的任务，这需要对排版有敏锐的眼光和大量复杂的自定义 CSS。
 
-By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you _really are_ just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.
+默认情况下，Tailwind 会移除段落、标题、列表等的所有默认浏览器样式。这在构建应用程序用户界面时非常有用，因为您花费更少的时间来撤销用户代理样式，但当您_确实_只是想要样式化一些来自 CMS 或 markdown 文件的富文本编辑器的内容时，这可能会令人惊讶和不直观。
 
-We get lots of complaints about it actually, with people regularly asking us things like:
+实际上我们收到了很多关于它的投诉，人们经常问我们这样的问题：
 
-> Why is Tailwind removing the default styles on my `h1` elements? How do I disable this? What do you mean I lose all the other base styles too?
+> 为什么 Tailwind 移除了我的 `h1` 元素的默认样式？我该如何禁用这个？你是什么意思，我也失去了其他所有基础样式？
 
-We hear you, but we're not convinced that simply disabling our base styles is what you really want. You don't want to have to remove annoying margins every time you use a `p` element in a piece of your dashboard UI. And I doubt you really want your blog posts to use the user-agent styles either — you want them to look _awesome_, not awful.
+我们听到了您的声音，但我们不认为简单地禁用我们的基础样式是您真的想要的。您不想在仪表板 UI 的每个 `p` 元素中都要去除恼人的边距。我怀疑您真的希望您的博客文章使用用户代理样式 — 您想让它们看起来_棒极了_，而不是糟糕。
 
-That's why today we're excited to release [`@tailwindcss/typography`](https://github.com/tailwindcss/typography) — a plugin that gives you what you _actually_ want, without any of the downside of doing something stupid like disabling our base styles.
+这就是为什么今天我们很高兴地发布 [`@tailwindcss/typography`](https://github.com/tailwindcss/typography) — 一个插件，可以为您提供您_真正_想要的，而不需要做一些愚蠢的事情，比如禁用我们的基础样式。
 
-It adds a new set of `prose` classes that you can slap on any block of vanilla HTML content and turn it into a beautiful, well-formatted document:
+它添加了一组新的 `prose` 类，您可以将其应用于任何一块普通的 HTML 内容， 将其变成一个美丽、格式良好的文档：
 
 ```html
 <article class="prose lg:prose-xl">
-  <h1>Garlic bread with cheese: What the science tells us</h1>
+  <h1>奶酪蒜蓉面包：科学告诉我们的事</h1>
   <p>
-    For years parents have espoused the health benefits of eating garlic bread with cheese to their children, with the
-    food earning such an iconic status in our culture that kids will often dress up as warm, cheesy loaf for Halloween.
+    多年来，父母一直向他们的孩子倡导食用奶酪蒜蓉面包的健康益处，这种食物在我们的文化中获得了如此标志性的地位，以至于孩子们常常在万圣节装扮成热乎乎、奶酪味浓的面包。
   </p>
   <p>
-    But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases springing up around
-    the country.
+    但最近的一项研究表明，这道备受推崇的开胃菜可能与全国范围内出现的一系列狂犬病病例有关。
   </p>
   <!-- ... -->
 </article>
 ```
 
-So how does it actually look? Well you're looking at it right now — we use it to style the content on this very blog!
+那么它实际上看起来是什么样的呢？好吧，您现在正在查看它 — 我们用它来样式化这篇博客的内容！
 
-[**Check out the documentation**](https://github.com/tailwindcss/typography) to learn more and try it out today.
+[**查看文档**](https://github.com/tailwindcss/typography) 以了解更多信息并今天就试试。
 
-Want to talk about this post? <a href="https://github.com/tailwindcss/tailwindcss/discussions/2021">Discuss this on GitHub →</a>
+想谈谈这篇文章吗？ <a href="https://github.com/tailwindcss/tailwindcss/discussions/2021">在 GitHub 上讨论 →</a>

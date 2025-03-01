@@ -10,8 +10,8 @@ import { Figure } from "@/components/figure.tsx";
 import colors from "./utils/colors";
 import dedent from "dedent";
 
-export const title = "border-color";
-export const description = "Utilities for controlling the color of an element's borders.";
+export const title = "边框颜色";
+export const description = "用于控制元素边框颜色的工具类.";
 
 <ApiTable
   rows={[
@@ -40,11 +40,11 @@ export const description = "Utilities for controlling the color of an element's 
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `border-rose-500` and `border-lime-100` to control the border color of an element:
+使用像 `border-rose-500` 和 `border-lime-100` 的工具类来控制元素的边框颜色：
 
 <Figure>
 
@@ -82,9 +82,9 @@ Use utilities like `border-rose-500` and `border-lime-100` to control the border
 
 </Figure>
 
-### Changing the opacity
+### 改变不透明度
 
-Use the color opacity modifier to control the opacity of an element's border color:
+使用颜色不透明度修饰符来控制元素边框颜色的不透明度：
 
 <Figure>
 
@@ -124,9 +124,9 @@ Use the color opacity modifier to control the opacity of an element's border col
 
 </Figure>
 
-### Individual sides
+### 单独的边
 
-Use utilities like `border-t-indigo-500` and `border-r-lime-100` to set the border color for one side of an element:
+使用像 `border-t-indigo-500` 和 `border-r-lime-100` 的工具类来设置元素一侧的边框颜色：
 
 <Figure>
 
@@ -171,9 +171,9 @@ Use utilities like `border-t-indigo-500` and `border-r-lime-100` to set the bord
 
 </Figure>
 
-### Horizontal and vertical sides
+### 水平和垂直边
 
-Use utilities like `border-x-indigo-500` and `border-y-lime-100` to set the border color on two sides of an element at the same time:
+使用像 `border-x-indigo-500` 和 `border-y-lime-100` 的工具类来同时设置元素两侧的边框颜色：
 
 <Figure>
 
@@ -204,9 +204,9 @@ Use utilities like `border-x-indigo-500` and `border-y-lime-100` to set the bord
 
 </Figure>
 
-### Using logical properties
+### 使用逻辑属性
 
-Use utilities like `border-s-indigo-500` and `border-e-lime-100` to set the `border-inline-start-color` and `border-inline-end-color` [logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts), which map to either the left or right border based on the text direction:
+使用像 `border-s-indigo-500` 和 `border-e-lime-100` 的工具类来设置 `border-inline-start-color` 和 `border-inline-end-color` [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)，这些属性根据文本方向映射到左或右边框：
 
 <Figure>
 
@@ -214,11 +214,11 @@ Use utilities like `border-s-indigo-500` and `border-e-lime-100` to set the `bor
   {
     <div className="grid grid-cols-2 place-items-center gap-x-4">
       <div className="flex flex-col items-start gap-y-4" dir="ltr">
-        <p className="text-sm font-medium">Left-to-right</p>
+        <p className="text-sm font-medium">从左到右</p>
         <div className="size-16 border-4 border-indigo-200 border-s-indigo-500 bg-white p-4 ring-1 ring-gray-900/5 dark:border-indigo-600/20 dark:border-s-indigo-500 dark:bg-gray-900"></div>
       </div>
       <div className="flex flex-col items-start gap-y-4" dir="rtl">
-        <p className="text-sm font-medium">Right-to-left</p>
+        <p className="text-sm font-medium">从右到左</p>
         <div className="size-16 border-4 border-indigo-200 border-s-indigo-500 bg-white p-4 ring-1 ring-gray-900/5 dark:border-indigo-600/20 dark:border-s-indigo-500 dark:bg-gray-900"></div>
       </div>
     </div>
@@ -239,9 +239,9 @@ Use utilities like `border-s-indigo-500` and `border-e-lime-100` to set the `bor
 
 </Figure>
 
-### Divider between children
+### 子元素之间的分隔符
 
-Use utilities like `divide-indigo-500` and `divide-lime-100` to control the border color between child elements:
+使用像 `divide-indigo-500` 和 `divide-lime-100` 的工具类来控制子元素之间的边框颜色：
 
 <Figure>
 
@@ -266,11 +266,11 @@ Use utilities like `divide-indigo-500` and `divide-lime-100` to control the bord
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="border" name="border color" value="#243c5a" />
+<UsingACustomValue utility="border" name="边框颜色" value="#243c5a" />
 
-### Applying on focus
+### 在焦点时应用
 
 <TargetingSpecificStates property="border-color" variant="focus">
 
@@ -279,7 +279,7 @@ Use utilities like `divide-indigo-500` and `divide-lime-100` to control the bord
 <Example>
   {
     <label className="mx-auto block max-w-xs">
-      <span className="text-sm font-medium text-gray-900 dark:text-gray-200">Email address</span>
+      <span className="text-sm font-medium text-gray-900 dark:text-gray-200">电子邮箱地址</span>
       <input
         type="text"
         placeholder="jane@example.com"
@@ -298,10 +298,10 @@ Use utilities like `divide-indigo-500` and `divide-lime-100` to control the bord
 
 </TargetingSpecificStates>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="border-color" defaultClass="border-blue-500" featuredClass="border-green-500" />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourThemeColors utility="border" />

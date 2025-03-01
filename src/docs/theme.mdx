@@ -4,20 +4,20 @@ import { Iframe } from "@/components/iframe";
 import { Example } from "@/components/example";
 import { Figure } from "@/components/figure";
 
-export const title = "Theme variables";
-export const description = "Using utility classes as an API for your design tokens.";
+export const title = "主题变量";
+export const description = "将工具类用作设计令牌的 API。";
 
-## Overview
+## 概述
 
-Tailwind is a framework for building custom designs, and different designs need different typography, colors, shadows, breakpoints, and more.
+Tailwind 是一个用于构建自定义设计的框架，而不同的设计需要不同的排版、颜色、阴影、中断点等。
 
-These low-level design decisions are often called _design tokens_, and in Tailwind projects you store those values in _theme variables_.
+这些低层次的设计决策通常被称为 _设计令牌_，在 Tailwind 项目中，你将这些值存储在 _主题变量_ 中。
 
-### What are theme variables?
+### 什么是主题变量？
 
-Theme variables are special CSS variables defined using the `@theme` directive that influence which utility classes exist in your project.
+主题变量是使用 `@theme` 指令定义的特殊 CSS 变量，它们影响你项目中存在的工具类。
 
-For example, you can add a new color to your project by defining a theme variable like `--color-mint-500`:
+例如，你可以通过定义一个主题变量如 `--color-mint-500` 来向项目添加新的颜色：
 
 ```css
 /* [!code filename:app.css] */
@@ -29,7 +29,7 @@ For example, you can add a new color to your project by defining a theme variabl
 }
 ```
 
-Now you can use utility classes like `bg-mint-500`, `text-mint-500`, or `fill-mint-500` in your HTML:
+现在你可以在 HTML 中使用类似 `bg-mint-500`、`text-mint-500` 或 `fill-mint-500` 的工具类：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -39,7 +39,7 @@ Now you can use utility classes like `bg-mint-500`, `text-mint-500`, or `fill-mi
 </div>
 ```
 
-Tailwind also generates regular CSS variables for your theme variables so you can reference your design tokens in arbitrary values or inline styles:
+Tailwind 还为你的主题变量生成常规 CSS 变量，因此你可以在任意值或内联样式中引用你的设计令牌：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -49,21 +49,21 @@ Tailwind also generates regular CSS variables for your theme variables so you ca
 </div>
 ```
 
-Learn more about how theme variables map to different utility classes in the [theme variable namespaces](#theme-variable-namespaces) documentation.
+在 [主题变量命名空间](#theme-variable-namespaces) 文档中了解更多关于主题变量如何映射到不同工具类的信息。
 
-#### Why `@theme` instead of `:root`?
+#### 为什么用 `@theme` 而不是 `:root`？
 
-Theme variables aren't _just_ CSS variables — they also instruct Tailwind to create new utility classes that you can use in your HTML.
+主题变量不仅仅是 _CSS 变量_ — 它们还指示 Tailwind 创建新的工具类，你可以在 HTML 中使用。
 
-Since they do more than regular CSS variables, Tailwind uses special syntax so that defining theme variables is always explicit. Theme variables are also required to be defined top-level and not nested under other selectors or media queries, and using a special syntax makes it possible to enforce that.
+由于它们的作用超出了常规 CSS 变量，Tailwind 使用特殊语法，以便始终明确地定义主题变量。主题变量还要求在顶层定义，而不能嵌套在其他选择器或媒体查询下，使用特殊语法使得 enforcement 变得可能。
 
-Defining regular CSS variables with `:root` can still be useful in Tailwind projects when you want to define a variable that isn't meant to be connected to a utility class. Use `@theme` when you want a design token to map directly to a utility class, and use `:root` for defining regular CSS variables that shouldn't have corresponding utility classes.
+在 Tailwind 项目中使用 `:root` 定义常规 CSS 变量仍然是有用的，当你想定义一个不打算连接到工具类的变量时。使用 `@theme` 当你希望设计令牌直接映射到工具类时，而对于定义常规 CSS 变量且不应有相应的工具类时使用 `:root`。
 
-### Relationship to utility classes
+### 与工具类的关系
 
-Some utility classes in Tailwind like `flex` and `object-cover` are static, and are always the same from project to project. But many others are driven by theme variables, and only exist because of the theme variables you've defined.
+Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且在项目之间始终是相同的。但是许多其他工具类是由主题变量驱动的，并且仅在你定义的主题变量存在时才存在。
 
-For example, theme variables defined in the `--font-*` namespace determine all of the `font-family` utilities that exist in a project:
+例如，在 `--font-*` 命名空间中定义的主题变量决定了项目中存在的所有 `font-family` 工具类：
 
 ```css
 /* [!code filename:./node_modules/tailwindcss/theme.css] */
@@ -78,9 +78,9 @@ For example, theme variables defined in the `--font-*` namespace determine all o
 }
 ```
 
-The `font-sans`, `font-serif`, and `font-mono` utilities only exist by default because Tailwind's default theme defines the `--font-sans`, `--font-serif`, and `--font-mono` theme variables.
+`font-sans`、`font-serif` 和 `font-mono` 工具类之所以默认存在，是因为 Tailwind 的默认主题定义了 `--font-sans`、`--font-serif` 和 `--font-mono` 主题变量。
 
-If another theme variable like `--font-poppins` were defined, a `font-poppins` utility class would become available to go with it:
+如果定义了其他主题变量如 `--font-poppins`，则对应的 `font-poppins` 工具类将可用：
 
 ```css
 /* [!code filename:app.css] */
@@ -95,14 +95,14 @@ If another theme variable like `--font-poppins` were defined, a `font-poppins` u
 ```html
 <!-- [!code filename:HTML] -->
 <!-- [!code word:font-poppins] -->
-<h1 class="font-poppins">This headline will use Poppins.</h1>
+<h1 class="font-poppins">这个标题将使用 Poppins。</h1>
 ```
 
-You can name your theme variables whatever you want within these namespaces, and a corresponding utility with the same name will become available to use in your HTML.
+你可以在这些命名空间中将主题变量命名为你想要的任何名称，具有相同名称的对应工具类将可在 HTML 中使用。
 
-#### Relationship to variants
+#### 与变体的关系
 
-Some theme variables are used to define variants rather than utilities. For example theme variables in the `--breakpoint-*` namespace determine which responsive breakpoint variants exist in your project:
+一些主题变量用于定义变体，而不是工具类。例如，在 `--breakpoint-*` 命名空间中的主题变量决定项目中存在的响应式断点变体：
 
 ```css
 /* [!code filename:app.css] */
@@ -114,7 +114,7 @@ Some theme variables are used to define variants rather than utilities. For exam
 }
 ```
 
-Now you can use the `3xl:*` variant to only trigger a utility when the viewport is 120rem or wider:
+现在你可以使用 `3xl:*` 变体，仅在视口宽度为 120rem 或更宽时触发工具类：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -124,21 +124,21 @@ Now you can use the `3xl:*` variant to only trigger a utility when the viewport 
 </div>
 ```
 
-Learn more about how theme variables map to different utility classes and variants in the [theme variable namespaces](#theme-variable-namespaces) documentation.
+在 [主题变量命名空间](#theme-variable-namespaces) 文档中了解更多关于主题变量如何映射到不同工具类和变体的信息。
 
-### Theme variable namespaces
+### 主题变量命名空间
 
-Theme variables are defined in _namespaces_ and each namespace corresponds to one or more utility class or variant APIs.
+主题变量是在 _命名空间_ 中定义的，每个命名空间对应一个或多个工具类或变体 API。
 
-Defining new theme variables in these namespaces will make new corresponding utilities and variants available in your project:
+在这些命名空间中定义新的主题变量将使你的项目中可用新的相应工具类和变体：
 
 {
 
 <table>
   <thead>
     <tr>
-      <th>Namespace</th>
-      <th>Utility classes</th>
+      <th>命名空间</th>
+      <th>工具类</th>
     </tr>
   </thead>
   <tbody>
@@ -147,7 +147,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--color-*</code>
       </td>
       <td>
-        Color utilities like <code>bg-red-500</code>, <code>text-sky-300</code>, and many more
+        颜色工具类，如 <code>bg-red-500</code>、<code>text-sky-300</code> 等等
       </td>
     </tr>
     <tr>
@@ -155,7 +155,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--font-*</code>
       </td>
       <td>
-        Font family utilities like <code>font-sans</code>
+        字体家族工具类，如 <code>font-sans</code>
       </td>
     </tr>
     <tr>
@@ -163,7 +163,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--text-*</code>
       </td>
       <td>
-        Font size utilities like <code>text-xl</code>
+        字体大小工具类，如 <code>text-xl</code>
       </td>
     </tr>
     <tr>
@@ -171,7 +171,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--font-weight-*</code>
       </td>
       <td>
-        Font weight utilities like <code>font-bold</code>
+        字体粗细工具类，如 <code>font-bold</code>
       </td>
     </tr>
     <tr>
@@ -179,7 +179,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--tracking-*</code>
       </td>
       <td>
-        Letter spacing utilities like <code>tracking-wide</code>
+        字母间距工具类，如 <code>tracking-wide</code>
       </td>
     </tr>
     <tr>
@@ -187,7 +187,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--leading-*</code>
       </td>
       <td>
-        Line height utilities like <code>leading-tight</code>
+        行高工具类，如 <code>leading-tight</code>
       </td>
     </tr>
     <tr>
@@ -195,7 +195,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--breakpoint-*</code>
       </td>
       <td>
-        Responsive breakpoint variants like <code>sm:*</code>
+        响应式断点变体，如 <code>sm:*</code>
       </td>
     </tr>
     <tr>
@@ -203,7 +203,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--container-*</code>
       </td>
       <td>
-        Container query variants like <code>@sm:*</code> and size utilities like <code>max-w-md</code>
+        容器查询变体，如 <code>@sm:*</code> 和尺寸工具类如 <code>max-w-md</code>
       </td>
     </tr>
     <tr>
@@ -211,7 +211,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--spacing-*</code>
       </td>
       <td>
-        Spacing and sizing utilities like <code>px-4</code>, <code>max-h-16</code>, and many more
+        间距和尺寸工具类，如 <code>px-4</code>、<code>max-h-16</code> 等等
       </td>
     </tr>
     <tr>
@@ -219,7 +219,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--radius-*</code>
       </td>
       <td>
-        Border radius utilities like <code>rounded-sm</code>
+        边框半径工具类，如 <code>rounded-sm</code>
       </td>
     </tr>
     <tr>
@@ -227,7 +227,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--shadow-*</code>
       </td>
       <td>
-        Box shadow utilities like <code>shadow-md</code>
+        盒子阴影工具类，如 <code>shadow-md</code>
       </td>
     </tr>
     <tr>
@@ -235,7 +235,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--inset-shadow-*</code>
       </td>
       <td>
-        Inset box shadow utilities like <code>inset-shadow-xs</code>
+        内嵌盒子阴影工具类，如 <code>inset-shadow-xs</code>
       </td>
     </tr>
     <tr>
@@ -243,7 +243,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--drop-shadow-*</code>
       </td>
       <td>
-        Drop shadow filter utilities like <code>drop-shadow-md</code>
+        降影过滤器工具类，如 <code>drop-shadow-md</code>
       </td>
     </tr>
     <tr>
@@ -251,7 +251,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--blur-*</code>
       </td>
       <td>
-        Blur filter utilities like <code>blur-md</code>
+        模糊过滤器工具类，如 <code>blur-md</code>
       </td>
     </tr>
     <tr>
@@ -259,7 +259,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--perspective-*</code>
       </td>
       <td>
-        Perspective utilities like <code>perspective-near</code>
+        透视工具类，如 <code>perspective-near</code>
       </td>
     </tr>
     <tr>
@@ -267,7 +267,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--aspect-*</code>
       </td>
       <td>
-        Aspect ratio utilities like <code>aspect-video</code>
+        宽高比工具类，如 <code>aspect-video</code>
       </td>
     </tr>
     <tr>
@@ -275,7 +275,7 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--ease-*</code>
       </td>
       <td>
-        Transition timing function utilities like <code>ease-out</code>
+        过渡时间函数工具类，如 <code>ease-out</code>
       </td>
     </tr>
     <tr>
@@ -283,20 +283,20 @@ Defining new theme variables in these namespaces will make new corresponding uti
         <code>--animate-*</code>
       </td>
       <td>
-        Animation utilities like <code>animate-spin</code>
+        动画工具类，如 <code>animate-spin</code>
       </td>
     </tr>
   </tbody>
 </table>
 }
 
-For a list of all of the default theme variables, see the [default theme variable reference](#default-theme-variable-reference).
+有关所有默认主题变量的列表，请参见 [默认主题变量参考](#default-theme-variable-reference)。
 
-### Default theme variables
+### 默认主题变量
 
-When you import `tailwindcss` at the top of your CSS file, it includes a set of default theme variables to get you started.
+当你在 CSS 文件的顶部导入 `tailwindcss` 时，它包括一个默认主题变量集，让你能开始使用。
 
-Here's what you're actually importing when you import `tailwindcss`:
+以下是你在导入 `tailwindcss` 时实际上导入的内容：
 
 ```css
 /* [!code filename:node_modules/tailwindcss/index.css] */
@@ -308,7 +308,7 @@ Here's what you're actually importing when you import `tailwindcss`:
 @import "./utilities.css" layer(utilities);
 ```
 
-That `theme.css` file includes the default color palette, type scale, shadows, fonts, and more:
+该 `theme.css` 文件包含默认的颜色调色板、类型比例、阴影、字体等：
 
 ```css
 /* [!code filename:node_modules/tailwindcss/theme.css] */
@@ -330,17 +330,17 @@ That `theme.css` file includes the default color palette, type scale, shadows, f
 }
 ```
 
-This is why utilities like `bg-red-200`, `font-serif`, and `shadow-sm` exist out of the box — they're driven by the default theme, not hardcoded into the framework like `flex-col` or `pointer-events-none`.
+这就是为什么像 `bg-red-200`、`font-serif` 和 `shadow-sm` 这样的工具类在开箱即用时就存在，因为它们是由默认主题驱动的，而不是像 `flex-col` 或 `pointer-events-none` 这样的硬编码在框架中的。
 
-For a list of all of the default theme variables, see the [default theme variable reference](#default-theme-variable-reference).
+有关所有默认主题变量的列表，请参见 [默认主题变量参考](#default-theme-variable-reference)。
 
-## Customizing your theme
+## 自定义你的主题
 
-The default theme variables are very general purpose and suitable for building dramatically different designs, but they are still just a starting point. It's very common to customize things like the color palette, fonts, and shadows to build exactly the design you have in mind.
+默认主题变量非常通用，适合构建截然不同的设计，但它们仍然只是一个起点。自定义颜色调色板、字体和阴影等内容以构建确切设计的事情是非常常见的。
 
-### Extending the default theme
+### 扩展默认主题
 
-Use `@theme` to define new theme variables and extend the default theme:
+使用 `@theme` 定义新的主题变量并扩展默认主题：
 
 ```css
 /* [!code filename:app.css] */
@@ -352,19 +352,19 @@ Use `@theme` to define new theme variables and extend the default theme:
 }
 ```
 
-This makes a new `font-script` utility class available that you can use in your HTML, just like the default `font-sans` or `font-mono` utilities:
+这将使新的 `font-script` 工具类可用，你可以像使用默认的 `font-sans` 或 `font-mono` 工具类一样在 HTML 中使用：
 
 ```html
 <!-- [!code filename:HTML] -->
 <!-- [!code word:font-script] -->
-<p class="font-script">This will use the Great Vibes font family.</p>
+<p class="font-script">这将使用 Great Vibes 字体系列。</p>
 ```
 
-Learn more about how theme variables map to different utility classes and variants in the [theme variable namespaces](#theme-variable-namespaces) documentation.
+在 [主题变量命名空间](#theme-variable-namespaces) 文档中了解更多关于主题变量如何映射到不同工具类和变体的信息。
 
-### Overriding the default theme
+### 重写默认主题
 
-Override a default theme variable value by redefining it within `@theme`:
+通过在 `@theme` 中重新定义默认主题变量值来重写它：
 
 ```css
 /* [!code filename:app.css] */
@@ -376,7 +376,7 @@ Override a default theme variable value by redefining it within `@theme`:
 }
 ```
 
-Now the `sm:*` variant will trigger at 30rem instead of the default 40rem viewport size:
+现在 `sm:*` 变体将在 30rem 时触发，而不是默认的 40rem 视口大小：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -386,7 +386,7 @@ Now the `sm:*` variant will trigger at 30rem instead of the default 40rem viewpo
 </div>
 ```
 
-To completely override an entire namespace in the default theme, set the entire namespace to `initial` using the special asterisk syntax:
+要完全覆盖默认主题中的整个命名空间，请使用特殊的星号语法将整个命名空间设置为 `initial`：
 
 ```css
 /* [!code filename:app.css] */
@@ -403,13 +403,13 @@ To completely override an entire namespace in the default theme, set the entire 
 }
 ```
 
-When you do this, all of the default utilities that use that namespace _(like `bg-red-500`)_ will be removed, and only your custom values _(like `bg-midnight`)_ will be available.
+这样做时，使用该命名空间的所有默认工具类 _(如 `bg-red-500`)_ 将被移除，并且仅使用你的自定义值 _(如 `bg-midnight`)_。
 
-Learn more about how theme variables map to different utility classes and variants in the [theme variable namespaces](#theme-variable-namespaces) documentation.
+在 [主题变量命名空间](#theme-variable-namespaces) 文档中了解更多关于主题变量如何映射到不同工具类和变体的信息。
 
-### Using a custom theme
+### 使用自定义主题
 
-To completely disable the default theme and use only custom values, set the global theme variable namespace to `initial`:
+要完全禁用默认主题并仅使用自定义值，请将全局主题变量命名空间设置为 `initial`：
 
 ```css
 /* [!code filename:app.css] */
@@ -431,11 +431,11 @@ To completely disable the default theme and use only custom values, set the glob
 }
 ```
 
-Now none of the default utility classes that are driven by theme variables will be available, and you'll only be able to use utility classes matching your custom theme variables like `font-body` and `text-dusk`.
+现在，所有由主题变量驱动的默认工具类都将不可用，你只能使用匹配你的自定义主题变量的工具类，如 `font-body` 和 `text-dusk`。
 
-### Defining animation keyframes
+### 定义动画关键帧
 
-Define the `@keyframes` rules for your `--animate-*` theme variables within `@theme` to include them in your generated CSS:
+在 `@theme` 中定义 `--animate-*` 主题变量的 `@keyframes` 规则，以将它们包含在生成的 CSS 中：
 
 ```css
 /* [!code filename:app.css] */
@@ -457,11 +457,11 @@ Define the `@keyframes` rules for your `--animate-*` theme variables within `@th
 }
 ```
 
-If you want your custom `@keyframes` rules to always be included even when not adding an `--animate-*` theme variable, define them outside of `@theme` instead.
+如果你希望自定义 `@keyframes` 规则始终被包含，即使未添加 `--animate-*` 主题变量，请将它们定义在 `@theme` 之外。
 
-### Referencing other variables
+### 引用其他变量
 
-When defining theme variables that reference other variables, use the `inline` option:
+定义引用其他变量的主题变量时，使用 `inline` 选项：
 
 ```css
 /* [!code filename:app.css] */
@@ -473,7 +473,7 @@ When defining theme variables that reference other variables, use the `inline` o
 }
 ```
 
-Using the `inline` option, the utility class will use the theme variable _value_ instead of referencing the actual theme variable:
+使用 `inline` 选项时，工具类将使用主题变量 _值_ 而不是引用实际的主题变量：
 
 ```css
 /* [!code filename:dist.css] */
@@ -482,9 +482,9 @@ Using the `inline` option, the utility class will use the theme variable _value_
 }
 ```
 
-Without using `inline`, your utility classes might resolve to unexpected values because of how variables are resolved in CSS.
+如果不使用 `inline`，由于 CSS 中的变量解析方式，你的工具类可能会解析为意外的值。
 
-For example, this text will fall back to `sans-serif` instead of using `Inter` like you might expect:
+例如，这段文本将回退到 `sans-serif` 而不使用 `Inter`，像你可能期望的那样：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -492,16 +492,16 @@ For example, this text will fall back to `sans-serif` instead of using `Inter` l
 <div id="parent" style="--font-sans: var(--font-inter, sans-serif);">
   <!-- [!code word:--font-inter\: Inter; font-family\: var(--font-sans);] -->
   <div id="child" style="--font-inter: Inter; font-family: var(--font-sans);">
-    This text will use the sans-serif font, not Inter.
+    这段文本将使用 sans-serif 字体，而不是 Inter。
   </div>
 </div>
 ```
 
-This happens because `var(--font-sans)` is resolved where `--font-sans` is defined _(on `#parent`)_, and `--font-inter` has no value there since it's not defined until deeper in the tree _(on `#child`)_.
+这发生是因为 `var(--font-sans)` 在定义其位置 _(在 `#parent` 上)_ 被解析，而 `--font-inter` 在那儿没有值，因为它直到树的更深处 _(在 `#child` 上)_ 才被定义。
 
-### Generating all CSS variables
+### 生成所有 CSS 变量
 
-By default only used CSS variables will be generated in the final CSS output. If you want to always generate all CSS variables, you can use the `static` theme option:
+默认情况下，只有使用的 CSS 变量将被生成到最终 CSS 输出中。如果你希望始终生成所有 CSS 变量，可以使用 `static` 主题选项：
 
 ```css
 /* [!code filename:app.css] */
@@ -514,9 +514,9 @@ By default only used CSS variables will be generated in the final CSS output. If
 }
 ```
 
-### Sharing across projects
+### 跨项目共享
 
-Since theme variables are defined in CSS, sharing them across projects is just a matter of throwing them into their own CSS file that you can import in each project:
+由于主题变量是在 CSS 中定义的，因此跨项目共享它们仅仅是将它们放入自己的 CSS 文件，然后在每个项目中导入：
 
 ```css
 /* [!code filename:./packages/brand/theme.css] */
@@ -535,7 +535,7 @@ Since theme variables are defined in CSS, sharing them across projects is just a
 }
 ```
 
-Then you can use `@import` to include your theme variables in other projects:
+然后，你可以使用 `@import` 将主题变量包含在其他项目中：
 
 ```css
 /* [!code filename:./packages/admin/app.css] */
@@ -544,11 +544,11 @@ Then you can use `@import` to include your theme variables in other projects:
 @import "../brand/theme.css";
 ```
 
-You can put shared theme variables like this in their own package in monorepo setups or even publish them to NPM and import them just like any other third-party CSS files.
+你可以将共享的主题变量放在它们自己的包中，在 monorepo 设置中，甚至将它们发布到 NPM，并像其他任何第三方 CSS 文件一样导入它们。
 
-## Using your theme variables
+## 使用你的主题变量
 
-All of your theme variables are turned into regular CSS variables when you compile your CSS:
+你所有的主题变量在编译 CSS 时都会转换为常规 CSS 变量：
 
 ```css
 /* [!code filename:dist.css] */
@@ -570,11 +570,11 @@ All of your theme variables are turned into regular CSS variables when you compi
 }
 ```
 
-This makes it easy to reference all of your design tokens in any of your custom CSS or inline styles.
+这使得在任何自定义 CSS 或内联样式中引用你的设计令牌变得容易。
 
-### With custom CSS
+### 与自定义 CSS 一起使用
 
-Use your theme variables to get access to your design tokens when you're writing custom CSS that needs to use the same values:
+使用你的主题变量，以便在编写需要使用相同值的自定义 CSS 时访问你的设计令牌：
 
 ```css
 /* [!code filename:app.css] */
@@ -608,11 +608,11 @@ Use your theme variables to get access to your design tokens when you're writing
 }
 ```
 
-This is often useful when styling HTML you don't control, like Markdown content coming from a database or API and rendered to HTML.
+这在样式化你无法控制的 HTML 内容时非常有用，例如从数据库或 API 获取的 Markdown 内容并呈现为 HTML。
 
-### With arbitrary values
+### 与任意值一起使用
 
-Using theme variables in arbitrary values can be useful, especially in combination with the `calc()` function.
+在任意值中使用主题变量可能会很有用，特别是结合 `calc()` 函数。
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -626,13 +626,13 @@ Using theme variables in arbitrary values can be useful, especially in combinati
 </div>
 ```
 
-In the above example, we're subtracting 1px from the `--radius-xl` value on a nested inset element to make sure it has a concentric border radius.
+在上面的示例中，我们从嵌套的内嵌元素的 `--radius-xl` 值中减去 1px，以确保它具有一个同心边框半径。
 
-### Referencing in JavaScript
+### 在 JavaScript 中引用
 
-Most of the time when you need to reference your theme variables in JS you can just use the CSS variables directly, just like any other CSS value.
+通常，当你需要在 JS 中引用主题变量时，只需像任何其他 CSS 值一样直接使用 CSS 变量。
 
-For example, the popular [Motion](https://motion.dev/docs/react-quick-start) library for React lets you animate to and from CSS variable values:
+例如，流行的 [Motion](https://motion.dev/docs/react-quick-start) 库让你能够到达和离开 CSS 变量值：
 
 ```jsx
 // [!code filename:JSX]
@@ -640,7 +640,7 @@ For example, the popular [Motion](https://motion.dev/docs/react-quick-start) lib
 <motion.div animate={{ backgroundColor: "var(--color-blue-500)" }} />
 ```
 
-If you need access to a resolved CSS variable value in JS, you can use `getComputedStyle` to get the value of a theme variable on the document root:
+如果你需要在 JS 中访问解析的 CSS 变量值，可以使用 `getComputedStyle` 获取文档根上主题变量的值：
 
 ```js
 // [!code filename:spaghetti.js]
@@ -648,9 +648,9 @@ let styles = getComputedStyle(document.documentElement);
 let shadow = styles.getPropertyValue("--shadow-xl");
 ```
 
-## Default theme variable reference
+## 默认主题变量参考
 
-For reference, here's a complete list of the theme variables included by default when you import Tailwind CSS into your project:
+供参考，这里是导入 Tailwind CSS 到你的项目时包含的主题变量的完整列表：
 
 ```css
 /* [!code filename:tailwindcss/theme.css] */

@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "line-clamp";
-export const description = "Utilities for clamping text to a specific number of lines.";
+export const title = "行数限制";
+export const description = "用于限制文本显示为特定行数的工具类。";
 
 <ApiTable
   rows={[
@@ -27,11 +27,11 @@ export const description = "Utilities for clamping text to a specific number of 
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `line-clamp-<number>` utilities like `line-clamp-2` and `line-clamp-3` to truncate multi-line text after a specific number of lines:
+使用 `line-clamp-<number>` 工具类，例如 `line-clamp-2` 和 `line-clamp-3` 来在特定行数后截断多行文本：
 
 <Figure>
 
@@ -40,9 +40,9 @@ Use `line-clamp-<number>` utilities like `line-clamp-2` and `line-clamp-3` to tr
     <div className="px-4 sm:px-0">
       <article className="mx-auto max-w-sm p-8 text-gray-700 dark:text-gray-400">
         <time dateTime="2020-03-16" className="block text-sm leading-6 text-gray-500 dark:text-gray-400">
-          Mar 10, 2020
+          2020年3月10日
         </time>
-        <div className="mt-2 text-lg font-semibold text-gray-900 dark:text-gray-200">Boost your conversion rate</div>
+        <div className="mt-2 text-lg font-semibold text-gray-900 dark:text-gray-200">提升您的转化率</div>
         <p className="mt-4 line-clamp-3 text-sm leading-6 text-gray-500 dark:text-gray-400">
           Nulla dolor velit adipisicing duis excepteur esse in duis nostrud occaecat mollit incididunt deserunt sunt. Ut
           ut sunt laborum ex occaecat eu tempor labore enim adipisicing minim ad. Est in quis eu dolore occaecat
@@ -66,8 +66,8 @@ Use `line-clamp-<number>` utilities like `line-clamp-2` and `line-clamp-3` to tr
 ```html
 <!-- [!code classes:line-clamp-3] -->
 <article>
-  <time>Mar 10, 2020</time>
-  <h2>Boost your conversion rate</h2>
+  <time>2020年3月10日</time>
+  <h2>提升您的转化率</h2>
   <p class="line-clamp-3">
     Nulla dolor velit adipisicing duis excepteur esse in duis nostrud occaecat mollit incididunt deserunt sunt. Ut ut
     sunt laborum ex occaecat eu tempor labore enim adipisicing minim ad. Est in quis eu dolore occaecat excepteur fugiat
@@ -84,9 +84,9 @@ Use `line-clamp-<number>` utilities like `line-clamp-2` and `line-clamp-3` to tr
 
 </Figure>
 
-### Undoing line clamping
+### 取消行数限制
 
-Use `line-clamp-none` to undo a previously applied line clamp utility:
+使用 `line-clamp-none` 取消之前应用的行数限制工具类：
 
 ```html
 <!-- [!code classes:lg:line-clamp-none] -->
@@ -95,16 +95,16 @@ Use `line-clamp-none` to undo a previously applied line clamp utility:
 </p>
 ```
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   element="p"
   utility="line-clamp"
-  name="number of lines"
+  name="行数"
   variable="line-count"
   value="calc(var(--characters)/100)"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="line-clamp" defaultClass="line-clamp-3" featuredClass="line-clamp-4" />

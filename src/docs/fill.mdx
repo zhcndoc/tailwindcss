@@ -4,8 +4,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import colors from "./utils/colors";
 
-export const title = "fill";
-export const description = "Utilities for styling the fill of SVG elements.";
+export const title = "填充";
+export const description = "用于样式化 SVG 元素填充的工具。";
 
 <ApiTable
   rows={[
@@ -19,11 +19,11 @@ export const description = "Utilities for styling the fill of SVG elements.";
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `fill-indigo-500` and `fill-lime-600` to change the fill color of an SVG:
+使用诸如 `fill-indigo-500` 和 `fill-lime-600` 的工具来更改 SVG 的填充颜色：
 
 <Figure>
 
@@ -50,13 +50,13 @@ Use utilities like `fill-indigo-500` and `fill-lime-600` to change the fill colo
 
 </Figure>
 
-This can be useful for styling icon sets like [Heroicons](https://heroicons.com).
+这对于样式化图标集如 [Heroicons](https://heroicons.com) 很有用。
 
-### Using the current color
+### 使用当前颜色
 
-Use the `fill-current` utility to set the fill color to the current text color:
+使用 `fill-current` 工具将填充颜色设置为当前文本颜色：
 
-<Figure hint="Hover over the button to see the fill color change">
+<Figure hint="将鼠标悬停在按钮上以查看填充颜色变化">
 
 <Example>
   {
@@ -69,7 +69,7 @@ Use the `fill-current` utility to set the fill color to the current text color:
             clipRule="evenodd"
           />
         </svg>
-        Check for updates
+        检查更新
       </button>
     </div>
   }
@@ -81,20 +81,20 @@ Use the `fill-current` utility to set the fill color to the current text color:
   <svg class="size-5 fill-current ...">
     <!-- ... -->
   </svg>
-  Check for updates
+  检查更新
 </button>
 ```
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue element="svg" utility="fill" name="fill color" value="#243c5a" variable="fill-color" />
+<UsingACustomValue element="svg" utility="fill" name="填充颜色" value="#243c5a" variable="fill-color" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="svg" property="fill" defaultClass="fill-cyan-500" featuredClass="fill-cyan-700" />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourThemeColors element="svg" utility="fill" />

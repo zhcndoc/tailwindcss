@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "cursor";
-export const description = "Utilities for controlling the cursor style when hovering over an element.";
+export const title = "光标";
+export const description = "用于控制悬停在元素上时光标样式的工具。";
 
 <ApiTable
   rows={[
@@ -49,13 +49,13 @@ export const description = "Utilities for controlling the cursor style when hove
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `cursor-pointer` and `cursor-grab` to control which cursor is displayed when hovering over an element:
+使用像 `cursor-pointer` 和 `cursor-grab` 这样的工具来控制悬停在元素上时显示哪个光标：
 
-<Figure hint="Hover over each button to see the cursor change">
+<Figure hint="将鼠标悬停在每个按钮上以查看光标变化">
 
 <Example>
   {
@@ -65,14 +65,14 @@ Use utilities like `cursor-pointer` and `cursor-grab` to control which cursor is
         className="w-full cursor-pointer rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-700 focus:outline-none disabled:bg-indigo-300 sm:w-auto dark:disabled:bg-indigo-800 dark:disabled:text-indigo-400"
         tabIndex="-1"
       >
-        Submit
+        提交
       </button>
       <button
         type="button"
         className="w-full cursor-progress rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-700 focus:outline-none disabled:bg-indigo-300 sm:w-auto dark:disabled:bg-indigo-800 dark:disabled:text-indigo-400"
         tabIndex="-1"
       >
-        Saving...
+        保存中...
       </button>
       <button
         type="button"
@@ -80,7 +80,7 @@ Use utilities like `cursor-pointer` and `cursor-grab` to control which cursor is
         className="w-full cursor-not-allowed rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-700 focus:outline-none disabled:bg-indigo-300 sm:w-auto dark:disabled:bg-indigo-800 dark:disabled:text-indigo-400"
         tabIndex="-1"
       >
-        Confirm
+        确认
       </button>
     </div>
   }
@@ -88,17 +88,17 @@ Use utilities like `cursor-pointer` and `cursor-grab` to control which cursor is
 
 ```html
 <!-- [!code classes:cursor-pointer,cursor-progress,cursor-not-allowed] -->
-<button class="cursor-pointer ...">Submit</button>
-<button class="cursor-progress ...">Saving...</button>
-<button class="cursor-not-allowed ..." disabled>Confirm</button>
+<button class="cursor-pointer ...">提交</button>
+<button class="cursor-progress ...">保存中...</button>
+<button class="cursor-not-allowed ..." disabled>确认</button>
 ```
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue element="button" utility="cursor" value="url(hand.cur),_pointer" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="button" property="cursor" defaultClass="cursor-not-allowed" featuredClass="cursor-auto" />

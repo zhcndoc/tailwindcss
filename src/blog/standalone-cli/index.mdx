@@ -13,54 +13,53 @@ import { adamwathan } from "@/app/blog/authors";
 import image from "./card.jpg";
 
 export const meta = {
-  title: "Standalone CLI: Use Tailwind CSS without Node.js",
-  description: `Today we're announcing a new standalone CLI build that gives you the full power of Tailwind CLI in a self-contained executable — no Node.js or npm required.`,
+  title: "独立的 CLI：在没有 Node.js 的情况下使用 Tailwind CSS",
+  description: `今天我们宣布一个新的独立 CLI 构建，它为您提供了 Tailwind CLI 的全部功能，不需要安装 Node.js 或 npm。`,
   date: "2021-12-16T16:00:00.000Z",
   authors: [adamwathan],
   image,
   excerpt: (
     <>
-      Tailwind CSS is written in JavaScript and distributed as an npm package, which means you've always had to have Node.js and npm installed to use it.
+      Tailwind CSS 是用 JavaScript 编写的，并作为一个 npm 包分发，这意味着您始终需要安装 Node.js 和 npm 才能使用它。
 
-      Today we're announcing a new <Link href="https://github.com/tailwindlabs/tailwindcss/releases/latest">standalone CLI build</Link> that gives you the full power of Tailwind CLI in a self-contained executable — no Node.js or npm required.
+      今天我们宣布一个新的 <Link href="https://github.com/tailwindlabs/tailwindcss/releases/latest">独立 CLI 构建</Link>，它为您提供了 Tailwind CLI 的全部功能，不需要安装 Node.js 或 npm。
     </>
-
-),
+  ),
 };
 
-Tailwind CSS is written in JavaScript and distributed as an npm package, which means you've always had to have Node.js and npm installed to use it.
+Tailwind CSS 是用 JavaScript 编写的，并作为一个 npm 包分发，这意味着您始终需要安装 Node.js 和 npm 才能使用它。
 
-This has made it harder to integrate into projects where using npm isn't always common, and with tools like <Link href="https://world.hey.com/dhh/rails-7-will-have-three-great-answers-to-javascript-in-2021-8d68191b">Rails</Link> and <Link href="https://github.com/phoenixframework/phoenix/pull/4377">Phoenix</Link> both moving away from npm by default, we needed to find a way for people to use Tailwind in these projects without forcing them to adopt an entirely separate ecosystem of tooling.
+这使得在不常使用 npm 的项目中集成它变得更加困难，随着 <Link href="https://world.hey.com/dhh/rails-7-will-have-three-great-answers-to-javascript-in-2021-8d68191b">Rails</Link> 和 <Link href="https://github.com/phoenixframework/phoenix/pull/4377">Phoenix</Link> 都默认不再使用 npm，我们需要找到一种方法，让人们在这些项目中使用 Tailwind，而不强迫他们采用一个完全独立的工具生态系统。
 
-Today we're announcing a new <Link href="https://github.com/tailwindlabs/tailwindcss/releases/latest">standalone CLI build</Link> that gives you the full power of Tailwind CLI in a self-contained executable — no Node.js or npm required.
+今天我们宣布一个新的 <Link href="https://github.com/tailwindlabs/tailwindcss/releases/latest">独立 CLI 构建</Link>，它为您提供了 Tailwind CLI 的全部功能，不需要安装 Node.js 或 npm。
 
 ---
 
-## Get started
+## 快速开始
 
-To install it, grab the executable for your platform from the <Link href="https://github.com/tailwindlabs/tailwindcss/releases/latest">latest release</Link> on GitHub, making sure to give it executable permissions:
+要安装它，请从 GitHub 上的 <Link href="https://github.com/tailwindlabs/tailwindcss/releases/latest">最新发布</Link> 中获取您平台的可执行文件，并确保授予其可执行权限：
 
 ```sh
-# Example for macOS arm64
+# macOS arm64 示例
 curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-macos-arm64
 chmod +x tailwindcss-macos-arm64
 mv tailwindcss-macos-arm64 tailwindcss
 ```
 
-Now you can use it just like our npm-distributed CLI tool:
+现在您可以像使用我们的 npm 分发的 CLI 工具一样来使用它：
 
 ```sh
-# Create a tailwind.config.js file
+# 创建一个 tailwind.config.js 文件
 ./tailwindcss init
 
-# Start a watcher
+# 启动监视器
 ./tailwindcss -i input.css -o output.css --watch
 
-# Compile and minify your CSS for production
+# 为生产编译和压缩您的 CSS
 ./tailwindcss -i input.css -o output.css --minify
 ```
 
-We've even bundled the latest versions of all of our first-party plugins, so if you want to use them in your project, just `require` them in your `tailwind.config.js` file like you would in a Node-based project:
+我们甚至捆绑了所有第一方插件的最新版本，因此如果您想在项目中使用它们，只需像在基于 Node 的项目中那样在 `tailwind.config.js` 文件中 `require` 它们：
 
 ```js
 module.exports = {
@@ -69,20 +68,20 @@ module.exports = {
 };
 ```
 
-You get all the power of our standard npm-distributed CLI in a convenient, portable package — no dependencies required.
+您将获得我们标准的 npm 分发的 CLI 的所有功能，便捷且可移植 — 不需要依赖。
 
 ---
 
-## How does it work?
+## 它是如何工作的？
 
-We didn't rewrite Tailwind in Rust or anything (<Link href="https://twitter.com/malfaitrobin/status/1446905317825069063">yet...</Link>) — we're actually using <Link href="https://github.com/vercel/pkg">pkg</Link>, a really cool project by <Link href="https://vercel.com">Vercel</Link> that lets you turn a Node.js project into an executable that can be run without installing Node.js by bundling all of the parts your project needs right into the executable itself.
+我们并没有用 Rust 重写 Tailwind 或其他任何东西（<Link href="https://twitter.com/malfaitrobin/status/1446905317825069063">还没……</Link>) — 我们实际上使用了 <Link href="https://github.com/vercel/pkg">pkg</Link>，这是由 <Link href="https://vercel.com">Vercel</Link> 创建的一个非常酷的项目，它允许您将 Node.js 项目转换为可执行文件，可以在不安装 Node.js 的情况下运行，方法是将项目所需的所有部分打包到可执行文件中。
 
-This is what makes it possible for you to still use a `tailwind.config.js` file with the full power of JavaScript, rather than a static format like JSON.
+这使得您仍然可以使用 `tailwind.config.js` 文件，并拥有 JavaScript 的全部功能，而不是像 JSON 这样的静态格式。
 
 ---
 
-## Which CLI should I use?
+## 我应该使用哪个 CLI？
 
-If you are already using npm in your project, use the npm-distributed version of our CLI that we've always provided. It's simpler to update, the file size is smaller, and you're already in the ecosystem anyways — there's no benefit at all to using the standalone build.
+如果您已经在项目中使用 npm，则使用我们一直提供的 npm 分发版本的 CLI。更新更简单，文件大小更小，而且您已经在该生态系统中——使用独立构建没有任何好处。
 
-If on the other hand you're working on a project where you don't otherwise need Node.js or npm, the standalone build can be a great choice. If Tailwind was the only reason you had a `package.json` file, this is probably going to feel like a nicer solution.
+另一方面，如果您正在处理一个项目，而不需要 Node.js 或 npm，那么独立构建可能是一个不错的选择。如果 Tailwind 是您唯一需要 `package.json` 文件的原因，那么这可能会感觉更好一些。

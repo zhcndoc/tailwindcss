@@ -9,43 +9,43 @@ import { adamwathan } from "@/app/blog/authors";
 
 export const meta = {
   title: "Tailwind CSS v1.5.0",
-  description: `Tailwind CSS v1.5.0 is here, now with component variants, responsive container variants, focus-visible support, and more.`,
+  description: `Tailwind CSS v1.5.0 正式发布，现在支持组件变体、响应式容器变体、焦点可见支持等功能。`,
   date: "2020-07-15T18:55:18.391Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      I was hoping to save v1.5.0 for something <em>really</em> exciting but we needed a new feature to support the new{" "}
+      我原本希望将 v1.5.0 保留用于一些 <em>真的</em> 令人兴奋的内容，但我们需要一个新特性来支持新的{" "}
       <Link href="https://github.com/tailwindcss/typography">
         <code>@tailwindcss/typography</code>
       </Link>{" "}
-      plugin so h*ck it, we're dropping some new stuff on you early.
+      插件，所以我们决定提前给你们带来一些新东西。
     </>
   ),
 };
 
-I was hoping to save v1.5.0 for something _really_ exciting but we needed a new feature to support the new [`@tailwindcss/typography`](https://github.com/tailwindcss/typography) plugin so h\*ck it, we're dropping some new stuff on you early.
+我原本希望将 v1.5.0 保留用于一些 _真的_ 令人兴奋的内容，但我们需要一个新特性来支持新的 [`@tailwindcss/typography`](https://github.com/tailwindcss/typography) 插件，所以我们决定提前给你们带来一些新东西。
 
-No breaking changes, this is a minor release and we're professionals you silly goose.
+没有破坏性更改，这是一个小版本发布，我们是专业人士，你个傻瓜。
 
-## New Features
+## 新特性
 
-### Component `variants` support
+### 组件 `variants` 支持
 
-Until Tailwind CSS v1.5.0, only "utility" classes were really intended to be used with `variants` (like "responsive", "hover", "focus", etc.)
+在 Tailwind CSS v1.5.0 之前，只有“工具类”被真正意图与 `variants` 一起使用（如“响应式”、“悬停”、“聚焦”等）。
 
-While these are still much more useful for utilities than any other type of class, we now support generating variants for component classes as well, like the `prose` classes in the new `@tailwindcss/typography` plugin:
+虽然这些类对于工具类依然比其他类型的类更有用，但现在我们也支持为组件类生成变体，例如新的 `@tailwindcss/typography` 插件中的 `prose` 类：
 
 ```html
 <article class="prose md:prose-lg">
-  <!-- Content -->
+  <!-- 内容 -->
 </article>
 ```
 
-You can take advantage of this feature in your own component classes by using the new `variants` option in the second argument of the `addComponents` plugin API:
+您可以通过在 `addComponents` 插件 API 的第二个参数中使用新的 `variants` 选项，利用您自己组件类中的此特性：
 
 ```js
-plugin(function ({ addComponents })) {
+plugin(function ({ addComponents }) {
   addComponents({
     '.card': {
       // ...
@@ -56,10 +56,10 @@ plugin(function ({ addComponents })) {
 })
 ```
 
-...or using the array shorthand you might be familiar with from the `addUtilities` API:
+...或者使用您可能熟悉的 `addUtilities` API 的数组简写：
 
 ```js
-plugin(function ({ addComponents })) {
+plugin(function ({ addComponents }) {
   addComponents({
     '.card': {
       // ...
@@ -68,7 +68,7 @@ plugin(function ({ addComponents })) {
 })
 ```
 
-To take advantage of these feature in your custom CSS (rather than using the plugin API), you can use a new `@layer` directive to explicitly tell Tailwind that your styles belong to the "components" bucket:
+要在自定义 CSS 中利用这些功能（而不是使用插件 API），您可以使用新的 `@layer` 指令，明确告诉 Tailwind 您的样式属于“组件”类别：
 
 ```css
 @layer components {
@@ -80,20 +80,20 @@ To take advantage of these feature in your custom CSS (rather than using the plu
 }
 ```
 
-This helps Tailwind purge your unused CSS correctly, ensuring it doesn't remove any responsive component variants when using the default "conservative" purge mode.
+这有助于 Tailwind 正确清除您的未使用 CSS，确保在使用默认的“保守”清除模式时不会移除任何响应式组件变体。
 
-### Responsive `container` variants
+### 响应式 `container` 变体
 
-Piggy-backing off of the new component `variants` support, the `container` class now supports variants!
+在新的组件 `variants` 支持的基础上，`container` 类现在支持变体！
 
 ```html
-<!-- Only lock the width at `md` sizes and above -->
+<!-- 仅在 `md` 尺寸及以上锁定宽度 -->
 <div class="md:container">
   <!-- ... -->
 </div>
 ```
 
-We've enabled responsive variants by default, but if you are sick in the head you can also manually enable other variants like `focus`, `group-hover`, whatever:
+我们默认启用了响应式变体，但如果您头脑不清晰，您还可以手动启用其他变体，如 `focus`、`group-hover` 等：
 
 ```js {{ filename: 'tailwind.config.js' }}
 module.exports = {
@@ -104,17 +104,17 @@ module.exports = {
 };
 ```
 
-### New `focus-visible` variant
+### 新的 `focus-visible` 变体
 
-We've added support for the [`:focus-visible` pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) using a new `focus-visible` variant.
+我们增加了对 [`:focus-visible` 伪类](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) 的支持，使用了新的 `focus-visible` 变体。
 
-This is super useful for adding focus styles that _only_ appear to keyboard users, and are ignored for mouse users:
+这对于添加只对键盘用户可见的聚焦样式非常有用，而鼠标用户将忽略它：
 
 ```html
-<button class="focus-visible:shadow-outline focus-visible:outline-none ...">Click me</button>
+<button class="focus-visible:shadow-outline focus-visible:outline-none ...">点击我</button>
 ```
 
-It's not enabled for anything by default, but you can enable it in the `variants` section of your config file:
+默认情况下未为任何内容启用，但您可以在配置文件的 `variants` 部分启用它：
 
 ```js {{ filename: 'tailwind.config.js' }}
 module.exports = {
@@ -125,17 +125,17 @@ module.exports = {
 };
 ```
 
-Browser support is still pretty weak on this but getting better. In the mean time, check out the [polyfill](https://github.com/WICG/focus-visible) and corresponding [PostCSS plugin](https://github.com/csstools/postcss-focus-visible) if you'd like to use this in all browsers right away.
+浏览器对这一点的支持仍然较弱，但正在改善。在此期间，如果您希望立即在所有浏览器中使用此功能，请查看 [polyfill](https://github.com/WICG/focus-visible) 和相应的 [PostCSS 插件](https://github.com/csstools/postcss-focus-visible)。
 
-### New `checked` variant
+### 新的 `checked` 变体
 
-We've added a new `checked` variant you can use to conditionally style things like checkboxes and radio buttons:
+我们添加了一个新的 `checked` 变体，您可以用它来有条件地样式化复选框和单选按钮等元素：
 
 ```html
 <input type="checkbox" class="bg-white checked:bg-blue-500" />
 ```
 
-It's not enabled for anything by default, but you can enable it in the `variants` section of your config file:
+默认情况下未为任何内容启用，但您可以在配置文件的 `variants` 部分启用它：
 
 ```js {{ filename: 'tailwind.config.js' }}
 module.exports = {
@@ -146,4 +146,4 @@ module.exports = {
 };
 ```
 
-Want to talk about this post? <a href="https://github.com/tailwindcss/tailwindcss/discussions/2033">Discuss this on GitHub →</a>
+想讨论这篇文章吗？ <a href="https://github.com/tailwindcss/tailwindcss/discussions/2033">在 GitHub 上讨论 →</a>

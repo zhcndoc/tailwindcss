@@ -3,8 +3,8 @@ import { CustomizingYourTheme, ResponsiveDesign, UsingACustomValue } from "@/com
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "filter: drop-shadow()";
-export const description = "Utilities for applying drop-shadow filters to an element.";
+export const title = "滤镜: drop-shadow()";
+export const description = "将 drop-shadow 滤镜应用于元素的工具类.";
 
 <ApiTable
   rows={[
@@ -12,7 +12,7 @@ export const description = "Utilities for applying drop-shadow filters to an ele
     ["drop-shadow-sm", "filter: drop-shadow(var(--drop-shadow-sm)); /* 0 1px 2px rgb(0 0 0 / 0.15) */"],
     ["drop-shadow-md", "filter: drop-shadow(var(--drop-shadow-md)); /* 0 3px 3px rgb(0 0 0 / 0.12) */"],
     ["drop-shadow-lg", "filter: drop-shadow(var(--drop-shadow-lg)); /* 0 4px 4px rgb(0 0 0 / 0.15) */"],
-    ["drop-shadow-xl", "filter: drop-shadow(var(--drop-shadow-xl); /* 0 9px 7px rgb(0 0 0 / 0.1) */"],
+    ["drop-shadow-xl", "filter: drop-shadow(var(--drop-shadow-xl)); /* 0 9px 7px rgb(0 0 0 / 0.1) */"],
     ["drop-shadow-2xl", "filter: drop-shadow(var(--drop-shadow-2xl)); /* 0 25px 25px rgb(0 0 0 / 0.15) */"],
     ["drop-shadow-none", "filter: drop-shadow(0 0 #0000);"],
     ["drop-shadow-(<custom-property>)", "filter: drop-shadow(var(<custom-property>));"],
@@ -20,11 +20,11 @@ export const description = "Utilities for applying drop-shadow filters to an ele
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基础示例
 
-Use utilities like `drop-shadow-sm` and `drop-shadow-xl` to add a drop shadow to an element:
+使用像 `drop-shadow-sm` 和 `drop-shadow-xl` 的工具类为元素添加阴影:
 
 <Figure>
 
@@ -79,13 +79,13 @@ Use utilities like `drop-shadow-sm` and `drop-shadow-xl` to add a drop shadow to
 
 </Figure>
 
-This is useful for applying shadows to irregular shapes, like text and SVG elements. For applying shadows to regular elements, you probably want to use [box shadow](/docs/box-shadow) instead.
+这对于将阴影应用于不规则形状（如文本和 SVG 元素）非常有用。如果要将阴影应用于规则元素，您可能希望使用 [盒子阴影](/docs/box-shadow) 。
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue element="svg" utility="drop-shadow" value="0_35px_35px_rgba(0,0,0,0.25)" name="drop shadow" />
+<UsingACustomValue element="svg" utility="drop-shadow" value="0_35px_35px_rgba(0,0,0,0.25)" name="投影阴影" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="svg"
@@ -94,12 +94,12 @@ This is useful for applying shadows to irregular shapes, like text and SVG eleme
   featuredClass="drop-shadow-xl"
 />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourTheme
   element="svg"
   utility="drop-shadow"
-  name="drop shadow"
+  name="投影阴影"
   customName="3xl"
   customValue="0 35px 35px rgba(0, 0, 0, 0.25)"
 />

@@ -5,7 +5,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "flex-wrap";
-export const description = "Utilities for controlling how flex items wrap.";
+export const description = "控制 flex 项目换行的工具类。";
 
 <ApiTable
   rows={[
@@ -15,11 +15,11 @@ export const description = "Utilities for controlling how flex items wrap.";
   ]}
 />
 
-## Examples
+## 示例
 
-### Don't wrap
+### 不换行
 
-Use `flex-nowrap` to prevent flex items from wrapping, causing inflexible items to overflow the container if necessary:
+使用 `flex-nowrap` 来防止 flex 项目换行，如果必要，导致不灵活的项目溢出容器：
 
 <Figure>
 
@@ -53,9 +53,9 @@ Use `flex-nowrap` to prevent flex items from wrapping, causing inflexible items 
 
 </Figure>
 
-### Wrap normally
+### 正常换行
 
-Use `flex-wrap` to allow flex items to wrap:
+使用 `flex-wrap` 允许 flex 项目换行：
 
 <Figure>
 
@@ -83,9 +83,9 @@ Use `flex-wrap` to allow flex items to wrap:
 
 </Figure>
 
-### Wrap reversed
+### 反向换行
 
-Use `flex-wrap-reverse` to wrap flex items in the reverse direction:
+使用 `flex-wrap-reverse` 在反向方向上换行 flex 项目：
 
 <Figure>
 
@@ -113,6 +113,6 @@ Use `flex-wrap-reverse` to wrap flex items in the reverse direction:
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="flex-wrap" defaultClass="flex flex-wrap" featuredClass="flex-wrap-reverse" />

@@ -5,7 +5,7 @@ import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "box-decoration-break";
 export const description =
-  "Utilities for controlling how element fragments should be rendered across multiple lines, columns, or pages.";
+  "用于控制元素片段如何在多行、多列或多个页面上呈现的工具。";
 
 <ApiTable
   rows={[
@@ -14,11 +14,11 @@ export const description =
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use the `box-decoration-slice` and `box-decoration-clone` utilities to control whether properties like background, border, border-image, box-shadow, clip-path, margin, and padding should be rendered as if the element were one continuous fragment, or distinct blocks:
+使用 `box-decoration-slice` 和 `box-decoration-clone` 工具来控制背景、边框、边框图像、盒阴影、剪切路径、边距和内边距等属性是否应被呈现为一个连续的片段，或作为不同的块：
 
 <Figure>
 
@@ -29,9 +29,9 @@ Use the `box-decoration-slice` and `box-decoration-clone` utilities to control w
         <p className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">box-decoration-slice</p>
         <div className="font-sans text-5xl leading-none font-extrabold tracking-tight">
           <span className="bg-linear-to-r from-indigo-600 to-pink-500 box-decoration-slice px-2 leading-[3.5rem] text-white">
-            Hello
+            你好
             <br />
-            World
+            世界
           </span>
         </div>
       </div>
@@ -39,9 +39,9 @@ Use the `box-decoration-slice` and `box-decoration-clone` utilities to control w
         <p className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">box-decoration-clone</p>
         <div className="font-sans text-5xl leading-none font-extrabold tracking-tight">
           <span className="bg-linear-to-r from-indigo-600 to-pink-500 box-decoration-clone px-2 leading-[3.5rem] text-white">
-            Hello
+            你好
             <br />
-            World
+            世界
           </span>
         </div>
       </div>
@@ -53,16 +53,16 @@ Use the `box-decoration-slice` and `box-decoration-clone` utilities to control w
 ```html
 <!-- [!code classes:box-decoration-slice,box-decoration-clone] -->
 <span class="box-decoration-slice bg-linear-to-r from-indigo-600 to-pink-500 px-2 text-white ...">
-  Hello<br />World
+  你好<br />世界
 </span>
 <span class="box-decoration-clone bg-linear-to-r from-indigo-600 to-pink-500 px-2 text-white ...">
-  Hello<br />World
+  你好<br />世界
 </span>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   property="box-decoration-break"

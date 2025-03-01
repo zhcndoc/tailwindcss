@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "font-style";
-export const description = "Utilities for controlling the style of text.";
+export const title = "字体样式";
+export const description = "用于控制文本样式的工具。";
 
 <ApiTable
   rows={[
@@ -13,50 +13,50 @@ export const description = "Utilities for controlling the style of text.";
   ]}
 />
 
-## Examples
+## 示例
 
-### Italicizing text
+### 斜体文本
 
-Use the `italic` utility to make text italic:
+使用 `italic` 工具将文本设置为斜体：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 italic dark:text-gray-200">
-      The quick brown fox jumps over the lazy dog.
+      灵活的棕色狐狸跳过懒惰的狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:italic] -->
-<p class="italic ...">The quick brown fox ...</p>
+<p class="italic ...">灵活的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
-### Displaying text normally
+### 正常显示文本
 
-Use the `not-italic` utility to display text normally:
+使用 `not-italic` 工具正常显示文本：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 not-italic dark:text-gray-200">
-      The quick brown fox jumps over the lazy dog.
+      灵活的棕色狐狸跳过懒惰的狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:not-italic] -->
-<p class="not-italic ...">The quick brown fox ...</p>
+<p class="not-italic ...">灵活的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="font-style" defaultClass="italic" featuredClass="not-italic" element="p" />

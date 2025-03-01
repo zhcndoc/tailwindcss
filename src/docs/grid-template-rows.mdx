@@ -5,7 +5,7 @@ import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "grid-template-rows";
-export const description = "Utilities for specifying the rows in a grid layout.";
+export const description = "用于指定网格布局中行的实用工具。";
 
 <ApiTable
   rows={[
@@ -17,11 +17,11 @@ export const description = "Utilities for specifying the rows in a grid layout."
   ]}
 />
 
-## Examples
+## 示例
 
-### Specifying the grid rows
+### 指定网格行
 
-Use `grid-rows-<number>` utilities like `grid-rows-2` and `grid-rows-4` to create grids with _n_ equally sized rows:
+使用 `grid-rows-<number>` 实用工具，如 `grid-rows-2` 和 `grid-rows-4` 来创建 _n_ 个等大小的行：
 
 <Figure>
 
@@ -55,9 +55,9 @@ Use `grid-rows-<number>` utilities like `grid-rows-2` and `grid-rows-4` to creat
 
 </Figure>
 
-### Implementing a subgrid
+### 实现子网格
 
-Use the `grid-rows-subgrid` utility to adopt the row tracks defined by the item's parent:
+使用 `grid-rows-subgrid` 实用工具来采用项目父元素定义的行轨道：
 
 <Figure>
 
@@ -99,10 +99,10 @@ Use the `grid-rows-subgrid` utility to adopt the row tracks defined by the item'
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue utility="grid-rows" name="rows" value="200px_minmax(900px,1fr)_100px" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="grid-template-rows" defaultClass="grid grid-rows-2" featuredClass="grid-rows-6" />

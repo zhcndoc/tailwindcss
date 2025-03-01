@@ -5,8 +5,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "max-width";
-export const description = "Utilities for setting the maximum width of an element.";
+export const title = "最大宽度";
+export const description = "设置元素最大宽度的工具类。";
 
 <ApiTable
   rows={[
@@ -55,13 +55,13 @@ export const description = "Utilities for setting the maximum width of an elemen
   ]}
 />
 
-## Examples
+## 例子
 
-### Basic example
+### 基本例子
 
-Use `max-w-<number>` utilities like `max-w-24` and `max-w-64` to set an element to a fixed maximum width based on the spacing scale:
+使用 `max-w-<number>` 工具类，比如 `max-w-24` 和 `max-w-64`，将元素设置为基于空间比例的固定最大宽度：
 
-<Figure hint="Resize the example to see the expected behavior">
+<Figure hint="调整示例大小以查看预期行为">
 
 <Example resizable>
   {
@@ -111,11 +111,11 @@ Use `max-w-<number>` utilities like `max-w-24` and `max-w-64` to set an element 
 
 </Figure>
 
-### Using a percentage
+### 使用百分比
 
-Use `max-w-full` or `max-w-<fraction>` utilities like `max-w-1/2` and `max-w-2/5` to give an element a percentage-based maximum width:
+使用 `max-w-full` 或 `max-w-<fraction>` 工具类，比如 `max-w-1/2` 和 `max-w-2/5`，给元素设置基于百分比的最大宽度：
 
-<Figure hint="Resize the example to see the expected behavior">
+<Figure hint="调整示例大小以查看预期行为">
 
 <Example resizable>
   {
@@ -150,11 +150,11 @@ Use `max-w-full` or `max-w-<fraction>` utilities like `max-w-1/2` and `max-w-2/5
 
 </Figure>
 
-### Using the container scale
+### 使用容器比例
 
-Use utilities like `max-w-sm` and `max-w-xl` to set an element to a fixed maximum width based on the container scale:
+使用如 `max-w-sm` 和 `max-w-xl` 的工具类，将元素设置为基于容器比例的固定最大宽度：
 
-<Figure hint="Resize the example to see the expected behavior">
+<Figure hint="调整示例大小以查看预期行为">
 
 <Example resizable>
   {
@@ -164,9 +164,9 @@ Use utilities like `max-w-sm` and `max-w-xl` to set an element to a fixed maximu
         src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
       />
       <div className="min-w-0 py-5 pr-5 pl-28">
-        <div className="truncate text-sm font-medium text-gray-900 sm:text-base dark:text-gray-200">Andrew Alfred</div>
+        <div className="truncate text-sm font-medium text-gray-900 sm:text-base dark:text-gray-200">安德鲁·阿尔弗雷德</div>
         <div className="truncate text-sm leading-tight text-gray-500 sm:text-base dark:text-gray-400">
-          Assistant to the Traveling Secretary
+          旅行秘书助理
         </div>
       </div>
     </div>
@@ -182,9 +182,9 @@ Use utilities like `max-w-sm` and `max-w-xl` to set an element to a fixed maximu
 
 </Figure>
 
-### Using breakpoints container
+### 使用断点容器
 
-Use the `container` utility to set the maximum width of an element to match the `min-width` of the current breakpoint. This is useful if you'd prefer to design for a fixed set of screen sizes instead of trying to accommodate a fully fluid viewport:
+使用 `container` 工具类将元素的最大宽度设置为当前断点的 `min-width`。如果你更喜欢针对固定的屏幕尺寸进行设计，而不是尝试适应完全流体的视口，这非常有用：
 
 ```html
 <!-- [!code classes:container] -->
@@ -193,7 +193,7 @@ Use the `container` utility to set the maximum width of an element to match the 
 </div>
 ```
 
-Note that unlike containers you might have used in other frameworks, Tailwind's container does not center itself automatically and does not have any built-in horizontal padding. Use `mx-auto` and the `px-<number>` utilities to add these:
+注意，与您可能在其他框架中使用的容器不同，Tailwind 的容器不会自动居中，并且没有任何内置的水平填充。使用 `mx-auto` 和 `px-<number>` 工具类来添加这些：
 
 ```html
 <!-- [!code classes:mx-auto,px-4] -->
@@ -202,14 +202,14 @@ Note that unlike containers you might have used in other frameworks, Tailwind's 
 </div>
 ```
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="max-w" value="220px" name="maximum width" variable="max-width" />
+<UsingACustomValue utility="max-w" value="220px" name="最大宽度" variable="max-width" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="max-width" defaultClass="max-w-sm" featuredClass="max-w-lg" />
 
-## Customizing your theme
+## 自定义你的主题
 
 <CustomizingYourSpacingScale utility="max-w" />

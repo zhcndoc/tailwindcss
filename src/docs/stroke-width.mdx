@@ -3,8 +3,8 @@ import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "stroke-width";
-export const description = "Utilities for styling the stroke width of SVG elements.";
+export const title = "描边宽度";
+export const description = "用于设置 SVG 元素的描边宽度的工具类。";
 
 <ApiTable
   rows={[
@@ -14,11 +14,11 @@ export const description = "Utilities for styling the stroke width of SVG elemen
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `stroke-<number>` utilities like `stroke-1` and `stroke-2` to set the stroke width of an SVG:
+使用 `stroke-<number>` 工具类，例如 `stroke-1` 和 `stroke-2`，来设置 SVG 的描边宽度：
 
 <Figure>
 
@@ -63,12 +63,12 @@ Use `stroke-<number>` utilities like `stroke-1` and `stroke-2` to set the stroke
 
 </Figure>
 
-This can be useful for styling icon sets like [Heroicons](https://heroicons.com).
+这对于样式设置图标集，例如 [Heroicons](https://heroicons.com)，非常有用。
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="stroke" name="stroke width" value="1.5" variable="stroke-width" dataType="length" />
+<UsingACustomValue utility="stroke" name="描边宽度" value="1.5" variable="stroke-width" dataType="length" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="stroke-width" defaultClass="stroke-1" featuredClass="stroke-2" />

@@ -6,20 +6,18 @@ import { adamwathan } from "@/app/blog/authors";
 
 export const meta = {
   title: "Tailwind CSS v2.2",
-  description: `An all-new high-performance CLI tool, ::before and ::after support, sibling selectors, selected text variants, and tons more.`,
+  description: `一个全新的高性能 CLI 工具，::before 和 ::after 支持，兄弟选择器，选定文本变体等等。`,
   date: "2021-06-17T14:00:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      Well I can't say we were really planning on it but over the last few weeks we've been having a ton of fun dumping
-      new and exciting features into Tailwind and now feels like the right time to cut a release, so here it is —
-      Tailwind CSS v2.2!
+      我不能说我们真的打算这样做，但在过去的几周里，我们一直很高兴地将许多新鲜有趣的功能放入 Tailwind，现在感觉是时候发布一个版本了，所以在这里——Tailwind CSS v2.2！
     </>
   ),
 };
 
-Well I can't say we were really planning on it but over the last few weeks we've been having a ton of fun dumping new and exciting features into Tailwind and now feels like the right time to cut a release, so here it is — Tailwind CSS v2.2!
+我不能说我们真的打算这样做，但在过去的几周里，我们一直很高兴地将许多新鲜有趣的功能放入 Tailwind，现在感觉是时候发布一个版本了，所以在这里——Tailwind CSS v2.2！
 
 <iframe
   src="https://www.youtube.com/embed/DxcJbrs6rKk"
@@ -29,31 +27,31 @@ Well I can't say we were really planning on it but over the last few weeks we've
   className="aspect-video w-full"
 ></iframe>
 
-This has to be one of the most feature-rich Tailwind releases of all-time. Introducing <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time mode</Link> back in v2.1 has opened the doors to a lot of cool features we couldn't have easily added otherwise, and this release is loaded with great examples of that.
+这是有史以来功能最丰富的 Tailwind 发布之一。 在 v2.1 中引入的 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time 模式</Link> 为我们提供了许多酷炫功能的可能性，我们无法轻松添加的，这次发布充满了这些优秀示例。
 
-Here are the highlights:
+以下是亮点：
 
-- [All-new high-performance Tailwind CLI](#all-new-high-performance-tailwind-cli)
-- [Before and after variants](#before-and-after-variants)
-- [First-letter/line variants](#first-letter-line-variants)
-- [Selected text variants](#selected-text-variants)
-- [List marker variants](#list-marker-variants)
-- [Sibling selector variants](#sibling-selector-variants)
-- [Exhaustive pseudo-class support](#exhaustive-pseudo-class-support)
-- [Shorthand color opacity syntax](#shorthand-color-opacity-syntax)
-- [Extended arbitrary value support](#extended-arbitrary-value-support)
-- [Improved nesting support](#improved-nesting-support)
-- [Caret color utilities](#caret-color-utilities)
-- [Background origin utilities](#background-origin-utilities)
-- [Simplified transform and filter composition](#simplified-transform-and-filter-composition)
-- [Per-side border color utilities](#per-side-border-color-utilities)
-- [Built-in safelist, transform, and extract support](#built-in-safelist-transform-and-extract-support)
+- [全新高性能 Tailwind CLI](#all-new-high-performance-tailwind-cli)
+- [前后变体](#before-and-after-variants)
+- [首字母/首行变体](#first-letter-line-variants)
+- [选定文本变体](#selected-text-variants)
+- [列表标记变体](#list-marker-variants)
+- [兄弟选择器变体](#sibling-selector-variants)
+- [详尽的伪类支持](#exhaustive-pseudo-class-support)
+- [简写颜色不透明度语法](#shorthand-color-opacity-syntax)
+- [扩展任意值支持](#extended-arbitrary-value-support)
+- [改进的嵌套支持](#improved-nesting-support)
+- [光标颜色工具](#caret-color-utilities)
+- [背景起源工具](#background-origin-utilities)
+- [简化的变换和过滤器组合](#simplified-transform-and-filter-composition)
+- [每边边框颜色工具](#per-side-border-color-utilities)
+- [内置安全列表、转换和提取支持](#built-in-safelist-transform-and-extract-support)
 
-For the full details, <Link href="https://github.com/tailwindlabs/tailwindcss/releases/tag/v2.2.0">check out the release notes</Link> on GitHub.
+有关完整详细信息，请查看 <Link href="https://github.com/tailwindlabs/tailwindcss/releases/tag/v2.2.0">GitHub 上的发布说明</Link>。
 
-It's important to note that although this is a minor release and there are no breaking changes in the classic engine, <strong>Just-in-Time mode is still in preview and v2.2 introduces a few very small changes that might impact you</strong>, so make sure you read through the <Link href="https://github.com/tailwindlabs/tailwindcss/releases/tag/v2.2.0#changes-and-deprecations">changes and deprecations</Link> in the release notes when upgrading.
+值得注意的是，虽然这是一个小版本，并且经典引擎中没有破坏性更改，<strong>Just-in-Time 模式仍处于预览状态，而 v2.2 引入了一些非常小的变化，可能会影响到你</strong>，因此在升级时，请确保仔细阅读发布说明中的 <Link href="https://github.com/tailwindlabs/tailwindcss/releases/tag/v2.2.0#changes-and-deprecations">更改和弃用内容</Link>。
 
-When you're ready to upgrade, just install the latest version from npm and you're off to the races:
+准备好升级了吗？只需从 npm 安装最新版本，您就可以开始使用：
 
 ```sh
 npm install -D tailwindcss@latest
@@ -63,131 +61,125 @@ npm install -D tailwindcss@latest
 
 <a name="all-new-high-performance-tailwind-cli"></a>
 
-## All-new high-performance Tailwind CLI
+## 全新高性能 Tailwind CLI
 
-We've rewritten the Tailwind CLI tool from the ground-up with a performance-first mindset, while also adding support for a bunch of new features.
+我们从头开始重新编写了 Tailwind CLI 工具，采用性能优先的思维方式，同时添加了一些新功能的支持。
 
 ```sh
 npx tailwindcss -o dist/tailwind.css --watch --jit --purge="./src/**/*.html"
 ```
 
-Here are some of the highlights:
+以下是一些亮点：
 
-- **No installation or configuration necessary** — simply `npx tailwindcss -o output.css` to compile Tailwind from anywhere. You can even enable JIT mode with the `--jit` flag and pass in your content files using the `--purge` option, all without creating a config file.
-- **Watch mode** — so you can automatically rebuild your CSS whenever you make any changes.
-- **JIT performance optimizations** — since our CLI is Tailwind-specific we've been able to make tons of optimizations that make it the absolute fastest build tool for compiling your CSS in JIT mode.
-- **Minification support** — now you can minify your CSS with <Link href="https://cssnano.co/">cssnano</Link> just by adding the `--minify` flag.
-- **PostCSS plugin support** — the new CLI will read and respect any extra plugins you configure using a `postcss.config.js` file.
+- **无需安装或配置** — 只需执行 `npx tailwindcss -o output.css` 即可从任何地方编译 Tailwind。您甚至可以通过 `--jit` 标志启用 JIT 模式，并使用 `--purge` 选项传入您的内容文件，全部无需创建配置文件。
+- **监视模式** — 这样您可以在每次修改时自动重建您的 CSS。
+- **JIT性能优化** — 由于我们的 CLI 是专为 Tailwind 设计的，我们能够进行大量优化，使其成为 JIT 模式下编译 CSS 的绝对最快构建工具。
+- **压缩支持** — 现在您只需添加 `--minify` 标志，就可以使用 <Link href="https://cssnano.co/">cssnano</Link> 压缩 CSS。
+- **PostCSS 插件支持** — 新的 CLI 将读取并尊重您使用 `postcss.config.js` 文件配置的任何额外插件。
 
-It's fully backwards-compatible with the previous CLI, so if you've got any scripts set up already you should be able to upgrade to v2.2 without making any changes to your scripts.
+与之前的 CLI 完全向后兼容，因此如果您已经设置了任何脚本，您应该能够在不更改脚本的情况下升级到 v2.2。
 
-Check out our <Link href="https://v2.tailwindcss.com/docs/installation#using-tailwind-cli">updated Tailwind CLI documentation</Link> to learn more.
+请查看我们更新的 <Link href="https://v2.tailwindcss.com/docs/installation#using-tailwind-cli">Tailwind CLI 文档</Link> 以了解更多信息。
 
-_Note that if you were using the `tailwindcss-cli` wrapper package, you can safely switch to `tailwindcss` as we've managed to resolve the peer-dependency issues that forced us to create the wrapper package in the first place._
+_请注意，如果您使用的是 `tailwindcss-cli` 包装器，您可以安全地切换到 `tailwindcss`，因为我们已经解决了迫使我们首次创建包装器包的对等依赖问题。_
 
 <a name="before-and-after-pseudo-element-variants"></a>
 
-## Before and after pseudo-element variants
+## 前后伪元素变体
 
-_This feature is only available in <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time mode</Link>_.
+_此功能仅在 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time 模式</Link> 中可用_。
 
-People have been asking for this for years and it's finally here! We've added first-party support for styling pseudo-elements like `before` and `after`:
+人们已经请求这个功能很多年了，现在终于来了！我们为伪元素如 `before` 和 `after` 添加了第一方支持的样式：
 
 ```html
 <div class="before:block before:bg-blue-500 after:flex after:bg-pink-300"></div>
 ```
 
-We set `content: ""` automatically any time you use a `before` or `after` variant to make sure the elements are rendered, but you can override it using the new `content` utilities which have full arbitrary value support:
+每当使用 `before` 或 `after` 变体时，我们会自动设置 `content: ""` 以确保元素被渲染，但您可以使用新的 `content` 工具覆盖它，这些工具具有完全的任意值支持：
 
 ```html
 <div class="before:block before:content-['hello'] ..."></div>
 ```
 
-You can even grab the content from an attribute using the CSS `attr()` function:
+您甚至可以使用 CSS `attr()` 函数从属性中获取内容：
 
 ```html
 <div before="hello world" class="before:block before:content-[attr(before)] ..."></div>
 ```
 
-This can be super helpful when your content has spaces in it, since spaces can't be used in CSS class names.
+当您的内容中有空格时，这非常有用，因为空格不能用于 CSS 类名。
 
 <a name="first-letter-line-variants"></a>
 
-## First-letter/line variants
+## 首字母/首行变体
 
-_This feature is only available in <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time mode</Link>_.
+_此功能仅在 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time 模式</Link> 中可用_。
 
-We've added variants for the `first-letter` and `first-line` pseudo-elements, so you can do stuff like drop caps:
+我们为 `first-letter` 和 `first-line` 伪元素添加了变体，因此您可以做到像掉落首字母这样的效果：
 
 ```html
 <p class="first-letter:float-left first-letter:text-4xl first-letter:font-bold">
-  The night was March 31, 1996, and it was finally time for Bret Hart to face off against Shawn Michaels in the long
-  anticipated Iron Man match — a 60 minute war of endurance where the man who scored the most number of falls would walk
-  away as the WWF World Heavyweight Champion.
+  那个夜晚是1996年3月31日，布雷特·哈特终于要与肖恩·迈克尔在期待已久的铁人赛中角逐——一场60分钟的耐力战，得分最多的人将作为 WWF 世界重量级冠军离开。
 </p>
 ```
 
 <a name="selected-text-variants"></a>
 
-## Selected text variants
+## 选定文本变体
 
-_This feature is only available in <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time mode</Link>_.
+_此功能仅在 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time 模式</Link> 中可用_。
 
-We've added a new `selection` variant that makes it super easy to style highlighted to match your design:
+我们添加了一个新的 `selection` 变体，使其非常容易样式高亮文本以匹配您的设计：
 
 ```html
 <p class="selection:bg-pink-200">
-  After nearly a grueling hour of warfare with neither man scoring a fall, Hart locked in the Sharpshooter, his
-  signature submission hold. As Michaels screamed in pain, the crowd were certain that Hart was about to walk away from
-  WrestleMania XII as the still-World Heavyweight Champion.
+  在经过近一个小时的战争而没有任何人得分后，哈特锁住了 Sharpshooter，他的标志性降服技。随着迈克尔斯在痛苦中尖叫，人群确信哈特将继续成为摔角大会 XII 的世界重量级冠军。
 </p>
 ```
 
-We've even built this feature in such a way that it can be applied to a parent element and cascade down, so you can set a highlight color for your whole site by applying a utility to the body:
+我们甚至构建了这个功能，可以将其应用于父元素并向下级联，因此您可以通过将工具应用于主体来为整个网站设置高亮颜色：
 
 ```html
 <body class="selection:bg-pink-200">
   <!-- ... -->
   <p>
-    But Michaels didn't give up — he held on until the bell rang and the designated 60 minutes was up. Hart walked away
-    content, thinking that without a clear winner, the title was his to hold. He was not prepared for what would happen
-    next, when Gorilla Monsoon declared the match would continue under sudden death rules.
+    但迈克尔斯并没有放弃——他坚持到铃声响起，规定的60分钟结束了。哈特认为没有明确的获胜者，冠军的头衔是他的。他没有准备好接下来的情况，戈里拉·蒙新闻宣称比赛将在突然死亡法则下继续进行。
   </p>
 </body>
 ```
 
 <a name="list-marker-variants"></a>
 
-## List marker variants
+## 列表标记变体
 
-_This feature is only available in <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time mode</Link>_.
+_此功能仅在 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time 模式</Link> 中可用_。
 
-You can use the new `marker` variant to style the bullets or numbers at the beginning of a list:
+您可以使用新的 `marker` 变体来样式列表开头的项目符号或数字：
 
 ```html
-<h1>WrestleMania XII Results</h1>
+<h1>摔角大会 XII 结果</h1>
 
 <ol class="marker:font-medium marker:text-gray-500">
-  <li>The British Bulldog, Owen Hart, and Vader defeated Ahmed Johnson, Jake Roberts, and Yokozuna</li>
-  <li>Roddy Piper defeated Goldust</li>
-  <li>Stone Cold Steve Austin defeated Savio Vega</li>
-  <li>The Ultimate Warrior defeated Hunter Hearst Helmsley</li>
-  <li>The Undertaker defeated Diesel</li>
-  <li>Shawn Michaels defeated Bret Hart</li>
+  <li>英国斗犬、欧文·哈特和维达击败阿赫德·约翰逊、杰克·罗伯茨和横滨</li>
+  <li>罗迪·派珀击败金尘</li>
+  <li>石冷史蒂夫·奥斯汀击败萨维奥·维加</li>
+  <li>终极战士击败亨特·赫斯特·海尔姆斯利</li>
+  <li>坟墓人击败柴油</li>
+  <li>肖恩·迈克尔斯击败布雷特·哈特</li>
 </ol>
 ```
 
-Like the `selection` variant, we've implemented this in a way that it cascades from the parent, so you don't have to repeat it for each list item.
+与 `selection` 变体一样，我们以一种方式实现了它，可以从父级向下级联，因此您不必为每个列表项重复它。
 
 <a name="sibling-selector-variants"></a>
 
-## Sibling selector variants
+## 兄弟选择器变体
 
-_This feature is only available in <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time mode</Link>_.
+_此功能仅在 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time 模式</Link> 中可用_。
 
-Tailwind CSS v2.2 adds new `peer-*` variants that behave much like the `group-*` variants, but for targeting sibling elements instead of parent elements.
+Tailwind CSS v2.2 添加了新的 `peer-*` 变体，它们的行为与 `group-*` 变体非常相似，但用于针对兄弟元素而不是父元素。
 
-This is useful for things like styling an element when a preceding checkbox is checked, doing things like floating labels, and lots more:
+这对于样式化当前复选框被选中时的元素非常有用，或者做诸如浮动标签等事情：
 
 ```html
 <label>
@@ -198,9 +190,9 @@ This is useful for things like styling an element when a preceding checkbox is c
 </label>
 ```
 
-Just like `group` can be combined with any other variant, `peer` can as well, so you have variants like `peer-hover`, `peer-focus`, `peer-disabled`, and loads more at your fingertips.
+就像 `group` 可以与任何其他变体结合一样，`peer` 也是如此，因此您可以使用 `peer-hover`、`peer-focus`、`peer-disabled` 等等。
 
-The generated CSS uses the <Link href="https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator">general sibling combinator</Link> and looks like this:
+生成的 CSS 使用 <Link href="https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator">一般兄弟组合器</Link>，看起来像这样：
 
 ```css
 .peer:checked ~ .peer-checked\:bg-blue-500 {
@@ -208,15 +200,15 @@ The generated CSS uses the <Link href="https://developer.mozilla.org/en-US/docs/
 }
 ```
 
-So just like in vanilla CSS, it will only work for targeting _previous_ siblings, not siblings that appear later in the DOM.
+因此，就像在原生 CSS 中一样，它只会针对_先前的_兄弟有效，而不是出现在 DOM 后面的兄弟。
 
 <a name="exhaustive-pseudo-class-support"></a>
 
-## Exhaustive pseudo-class support
+## 详尽的伪类支持
 
-_This feature is only available in <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time mode</Link>_.
+_此功能仅在 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time 模式</Link> 中可用_。
 
-We've added variants for basically every single missing pseudo-class we could think of in this release:
+我们为几乎所有缺少的伪类添加了变体：
 
 - `only` _(only-child)_
 - `first-of-type`
@@ -233,22 +225,22 @@ We've added variants for basically every single missing pseudo-class we could th
 - `in-range`
 - `out-of-range`
 
-Personal favorite in the list is `placeholder-shown` — when combined with the new sibling selector variants it makes it possible to do cool stuff like floating labels:
+列表中我最喜欢的是 `placeholder-shown`——当与新的兄弟选择器变体结合时，它可以实现很酷的效果，比如浮动标签：
 
 ```html
 <div class="relative">
   <input id="name" class="peer ..." />
-  <label for="name" class="peer-placeholder-shown:top-4 peer-focus:top-0 ..."> Name </label>
+  <label for="name" class="peer-placeholder-shown:top-4 peer-focus:top-0 ..."> 名字 </label>
 </div>
 ```
 
 <a name="shorthand-color-opacity-syntax"></a>
 
-## Shorthand color opacity syntax
+## 简写颜色不透明度语法
 
-_This feature is only available in <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time mode</Link>_.
+_此功能仅在 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time 模式</Link> 中可用_。
 
-Instead of using utilities like `bg-opacity-50`, `text-opacity-25`, or `placeholder-opacity-40`, Tailwind CSS v2.2 gives you a new color opacity shorthand you can use to tweak the alpha channel of a color directly in the color utility itself:
+与其使用像 `bg-opacity-50`、`text-opacity-25` 或 `placeholder-opacity-40` 这样的工具，Tailwind CSS v2.2 让您可以使用新的颜色不透明度简写，以便直接在颜色工具中调整颜色的 alpha 通道：
 
 {/* prettier-ignore */}
 ```html
@@ -257,67 +249,67 @@ Instead of using utilities like `bg-opacity-50`, `text-opacity-25`, or `placehol
 </div>
 ```
 
-This means you can now change the opacity of colors anywhere in Tailwind, even where we previously didn’t have specific opacity utilities, like in gradients for example:
+这意味着您现在可以在 Tailwind 中的任何地方更改颜色的不透明度，即使是在我们之前没有特定不透明度工具的地方，例如在渐变中：
 
 ```html
 <div class="bg-gradient-to-r from-red-500/50"></div>
 ```
 
-The opacity values are taken from your `opacity` scale, but you can also use arbitrary opacity values using square bracket notation:
+不透明度值取自您的 `opacity` 列表，但您也可以使用方括号语法使用任意不透明度值：
 
 ```html
 <div class="bg-red-500/[0.31]"></div>
 ```
 
-If I'm being honest, I am more excited about never having to create another core plugin like `placeholderOpacity.js` for you people again than I am about actually using the feature. And I'm really excited about the feature, so that says something.
+说实话，我更兴奋的是再也不需要为你们创建 `placeholderOpacity.js` 这样的核心插件，而不是真正使用这个功能。我对这个功能真的很兴奋，所以这说明了许多问题。
 
 <a name="extended-arbitrary-value-support"></a>
 
-## Extended arbitrary value support
+## 扩展任意值支持
 
-_This feature is only available in <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time mode</Link>_.
+_此功能仅在 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time 模式</Link> 中可用_。
 
-We've gone over every core plugin in Tailwind to try and add the most flexible arbitrary value support we possibly could, and I think we've covered pretty much everything at this point.
+我们检查了 Tailwind 中的每一个核心插件，尽可能添加最灵活的任意值支持，我认为我们已经涵盖了几乎所有内容。
 
-You should be able to use whatever arbitrary values you want, just about wherever you want:
+您应该能够在几乎任何地方使用任何任意值：
 
 ```html
 <div class="col-start-[73] object-[50%] placeholder-[#aabbcc] ..."></div>
 ```
 
-If you find one we missed, open an issue and we'll sort it out.
+如果您发现我们错过了某个则请打开一个问题，我们将解决它。
 
-In addition to making arbitrary value support more comprehensive, we've also added a new type-hint syntax to handle ambiguous situations. For example, if you are using a CSS variable as an arbitrary value, it's not always clear what the generated CSS should be:
+除了使任意值支持更全面外，我们还添加了一种新的类型提示语法来处理模糊情况。例如，如果您将 CSS 变量用作任意值，生成的 CSS 应该是什么并不总是明确的：
 
 ```html
-<!-- Is this a font size utility, or a text color utility? -->
+<!-- 这是字体大小工具，还是文本颜色工具？ -->
 <div class="text-[var(--mystery-var)]"></div>
 ```
 
-Now you can provide a hint to the engine by prefixing the arbitrary value with the type name:
+现在，您可以通过在任意值前面加上类型名称来提供提示：
 
 ```html
 <div class="text-[color:var(--mystery-var)]"></div>
 ```
 
-Currently, the supported types are:
+当前，支持的类型包括：
 
 - `length`
 - `color`
 - `angle`
 - `list`
 
-We'll probably flesh this out even more over time as people discover new edge cases but this should get you very far.
+随着人们对新边缘情况的发现，我们可能会逐步充实这个列表，但这应该能让您走得很远。
 
 <a name="improved-nesting-support"></a>
 
-## Improved nesting support
+## 改进的嵌套支持
 
-Since Tailwind introduces a lot of non-standard CSS at-rules like `@tailwind` and `@apply`, you can often run into weird output when combining it with a PostCSS nesting plugin like `postcss-nested` or `postcss-nesting`.
+由于 Tailwind 引入了许多非标准的 CSS at-rule，例如 `@tailwind` 和 `@apply`，因此将其与像 `postcss-nested` 或 `postcss-nesting` 这样的 PostCSS 嵌套插件相结合时，您可能会遇到奇怪的输出。
 
-To ease the pain here, we've included a new PostCSS plugin in the `tailwindcss` package that acts as a lightweight compatibility layer between existing nesting plugins and Tailwind itself.
+为了解决这个问题，我们在 `tailwindcss` 包中包含了一种新的 PostCSS 插件，作为现有嵌套插件与 Tailwind 之间的轻量兼容层。
 
-So if you need nesting support in your project, use our plugin, and stick it before Tailwind in your PostCSS plugin list:
+因此，如果您在项目中需要嵌套支持，请使用我们的插件，并将其置于 Tailwind 之前的 PostCSS 插件列表中：
 
 ```js
 // postcss.config.js
@@ -331,7 +323,7 @@ module.exports = {
 };
 ```
 
-By default, it uses `postcss-nested` under the hood _(since that's what we use to support nesting in Tailwind plugins)_, but if you'd like to use `postcss-nesting` instead, just call our plugin as a function and pass through the `postcss-nesting` plugin:
+默认情况下，它使用 `postcss-nested` 在内部 _(因为我们使用它来支持 Tailwind 插件中的嵌套)_，但如果您想改用 `postcss-nesting`，只需将我们的插件作为函数调用并传入 `postcss-nesting` 插件：
 
 ```js
 // postcss.config.js
@@ -345,21 +337,21 @@ module.exports = {
 };
 ```
 
-Under the hood, this uses a new `screen()` function we've introduced that you can use to get the expanded media expression from any of your configured breakpoints:
+在后台，这使用了我们引入的新 `screen()` 函数，您可以使用它从任何配置的断点获取展开的媒体表达式：
 
 ```css
-/* Input */
+/* 输入 */
 @media screen(sm) {
   /* ... */
 }
 
-/* Output */
+/* 输出 */
 @media (min-width: 640px) {
   /* ... */
 }
 ```
 
-You probably won't need to use this yourself but it could be helpful if you're ever integrating Tailwind with another tool that understands `@media` but doesn't handle `@screen` properly.
+您可能不需要自己使用这个功能，但如果您将 Tailwind 集成到另一个理解 `@media` 但没有正确处理 `@screen` 的工具中，它可能会很有用。
 
 {/* prettier-ignore */}
 ```css
@@ -371,47 +363,47 @@ You probably won't need to use this yourself but it could be helpful if you're e
 
 <a name="caret-color-utilities"></a>
 
-## Caret color utilities
+## 光标颜色工具
 
-_This feature is only available in <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time mode</Link>_.
+_此功能仅在 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time 模式</Link> 中可用_。
 
-You can now set the color of the cursor in form fields using the new `caret-{color}` utilities:
+您现在可以使用新的 `caret-{color}` 工具设置表单字段中的光标颜色：
 
 ```html
 <input class="caret-red-500" />
 ```
 
-These are customizable using the `caretColor` key in the `theme` section of your `tailwind.config.js` file.
+这些工具可以使用 `tailwind.config.js` 文件的 `theme` 部分中的 `caretColor` 键进行自定义。
 
 <a name="background-origin-utilities"></a>
 
-## Background origin utilities
+## 背景起源工具
 
-We've added new utilities for the `background-origin` property, which let you control where an element's background is positioned relative to the element's border, padding box, or content:
+我们为 `background-origin` 属性添加了新的工具，允许您控制元素的背景相对于元素的边框、填充框或内容的位置：
 
 ```html
 <div class="border-4 border-dashed bg-origin-border p-4 ..." style="background-image: url(...)">
-  Background is rendered under the border
+  背景渲染在边框下
 </div>
 
 <div class="border-4 border-dashed bg-origin-padding p-4 ..." style="background-image: url(...)">
-  Background is rendered within the border but on top of any padding
+  背景渲染在边框内但在任何填充上方
 </div>
 
 <div class="border-4 border-dashed bg-origin-content p-4 ..." style="background-image: url(...)">
-  Background is rendered within any padding and under the content
+  背景渲染在任何填充内并且在内容下
 </div>
 ```
 
-Learn more in the <Link href="https://v2.tailwindcss.com/docs/background-origin">background origin documentation</Link>.
+在 <Link href="https://v2.tailwindcss.com/docs/background-origin">背景起源文档</Link> 中了解更多信息。
 
 <a name="simplified-transform-and-filter-composition"></a>
 
-## Simplified transform and filter composition
+## 简化的变换和过滤器组合
 
-_This feature is only available in <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time mode</Link>_.
+_此功能仅在 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time 模式</Link> 中可用_。
 
-The `transform`, `filter`, and `backdrop-filter` classes are no longer necessary to "enable" their respective set of composable utilities.
+现在不再需要使用 `transform`、`filter` 和 `backdrop-filter` 类来“启用”它们各自的一组可组合工具。
 
 {/* prettier-ignore */}
 ```html
@@ -420,9 +412,9 @@ The `transform`, `filter`, and `backdrop-filter` classes are no longer necessary
 </div>
 ```
 
-Now those features are automatically enabled any time you use any of the relevant sub-utilities.
+现在，只要您使用任何相关的子工具，这些功能就会自动启用。
 
-It's important to understand though that because these utilities aren't needed anymore, you can no longer expect transforms and filters to be "dormant" by default. If you were relying on conditionally "activating" transforms or filters by toggling these classes, you will want to make sure you are toggling the sub-utilities themselves instead:
+不过要理解的是，因为这些工具不再需要，因此您不能再期待变换和过滤器“处于休眠状态”。如果您依赖于通过切换这些类来“激活”变换或过滤器，您将需要确保切换子工具本身：
 
 {/* prettier-ignore */}
 ```html
@@ -431,15 +423,15 @@ It's important to understand though that because these utilities aren't needed a
 </div>
 ```
 
-I don't expect this will be a real problem for most people, but it's technically a breaking change which is why we've limited this improvement to the JIT engine only.
+我不认为这对大多数人来说会是真正的问题，但这在技术上是一个破坏性变化，这就是为什么我们将此改进仅限于 JIT 引擎。
 
 <a name="per-side-border-color-utilities"></a>
 
-## Per-side border color utilities
+## 每边边框颜色工具
 
-_This feature is only available in <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time mode</Link>_.
+_此功能仅在 <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Just-in-Time 模式</Link> 中可用_。
 
-Requested at least once a month for the last four years, I'm excited to share that we've finally added per-side border color support now that we don't have to sweat the development stylesheet size.
+在过去四年中每月至少请求一次，我很高兴地分享，由于我们不必担心开发样式表的大小，我们终于添加了每边边框颜色支持。
 
 ```html
 <div class="border-2 border-t-blue-500 border-r-pink-500 border-b-green-500 border-l-yellow-500">
@@ -447,15 +439,15 @@ Requested at least once a month for the last four years, I'm excited to share th
 </div>
 ```
 
-Go forth and build ugly websites! _(Kidding, kidding, I know they are useful settle the hell down.)_
+去吧，建造丑陋的网站吧！ _(开玩笑，开玩笑，我知道它们非常实用，冷静点。)_
 
 <a name="built-in-safelist-transform-and-extract-support"></a>
 
-## Built-in safelist, transform, and extract support
+## 内置安全列表、转换和提取支持
 
-We've added first-class support for a bunch of important PurgeCSS features and made them work in the JIT engine as well, which doesn't actually even use PurgeCSS.
+我们为许多重要的 PurgeCSS 功能添加了一级支持，并使它们在 JIT 引擎中也能正常工作，实际上这根本不使用 PurgeCSS。
 
-First is `safelist`, which is super useful if you need to protect specific classes from being removed from your production CSS, perhaps because they are used in content that comes from a database or similar:
+首先是 `safelist`，如果您需要保护特定类不被从生产 CSS 中移除，这非常有用，可能是因为它们被用在来自数据库或类似的内容中：
 
 ```js
 module.exports = {
@@ -473,9 +465,9 @@ module.exports = {
 };
 ```
 
-**Note that while the classic engine will accept regular expressions here, the JIT engine will not**. That's because when we're generating classes on demand, the class doesn't exist until it's used so we have nothing to match the expression against. So if you're using just-in-time mode, make sure you're providing complete class names to get the expected result.
+**请注意，虽然经典引擎将在此接受正则表达式，但 JIT 引擎将不会**。这是因为在按需生成类时，该类在使用之前并不存在，因此我们没法与表达式进行匹配。因此，如果您使用的是即时模式，请确保提供完整的类名以获取预期的结果。
 
-Next is `transform`, which lets you transform content for different file extensions before scanning it for potential class names:
+然后是 `transform`，它让您可以在扫描潜在类名之前转换不同文件扩展名的内容：
 
 ```js
 let remark = require("remark");
@@ -493,9 +485,9 @@ module.exports = {
 };
 ```
 
-This is really useful if you have templates that are written in a language that compiles to HTML, like Markdown.
+如果您有用编译为 HTML 的语言编写的模板，这非常有用，例如 Markdown。
 
-Finally we have `extract`, which lets you customize the logic that Tailwind uses to detect class names in specific file types:
+最后，我们有 `extract`，它让您可以自定义 Tailwind 用于检测特定文件类型中的类名的逻辑：
 
 ```js
 module.exports = {
@@ -511,20 +503,20 @@ module.exports = {
 };
 ```
 
-This is an advanced feature and most users won’t need it. The default extraction logic in Tailwind works extremely well for almost all projects.
+这是一个高级功能，大多数用户不需要它。Tailwind 中的默认提取逻辑对几乎所有项目都能很好地工作。
 
-For more information on these features, check out our <Link href="https://v2.tailwindcss.com/docs/optimizing-for-production">optimizing for production documentation</Link>.
+有关这些功能的更多信息，请查看我们的 <Link href="https://v2.tailwindcss.com/docs/optimizing-for-production">为生产优化文档</Link>。
 
 ---
 
-## Upgrading
+## 升级
 
-To upgrade to Tailwind CSS v2.2, install the latest release from npm:
+要升级到 Tailwind CSS v2.2，请从 npm 安装最新版本：
 
 ```bash
 npm install -D tailwindcss@latest
 ```
 
-If you are using the Just-in-Time mode preview, you'll also want to read through the <Link href="https://github.com/tailwindlabs/tailwindcss/releases/tag/v2.2.0#changes-and-deprecations">changes and deprecations</Link> in the release notes.
+如果您使用的是 Just-in-Time 模式预览，您还需要阅读发布说明中的 <Link href="https://github.com/tailwindlabs/tailwindcss/releases/tag/v2.2.0#changes-and-deprecations">更改和弃用</Link>。
 
-Ready to upgrade? <Link href="https://npmjs.com/tailwindcss">Get it from npm →</Link>
+准备好升级了吗？ <Link href="https://npmjs.com/tailwindcss">从 npm 获取它 →</Link>

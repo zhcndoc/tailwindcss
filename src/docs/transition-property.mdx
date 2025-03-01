@@ -5,7 +5,7 @@ import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import dedent from "dedent";
 
 export const title = "transition-property";
-export const description = "Utilities for controlling which CSS properties transition.";
+export const description = "控制哪些 CSS 属性过渡的工具类。";
 
 <ApiTable
   rows={[
@@ -77,19 +77,19 @@ export const description = "Utilities for controlling which CSS properties trans
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `transition` and `transition-colors` to specify which properties should transition when they change:
+使用 `transition` 和 `transition-colors` 等工具类来指定更改时应过渡哪些属性：
 
-<Figure hint="Hover the button to see the expected behavior">
+<Figure hint="悬停按钮以查看预期效果">
 
 <Example>
   {
     <div className="flex justify-around text-sm leading-6 font-bold text-white">
       <button className="rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500">
-        Save Changes
+        保存更改
       </button>
     </div>
   }
@@ -99,15 +99,15 @@ Use utilities like `transition` and `transition-colors` to specify which propert
 ```html
 <!-- [!code classes:transition] -->
 <button class="bg-blue-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 ...">
-  Save Changes
+  保存更改
 </button>
 ```
 
 </Figure>
 
-### Supporting reduced motion
+### 支持减少运动
 
-For situations where the user has specified that they prefer reduced motion, you can conditionally apply animations and transitions using the `motion-safe` and `motion-reduce` variants:
+在用户指定希望减少运动的情况下，可以使用 `motion-safe` 和 `motion-reduce` 变体有条件地应用动画和过渡：
 
 ```html
 <!-- [!code classes:motion-reduce:transition-none,motion-reduce:hover:transform-none] -->
@@ -117,17 +117,17 @@ For situations where the user has specified that they prefer reduced motion, you
 </button>
 ```
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   element="button"
   utility="transition"
   value="height"
-  name="transition properties"
+  name="过渡属性"
   variable="properties"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="button"

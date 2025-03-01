@@ -4,9 +4,9 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "justify-content";
+export const title = "对齐内容";
 export const description =
-  "Utilities for controlling how flex and grid items are positioned along a container's main axis.";
+  "用于控制弹性和网格项目在容器主轴上如何定位的工具类。";
 
 <ApiTable
   rows={[
@@ -22,11 +22,11 @@ export const description =
   ]}
 />
 
-## Examples
+## 示例
 
-### Start
+### 开始
 
-Use `justify-start` to justify items against the start of the container's main axis:
+使用 `justify-start` 将项目对齐到容器主轴的开始位置：
 
 <Figure>
 
@@ -54,9 +54,9 @@ Use `justify-start` to justify items against the start of the container's main a
 
 </Figure>
 
-### Center
+### 居中
 
-Use `justify-center` to justify items along the center of the container's main axis:
+使用 `justify-center` 将项目在容器主轴的中心对齐：
 
 <Figure>
 
@@ -84,9 +84,9 @@ Use `justify-center` to justify items along the center of the container's main a
 
 </Figure>
 
-### End
+### 结束
 
-Use `justify-end` to justify items against the end of the container's main axis:
+使用 `justify-end` 将项目对齐到容器主轴的结束位置：
 
 <Figure>
 
@@ -114,9 +114,9 @@ Use `justify-end` to justify items against the end of the container's main axis:
 
 </Figure>
 
-### Space between
+### 均分空间
 
-Use `justify-between` to justify items along the container's main axis such that there is an equal amount of space between each item:
+使用 `justify-between` 在容器主轴上将项目对齐，使每个项目之间有相等的空间：
 
 <Figure>
 
@@ -144,9 +144,9 @@ Use `justify-between` to justify items along the container's main axis such that
 
 </Figure>
 
-### Space around
+### 周围空间
 
-Use `justify-around` to justify items along the container's main axis such that there is an equal amount of space on each side of each item:
+使用 `justify-around` 在容器主轴上将项目对齐，使每个项目的两侧有相等的空间：
 
 <Figure>
 
@@ -174,9 +174,9 @@ Use `justify-around` to justify items along the container's main axis such that 
 
 </Figure>
 
-### Space evenly
+### 均匀空间
 
-Use `justify-evenly` to justify items along the container's main axis such that there is an equal amount of space around each item, but also accounting for the doubling of space you would normally see between each item when using `justify-around`:
+使用 `justify-evenly` 在容器主轴上将项目对齐，使每个项目周围有相等的空间，同时考虑到使用 `justify-around` 时每个项目之间的空间翻倍：
 
 <Figure>
 
@@ -204,9 +204,9 @@ Use `justify-evenly` to justify items along the container's main axis such that 
 
 </Figure>
 
-### Stretch
+### 拉伸
 
-Use `justify-stretch` to allow content items to fill the available space along the container's main axis:
+使用 `justify-stretch` 让内容项目填充容器主轴上的可用空间：
 
 <Figure>
 
@@ -234,9 +234,9 @@ Use `justify-stretch` to allow content items to fill the available space along t
 
 </Figure>
 
-### Normal
+### 正常
 
-Use `justify-normal` to pack content items in their default position as if no `justify-content` value was set:
+使用 `justify-normal` 将内容项目打包到其默认位置，就像没有设置 `justify-content` 值一样：
 
 <Figure>
 
@@ -264,6 +264,6 @@ Use `justify-normal` to pack content items in their default position as if no `j
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="justify-content" defaultClass="flex justify-start" featuredClass="justify-between" />

@@ -12,56 +12,53 @@ import clsx from "clsx";
 import { StateAttributesExample } from "./examples/StateAttributesExample";
 
 export const meta = {
-  title: "Headless UI v2.0 for React",
+  title: "React 的 Headless UI v2.0",
   description:
-    "We just released Headless UI v2.0 for React which includes a ton of new stuff including built-in anchor positioning, a new headless checkbox component, HTML form components and more!",
+    "我们刚刚发布了 React 的 Headless UI v2.0，其中包含许多新特性，包括内置锚点定位、新的无头复选框组件、HTML 表单组件等！",
   date: "2024-05-07T16:00:00.000Z",
   authors: [adamwathan, reinink],
   image: card,
   excerpt: (
     <>
-      Nothing beats actually building something real with your own tools when it comes to finding ways to make things
-      better. As we've been working on <Link href="/blog/introducing-catalyst">Catalyst</Link> these last several
-      months, we've been making dozens of improvements to Headless UI that let you write even less code, and make the
-      developer experience even better.
+      在寻找改进事物的方法时，实际使用自己的工具构建一些真实的东西是无与伦比的。过去几个月，我们一直在开发<Link href="/blog/introducing-catalyst">Catalyst</Link>，并对 Headless UI 进行了数十项改进，让你写更少的代码，使开发者体验变得更好。
     </>
   ),
 };
 
 <Image alt="Headless UI v2.0" src={card} />
 
-Nothing beats actually building something real with your own tools when it comes to finding ways to make things better.
+在寻找改进事物的方法时，实际使用自己的工具构建一些真实的东西是无与伦比的。
 
-As we've been working on [Catalyst](/blog/introducing-catalyst) these last several months, we've been making dozens of improvements to Headless UI that let you write even less code, and make the developer experience even better.
+过去几个月，我们一直在开发 [Catalyst](/blog/introducing-catalyst)，并对 Headless UI 进行了数十项改进，让你写更少的代码，使开发者体验变得更好。
 
-We just released Headless UI v2.0 for React, which is the culmination of all this work.
+我们刚刚发布了 React 的 Headless UI v2.0，这是所有这些工作的结晶。
 
-Here's all the best new stuff:
+以下是所有最新的特性：
 
-- [Built-in anchor positioning](#built-in-anchor-positioning)
-- [New checkbox component](#new-checkbox-component)
-- [HTML form components](#html-form-components)
-- [Improved hover, focus and active state detection](#improved-hover-focus-and-active-state-detection)
-- [Combobox list virtualization](#combobox-list-virtualization)
-- [New website and improved docs](#new-website-and-improved-docs)
+- [内置锚点定位](#built-in-anchor-positioning)
+- [新的复选框组件](#new-checkbox-component)
+- [HTML 表单组件](#html-form-components)
+- [改进的悬停、焦点和活动状态检测](#improved-hover-focus-and-active-state-detection)
+- [组合框列表虚拟化](#combobox-list-virtualization)
+- [新网站及改进文档](#new-website-and-improved-docs)
 
-Add it to your project by installing the latest version of `@headlessui/react` from npm:
+通过从 npm 安装最新版本的 `@headlessui/react`，将其添加到你的项目中：
 
 ```sh
 npm install @headlessui/react@latest
 ```
 
-If you're upgrading from v1.x, check out the [upgrade guide](https://github.com/tailwindlabs/headlessui/releases/tag/%40headlessui%2Freact%40v2.0.0#user-content-upgrading-from-v1) to learn more about what's changed.
+如果你正在从 v1.x 升级，请查看 [升级指南](https://github.com/tailwindlabs/headlessui/releases/tag/%40headlessui%2Freact%40v2.0.0#user-content-upgrading-from-v1)，了解更多关于变更的信息。
 
 ---
 
-## Built-in anchor positioning
+## 内置锚点定位
 
-We've integrated [Floating UI](https://floating-ui.com/) directly into Headless UI, so you never have to worry about dropdowns going out of view or being obscured by other elements on the screen.
+我们已经将 [Floating UI](https://floating-ui.com/) 直接集成到 Headless UI 中，因此你再也不必担心下拉菜单超出视野或被其他屏幕元素遮挡。
 
-Use the new `anchor` prop on the `Menu`, `Popover`, `Combobox`, and `Listbox` components to specify the anchor positioning, then fine-tune the placement with CSS variables like `--anchor-gap` and `--anchor-padding`:
+在 `Menu`、`Popover`、`Combobox` 和 `Listbox` 组件上使用新的 `anchor` prop 指定锚点定位，然后使用 CSS 变量如 `--anchor-gap` 和 `--anchor-padding` 微调位置：
 
-<Figure hint="Scroll up and down to see the dropdown position change">
+<Figure hint="上下滚动以查看下拉菜单位置变化">
 
 <Iframe className="h-[400px] w-full overflow-x-scroll">
   <AnchorPositioningExample />
@@ -73,24 +70,24 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 function Example() {
   return (
     <Menu>
-      <MenuButton>Options</MenuButton>
+      <MenuButton>选项</MenuButton>
       <MenuItems
         // [!code highlight:3]
         anchor="bottom start"
         className="[--anchor-gap:8px] [--anchor-padding:8px]"
       >
         <MenuItem>
-          <button>Edit</button>
+          <button>编辑</button>
         </MenuItem>
         <MenuItem>
-          <button>Duplicate</button>
+          <button>重复</button>
         </MenuItem>
         <hr />
         <MenuItem>
-          <button>Archive</button>
+          <button>归档</button>
         </MenuItem>
         <MenuItem>
-          <button>Delete</button>
+          <button>删除</button>
         </MenuItem>
       </MenuItems>
     </Menu>
@@ -100,15 +97,15 @@ function Example() {
 
 </Figure>
 
-What makes this API really nice is that you can tweak the styles at different breakpoints by changing the CSS variables using utility classes like `sm:[--anchor-gap:4px]`.
+这个 API 的优势在于，你可以通过使用像 `sm:[--anchor-gap:4px]` 的工具类来在不同的断点上调整样式。
 
-Check out the [anchor positioning documentation](https://headlessui.com/react/menu#positioning-the-dropdown) for each component for all of the details.
+请查看每个组件的 [锚点定位文档](https://headlessui.com/react/menu#positioning-the-dropdown) 获取所有详细信息。
 
 ---
 
-## New checkbox component
+## 新的复选框组件
 
-We've added a new headless `Checkbox` component to complement our existing `RadioGroup` component, making it easy to build totally custom checkbox controls:
+我们添加了一个新的无头 `Checkbox` 组件，以补充我们现有的 `RadioGroup` 组件，使构建完全自定义的复选框控件变得更加简单：
 
 <Figure>
 
@@ -134,8 +131,8 @@ function Example() {
         <CheckmarkIcon className="stroke-white opacity-0 group-data-[checked]:opacity-100" />
       </Checkbox>
       <div>
-        <Label>Enable beta features</Label>
-        <Description>This will give you early access to any awesome new features we're developing.</Description>
+        <Label>启用测试功能</Label>
+        <Description>这将使你能够提前使用我们正在开发的任何新功能。</Description>
       </div>
     </Field>
   );
@@ -144,29 +141,29 @@ function Example() {
 
 </Figure>
 
-Checkboxes can be controlled or uncontrolled, and can automatically sync their state with a hidden input to play nicely with HTML forms.
+复选框可以是受控或不受控的，并且可以自动与隐藏的输入同步状态，以良好地适配 HTML 表单。
 
-Take a look at the [Checkbox documentation](https://headlessui.com/react/checkbox) to learn more.
+请查看 [复选框文档](https://headlessui.com/react/checkbox) 了解更多信息。
 
 ---
 
-## HTML form components
+## HTML 表单组件
 
-We've added a whole new set of components that just wrap native form controls, but do all of the tedious work of wiring up IDs and `aria-*` attributes for you automatically.
+我们添加了一整套新组件，它们简单地包装了原生表单控件，但自动完成 ID 和 `aria-*` 属性的连接等繁琐工作。
 
-Here's what it looked like to build a simple `<input>` field with a properly associated `<label>` and description before:
+以下是在没有这些新的 Headless UI v2.0 组件之前，构建一个简单 `<input>` 字段，并与适当的 `<label>` 和描述关联的样子：
 
 ```jsx
 <div>
   <label id="name-label" for="name-input">
-    Name
+    姓名
   </label>
   <input id="name-input" aria-labelledby="name-label" aria-describedby="name-description" />
-  <p id="name-description">Use your real name so people will recognize you.</p>
+  <p id="name-description">使用真实姓名，以便人们能识别你。</p>
 </div>
 ```
 
-And here's what it looks like with these new components in Headless UI v2.0:
+而使用这些新组件的情况如下：
 
 ```jsx
 import { Description, Field, Input, Label } from "@headlessui/react";
@@ -174,17 +171,17 @@ import { Description, Field, Input, Label } from "@headlessui/react";
 function Example() {
   return (
     <Field>
-      <Label>Name</Label>
+      <Label>姓名</Label>
       <Input name="your_name" />
-      <Description>Use your real name so people will recognize you.</Description>
+      <Description>使用真实姓名，以便人们能识别你。</Description>
     </Field>
   );
 }
 ```
 
-The new `Field` and `Fieldset` components also cascade disabled states like the native `<fieldset>` element, so you can easily disable an entire group of controls at once:
+新的 `Field` 和 `Fieldset` 组件还像原生的 `<fieldset>` 元素一样级联禁用状态，因此你可以轻松地一次禁用整个控件组：
 
-<Figure hint="Select a country to see the region field become enabled">
+<Figure hint="选择一个国家以查看区域字段变为启用状态">
 
 <FormExample />
 
@@ -198,30 +195,30 @@ export function Example() {
   return (
     <form action="/shipping">
       <Fieldset>
-        <Legend>Shipping details</Legend>
+        <Legend>配送详情</Legend>
         <Field>
-          <Label>Street address</Label>
+          <Label>街道地址</Label>
           <Input name="address" />
         </Field>
         <Field>
-          <Label>Country</Label>
-          <Description>We currently only ship to North America.</Description>
+          <Label>国家</Label>
+          <Description>我们目前仅向北美地区发货。</Description>
           <Select name="country" value={country} onChange={(event) => setCountry(event.target.value)}>
             <option></option>
-            <option>Canada</option>
-            <option>Mexico</option>
-            <option>United States</option>
+            <option>加拿大</option>
+            <option>墨西哥</option>
+            <option>美国</option>
           </Select>
         </Field>
         // [!code highlight:4]
         <Field disabled={!country}>
-          <Label className="data-[disabled]:opacity-40">State/province</Label>
+          <Label className="data-[disabled]:opacity-40">州/省</Label>
           <Select name="region" className="data-[disabled]:opacity-50">
             <option></option>
             {country && regions[country].map((region) => <option>{region}</option>)}
           </Select>
         </Field>
-        <Button>Submit</Button>
+        <Button>提交</Button>
       </Fieldset>
     </form>
   );
@@ -230,41 +227,41 @@ export function Example() {
 
 </Figure>
 
-We expose the disabled state using a `data-disabled` attribute in the rendered HTML. This lets us expose it even on elements that don't support the native `disabled` attribute like the associated `<label>` element, making it really easy to fine-tune the disabled styles for each element.
+我们通过在渲染的 HTML 中使用 `data-disabled` 属性来暴露禁用状态。这使我们能够在不支持原生 `disabled` 属性的元素（如关联的 `<label>` 元素）上也暴露该状态，从而便于微调每个元素的禁用样式。
 
-All in all we've added 8 new components here — `Fieldset`, `Legend`, `Field`, `Label`, `Description`, `Input`, `Select`, and `Textarea`.
+总之，我们在这里添加了 8 个新组件 — `Fieldset`、`Legend`、`Field`、`Label`、`Description`、`Input`、`Select` 和 `Textarea`。
 
-For more details, start with the [Fieldset documentation](https://headlessui.com/react/fieldset) and work your way through the rest.
+有关更多详细信息，请从 [Fieldset 文档](https://headlessui.com/react/fieldset) 开始，并逐步了解其余内容。
 
 ---
 
-## Improved hover, focus and active state detection
+## 改进的悬停、焦点和活动状态检测
 
-Using hooks from the awesome [React Aria](https://react-spectrum.adobe.com/react-aria/hooks.html) library under the hood, Headless UI now adds smarter `data-*` state attributes to your controls that behave more consistently across different devices than the native CSS pseudo-classes:
+使用强大的 [React Aria](https://react-spectrum.adobe.com/react-aria/hooks.html) 库中的 hooks，Headless UI 现在为你的控件添加了更智能的 `data-*` 状态属性，相比于原生 CSS 伪类在不同设备上表现得更加一致：
 
-- `data-active` — like `:active`, but is removed when dragging off of the element.
-- `data-hover` — like `:hover`, but is ignored on touch devices to avoid sticky hover states.
-- # `data-focus` — like `:focus-visible`, without false positives from imperative focusing.
+- `data-active` — 类似于 `:active`，但当从元素上拖动时会消失。
+- `data-hover` — 类似于 `:hover`，但在触控设备上会被忽略，以避免出现粘滞的悬停状态。
+- `data-focus` — 类似于 `:focus-visible`，没有来自命令性聚焦的误报。
 
 <StateAttributesExample />
 
-To learn more about why applying these styles using JavaScript is important, I highly recommend reading through Devon Govett's excellent blog series on this topic:
+要了解更多关于为什么使用 JavaScript 应用这些样式很重要的信息，我强烈推荐阅读 Devon Govett 关于该主题的精彩博客系列：
 
-- [Building a Button Part 1: Press Events](https://react-spectrum.adobe.com/blog/building-a-button-part-1.html)
-- [Building a Button Part 2: Hover Interactions](https://react-spectrum.adobe.com/blog/building-a-button-part-2.html)
-- [Building a Button Part 3: Keyboard Focus Behavior](https://react-spectrum.adobe.com/blog/building-a-button-part-3.html)
+- [构建按钮 第 1 部分：按压事件](https://react-spectrum.adobe.com/blog/building-a-button-part-1.html)
+- [构建按钮 第 2 部分：悬停交互](https://react-spectrum.adobe.com/blog/building-a-button-part-2.html)
+- [构建按钮 第 3 部分：键盘焦点行为](https://react-spectrum.adobe.com/blog/building-a-button-part-3.html)
 
-The web never ceases to surprise me with the amount of effort it takes to actually make nice things.
+在实际上制作美好的东西方面，网络总是让我感到惊讶需要付出多少努力。
 
 ---
 
-## Combobox list virtualization
+## 组合框列表虚拟化
 
-We've integrated [TanStack Virtual](https://tanstack.com/virtual/latest) into Headless UI to support list virtualization when you need to put a hundred thousand items in your combobox because, hey, that's what the boss told you to do.
+我们将 [TanStack Virtual](https://tanstack.com/virtual/latest) 集成到 Headless UI 中，以支持列表虚拟化，当你需要在组合框中放置十万个项目时，正如老板吩咐你的那样。
 
-Use the new `virtual` prop to pass in all of your items, and use the `ComboboxOptions` render prop to provide the template for an individual option:
+使用新的 `virtual` prop 来传入所有项目，并使用 `ComboboxOptions` 渲染 prop 提供单个选项的模板：
 
-<Figure hint="Open the combobox and scroll through the 1,000 options">
+<Figure hint="打开组合框并滚动浏览 1,000 个选项">
 
 <ComboboxExample />
 
@@ -279,7 +276,7 @@ const people = [
   { id: 3, name: "Leonel Abshire" },
   { id: 4, name: "Llewellyn Abshire" },
   { id: 5, name: "Ramon Abshire" },
-  // ...up to 1000 people
+  // ...最多 1000 人
 ];
 
 function Example() {
@@ -322,16 +319,16 @@ function Example() {
 
 </Figure>
 
-Check out the new [virtual scrolling documentation](https://headlessui.com/react/combobox#virtual-scrolling) to learn more.
+请查看新的 [虚拟滚动文档](https://headlessui.com/react/combobox#virtual-scrolling) 了解更多。
 
 ---
 
-## New website and improved docs
+## 新网站及改进文档
 
-To go along with this major release, we've also significantly revamped the documentation and given the website a fresh coat of paint:
+为了配合这次重大发布，我们还大幅改进了文档，并为网站换上了新面貌：
 
 <Link href="https://headlessui.com/">
-  <Image alt="New Headless UI v2.0 website" src={newWebsite} />
+  <Image alt="新的 Headless UI v2.0 网站" src={newWebsite} />
 </Link>
 
-Head over to the new [headlessui.com](https://headlessui.com) to check it out!
+请访问新的 [headlessui.com](https://headlessui.com) 来查看！

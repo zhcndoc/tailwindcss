@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "text-decoration-style";
-export const description = "Utilities for controlling the style of text decorations.";
+export const description = "用于控制文本装饰样式的工具。";
 
 <ApiTable
   rows={[
@@ -16,11 +16,11 @@ export const description = "Utilities for controlling the style of text decorati
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `decoration-dotted` and `decoration-dashed` to change the [text decoration](/docs/text-decoration-line) style of an element:
+使用 `decoration-dotted` 和 `decoration-dashed` 等工具来改变元素的 [文本装饰](/docs/text-decoration-line) 样式：
 
 <Figure>
 
@@ -29,26 +29,26 @@ Use utilities like `decoration-dotted` and `decoration-dashed` to change the [te
     <div className="flex flex-col gap-8 text-gray-900 dark:text-gray-200">
       <div>
         <div className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">decoration-solid</div>
-        <p className="text-lg font-medium underline decoration-solid">The quick brown fox jumps over the lazy dog.</p>
+        <p className="text-lg font-medium underline decoration-solid">快速的棕色狐狸跳过懒狗。</p>
       </div>
       <div>
         <div className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">decoration-double</div>
         <p
           className="text-lg font-medium underline decoration-double"
-          children="The quick brown fox jumps over the lazy dog."
+          children="快速的棕色狐狸跳过懒狗。"
         />
       </div>
       <div>
         <div className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">decoration-dotted</div>
-        <p className="text-lg font-medium underline decoration-dotted">The quick brown fox jumps over the lazy dog.</p>
+        <p className="text-lg font-medium underline decoration-dotted">快速的棕色狐狸跳过懒狗。</p>
       </div>
       <div>
         <div className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">decoration-dashed</div>
-        <p className="text-lg font-medium underline decoration-dashed">The quick brown fox jumps over the lazy dog.</p>
+        <p className="text-lg font-medium underline decoration-dashed">快速的棕色狐狸跳过懒狗。</p>
       </div>
       <div>
         <div className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">decoration-wavy</div>
-        <p className="text-lg font-medium underline decoration-wavy">The quick brown fox jumps over the lazy dog.</p>
+        <p className="text-lg font-medium underline decoration-wavy">快速的棕色狐狸跳过懒狗。</p>
       </div>
     </div>
   }
@@ -56,16 +56,16 @@ Use utilities like `decoration-dotted` and `decoration-dashed` to change the [te
 
 ```html
 <!-- [!code classes:decoration-solid,decoration-double,decoration-dotted,decoration-dashed,decoration-wavy] -->
-<p class="underline decoration-solid">The quick brown fox...</p>
-<p class="underline decoration-double">The quick brown fox...</p>
-<p class="underline decoration-dotted">The quick brown fox...</p>
-<p class="underline decoration-dashed">The quick brown fox...</p>
-<p class="underline decoration-wavy">The quick brown fox...</p>
+<p class="underline decoration-solid">快速的棕色狐狸...</p>
+<p class="underline decoration-double">快速的棕色狐狸...</p>
+<p class="underline decoration-dotted">快速的棕色狐狸...</p>
+<p class="underline decoration-dashed">快速的棕色狐狸...</p>
+<p class="underline decoration-wavy">快速的棕色狐狸...</p>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="p"

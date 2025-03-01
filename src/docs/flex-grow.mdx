@@ -5,7 +5,7 @@ import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "flex-grow";
-export const description = "Utilities for controlling how flex items grow.";
+export const description = "控制flex项目如何生长的工具类。";
 
 <ApiTable
   rows={[
@@ -16,11 +16,11 @@ export const description = "Utilities for controlling how flex items grow.";
   ]}
 />
 
-## Examples
+## 示例
 
-### Allowing items to grow
+### 允许项目生长
 
-Use `grow` to allow a flex item to grow to fill any available space:
+使用 `grow` 来允许 flex 项目生长，以填充任何可用空间：
 
 <Figure>
 
@@ -52,9 +52,9 @@ Use `grow` to allow a flex item to grow to fill any available space:
 
 </Figure>
 
-### Growing items based on factor
+### 基于因子的项目生长
 
-Use `grow-<number>` utilities like `grow-3` to make flex items grow proportionally based on their growth factor, allowing them to fill the available space relative to each other:
+使用 `grow-<number>` 工具类，如 `grow-3`，使 flex 项目根据其生长因子按比例生长，从而填充相对彼此的可用空间：
 
 <Figure>
 
@@ -86,9 +86,9 @@ Use `grow-<number>` utilities like `grow-3` to make flex items grow proportional
 
 </Figure>
 
-### Preventing items from growing
+### 防止项目生长
 
-Use `grow-0` to prevent a flex item from growing:
+使用 `grow-0` 来防止 flex 项目生长：
 
 <Figure>
 
@@ -120,10 +120,10 @@ Use `grow-0` to prevent a flex item from growing:
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="grow" name="flex grow factor" value="25vw" />
+<UsingACustomValue utility="grow" name="flex 生长因子" value="25vw" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="flex-grow" defaultClass="grow" featuredClass="grow-0" />

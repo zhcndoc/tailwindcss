@@ -7,142 +7,91 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const meta = {
-  title: "Tailwind UI: Site templates and all-access",
-  description: `Today we're releasing our first batch of official Tailwind CSS website templates — beautiful designs engineered into production-quality codebases, powered by Tailwind CSS and Next.js.`,
+  title: "Tailwind UI：站点模板与全访问",
+  description: `今天我们发布了第一批官方的 Tailwind CSS 网站模板——美丽的设计，工程化为生产级代码库，由 Tailwind CSS 和 Next.js 提供支持。`,
   date: "2022-06-23T19:40:00.000Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      When I was early in my programming career, I loved following{" "}
-      <Link href="https://thoughtbot.com/">thoughtbot</Link>. They were always writing interesting programming articles
-      and producing fantastic screencasts.
+      当我刚开始我的编程生涯时，我很喜欢关注{" "}
+      <Link href="https://thoughtbot.com/">thoughtbot</Link>。他们总是写有趣的编程文章，并制作出精彩的录制视频。
     </>
   ),
 };
 
-When I was early in my programming career, I loved following{" "}
+当我刚开始我的编程生涯时，我很喜欢关注{" "}
 
-<Link href="https://thoughtbot.com/">thoughtbot</Link>. They were always writing interesting programming articles,
-producing fantastic screencasts, and publishing incredible books. I could tell they really cared about their craft and
-it inspired the hell out of me.
+<Link href="https://thoughtbot.com/">thoughtbot</Link>。他们总是写有趣的编程文章，制作出精彩的录制视频，并出版令人惊叹的书籍。我能感觉到他们真的很关心自己的手艺，这让我受到了极大的鼓舞。
 
-But when they launched{" "}
+但是当他们发布{" "}
 
-<Link href="https://thoughtbot.com/upcase">Upcase</Link>, the thing I was most excited about wasn't the courses or
-weekly videos. What I was most excited about was the source code for Upcase itself — the _actual-in-production_ Rails
-codebase that they gave you access to when you subscribed.
+<Link href="https://thoughtbot.com/upcase">Upcase</Link> 时，我最兴奋的并不是课程或每周视频。让我最兴奋的是 Upcase 本身的源代码——当你订阅时，他们提供的实际在生产中使用的 Rails 代码库。
 
-I'd learned a ton from blog posts, books, and screencasts, but I still craved
-the chance to dig into a real-world codebase crafted by people I trust and
-study how they put all that knowledge together to build a production-ready
-application.
+我从博客文章、书籍和录制视频中学到了很多，但我仍然渴望有机会深入了解一个由我信任的人制作的真实代码库，研究他们如何将所有知识结合起来构建一个可投入生产的应用程序。
 
-That experience was transformative for me, and so for a long time I've wanted
-to give people something like it to learn how real websites are built with
-Tailwind CSS.
+那段经历对我来说是一次变革性的体验，因此我一直希望能给人们提供类似的机会，去学习如何用 Tailwind CSS 构建真实的网站。
 
-How a layout is broken down into components, what sort of APIs those
-components expose, how the config has been customized — all of the interesting
-decisions that you can't see when you just click _view source_ in the browser.
+布局如何被拆分成组件，这些组件暴露了什么样的 API，配置是如何定制的——所有那些你在浏览器中仅仅点击“查看源代码”时无法看到的有趣决策。
 
-So today we're releasing our first batch of official Tailwind CSS{" "}
+所以今天我们发布了第一批官方的 Tailwind CSS{" "}
 
-<Link href="https://tailwindui.com/templates">website templates</Link> — beautiful designs engineered into
-production-quality codebases, powered by Tailwind CSS and Next.js.
+<Link href="https://tailwindui.com/templates">网站模板</Link>——美丽的设计，工程化为生产级代码库，由 Tailwind CSS 和 Next.js 提供支持。
 
-<Image alt="Tailwind CSS Templates" src={templates} />
+<Image alt="Tailwind CSS 模板" src={templates} />
 
-We started designing these way back in March and I'm really excited to get
-these first five out the door so you can check them out and start playing with
-them:
+我们从三月开始设计这些模板，我非常兴奋能够将这前五个模板推出，让你们可以查看和尝试它们：
 
-- <Link href="https://syntax.tailwindui.com/">Syntax</Link> — a documentation site template powered by Stripe's new <Link href="https://markdoc.io/">
+- <Link href="https://syntax.tailwindui.com/">Syntax</Link>——一个文档网站模板，基于 Stripe 的新 <Link href="https://markdoc.io/">
     Markdoc
-  </Link> library that's perfect for things like open-source projects or product documentation.
-- <Link href="https://primer.tailwindui.com/">Primer</Link> — a landing page template for ebooks and courses that bakes
-  in a lot of the best practices we've learned releasing our own info products.
-- <Link href="https://salient.tailwindui.com/">Salient</Link> — a stunning but simple SaaS marketing website you can
-  quickly adapt for your next idea without burning time you wish you were spending on the actual product.
-- <Link href="https://keynote.tailwindui.com/">Keynote</Link> — a beautiful conference website design that works just as
-  well for small local gatherings as it does for international events.
-- <Link href="https://transmit.tailwindui.com/">Transmit</Link> — an awesome podcasting template with a custom
-  persistent audio player that you can wire up to your own RSS feed in no time.
+  </Link> 库，非常适合像开源项目或产品文档的应用。
+- <Link href="https://primer.tailwindui.com/">Primer</Link>——一个电子书和课程的着陆页模板，融入了我们在推出自己信息产品时学习到的许多最佳实践。
+- <Link href="https://salient.tailwindui.com/">Salient</Link>——一个惊艳却简单的 SaaS 营销网站，你可以迅速调整以适应你的下一个想法，而不会浪费你希望用在实际产品上的时间。
+- <Link href="https://keynote.tailwindui.com/">Keynote</Link>——一个美丽的会议网站设计，适合小型本地聚会，也非常适合国际活动。
+- <Link href="https://transmit.tailwindui.com/">Transmit</Link>——一个非常棒的播客模板，配有一个自定义的持久音频播放器，你可以迅速将其连接到自己的 RSS 源。
 
-We've put a ton of time and attention into both the design and the code, and
-everything is structured exactly the way we'd do it in a real production
-project. They're the perfect starting point when you don't want to start from a
-blank canvas, and the best way to learn how experts build modern websites with
-Tailwind CSS.
+我们在设计和代码方面投入了大量时间和精力，所有内容的结构完全是我们在真实生产项目中会采用的方式。当你不想从空白画布开始时，它们是完美的起点，也是学习专家如何使用 Tailwind CSS 构建现代网站的最佳方式。
 
-<Image alt="Code Structure" src={codeStructure} />
+<Image alt="代码结构" src={codeStructure} />
 
-Each template can be purchased on its own for **$99**, or you can get all of
-them with <Link href="https://tailwindui.com/all-access">all-access</Link> —
-the new _get-everything-we-ever-add-forever_ package we're launching today.
+每个模板可以单独以 **$99** 购买，或者你可以通过 <Link href="https://tailwindui.com/all-access">全访问</Link> 获取全部——我们今天发布的新 _获取我们未来发布的所有内容_ 套餐。
 
 ---
 
-## Going all in on all-access
+## 全力以赴全访问
 
-When we started working on templates, one of the things I was really sure about
-is that I wanted it to be easy to get access to _all_ of them.
+当我们开始制作模板时，我很确定的一点是我希望能够轻松获取到 _所有_ 模板。
 
-This was important to me for two reasons:
+这对我来说重要的原因有两个：
 
-1. **I want people to think of our templates more like educational resources
-   than traditional website themes**. Every template we build has its own
-   unique learning moments, and I don't want people to have to be selective
-   about what they get to learn from.
+1. **我希望人们将我们的模板视为教育资源，而不是传统网站主题**。我们构建的每个模板都有其独特的学习时刻，我不希望人们不得不挑选他们能从中学习的内容。
 
-2. **I don't want to worry about ROI on a per-template basis**. Nothing would
-   suck the fun out of designing and building templates like having to make
-   sure each one had mass appeal. I want us to have the freedom to make niche,
-   interesting stuff with cool ideas to study, not just templates that can sell
-   enough copies on their own to justify the work we put into them.
+2. **我不想担心每个模板的投资回报**。没有什么比确保每个模板都有广泛吸引力更能消减设计和构建模板的乐趣。我希望我们有自由去制作小众、有趣的东西，以及酷的研究想法，而不仅仅是能够独立售出足够副本来证明我们投入的工作的模板。
 
-When I was a kid I went to this{" "}
+当我还是个小孩时，我去过一个{" "}
 
-<Link href="https://en.concerts-metal.com/concert_-_Hellfest_2008-3308.html">music festival</Link> in France where
-almost a hundred bands performed. There were a couple of bands on the bill I absolutely _loved_, knew every song, and
-would buy a ticket to see any day of the week.
+<Link href="https://en.concerts-metal.com/concert_-_Hellfest_2008-3308.html">法国的音乐节</Link>，几乎有一百支乐队表演。演出阵容中有几支乐队我绝对 _爱_，知道每一首歌，随时都愿意买票去看。
 
-Most of them though were bands I really _liked_, but wouldn't have made the 90
-minute drive to make it out to a show. But putting all of them on a bill
-together got me to buy a plane ticket to Paris, and have one of the best
-experiences of my life.
+然而大多数乐队我其实只是很 _喜欢_，但不会专门开车 90 分钟来参加演出。但把它们都安排在一起让我买了去巴黎的机票，体验了我人生中最美好的经历之一。
 
-I want Tailwind UI to feel like a music festival, where you can wander from
-stage to stage, enjoy a song or two from a band you've never heard of, and once
-in a while be blown away by a performance you would have never otherwise
-bothered to check out.
+我希望 Tailwind UI 感觉像一个音乐节，你可以在不同的舞台之间漫游，享受来自你从未听说过的乐队的几首歌，偶尔被你本不会关注的表演惊艳到。
 
-So we're launching a new{" "}
+所以我们推出了一个新的{" "}
 
-<Link href="https://tailwindui.com/all-access">all-access package</Link> for Tailwind UI that includes access to every
-template and component package that exists today and any new content we add in the future.
+<Link href="https://tailwindui.com/all-access">全访问套餐</Link>，Tailwind UI 包含对今天拥有的每个模板和组件包的访问权限，以及我们未来添加的任何新内容。
 
-<Image alt="Get Tailwind UI all-access" src={allAccess} />
+<Image alt="获取 Tailwind UI 全访问" src={allAccess} />
 
-It's a one-time purchase of **$299**. No subscription, no upgrade costs — if we
-add something new to Tailwind UI, it's yours, forever.
+这是一次性购买，价格为 **$299**。没有订阅，没有升级费用——如果我们在 Tailwind UI 中添加了新内容，它就是你的，永久有效。
 
-And if you already own everything in Tailwind UI, **we've upgraded you to
-all-access for free**.
+如果你已经拥有 Tailwind UI 中的所有内容，**我们将免费为你升级到全访问**。
 
 ---
 
-So there you have it — that's everything we've been working on for the last few
-months!
+所以你看，这就是我们过去几个月以来一直在努力工作的所有内容！
 
-We've got a bunch of new templates in the works already, and we're actively
-working on extracting a lot of the component ideas from these templates into
-new examples to include in the Marketing, Application UI, and Ecommerce
-component categories.
+我们已经有一批新的模板在开发中，并且我们正在积极提取许多组件的创意，将其转化为新的示例，以包含在市场营销、应用程序 UI 和电子商务组件类别中。
 
-That's one of my favorite things about working on these site templates —
-building real-world stuff with Tailwind is the best way for us to come up with
-new component ideas, and to find ways to improve both Tailwind CSS and Headless
-UI too.
+这是我最喜欢的制作这些网站模板的事情之一——用 Tailwind 构建现实世界的东西是我们提出新组件想法的最佳方式，同时还可以找到改善 Tailwind CSS 和 Headless UI 的方法。
 
-Look forward to lots of new Tailwind UI stuff in the coming months!
+期待在未来几个月中看到大量新的 Tailwind UI 内容！

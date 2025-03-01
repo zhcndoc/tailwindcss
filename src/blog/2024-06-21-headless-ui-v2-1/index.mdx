@@ -3,28 +3,27 @@ import card from "./card.jpg";
 import Image from "next/image";
 
 export const meta = {
-  title: "Headless UI v2.1: Simplified transition API and improved multi-dialog support",
+  title: "Headless UI v2.1: 简化过渡 API 和改进多对话框支持",
   description: "",
   date: "2024-06-21T15:00:00.000Z",
   authors: [adamwathan, reinink],
   image: card,
   excerpt: (
     <>
-      We just released Headless UI v2.1 for React, which dramatically simplifies our transition APIs and adds support
-      for rendering multiple dialogs as siblings.
+      我们刚刚发布了适用于 React 的 Headless UI v2.1，该版本显著简化了我们的过渡 API，并增加了同时渲染多个对话框作为兄弟元素的支持。
     </>
   ),
 };
 
 <Image src={card} alt="Headless UI v2.1" />
 
-We just released Headless UI v2.1 for React, which dramatically simplifies our transition APIs and adds support for rendering multiple dialogs as siblings.
+我们刚刚发布了适用于 React 的 Headless UI v2.1，该版本显著简化了我们的过渡 API，并增加了同时渲染多个对话框作为兄弟元素的支持。
 
 ---
 
-## Simplified transition API
+## 简化的过渡 API
 
-We've made transitions way easier in v2.1 by adding a new `transition` prop to all of the built-in components you might want to transition, and adding data attributes for each transition stage so you can add transition styles by just throwing some classes on the target element:
+在 v2.1 中，我们通过向您可能想要过渡的所有内置组件添加新的 `transition` 属性，极大地简化了过渡，使您可以通过为目标元素添加一些类来添加过渡样式，增加了每个过渡阶段的数据属性：
 
 {/* prettier-ignore */}
 ```jsx
@@ -33,7 +32,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 function Example() {
   return (
     <Menu>
-      <MenuButton>My account</MenuButton>
+      <MenuButton>我的账户</MenuButton>
       <MenuItems
         // [!code highlight:7]
         transition
@@ -43,21 +42,21 @@ function Example() {
           data-[enter]:duration-200 data-[leave]:duration-300
         `}
       >
-        {/* Menu items… */}
+        {/* 菜单项… */}
       </MenuItems>
     </Menu>
   );
 }
 ```
 
-There are four data attributes you can use to target the different stages of your transitions:
+您可以使用以下四个数据属性来定位过渡的不同阶段：
 
-- `data-closed`: The styles the element should transition from when entering and to when leaving.
-- `data-enter`: Styles to apply while the element is entering, like a duration or easing curve.
-- `data-leave`: Styles to apply while the element is leaving, like a duration or easing curve.
-- `data-transition`: Styles to apply while the element is entering or leaving, useful for sharing values between both stages.
+- `data-closed`: 元素进入时进行过渡时的样式，以及离开时的样式。
+- `data-enter`: 应用于元素进入时的样式，比如持续时间或缓动曲线。
+- `data-leave`: 应用于元素离开时的样式，比如持续时间或缓动曲线。
+- `data-transition`: 应用于元素进入或离开时的样式，对于在两个阶段之间共享值非常有用。
 
-You can even stack these attributes to use different `closed` styles for entering and leaving. For example this dialog slides in from the left, but slides out to the right:
+您甚至可以堆叠这些属性，以便使用不同的 `closed` 样式进行进入和离开。例如，这个对话框从左侧滑入，但向右滑出：
 
 {/* prettier-ignore */}
 ```jsx
@@ -69,7 +68,7 @@ function Example() {
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)}>Open dialog</button>
+      <button onClick={() => setIsOpen(true)}>打开对话框</button>
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}
@@ -82,14 +81,14 @@ function Example() {
           data-[closed]:data-[leave]:translate-x-8
         `}
       >
-        {/* Dialog content… */}
+        {/* 对话框内容… */}
       </Dialog>
     </>
   );
 }
 ```
 
-And for transitioning regular HTML elements or other components, you can still use the `<Transition>` component but with the new data attribute APIs:
+对于过渡常规 HTML 元素或其他组件，您仍然可以使用 `<Transition>` 组件，但使用新的数据属性 API：
 
 ```jsx
 import { Transition } from "@headlessui/react";
@@ -100,31 +99,31 @@ function Example() {
 
   return (
     <>
-      <button onClick={() => setIsShowing((isShowing) => !isShowing)}>Toggle</button>
+      <button onClick={() => setIsShowing((isShowing) => !isShowing)}>切换</button>
       // [!code highlight:6]
       <Transition show={isShowing}>
-        <div className="transition duration-300 data-[closed]:opacity-0">I will fade in and out</div>
+        <div className="transition duration-300 data-[closed]:opacity-0">我将渐隐渐现</div>
       </Transition>
     </>
   );
 }
 ```
 
-We've already updated all of Tailwind UI to use this new transition API and the code is a lot simpler and lighter. Take a look at the [Modal Dialog](https://tailwindui.com/components/application-ui/overlays/modal-dialogs), [Dropdown](https://tailwindui.com/components/application-ui/elements/dropdowns), [Slide-over](https://tailwindui.com/components/application-ui/overlays/slide-overs), [Flyout Menu](https://tailwindui.com/components/marketing/elements/flyout-menus), or [Select Menu](https://tailwindui.com/components/application-ui/forms/select-menus) components for more examples.
+我们已经更新了所有 Tailwind UI 组件以使用这个新的过渡 API，代码变得更加简洁和轻量。查看 [模态对话框](https://tailwindui.com/components/application-ui/overlays/modal-dialogs)、[下拉菜单](https://tailwindui.com/components/application-ui/elements/dropdowns)、[滑动覆盖](https://tailwindui.com/components/application-ui/overlays/slide-overs)、[悬浮菜单](https://tailwindui.com/components/marketing/elements/flyout-menus) 或 [选择菜单](https://tailwindui.com/components/application-ui/forms/select-menus) 组件以获取更多示例。
 
-All of the existing APIs continue to work for backwards compatibility, but this new approach is what we're going to recommend going forward.
+所有现有的 API 仍继续支持以保持向后兼容，但这个新的方法是我们今后推荐的方式。
 
-Check out the updated [`Transition` component documentation](https://headlessui.com/react/transition) to learn more.
+查看更新后的 [`Transition` 组件文档](https://headlessui.com/react/transition) 以了解更多信息。
 
 ---
 
-## Rendering multiple dialogs as siblings
+## 同时渲染多个对话框作为兄弟元素
 
-In Headless UI v2.1 you can finally render multiple dialogs at the same time without nesting one inside the other.
+在 Headless UI v2.1 中，您可以最终同时渲染多个对话框，而无需将一个对话框嵌套在另一个内部。
 
-This can be really helpful when two unrelated parts of your application need to show a dialog at the same time — for example maybe you already have some sort of confirmation dialog open but another part of your app detects that you've lost network connectivity or your session has timed-out and needs to throw up a new dialog on top.
+当您应用的两个不相关部分需要同时显示一个对话框时，这可能非常有帮助 – 例如您可能已经打开某种确认对话框，但应用的另一部分检测到您失去了网络连接或您的会话已超时，需要在上面弹出一个新对话框。
 
-Here's what something like that might look like with [Catalyst](https://tailwindui.com/templates/catalyst), the application UI kit we've been working on recently:
+以下是与我们最近正在开发的应用 UI 套件 [Catalyst](https://tailwindui.com/templates/catalyst) 类似的效果：
 
 <div className="relative overflow-hidden rounded-2xl">
   <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
@@ -138,14 +137,14 @@ Here's what something like that might look like with [Catalyst](https://tailwind
   />
 </div>
 
-We keep track of the order in which each dialog is opened, and whichever one was opened last is the one that will close when you press escape or click outside the dialog.
+我们跟踪每个对话框打开的顺序，最近打开的那个将在您按下 ESC 键或单击对话框外部时关闭。
 
 ---
 
-To start using this stuff today, just install the latest version of Headless UI:
+要立即开始使用这些功能，只需安装最新版本的 Headless UI：
 
 ```sh
 npm i @headlessui/react@latest
 ```
 
-If you run into any issues, let us know on [GitHub](https://github.com/tailwindlabs/headlessui)!
+如果您遇到任何问题，请在 [GitHub](https://github.com/tailwindlabs/headlessui) 上告知我们！

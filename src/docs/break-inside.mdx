@@ -2,7 +2,7 @@ import { ApiTable } from "@/components/api-table.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "break-inside";
-export const description = "Utilities for controlling how a column or page should break within an element.";
+export const description = "用于控制元素内部如何进行列或页面换行的工具。";
 
 <ApiTable
   rows={[
@@ -13,22 +13,22 @@ export const description = "Utilities for controlling how a column or page shoul
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `break-inside-column` and `break-inside-avoid-page` to control how a column or page break should behave within an element:
+使用 `break-inside-column` 和 `break-inside-avoid-page` 等工具来控制元素内部列或页面换行的行为：
 
 ```html
 <!-- [!code classes:break-inside-avoid-column] -->
 <div class="columns-2">
-  <p>Well, let me tell you something, ...</p>
-  <p class="break-inside-avoid-column">Sure, go ahead, laugh...</p>
-  <p>Maybe we can live without...</p>
-  <p>Look. If you think this is...</p>
+  <p>好吧，让我告诉你一些事情，...</p>
+  <p class="break-inside-avoid-column">当然，继续，笑吧...</p>
+  <p>也许我们可以没有...</p>
+  <p>看。如果你认为这是...</p>
 </div>
 ```
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="break-inside" defaultClass="break-inside-avoid-column" featuredClass="break-inside-auto" />

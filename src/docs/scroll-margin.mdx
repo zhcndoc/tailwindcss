@@ -4,8 +4,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "scroll-margin";
-export const description = "Utilities for controlling the scroll offset around items in a snap container.";
+export const title = "滚动边距";
+export const description = "控制快照容器中项目周围滚动偏移的工具。";
 
 <ApiTable
   rows={[
@@ -26,13 +26,13 @@ export const description = "Utilities for controlling the scroll offset around i
   ])}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use the `scroll-mt-<number>`, `scroll-mr-<number>`, `scroll-mb-<number>`, and `scroll-ml-<number>` utilities like `scroll-ml-4` and `scroll-mt-6` to set the scroll offset around items within a snap container:
+使用 `scroll-mt-<number>`、`scroll-mr-<number>`、`scroll-mb-<number>` 和 `scroll-ml-<number>` 工具，例如 `scroll-ml-4` 和 `scroll-mt-6`，在快照容器中设置项目周围的滚动偏移：
 
-<Figure hint="Scroll in the grid of images to see the expected behavior">
+<Figure hint="在图像网格中滚动以查看预期行为">
 
 <Example padding={false}>
   {
@@ -100,9 +100,9 @@ Use the `scroll-mt-<number>`, `scroll-mr-<number>`, `scroll-mb-<number>`, and `s
 
 </Figure>
 
-### Using negative values
+### 使用负值
 
-To use a negative scroll margin value, prefix the class name with a dash to convert it to a negative value:
+要使用负的滚动边距值，请在类名前加上破折号以将其转换为负值：
 
 ```html
 <!-- [!code classes:-scroll-ml-6] -->
@@ -111,16 +111,16 @@ To use a negative scroll margin value, prefix the class name with a dash to conv
 </div>
 ```
 
-### Using logical properties
+### 使用逻辑属性
 
-Use the `scroll-ms-<number>` and `scroll-me-<number>` utilities to set the `scroll-margin-inline-start` and `scroll-margin-inline-end` [logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts), which map to either the left or right side based on the text direction:
+使用 `scroll-ms-<number>` 和 `scroll-me-<number>` 工具设置 `scroll-margin-inline-start` 和 `scroll-margin-inline-end` [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)，这些属性基于文本方向映射至左侧或右侧：
 
-<Figure hint="Scroll in the grid of images to see the expected behavior">
+<Figure hint="在图像网格中滚动以查看预期行为">
 
 <Example padding={false}>
   {
     <>
-      <p className="mb-4 pt-8 pl-6 text-sm font-medium">Left-to-right</p>
+      <p className="mb-4 pt-8 pl-6 text-sm font-medium">从左到右</p>
       <div className="flex w-full snap-x gap-12 overflow-x-auto pb-10" dir="ltr">
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pr-[calc(100%-21.5rem)]">
           <Stripes border className="absolute start-0 top-0 bottom-0 w-6" />
@@ -158,7 +158,7 @@ Use the `scroll-ms-<number>` and `scroll-me-<number>` utilities to set the `scro
           />
         </div>
       </div>
-      <p className="mt-4 mb-4 pl-6 text-sm font-medium">Right-to-left</p>
+      <p className="mt-4 mb-4 pl-6 text-sm font-medium">从右到左</p>
       <div className="flex w-full snap-x gap-12 overflow-x-auto pb-10" dir="rtl">
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pl-[calc(100%-21.5rem)]">
           <Stripes border className="absolute start-0 top-0 bottom-0 w-6" />
@@ -226,17 +226,17 @@ Use the `scroll-ms-<number>` and `scroll-me-<number>` utilities to set the `scro
 
 </Figure>
 
-For more control, you can also use the [LTR and RTL modifiers](/docs/hover-focus-and-other-states#rtl-support) to conditionally apply specific styles depending on the current text direction.
+为了获得更多控制，您还可以使用 [LTR 和 RTL 修饰符](/docs/hover-focus-and-other-states#rtl-support) 根据当前文本方向有条件地应用特定样式。
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utilities={["scroll-ml", "scroll-me"]} value="24rem" name="scroll margin" variable="scroll-margin" />
+<UsingACustomValue utilities={["scroll-ml", "scroll-me"]} value="24rem" name="滚动边距" variable="scroll-margin" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="scroll-margin" defaultClass="scroll-m-8" featuredClass="scroll-m-0" />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourSpacingScale
   utilities={[

@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "perspective-origin";
-export const description = "Utilities for controlling an element's perspective origin when placed in 3D space.";
+export const title = "透视原点";
+export const description = "控制元素在三维空间中的透视原点的工具。";
 
 <ApiTable
   rows={[
@@ -22,11 +22,11 @@ export const description = "Utilities for controlling an element's perspective o
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `perspective-origin-top` and `perspective-origin-bottom-left` to control where the vanishing point of a perspective is located:
+使用 `透视原点-顶部` 和 `透视原点-底部左侧` 等工具来控制透视消失点的位置：
 
 <Figure>
 
@@ -35,7 +35,7 @@ Use utilities like `perspective-origin-top` and `perspective-origin-bottom-left`
     <div className="flex flex-col justify-around gap-8 text-sm leading-6 font-bold text-white sm:flex-row sm:gap-0">
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">
-          perspective-origin-top-left
+          透视原点-顶部左侧
         </p>
         <div className="size-40 p-10">
           <div className="size-20 rotate-[0.75_1_0.75_45deg] perspective-near perspective-origin-top-left transform-3d *:backface-visible">
@@ -62,7 +62,7 @@ Use utilities like `perspective-origin-top` and `perspective-origin-bottom-left`
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-sm font-medium text-gray-500 dark:text-gray-400">
-          perspective-origin-bottom-right
+          透视原点-底部右侧
         </p>
         <div className="size-40 p-10">
           <div className="size-20 rotate-[0.75_1_0.75_45deg] perspective-near perspective-origin-bottom-right transform-3d *:backface-visible">
@@ -114,11 +114,11 @@ Use utilities like `perspective-origin-top` and `perspective-origin-bottom-left`
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue utility="perspective-origin" value="200%_150%" name="perspective origin" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   property="perspective-origin"

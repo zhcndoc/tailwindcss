@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, TargetingSpecificStates, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "filter";
-export const description = "Utilities for applying filters to an element.";
+export const title = "滤镜";
+export const description = "用于将滤镜应用于元素的工具。";
 
 <ApiTable
   rows={[
@@ -14,11 +14,11 @@ export const description = "Utilities for applying filters to an element.";
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `blur-xs` and `grayscale` to apply filters to an element:
+使用如 `blur-xs` 和 `grayscale` 的工具将滤镜应用于元素：
 
 <Figure>
 
@@ -72,18 +72,18 @@ Use utilities like `blur-xs` and `grayscale` to apply filters to an element:
 
 </Figure>
 
-You can combine the following filter utilities: [blur](/docs/filter-blur), [brightness](/docs/filter-brightness), [contrast](/docs/filter-contrast), [drop-shadow](/docs/filter-drop-shadow), [grayscale](/docs/filter-grayscale), [hue-rotate](/docs/filter-hue-rotate), [invert](/docs/filter-invert), [saturate](/docs/filter-saturate), and [sepia](/docs/filter-sepia).
+您可以组合以下滤镜工具：[blur](/docs/filter-blur), [brightness](/docs/filter-brightness), [contrast](/docs/filter-contrast), [drop-shadow](/docs/filter-drop-shadow), [grayscale](/docs/filter-grayscale), [hue-rotate](/docs/filter-hue-rotate), [invert](/docs/filter-invert), [saturate](/docs/filter-saturate), 和 [sepia](/docs/filter-sepia)。
 
-### Removing filters
+### 移除滤镜
 
-Use the `filter-none` utility to remove all of the filters applied to an element:
+使用 `filter-none` 工具来移除应用于元素的所有滤镜：
 
 ```html
 <!-- [!code classes:md:filter-none] -->
 <img class="blur-md brightness-150 invert md:filter-none" src="/img/mountains.jpg" />
 ```
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   element="img"
@@ -92,7 +92,7 @@ Use the `filter-none` utility to remove all of the filters applied to an element
   value="url('filters.svg#filter-id')"
 />
 
-### Applying on hover
+### 悬停时应用
 
 <TargetingSpecificStates
   element="img"
@@ -102,7 +102,7 @@ Use the `filter-none` utility to remove all of the filters applied to an element
   featuredClass="filter-none"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="img"

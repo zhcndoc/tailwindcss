@@ -3,8 +3,8 @@ import { CustomizingYourTheme, ResponsiveDesign, UsingACustomValue } from "@/com
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "font-family";
-export const description = "Utilities for controlling the font family of an element.";
+export const title = "字体系列";
+export const description = "控制元素字体系列的工具类。";
 
 <ApiTable
   rows={[
@@ -22,11 +22,11 @@ export const description = "Utilities for controlling the font family of an elem
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use utilities like `font-sans` and `font-mono` to set the font family of an element:
+使用诸如 `font-sans` 和 `font-mono` 的工具类来设置元素的字体系列：
 
 <Figure>
 
@@ -36,19 +36,19 @@ Use utilities like `font-sans` and `font-mono` to set the font family of an elem
       <div>
         <span className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-sans</span>
         <p className="font-sans text-lg font-medium text-gray-900 dark:text-gray-200">
-          The quick brown fox jumps over the lazy dog.
+          灵活的棕色狐狸跳过懒狗。
         </p>
       </div>
       <div>
         <span className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-serif</span>
         <p className="font-serif text-lg font-medium text-gray-900 dark:text-gray-200">
-          The quick brown fox jumps over the lazy dog.
+          灵活的棕色狐狸跳过懒狗。
         </p>
       </div>
       <div>
         <span className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">font-mono</span>
         <p className="font-mono text-lg font-medium text-gray-900 dark:text-gray-200">
-          The quick brown fox jumps over the lazy dog.
+          灵活的棕色狐狸跳过懒狗。
         </p>
       </div>
     </div>
@@ -57,31 +57,31 @@ Use utilities like `font-sans` and `font-mono` to set the font family of an elem
 
 ```html
 <!-- [!code classes:font-sans,font-serif,font-mono] -->
-<p class="font-sans ...">The quick brown fox ...</p>
-<p class="font-serif ...">The quick brown fox ...</p>
-<p class="font-mono ...">The quick brown fox ...</p>
+<p class="font-sans ...">灵活的棕色狐狸 ...</p>
+<p class="font-serif ...">灵活的棕色狐狸 ...</p>
+<p class="font-mono ...">灵活的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="font" name="font family" value="Open_Sans" element="p" dataType="family-name" />
+<UsingACustomValue utility="font" name="字体系列" value="Open_Sans" element="p" dataType="family-name" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="font-family" defaultClass="font-sans" featuredClass="font-serif" element="p" />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourTheme
   utility="font"
-  name="font family"
+  name="字体系列"
   customName="display"
   customValue='"Oswald", "sans-serif"'
 >
 
-You can also provide default `font-feature-settings` and `font-variation-settings` values for a font family:
+您还可以为字体系列提供默认的 `font-feature-settings` 和 `font-variation-settings` 值：
 
 ```css
 @theme {
@@ -91,7 +91,7 @@ You can also provide default `font-feature-settings` and `font-variation-setting
 }
 ```
 
-If needed, use the [@font-face](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) at-rule to load custom fonts:
+如有需要，使用 [@font-face](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) 规则加载自定义字体：
 
 ```css
 @font-face {
@@ -103,7 +103,7 @@ If needed, use the [@font-face](https://developer.mozilla.org/en-US/docs/Web/CSS
 }
 ```
 
-If you're loading a font from a service like [Google Fonts](https://fonts.google.com/), make sure to put the `@import` at the very top of your CSS file:
+如果您从 [Google Fonts](https://fonts.google.com/) 等服务加载字体，请确保将 `@import` 放在 CSS 文件的最顶部：
 
 ```css
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap"); /* [!code highlight] */
@@ -114,6 +114,6 @@ If you're loading a font from a service like [Google Fonts](https://fonts.google
 }
 ```
 
-Browsers require that `@import` statements come before any other rules, so URL imports need to be above imports like `@import "tailwindcss"` which are inlined in the compiled CSS.
+浏览器要求 `@import` 语句位于任何其他规则之前，因此 URL 导入需要在像 `@import "tailwindcss"` 这样的导入之上，这些导入在编译后的 CSS 中是内联的。
 
 </CustomizingYourTheme>

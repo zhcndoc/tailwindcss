@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "text-decoration-thickness";
-export const description = "Utilities for controlling the thickness of text decorations.";
+export const title = "文本装饰厚度";
+export const description = "用于控制文本装饰厚度的工具类。";
 
 <ApiTable
   rows={[
@@ -16,11 +16,11 @@ export const description = "Utilities for controlling the thickness of text deco
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use `decoration-<number>` utilities like `decoration-2` and `decoration-4` to change the [text decoration](/docs/text-decoration-line) thickness of an element:
+使用 `decoration-<number>` 工具类，如 `decoration-2` 和 `decoration-4` 来改变元素的 [文本装饰](/docs/text-decoration-line) 厚度：
 
 <Figure>
 
@@ -29,15 +29,15 @@ Use `decoration-<number>` utilities like `decoration-2` and `decoration-4` to ch
     <div className="flex flex-col gap-8 text-gray-900 dark:text-gray-200">
       <div>
         <div className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">decoration-1</div>
-        <p className="text-lg font-medium underline decoration-1">The quick brown fox jumps over the lazy dog.</p>
+        <p className="text-lg font-medium underline decoration-1">快棕色狐狸跃过懒狗。</p>
       </div>
       <div>
         <div className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">decoration-2</div>
-        <p className="text-lg font-medium underline decoration-2">The quick brown fox jumps over the lazy dog.</p>
+        <p className="text-lg font-medium underline decoration-2">快棕色狐狸跃过懒狗。</p>
       </div>
       <div>
         <div className="mb-3 font-mono text-sm font-medium text-gray-500 dark:text-gray-400">decoration-4</div>
-        <p className="text-lg font-medium underline decoration-4">The quick brown fox jumps over the lazy dog.</p>
+        <p className="text-lg font-medium underline decoration-4">快棕色狐狸跃过懒狗。</p>
       </div>
     </div>
   }
@@ -45,26 +45,26 @@ Use `decoration-<number>` utilities like `decoration-2` and `decoration-4` to ch
 
 ```html
 <!-- [!code classes:decoration-1] -->
-<p class="underline decoration-1">The quick brown fox...</p>
+<p class="underline decoration-1">快棕色狐狸...</p>
 <!-- [!code classes:decoration-2] -->
-<p class="underline decoration-2">The quick brown fox...</p>
+<p class="underline decoration-2">快棕色狐狸...</p>
 <!-- [!code classes:decoration-4] -->
-<p class="underline decoration-4">The quick brown fox...</p>
+<p class="underline decoration-4">快棕色狐狸...</p>
 ```
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   element="p"
   utility="decoration"
-  name="text decoration thickness"
+  name="文本装饰厚度"
   value="0.25rem"
   variable="decoration-thickness"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="p"

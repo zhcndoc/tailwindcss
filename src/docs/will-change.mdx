@@ -3,7 +3,7 @@ import { Example } from "@/components/example.tsx";
 import { UsingACustomValue } from "@/components/content.tsx";
 
 export const title = "will-change";
-export const description = "Utilities for optimizing upcoming animations of elements that are expected to change.";
+export const description = "用于优化预计将要变化的元素的即将到来的动画的工具类。";
 
 <ApiTable
   rows={[
@@ -16,11 +16,11 @@ export const description = "Utilities for optimizing upcoming animations of elem
   ]}
 />
 
-## Examples
+## 示例
 
-### Optimizing with will change
+### 使用 will-change 进行优化
 
-Use the `will-change-scroll`, `will-change-contents` and `will-change-transform` utilities to optimize an element that's expected to change in the near future by instructing the browser to prepare the necessary animation before it actually begins:
+使用 `will-change-scroll`、`will-change-contents` 和 `will-change-transform` 工具类来优化一个预计将在不久的将来发生变化的元素，通过指示浏览器在动画实际开始之前准备必要的动画：
 
 ```html
 <!-- [!code classes:will-change-scroll] -->
@@ -29,17 +29,17 @@ Use the `will-change-scroll`, `will-change-contents` and `will-change-transform`
 </div>
 ```
 
-It's recommended that you apply these utilities just before an element changes, and then remove it shortly after it finishes using `will-change-auto`.
+建议在元素变化之前立即应用这些工具类，然后在动画完成后不久使用 `will-change-auto` 将其移除。
 
-The `will-change` property is intended to be used as a last resort when dealing with **known performance problems**. Avoid using these utilities too much, or simply in anticipation of performance issues, as it could actually cause the page to be less performant.
+`will-change` 属性旨在作为处理**已知性能问题**的最后手段来使用。避免过多使用这些工具类，或仅仅因为预期的性能问题而使用它们，因为这实际上可能导致页面性能降低。
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   utility="will-change"
   name={
     <>
-      <code>will-change</code> property
+      <code>will-change</code> 属性
     </>
   }
   value="top,left"

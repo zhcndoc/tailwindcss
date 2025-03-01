@@ -4,25 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const meta = {
-  title: "Welcoming David Luhr to Tailwind Labs",
-  description: `We started working with David Luhr last summer to help us develop a Figma version of Tailwind UI, as well as to leverage his accessibility expertise, ensuring we were following best practices and delivering markup that would work for everyone. Today we're excited to share that David has joined the team full-time!`,
+  title: "欢迎 David Luhr 加入 Tailwind Labs",
+  description: `我们从去年夏天开始与 David Luhr 合作，帮助我们开发 Tailwind UI 的 Figma 版本，并利用他的无障碍知识来确保我们遵循最佳实践，交付适用于所有人的标记。今天我们很高兴地宣布 David 已全职加入团队！`,
   date: "2021-02-01T13:35:00.0Z",
   authors: [adamwathan],
   image: card,
   excerpt: (
     <>
-      We started working with <Link href="https://twitter.com/david_luhr">David Luhr</Link> last summer on a
-      project-by-project basis to help us develop a Figma version of{" "}
-      <Link href="https://tailwindui.com">Tailwind UI</Link> (almost ready!), as well as to leverage his accessibility
-      expertise when building Tailwind UI templates, ensuring we were following best practices and delivering markup
-      that would work for everyone, no matter what tools they use to browse the web.
+      我们从 <Link href="https://twitter.com/david_luhr">David Luhr</Link> 去年夏天开始在逐项项目的基础上合作，
+      帮助我们开发 <Link href="https://tailwindui.com">Tailwind UI</Link> 的 Figma 版本（几乎准备就绪！），
+      并利用他的无障碍知识来构建 Tailwind UI 模板，确保我们遵循最佳实践，交付适用于所有人的标记，无论他们使用什么工具浏览网页。
     </>
   ),
 };
 
-We started working with <Link href="https://twitter.com/david_luhr">David Luhr</Link> last summer on a project-by-project basis to help us develop a Figma version of <Link href="https://tailwindui.com">Tailwind UI</Link> _(almost ready!)_, as well as to leverage his accessibility expertise when building Tailwind UI templates, ensuring we were following best practices and delivering markup that would work for everyone, no matter what tools they use to browse the web.
+我们从 <Link href="https://twitter.com/david_luhr">David Luhr</Link> 去年夏天开始在逐项项目的基础上合作，
+帮助我们开发 <Link href="https://tailwindui.com">Tailwind UI</Link> _(几乎准备就绪！)_ 的 Figma 版本，
+并利用他的无障碍知识来构建 Tailwind UI 模板，确保我们遵循最佳实践，交付适用于所有人的标记，
+无论他们使用什么工具浏览网页。
 
-Today we're excited to share that David has joined the team full-time!
+今天我们很高兴地宣布 David 已全职加入团队！
 
 <figure>
   <iframe
@@ -32,21 +33,21 @@ Today we're excited to share that David has joined the team full-time!
     allowFullScreen
     className="aspect-video w-full"
   ></iframe>
-  <figcaption>Watch David build some Tailwind UI components in Figma live on his YouTube channel!</figcaption>
+  <figcaption>观看 David 在他的 YouTube 频道上实时构建一些 Tailwind UI 组件！</figcaption>
 </figure>
 
-David is an accessibility expert, a world-class front-end developer, a gifted educator, and a compassionate leader. He's performed black magic with Tailwind UI in Figma that Steve and I didn't even know was possible, and he's been doing an incredible job turning Steve's Tailwind UI designs into pixel-perfect HTML and CSS that works for everyone.
+David 是一位无障碍专家，一位世界级的前端开发者，一位天赋异禀的教育者，以及一位富有同情心的领导者。他在 Figma 中运用了 Tailwind UI 的黑魔法，连我和 Steve 都不知道这是可能的，他在将 Steve 的 Tailwind UI 设计转化为像素完美的 HTML 和 CSS 方面表现得令人难以置信，这些代码适用于所有人。
 
-Say what you will about HTML being easy to learn, it's a bear to master. David knows things about the spec that I've never encountered in 20 years of building things for the web, and has so much built up knowledge from his own real-world device testing that it would take years of dedicated focus to even come close to writing markup as bullet-proof as what David produces by default.
+无论如何，HTML 学习起来容易，但精通它却很困难。David 了解一些我在 20 年的网页构建中从未遇到过的规范知识，并且他从自己的真实设备测试中积累了大量知识，写出像 David 默认产出的那样万无一失的标记，至少需要数年的专注努力才能接近。
 
-As a company that specializes in helping developers build better interfaces faster, it's our responsibility to make sure that the tools we build follow accessibility best practices by default, and we couldn't be more grateful to have David on the team to help us live up to that responsibility.
+作为一家专注于帮助开发人员更快构建更好界面的公司，我们有责任确保我们构建的工具默认遵循无障碍最佳实践，我们十分感激 David 加入团队，帮助我们履行这一责任。
 
-One of my favorite problems David has helped me solve is developing the new <Link href="https://v2.tailwindcss.com/docs/ring-offset-width">ring utilities</Link> in Tailwind CSS v2.0. When David first started auditing our work in Tailwind UI for accessibility improvements, he mentioned that some of our focus styles were not obvious enough. It turns out that just changing a button's _color_ for example isn't good enough — it's important that something _new_ is drawn to the screen (like a focus ring) that is really easy for anyone to see.
+我最喜欢的 David 帮助我解决的问题之一是开发 Tailwind CSS v2.0 中新的 <Link href="https://v2.tailwindcss.com/docs/ring-offset-width">环工具</Link>。当 David 首次开始审计我们在 Tailwind UI 中的无障碍改进时，他提到我们的一些焦点样式不够明显。事实证明，仅仅改变按钮的 _颜色_ 是不够的——重要的是要有一些 _新的_ 内容呈现在屏幕上（例如焦点环），让任何人都非常容易看到。
 
-Trying to come up with a way to solve this was hard. It needed to look good, needed to be straightforward to do with utility classes, and needed to be possible to actually implement in Tailwind internally. David suggested we study the interfaces of things like video games consoles or the Apple TV for inspiration since you can't interact with them with a mouse, and that's where we landed on trying to build some sort of customizable offset focus ring.
+尝试想出解决方案是困难的。它需要看起来不错，需要使用工具类轻松实现，而且必须能够在 Tailwind 内部实际实施。David 建议我们研究视频游戏主机或 Apple TV 等事物的界面以获得灵感，因为你无法用鼠标与它们互动，这就是我们想到尝试构建某种可自定义的偏移焦点环的原因。
 
-Coming up with an implementation for this was hard because it needed to be implemented with a box shadow, and we had to somehow make it composable with the existing box shadow API. There were many moments where I got frustrated and I might have even given up on it if I was working on it alone, but ultimately we figured it out and now it's one of my favorite features in the framework.
+为此提出一个实施方案很难，因为它需要用盒阴影来实现，而且我们必须以某种方式使其与现有的盒阴影 API 组合。有很多时候我感到沮丧，甚至如果我自己在做这件事可能会放弃，但最终我们还是找到了办法，现在它是我在框架中最喜欢的功能之一。
 
-David will be leading component and design asset development on Tailwind UI, and providing accessibility guidance on our other projects like Tailwind CSS and Headless UI. It's been an amazing experience working with him over the last 6 months and we are so excited to have him on the team full-time.
+David 将负责 Tailwind UI 的组件和设计资产开发，并为我们的其他项目（如 Tailwind CSS 和 Headless UI）提供无障碍指导。在过去的 6 个月中与他合作的经历非常棒，我们非常高兴他全职加入团队。
 
-Want to keep up with David's work? <Link href="https://twitter.com/david_luhr">Follow David on Twitter →</Link>
+想要及时了解 David 的工作吗？<Link href="https://twitter.com/david_luhr">在 Twitter 上关注 David →</Link>
