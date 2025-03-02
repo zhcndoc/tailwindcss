@@ -3,34 +3,34 @@ import Logo from "@/docs/img/guides/laravel.react.svg";
 
 export let tile: Tile = {
   title: "Laravel",
-  description: "PHP web application framework with expressive, elegant syntax.",
+  description: "具有丰富、优雅语法的 PHP Web 应用框架。",
   Logo,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with Laravel",
-  description: "Setting up Tailwind CSS in a Laravel project.",
+  title: "使用 Laravel 安装 Tailwind CSS",
+  description: "在 Laravel 项目中设置 Tailwind CSS。",
 };
 
 export let tabs: Tab[] = [
   {
     slug: "vite",
-    title: "Using Vite",
+    title: "使用 Vite",
   },
   {
     slug: "mix",
-    title: "Using Laravel Mix",
+    title: "使用 Laravel Mix",
   },
 ];
 
 export let steps: Step[] = [
   {
     tabs: ["vite"],
-    title: "Create your project",
+    title: "创建项目",
     body: (
       <p>
-        Start by creating a new Laravel project if you don’t have one set up already. The most common approach is to use{" "}
-        <a href="https://laravel.com/docs/11.x#creating-an-application">the Laravel installer</a>.
+        首先创建一个新的 Laravel 项目，如果尚未设置。最常见的方法是使用{" "}
+        <a href="https://laravel.com/docs/11.x#creating-an-application">Laravel 安装器</a>。
       </p>
     ),
     code: {
@@ -45,10 +45,10 @@ export let steps: Step[] = [
 
   {
     tabs: ["vite"],
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>@tailwindcss/vite</code> and its peer dependencies via npm.
+        通过 npm 安装 <code>@tailwindcss/vite</code> 及其对等依赖包。
       </p>
     ),
     code: {
@@ -61,10 +61,10 @@ export let steps: Step[] = [
   },
   {
     tabs: ["mix"],
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>@tailwindcss/postcss</code> and its peer dependencies via npm.
+        通过 npm 安装 <code>@tailwindcss/postcss</code> 及其对等依赖包。
       </p>
     ),
     code: {
@@ -78,10 +78,10 @@ export let steps: Step[] = [
 
   {
     tabs: ["vite"],
-    title: "Configure Vite Plugin",
+    title: "配置 Vite 插件",
     body: (
       <p>
-        Add the <code>@tailwindcss/vite</code> plugin to your Vite configuration.
+        在你的 Vite 配置中添加 <code>@tailwindcss/vite</code> 插件。
       </p>
     ),
     code: {
@@ -105,10 +105,10 @@ export let steps: Step[] = [
 
   {
     tabs: ["mix"],
-    title: "Add Tailwind to your Laravel Mix configuration",
+    title: "添加 Tailwind 到你的 Laravel Mix 配置",
     body: (
       <p>
-        In your <code>webpack.mix.js</code> file, add <code>tailwindcss</code> as a PostCSS plugin.
+        在你的 <code>webpack.mix.js</code> 文件中，添加 <code>tailwindcss</code> 作为 PostCSS 插件。
       </p>
     ),
     code: {
@@ -126,11 +126,11 @@ export let steps: Step[] = [
   },
 
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> to <code>./resources/css/app.css</code> that imports Tailwind CSS. Additionally,
-        tell Tailwind CSS to scan your <code>resources/views</code> directory for utilities.
+        添加一个 <code>@import</code> 到 <code>./resources/css/app.css</code> 以导入 Tailwind CSS。此外，
+        告诉 Tailwind CSS 扫描你的 <code>resources/views</code> 目录以便获取工具类。
       </p>
     ),
     code: {
@@ -145,10 +145,10 @@ export let steps: Step[] = [
 
   {
     tabs: ["vite"],
-    title: "Start your build process",
+    title: "开始构建过程",
     body: (
       <p>
-        Run your build process with <code>npm run dev</code>.
+        使用 <code>npm run dev</code> 运行你的构建过程。
       </p>
     ),
     code: {
@@ -162,10 +162,10 @@ export let steps: Step[] = [
 
   {
     tabs: ["mix"],
-    title: "Start your build process",
+    title: "开始构建过程",
     body: (
       <p>
-        Run your build process with <code>npm run watch</code>.
+        使用 <code>npm run watch</code> 运行你的构建过程。
       </p>
     ),
     code: {
@@ -179,11 +179,10 @@ export let steps: Step[] = [
 
   {
     tabs: ["vite"],
-    title: "Start using Tailwind in your project",
+    title: "在项目中开始使用 Tailwind",
     body: (
       <p>
-        Make sure your compiled CSS is included in the <code>{"<head>"}</code> then start using Tailwind’s utility
-        classes to style your content.
+        确保你的已编译 CSS 包含在 <code>{"<head>"}</code> 中，然后开始使用 Tailwind 的工具类来样式你的内容。
       </p>
     ),
     code: {
@@ -211,11 +210,10 @@ export let steps: Step[] = [
   },
   {
     tabs: ["mix"],
-    title: "Start using Tailwind in your project",
+    title: "在项目中开始使用 Tailwind",
     body: (
       <p>
-        Make sure your compiled CSS is included in the <code>{"<head>"}</code> then start using Tailwind’s utility
-        classes to style your content.
+        确保你的已编译 CSS 包含在 <code>{"<head>"}</code> 中，然后开始使用 Tailwind 的工具类来样式你的内容。
       </p>
     ),
     code: {

@@ -4,24 +4,23 @@ import { Steps, type Step } from "@/components/installation-steps";
 import dedent from "dedent";
 
 export const metadata: Metadata = {
-  title: "Play CDN",
-  description: "Use the Play CDN to try Tailwind right in the browser without any build step.",
+  title: "体验 CDN",
+  description: "使用体验 CDN 直接在浏览器中尝试 Tailwind，无需任何构建步骤。",
   openGraph: {
     type: "article",
-    title: "Play CDN",
-    description: "Try Tailwind CSS right in the browser without any build step.",
-    images: "https://tailwindcss.com/api/og?path=/docs/installation/play-cdn",
-    url: "https://tailwindcss.com/docs/installation/play-cdn",
+    title: "体验 CDN",
+    description: "直接在浏览器中尝试 Tailwind CSS，不需要任何构建步骤。",
+    images: "https://tailwindcss.zhcndoc.com/api/og?path=/docs/installation/play-cdn",
+    url: "https://tailwindcss.zhcndoc.com/docs/installation/play-cdn",
   },
 };
 
 const steps: Step[] = [
   {
-    title: "Add the Play CDN script to your HTML",
+    title: "将体验 CDN 脚本添加到您的 HTML 中",
     body: (
       <p>
-        Add the Play CDN script tag to the <code>&lt;head&gt;</code> of your HTML file, and start using Tailwind’s
-        utility classes to style your content.
+        将体验 CDN 脚本标签添加到 HTML 文件的 <code>&lt;head&gt;</code> 中，并开始使用 Tailwind 的工具类来设置内容样式。
       </p>
     ),
     code: {
@@ -47,10 +46,10 @@ const steps: Step[] = [
     },
   },
   {
-    title: "Try adding some custom CSS",
+    title: "尝试添加一些自定义 CSS",
     body: (
       <p>
-        Use <code>type="text/tailwindcss"</code> to add custom CSS that supports all of Tailwind's CSS features.
+        使用 <code>type="text/tailwindcss"</code> 添加自定义 CSS，它支持所有的 Tailwind CSS 功能。
       </p>
     ),
     code: {
@@ -87,11 +86,10 @@ export default function Page() {
     <>
       <div id="content-wrapper" className="prose relative z-10 mb-10 max-w-3xl" data-content="true">
         <h3 className="sr-only" data-title="true">
-          Using Play CDN
+          使用体验 CDN
         </h3>
         <p>
-          Use the Play CDN to try Tailwind right in the browser without any build step. The Play CDN is designed for
-          development purposes only, and is not intended for production.
+          使用体验 CDN 直接在浏览器中尝试 Tailwind，无需任何构建步骤。体验 CDN 仅用于开发目的，不适用于生产环境。
         </p>
       </div>
       <Steps steps={steps} />

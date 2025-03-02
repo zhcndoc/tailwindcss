@@ -4,24 +4,24 @@ import dedent from "dedent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Installing Tailwind CSS with PostCSS",
+  title: "使用 PostCSS 安装 Tailwind CSS",
   description:
-    "Installing Tailwind CSS as a PostCSS plugin is the most seamless way to integrate it with frameworks like Next.js and Angular.",
+    "将 Tailwind CSS 安装为 PostCSS 插件是将其与 Next.js 和 Angular 等框架集成的最无缝方式。",
   openGraph: {
     type: "article",
-    title: "Installing with PostCSS",
-    description: "Integrate Tailwind CSS with frameworks like Next.js and Angular.",
-    images: "https://tailwindcss.com/api/og?path=/docs/installation/using-postcss",
-    url: "https://tailwindcss.com/docs/installation/using-postcss",
+    title: "使用 PostCSS 进行安装",
+    description: "将 Tailwind CSS 与 Next.js 和 Angular 等框架集成。",
+    images: "https://tailwindcss.zhcndoc.com/api/og?path=/docs/installation/using-postcss",
+    url: "https://tailwindcss.zhcndoc.com/docs/installation/using-postcss",
   },
 };
 
 const steps: Step[] = [
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>tailwindcss</code>, <code>@tailwindcss/postcss</code>, and <code>postcss</code> via npm.
+        通过 npm 安装 <code>tailwindcss</code>、<code>@tailwindcss/postcss</code> 和 <code>postcss</code>。
       </p>
     ),
     code: {
@@ -33,11 +33,10 @@ const steps: Step[] = [
     },
   },
   {
-    title: "Add Tailwind to your PostCSS configuration",
+    title: "添加 Tailwind 到你的 PostCSS 配置",
     body: (
       <p>
-        Add <code>@tailwindcss/postcss</code> to your <code>postcss.config.mjs</code> file, or wherever PostCSS is
-        configured in your project.
+        将 <code>@tailwindcss/postcss</code> 添加到你的 <code>postcss.config.mjs</code> 文件，或者你的项目中任何 PostCSS 已配置的地方。
       </p>
     ),
     code: {
@@ -54,10 +53,10 @@ const steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> to your CSS file that imports Tailwind CSS.
+        在你的 CSS 文件中添加一个 <code>@import</code> 来导入 Tailwind CSS。
       </p>
     ),
     code: {
@@ -69,11 +68,10 @@ const steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动你的构建过程",
     body: (
       <p>
-        Run your build process with <code>npm run dev</code> or whatever command is configured in your{" "}
-        <code>package.json</code> file.
+        使用 <code>npm run dev</code> 或者任何在你的 <code>package.json</code> 文件中配置的命令来运行你的构建过程。
       </p>
     ),
     code: {
@@ -85,12 +83,11 @@ const steps: Step[] = [
     },
   },
   {
-    title: "Start using Tailwind in your HTML",
+    title: "在你的 HTML 中开始使用 Tailwind",
     body: (
       <p>
-        Make sure your compiled CSS is included in the <code>{"<head>"}</code>{" "}
-        <em>(your framework might handle this for you)</em>, then start using Tailwind’s utility classes to style your
-        content.
+        确保你的编译后的 CSS 文件包含在 <code>{"<head>"}</code>{" "}
+        <em>（你的框架可能会为你处理这一点）</em>，然后开始使用 Tailwind 的实用类来为你的内容添加样式。
       </p>
     ),
     code: {
@@ -122,19 +119,16 @@ export default function Page() {
     <>
       <div id="content-wrapper" className="prose relative z-10 mb-10 max-w-3xl" data-content="true">
         <h3 data-title="true" className="sr-only">
-          Installing Tailwind CSS as a PostCSS plugin
+          将 Tailwind CSS 安装为 PostCSS 插件
         </h3>
         <p>
-          Installing Tailwind CSS as a PostCSS plugin is the most seamless way to integrate it with frameworks like
-          Next.js and Angular.
+          将 Tailwind CSS 安装为 PostCSS 插件是将其与 Next.js 和 Angular 等框架集成的最无缝方式。
         </p>
       </div>
       <Steps steps={steps} />
       <div className="my-4 md:my-16">
-        <Cta label="Explore our framework guides" href="/docs/installation/framework-guides">
-          <strong className="font-semibold text-gray-950 dark:text-white">Are you stuck?</strong> Setting up Tailwind
-          with PostCSS can be a bit different across different build tools. Check our framework guides to see if we have
-          more specific instructions for your particular setup.
+        <Cta label="探索我们的框架指南" href="/docs/installation/framework-guides">
+          <strong className="font-semibold text-gray-950 dark:text-white">你遇到困难了吗？</strong> 在不同的构建工具中设置 Tailwind 与 PostCSS 可能会有所不同。查看我们的框架指南，看看我们是否有针对你的特定设置的更具体的说明。
         </Cta>
       </div>
     </>

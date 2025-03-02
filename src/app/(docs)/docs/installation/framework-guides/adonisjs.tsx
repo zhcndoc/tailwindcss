@@ -4,28 +4,27 @@ import LogoDark from "@/docs/img/guides/adonis-white.react.svg";
 
 export let tile: Tile = {
   title: "AdonisJS",
-  description: "A fully featured web framework for Node.js.",
+  description: "一个为 Node.js 提供的全方位功能的 Web 框架。",
 
   Logo,
   LogoDark,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with AdonisJS",
-  description: "Setting up Tailwind CSS in an AdonisJS project.",
+  title: "在 AdonisJS 中安装 Tailwind CSS",
+  description: "在 AdonisJS 项目中设置 Tailwind CSS。",
 };
 
 export let steps: Step[] = [
   {
-    title: "Create your project",
+    title: "创建项目",
     body: (
       <p>
-        Start by creating a new AdonisJS project if you don’t have one set up already. The most common approach is to
-        use <a href="https://docs.adonisjs.com/guides/getting-started/installation">Create AdonisJS</a>.
+        如果你还没有设置项目，首先创建一个新的 AdonisJS 项目。最常见的方法是使用<a href="https://docs.adonisjs.com/guides/getting-started/installation">Create AdonisJS</a>。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm init adonisjs@latest my-project -- --kit=web
@@ -34,14 +33,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>@tailwindcss/vite</code> and its peer dependencies via npm.
+        通过 npm 安装 <code>@tailwindcss/vite</code> 及其对等依赖项。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm install tailwindcss @tailwindcss/vite
@@ -49,10 +48,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Configure Vite Plugin",
+    title: "配置 Vite 插件",
     body: (
       <p>
-        Add the <code>@tailwindcss/vite</code> plugin to your Vite configuration.
+        将 <code>@tailwindcss/vite</code> 插件添加到你的 Vite 配置中。
       </p>
     ),
     code: {
@@ -77,11 +76,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> to <code>./resources/css/app.css</code> that imports Tailwind CSS's styles.
-        Additionally, tell Tailwind CSS to scan your <code>resources/views</code> directory for utilities.
+        在 <code>./resources/css/app.css</code> 中添加 <code>@import</code>，以导入 Tailwind CSS 的样式。此外，告诉 Tailwind CSS 扫描你的 <code>resources/views</code> 目录中的实用工具。
       </p>
     ),
     code: {
@@ -94,24 +92,23 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动构建流程",
     body: (
       <p>
-        Run your build process with <code>npm run dev</code>.
+        使用 <code>npm run dev</code> 运行构建过程。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: "npm run dev",
     },
   },
   {
-    title: "Start using Tailwind in your project",
+    title: "开始在项目中使用 Tailwind",
     body: (
       <p>
-        Make sure your compiled CSS is included in the <code>{"<head>"}</code> then start using Tailwind’s utility
-        classes to style your content.
+        确保在 <code>{"<head>"}</code> 中包含编译后的 CSS，然后开始使用 Tailwind 的实用类来为你的内容添加样式。
       </p>
     ),
     code: {

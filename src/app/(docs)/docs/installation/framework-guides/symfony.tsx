@@ -4,27 +4,27 @@ import LogoDark from "@/docs/img/guides/symfony-white.react.svg";
 
 export let tile: Tile = {
   title: "Symfony",
-  description: "A PHP framework to create websites and web applications.",
+  description: "一个用于创建网站和网络应用的 PHP 框架。",
   Logo,
   LogoDark,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with Symfony",
-  description: "Setting up Tailwind CSS in a Symfony project.",
+  title: "在 Symfony 中安装 Tailwind CSS",
+  description: "在 Symfony 项目中设置 Tailwind CSS。",
 };
 
 export let steps: Step[] = [
   {
-    title: "Create your project",
+    title: "创建你的项目",
     body: (
       <p>
-        Start by creating a new Symfony project if you don’t have one set up already. The most common approach is to use{" "}
-        <a href="https://symfony.com/download">the Symfony Installer</a>.
+        首先创建一个新的 Symfony 项目，如果你还没有设置的话。最常见的方法是使用{" "}
+        <a href="https://symfony.com/download">Symfony 安装程序</a>。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         symfony new --webapp my-project
@@ -33,15 +33,15 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install Webpack Encore",
+    title: "安装 Webpack Encore",
     body: (
       <p>
-        Install Webpack Encore, which handles building your assets. See{" "}
-        <a href="https://symfony.com/doc/current/frontend.html">the documentation</a> for more information.
+        安装 Webpack Encore，用于处理资产的构建。查看{" "}
+        <a href="https://symfony.com/doc/current/frontend.html">文档</a>了解更多信息。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         composer remove symfony/ux-turbo symfony/asset-mapper symfony/stimulus-bundle
@@ -50,15 +50,15 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Using npm, install <code>@tailwindcss/postcss</code> and its peer dependencies, as well as{" "}
-        <code>postcss-loader</code>.
+        使用 npm，安装 <code>@tailwindcss/postcss</code> 及其对等依赖项，以及{" "}
+        <code>postcss-loader</code>。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm install tailwindcss @tailwindcss/postcss postcss postcss-loader
@@ -66,12 +66,11 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Enable PostCSS support",
+    title: "启用 PostCSS 支持",
     body: (
       <p>
-        In your <code>webpack.config.js</code> file, enable the PostCSS Loader. See{" "}
-        <a href="https://symfony.com/doc/current/frontend/encore/postcss.html">the documentation</a> for more
-        information.
+        在你的 <code>webpack.config.js</code> 文件中，启用 PostCSS Loader。查看{" "}
+        <a href="https://symfony.com/doc/current/frontend/encore/postcss.html">文档</a>了解更多信息。
       </p>
     ),
     code: {
@@ -85,11 +84,11 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Configure PostCSS Plugins",
+    title: "配置 PostCSS 插件",
     body: (
       <p>
-        Create a <code>postcss.config.mjs</code> file in the root of your project and add the{" "}
-        <code>@tailwindcss/postcss</code> plugin to your PostCSS configuration.
+        在项目根目录中创建一个 <code>postcss.config.mjs</code> 文件，并将{" "}
+        <code>@tailwindcss/postcss</code> 插件添加到你的 PostCSS 配置中。
       </p>
     ),
     code: {
@@ -106,10 +105,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> to <code>./assets/styles/app.css</code> that imports Tailwind CSS.
+        在 <code>./assets/styles/app.css</code> 文件中添加导入 Tailwind CSS 的 <code>@import</code>。
       </p>
     ),
     code: {
@@ -121,14 +120,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动构建进程",
     body: (
       <p>
-        Run your build process with <code>npm run watch</code>.
+        使用 <code>npm run watch</code> 启动你的构建进程。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm run watch
@@ -136,11 +135,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start using Tailwind in your project",
+    title: "开始在你的项目中使用 Tailwind",
     body: (
       <p>
-        Make sure your compiled CSS is included in the <code>{"<head>"}</code> then start using Tailwind’s utility
-        classes to style your content.
+        确保编译后的 CSS 包含在 <code>{"<head>"}</code> 中，然后开始使用 Tailwind 的工具类来样式化你的内容。
       </p>
     ),
     code: {

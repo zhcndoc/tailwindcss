@@ -4,15 +4,15 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Framework guides",
+  title: "框架指南",
   description:
-    "Framework-specific guides that cover our recommended approach to installing Tailwind CSS in a number of popular environments.",
+    "涵盖我们在许多流行环境中安装 Tailwind CSS 的推荐方法的特定框架指南。",
   openGraph: {
     type: "article",
-    title: "Framework guides",
-    description: "Our recommended approach to installing Tailwind CSS in popular frameworks.",
-    images: "https://tailwindcss.com/api/og?path=/docs/installation/framework-guides",
-    url: "https://tailwindcss.com/docs/installation/framework-guides",
+    title: "框架指南",
+    description: "我们推荐的在流行框架中安装 Tailwind CSS 的方法。",
+    images: "https://tailwindcss.zhcndoc.com/api/og?path=/docs/installation/framework-guides",
+    url: "https://tailwindcss.zhcndoc.com/docs/installation/framework-guides",
   },
 };
 
@@ -23,11 +23,10 @@ export default async function FrameworkGuides() {
     <>
       <div id="content-wrapper" className="prose mb-10 max-w-3xl" data-content="true">
         <h3 className="sr-only" data-title="true">
-          Framework Guides
+          框架指南
         </h3>
         <p>
-          Framework-specific guides that cover our recommended approach to installing Tailwind CSS in a number of
-          popular environments.
+          涵盖我们在许多流行环境中安装 Tailwind CSS 的推荐方法的特定框架指南。
         </p>
       </div>
       <ul className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-3">
@@ -37,9 +36,9 @@ export default async function FrameworkGuides() {
       </ul>
       <div className="my-4 md:my-16">
         <Cta>
-          Don't see your framework of choice? Try using the <Link href="/docs/installation">Tailwind CLI</Link>, the{" "}
-          <Link href="/docs/installation/using-vite">Vite plugin</Link>, or the{" "}
-          <Link href="/docs/installation/using-postcss">PostCSS plugin</Link> instead.
+          没看到你选择的框架？试试使用 <Link href="/docs/installation">Tailwind CLI</Link>、
+          <Link href="/docs/installation/using-vite">Vite 插件{" "}</Link>或者{" "}
+          <Link href="/docs/installation/using-postcss">PostCSS 插件</Link>。
         </Cta>
       </div>
     </>

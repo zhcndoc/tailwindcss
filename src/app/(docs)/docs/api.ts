@@ -93,7 +93,7 @@ export async function generateTableOfContentsFromMarkdown(markdown: string) {
   if (containsQuickReference) {
     toc.push({
       level: 0,
-      text: "Quick reference",
+      text: "快速参考",
       slug: "#quick-reference",
       children: [],
     });

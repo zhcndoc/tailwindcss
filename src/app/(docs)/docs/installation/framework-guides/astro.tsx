@@ -4,27 +4,27 @@ import LogoDark from "@/docs/img/guides/astro-white.react.svg";
 
 export let tile: Tile = {
   title: "Astro",
-  description: "The all-in-one web framework designed for speed.",
+  description: "为速度而生的一体化 Web 框架。",
   Logo,
   LogoDark,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with Astro",
-  description: "Setting up Tailwind CSS in an Astro project.",
+  title: "在 Astro 中安装 Tailwind CSS",
+  description: "在 Astro 项目中设置 Tailwind CSS。",
 };
 
 export let steps: Step[] = [
   {
-    title: "Create your project",
+    title: "创建你的项目",
     body: (
       <p>
-        Start by creating a new Astro project if you don't have one set up already. The most common approach is to use{" "}
+        如果您还没有设置 Astro 项目，请先创建一个。最常见的方法是使用{" "}
         <a href="https://docs.astro.build/en/install-and-setup/#install-from-the-cli-wizard">create astro</a>.
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm create astro@latest my-project
@@ -33,14 +33,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>@tailwindcss/vite</code> and its peer dependencies via npm.
+        通过 npm 安装 <code>@tailwindcss/vite</code> 和它的对等依赖。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm install tailwindcss @tailwindcss/vite
@@ -48,10 +48,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Configure Vite Plugin",
+    title: "配置 Vite 插件",
     body: (
       <p>
-        Add the <code>@tailwindcss/vite</code> plugin to your Vite plugins in your Astro config file.
+        在你的 Astro 配置文件中添加 <code>@tailwindcss/vite</code> 插件到 Vite 插件中。
       </p>
     ),
     code: {
@@ -74,10 +74,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Create a <code>./src/styles/global.css</code> file and add an <code>@import</code> for Tailwind CSS.
+        创建一个 <code>./src/styles/global.css</code> 文件，并添加一个 <code>@import</code> 用于 Tailwind CSS。
       </p>
     ),
     code: {
@@ -89,14 +89,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动构建过程",
     body: (
       <p>
-        Run your build process with <code>npm run dev</code>.
+        使用 <code>npm run dev</code> 启动构建过程。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm run dev
@@ -104,11 +104,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start using Tailwind in your project",
+    title: "开始在你的项目中使用 Tailwind",
     body: (
       <p>
-        Start using Tailwind's utility classes to style your content while making sure to import the newly created CSS
-        file.
+        开始使用 Tailwind 的实用程序类来样式化你的内容，并确保导入新创建的 CSS 文件。
       </p>
     ),
     code: {

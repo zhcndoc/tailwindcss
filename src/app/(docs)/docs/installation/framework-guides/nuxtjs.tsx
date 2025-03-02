@@ -3,26 +3,26 @@ import Logo from "@/docs/img/guides/nuxtjs.react.svg";
 
 export let tile: Tile = {
   title: "Nuxt",
-  description: "Intuitive Vue framework for building universal applications.",
+  description: "构建通用应用程序的直观 Vue 框架。",
   Logo,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with Nuxt",
-  description: "Setting up Tailwind CSS in a Nuxt project.",
+  title: "使用 Nuxt 安装 Tailwind CSS",
+  description: "在 Nuxt 项目中设置 Tailwind CSS。",
 };
 
 export let steps: Step[] = [
   {
-    title: "Create your project",
+    title: "创建你的项目",
     body: (
       <p>
-        Start by creating a new Nuxt project if you don’t have one set up already. The most common approach is to use
-        the <a href="https://nuxt.com/docs/getting-started/installation">Nuxt Command Line Interface</a>.
+        如果你还没有设置好的 Nuxt 项目，请首先创建一个新的 Nuxt 项目。最常见的方法是使用
+        <a href="https://nuxt.zhcndoc.com/docs/getting-started/installation">Nuxt 命令行界面</a>。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npx nuxi init my-project
@@ -31,14 +31,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>@tailwindcss/vite</code> and its peer dependencies via npm.
+        通过 npm 安装 <code>@tailwindcss/vite</code> 及其对等依赖。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm install tailwindcss @tailwindcss/vite
@@ -46,10 +46,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Configure Vite Plugin",
+    title: "配置 Vite 插件",
     body: (
       <p>
-        Add the <code>@tailwindcss/vite</code> plugin to your Nuxt configuration as a Vite plugin.
+        将 <code>@tailwindcss/vite</code> 插件添加到您的 Nuxt 配置作为 Vite 插件。
       </p>
     ),
     code: {
@@ -73,10 +73,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Create an <code>./assets/css/main.css</code> file and add an <code>@import</code> that imports Tailwind CSS.
+        创建一个 <code>./assets/css/main.css</code> 文件，并添加一个 <code>@import</code> 来导入 Tailwind CSS。
       </p>
     ),
     code: {
@@ -88,11 +88,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Add the CSS file globally",
+    title: "全局添加 CSS 文件",
     body: (
       <p>
-        Add your newly-created <code>./assets/css/main.css</code> to the <code>css</code> array in your{" "}
-        <code>nuxt.config.ts</code> file.
+        将您新创建的 <code>./assets/css/main.css</code> 添加到 <code>nuxt.config.ts</code> 文件中的 <code>css</code> 数组。
       </p>
     ),
     code: {
@@ -116,14 +115,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动你的构建过程",
     body: (
       <p>
-        Run your build process with <code>npm run dev</code>.
+        使用 <code>npm run dev</code> 启动构建过程。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm run dev
@@ -131,8 +130,8 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start using Tailwind in your project",
-    body: <p>Start using Tailwind’s utility classes to style your content.</p>,
+    title: "在你的项目中开始使用 Tailwind",
+    body: <p>开始使用 Tailwind 的工具类来设计您的内容。</p>,
     code: {
       name: "app.vue",
       lang: "vue",

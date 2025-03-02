@@ -4,23 +4,20 @@ import LogoDark from "@/docs/img/guides/rails-white.react.svg";
 
 export let tile: Tile = {
   title: "Ruby on Rails",
-  description: "Full-stack framework with all the tools needed to build amazing web apps.",
+  description: "全栈框架，具有构建出色的 Web 应用程序所需的所有工具。",
   Logo,
   LogoDark,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with Ruby on Rails",
-  description: "Setting up Tailwind CSS in Ruby on Rails v7+ project.",
+  title: "在 Ruby on Rails 中安装 Tailwind CSS",
+  description: "在 Ruby on Rails v7+ 项目中设置 Tailwind CSS。",
 
-  // NOTE: This intro is not used currently but is here for reference as we'll want to bring it back once the rails gem is updated for a stable v4 release.
+  // 注意：目前未使用此介绍，但作为参考保留在此，因为当 rails gem 更新为稳定版 v4 版本时，我们希望重新启用它。
   intro: (
     <div className="prose prose-slate dark:prose-dark relative z-10 mb-16 max-w-3xl">
       <p>
-        The quickest way to start using Tailwind CSS in your Rails project is to use{" "}
-        <a href="https://github.com/rails/tailwindcss-rails">Tailwind CSS for Rails</a> by running{" "}
-        <code>rails new my-project --css tailwind</code>. This will automatically configure your Tailwind setup based on
-        the official Rails example. If you'd like to configure Tailwind manually, continue with the rest of this guide.
+        在 Rails 项目中开始使用 Tailwind CSS 的最快方法是使用 <a href="https://github.com/rails/tailwindcss-rails">Tailwind CSS for Rails</a>，运行 <code>rails new my-project --css tailwind</code>。这将根据官方 Rails 示例自动配置 Tailwind 设置。如果您希望手动配置 Tailwind，请继续阅读本指南剩余部分。
       </p>
     </div>
   ),
@@ -28,15 +25,14 @@ export let page: Page = {
 
 export let steps: Step[] = [
   {
-    title: "Create your project",
+    title: "创建您的项目",
     body: (
       <p>
-        Start by creating a new Rails project if you don't have one set up already. The most common approach is to use
-        the <a href="https://guides.rubyonrails.org/command_line.html">Rails Command Line</a>.
+        首先，创建一个新的 Rails 项目，如果您还没有设置好。最常见的方法是使用 <a href="https://guides.rubyonrails.org/command_line.html">Rails 命令行</a>。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         rails new my-project
@@ -45,16 +41,15 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install the <code>tailwindcss-ruby</code> and <code>tailwindcss-rails</code> gems, and then run the install
-        command to set up Tailwind CSS in your project.
+        安装 <code>tailwindcss-ruby</code> 和 <code>tailwindcss-rails</code> gems，然后运行安装命令在项目中设置 Tailwind CSS。
       </p>
     ),
 
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         ./bin/bundle add tailwindcss-ruby
@@ -64,11 +59,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> that imports Tailwind CSS to your <code>application.tailwind.css</code> file located
-        in the <code>./app/assets/stylesheets</code> directory.
+        添加一个 <code>@import</code> 语句，将 Tailwind CSS 导入到位于 <code>./app/assets/stylesheets</code> 目录下的 <code>application.tailwind.css</code> 文件中。
       </p>
     ),
     code: {
@@ -80,14 +74,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动您的构建过程",
     body: (
       <p>
-        Run your build process with <code>./bin/dev</code>.
+        通过运行 <code>./bin/dev</code> 启动构建过程。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         ./bin/dev
@@ -95,8 +89,8 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start using Tailwind in your project",
-    body: <p>Start using Tailwind's utility classes to style your content.</p>,
+    title: "开始在您的项目中使用 Tailwind",
+    body: <p>开始使用 Tailwind 的实用类来为您的内容设置样式。</p>,
     code: {
       name: "index.html.erb",
       lang: "html",

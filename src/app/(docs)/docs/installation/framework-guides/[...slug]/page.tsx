@@ -22,7 +22,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   let { page } = guide;
 
   return {
-    metadataBase: new URL("https://tailwindcss.com"),
+    metadataBase: new URL("https://tailwindcss.zhcndoc.com"),
     title: page.title,
     description: page.description,
     openGraph: {
@@ -79,7 +79,7 @@ export default async function Page({ params }: Props) {
             className="font-mono text-xs/6 tracking-widest text-gray-600 uppercase dark:text-gray-400"
             data-section="true"
           >
-            Installation
+            安装
           </p>
           <h1 className="mt-2 text-3xl font-medium tracking-tight text-gray-950 dark:text-white" data-title="true">
             {page.title}

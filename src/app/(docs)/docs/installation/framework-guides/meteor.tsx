@@ -3,26 +3,26 @@ import Logo from "@/docs/img/guides/meteor.react.svg";
 
 export let tile: Tile = {
   title: "Meteor",
-  description: "The full stack JavaScript framework for developing cross-platform apps.",
+  description: "用于开发跨平台应用程序的全栈 JavaScript 框架。",
   Logo,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with Meteor",
-  description: "Setting up Tailwind CSS in a Meteor project.",
+  title: "在 Meteor 中安装 Tailwind CSS",
+  description: "在 Meteor 项目中设置 Tailwind CSS。",
 };
 
 export let steps: Step[] = [
   {
-    title: "Create your project",
+    title: "创建你的项目",
     body: (
       <p>
-        Start by creating a new Meteor project if you don't have one set up already. The most common approach is to use{" "}
-        <a href="https://docs.meteor.com/about/install.html">the Meteor CLI</a>.
+        如果你还没有设置 Meteor 项目，请首先创建一个新的 Meteor 项目。最常见的方法是使用
+        <a href="https://docs.meteor.com/about/install.html">Meteor CLI</a>。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npx meteor create my-project
@@ -31,14 +31,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>@tailwindcss/postcss</code> and its peer dependencies via npm.
+        通过 npm 安装 <code>@tailwindcss/postcss</code> 及其对等依赖项。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm install tailwindcss @tailwindcss/postcss postcss postcss-load-config
@@ -46,11 +46,11 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Configure PostCSS Plugins",
+    title: "配置 PostCSS 插件",
     body: (
       <p>
-        Create a <code>postcss.config.mjs</code> file in the root of your project and add the{" "}
-        <code>@tailwindcss/postcss</code> plugin to your PostCSS configuration.
+        在项目根目录下创建一个 <code>postcss.config.mjs</code> 文件，并将
+        <code>@tailwindcss/postcss</code> 插件添加到你的 PostCSS 配置中。
       </p>
     ),
     code: {
@@ -67,10 +67,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> for Tailwind CSS to your <code>./client/main.css</code> file.
+        将 <code>@import</code> Tailwind CSS 添加到你的 <code>./client/main.css</code> 文件中。
       </p>
     ),
     code: {
@@ -82,14 +82,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动构建过程",
     body: (
       <p>
-        Run your build process with <code>npm run start</code>.
+        使用 <code>npm run start</code> 运行你的构建过程。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm run start
@@ -97,8 +97,8 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start using Tailwind in your project",
-    body: <p>Start using Tailwind’s utility classes to style your content.</p>,
+    title: "开始在项目中使用 Tailwind",
+    body: <p>开始使用 Tailwind 的实用类来设计你的内容。</p>,
     code: {
       name: "App.jsx",
       lang: "jsx",

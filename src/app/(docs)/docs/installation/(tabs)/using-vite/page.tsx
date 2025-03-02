@@ -4,28 +4,28 @@ import dedent from "dedent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Installing Tailwind CSS with Vite",
+  title: "使用 Vite 安装 Tailwind CSS",
   description:
-    "Installing Tailwind CSS as a Vite plugin is the most seamless way to integrate it with frameworks like Laravel, SvelteKit, React Router, Nuxt, and SolidJS.",
+    "将 Tailwind CSS 作为 Vite 插件安装是最无缝的方式，可将其与 Laravel、SvelteKit、React Router、Nuxt 和 SolidJS 等框架集成。",
   openGraph: {
     type: "article",
-    title: "Installing with Vite",
-    description: "Integrate Tailwind CSS with frameworks like Laravel, SvelteKit, React Router, and SolidJS.",
-    images: "https://tailwindcss.com/api/og?path=/docs/installation/using-vite",
-    url: "https://tailwindcss.com/docs/installation/using-vite",
+    title: "使用 Vite 安装",
+    description: "将 Tailwind CSS 集成到 Laravel、SvelteKit、React Router 和 SolidJS 等框架中。",
+    images: "https://tailwindcss.zhcndoc.com/api/og?path=/docs/installation/using-vite",
+    url: "https://tailwindcss.zhcndoc.com/docs/installation/using-vite",
   },
 };
 
 const steps: Step[] = [
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>tailwindcss</code> and <code>@tailwindcss/vite</code> via npm.
+        通过 npm 安装 <code>tailwindcss</code> 和 <code>@tailwindcss/vite</code>。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: dedent`
         npm install tailwindcss @tailwindcss/vite
@@ -33,10 +33,10 @@ const steps: Step[] = [
     },
   },
   {
-    title: "Configure the Vite plugin",
+    title: "配置 Vite 插件",
     body: (
       <p>
-        Add the <code>@tailwindcss/vite</code> plugin to your Vite configuration.
+        在你的 Vite 配置中添加 <code>@tailwindcss/vite</code> 插件。
       </p>
     ),
     code: {
@@ -57,10 +57,10 @@ const steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> to your CSS file that imports Tailwind CSS.
+        在你的 CSS 文件中添加一个 <code>@import</code> 语句，用于导入 Tailwind CSS。
       </p>
     ),
     code: {
@@ -72,15 +72,14 @@ const steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动构建过程",
     body: (
       <p>
-        Run your build process with <code>npm run dev</code> or whatever command is configured in your{" "}
-        <code>package.json</code> file.
+        运行 <code>npm run dev</code> 或 <code>package.json</code> 文件中配置好的其他命令来启动你的构建过程。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: dedent`
         npm run dev
@@ -88,12 +87,10 @@ const steps: Step[] = [
     },
   },
   {
-    title: "Start using Tailwind in your HTML",
+    title: "在 HTML 中开始使用 Tailwind",
     body: (
       <p>
-        Make sure your compiled CSS is included in the <code>{"<head>"}</code>{" "}
-        <em>(your framework might handle this for you)</em>, then start using Tailwind’s utility classes to style your
-        content.
+        确保你的编译后的 CSS 被包含在 <code>{"<head>"}</code> 中 <em>（你的框架可能会为你处理这一点）</em>，然后开始使用 Tailwind 的工具类来样式化你的内容。
       </p>
     ),
     code: {
@@ -125,19 +122,16 @@ export default function Page() {
     <>
       <div id="content-wrapper" className="prose relative z-10 mb-10 max-w-3xl" data-content="true">
         <h3 data-title="true" className="sr-only">
-          Installing Tailwind CSS as a Vite plugin
+          将 Tailwind CSS 作为 Vite 插件安装
         </h3>
         <p>
-          Installing Tailwind CSS as a Vite plugin is the most seamless way to integrate it with frameworks like
-          Laravel, SvelteKit, React Router, Nuxt, and SolidJS.
+          将 Tailwind CSS 作为 Vite 插件安装是最无缝的方式，可将其与 Laravel、SvelteKit、React Router、Nuxt 和 SolidJS 等框架集成。
         </p>
       </div>
       <Steps steps={steps} />
       <div className="my-4 md:my-16">
-        <Cta label="Explore our framework guides" href="/docs/installation/framework-guides">
-          <strong className="font-semibold text-gray-950 dark:text-white">Are you stuck?</strong> Setting up Tailwind
-          with Vite can be a bit different across different build tools. Check our framework guides to see if we have
-          more specific instructions for your particular setup.
+        <Cta label="探索我们的框架指南" href="/docs/installation/framework-guides">
+          <strong className="font-semibold text-gray-950 dark:text-white">遇到困难了吗？</strong> 使用不同的构建工具设置 Tailwind 和 Vite 可能略有不同。检查我们的框架指南，看看有没有针对特定设置的更详细说明。
         </Cta>
       </div>
     </>

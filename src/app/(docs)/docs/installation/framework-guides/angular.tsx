@@ -4,27 +4,27 @@ import LogoDark from "@/docs/img/guides/angular-white.react.svg";
 
 export let tile: Tile = {
   title: "Angular",
-  description: "Platform for building mobile and desktop web applications.",
+  description: "用于构建移动和桌面 Web 应用的平台。",
   Logo,
   LogoDark,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with Angular",
-  description: "Setting up Tailwind CSS in an Angular project.",
+  title: "在 Angular 中安装 Tailwind CSS",
+  description: "在 Angular 项目中设置 Tailwind CSS。",
 };
 
 export let steps: Step[] = [
   {
-    title: "Create your project",
+    title: "创建你的项目",
     body: (
       <p>
-        Start by creating a new Angular project if you don’t have one set up already. The most common approach is to use{" "}
-        <a href="https://angular.dev/tools/cli/setup-local">Angular CLI</a>.
+        如果你还没有设置一个项目，请首先创建一个新的 Angular 项目。最常见的方法是使用{" "}
+        <a href="https://angular.dev/tools/cli/setup-local">Angular CLI</a>。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         ng new my-project --style css
@@ -33,16 +33,16 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>@tailwindcss/postcss</code> and its peer dependencies via npm.
+        通过 npm 安装 <code>@tailwindcss/postcss</code> 及其对等依赖。
       </p>
     ),
 
-    // NOTE: The `--force` flag is used to make sure the installation succeeds. Angular has a peer dependency on `tailwindcss` v3 which causes errors when installing `tailwindcss` v4.
+    // 注意: `--force` 标志用于确保安装成功。Angular 对 `tailwindcss` v3 有对等依赖，这在安装 `tailwindcss` v4 时会导致错误。
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm install tailwindcss @tailwindcss/postcss postcss --force
@@ -50,11 +50,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Configure PostCSS Plugins",
+    title: "配置 PostCSS 插件",
     body: (
       <p>
-        Create a <code>.postcssrc.json</code> file in the root of your project and add the{" "}
-        <code>@tailwindcss/postcss</code> plugin to your PostCSS configuration.
+        在项目根目录创建一个 <code>.postcssrc.json</code> 文件，并将 <code>@tailwindcss/postcss</code> 插件添加到你的 PostCSS 配置中。
       </p>
     ),
     code: {
@@ -71,10 +70,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "引入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> to <code>./src/styles.css</code> that imports Tailwind CSS.
+        添加一个 <code>@import</code> 到 <code>./src/styles.css</code> 以引入 Tailwind CSS。
       </p>
     ),
     code: {
@@ -86,14 +85,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动你的构建过程",
     body: (
       <p>
-        Run your build process with <code>ng serve</code>.
+        使用 <code>ng serve</code> 运行你的构建过程。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         ng serve
@@ -101,8 +100,8 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start using Tailwind in your project",
-    body: <p>Start using Tailwind’s utility classes to style your content.</p>,
+    title: "在项目中开始使用 Tailwind",
+    body: <p>开始使用 Tailwind 的工具类来样式化你的内容。</p>,
     code: {
       name: "app.component.html",
       lang: "html",

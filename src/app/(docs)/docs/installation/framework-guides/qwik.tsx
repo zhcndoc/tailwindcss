@@ -3,26 +3,26 @@ import Logo from "@/docs/img/guides/qwik.react.svg";
 
 export let tile: Tile = {
   title: "Qwik",
-  description: "Build instantly-interactive web apps without effort.",
+  description: "无需费力构建即时互动的 Web 应用。",
   Logo,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with Qwik",
-  description: "Setting up Tailwind CSS in an Qwik project.",
+  title: "在 Qwik 中安装 Tailwind CSS",
+  description: "在 Qwik 项目中设置 Tailwind CSS。",
 };
 
 export let steps: Step[] = [
   {
-    title: "Create your project",
+    title: "创建项目",
     body: (
       <p>
-        Start by creating a new Qwik project if you don't have one set up already. The most common approach is to use{" "}
-        <a href="https://qwik.dev/docs/getting-started/#create-an-app-using-the-cli">Create Qwik</a>.
+        如果你还没有设置一个新的 Qwik 项目，请先创建一个。最常见的方法是使用{" "}
+        <a href="https://qwik.dev/docs/getting-started/#create-an-app-using-the-cli">Create Qwik</a>。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm create qwik@latest empty my-project
@@ -31,14 +31,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>@tailwindcss/vite</code> and its peer dependencies via npm.
+        通过 npm 安装 <code>@tailwindcss/vite</code> 及其对等依赖。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm install tailwindcss @tailwindcss/vite
@@ -46,10 +46,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Configure Vite Plugin",
+    title: "配置 Vite 插件",
     body: (
       <p>
-        Add the <code>@tailwindcss/vite</code> plugin to your Vite configuration.
+        将 <code>@tailwindcss/vite</code> 插件添加到你的 Vite 配置中。
       </p>
     ),
     code: {
@@ -81,10 +81,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> to <code>./src/global.css</code> that imports Tailwind CSS.
+        添加一个 <code>@import</code> 到 <code>./src/global.css</code> 中以导入 Tailwind CSS。
       </p>
     ),
     code: {
@@ -96,14 +96,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动构建过程",
     body: (
       <p>
-        Run your build process with <code>npm run dev</code>.
+        通过 <code>npm run dev</code> 启动你的构建过程。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm run dev
@@ -111,8 +111,8 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start using Tailwind in your project",
-    body: <p>Start using Tailwind’s utility classes to style your content.</p>,
+    title: "在你的项目中开始使用 Tailwind",
+    body: <p>开始使用 Tailwind 的实用类来为你的内容设置样式。</p>,
     code: {
       name: "index.tsx",
       lang: "tsx",

@@ -75,11 +75,10 @@ export async function getBlogPostSlugs(): Promise<string[]> {
 
 export function formatDate(timestamp: string) {
   const date = new Date(timestamp);
-  return date.toLocaleDateString("zh-CN", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1)
+  const day = String(date.getDate())
+  return `${year} 年 ${month} 月 ${day} 日`;
 }
 
 export function nonNullable<T>(x: T | null): x is NonNullable<T> {

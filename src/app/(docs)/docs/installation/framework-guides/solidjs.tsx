@@ -3,26 +3,26 @@ import Logo from "@/docs/img/guides/solidjs.react.svg";
 
 export let tile: Tile = {
   title: "SolidJS",
-  description: "A tool for building simple, performant, and reactive user interfaces.",
+  description: "用于构建简单、高性能和响应式用户界面的工具。",
   Logo,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with SolidJS",
-  description: "Setting up Tailwind CSS in a SolidJS project.",
+  title: "在 SolidJS 中安装 Tailwind CSS",
+  description: "在 SolidJS 项目中设置 Tailwind CSS。",
 };
 
 export let steps: Step[] = [
   {
-    title: "Create your project",
+    title: "创建你的项目",
     body: (
       <p>
-        Start by creating a new SolidJS project if you don't have one set up already. The most common approach is to use{" "}
-        <a href="https://www.solidjs.com/guides/getting-started">the SolidJS Vite template</a>.
+        如果你还没有设置 SolidJS 项目，可以首先创建一个新的项目。最常见的方法是使用{" "}
+        <a href="https://www.solidjs.com/guides/getting-started">SolidJS Vite 模板</a>。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npx degit solidjs/templates/js my-project
@@ -31,14 +31,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>@tailwindcss/vite</code> and its peer dependencies via npm.
+        通过 npm 安装 <code>@tailwindcss/vite</code> 及其对等依赖。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm install tailwindcss @tailwindcss/vite
@@ -46,10 +46,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Configure Vite Plugin",
+    title: "配置 Vite 插件",
     body: (
       <p>
-        Add the <code>@tailwindcss/vite</code> plugin to your Vite configuration.
+        在你的 Vite 配置中添加 <code>@tailwindcss/vite</code> 插件。
       </p>
     ),
     code: {
@@ -78,10 +78,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> to <code>./src/index.css</code> that imports Tailwind CSS.
+        在 <code>./src/index.css</code> 中添加一个 <code>@import</code> 导入 Tailwind CSS。
       </p>
     ),
     code: {
@@ -93,14 +93,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动构建过程",
     body: (
       <p>
-        Run your build process with <code>npm run dev</code>.
+        使用 <code>npm run dev</code> 启动你的构建过程。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm run dev
@@ -108,8 +108,8 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start using Tailwind in your project",
-    body: <p>Start using Tailwind’s utility classes to style your content.</p>,
+    title: "在你的项目中开始使用 Tailwind",
+    body: <p>开始使用 Tailwind 的工具类来样式化你的内容。</p>,
     code: {
       name: "App.jsx",
       lang: "jsx",

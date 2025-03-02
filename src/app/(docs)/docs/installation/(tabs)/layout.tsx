@@ -3,32 +3,32 @@ import { TabBar } from "@/components/installation-tabs";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s - Tailwind CSS",
-    default: "Installation",
+    template: "%s - Tailwind CSS 中文文档",
+    default: "安装",
   },
   openGraph: {
     type: "article",
     title: {
-      template: "%s - Installation",
-      default: "Installation",
+      template: "%s - Tailwind CSS 中文文档",
+      default: "安装",
     },
   },
 };
 
 const tabs = {
-  "Using Vite": "/docs/installation/using-vite",
-  "Using PostCSS": "/docs/installation/using-postcss",
+  "使用 Vite": "/docs/installation/using-vite",
+  "使用 PostCSS": "/docs/installation/using-postcss",
   "Tailwind CLI": "/docs/installation/tailwind-cli",
-  "Framework Guides": "/docs/installation/framework-guides",
-  "Play CDN": "/docs/installation/play-cdn",
+  "框架指南": "/docs/installation/framework-guides",
+  "体验 CDN": "/docs/installation/play-cdn",
 };
 
 const readNext = [
   {
-    title: "Styling with utility classes",
+    title: "使用实用类样式",
     href: "/docs/styling-with-utility-classes",
     body: (
-      <p>Using a utility-first workflow to build complex components from a constrained set of primitive utilities.</p>
+      <p>使用以实用性为主的工作流，从一组限定的基本实用工具构建复杂的组件。</p>
     ),
     // icon: {
     //   className: "dark:bg-indigo-500 dark:highlight-white/20",
@@ -38,9 +38,9 @@ const readNext = [
     icon: require("@/components/home/icons/css-grid-icon").default,
   },
   {
-    title: "Responsive Design",
+    title: "响应式设计",
     href: "/docs/responsive-design",
-    body: <p>Build fully responsive user interfaces that adapt to any screen size using responsive modifiers.</p>,
+    body: <p>使用响应式修饰符构建完全响应的用户界面，适应任意屏幕尺寸。</p>,
     icon: {
       className: "dark:bg-indigo-500 dark:highlight-white/20",
       // light: require("@/img/icons/home/mobile-first.png").default.src,
@@ -48,9 +48,9 @@ const readNext = [
     },
   },
   {
-    title: "Hover, Focus & Other States",
+    title: "悬停、聚焦及其他状态",
     href: "/docs/hover-focus-and-other-states",
-    body: <p>Style elements in interactive states like hover, focus, and more using conditional modifiers.</p>,
+    body: <p>在交互状态（如悬停、聚焦等）下通过条件修饰符样式化元素。</p>,
     icon: {
       className: "dark:bg-blue-500 dark:highlight-white/20",
       // light: require("@/img/icons/home/state-variants.png").default.src,
@@ -58,9 +58,9 @@ const readNext = [
     },
   },
   {
-    title: "Dark Mode",
+    title: "暗黑模式",
     href: "/docs/dark-mode",
-    body: <p>Optimize your site for dark mode directly in your HTML using the dark mode modifier.</p>,
+    body: <p>直接在 HTML 中使用暗黑模式修饰符优化您的网站以适应暗黑模式。</p>,
     icon: {
       className: "dark:bg-slate-600 dark:highlight-white/20",
       // light: require("@/img/icons/home/dark-mode.png").default.src,
@@ -68,9 +68,9 @@ const readNext = [
     },
   },
   {
-    title: "Reusing Styles",
+    title: "样式重用",
     href: "/docs/reusing-styles",
-    body: <p>Manage duplication and keep your projects maintainable by creating reusable abstractions.</p>,
+    body: <p>通过创建可重用的抽象体管理重复内容并保持项目的可维护性。</p>,
     icon: {
       className: "dark:bg-sky-500 dark:highlight-white/20",
       // light: require("@/img/icons/home/component-driven.png").default.src,
@@ -78,9 +78,9 @@ const readNext = [
     },
   },
   {
-    title: "Customizing the Framework",
+    title: "自定义框架",
     href: "/docs/adding-custom-styles",
-    body: <p>Customize the framework to match your brand and extend it with your own custom styles.</p>,
+    body: <p>自定义框架以匹配您的品牌，并使用自己的自定义样式扩展框架。</p>,
     icon: {
       className: "dark:bg-pink-500 dark:highlight-white/30",
       // light: require("@/img/icons/home/customization.png").default.src,
@@ -101,17 +101,16 @@ export default function Page({ children }: { children: React.ReactNode }) {
             data-section="true"
             className="font-mono text-xs/6 font-medium tracking-widest text-gray-600 uppercase dark:text-gray-400"
           >
-            Installation
+            安装
           </p>
           <h1 className="mt-2 text-3xl font-medium tracking-tight text-gray-950 dark:text-white">
-            Get started with Tailwind CSS
+            开始使用 Tailwind CSS
           </h1>
           <p data-description="true" className="mt-6 text-base/7 text-gray-700 dark:text-gray-300">
-            Tailwind CSS works by scanning all of your HTML files, JavaScript components, and any other templates for
-            class names, generating the corresponding styles and then writing them to a static CSS file.
+            Tailwind CSS 通过扫描所有 HTML 文件、JavaScript 组件以及其他模板中的类名来工作，生成相应的样式，然后将其写入静态 CSS 文件。
           </p>
           <p className="mt-4 text-base/7 text-gray-700 dark:text-gray-300">
-            It's fast, flexible, and reliable — with zero-runtime.
+            它快速、灵活且可靠——无运行时。
           </p>
 
           <div className="mt-10" data-content="true">
@@ -121,7 +120,7 @@ export default function Page({ children }: { children: React.ReactNode }) {
                   data-docsearch-ignore
                   className="mb-6 text-lg font-semibold tracking-tight text-gray-950 dark:text-white"
                 >
-                  Installation
+                  安装
                 </h2>
                 <TabBar
                   tabs={Object.entries(tabs).map(([title, url]) => ({

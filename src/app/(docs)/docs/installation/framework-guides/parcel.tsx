@@ -3,23 +3,22 @@ import Logo from "@/docs/img/guides/parcel.react.svg";
 
 export let tile: Tile = {
   title: "Parcel",
-  description: "The zero-configuration build tool for the web.",
+  description: "适用于 Web 的零配置构建工具。",
   Logo,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with Parcel",
-  description: "Setting up Tailwind CSS in a Parcel project.",
+  title: "使用 Parcel 安装 Tailwind CSS",
+  description: "在 Parcel 项目中设置 Tailwind CSS。",
 };
 
 export let steps: Step[] = [
   {
-    title: "Create your project",
+    title: "创建你的项目",
     body: (
       <p>
-        Start by creating a new Parcel project if you don’t have one set up already. The most common approach is to add
-        Parcel as a dev-dependency to your project as outlined in their{" "}
-        <a href="https://parceljs.org/getting-started/webapp/">getting started guide</a>.
+        首先，创建一个新的 Parcel 项目，如果你还没有设置项目的话。最常见的方法是将 Parcel 作为开发依赖项添加到你的项目中，具体步骤请参考他们的{" "}
+        <a href="https://parceljs.org/getting-started/webapp/">入门指南</a>。
       </p>
     ),
     code: {
@@ -36,10 +35,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>@tailwindcss/postcss</code> and its peer dependencies via npm.
+        通过 npm 安装 <code>@tailwindcss/postcss</code> 及其对等依赖项。
       </p>
     ),
     code: {
@@ -51,11 +50,11 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Configure PostCSS",
+    title: "配置 PostCSS",
     body: (
       <p>
-        Create a <code>.postcssrc</code> file in your project root, and enable the <code>@tailwindcss/postcss</code>{" "}
-        plugin.
+        在你的项目根目录下创建一个 <code>.postcssrc</code> 文件，并启用 <code>@tailwindcss/postcss</code>{" "}
+        插件。
       </p>
     ),
     code: {
@@ -71,10 +70,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Create a <code>./src/index.css</code> file and add an <code>@import</code> for Tailwind CSS.
+        创建一个 <code>./src/index.css</code> 文件，并添加一个 <code>@import</code> 用于导入 Tailwind CSS。
       </p>
     ),
     code: {
@@ -86,10 +85,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动你的构建过程",
     body: (
       <p>
-        Run your build process with <code>npx parcel src/index.html</code>.
+        运行 <code>npx parcel src/index.html</code> 启动构建过程。
       </p>
     ),
     code: {
@@ -101,11 +100,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start using Tailwind in your project",
+    title: "开始在你的项目中使用 Tailwind",
     body: (
       <p>
-        Add your CSS file to the <code>{"<head>"}</code> and start using Tailwind’s utility classes to style your
-        content.
+        将你的 CSS 文件添加到 <code>{"<head>"}</code> 中，开始使用 Tailwind 的实用类来为你的内容添加样式。
       </p>
     ),
     code: {

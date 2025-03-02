@@ -3,37 +3,37 @@ import Logo from "@/docs/img/guides/rspack.react.svg";
 
 export let tile: Tile = {
   title: "Rspack",
-  description: "A fast Rust-based web bundler.",
+  description: "一个快速的基于 Rust 的网页打包工具。",
   Logo,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with Rspack",
-  description: "Setting up Tailwind CSS in a Rspack project.",
+  title: "使用 Rspack 安装 Tailwind CSS",
+  description: "在 Rspack 项目中设置 Tailwind CSS。",
 };
 
 export let tabs: Tab[] = [
   {
     slug: "react",
-    title: "Using React",
+    title: "使用 React",
   },
   {
     slug: "vue",
-    title: "Using Vue",
+    title: "使用 Vue",
   },
 ];
 
 export let steps: Step[] = [
   {
-    title: "Create your project",
+    title: "创建你的项目",
     body: (
       <p>
-        Start by creating a new Rspack project if you don’t have one set up already. The most common approach is to use{" "}
-        <a href="https://rspack.dev/guide/start/quick-start#using-the-rspack-cli">Rspack CLI</a>.
+        如果你还没有设置一个新的 Rspack 项目，请首先创建一个。最常见的方法是使用{" "}
+        <a href="https://rspack.dev/guide/start/quick-start#using-the-rspack-cli">Rspack CLI</a>。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm create rspack@latest
@@ -42,14 +42,14 @@ export let steps: Step[] = [
   },
 
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>@tailwindcss/postcss</code> and its peer dependencies.
+        安装 <code>@tailwindcss/postcss</code> 及其对等依赖项。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm install tailwindcss @tailwindcss/postcss postcss postcss-loader
@@ -57,11 +57,11 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Enable PostCSS support",
+    title: "启用 PostCSS 支持",
     body: (
       <p>
-        In your <code>rspack.config.js</code> file, enable the PostCSS loader. See{" "}
-        <a href="https://rspack.dev/guide/tech/css#tailwind-css">the documentation</a> for more information.
+        在你的 <code>rspack.config.js</code> 文件中启用 PostCSS 加载器。请参阅{" "}
+        <a href="https://rspack.dev/guide/tech/css#tailwind-css">文档</a>{" "}了解更多信息。
       </p>
     ),
     code: {
@@ -86,11 +86,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Configure PostCSS Plugins",
+    title: "配置 PostCSS 插件",
     body: (
       <p>
-        Create a <code>postcss.config.mjs</code> file in the root of your project and add the{" "}
-        <code>@tailwindcss/postcss</code> plugin to your PostCSS configuration.
+        在项目根目录创建一个 <code>postcss.config.mjs</code> 文件，并将 <code>@tailwindcss/postcss</code> 插件添加到你的 PostCSS 配置中。
       </p>
     ),
     code: {
@@ -108,10 +107,10 @@ export let steps: Step[] = [
   },
   {
     tabs: ["react"],
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> to <code>./src/index.css</code> that imports Tailwind CSS.
+        在 <code>./src/index.css</code> 中添加一个 <code>@import</code> 语句来导入 Tailwind CSS。
       </p>
     ),
     code: {
@@ -124,10 +123,10 @@ export let steps: Step[] = [
   },
   {
     tabs: ["vue"],
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> to <code>./src/style.css</code> that imports Tailwind CSS.
+        在 <code>./src/style.css</code> 中添加一个 <code>@import</code> 语句来导入 Tailwind CSS。
       </p>
     ),
     code: {
@@ -139,14 +138,14 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动你的构建流程",
     body: (
       <p>
-        Run your build process with <code>npm run dev</code>.
+        通过运行 <code>npm run dev</code> 来启动你的构建流程。
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         npm run dev
@@ -155,8 +154,8 @@ export let steps: Step[] = [
   },
   {
     tabs: ["react"],
-    title: "Start using Tailwind in your project",
-    body: <p>Start using Tailwind’s utility classes to style your content.</p>,
+    title: "在项目中开始使用 Tailwind",
+    body: <p>开始使用 Tailwind 的工具类来设置你的内容样式。</p>,
     code: {
       name: "App.jsx",
       lang: "jsx",
@@ -174,8 +173,8 @@ export let steps: Step[] = [
   },
   {
     tabs: ["vue"],
-    title: "Start using Tailwind in your project",
-    body: <p>Start using Tailwind’s utility classes to style your content.</p>,
+    title: "在项目中开始使用 Tailwind",
+    body: <p>开始使用 Tailwind 的工具类来设置你的内容样式。</p>,
     code: {
       name: "App.vue",
       lang: "vue",

@@ -4,23 +4,22 @@ import LogoDark from "@/docs/img/guides/react-router-white.react.svg";
 
 export let tile: Tile = {
   title: "React Router",
-  description: "A standards‑focused router you can deploy anywhere.",
+  description: "一个以标准为中心的路由器，你可以在任何地方部署。",
   Logo,
   LogoDark,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with React Router",
-  description: "Setting up Tailwind CSS in a React Router project.",
+  title: "使用 React Router 安装 Tailwind CSS",
+  description: "在 React Router 项目中设置 Tailwind CSS。",
 };
 
 export let steps: Step[] = [
   {
-    title: "Create your project",
+    title: "创建你的项目",
     body: (
       <p>
-        Start by creating a new React Router project if you don’t have one set up already. The most common approach is
-        to use <a href="https://reactrouter.com/start/framework/installation">Create React Router</a>.
+        如果你还没有设置好的话，首先创建一个新的 React Router 项目。最常见的方法是使用 <a href="https://reactrouter.com/start/framework/installation">Create React Router</a>。
       </p>
     ),
     code: {
@@ -33,10 +32,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        Install <code>@tailwindcss/vite</code> and its peer dependencies via npm.
+        通过 npm 安装 <code>@tailwindcss/vite</code> 及其对等依赖项。
       </p>
     ),
     code: {
@@ -48,10 +47,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Configure Vite Plugin",
+    title: "配置 Vite 插件",
     body: (
       <p>
-        Add the <code>@tailwindcss/vite</code> plugin to your Vite configuration.
+        将 <code>@tailwindcss/vite</code> 插件添加到你的 Vite 配置中。
       </p>
     ),
     code: {
@@ -76,10 +75,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> to <code>./app/app.css</code> that imports Tailwind CSS.
+        添加一个 <code>@import</code> 到 <code>./app/app.css</code> 以导入 Tailwind CSS。
       </p>
     ),
     code: {
@@ -91,10 +90,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start your build process",
+    title: "启动构建过程",
     body: (
       <p>
-        Run your build process with <code>npm run dev</code>.
+        运行 <code>npm run dev</code> 来启动你的构建过程。
       </p>
     ),
     code: {
@@ -106,8 +105,8 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start using Tailwind in your project",
-    body: <p>Start using Tailwind’s utility classes to style your content.</p>,
+    title: "在你的项目中开始使用 Tailwind",
+    body: <p>开始使用 Tailwind 的实用类来装饰你的内容。</p>,
     code: {
       name: "home.tsx",
       lang: "tsx",

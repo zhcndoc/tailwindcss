@@ -5,7 +5,7 @@ import openGraphScraper from "open-graph-scraper-lite";
 const WIDTH = 1200;
 const HEIGHT = 630;
 
-const HOST = process.env.NODE_ENV === "development" ? `http://localhost:3000` : `https://tailwindcss.com`;
+const HOST = process.env.NODE_ENV === "development" ? `http://localhost:3000` : `https://tailwindcss.zhcndoc.com`;
 
 export async function GET(req: NextRequest) {
   let requestUrl = new URL(req.url);

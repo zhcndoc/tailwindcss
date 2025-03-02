@@ -3,26 +3,26 @@ import Logo from "@/docs/img/guides/phoenix.react.svg";
 
 export let tile: Tile = {
   title: "Phoenix",
-  description: "A framework to build rich, interactive applications with Elixir.",
+  description: "一个使用 Elixir 构建丰富、交互式应用的框架.",
   Logo,
 };
 
 export let page: Page = {
-  title: "Install Tailwind CSS with Phoenix",
-  description: "Setting up Tailwind CSS in a Phoenix project.",
+  title: "在 Phoenix 项目中安装 Tailwind CSS",
+  description: "在 Phoenix 项目中设置 Tailwind CSS.",
 };
 
 export let steps: Step[] = [
   {
-    title: "Create your project",
+    title: "创建你的项目",
     body: (
       <p>
-        Start by creating a new Phoenix project if you don't have one set up already. You can follow their{" "}
-        <a href="https://hexdocs.pm/phoenix/installation.html">installation guide</a> to get up and running.
+        首先，如果你还没有设置，请创建一个新的 Phoenix 项目。你可以按照他们的{" "}
+        <a href="https://hexdocs.pm/phoenix/installation.html">安装指南</a>来快速启动和运行.
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         mix phx.new myproject
@@ -31,10 +31,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install the Tailwind plugin",
+    title: "安装 Tailwind 插件",
     body: (
       <p>
-        Add the Tailwind plugin to your dependencies and run <code>mix deps.get</code> to install it.
+        将 Tailwind 插件添加到你的依赖项中，并运行 <code>mix deps.get</code> 来安装它.
       </p>
     ),
     code: {
@@ -52,11 +52,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Configure the Tailwind plugin",
+    title: "配置 Tailwind 插件",
     body: (
       <p>
-        In your <code>config/config.exs</code> file you can set which version of Tailwind CSS you want to use and
-        customize your asset paths.
+        在你的 <code>config/config.exs</code> 文件中，你可以设置你想要使用的 Tailwind CSS 版本并且自定义你的资产路径.
       </p>
     ),
     code: {
@@ -78,10 +77,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Update your deployment script",
+    title: "更新部署脚本",
     body: (
       <p>
-        Configure your <code>assets.deploy</code> alias to build your CSS on deployment.
+        配置你的 <code>assets.deploy</code> 别名，以便在部署时构建你的 CSS.
       </p>
     ),
     code: {
@@ -103,10 +102,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Enable watcher in development",
+    title: "在开发环境中启用 watcher",
     body: (
       <p>
-        Add Tailwind to your list of watchers in your <code>./config/dev.exs</code> file.
+        在你的 <code>./config/dev.exs</code> 文件中将 Tailwind 添加到 watcher 列表中.
       </p>
     ),
     code: {
@@ -114,7 +113,7 @@ export let steps: Step[] = [
       lang: "elixir",
       code: elixir`
         watchers: [
-          # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
+          # 通过调用 Esbuild.install_and_run(:default, args) 启动 esbuild watcher
           esbuild: {Esbuild, :install_and_run, [:myproject, ~w(--sourcemap=inline --watch)]},
           # [!code highlight:2]
           tailwind: {Tailwind, :install_and_run, [:myproject, ~w(--watch)]}
@@ -123,10 +122,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Install Tailwind CSS",
-    body: <p>Run the install command to download the standalone Tailwind CLI.</p>,
+    title: "安装 Tailwind CSS",
+    body: <p>运行安装命令以下载独立的 Tailwind CLI.</p>,
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         mix tailwind.install
@@ -134,11 +133,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Import Tailwind CSS",
+    title: "导入 Tailwind CSS",
     body: (
       <p>
-        Add an <code>@import</code> to <code>./assets/css/app.css</code> that imports Tailwind CSS. Additionally, tell
-        Tailwind CSS where to scan for utilities.
+        添加一个 <code>@import</code> 到 <code>./assets/css/app.css</code> 中以导入 Tailwind CSS。另外，告诉 Tailwind CSS 在哪里扫描实用工具.
       </p>
     ),
     code: {
@@ -150,10 +148,10 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Remove the default CSS import",
+    title: "删除默认的 CSS 导入",
     body: (
       <p>
-        Remove the CSS import from <code>./assets/js/app.js</code>, as Tailwind is now handling this for you.
+        从 <code>./assets/js/app.js</code> 中删除 CSS 导入，因为 Tailwind 现在为你处理此问题.
       </p>
     ),
     code: {
@@ -161,20 +159,20 @@ export let steps: Step[] = [
       lang: "js",
       code: js`
         // [!code --:3]
-        // Remove this line if you add your own CSS build pipeline (e.g postcss).
+        // 如果你添加了自己的 CSS 构建管道（例如 postcss），请删除此行.
         import "../css/app.css"
       `,
     },
   },
   {
-    title: "Start your build process",
+    title: "启动你的构建过程",
     body: (
       <p>
-        Run your build process with <code>mix phx.server</code>.
+        使用 <code>mix phx.server</code> 运行你的构建过程.
       </p>
     ),
     code: {
-      name: "Terminal",
+      name: "终端",
       lang: "shell",
       code: shell`
         mix phx.server
@@ -182,8 +180,8 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "Start using Tailwind in your project",
-    body: <p>Start using Tailwind’s utility classes to style your content.</p>,
+    title: "开始在你的项目中使用 Tailwind",
+    body: <p>开始使用 Tailwind 的实用类来样式化你的内容.</p>,
     code: {
       name: "index.html.heex",
       lang: "html",
@@ -191,7 +189,7 @@ export let steps: Step[] = [
         <!-- [!code highlight:4] -->
         <h1 class="text-3xl font-bold underline">
           <!-- prettier-ignore -->
-          Hello world!
+          你好, 世界！
         </h1>
       `,
     },
