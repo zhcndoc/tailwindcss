@@ -116,7 +116,7 @@ export default function ExplainerSection() {
 
       <GridContainer>
         <h2 className="mt-4 px-2 text-[2.5rem]/10 font-medium tracking-tighter max-sm:px-4 2xl:mt-0">
-          Ship faster and smaller.
+          发货更快、更小。
         </h2>
       </GridContainer>
 
@@ -127,9 +127,7 @@ export default function ExplainerSection() {
 
       <GridContainer>
         <p className="max-w-(--breakpoint-md) px-2 text-base/7 text-gray-600 max-sm:px-4 dark:text-gray-400">
-          Tailwind automatically removes all unused CSS when building for production, which means your final CSS bundle
-          is the smallest it could possibly be. In fact, most Tailwind projects ship less than 10kB of CSS to the
-          client.
+          Tailwind 在为生产构建时会自动移除所有未使用的 CSS，这意味着你的最终 CSS 包是可能的最小大小。事实上，大多数 Tailwind 项目向客户端发送的 CSS 小于 10kB。
         </p>
       </GridContainer>
 

@@ -127,13 +127,13 @@ let darkModeScript = js`
 `;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tailwindcss.com"),
+  metadataBase: new URL("https://tailwindcss.zhcndoc.com"),
   title: {
-    default: "Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.",
-    template: "%s - Tailwind CSS",
+    default: "Tailwind CSS 中文文档 - 只需 HTML 即可快速构建现代网站",
+    template: "%s - Tailwind CSS 中文文档",
   },
   description:
-    "Tailwind CSS is a utility-first CSS framework for rapidly building modern websites without ever leaving your HTML.",
+    "Tailwind CSS 是一个以实用为主的 CSS 框架，用于快速构建现代网站，而无需离开您的 HTML。",
 };
 
 export default async function RootLayout({
@@ -161,6 +161,7 @@ export default async function RootLayout({
         <meta name="application-name" content="Tailwind CSS" />
         <meta name="msapplication-TileColor" content="#38bdf8" />
         <meta name="msapplication-config" content={v("/favicons/browserconfig.xml")} />
+        <Script async src="https://www.zhcndoc.com/js/common.js" />
         <script type="text/javascript" dangerouslySetInnerHTML={{ __html: darkModeScript }}></script>
         {/*
           We inject the script via the <Script/> tag again, since we found the regular `<script>`

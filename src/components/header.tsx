@@ -145,10 +145,10 @@ export function Header(props: React.PropsWithChildren) {
             </kbd>
           </SearchButton>
           {[
-            ["Docs", "/docs"],
-            ["Components", "https://tailwindui.com/?ref=top"],
-            ["Blog", "/blog"],
-            ["Showcase", "/showcase"],
+            ["文档", "/docs"],
+            ["组件", "https://tailwindui.com/?ref=top"],
+            ["博客", "/blog"],
+            ["展示柜", "/showcase"],
           ].map(([text, href]) => (
             <Link href={href} key={href} className="text-sm/6 text-gray-950 dark:text-white">
               {text}
@@ -191,10 +191,9 @@ export function Header(props: React.PropsWithChildren) {
               </div>
               <div className="grid grid-cols-1 gap-1 px-1 pb-1 sm:px-3 sm:pb-3">
                 {[
-                  ["Docs", "/docs"],
-                  ["Components", "https://tailwindui.com/?ref=top"],
-                  ["Blog", "/blog"],
-                  ["Showcase", "/showcase"],
+                  ["文档", "/docs"],
+                  ["组件", "https://tailwindui.com/?ref=top"],
+                  ["博客", "/blog"],
                   ["GitHub", "https://github.com/tailwindlabs/tailwindcss"],
                 ].map(([text, href]) => (
                   <Link

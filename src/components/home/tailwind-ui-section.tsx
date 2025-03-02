@@ -36,7 +36,7 @@ export default function TailwindUiSection() {
 
       <GridContainer>
         <h2 className="px-2 text-[2.5rem]/10 font-medium tracking-tighter max-sm:px-4 2xl:mt-0">
-          Move even faster with Tailwind UI.
+          使用 Tailwind UI 更快地移动。
         </h2>
       </GridContainer>
 
@@ -50,15 +50,13 @@ export default function TailwindUiSection() {
 
       <GridContainer>
         <p className="max-w-(--breakpoint-md) px-2 text-base/7 text-gray-600 max-sm:px-4 dark:text-gray-400">
-          Tailwind UI is a collection of beautiful, fully responsive UI components, designed and developed by us, the
-          creators of Tailwind CSS. It's got hundreds of ready-to-use examples to choose from, and is guaranteed to help
-          you find the perfect starting point for what you want to build.
+          Tailwind UI 是一个美丽的、完全响应式的 UI 组件集合，由我们 Tailwind CSS 的创作者设计和开发。它有数百个现成的示例可供选择，保证能帮助你找到构建所需的完美起点。
         </p>
       </GridContainer>
 
       <GridContainer className="mt-10">
         <div className="px-2 max-sm:px-4">
-          <LinkButton href="https://tailwindui.com/">Explore Tailwind UI</LinkButton>
+          <LinkButton href="https://tailwindui.com/">探索 Tailwind UI</LinkButton>
         </div>
       </GridContainer>
       <TabGroup>
@@ -158,9 +156,9 @@ export default function TailwindUiSection() {
                   />
                 </svg>
                 <div className="text-center xl:text-left">
-                  <p className="font-mono text-sm font-semibold uppercase tracking-widest">Templates</p>
+                  <p className="font-mono text-sm font-semibold uppercase tracking-widest">模板</p>
                   <p className="mt-2 hidden text-sm text-gray-600 lg:block dark:text-gray-400">
-                    Visually-stunning, easy to customize site templates built with React and Next.js.
+                    视觉惊艳，易于自定义的站点模板，使用 React 和 Next.js 构建。
                   </p>
                 </div>
               </TabButton>
@@ -231,9 +229,9 @@ export default function TailwindUiSection() {
                   </g>
                 </svg>
                 <div className="text-center xl:text-left">
-                  <p className="font-mono text-sm font-semibold uppercase tracking-widest">UI Blocks</p>
+                  <p className="font-mono text-sm font-semibold uppercase tracking-widest">UI 组件</p>
                   <p className="mt-2 hidden text-sm text-gray-600 lg:block dark:text-gray-400">
-                    Over 500+ professionally designed, fully responsive, expertly crafted components.
+                    超过 500 个专业设计、完全响应、精心制作的组件。
                   </p>
                 </div>
               </TabButton>
@@ -312,9 +310,9 @@ export default function TailwindUiSection() {
                   </g>
                 </svg>
                 <div className="text-center xl:text-left">
-                  <p className="font-mono text-sm font-semibold uppercase tracking-widest">UI Kit</p>
+                  <p className="font-mono text-sm font-semibold uppercase tracking-widest">UI 套件</p>
                   <p className="mt-2 hidden text-sm text-gray-600 lg:block dark:text-gray-400">
-                    A starter kit for building your own component systems with React and Tailwind CSS.
+                    一个用于构建自己组件系统的入门套件，使用 React 和 Tailwind CSS。
                   </p>
                 </div>
               </TabButton>

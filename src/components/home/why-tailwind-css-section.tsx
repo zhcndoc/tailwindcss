@@ -56,12 +56,12 @@ export default function WhyTailwindCssSection() {
       </div>
 
       <GridContainer className="2xl:before:hidden 2xl:after:hidden">
-        <CategoryHeader className="text-sky-500 dark:text-sky-400">Why Tailwind CSS?</CategoryHeader>
+        <CategoryHeader className="text-sky-500 dark:text-sky-400">为什么选择 Tailwind CSS？</CategoryHeader>
       </GridContainer>
 
       <GridContainer>
         <h2 className="max-w-lg text-balance px-2 text-[2.5rem]/10 font-medium tracking-tighter max-sm:px-4 2xl:mt-0">
-          Built for the modern web.
+          为现代化网站而构建。
         </h2>
       </GridContainer>
 
@@ -75,8 +75,7 @@ export default function WhyTailwindCssSection() {
 
       <GridContainer>
         <p className="max-w-(--breakpoint-md) px-2 text-base/7 text-gray-600 max-sm:px-4 dark:text-gray-400">
-          Tailwind is unapologetically modern, and takes advantage of all the latest and greatest CSS features to make
-          the developer experience as enjoyable as possible.
+          Tailwind 毫不掩饰地现代化，并利用所有最新和最优秀的 CSS 特性，使开发者体验尽可能愉快。
         </p>
       </GridContainer>
 
@@ -88,10 +87,9 @@ export default function WhyTailwindCssSection() {
                 <ResponsiveDesignIcon />
               </BentoIcon>
               <div>
-                <BentoTitle>Responsive design</BentoTitle>
+                <BentoTitle>响应式设计</BentoTitle>
                 <BentoDescription>
-                  Okay, it’s not exactly cutting edge, but just throw a screen size in front of literally any utility to
-                  apply it at a specific breakpoint.
+                  好的，这并不算前沿技术，但只需在任何工具前面添加一个屏幕尺寸，就可以在特定的断点应用它。
                 </BentoDescription>
               </div>
             </BentoHeader>
@@ -155,19 +153,19 @@ export default function WhyTailwindCssSection() {
                           </div>
 
                           <div className="bg-linear-to-b @min-[theme(--breakpoint-sm)]:hidden absolute inset-0 flex flex-col justify-end gap-2 from-transparent via-transparent to-gray-950 p-6">
-                            <span className="text-sm/6 font-semibold text-white/80">Entire house</span>
-                            <span className="text-xl/6 font-semibold text-white">Beach House on Lake Huron</span>
+                            <span className="text-sm/6 font-semibold text-white/80">整栋房子</span>
+                            <span className="text-xl/6 font-semibold text-white">休伦湖的海滨别墅</span>
                           </div>
                         </div>
 
                         <span className="@max-[theme(--breakpoint-sm)]:hidden font-medium text-gray-500 dark:text-gray-500">
-                          Entire house
+                          整栋房子
                         </span>
 
                         <div className="@min-[theme(--breakpoint-sm)]:grid-cols-[1fr_auto] @min-[theme(--breakpoint-xl)]:grid-cols-1 grid grid-cols-1 gap-4">
                           <div>
                             <span className="@max-[theme(--breakpoint-sm)]:hidden mt-2 text-3xl font-semibold text-gray-950 dark:text-white">
-                              Beach House on Lake Huron
+                              休伦湖的海滨别墅
                             </span>
 
                             <span className="mt-2 flex gap-2">
@@ -175,7 +173,7 @@ export default function WhyTailwindCssSection() {
                                 <StarIcon className="size-4" />
                                 <span className="text-sm/6 font-medium">2.66</span>
                               </span>
-                              <span className="text-sm/6 text-gray-500">(128 reviews)</span>
+                              <span className="text-sm/6 text-gray-500">(128 条评论)</span>
                               <span className="text-pink-300 dark:text-gray-600">&middot;</span>
                               <span className="text-sm/6 font-medium text-pink-600 dark:text-pink-500">
                                 Bayfield, ON
@@ -188,22 +186,21 @@ export default function WhyTailwindCssSection() {
                               type="button"
                               className="@min-[theme(--breakpoint-sm)]:w-auto w-full rounded-lg bg-pink-500 px-3 py-2 text-sm/6 font-bold text-white"
                             >
-                              Check availability
+                              检查可用性
                             </button>
                           </div>
                         </div>
 
                         <div>
                           <p className="@min-[theme(--breakpoint-xl)]:max-w-md mt-4 line-clamp-2 text-sm/6 text-gray-600 dark:text-gray-400">
-                            This sunny and spacious room is for those traveling light and looking for a comfy and cozy
-                            place to lay their head for a night...{" "}
+                            这个阳光明媚且宽敞的房间适合那些轻装出行、寻找舒适温馨的地方过夜的旅客...{" "}
                             <span className="sm:@max-[theme(--breakpoint-sm)]:inline-block hidden font-bold text-pink-600 before:text-white dark:text-pink-500">
-                              Show more
+                              显示更多
                             </span>
                           </p>
 
                           <span className="mt-3 inline-block shrink-0 text-sm/6 font-semibold text-pink-600 dark:text-pink-500">
-                            Show more
+                            显示更多
                           </span>
                         </div>
 
@@ -212,7 +209,7 @@ export default function WhyTailwindCssSection() {
                             type="button"
                             className="w-auto rounded-lg bg-pink-500 px-3 py-2 text-sm/6 font-bold text-white"
                           >
-                            Check availability
+                            检查可用性
                           </button>
                         </div>
                       </div>
@@ -265,10 +262,9 @@ export default function WhyTailwindCssSection() {
                 <FiltersIcon />
               </BentoIcon>
               <div>
-                <BentoTitle>Filters</BentoTitle>
+                <BentoTitle>滤镜</BentoTitle>
                 <BentoDescription>
-                  What’s a website these days without a few backdrop blurs? Keep stacking filters until your designer
-                  asks you to please, please stop.
+                  现在的网站没有几个背景模糊效果算什么？继续叠加滤镜，直到你的设计师恳求你停下。
                 </BentoDescription>
               </div>
             </BentoHeader>
@@ -315,11 +311,11 @@ export default function WhyTailwindCssSection() {
                 <DarkModeIcon />
               </BentoIcon>
               <div>
-                <BentoTitle>Dark mode</BentoTitle>
+                <BentoTitle>深色模式</BentoTitle>
                 <BentoDescription>
-                  If you’re not a fan of burning your retinas, just stick{" "}
-                  <code className="font-medium text-gray-950 dark:text-white">dark:</code> in front of any color to
-                  apply it in dark mode.
+                  如果您不喜欢烧伤视网膜，只需坚持{" "}
+                  <code className="font-medium text-gray-950 dark:text-white">dark:</code>{" "}
+                  在任何颜色前面以深色模式涂抹。
                 </BentoDescription>
               </div>
             </BentoHeader>
@@ -334,9 +330,9 @@ export default function WhyTailwindCssSection() {
                 <CssVariablesIcon />
               </BentoIcon>
               <div>
-                <BentoTitle>CSS variables</BentoTitle>
+                <BentoTitle>CSS 变量</BentoTitle>
                 <BentoDescription>
-                  Customizing your theme is as simple as creating a few CSS variables.
+                  自定义主题就像创建几个 CSS 变量一样简单。
                 </BentoDescription>
               </div>
             </BentoHeader>
@@ -376,10 +372,9 @@ export default function WhyTailwindCssSection() {
                 <P3ColorsIcon />
               </BentoIcon>
               <div>
-                <BentoTitle>P3 colors</BentoTitle>
+                <BentoTitle>P3 颜色</BentoTitle>
                 <BentoDescription>
-                  The color palette now uses more vibrant wide gamut colors without you needing to understand what any
-                  of that even means.
+                  调色板现在使用更生动的广色域颜色，您无需了解这些的含义。
                 </BentoDescription>
               </div>
             </BentoHeader>
@@ -494,9 +489,9 @@ export default function WhyTailwindCssSection() {
                 <CssGridIcon />
               </BentoIcon>
               <div>
-                <BentoTitle>CSS grid layout</BentoTitle>
+                <BentoTitle>CSS 网格布局</BentoTitle>
                 <BentoDescription>
-                  Using grid utilities directly in your HTML makes it so much easier to reason about complex layouts.
+                  在您的 HTML 中直接使用网格工具可以使推理复杂布局变得容易得多。
                 </BentoDescription>
               </div>
             </BentoHeader>
@@ -504,31 +499,31 @@ export default function WhyTailwindCssSection() {
               <div className="-mb-8 -mr-16 [--size:--spacing(48)] lg:flex lg:justify-center xl:block">
                 <div className="-mt-18 sm:-mt-26">
                   <div className="bg-white p-6 ring ring-gray-950/5 sm:p-16 dark:bg-gray-950 dark:ring-white/10">
-                    <h3 className="text-base/6 font-semibold text-gray-950 dark:text-white">Browse properties</h3>
+                    <h3 className="text-base/6 font-semibold text-gray-950 dark:text-white">浏览房产</h3>
                     <div className="mt-6 grid grid-cols-[repeat(2,var(--size))] grid-rows-[repeat(3,var(--size))] gap-2 sm:grid-cols-[repeat(3,var(--size))] sm:grid-rows-[repeat(2,var(--size))]">
                       <div className="relative col-span-2 row-span-1 overflow-hidden rounded-t-2xl sm:col-span-1 sm:row-span-2 sm:rounded-none sm:rounded-l-2xl dark:outline dark:outline-white/10">
                         <img alt="" className="not-sm:hidden" src={cssGrid1.src} />
                         <img alt="" className="sm:hidden" src={cssGrid1Mobile.src} />
                         <div className="bg-linear-to-b absolute inset-0 flex items-end from-transparent via-transparent to-gray-950">
-                          <span className="p-4 text-sm/5 font-semibold text-white">Treehouses</span>
+                          <span className="p-4 text-sm/5 font-semibold text-white">树屋</span>
                         </div>
                       </div>
                       <div className="relative dark:outline dark:outline-white/10">
                         <img alt="" src={cssGrid2.src} />
                         <div className="bg-linear-to-b absolute inset-0 flex items-end from-transparent via-transparent to-gray-950">
-                          <span className="p-4 text-sm/5 font-semibold text-white">Mansions</span>
+                          <span className="p-4 text-sm/5 font-semibold text-white">豪宅</span>
                         </div>
                       </div>
                       <div className="relative overflow-hidden sm:rounded-tr-2xl dark:outline dark:outline-white/10">
                         <img alt="" src={cssGrid3.src} />
                         <div className="bg-linear-to-b absolute inset-0 flex items-end from-transparent via-transparent to-gray-950">
-                          <span className="p-4 text-sm/5 font-semibold text-white">Lakefront cottages</span>
+                          <span className="p-4 text-sm/5 font-semibold text-white">湖畔小屋</span>
                         </div>
                       </div>
                       <div className="relative col-span-2 overflow-hidden rounded-b-2xl sm:rounded-bl-none dark:outline dark:outline-white/10">
                         <img alt="" className="aspect-2/1" src={cssGrid4.src} />
                         <div className="bg-linear-to-b absolute inset-0 flex items-end from-transparent via-transparent to-gray-950">
-                          <span className="p-4 text-sm/5 font-semibold text-white">Designer homes</span>
+                          <span className="p-4 text-sm/5 font-semibold text-white">设计师住宅</span>
                         </div>
                       </div>
                     </div>
@@ -544,10 +539,9 @@ export default function WhyTailwindCssSection() {
                 <TransitionsAndAnimationsIcon />
               </BentoIcon>
               <div>
-                <BentoTitle>Transitions and animations</BentoTitle>
+                <BentoTitle>过渡和动画</BentoTitle>
                 <BentoDescription>
-                  Transitions that work the way you'd expect — throw a few utilities on an element and you're in
-                  business.
+                  按您预期的方式工作的过渡，在一个元素上添加几个工具类，您就可以开始了。
                 </BentoDescription>
               </div>
             </BentoHeader>
@@ -564,9 +558,9 @@ export default function WhyTailwindCssSection() {
                 <CascadeLayersIcon />
               </BentoIcon>
               <div>
-                <BentoTitle>Cascade layers</BentoTitle>
+                <BentoTitle>级联层</BentoTitle>
                 <BentoDescription>
-                  Tailwind uses CSS layers so you don’t have to worry about specificity issues.
+                  Tailwind 使用 CSS 层，因此您不必担心特异性问题。
                 </BentoDescription>
               </div>
             </BentoHeader>
@@ -607,9 +601,9 @@ export default function WhyTailwindCssSection() {
                 <LogicalPropertiesIcon />
               </BentoIcon>
               <div>
-                <BentoTitle>Logical properties</BentoTitle>
+                <BentoTitle>逻辑属性</BentoTitle>
                 <BentoDescription>
-                  Supporting multiple language text directions is no longer a nightmare.
+                  支持多语言文本方向不再是噩梦。
                 </BentoDescription>
               </div>
             </BentoHeader>
@@ -680,9 +674,9 @@ export default function WhyTailwindCssSection() {
                 <ContainerQueriesIcon />
               </BentoIcon>
               <div>
-                <BentoTitle>Container queries</BentoTitle>
+                <BentoTitle>容器查询</BentoTitle>
                 <BentoDescription>
-                  Tag an element as a container to let children adapt to changes in its size.
+                  将元素标记为容器，以便让子元素适应其大小变化。
                 </BentoDescription>
               </div>
             </BentoHeader>
@@ -728,10 +722,9 @@ export default function WhyTailwindCssSection() {
                 <GradientsIcon />
               </BentoIcon>
               <div>
-                <BentoTitle>Gradients</BentoTitle>
+                <BentoTitle>渐变</BentoTitle>
                 <BentoDescription>
-                  No need to remember that complicated gradient syntax — create silky-smooth gradients with just a few
-                  utility classes.
+                  无需记住复杂的渐变语法，只需几个实用类即可创建丝滑顺畅的渐变。
                 </BentoDescription>
               </div>
             </BentoHeader>
@@ -739,21 +732,20 @@ export default function WhyTailwindCssSection() {
               <div className="-mt-27 -mr-124 xl:-mr-26 -mb-8 bg-white px-6 py-16 ring ring-gray-950/5 md:px-16 dark:bg-gray-950 dark:ring-white/10">
                 <div className="flex flex-col gap-2">
                   <span className="text-sm/7 font-medium text-gray-950/75 dark:text-white/75">
-                    Power Meets Precision
+                    力量与精确
                   </span>
                   <h3 className="text-4xl/12 font-semibold text-gray-950 dark:text-white">
-                    Redefining real-time performance
+                    重新定义实时性能
                   </h3>
                   <p className="text-lg/7 font-medium text-gray-950/75 dark:text-white/75">
-                    Our next-generation rendering engine delivers unmatched speed and efficiency, empowering creators to
-                    push boundaries like never before.
+                    我们的下一代渲染引擎提供无与伦比的速度和效率，使创作者能够前所未有地突破界限。
                   </p>
                 </div>
                 <div className="mt-10 flex flex-col gap-10">
                   <div className="flex gap-6">
                     <div className="flex flex-1 flex-col gap-2.5">
                       <span className="text-base/7 font-medium text-gray-950 dark:text-white">
-                        Render time performance
+                        渲染时间性能
                       </span>
                       <div className="bg-linear-to-r h-2.5 w-full rounded-full from-emerald-500 to-sky-400 ring-1 ring-inset ring-gray-950/10 dark:from-emerald-400 dark:ring-white/10"></div>
                     </div>
@@ -762,7 +754,7 @@ export default function WhyTailwindCssSection() {
                   <div className="flex gap-6">
                     <div className="flex flex-1 flex-col gap-2.5">
                       <span className="text-base/7 font-medium text-gray-950 dark:text-white">
-                        Real-time frame rate
+                        实时帧率
                       </span>
                       <div className="bg-linear-to-r h-2.5 w-3/4 rounded-full from-pink-600 to-amber-300 ring-1 ring-inset ring-gray-950/10 dark:from-pink-500 dark:to-amber-200 dark:ring-white/10"></div>
                     </div>
@@ -771,7 +763,7 @@ export default function WhyTailwindCssSection() {
                   <div className="flex gap-6">
                     <div className="flex flex-1 flex-col gap-2.5">
                       <span className="text-base/7 font-medium text-gray-950 dark:text-white">
-                        Multi-platform build time
+                        多平台构建时间
                       </span>
                       <div className="bg-linear-to-r h-2.5 w-1/2 rounded-full from-purple-600 to-cyan-400 ring-1 ring-inset ring-gray-950/10 dark:from-purple-500 dark:ring-white/10"></div>
                     </div>
@@ -788,10 +780,9 @@ export default function WhyTailwindCssSection() {
                 <_3DTransformsIcon />
               </BentoIcon>
               <div>
-                <BentoTitle>3D transforms</BentoTitle>
+                <BentoTitle>3D 变换</BentoTitle>
                 <BentoDescription>
-                  Sometimes two dimensions aren’t enough. Scale, rotate, and translate any element in 3D space to add a
-                  touch of depth.
+                  有时候二维不足以满足需求，在三维空间中缩放、旋转和移动任何元素，以增加一丝深度。
                 </BentoDescription>
               </div>
             </BentoHeader>

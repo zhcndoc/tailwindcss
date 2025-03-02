@@ -57,11 +57,9 @@ export function FooterMeta({ className }: { className?: string }) {
       >
         <ThemeToggle />
         <div className="flex flex-col gap-4 text-sm/6 text-gray-700 sm:flex-row sm:gap-2 sm:pr-4 dark:text-gray-400">
-          <span>Copyright ©&nbsp;2025&nbsp;Tailwind Labs Inc.</span>
-          <span className="max-sm:hidden">&middot;</span>
-          <Link href="/brand" className="hover:underline">
-            Trademark Policy
-          </Link>
+          <a target="_blank" href="https://www.zhcndoc.com"> 简中文档 </a>
+          {" - "}
+          <a rel="nofollow" target="_blank" href="https://beian.miit.gov.cn"> 沪ICP备2024070610号-3 </a>
         </div>
       </div>
     </div>
@@ -71,26 +69,26 @@ export function FooterMeta({ className }: { className?: string }) {
 function Learn() {
   return (
     <>
-      <h3 className="font-semibold">Learn</h3>
+      <h3 className="font-semibold">学习</h3>
       <ul className="mt-4 grid gap-4">
         <li>
           <Link href="/docs" className="hover:underline">
-            Documentation
+            文档
           </Link>
         </li>
         <li>
           <Link href="/showcase" className="hover:underline">
-            Showcase
+            展示柜
           </Link>
         </li>
         <li>
           <Link href="/blog" className="hover:underline">
-            Blog
+            博客
           </Link>
         </li>
         <li>
           <Link href="https://play.tailwindcss.com/" className="hover:underline">
-            Playground
+            演练场
           </Link>
         </li>
       </ul>
@@ -105,17 +103,17 @@ function TailwindUI() {
       <ul className="mt-4 grid gap-4">
         <li>
           <Link href="https://tailwindui.com/components?ref=footer" className="hover:underline">
-            UI Blocks
+            UI 组件
           </Link>
         </li>
         <li>
           <Link href="https://tailwindui.com/templates?ref=footer" className="hover:underline">
-            Templates
+            模板
           </Link>
         </li>
         <li>
           <Link href="https://tailwindui.com/templates/catalyst?ref=footer" className="hover:underline">
-            UI Kit
+            UI 套件
           </Link>
         </li>
       </ul>
@@ -126,7 +124,7 @@ function TailwindUI() {
 function Resources() {
   return (
     <>
-      <h3 className="font-semibold">Resources</h3>
+      <h3 className="font-semibold">资源</h3>
       <ul className="mt-4 grid gap-4">
         <li>
           <Link href="https://www.refactoringui.com" className="hover:underline">
@@ -156,7 +154,7 @@ function Resources() {
 function Community() {
   return (
     <>
-      <h3 className="font-semibold">Community</h3>
+      <h3 className="font-semibold">社区</h3>
       <ul className="mt-4 grid gap-4">
         <li>
           <Link href="https://github.com/tailwindlabs/tailwindcss" className="hover:underline">

@@ -36,7 +36,7 @@ export default function BuildAnythingSection() {
 
       <GridContainer>
         <h2 className="max-w-lg text-balance px-2 text-[2.5rem]/10 font-medium tracking-tighter max-sm:px-4">
-          Build whatever you want, without touching your CSS file.
+          构建你想要的一切，<br></br>无需接触你的 CSS 文件。
         </h2>
       </GridContainer>
 
@@ -47,8 +47,7 @@ export default function BuildAnythingSection() {
 
       <GridContainer>
         <p className="max-w-(--breakpoint-md) px-2 text-base/7 text-gray-600 max-sm:px-4 dark:text-gray-400">
-          Because Tailwind is so low-level, it never encourages you to design the same site twice. Some of your favorite
-          sites are built with Tailwind, and you probably had no idea.
+          因为 Tailwind 是如此底层，它从不鼓励你重复设计同一个网站。你最喜欢的一些网站是用 Tailwind 构建的，而你可能对此毫不知情。
         </p>
       </GridContainer>
 

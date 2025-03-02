@@ -4,15 +4,15 @@ import ShowcaseThumbnail from "@/components/showcase-thumbnail";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Showcase",
+  title: "展示柜",
   description:
-    "A collection of beautiful websites built with Tailwind CSS, including marketing sites, SaaS applications, ecommerce stores, and more.",
+    "一系列使用 Tailwind CSS 构建的美丽网站，包括营销网站、SaaS 应用程序、电子商务商店等。",
   openGraph: {
     type: "article",
-    title: "Showcase - Build anything",
-    description: "A collection of beautiful websites built with Tailwind CSS.",
-    images: "https://tailwindcss.com/api/og?path=/showcase",
-    url: "https://tailwindcss.com/showcase",
+    title: "展示柜 - 构建任何东西",
+    description: "一组使用 Tailwind CSS 构建的美丽网站。",
+    images: "https://tailwindcss.zhcndoc.com/api/og?path=/showcase",
+    url: "https://tailwindcss.zhcndoc.com/showcase",
   },
 };
 
@@ -22,18 +22,17 @@ export default async function Showcase() {
       <div className="mx-2 font-mono text-sm/7 font-medium tracking-widest text-gray-500 uppercase">Showcase</div>
       <GridContainer>
         <h1 className="mx-2 text-4xl tracking-tighter text-balance sm:text-5xl lg:text-6xl xl:text-8xl">
-          You can build anything with Tailwind CSS.
+          你可以用 Tailwind CSS 构建任何东西。
         </h1>
       </GridContainer>
 
       <GridContainer className="mt-10">
         <p className="prose mx-2 max-w-(--breakpoint-md) text-lg leading-8 text-gray-600 dark:text-gray-400">
-          Well not quite <em>anything</em>, like you can't build a spaceship with it. But you can definitely build the
-          website for the spaceship —{" "}
+          几乎什么东西都可以，但你不能用它来建造一艘宇宙飞船。不过你绝对可以用它建造宇宙飞船的网站，
           <a href="https://www.nasa.gov/" target="_blank" rel="noreferrer">
             NASA
           </a>{" "}
-          did.
+          就是这么做的。
         </p>
       </GridContainer>
 

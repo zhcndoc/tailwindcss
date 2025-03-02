@@ -75,7 +75,7 @@ export async function getBlogPostSlugs(): Promise<string[]> {
 
 export function formatDate(timestamp: string) {
   const date = new Date(timestamp);
-  return date.toLocaleDateString("en-US", {
+  return date.toLocaleDateString("zh-CN", {
     month: "long",
     day: "numeric",
     year: "numeric",

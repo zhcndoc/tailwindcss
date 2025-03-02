@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
       </div>
       <GridContainer>
         <h1 className="text-balance px-2 text-4xl tracking-tighter max-lg:font-medium max-sm:px-4 sm:text-5xl lg:text-6xl xl:text-8xl">
-          Rapidly build modern websites without ever leaving your HTML.
+          快速构建现代化网站，无需离开您的 HTML。
         </h1>
       </GridContainer>
       <div
@@ -74,24 +74,25 @@ const Hero: React.FC = () => {
         <span className="hidden dark:inline">text-white</span> font-medium
       </div>
       <GridContainer>
+        {/* 一个以实用为先的 CSS 框架，包含像 flex、pt-4、text-center 和 rotate-90 这样的类，可以组合在一起直接在你的标记中构建任何设计。 */}
         <p className="max-w-(--breakpoint-md) px-2 text-lg/7 font-medium text-gray-600 max-sm:px-4 dark:text-gray-400">
-          A utility-first CSS framework packed with classes like{" "}
-          <span className="font-mono text-[1.0625rem] text-sky-500 dark:text-sky-400">flex</span>,{" "}
-          <span className="font-mono text-[1.0625rem] text-sky-500 dark:text-sky-400">pt-4</span>,{" "}
-          <span className="font-mono text-[1.0625rem] text-sky-500 dark:text-sky-400">text-center</span> and{" "}
-          <span className="font-mono text-[1.0625rem] text-sky-500 dark:text-sky-400">rotate-90</span> that can be
-          composed to build any design, directly in your markup.
+        一个以实用为先的 CSS 框架，包含像{" "}
+          <span className="font-mono text-[1.0625rem] text-sky-500 dark:text-sky-400">flex</span>{"、"}
+          <span className="font-mono text-[1.0625rem] text-sky-500 dark:text-sky-400">pt-4</span>{"、"}
+          <span className="font-mono text-[1.0625rem] text-sky-500 dark:text-sky-400">text-center</span> 和{" "}
+          <span className="font-mono text-[1.0625rem] text-sky-500 dark:text-sky-400">rotate-90</span>{" "}
+          这样的类，可以组合在一起直接在你的标记中构建任何设计。
         </p>
       </GridContainer>
       <GridContainer className="mt-10 px-4 sm:hidden">
         <LinkButton href="docs/installation" className="z-1 w-full text-center">
-          Get started
+          开始使用
         </LinkButton>
       </GridContainer>
       <GridContainer className="mt-4 sm:mt-10 sm:px-2">
         <div className="flex gap-4 max-sm:px-4">
           <LinkButton href="docs/installation" className="z-1 max-sm:hidden">
-            Get started
+            开始使用
           </LinkButton>
           <SearchButton className="outline-gray-950/8 grid w-full grid-cols-[auto_1fr_auto] items-center gap-1 rounded-full px-4 py-2 text-left text-sm/6 text-gray-950/50 outline -outline-offset-1 sm:w-80 dark:bg-white/5 dark:text-white/50 dark:outline-white/15">
             <svg
@@ -105,7 +106,7 @@ const Hero: React.FC = () => {
                 clipRule="evenodd"
               />
             </svg>
-            Quick search
+            快速搜索
             <kbd className="hidden font-sans text-xs/4 text-gray-500 dark:text-gray-400 [.os-macos_&]:block">
               <span className="opacity-60">⌘</span>K
             </kbd>

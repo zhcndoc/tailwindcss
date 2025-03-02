@@ -48,7 +48,7 @@ export default async function DocPage({ children }: { children: React.ReactNode 
         <div className="max-xl:hidden">
           <div className="sticky top-14 max-h-[calc(100svh-3.5rem)] overflow-x-hidden px-6 pt-10 pb-24">
             <TableOfContents tableOfContents={tableOfContents} />
-            <BookPromo />
+            {/* <BookPromo /> */}
           </div>
         </div>
       </div>

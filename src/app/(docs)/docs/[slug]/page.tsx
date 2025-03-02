@@ -29,7 +29,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   let title = `${post.title} - ${sectionAndTitle?.section ?? ""}`;
 
   return {
-    metadataBase: new URL("https://tailwindcss.com"),
+    metadataBase: new URL("https://tailwindcss.zhcndoc.com"),
     title,
     description: post.description,
     openGraph: {
@@ -94,7 +94,7 @@ export default async function DocPage(props: Props) {
         <div className="max-xl:hidden">
           <div className="sticky top-14 max-h-[calc(100svh-3.5rem)] overflow-x-hidden px-6 pt-10 pb-24">
             <TableOfContents tableOfContents={tableOfContents} />
-            <BookPromo />
+            {/* <BookPromo /> */}
           </div>
         </div>
       </div>

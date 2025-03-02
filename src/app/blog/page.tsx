@@ -8,14 +8,14 @@ import { formatDate, getBlogPostBySlug, getBlogPostSlugs, nonNullable } from "./
 import { FooterSitemap, FooterMeta } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "All the latest Tailwind CSS news, straight from the team.",
+  title: "Tailwind CSS 博客",
+  description: "来自 Tailwind CSS 团队的最新消息。",
   openGraph: {
     type: "article",
-    title: "Latest updates - Blog",
-    description: "All the latest Tailwind CSS news, straight from the team.",
-    images: "https://tailwindcss.com/api/og?path=/blog",
-    url: "https://tailwindcss.com/blog",
+    title: "最新更新 - Tailwind CSS 博客",
+    description: "来自 Tailwind CSS 团队的最新消息。",
+    images: "https://tailwindcss.zhcndoc.com/api/og?path=/blog",
+    url: "https://tailwindcss.zhcndoc.com/blog",
   },
 };
 
@@ -31,11 +31,11 @@ export default async function Blog() {
         <Keyboard />
       </div>
       <GridContainer>
-        <h1 className="mx-2 text-6xl tracking-tighter text-balance sm:text-7xl lg:text-8xl">Latest Updates</h1>
+        <h1 className="mx-2 text-6xl tracking-tighter text-balance sm:text-7xl lg:text-8xl">最新更新</h1>
       </GridContainer>
 
       <GridContainer className="mt-10">
-        <p className="mx-2 text-lg">All the latest Tailwind CSS news, straight from the team.</p>
+        <p className="mx-2 text-lg">来自 Tailwind CSS 团队的最新消息。</p>
       </GridContainer>
 
       <GridContainer className="mt-10">
@@ -66,7 +66,7 @@ export default async function Blog() {
                     href={`/blog/${slug}`}
                     className="mt-4 inline-block text-sm font-semibold text-sky-500 hover:text-sky-600 dark:text-sky-400"
                   >
-                    Read more
+                    阅读更多
                   </Link>
                 </div>
               </div>
