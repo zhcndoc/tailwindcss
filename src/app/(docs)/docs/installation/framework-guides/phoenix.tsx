@@ -45,7 +45,7 @@ export let steps: Step[] = [
           [
             # …
             # [!code highlight:2]
-            {:tailwind, "~> 0.2", runtime: Mix.env() == :dev},
+            {:tailwind, "~> 0.3", runtime: Mix.env() == :dev},
           ]
         end
       `,
@@ -68,10 +68,11 @@ export let steps: Step[] = [
           myproject: [
             args: ~w(
               # [!code highlight:3]
-              --input=css/app.css
-              --output=../priv/static/assets/app.css
+              --input=assets/css/app.css
+              --output=priv/static/assets/app.css
             ),
-            cd: Path.expand("../assets", __DIR__)
+            # [!code highlight:2]
+            cd: Path.expand("..", __DIR__)
           ]
       `,
     },
@@ -136,14 +137,14 @@ export let steps: Step[] = [
     title: "导入 Tailwind CSS",
     body: (
       <p>
-        添加一个 <code>@import</code> 到 <code>./assets/css/app.css</code> 中以导入 Tailwind CSS。另外，告诉 Tailwind CSS 在哪里扫描实用工具.
+        添加一个 <code>@import</code> 到 <code>./assets/css/app.css</code> 中以导入 Tailwind CSS。
       </p>
     ),
     code: {
       name: "app.css",
       lang: "css",
       code: css`
-        @import "tailwindcss" source("../..");
+        @import "tailwindcss";
       `,
     },
   },

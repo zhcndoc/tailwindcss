@@ -49,7 +49,7 @@ export default function WhyTailwindCssSection() {
     <div className="relative max-w-full">
       <div
         aria-hidden="true"
-        className="hidden h-4 items-end whitespace-pre px-2 font-mono text-xs/6 text-black/20 max-sm:px-4 2xl:visible 2xl:flex dark:text-white/25"
+        className="hidden h-4 items-end px-2 font-mono text-xs/6 whitespace-pre text-black/20 max-sm:px-4 2xl:visible 2xl:flex dark:text-white/25"
       >
         text-4xl <span className="inline dark:hidden">text-gray-950</span>
         <span className="hidden dark:inline">text-white</span> tracking-tighter text-balance
@@ -60,14 +60,14 @@ export default function WhyTailwindCssSection() {
       </GridContainer>
 
       <GridContainer>
-        <h2 className="max-w-lg text-balance px-2 text-[2.5rem]/10 font-medium tracking-tighter max-sm:px-4 2xl:mt-0">
+        <h2 className="max-w-lg px-2 text-[2.5rem]/10 font-medium tracking-tighter text-balance max-sm:px-4 2xl:mt-0">
           为现代化网站而构建。
         </h2>
       </GridContainer>
 
       <div
         aria-hidden="true"
-        className="flex h-6 items-end whitespace-pre px-2 font-mono text-xs/6 text-black/20 max-sm:px-4 sm:h-10 dark:text-white/25"
+        className="flex h-6 items-end px-2 font-mono text-xs/6 whitespace-pre text-black/20 max-sm:px-4 sm:h-10 dark:text-white/25"
       >
         text-base <span className="inline dark:hidden">text-gray-950</span>
         <span className="hidden dark:inline">text-white</span>
@@ -80,7 +80,7 @@ export default function WhyTailwindCssSection() {
       </GridContainer>
 
       <GridContainer className="mt-16">
-        <div className="grid-cols-30 grid w-full grid-flow-dense gap-2 bg-gray-950/5 p-2 dark:bg-white/10">
+        <div className="grid w-full grid-flow-dense grid-cols-30 gap-2 bg-gray-950/5 p-2 dark:bg-white/10">
           <BentoItem className="col-span-full">
             <BentoHeader>
               <BentoIcon>
@@ -95,7 +95,7 @@ export default function WhyTailwindCssSection() {
             </BentoHeader>
             <BentoBody className="h-112">
               <div className="group flex flex-col gap-2">
-                <div className="not-sm:hidden flex justify-start">
+                <div className="flex justify-start not-sm:hidden">
                   <div className="flex w-10 shrink-0 grow-0 gap-2">
                     <div className="h-8 w-px shrink-0 bg-gray-950/20 dark:bg-white/30"></div>
                     <span className="text-gray-950 dark:text-white">
@@ -103,25 +103,25 @@ export default function WhyTailwindCssSection() {
                     </span>
                   </div>
                   <div className="ml-150 flex w-32 shrink-0 grow-0 gap-2">
-                    <div className="not-group-has-data-sm:bg-gray-950/5 dark:not-group-has-data-sm:bg-white/10 h-8 w-px shrink-0 bg-gray-950/20 dark:bg-white/30"></div>
+                    <div className="h-8 w-px shrink-0 bg-gray-950/20 not-group-has-data-sm:bg-gray-950/5 dark:bg-white/30 dark:not-group-has-data-sm:bg-white/10"></div>
                     <span className="not-group-has-data-sm:opacity-40">
                       <Code>sm</Code>
                     </span>
                   </div>
                   <div className="flex w-64 shrink-0 grow-0 gap-2">
-                    <div className="not-group-has-data-md:bg-gray-950/5 dark:not-group-has-data-md:bg-white/10 h-8 w-px shrink-0 bg-gray-950/20 dark:bg-white/30"></div>
+                    <div className="h-8 w-px shrink-0 bg-gray-950/20 not-group-has-data-md:bg-gray-950/5 dark:bg-white/30 dark:not-group-has-data-md:bg-white/10"></div>
                     <span className="not-group-has-data-md:opacity-40">
                       <Code>md</Code>
                     </span>
                   </div>
                   <div className="flex w-64 shrink-0 grow-0 gap-2">
-                    <div className="not-group-has-data-lg:bg-gray-950/5 dark:not-group-has-data-lg:bg-white/10 h-8 w-px shrink-0 bg-gray-950/20 dark:bg-white/30"></div>
+                    <div className="h-8 w-px shrink-0 bg-gray-950/20 not-group-has-data-lg:bg-gray-950/5 dark:bg-white/30 dark:not-group-has-data-lg:bg-white/10"></div>
                     <span className="not-group-has-data-lg:opacity-40">
                       <Code>lg</Code>
                     </span>
                   </div>
                   <div className="flex w-64 shrink-0 grow-0 gap-2">
-                    <div className="not-group-has-data-xl:bg-gray-950/5 dark:not-group-has-data-xl:bg-white/10 h-8 w-px shrink-0 bg-gray-950/20 dark:bg-white/30"></div>
+                    <div className="h-8 w-px shrink-0 bg-gray-950/20 not-group-has-data-xl:bg-gray-950/5 dark:bg-white/30 dark:not-group-has-data-xl:bg-white/10"></div>
                     <span className="not-group-has-data-xl:opacity-40">
                       <Code>xl</Code>
                     </span>
@@ -129,42 +129,42 @@ export default function WhyTailwindCssSection() {
                 </div>
                 <Resizable>
                   <ResizablePanel className="@container max-sm:mr-0!">
-                    <div className="@min-[theme(--breakpoint-lg)]:grid-cols-2 @min-[theme(--breakpoint-lg)]:px-20 @min-[theme(--breakpoint-lg)]:py-8 @min-[theme(--breakpoint-lg)]:pb-10 relative grid gap-10 rounded-t-2xl bg-white p-6 pb-10 ring ring-gray-950/5 dark:bg-gray-950 dark:ring-white/10">
+                    <div className="relative grid gap-10 rounded-t-2xl bg-white p-6 pb-10 ring ring-gray-950/5 @min-[theme(--breakpoint-lg)]:grid-cols-2 @min-[theme(--breakpoint-lg)]:px-20 @min-[theme(--breakpoint-lg)]:py-8 @min-[theme(--breakpoint-lg)]:pb-10 dark:bg-gray-950 dark:ring-white/10">
                       <div className="flex flex-1 flex-col">
-                        <div className="@max-[theme(--breakpoint-xl)]:-mx-4 @max-[theme(--breakpoint-xl)]:-mt-4 @min-[theme(--breakpoint-lg)]:hidden relative mb-4 overflow-hidden rounded-lg">
-                          <div className="@min-[theme(--breakpoint-sm)]:grid-cols-4 grid grid-cols-1 gap-2">
+                        <div className="relative mb-4 overflow-hidden rounded-lg @max-[theme(--breakpoint-xl)]:-mx-4 @max-[theme(--breakpoint-xl)]:-mt-4 @min-[theme(--breakpoint-lg)]:hidden">
+                          <div className="grid grid-cols-1 gap-2 @min-[theme(--breakpoint-sm)]:grid-cols-4">
                             <img
                               alt=""
                               src={responsive1.src}
-                              className="@min-[theme(--breakpoint-sm)]:col-span-2 @min-[theme(--breakpoint-sm)]:h-40 h-48 w-full rounded-lg bg-gray-950/5 object-cover"
+                              className="h-48 w-full rounded-lg bg-gray-950/5 object-cover @min-[theme(--breakpoint-sm)]:col-span-2 @min-[theme(--breakpoint-sm)]:h-40"
                             />
 
                             <img
                               alt=""
                               src={responsive2.src}
-                              className="@max-[theme(--breakpoint-sm)]:hidden @min-[theme(--breakpoint-md)]:col-span-1 @min-[theme(--breakpoint-sm)]:h-40 col-span-2 h-48 w-full rounded-lg bg-gray-950/5 object-cover"
+                              className="col-span-2 h-48 w-full rounded-lg bg-gray-950/5 object-cover @max-[theme(--breakpoint-sm)]:hidden @min-[theme(--breakpoint-md)]:col-span-1 @min-[theme(--breakpoint-sm)]:h-40"
                             />
 
                             <img
                               alt=""
                               src={responsive3.src}
-                              className="@max-[theme(--breakpoint-md)]:hidden @min-[theme(--breakpoint-sm)]:h-40 h-48 w-full rounded-lg bg-gray-950/5 object-cover"
+                              className="h-48 w-full rounded-lg bg-gray-950/5 object-cover @max-[theme(--breakpoint-md)]:hidden @min-[theme(--breakpoint-sm)]:h-40"
                             />
                           </div>
 
-                          <div className="bg-linear-to-b @min-[theme(--breakpoint-sm)]:hidden absolute inset-0 flex flex-col justify-end gap-2 from-transparent via-transparent to-gray-950 p-6">
+                          <div className="absolute inset-0 flex flex-col justify-end gap-2 bg-linear-to-b from-transparent via-transparent to-gray-950 p-6 @min-[theme(--breakpoint-sm)]:hidden">
                             <span className="text-sm/6 font-semibold text-white/80">整栋房子</span>
                             <span className="text-xl/6 font-semibold text-white">休伦湖的海滨别墅</span>
                           </div>
                         </div>
 
-                        <span className="@max-[theme(--breakpoint-sm)]:hidden font-medium text-gray-500 dark:text-gray-500">
+                        <span className="font-medium text-gray-500 @max-[theme(--breakpoint-sm)]:hidden dark:text-gray-500">
                           整栋房子
                         </span>
 
-                        <div className="@min-[theme(--breakpoint-sm)]:grid-cols-[1fr_auto] @min-[theme(--breakpoint-xl)]:grid-cols-1 grid grid-cols-1 gap-4">
+                        <div className="grid grid-cols-1 gap-4 @min-[theme(--breakpoint-sm)]:grid-cols-[1fr_auto] @min-[theme(--breakpoint-xl)]:grid-cols-1">
                           <div>
-                            <span className="@max-[theme(--breakpoint-sm)]:hidden mt-2 text-3xl font-semibold text-gray-950 dark:text-white">
+                            <span className="mt-2 text-3xl font-semibold text-gray-950 @max-[theme(--breakpoint-sm)]:hidden dark:text-white">
                               休伦湖的海滨别墅
                             </span>
 
@@ -184,7 +184,7 @@ export default function WhyTailwindCssSection() {
                           <div className="@min-[theme(--breakpoint-lg)]:hidden">
                             <button
                               type="button"
-                              className="@min-[theme(--breakpoint-sm)]:w-auto w-full rounded-lg bg-pink-500 px-3 py-2 text-sm/6 font-bold text-white"
+                              className="w-full rounded-lg bg-pink-500 px-3 py-2 text-sm/6 font-bold text-white @min-[theme(--breakpoint-sm)]:w-auto"
                             >
                               检查可用性
                             </button>
@@ -192,9 +192,9 @@ export default function WhyTailwindCssSection() {
                         </div>
 
                         <div>
-                          <p className="@min-[theme(--breakpoint-xl)]:max-w-md mt-4 line-clamp-2 text-sm/6 text-gray-600 dark:text-gray-400">
+                          <p className="mt-4 line-clamp-2 text-sm/6 text-gray-600 @min-[theme(--breakpoint-xl)]:max-w-md dark:text-gray-400">
                             这个阳光明媚且宽敞的房间适合那些轻装出行、寻找舒适温馨的地方过夜的旅客...{" "}
-                            <span className="sm:@max-[theme(--breakpoint-sm)]:inline-block hidden font-bold text-pink-600 before:text-white dark:text-pink-500">
+                            <span className="hidden font-bold text-pink-600 before:text-white sm:@max-[theme(--breakpoint-sm)]:inline-block dark:text-pink-500">
                               显示更多
                             </span>
                           </p>
@@ -204,7 +204,7 @@ export default function WhyTailwindCssSection() {
                           </span>
                         </div>
 
-                        <div className="@max-[theme(--breakpoint-lg)]:hidden mt-6">
+                        <div className="mt-6 @max-[theme(--breakpoint-lg)]:hidden">
                           <button
                             type="button"
                             className="w-auto rounded-lg bg-pink-500 px-3 py-2 text-sm/6 font-bold text-white"
@@ -213,23 +213,23 @@ export default function WhyTailwindCssSection() {
                           </button>
                         </div>
                       </div>
-                      <div className="@max-[theme(--breakpoint-lg)]:hidden grid grid-cols-4 grid-rows-2 gap-2">
+                      <div className="grid grid-cols-4 grid-rows-2 gap-2 @max-[theme(--breakpoint-lg)]:hidden">
                         <img
                           alt=""
                           src={responsive1.src}
-                          className="@min-[theme(--breakpoint-xl)]:col-span-2 @min-[theme(--breakpoint-xl)]:row-span-2 @min-[theme(--breakpoint-xl)]:aspect-square @min-[theme(--breakpoint-xl)]:h-[308px] col-span-4 h-[150px] w-full rounded-lg bg-gray-950/5 object-cover"
+                          className="col-span-4 h-[150px] w-full rounded-lg bg-gray-950/5 object-cover @min-[theme(--breakpoint-xl)]:col-span-2 @min-[theme(--breakpoint-xl)]:row-span-2 @min-[theme(--breakpoint-xl)]:aspect-square @min-[theme(--breakpoint-xl)]:h-[308px]"
                         />
                         <img
                           alt=""
                           src={responsive2.src}
-                          className="@max-[theme(--breakpoint-xl)]:aspect-square @min-[theme(--breakpoint-xl)]:col-span-1 col-span-2 h-[150px] w-full rounded-lg bg-gray-950/5"
+                          className="col-span-2 h-[150px] w-full rounded-lg bg-gray-950/5 @max-[theme(--breakpoint-xl)]:aspect-square @min-[theme(--breakpoint-xl)]:col-span-1"
                         />
                         <img
                           alt=""
                           src={responsive3.src}
-                          className="@max-[theme(--breakpoint-xl)]:aspect-square @min-[theme(--breakpoint-xl)]:col-span-1 col-span-2 h-[150px] w-full rounded-lg bg-gray-950/5"
+                          className="col-span-2 h-[150px] w-full rounded-lg bg-gray-950/5 @max-[theme(--breakpoint-xl)]:aspect-square @min-[theme(--breakpoint-xl)]:col-span-1"
                         />
-                        <div className="@max-[theme(--breakpoint-xl)]:hidden contents">
+                        <div className="contents @max-[theme(--breakpoint-xl)]:hidden">
                           <img
                             alt=""
                             src={responsive4.src}
@@ -246,9 +246,9 @@ export default function WhyTailwindCssSection() {
                   </ResizablePanel>
                   <ResizableHandle
                     className={clsx(
-                      "pointer-events-auto absolute -right-4 top-[186px] z-50 -mt-6 h-12 w-1.5 cursor-ew-resize rounded-full max-lg:hidden",
-                      "group-data-dragging:bg-slate-950/40 bg-slate-950/20 hover:bg-slate-950/40",
-                      "dark:group-data-dragging:bg-slate-300 dark:bg-slate-500 dark:hover:bg-slate-300",
+                      "pointer-events-auto absolute top-[186px] -right-4 z-50 -mt-6 h-12 w-1.5 cursor-ew-resize rounded-full max-lg:hidden",
+                      "bg-slate-950/20 group-data-dragging:bg-slate-950/40 hover:bg-slate-950/40",
+                      "dark:bg-slate-500 dark:group-data-dragging:bg-slate-300 dark:hover:bg-slate-300",
                     )}
                   />
                 </Resizable>
@@ -256,7 +256,7 @@ export default function WhyTailwindCssSection() {
             </BentoBody>
           </BentoItem>
 
-          <BentoItem className="md:col-span-15 col-span-full">
+          <BentoItem className="col-span-full md:col-span-15">
             <BentoHeader>
               <BentoIcon>
                 <FiltersIcon />
@@ -270,7 +270,7 @@ export default function WhyTailwindCssSection() {
             </BentoHeader>
             <BentoBody className="h-112" padding={false}>
               <div className="@container relative flex size-full items-center justify-center">
-                <Autoscroll className="no-scrollbar gap-(--gap) z-10 -my-1 flex snap-x snap-mandatory overflow-x-auto py-1 [--gap:--spacing(10)] [--size:--spacing(72)]">
+                <Autoscroll className="no-scrollbar z-10 -my-1 flex snap-x snap-mandatory gap-(--gap) overflow-x-auto py-1 [--gap:--spacing(10)] [--size:--spacing(72)]">
                   <div className="flex snap-proximity snap-end">
                     <div className="w-[calc(50cqw-(var(--size)/2)-(var(--gap)))]" />
                   </div>
@@ -286,7 +286,7 @@ export default function WhyTailwindCssSection() {
                     return (
                       <div key={name} data-target className="flex snap-center snap-always flex-col items-center gap-2">
                         <Code>{name}</Code>
-                        <div className="inset-ring inset-ring-white/20 shadow ring ring-gray-950/10">
+                        <div className="shadow ring inset-ring ring-gray-950/10 inset-ring-white/20">
                           <div className={clsx("size-(--size) bg-white/15", className)} />
                         </div>
                       </div>
@@ -299,13 +299,13 @@ export default function WhyTailwindCssSection() {
                 </Autoscroll>
 
                 <div className="absolute inset-0 mt-8 flex items-center justify-center">
-                  <img alt="" src={filtersImg.src} className="inset-ring inset-ring-gray-950/10 size-64" />
+                  <img alt="" src={filtersImg.src} className="size-64 inset-ring inset-ring-gray-950/10" />
                 </div>
               </div>
             </BentoBody>
           </BentoItem>
 
-          <BentoItem className="md:col-span-15 col-span-full">
+          <BentoItem className="col-span-full md:col-span-15">
             <BentoHeader>
               <BentoIcon>
                 <DarkModeIcon />
@@ -324,7 +324,7 @@ export default function WhyTailwindCssSection() {
             </BentoBody>
           </BentoItem>
 
-          <BentoItem className="md:col-span-15 col-span-full xl:col-span-12">
+          <BentoItem className="col-span-full md:col-span-15 xl:col-span-12">
             <BentoHeader>
               <BentoIcon>
                 <CssVariablesIcon />
@@ -337,7 +337,7 @@ export default function WhyTailwindCssSection() {
               </div>
             </BentoHeader>
             <BentoBody className="h-112">
-              <div className="-mb-16 -mr-16">
+              <div className="-mr-16 -mb-16">
                 <Editor>
                   <HighlightedCode
                     example={css`
@@ -366,7 +366,7 @@ export default function WhyTailwindCssSection() {
             </BentoBody>
           </BentoItem>
 
-          <BentoItem className="xl:col-span-18 col-span-full">
+          <BentoItem className="col-span-full xl:col-span-18">
             <BentoHeader>
               <BentoIcon>
                 <P3ColorsIcon />
@@ -413,7 +413,7 @@ export default function WhyTailwindCssSection() {
                 let cos = Math.abs(Math.cos(angleAsRadians));
 
                 return (
-                  <div className="-mb-16 -mr-16 mt-8 sm:mt-0">
+                  <div className="mt-8 -mr-16 -mb-16 sm:mt-0">
                     <div
                       className="group grid grid-cols-[repeat(var(--columns),var(--width))] gap-1.5 [--height:--spacing(6)] [--width:--spacing(10)] sm:[--height:--spacing(10)] sm:[--width:--spacing(16)]"
                       style={
@@ -442,7 +442,7 @@ export default function WhyTailwindCssSection() {
                           <Fragment key={shade}>
                             <div className="relative">
                               <div className="absolute -mt-1 w-screen border-t border-gray-950/5 dark:border-white/10"></div>
-                              <div className="h-(--height) w-(--width) flex items-center">
+                              <div className="flex h-(--height) w-(--width) items-center">
                                 <Code>{shade}</Code>
                               </div>
                             </div>
@@ -452,21 +452,21 @@ export default function WhyTailwindCssSection() {
                                 <Tooltip as="div" key={color} showDelayMs={100} hideDelayMs={0} className="relative">
                                   {shadeIdx === 0 && (
                                     <>
-                                      <div className="pointer-events-none absolute -left-1 -top-1 h-screen border-l border-gray-950/5 dark:border-white/10"></div>
-                                      <div className="translate-px rotate-225 pointer-events-none absolute -left-1 -top-1 h-16 origin-top-left border-l border-gray-950/5 sm:h-24 dark:border-white/10"></div>
+                                      <div className="pointer-events-none absolute -top-1 -left-1 h-screen border-l border-gray-950/5 dark:border-white/10"></div>
+                                      <div className="pointer-events-none absolute -top-1 -left-1 h-16 origin-top-left translate-px rotate-225 border-l border-gray-950/5 sm:h-24 dark:border-white/10"></div>
                                     </>
                                   )}
 
                                   <TooltipTrigger>
                                     <div
                                       style={{ "--color": `var(--color-${color}-${shade})` } as CSSProperties}
-                                      className="h-(--height) w-(--width) bg-(--color) inset-ring inset-ring-gray-950/10 dark:inset-ring-white/10 transition-opacity hover:opacity-100 group-hover:opacity-75"
+                                      className="h-(--height) w-(--width) bg-(--color) inset-ring inset-ring-gray-950/10 transition-opacity group-hover:opacity-75 hover:opacity-100 dark:inset-ring-white/10"
                                     />
                                   </TooltipTrigger>
                                   <TooltipPanel
                                     as="div"
                                     anchor="top"
-                                    className="inset-ring inset-ring-white/10 starting:opacity-0 pointer-events-none z-10 translate-y-2 whitespace-nowrap rounded-full border border-gray-950 bg-gray-950/90 py-0.5 pb-1 pl-3 pr-2 text-center font-mono text-xs/6 font-medium text-white opacity-100 transition-[opacity]"
+                                    className="pointer-events-none z-10 translate-y-2 rounded-full border border-gray-950 bg-gray-950/90 py-0.5 pr-2 pb-1 pl-3 text-center font-mono text-xs/6 font-medium whitespace-nowrap text-white opacity-100 inset-ring inset-ring-white/10 transition-[opacity] starting:opacity-0"
                                   >
                                     {value}
                                   </TooltipPanel>
@@ -483,7 +483,7 @@ export default function WhyTailwindCssSection() {
             </BentoBody>
           </BentoItem>
 
-          <BentoItem className="xl:col-span-15 col-span-full">
+          <BentoItem className="col-span-full xl:col-span-15">
             <BentoHeader>
               <BentoIcon>
                 <CssGridIcon />
@@ -496,7 +496,7 @@ export default function WhyTailwindCssSection() {
               </div>
             </BentoHeader>
             <BentoBody className="h-112">
-              <div className="-mb-8 -mr-16 [--size:--spacing(48)] lg:flex lg:justify-center xl:block">
+              <div className="-mr-16 -mb-8 [--size:--spacing(48)] lg:flex lg:justify-center xl:block">
                 <div className="-mt-18 sm:-mt-26">
                   <div className="bg-white p-6 ring ring-gray-950/5 sm:p-16 dark:bg-gray-950 dark:ring-white/10">
                     <h3 className="text-base/6 font-semibold text-gray-950 dark:text-white">浏览房产</h3>
@@ -504,25 +504,25 @@ export default function WhyTailwindCssSection() {
                       <div className="relative col-span-2 row-span-1 overflow-hidden rounded-t-2xl sm:col-span-1 sm:row-span-2 sm:rounded-none sm:rounded-l-2xl dark:outline dark:outline-white/10">
                         <img alt="" className="not-sm:hidden" src={cssGrid1.src} />
                         <img alt="" className="sm:hidden" src={cssGrid1Mobile.src} />
-                        <div className="bg-linear-to-b absolute inset-0 flex items-end from-transparent via-transparent to-gray-950">
+                        <div className="absolute inset-0 flex items-end bg-linear-to-b from-transparent via-transparent to-gray-950">
                           <span className="p-4 text-sm/5 font-semibold text-white">树屋</span>
                         </div>
                       </div>
                       <div className="relative dark:outline dark:outline-white/10">
                         <img alt="" src={cssGrid2.src} />
-                        <div className="bg-linear-to-b absolute inset-0 flex items-end from-transparent via-transparent to-gray-950">
+                        <div className="absolute inset-0 flex items-end bg-linear-to-b from-transparent via-transparent to-gray-950">
                           <span className="p-4 text-sm/5 font-semibold text-white">豪宅</span>
                         </div>
                       </div>
                       <div className="relative overflow-hidden sm:rounded-tr-2xl dark:outline dark:outline-white/10">
                         <img alt="" src={cssGrid3.src} />
-                        <div className="bg-linear-to-b absolute inset-0 flex items-end from-transparent via-transparent to-gray-950">
+                        <div className="absolute inset-0 flex items-end bg-linear-to-b from-transparent via-transparent to-gray-950">
                           <span className="p-4 text-sm/5 font-semibold text-white">湖畔小屋</span>
                         </div>
                       </div>
                       <div className="relative col-span-2 overflow-hidden rounded-b-2xl sm:rounded-bl-none dark:outline dark:outline-white/10">
                         <img alt="" className="aspect-2/1" src={cssGrid4.src} />
-                        <div className="bg-linear-to-b absolute inset-0 flex items-end from-transparent via-transparent to-gray-950">
+                        <div className="absolute inset-0 flex items-end bg-linear-to-b from-transparent via-transparent to-gray-950">
                           <span className="p-4 text-sm/5 font-semibold text-white">设计师住宅</span>
                         </div>
                       </div>
@@ -533,7 +533,7 @@ export default function WhyTailwindCssSection() {
             </BentoBody>
           </BentoItem>
 
-          <BentoItem className="xl:col-span-15 col-span-full">
+          <BentoItem className="col-span-full xl:col-span-15">
             <BentoHeader>
               <BentoIcon>
                 <TransitionsAndAnimationsIcon />
@@ -545,14 +545,14 @@ export default function WhyTailwindCssSection() {
                 </BentoDescription>
               </div>
             </BentoHeader>
-            <div className="h-112 grid gap-[inherit]">
+            <div className="grid h-112 gap-[inherit]">
               <BentoBody padding={false}>
                 <TransitionsSection />
               </BentoBody>
             </div>
           </BentoItem>
 
-          <BentoItem className="md:col-span-15 col-span-full xl:col-span-10">
+          <BentoItem className="col-span-full md:col-span-15 xl:col-span-10">
             <BentoHeader>
               <BentoIcon>
                 <CascadeLayersIcon />
@@ -565,7 +565,7 @@ export default function WhyTailwindCssSection() {
               </div>
             </BentoHeader>
             <BentoBody className="h-112">
-              <div className="-mb-16 -mr-16">
+              <div className="-mr-16 -mb-16">
                 <Editor>
                   <HighlightedCode
                     example={css`
@@ -595,7 +595,7 @@ export default function WhyTailwindCssSection() {
             </BentoBody>
           </BentoItem>
 
-          <BentoItem className="md:col-span-15 col-span-full xl:col-span-10">
+          <BentoItem className="col-span-full md:col-span-15 xl:col-span-10">
             <BentoHeader>
               <BentoIcon>
                 <LogicalPropertiesIcon />
@@ -617,7 +617,7 @@ export default function WhyTailwindCssSection() {
                 </div>
               </div>
               <div className="@container relative isolate flex h-full items-center justify-center">
-                <div className="z-1 inset-ring inset-ring-gray-950/5 dark:inset-ring-white/5 absolute -left-2 bottom-12 w-[60cqw] shrink-0 divide-y divide-gray-950/5 rounded-xl bg-white shadow-2xl dark:divide-white/5 dark:bg-gray-800">
+                <div className="absolute bottom-12 -left-2 z-1 w-[60cqw] shrink-0 divide-y divide-gray-950/5 rounded-xl bg-white shadow-2xl inset-ring inset-ring-gray-950/5 dark:divide-white/5 dark:bg-gray-800 dark:inset-ring-white/5">
                   {[
                     { src: avatar4.src, name: "Will Winton", role: "Director of Operations" },
                     { src: avatar5.src, name: "Kristin Yardly", role: "Marketing Coordinator" },
@@ -641,7 +641,7 @@ export default function WhyTailwindCssSection() {
                     );
                   })}
                 </div>
-                <div className="inset-ring inset-ring-gray-950/5 dark:inset-ring-white/5 absolute -right-3 bottom-12 w-[50cqw] shrink-0 divide-y divide-gray-950/5 rounded-xl bg-white shadow-2xl dark:divide-white/5 dark:bg-gray-800">
+                <div className="absolute -right-3 bottom-12 w-[50cqw] shrink-0 divide-y divide-gray-950/5 rounded-xl bg-white shadow-2xl inset-ring inset-ring-gray-950/5 dark:divide-white/5 dark:bg-gray-800 dark:inset-ring-white/5">
                   {[
                     { src: avatar1.src, name: "سارة أحمد", role: "مديرة مشاريع" },
                     { src: avatar2.src, name: "علي محمد", role: "مطور برمجيات" },
@@ -668,7 +668,7 @@ export default function WhyTailwindCssSection() {
             </BentoBody>
           </BentoItem>
 
-          <BentoItem className="md:col-span-15 col-span-full xl:col-span-10">
+          <BentoItem className="col-span-full md:col-span-15 xl:col-span-10">
             <BentoHeader>
               <BentoIcon>
                 <ContainerQueriesIcon />
@@ -681,7 +681,7 @@ export default function WhyTailwindCssSection() {
               </div>
             </BentoHeader>
             <BentoBody className="h-112">
-              <div className="-mb-16 -mr-16">
+              <div className="-mr-16 -mb-16">
                 <Editor>
                   <HighlightedCode
                     example={
@@ -716,7 +716,7 @@ export default function WhyTailwindCssSection() {
             </BentoBody>
           </BentoItem>
 
-          <BentoItem className="md:col-span-15 col-span-full">
+          <BentoItem className="col-span-full md:col-span-15">
             <BentoHeader>
               <BentoIcon>
                 <GradientsIcon />
@@ -729,7 +729,7 @@ export default function WhyTailwindCssSection() {
               </div>
             </BentoHeader>
             <BentoBody className="h-112">
-              <div className="-mt-27 -mr-124 xl:-mr-26 -mb-8 bg-white px-6 py-16 ring ring-gray-950/5 md:px-16 dark:bg-gray-950 dark:ring-white/10">
+              <div className="-mt-27 -mr-124 -mb-8 bg-white px-6 py-16 ring ring-gray-950/5 md:px-16 xl:-mr-26 dark:bg-gray-950 dark:ring-white/10">
                 <div className="flex flex-col gap-2">
                   <span className="text-sm/7 font-medium text-gray-950/75 dark:text-white/75">
                     力量与精确
@@ -747,7 +747,7 @@ export default function WhyTailwindCssSection() {
                       <span className="text-base/7 font-medium text-gray-950 dark:text-white">
                         渲染时间性能
                       </span>
-                      <div className="bg-linear-to-r h-2.5 w-full rounded-full from-emerald-500 to-sky-400 ring-1 ring-inset ring-gray-950/10 dark:from-emerald-400 dark:ring-white/10"></div>
+                      <div className="h-2.5 w-full rounded-full bg-linear-to-r from-emerald-500 to-sky-400 ring-1 ring-gray-950/10 ring-inset dark:from-emerald-400 dark:ring-white/10"></div>
                     </div>
                     <span className="text-3xl/12 font-semibold text-gray-950 dark:text-white">6.4x</span>
                   </div>
@@ -756,7 +756,7 @@ export default function WhyTailwindCssSection() {
                       <span className="text-base/7 font-medium text-gray-950 dark:text-white">
                         实时帧率
                       </span>
-                      <div className="bg-linear-to-r h-2.5 w-3/4 rounded-full from-pink-600 to-amber-300 ring-1 ring-inset ring-gray-950/10 dark:from-pink-500 dark:to-amber-200 dark:ring-white/10"></div>
+                      <div className="h-2.5 w-3/4 rounded-full bg-linear-to-r from-pink-600 to-amber-300 ring-1 ring-gray-950/10 ring-inset dark:from-pink-500 dark:to-amber-200 dark:ring-white/10"></div>
                     </div>
                     <span className="text-3xl/12 font-semibold text-gray-950 dark:text-white">4.2x</span>
                   </div>
@@ -765,7 +765,7 @@ export default function WhyTailwindCssSection() {
                       <span className="text-base/7 font-medium text-gray-950 dark:text-white">
                         多平台构建时间
                       </span>
-                      <div className="bg-linear-to-r h-2.5 w-1/2 rounded-full from-purple-600 to-cyan-400 ring-1 ring-inset ring-gray-950/10 dark:from-purple-500 dark:ring-white/10"></div>
+                      <div className="h-2.5 w-1/2 rounded-full bg-linear-to-r from-purple-600 to-cyan-400 ring-1 ring-gray-950/10 ring-inset dark:from-purple-500 dark:ring-white/10"></div>
                     </div>
                     <span className="text-3xl/12 font-semibold text-gray-950 dark:text-white">2.7x</span>
                   </div>
@@ -774,7 +774,7 @@ export default function WhyTailwindCssSection() {
             </BentoBody>
           </BentoItem>
 
-          <BentoItem className="md:col-span-15 col-span-full">
+          <BentoItem className="col-span-full md:col-span-15">
             <BentoHeader>
               <BentoIcon>
                 <_3DTransformsIcon />

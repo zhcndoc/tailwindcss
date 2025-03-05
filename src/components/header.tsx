@@ -126,7 +126,7 @@ export function Header(props: React.PropsWithChildren) {
           <VersionPicker />
         </div>
         <div className="flex items-center gap-6 max-md:hidden">
-          <SearchButton className="inline-flex items-center gap-1 rounded-full bg-gray-950/2 px-2 py-1 outline -outline-offset-1 outline-gray-950/8 dark:bg-white/5 dark:outline-white/2">
+          <SearchButton className="inline-flex items-center gap-1 rounded-full bg-gray-950/2 px-2 py-1 inset-ring inset-ring-gray-950/8 dark:bg-white/5 dark:inset-ring-white/2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
@@ -144,16 +144,52 @@ export function Header(props: React.PropsWithChildren) {
               Ctrl&nbsp;K
             </kbd>
           </SearchButton>
-          {[
-            ["文档", "/docs"],
-            ["组件", "https://tailwindui.com/?ref=top"],
-            ["博客", "/blog"],
-            ["展示柜", "/showcase"],
-          ].map(([text, href]) => (
-            <Link href={href} key={href} className="text-sm/6 text-gray-950 dark:text-white">
-              {text}
-            </Link>
-          ))}
+          <Link href="/docs" className="text-sm/6 text-gray-950 dark:text-white">
+            文档
+          </Link>
+          <Link href="/blog" className="text-sm/6 text-gray-950 dark:text-white">
+            博客
+          </Link>
+          <Link href="/showcase" className="text-sm/6 text-gray-950 dark:text-white">
+            展示柜
+          </Link>
+          <a href="/plus?ref=top" className="group relative px-1.5 text-sm/6 text-sky-800 dark:text-sky-300">
+            <span className="absolute inset-0 border border-dashed border-sky-300/60 bg-sky-400/10 group-hover:bg-sky-400/15 dark:border-sky-300/30" />
+            Plus
+            <svg
+              width="5"
+              height="5"
+              viewBox="0 0 5 5"
+              className="absolute top-[-2px] left-[-2px] fill-sky-300 dark:fill-sky-300/50"
+            >
+              <path d="M2 0h1v2h2v1h-2v2h-1v-2h-2v-1h2z" />
+            </svg>
+            <svg
+              width="5"
+              height="5"
+              viewBox="0 0 5 5"
+              className="absolute top-[-2px] right-[-2px] fill-sky-300 dark:fill-sky-300/50"
+            >
+              <path d="M2 0h1v2h2v1h-2v2h-1v-2h-2v-1h2z" />
+            </svg>
+            <svg
+              width="5"
+              height="5"
+              viewBox="0 0 5 5"
+              className="absolute bottom-[-2px] left-[-2px] fill-sky-300 dark:fill-sky-300/50"
+            >
+              <path d="M2 0h1v2h2v1h-2v2h-1v-2h-2v-1h2z" />
+            </svg>
+            <svg
+              width="5"
+              height="5"
+              viewBox="0 0 5 5"
+              className="absolute right-[-2px] bottom-[-2px] fill-sky-300 dark:fill-sky-300/50"
+            >
+              <path d="M2 0h1v2h2v1h-2v2h-1v-2h-2v-1h2z" />
+            </svg>
+          </a>
+
           <Link href="https://github.com/tailwindlabs/tailwindcss" aria-label="GitHub repository">
             <GitHubLogo className="size-5 fill-black/40 dark:fill-gray-400" />
           </Link>
@@ -190,20 +226,36 @@ export function Header(props: React.PropsWithChildren) {
                 </IconButton>
               </div>
               <div className="grid grid-cols-1 gap-1 px-1 pb-1 sm:px-3 sm:pb-3">
-                {[
-                  ["文档", "/docs"],
-                  ["组件", "https://tailwindui.com/?ref=top"],
-                  ["博客", "/blog"],
-                  ["GitHub", "https://github.com/tailwindlabs/tailwindcss"],
-                ].map(([text, href]) => (
-                  <Link
-                    href={href}
-                    key={href}
-                    className="rounded-lg px-3 py-2 text-xl/9 font-medium text-gray-950 data-active:bg-gray-950/5 dark:text-white dark:hover:bg-white/10"
-                  >
-                    {text}
-                  </Link>
-                ))}
+                <Link
+                  href="/docs"
+                  className="rounded-lg px-3 py-2 text-xl/9 font-medium text-gray-950 data-active:bg-gray-950/5 dark:text-white dark:hover:bg-white/10"
+                >
+                  文档
+                </Link>
+                <a
+                  href="/plus/?ref=top"
+                  className="rounded-lg px-3 py-2 text-xl/9 font-medium text-gray-950 data-active:bg-gray-950/5 dark:text-white dark:hover:bg-white/10"
+                >
+                  Plus
+                </a>
+                <Link
+                  href="/blog"
+                  className="rounded-lg px-3 py-2 text-xl/9 font-medium text-gray-950 data-active:bg-gray-950/5 dark:text-white dark:hover:bg-white/10"
+                >
+                  博客
+                </Link>
+                <Link
+                  href="/showcase"
+                  className="rounded-lg px-3 py-2 text-xl/9 font-medium text-gray-950 data-active:bg-gray-950/5 dark:text-white dark:hover:bg-white/10"
+                >
+                  展示柜
+                </Link>
+                <Link
+                  href="https://github.com/tailwindlabs/tailwindcss"
+                  className="rounded-lg px-3 py-2 text-xl/9 font-medium text-gray-950 data-active:bg-gray-950/5 dark:text-white dark:hover:bg-white/10"
+                >
+                  GitHub
+                </Link>
               </div>
             </DialogPanel>
           </Dialog>

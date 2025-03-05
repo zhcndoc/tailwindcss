@@ -7,7 +7,6 @@ import React from "react";
 import GridContainer from "../grid-container";
 import { BentoItem } from "./bento";
 import CategoryHeader from "./category-header";
-import LinkButton from "./link-button";
 import templatesCol1 from "./templates-col-1.png";
 import templatesCol2 from "./templates-col-2.png";
 import templatesCol3 from "./templates-col-3.png";
@@ -24,7 +23,7 @@ export default function TailwindUiSection() {
     <div className="relative max-w-full">
       <div
         aria-hidden="true"
-        className="hidden h-4 items-end whitespace-pre px-2 font-mono text-xs/6 text-black/20 max-sm:px-4 2xl:visible 2xl:flex dark:text-white/25"
+        className="hidden h-4 items-end px-2 font-mono text-xs/6 whitespace-pre text-black/20 max-sm:px-4 2xl:visible 2xl:flex dark:text-white/25"
       >
         text-4xl <span className="inline dark:hidden">text-gray-950</span>
         <span className="hidden dark:inline">text-white</span> tracking-tighter text-balance
@@ -36,13 +35,13 @@ export default function TailwindUiSection() {
 
       <GridContainer>
         <h2 className="px-2 text-[2.5rem]/10 font-medium tracking-tighter max-sm:px-4 2xl:mt-0">
-          使用 Tailwind UI 更快地移动。
+          使用 Tailwind Plus 更快地移动。
         </h2>
       </GridContainer>
 
       <div
         aria-hidden="true"
-        className="flex h-6 items-end whitespace-pre px-2 font-mono text-xs/6 text-black/20 max-sm:px-4 sm:h-10 dark:text-white/25"
+        className="flex h-6 items-end px-2 font-mono text-xs/6 whitespace-pre text-black/20 max-sm:px-4 sm:h-10 dark:text-white/25"
       >
         text-base <span className="inline dark:hidden">text-gray-950</span>
         <span className="hidden dark:inline">text-white</span>
@@ -50,13 +49,13 @@ export default function TailwindUiSection() {
 
       <GridContainer>
         <p className="max-w-(--breakpoint-md) px-2 text-base/7 text-gray-600 max-sm:px-4 dark:text-gray-400">
-          Tailwind UI 是一个美丽的、完全响应式的 UI 组件集合，由我们 Tailwind CSS 的创作者设计和开发。它有数百个现成的示例可供选择，保证能帮助你找到构建所需的完美起点。
+          Tailwind Plus 是一个美丽的、完全响应式的 UI 组件集合，由我们 Tailwind CSS 的创作者设计和开发。它有数百个现成的示例可供选择，保证能帮助你找到构建所需的完美起点。
         </p>
       </GridContainer>
 
       <GridContainer className="mt-10">
         <div className="px-2 max-sm:px-4">
-          <LinkButton href="https://tailwindui.com/">探索 Tailwind UI</LinkButton>
+          <a href="https://tailwindcss.com/plus?ref=home" className="inline-block rounded-4xl bg-black px-4 py-2 text-sm/6 font-semibold text-white hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600">探索 Tailwind Plus</a>
         </div>
       </GridContainer>
       <TabGroup>
@@ -70,7 +69,7 @@ export default function TailwindUiSection() {
                   height="74"
                   fill="none"
                   viewBox="0 0 120 72"
-                  className="group-data-selected:translate-y-0 transition-transform duration-300 group-hover:-translate-y-0.5"
+                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-data-selected:translate-y-0"
                 >
                   <path
                     shapeRendering="geometricPrecision"
@@ -156,7 +155,7 @@ export default function TailwindUiSection() {
                   />
                 </svg>
                 <div className="text-center xl:text-left">
-                  <p className="font-mono text-sm font-semibold uppercase tracking-widest">模板</p>
+                  <p className="font-mono text-sm font-semibold tracking-widest uppercase">模板</p>
                   <p className="mt-2 hidden text-sm text-gray-600 lg:block dark:text-gray-400">
                     视觉惊艳，易于自定义的站点模板，使用 React 和 Next.js 构建。
                   </p>
@@ -190,7 +189,7 @@ export default function TailwindUiSection() {
                     d="M45.703 57c-.478-.276-.478-.724 0-1l47.632-27.5c.478-.276 1.254-.276 1.732 0l12.99 7.5c.479.276.479.724 0 1L60.426 64.5c-.478.276-1.254.276-1.732 0z"
                     opacity="0.1"
                   />
-                  <g className="group-data-selected:translate-y-0 transition-transform duration-300 group-hover:-translate-y-0.5">
+                  <g className="transition-transform duration-300 group-hover:-translate-y-0.5 group-data-selected:translate-y-0">
                     <path
                       className="fill-white dark:fill-gray-950"
                       stroke="currentColor"
@@ -229,7 +228,7 @@ export default function TailwindUiSection() {
                   </g>
                 </svg>
                 <div className="text-center xl:text-left">
-                  <p className="font-mono text-sm font-semibold uppercase tracking-widest">UI 组件</p>
+                  <p className="font-mono text-sm font-semibold tracking-widest uppercase">UI 组件</p>
                   <p className="mt-2 hidden text-sm text-gray-600 lg:block dark:text-gray-400">
                     超过 500 个专业设计、完全响应、精心制作的组件。
                   </p>
@@ -274,7 +273,7 @@ export default function TailwindUiSection() {
                     d="M11.062 36c-.478-.276-.478-.724 0-1L58.694 7.5c.478-.276 1.253-.276 1.732 0L63.024 9c.478.276.478.724 0 1L15.392 37.5c-.478.276-1.253.276-1.732 0z"
                     opacity="0.1"
                   />
-                  <g className="group-data-selected:translate-y-0 transition-transform duration-300 group-hover:-translate-y-0.5">
+                  <g className="transition-transform duration-300 group-hover:-translate-y-0.5 group-data-selected:translate-y-0">
                     <path
                       className="fill-current"
                       fillOpacity={0.3}
@@ -310,7 +309,7 @@ export default function TailwindUiSection() {
                   </g>
                 </svg>
                 <div className="text-center xl:text-left">
-                  <p className="font-mono text-sm font-semibold uppercase tracking-widest">UI 套件</p>
+                  <p className="font-mono text-sm font-semibold tracking-widest uppercase">UI 套件</p>
                   <p className="mt-2 hidden text-sm text-gray-600 lg:block dark:text-gray-400">
                     一个用于构建自己组件系统的入门套件，使用 React 和 Tailwind CSS。
                   </p>
@@ -323,9 +322,9 @@ export default function TailwindUiSection() {
         <GridContainer className="mt-4">
           <TabPanels>
             <TabPanel className="bg-gray-950/5 p-2 dark:bg-white/10">
-              <BentoItem className="h-148 bg-white/75! p-0! relative isolate w-full overflow-hidden">
-                <div className="h-150 w-380 absolute -left-[300%] min-[500px]:-left-[250%] sm:-left-[200%] md:-left-[150%] lg:-left-[100%] xl:-left-[80%] 2xl:-left-[65%]">
-                  <div className="scale-120 rotate-x-55 rotate-y-0 -rotate-z-45 transform-3d grid origin-top-left grid-cols-3">
+              <BentoItem className="relative isolate h-148 w-full overflow-hidden bg-white/75! p-0!">
+                <div className="absolute -left-[300%] h-150 w-380 min-[500px]:-left-[250%] sm:-left-[200%] md:-left-[150%] lg:-left-[100%] xl:-left-[80%] 2xl:-left-[65%]">
+                  <div className="grid origin-top-left scale-120 rotate-x-55 rotate-y-0 -rotate-z-45 grid-cols-3 transform-3d">
                     <motion.img
                       initial={{ translateY: 700 }}
                       viewport={{ once: true }}
@@ -359,9 +358,9 @@ export default function TailwindUiSection() {
             </TabPanel>
 
             <TabPanel className="bg-gray-950/5 p-2 dark:bg-white/10">
-              <BentoItem className="h-148 bg-white/75! p-0! relative isolate w-full overflow-hidden">
-                <div className="h-150 w-380 absolute -left-[300%] min-[500px]:-left-[250%] sm:-left-[200%] md:-left-[150%] lg:-left-[100%] xl:-left-[80%] 2xl:-left-[65%]">
-                  <div className="scale-120 rotate-x-55 rotate-y-0 -rotate-z-45 transform-3d grid origin-top-left grid-cols-4 gap-4">
+              <BentoItem className="relative isolate h-148 w-full overflow-hidden bg-white/75! p-0!">
+                <div className="absolute -left-[300%] h-150 w-380 min-[500px]:-left-[250%] sm:-left-[200%] md:-left-[150%] lg:-left-[100%] xl:-left-[80%] 2xl:-left-[65%]">
+                  <div className="grid origin-top-left scale-120 rotate-x-55 rotate-y-0 -rotate-z-45 grid-cols-4 gap-4 transform-3d">
                     <motion.img
                       initial={{ translateY: 500 }}
                       viewport={{ once: true }}
@@ -403,9 +402,9 @@ export default function TailwindUiSection() {
             </TabPanel>
 
             <TabPanel className="bg-gray-950/5 p-2 dark:bg-white/10">
-              <BentoItem className="h-148 bg-white/75! p-0! relative isolate w-full overflow-hidden">
-                <div className="h-150 w-380 absolute -left-[300%] min-[500px]:-left-[250%] sm:-left-[200%] md:-left-[150%] lg:-left-[100%] xl:-left-[80%] 2xl:-left-[65%]">
-                  <div className="rotate-x-55 rotate-y-0 -rotate-z-45 transform-3d flex origin-top-left scale-100 grid-cols-3 flex-row gap-4">
+              <BentoItem className="relative isolate h-148 w-full overflow-hidden bg-white/75! p-0!">
+                <div className="absolute -left-[300%] h-150 w-380 min-[500px]:-left-[250%] sm:-left-[200%] md:-left-[150%] lg:-left-[100%] xl:-left-[80%] 2xl:-left-[65%]">
+                  <div className="flex origin-top-left scale-100 rotate-x-55 rotate-y-0 -rotate-z-45 grid-cols-3 flex-row gap-4 transform-3d">
                     <motion.img
                       initial={{ translateY: 700 }}
                       viewport={{ once: true }}
