@@ -59,21 +59,6 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "导入 Tailwind CSS",
-    body: (
-      <p>
-        添加一个 <code>@import</code> 语句，将 Tailwind CSS 导入到位于 <code>./app/assets/stylesheets</code> 目录下的 <code>application.tailwind.css</code> 文件中。
-      </p>
-    ),
-    code: {
-      name: "application.tailwind.css",
-      lang: "css",
-      code: css`
-        @import "tailwindcss";
-      `,
-    },
-  },
-  {
     title: "启动您的构建过程",
     body: (
       <p>
