@@ -337,6 +337,16 @@ npx @tailwindcss/cli -i input.css -o output.css
 
 #### 重命名的轮廓实用工具
 
+`outline` 工具现在默认设置 `outline-width: 1px`，以便与边框和环形工具更加一致。此外，所有 `outline-<number>` 工具默认将 `outline-style` 设置为 `solid`，省去了与 `outline` 组合的需要：
+
+```html
+<!-- [!code filename:HTML] -->
+<!-- [!code --:2] -->
+<input class="outline outline-2" />
+<!-- [!code ++:2] -->
+<input class="outline-2" />
+```
+
 `outline-none` 实用工具之前实际上并没有设置 `outline-style: none`，而是设定了一条不可见的轮廓，在强制颜色模式下仍会显示，以保持可访问性。
 
 为了使这一点更清晰，我们将该实用工具重命名为 `outline-hidden`，并添加了一个新的 `outline-none` 实用工具，实际上设置 `outline-style: none`。
