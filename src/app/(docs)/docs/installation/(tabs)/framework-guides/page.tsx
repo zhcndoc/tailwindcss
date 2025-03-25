@@ -36,7 +36,7 @@ export default async function FrameworkGuides() {
       </ul>
       <div className="my-4 md:my-16">
         <Cta>
-          没看到你选择的框架？试试使用 <Link href="/docs/installation">Tailwind CLI</Link>、
+          没看到你选择的框架？试试使用 <Link href="/docs/installation/tailwind-cli">Tailwind CLI</Link>、
           <Link href="/docs/installation/using-vite">Vite 插件{" "}</Link>或者{" "}
           <Link href="/docs/installation/using-postcss">PostCSS 插件</Link>。
         </Cta>
