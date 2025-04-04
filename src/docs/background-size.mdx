@@ -12,8 +12,8 @@ export const description = "用于控制元素背景图像背景大小的工具�
     ["bg-auto", "background-size: auto;"],
     ["bg-cover", "background-size: cover;"],
     ["bg-contain", "background-size: contain;"],
-    ["bg-(length:<custom-property>)", "background-size: var(<custom-property>);"],
-    ["bg-[<value>]", "background-size: <value>;"],
+    ["bg-size-(<custom-property>)", "background-size: var(<custom-property>);"],
+    ["bg-size-[<value>]", "background-size: <value>;"],
   ]}
 />
 
@@ -93,13 +93,7 @@ export const description = "用于控制元素背景图像背景大小的工具�
 
 ### 使用自定义值
 
-<UsingACustomValue
-  utility="bg"
-  value="auto_100px"
-  name="背景图像大小"
-  variable="image-size"
-  dataType="length"
-/>
+<UsingACustomValue utility="bg-size" value="auto_100px" name="background size" variable="image-size" />
 
 ### 响应式设计
 

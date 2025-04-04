@@ -1,5 +1,7 @@
-export const title = "添加自定义样式";
-export const description = "在 Tailwind 项目中添加自定义样式的最佳实践。";
+import { CodeExampleStack } from "@/components/code-example";
+
+export const title = "Adding custom styles";
+export const description = "Best practices for adding your own custom styles in Tailwind projects.";
 
 在使用框架时，通常面临的最大挑战是要弄清楚当你需要框架没有处理的内容时该怎么办。
 
@@ -294,13 +296,81 @@ Tailwind 中的许多实用工具共享一个公共命名空间，但映射到�
 }
 ```
 
-## 添加自定义工具
+### Using variants
 
-### 简单工具
+Use the `@variant` directive to apply a Tailwind variant within custom CSS:
 
-除了使用 Tailwind 附带的实用工具外，你还可以添加自己的自定义工具。这在你希望在项目中使用的 CSS 特性且 Tailwind 默认未包含工具时非常有用。
+<CodeExampleStack>
 
-使用 `@utility` 指令将自定义工具添加到项目中：
+```css
+/* [!code filename:app.css] */
+.my-element {
+  background: white;
+
+  /* [!code highlight:4] */
+  @variant dark {
+    background: black;
+  }
+}
+```
+
+```css
+/* [!code filename:Compiled CSS] */
+.my-element {
+  background: white;
+
+  /* [!code highlight:4] */
+  @media (prefers-color-scheme: dark) {
+    background: black;
+  }
+}
+```
+
+</CodeExampleStack>
+
+If you need to apply multiple variants at the same time, use nesting:
+
+<CodeExampleStack>
+
+```css
+/* [!code filename:app.css] */
+.my-element {
+  background: white;
+
+  /* [!code highlight:6] */
+  @variant dark {
+    @variant hover {
+      background: black;
+    }
+  }
+}
+```
+
+```css
+/* [!code filename:Compiled CSS] */
+.my-element {
+  background: white;
+
+  /* [!code highlight:7] */
+  @media (prefers-color-scheme: dark) {
+    &:hover {
+      @media (hover: hover) {
+        background: black;
+      }
+    }
+  }
+}
+```
+
+</CodeExampleStack>
+
+## Adding custom utilities
+
+### Simple utilities
+
+In addition to using the utilities that ship with Tailwind, you can also add your own custom utilities. This can be useful when there's a CSS feature you'd like to use in your project that Tailwind doesn't include utilities for out of the box.
+
+Use the `@utility` directive to add a custom utility to your project:
 
 ```css
 /* [!code filename:CSS] */
@@ -508,31 +578,38 @@ Tailwind 中的许多实用工具共享一个公共命名空间，但映射到�
 
 ## 添加自定义变体
 
-使用 `@variant` 指令在自定义 CSS 中应用 Tailwind 变体：
+In addition to using the variants that ship with Tailwind, you can also add your own custom variants using the `@custom-variant` directive:
 
 ```css
-/* [!code filename:CSS] */
-.my-element {
-  background: white;
-
-  /* [!code highlight:4] */
-  @variant dark {
-    background: black;
+@custom-variant theme-midnight {
+  &:where([data-theme="midnight"] *) {
+    @slot;
   }
 }
 ```
 
-如果需要同时应用多个变体，可以使用嵌套：
+Now you can use the `theme-midnight:<utility>` variant in your HTML:
+
+```html
+<!-- [!code classes:theme-midnight:bg-black] -->
+<html data-theme="midnight">
+  <button class="theme-midnight:bg-black ..."></button>
+</html>
+```
+
+You can create variants using the shorthand syntax when nesting isn't required:
 
 ```css
-/* [!code filename:CSS] */
-.my-element {
-  background: white;
+@custom-variant theme-midnight (&:where([data-theme="midnight"] *));
+```
 
-  /* [!code highlight:6] */
-  @variant dark {
-    @variant hover {
-      background: black;
+When a custom variant has multiple rules, they can be nested within each other:
+
+```css
+@custom-variant any-hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @slot;
     }
   }
 }

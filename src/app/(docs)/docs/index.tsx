@@ -104,6 +104,7 @@ export default {
     ["垂直对齐", "/docs/vertical-align"],
     ["空白处理", "/docs/white-space"],
     ["单词断行", "/docs/word-break"],
+    ["溢出换行", "/docs/overflow-wrap"],
     ["连字符", "/docs/hyphens"],
     ["内容", "/docs/content"],
   ] as const,
@@ -129,9 +130,19 @@ export default {
   ] as const,
   "效果": [
     ["盒子阴影", "/docs/box-shadow"],
+    ["文本阴影", "/docs/text-shadow"],
     ["不透明度", "/docs/opacity"],
     ["混合模式", "/docs/mix-blend-mode"],
     ["背景混合模式", "/docs/background-blend-mode"],
+    ["mask-clip", "/docs/mask-clip"],
+    ["mask-composite", "/docs/mask-composite"],
+    ["mask-image", "/docs/mask-image"],
+    ["mask-mode", "/docs/mask-mode"],
+    ["mask-origin", "/docs/mask-origin"],
+    ["mask-position", "/docs/mask-position"],
+    ["mask-repeat", "/docs/mask-repeat"],
+    ["mask-size", "/docs/mask-size"],
+    ["mask-type", "/docs/mask-type"],
   ] as const,
   "滤镜": [
     [

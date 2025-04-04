@@ -1,3 +1,4 @@
+import cloudsImg from "@/docs/img/clouds.svg";
 import { ApiTable } from "@/components/api-table.tsx";
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
@@ -26,7 +27,7 @@ export const description = "用于控制元素背景图像重复的工具类。"
 <Figure>
 
 <Example padding={false}>
-  {<div className="h-64 bg-[url('/background-pattern.svg')] bg-center bg-repeat"></div>}
+  {<div className="h-64 bg-center bg-repeat" style={{ backgroundImage: `url(${cloudsImg.src})` }}></div>}
 </Example>
 
 ```html
@@ -43,7 +44,7 @@ export const description = "用于控制元素背景图像重复的工具类。"
 <Figure>
 
 <Example padding={false}>
-  {<div className="h-64 bg-[url('/background-pattern.svg')] bg-center bg-repeat-x"></div>}
+  {<div className="h-64 bg-center bg-repeat-x" style={{ backgroundImage: `url(${cloudsImg.src})` }}></div>}
 </Example>
 
 ```html
@@ -60,7 +61,7 @@ export const description = "用于控制元素背景图像重复的工具类。"
 <Figure>
 
 <Example padding={false}>
-  {<div className="h-64 bg-[url('/background-pattern.svg')] bg-center bg-repeat-y"></div>}
+  {<div className="h-64 bg-center bg-repeat-y" style={{ backgroundImage: `url(${cloudsImg.src})` }}></div>}
 </Example>
 
 ```html
@@ -77,7 +78,7 @@ export const description = "用于控制元素背景图像重复的工具类。"
 <Figure>
 
 <Example padding={false} resizable>
-  {<div className="h-64 bg-[url('/background-pattern.svg')] bg-center bg-repeat-space"></div>}
+  {<div className="h-64 bg-center bg-repeat-space" style={{ backgroundImage: `url(${cloudsImg.src})` }}></div>}
 </Example>
 
 ```html
@@ -94,7 +95,7 @@ export const description = "用于控制元素背景图像重复的工具类。"
 <Figure>
 
 <Example padding={false} resizable>
-  {<div className="h-64 bg-[url('/background-pattern.svg')] bg-center bg-repeat-round"></div>}
+  {<div className="h-64 bg-center bg-repeat-round" style={{ backgroundImage: `url(${cloudsImg.src})` }}></div>}
 </Example>
 
 ```html
@@ -111,7 +112,7 @@ export const description = "用于控制元素背景图像重复的工具类。"
 <Figure>
 
 <Example padding={false}>
-  {<div className="h-64 bg-[url('/background-pattern.svg')] bg-center bg-no-repeat"></div>}
+  {<div className="h-64 bg-center bg-no-repeat" style={{ backgroundImage: `url(${cloudsImg.src})` }}></div>}
 </Example>
 
 ```html

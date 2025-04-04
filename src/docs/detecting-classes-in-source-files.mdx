@@ -2,6 +2,7 @@ import { TipGood, TipBad, TipInfo } from "@/components/tips";
 import { Iframe } from "@/components/iframe";
 import { Example } from "@/components/example";
 import { Figure } from "@/components/figure";
+import { CodeExampleStack } from "@/components/code-example";
 
 export const title = "检测源文件中的类";
 export const description = "理解和自定义 Tailwind 如何扫描你的源文件。";
@@ -165,7 +166,20 @@ Tailwind 默认使用当前工作目录作为扫描类名的起始点。
 @import "tailwindcss" source("../src");
 ```
 
-当在 monorepos 工作时，这可能很有用，因为你的构建命令从 monorepo 的根目录运行，而不是每个项目的根目录。
+This can be useful when working with monorepos where your build commands run from the root of the monorepo instead of the root of each project.
+
+### Ignoring specific paths
+
+Use `@source not` to ignore specific paths, relative to the stylesheet, when scanning for class names:
+
+```css
+/* [!code filename:CSS] */
+@import "tailwindcss";
+/* [!code highlight:2] */
+@source not "../src/components/legacy";
+```
+
+This is useful when you have large directories in your project that you know don't use Tailwind classes, like legacy components or third-party libraries.
 
 ### 禁用自动检测
 
@@ -180,4 +194,121 @@ Tailwind 默认使用当前工作目录作为扫描类名的起始点。
 @source "../shared";
 ```
 
-在有多个 Tailwind 样式表的项目中，这可能很有用，在这些项目中，你要确保每个样式表仅包括每个样式表所需的类。
+This can be useful in projects that have multiple Tailwind stylesheets where you want to make sure each one only includes the classes each stylesheet needs.
+
+## Safelisting specific utilities
+
+If you need to make sure Tailwind generates certain class names that don’t exist in your content files, use `@source inline()` to force them to be generated:
+
+<CodeExampleStack>
+```css
+/* [!code filename:CSS] */
+@import "tailwindcss";
+/* [!code highlight:2] */
+@source inline("underline");
+```
+
+```css
+/* [!code filename:Generated CSS] */
+.underline {
+  text-decoration: underline;
+}
+```
+
+</CodeExampleStack>
+
+### Safelisting variants
+
+You can also use `@source inline()` to generate classes with variants. For example, to generate the `underline` class with hover and focus variants, add `{hover:,focus:,}` to the source input:
+
+<CodeExampleStack>
+```css
+/* [!code filename:CSS] */
+@import "tailwindcss";
+/* [!code highlight:2] */
+@source inline("{hover:,focus:,}underline");
+```
+
+```css
+/* [!code filename:Generated CSS] */
+.underline {
+  text-decoration: underline;
+}
+@media (hover: hover) {
+  .hover\:underline:hover {
+    text-decoration: underline;
+  }
+}
+@media (focus: focus) {
+  .focus\:underline:focus {
+    text-decoration: underline;
+  }
+}
+```
+
+</CodeExampleStack>
+
+### Safelisting with ranges
+
+The source input is [brace expanded](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html), so you can generate multiple classes at once. For example, to generate all the red background colors with hover variants, use a range:
+
+<CodeExampleStack>
+```css
+/* [!code filename:CSS] */
+@import "tailwindcss";
+/* [!code highlight:2] */
+@source inline("{hover:,}bg-red-{50,{100..900..100},950}");
+```
+
+```css
+/* [!code filename:Generated CSS] */
+.bg-red-50 {
+  background-color: var(--color-red-50);
+}
+.bg-red-100 {
+  background-color: var(--color-red-100);
+}
+.bg-red-200 {
+  background-color: var(--color-red-200);
+}
+
+/* ... */
+
+.bg-red-800 {
+  background-color: var(--color-red-800);
+}
+.bg-red-900 {
+  background-color: var(--color-red-900);
+}
+.bg-red-950 {
+  background-color: var(--color-red-950);
+}
+@media (hover: hover) {
+  .hover\:bg-red-50:hover {
+    background-color: var(--color-red-50);
+  }
+
+  /* ... */
+
+  .hover\:bg-red-950:hover {
+    background-color: var(--color-red-950);
+  }
+}
+```
+
+</CodeExampleStack>
+
+This generates red background colors from 100 to 900 in increments of 100, along with the first and last shades of 50 and 950. It also adds the `hover:` variant for each of those classes.
+
+### Explicitly excluding classes
+
+Use `@source not inline()` to prevent specific classes from being generated, even if they are detected in your source files:
+
+```css
+/* [!code filename:CSS] */
+@import "tailwindcss";
+/* [!code highlight:2] */
+@source not inline("{hover:,focus:,}bg-red-{50,{100..900..100},950}");
+```
+
+This will explicitly exclude the red background utilities, along with their hover and focus variants, from being generated.

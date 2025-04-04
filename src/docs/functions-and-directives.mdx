@@ -83,23 +83,7 @@ export const description = "Tailwind 提供给你的 CSS 参考自定义函数�
 }
 ```
 
-如果需要同时应用多个变体，可以使用嵌套：
-
-```css
-/* [!code filename:CSS] */
-.my-element {
-  background: white;
-
-  /* [!code highlight:6] */
-  @variant dark {
-    @variant hover {
-      background: black;
-    }
-  }
-}
-```
-
-了解更多关于变体的信息，请参阅 [hover、focus 和其他状态文档](/docs/hover-focus-and-other-states)。
+Learn more using variants in the [using variants documentation](/docs/adding-custom-styles#using-variants).
 
 <h3 id="custom-variant-directive">@custom-variant</h3>
 
@@ -107,13 +91,12 @@ export const description = "Tailwind 提供给你的 CSS 参考自定义函数�
 
 ```css
 /* [!code filename:CSS] */
-@custom-variant pointer-coarse (@media (pointer: coarse));
 @custom-variant theme-midnight (&:where([data-theme="midnight"] *));
 ```
 
-这让你可以像 `pointer-coarse:size-48` 和 `theme-midnight:bg-slate-900` 一样书写工具类。
+This lets you write utilities `theme-midnight:bg-black` and `theme-midnight:text-white`.
 
-了解更多关于添加自定义变体的信息，请参阅 [注册自定义变体文档](/docs/hover-focus-and-other-states#registering-a-custom-variant)。
+Learn more about adding custom variants in the [adding custom variants documentation](/docs/adding-custom-styles#adding-custom-variants).
 
 <h3 id="apply-directive">@apply</h3>
 

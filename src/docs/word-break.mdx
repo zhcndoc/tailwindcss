@@ -8,8 +8,7 @@ export const description = "控制元素中文字断开的工具类。";
 
 <ApiTable
   rows={[
-    ["break-normal", "overflow-wrap: normal;\nword-break: normal;"],
-    ["break-words", "overflow-wrap: break-word;"],
+    ["break-normal", "word-break: normal;"],
     ["break-all", "word-break: break-all;"],
     ["break-keep", "word-break: keep-all;"],
   ]}
@@ -34,29 +33,7 @@ export const description = "控制元素中文字断开的工具类。";
 
 ```html
 <!-- [!code classes:break-normal] -->
-<p class="break-normal">在任何主要英语字典中最长的单词是...</p>
-```
-
-</Figure>
-
-### 断字
-
-使用 `break-words` 工具类在需要时在单词中间添加换行：
-
-<Figure>
-
-<Example padding={false}>
-  {
-    <p className="mx-auto max-w-xs border-x border-x-pink-400/30 py-8 break-words text-gray-900 dark:text-gray-200">
-      在任何主要英语字典中最长的单词是{" "}
-      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是一种因吸入非常细小的硅颗粒而感染的肺病，尤其是来自火山的颗粒；在医学上，这和硅肺病是相同的。
-    </p>
-  }
-</Example>
-
-```html
-<!-- [!code classes:break-words] -->
-<p class="break-words">在任何主要英语字典中最长的单词是...</p>
+<p class="break-normal">The longest word in any of the major...</p>
 ```
 
 </Figure>

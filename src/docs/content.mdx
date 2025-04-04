@@ -84,10 +84,8 @@ Pro Display XDR</a> 为您提供了比 5K 显示器多近 40% 的屏幕空间。
 </Example>
 
 ```html
-<!-- [!code classes:before:content-['你好_世界']] -->
-<p class="before:content-['你好_世界'] ...">
-  <!-- ... -->
-</p>
+<!-- [!code classes:before:content-['Hello_World']] -->
+<p class="before:content-['Hello_World'] ..."></p>
 ```
 
 </Figure>
@@ -101,10 +99,8 @@ Pro Display XDR</a> 为您提供了比 5K 显示器多近 40% 的屏幕空间。
 </Example>
 
 ```html
-<!-- [!code classes:before:content-['你好\_世界']] -->
-<p class="before:content-['你好\_世界']">
-  <!-- ... -->
-</p>
+<!-- [!code classes:before:content-['Hello\_World']] -->
+<p class="before:content-['Hello\_World']"></p>
 ```
 
 </Figure>
@@ -115,18 +111,18 @@ Pro Display XDR</a> 为您提供了比 5K 显示器多近 40% 的屏幕空间。
 
 ```html
 <!-- [!code classes:content-(--my-content)] -->
-<p class="content-(--my-content)">
-  <!-- ... -->
-</p>
+<p class="content-(--my-content)"></p>
 ```
 
 这只是 <code>content-{'[var(<custom-property>)]'}</code> 的缩写，自动为您添加 `var()` 函数。
 
 ### 响应式设计
 
-<ResponsiveDesign
-  element="p"
-  property="content"
-  defaultClass="before:content-['移动']"
-  featuredClass="before:content-['桌面']"
-/>
+<ResponsiveDesign property="content">
+
+```html
+<!-- [!code classes:md:before:content-['Desktop']] -->
+<p class="before:content-['Mobile'] md:before:content-['Desktop'] ..."></p>
+```
+
+</ResponsiveDesign>
