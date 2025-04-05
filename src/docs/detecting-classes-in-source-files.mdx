@@ -4,20 +4,20 @@ import { Example } from "@/components/example";
 import { Figure } from "@/components/figure";
 import { CodeExampleStack } from "@/components/code-example";
 
-export const title = "检测源文件中的类";
+export const title = "在源文件中检测 CSS 类";
 export const description = "理解和自定义 Tailwind 如何扫描你的源文件。";
 
 ## 概述
 
-Tailwind 通过扫描你的项目以查找实用类，然后生成所有必要的 CSS，基于你实际使用的类。
+Tailwind 通过扫描你的项目中的实用类，生成所有必要的 CSS，基于你实际使用的类。
 
-这确保了你的 CSS 尽可能小，并且也是使得像 [任意值](/docs/adding-custom-styles#using-arbitrary-values) 这样功能成为可能的原因。
+这确保你的 CSS 尽可能小巧，同时也使得像 [任意值](/docs/adding-custom-styles#using-arbitrary-values) 这样的功能成为可能。
 
-### 类是如何被检测的
+### 类的检测方式
 
-Tailwind 将你的所有源文件视为普通文本，并且不试图以任何方式解析你的文件作为代码。
+Tailwind 将所有源文件视为纯文本，并不尝试以任何方式解析这些文件。
 
-相反，它只查找你文件中可能是类的任何标记，基于 Tailwind 对类名中预期字符的判断：
+相反，它只查找文件中可能是类的任何标记，这些标记依赖于 Tailwind 在类名称中期待的字符：
 
 ```jsx
 // [!code filename:JSX]
@@ -60,22 +60,22 @@ export function Button({ color, children }) {
 }
 ```
 
-然后它试图为所有这些标记生成 CSS，丢弃任何不映射到框架所知道的实用类的标记。
+然后它尝试为所有这些标记生成 CSS，丢弃那些框架不知道的与实用类不匹配的标记。
 
 ### 动态类名
 
-由于 Tailwind 将你的源文件视为普通文本，因此无法理解你正在使用的编程语言中的字符串拼接或插值。
+由于 Tailwind 将源文件作为纯文本进行扫描，因此对于你使用的编程语言中的字符串拼接或插值，它没有办法理解。
 
-<TipBad>{<>不要动态构建类名</>}</TipBad>
+<TipBad>{<>不要动态构造类名</>}</TipBad>
 
 ```html
 <!-- [!code filename:HTML] -->
 <div class="text-{{ error ? 'red' : 'green' }}-600"></div>
 ```
 
-在上面的例子中，字符串 `text-red-600` 和 `text-green-600` 不存在，因此 Tailwind 不会生成这些类。
+在上面的示例中，字符串 `text-red-600` 和 `text-green-600` 并不存在，因此 Tailwind 不会生成这些类。
 
-相反，请确保你使用的任何类名都完整存在：
+相反，确保你使用的任何类名都是完整的：
 
 <TipGood>{<>始终使用完整的类名</>}</TipGood>
 
@@ -86,7 +86,7 @@ export function Button({ color, children }) {
 <div class="{{ error ? 'text-red-600' : 'text-green-600' }}"></div>
 ```
 
-如果你使用的是像 React 或 Vue 这样的组件库，这意味着你不应该使用 props 来动态构建类：
+如果你使用的是像 React 或 Vue 这样的组件库，这意味着你不应该使用 props 动态构造类名：
 
 <TipBad>不要使用 props 动态构建类名</TipBad>
 
@@ -97,7 +97,7 @@ function Button({ color, children }) {
 }
 ```
 
-相反，将 props 映射到在构建时静态可检测的完整类名：
+相反，将 props 映射到构建时可以静态检测到的完整类名：
 
 <TipGood>始终将 props 映射到静态类名</TipGood>
 
@@ -113,7 +113,7 @@ function Button({ color, children }) {
 }
 ```
 
-这还可以让你将不同的 prop 值映射到不同的颜色阴影，例如：
+这还能让你将不同的 prop 值映射到不同的颜色阴影，例如：
 
 ```jsx
 // [!code filename:JSX]
@@ -128,16 +128,16 @@ function Button({ color, children }) {
 }
 ```
 
-只要你在代码中始终使用完整的类名，Tailwind 将每次完美生成你所有的 CSS。
+只要你在代码中始终使用完整的类名，Tailwind 每次都会完美生成你的 CSS。
 
 ### 哪些文件会被扫描
 
-Tailwind 将扫描项目中每个文件的类名，除了以下情况：
+Tailwind 会扫描项目中的每个文件以查找类名，除非在以下情况下：
 
-- 在你的 `.gitignore` 文件中的文件
-- 二进制文件，如图像、视频或压缩文件
+- 位于 `.gitignore` 文件中的文件
+- 二进制文件，例如图像、视频或压缩文件
 - CSS 文件
-- 常见的包管理器锁文件
+- 常见的包管理器锁定文件
 
 如果你需要扫描 Tailwind 默认忽略的任何文件，你可以 [显式注册](#explicitly-registering-sources) 这些源。
 
@@ -152,13 +152,13 @@ Tailwind 将扫描项目中每个文件的类名，除了以下情况：
 @source "../node_modules/@acmecorp/ui-lib";
 ```
 
-当你需要扫描一个使用 Tailwind 的外部库时，这一点尤其有用，因为依赖项通常列在你的 `.gitignore` 文件中，并且默认被 Tailwind 忽略。
+当你需要扫描使用 Tailwind 构建的外部库时，这特别有用，因为依赖项通常列在你的 `.gitignore` 文件中并被 Tailwind 默认忽略。
 
-### 设置基础路径
+### 设置基本路径
 
-Tailwind 默认使用当前工作目录作为扫描类名的起始点。
+Tailwind 默认将当前工作目录作为扫描类名的起始点。
 
-要显式设置源检测的基础路径，在 CSS 中导入 Tailwind 时使用 `source()` 函数：
+要显式设置源检测的基路径，可以在 CSS 中导入 Tailwind 时使用 `source()` 函数：
 
 ```css
 /* [!code filename:CSS] */
@@ -166,11 +166,11 @@ Tailwind 默认使用当前工作目录作为扫描类名的起始点。
 @import "tailwindcss" source("../src");
 ```
 
-This can be useful when working with monorepos where your build commands run from the root of the monorepo instead of the root of each project.
+当处理由于构建命令从单个 monorepo 的根而不是每个项目的根运行时，这很好用。
 
-### Ignoring specific paths
+### 忽略特定路径
 
-Use `@source not` to ignore specific paths, relative to the stylesheet, when scanning for class names:
+使用 `@source not` 当扫描类名时忽略相对于样式表的特定路径：
 
 ```css
 /* [!code filename:CSS] */
@@ -179,11 +179,11 @@ Use `@source not` to ignore specific paths, relative to the stylesheet, when sca
 @source not "../src/components/legacy";
 ```
 
-This is useful when you have large directories in your project that you know don't use Tailwind classes, like legacy components or third-party libraries.
+这在你的项目中有大型目录且你知道这些目录不使用 Tailwind 类时非常有用，例如遗留组件或第三方库。
 
 ### 禁用自动检测
 
-使用 `source(none)` 完全禁用自动源检测，如果你想显式注册所有源：
+使用 `source(none)` 如果你想显式地注册所有源，完全禁用自动源检测：
 
 ```css
 /* [!code filename:CSS] */
@@ -194,11 +194,11 @@ This is useful when you have large directories in your project that you know don
 @source "../shared";
 ```
 
-This can be useful in projects that have multiple Tailwind stylesheets where you want to make sure each one only includes the classes each stylesheet needs.
+这在有多个 Tailwind 样式表的项目中非常有用，确保每个样式表只包含其所需的类。
 
-## Safelisting specific utilities
+## 安全列出特定实用程序
 
-If you need to make sure Tailwind generates certain class names that don’t exist in your content files, use `@source inline()` to force them to be generated:
+如果你需要确保 Tailwind 生成某些在你的内容文件中不存在的类名，使用 `@source inline()` 来强制它们被生成：
 
 <CodeExampleStack>
 ```css
@@ -217,9 +217,9 @@ If you need to make sure Tailwind generates certain class names that don’t exi
 
 </CodeExampleStack>
 
-### Safelisting variants
+### 安全列出变体
 
-You can also use `@source inline()` to generate classes with variants. For example, to generate the `underline` class with hover and focus variants, add `{hover:,focus:,}` to the source input:
+你还可以使用 `@source inline()` 来生成带有变体的类。例如，为 `underline` 类生成 hover 和 focus 变体，向源输入中添加 `{hover:,focus:,}`：
 
 <CodeExampleStack>
 ```css
@@ -248,9 +248,9 @@ You can also use `@source inline()` to generate classes with variants. For examp
 
 </CodeExampleStack>
 
-### Safelisting with ranges
+### 安全列出范围
 
-The source input is [brace expanded](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html), so you can generate multiple classes at once. For example, to generate all the red background colors with hover variants, use a range:
+源输入是 [花括号扩展](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) 的，所以你可以一次生成多个类。例如，要生成带有 hover 变体的所有红色背景颜色，使用范围：
 
 <CodeExampleStack>
 ```css
@@ -298,11 +298,11 @@ The source input is [brace expanded](https://www.gnu.org/software/bash/manual/ht
 
 </CodeExampleStack>
 
-This generates red background colors from 100 to 900 in increments of 100, along with the first and last shades of 50 and 950. It also adds the `hover:` variant for each of those classes.
+这会生成从 100 到 900，每 100 增加的红色背景颜色，以及首尾的阴影 50 和 950。它还为每个类添加了 `hover:` 变体。
 
-### Explicitly excluding classes
+### 显式排除类
 
-Use `@source not inline()` to prevent specific classes from being generated, even if they are detected in your source files:
+使用 `@source not inline()` 即使在源文件中检测到，也防止生成特定类：
 
 ```css
 /* [!code filename:CSS] */
@@ -311,4 +311,4 @@ Use `@source not inline()` to prevent specific classes from being generated, eve
 @source not inline("{hover:,focus:,}bg-red-{50,{100..900..100},950}");
 ```
 
-This will explicitly exclude the red background utilities, along with their hover and focus variants, from being generated.
+这将明确排除红色背景实用程序及其 hover 和 focus 变体的生成。

@@ -5,7 +5,7 @@ import { Figure } from "@/components/figure.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "scroll-padding";
-export const description = "用于控制元素在快照容器内的滚动偏移的工具类。";
+export const description = "用于控制元素在捕捉容器内的滚动偏移的工具类。";
 
 <ApiTable
   rows={[
@@ -30,9 +30,9 @@ export const description = "用于控制元素在快照容器内的滚动偏移�
 
 ### 基本示例
 
-使用 `scroll-pt-<number>`, `scroll-pr-<number>`, `scroll-pb-<number>`, 和 `scroll-pl-<number>` 工具类，例如 `scroll-pl-4` 和 `scroll-pt-6`，设置元素在快照容器内的滚动偏移：
+使用 `scroll-pt-<number>`、`scroll-pr-<number>`、`scroll-pb-<number>` 和 `scroll-pl-<number>` 工具类，例如 `scroll-pl-4` 和 `scroll-pt-6`，在捕捉容器内设置元素的滚动偏移：
 
-<Figure hint="在图像网格中滚动以查看预期行为">
+<Figure hint="在图像网格中滚动以查看预期效果">
 
 <Example padding={false}>
   {
@@ -99,9 +99,9 @@ export const description = "用于控制元素在快照容器内的滚动偏移�
 
 ### 使用逻辑属性
 
-使用 `scroll-ps-<number>` 和 `scroll-pe-<number>` 工具类设置 `scroll-padding-inline-start` 和 `scroll-padding-inline-end` 逻辑属性，这些属性根据文本方向映射到左或右侧：
+使用 `scroll-ps-<number>` 和 `scroll-pe-<number>` 工具类设置 `scroll-padding-inline-start` 和 `scroll-padding-inline-end` 逻辑属性，这取决于文本方向映射到左侧或右侧：
 
-<Figure hint="在图像网格中滚动以查看预期行为">
+<Figure hint="在图像网格中滚动以查看预期效果">
 
 <Example padding={false}>
   {
@@ -203,7 +203,7 @@ export const description = "用于控制元素在快照容器内的滚动偏移�
 
 ### 使用负值
 
-要使用负的滚动填充值，请在类名前面加上一个短横线以将其转换为负值：
+要使用负的滚动内边距值，请用短横线作为前缀将类名转换为负值：
 
 ```html
 <!-- [!code classes:-scroll-ps-6] -->
@@ -217,7 +217,7 @@ export const description = "用于控制元素在快照容器内的滚动偏移�
 <UsingACustomValue
   utilities={["scroll-pl", "scroll-pe"]}
   value="24rem"
-  name="滚动填充"
+  name="滚动内边距"
   variable="scroll-padding"
 />
 

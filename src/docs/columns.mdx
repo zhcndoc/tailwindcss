@@ -6,8 +6,8 @@ import { Figure } from "@/components/figure.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 import { UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "列";
-export const description = "用于控制元素内列数的实用工具。";
+export const title = "列数";
+export const description = "用于控制元素内列数的工具。";
 
 <ApiTable
   rows={[
@@ -33,9 +33,9 @@ export const description = "用于控制元素内列数的实用工具。";
 
 ## 示例
 
-### 按数量设置
+### 按数字设置
 
-使用 `columns-<number>` 实用工具，如 `columns-3` 来设置元素内应创建的列数：
+使用 `columns-<number>` 工具类，例如 `columns-3`，来设置内容在元素中应该创建的列数：
 
 <Figure>
 
@@ -101,13 +101,13 @@ export const description = "用于控制元素内列数的实用工具。";
 
 </Figure>
 
-列的宽度将自动调整以满足指定数量的列。
+列宽将自动调整以适应指定的列数。
 
 ### 按宽度设置
 
-使用 `columns-xs` 和 `columns-sm` 等实用工具来为元素内的内容设置理想的列宽：
+使用 `columns-xs` 和 `columns-sm` 等工具类来为元素中的内容设置理想的列宽：
 
-<Figure desktopHint="调整示例大小以查看预期行为">
+<Figure desktopHint="调整示例大小以查看预期效果">
 
 <Example resizable>
   {
@@ -151,11 +151,11 @@ export const description = "用于控制元素内列数的实用工具。";
 
 </Figure>
 
-设置列宽时，列数会自动调整以确保它们不会变得太窄。
+设置列宽时，列数会自动调整以确保它们不会变得过窄。
 
 ### 设置列间距
 
-使用 `gap-<width>` 实用工具来指定列之间的宽度：
+使用 `gap-<width>` 工具类来指定列之间的宽度：
 
 <Figure>
 
@@ -223,7 +223,7 @@ export const description = "用于控制元素内列数的实用工具。";
 
 </Figure>
 
-了解有关间距实用工具的更多信息，请参阅 [间距文档](/docs/gap)。
+了解更多关于间距工具的信息，请参阅 [间距文档](/docs/gap)。
 
 ### 使用自定义值
 
@@ -233,7 +233,7 @@ export const description = "用于控制元素内列数的实用工具。";
 
 <ResponsiveDesign property="columns" breakpoint="sm" featuredClass="aspect-square">
 
-<Figure desktopHint="调整示例大小以查看预期行为">
+<Figure desktopHint="调整示例大小以查看预期效果">
 
 <Example resizable>
   {

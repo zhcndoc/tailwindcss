@@ -3,9 +3,9 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "overflow";
+export const title = "溢出控制";
 export const description =
-  "用于控制元素如何处理超出容器大小的内容的工具类。";
+  "用于控制元素如何处理超出容器的内容的实用工具。";
 
 <ApiTable
   rows={[
@@ -29,9 +29,9 @@ export const description =
 
 ## 示例
 
-### 显示溢出内容
+### 显示溢出的内容
 
-使用 `overflow-visible` 工具类以防止元素内的内容被裁剪：
+使用 `overflow-visible` 工具类可以防止元素内的内容被裁剪：
 
 <Figure>
 
@@ -59,11 +59,11 @@ export const description =
 
 </Figure>
 
-请注意，任何超出元素边界的内容将会可见。
+请注意，任何超出元素边界的内容都会可见。
 
-### 隐藏溢出内容
+### 隐藏溢出的内容
 
-使用 `overflow-hidden` 工具类来裁剪元素内任何超出该元素边界的内容：
+使用 `overflow-hidden` 工具类可以裁剪任何超出元素边界的内容：
 
 <Figure>
 
@@ -91,9 +91,9 @@ export const description =
 
 </Figure>
 
-### 如有需要则滚动
+### 按需滚动
 
-使用 `overflow-auto` 工具类为元素添加滚动条，以防其内容超出该元素的边界：
+使用 `overflow-auto` 工具类可以在内容超出元素边界的情况下为其添加滚动条：
 
 <Figure hint="垂直滚动">
 
@@ -116,7 +116,7 @@ export const description =
           src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
         />
         <div className="flex flex-col">
-          <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">黛布拉·休斯顿</strong>
+          <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">德布拉·休斯顿</strong>
           <span className="text-sm font-medium text-gray-500 dark:text-gray-400">分析师</span>
         </div>
       </div>
@@ -153,11 +153,11 @@ export const description =
 
 </Figure>
 
-与 `overflow-scroll` 不同，该工具类仅在需要滚动时显示滚动条。
+与 `overflow-scroll` 不同，该工具类仅在需要滚动时才会显示滚动条。
 
-### 如有需要则水平滚动
+### 按需水平滚动
 
-使用 `overflow-x-auto` 工具类以允许水平滚动（如有需要）：
+使用 `overflow-x-auto` 工具类允许在需要时进行水平滚动：
 
 <Figure hint="水平滚动">
 
@@ -216,7 +216,7 @@ export const description =
               className="h-18 w-18 rounded-full"
               src="https://images.unsplash.com/photo-1605405748313-a416a1b84491?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
             />
-            <strong className="text-xs font-medium text-gray-900 dark:text-gray-200">萨拉</strong>
+            <strong className="text-xs font-medium text-gray-900 dark:text-gray-200">莎拉</strong>
           </div>
         </div>
       </div>
@@ -233,9 +233,9 @@ export const description =
 
 </Figure>
 
-### 如有需要则垂直滚动
+### 按需垂直滚动
 
-使用 `overflow-y-auto` 工具类以允许垂直滚动（如有需要）：
+使用 `overflow-y-auto` 工具类允许在需要时进行垂直滚动：
 
 <Figure hint="垂直滚动">
 
@@ -258,7 +258,7 @@ export const description =
           src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
         />
         <div className="flex flex-col">
-          <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">黛布拉·休斯顿</strong>
+          <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">德布拉·休斯顿</strong>
           <span className="text-sm font-medium text-gray-500 dark:text-gray-400">分析师</span>
         </div>
       </div>
@@ -297,7 +297,7 @@ export const description =
 
 ### 始终水平滚动
 
-使用 `overflow-x-scroll` 工具类以允许水平滚动，并始终显示滚动条，除非操作系统禁用始终可见的滚动条：
+使用 `overflow-x-scroll` 工具类可以允许水平滚动，并始终显示滚动条，除非操作系统禁用了始终可见的滚动条：
 
 <Figure hint="水平滚动">
 
@@ -356,7 +356,7 @@ export const description =
               className="h-18 w-18 rounded-full"
               src="https://images.unsplash.com/photo-1605405748313-a416a1b84491?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
             />
-            <strong className="text-xs font-medium text-gray-900 dark:text-gray-200">萨拉</strong>
+            <strong className="text-xs font-medium text-gray-900 dark:text-gray-200">莎拉</strong>
           </div>
         </div>
       </div>
@@ -375,7 +375,7 @@ export const description =
 
 ### 始终垂直滚动
 
-使用 `overflow-y-scroll` 工具类以允许垂直滚动，并始终显示滚动条，除非操作系统禁用始终可见的滚动条：
+使用 `overflow-y-scroll` 工具类可以允许垂直滚动，并且除非操作系统禁用了始终可见的滚动条，否则始终显示滚动条：
 
 <Figure hint="垂直滚动">
 
@@ -398,7 +398,7 @@ export const description =
           src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
         />
         <div className="flex flex-col">
-          <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">黛布拉·休斯顿</strong>
+          <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">德布拉·休斯顿</strong>
           <span className="text-sm font-medium text-gray-500 dark:text-gray-400">分析师</span>
         </div>
       </div>
@@ -439,7 +439,7 @@ export const description =
 
 使用 `overflow-scroll` 工具类为元素添加滚动条：
 
-<Figure hint="垂直和水平方向滚动">
+<Figure hint="垂直和水平滚动">
 
 <Example padding={false}>
   {
@@ -448,28 +448,28 @@ export const description =
         {/* 日历框架 */}
         <div className="sticky top-0 z-10 col-start-1 row-start-1 border-b border-gray-100 bg-white bg-clip-padding py-2 text-sm font-medium text-gray-900 dark:border-black/10 dark:bg-gradient-to-b dark:from-gray-600 dark:to-gray-700 dark:text-gray-200"></div>
         <div className="sticky top-0 z-10 col-start-2 row-start-1 border-b border-gray-100 bg-white bg-clip-padding py-2 text-center text-sm font-medium text-gray-900 dark:border-black/10 dark:bg-gradient-to-b dark:from-gray-600 dark:to-gray-700 dark:text-gray-200">
-          星期日
+          周日
         </div>
         <div className="sticky top-0 z-10 col-start-3 row-start-1 border-b border-gray-100 bg-white bg-clip-padding py-2 text-center text-sm font-medium text-gray-900 dark:border-black/10 dark:bg-gradient-to-b dark:from-gray-600 dark:to-gray-700 dark:text-gray-200">
-          星期一
+          周一
         </div>
         <div className="sticky top-0 z-10 col-start-4 row-start-1 border-b border-gray-100 bg-white bg-clip-padding py-2 text-center text-sm font-medium text-gray-900 dark:border-black/10 dark:bg-gradient-to-b dark:from-gray-600 dark:to-gray-700 dark:text-gray-200">
-          星期二
+          周二
         </div>
         <div className="sticky top-0 z-10 col-start-5 row-start-1 border-b border-gray-100 bg-white bg-clip-padding py-2 text-center text-sm font-medium text-gray-900 dark:border-black/10 dark:bg-gradient-to-b dark:from-gray-600 dark:to-gray-700 dark:text-gray-200">
-          星期三
+          周三
         </div>
         <div className="sticky top-0 z-10 col-start-6 row-start-1 border-b border-gray-100 bg-white bg-clip-padding py-2 text-center text-sm font-medium text-gray-900 dark:border-black/10 dark:bg-gradient-to-b dark:from-gray-600 dark:to-gray-700 dark:text-gray-200">
-          星期四
+          周四
         </div>
         <div className="sticky top-0 z-10 col-start-7 row-start-1 border-b border-gray-100 bg-white bg-clip-padding py-2 text-center text-sm font-medium text-gray-900 dark:border-black/10 dark:bg-gradient-to-b dark:from-gray-600 dark:to-gray-700 dark:text-gray-200">
-          星期五
+          周五
         </div>
         <div className="sticky top-0 z-10 col-start-8 row-start-1 border-b border-gray-100 bg-white bg-clip-padding py-2 text-center text-sm font-medium text-gray-900 dark:border-black/10 dark:bg-gradient-to-b dark:from-gray-600 dark:to-gray-700 dark:text-gray-200">
-          星期六
+          周六
         </div>
         <div className="sticky left-0 col-start-1 row-start-2 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          上午5点
+          早上5点
         </div>
         <div className="col-start-2 row-start-2 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-2 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -479,7 +479,7 @@ export const description =
         <div className="col-start-7 row-start-2 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-2 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-3 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          上午6点
+          早上6点
         </div>
         <div className="col-start-2 row-start-3 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-3 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -489,7 +489,7 @@ export const description =
         <div className="col-start-7 row-start-3 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-3 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-4 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          上午7点
+          早上7点
         </div>
         <div className="col-start-2 row-start-4 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-4 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -499,7 +499,7 @@ export const description =
         <div className="col-start-7 row-start-4 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-4 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-5 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          上午8点
+          早上8点
         </div>
         <div className="col-start-2 row-start-5 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-5 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -509,7 +509,7 @@ export const description =
         <div className="col-start-7 row-start-5 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-5 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-6 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          上午9点
+          早上9点
         </div>
         <div className="col-start-2 row-start-6 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-6 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -519,7 +519,7 @@ export const description =
         <div className="col-start-7 row-start-6 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-6 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-7 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          上午10点
+          早上10点
         </div>
         <div className="col-start-2 row-start-7 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-7 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -529,7 +529,7 @@ export const description =
         <div className="col-start-7 row-start-7 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-7 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-8 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          上午11点
+          中午12点
         </div>
         <div className="col-start-2 row-start-8 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-8 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -539,7 +539,7 @@ export const description =
         <div className="col-start-7 row-start-8 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-8 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-9 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          中午12点
+          下午1点
         </div>
         <div className="col-start-2 row-start-9 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-9 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -549,7 +549,7 @@ export const description =
         <div className="col-start-7 row-start-9 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-9 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-10 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          下午1点
+          下午2点
         </div>
         <div className="col-start-2 row-start-10 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-10 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -559,7 +559,7 @@ export const description =
         <div className="col-start-7 row-start-10 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-10 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-11 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          下午2点
+          下午3点
         </div>
         <div className="col-start-2 row-start-11 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-11 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -569,7 +569,7 @@ export const description =
         <div className="col-start-7 row-start-11 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-11 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-12 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          下午3点
+          下午4点
         </div>
         <div className="col-start-2 row-start-12 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-12 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -579,7 +579,7 @@ export const description =
         <div className="col-start-7 row-start-12 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-12 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-13 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          下午4点
+          下午5点
         </div>
         <div className="col-start-2 row-start-13 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-13 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -589,7 +589,7 @@ export const description =
         <div className="col-start-7 row-start-13 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-13 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-14 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          下午5点
+          下午6点
         </div>
         <div className="col-start-2 row-start-14 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-14 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -599,7 +599,7 @@ export const description =
         <div className="col-start-7 row-start-14 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-14 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-15 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          下午6点
+          下午7点
         </div>
         <div className="col-start-2 row-start-15 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-15 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -609,7 +609,7 @@ export const description =
         <div className="col-start-7 row-start-15 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-15 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-16 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          下午7点
+          下午8点
         </div>
         <div className="col-start-2 row-start-16 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-16 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -619,7 +619,7 @@ export const description =
         <div className="col-start-7 row-start-16 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-8 row-start-16 border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="sticky left-0 col-start-1 row-start-17 border-r border-gray-100 bg-white p-1.5 text-right text-xs font-medium text-gray-400 uppercase dark:border-gray-200/5 dark:bg-gray-800">
-          下午8点
+          下午9点
         </div>
         <div className="col-start-2 row-start-17 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
         <div className="col-start-3 row-start-17 border-r border-b border-gray-100 dark:border-gray-200/5"></div>
@@ -630,14 +630,14 @@ export const description =
         <div className="col-start-8 row-start-17"></div>
         {/* 日历内容 */}
         <div className="col-start-3 row-span-4 row-start-2 m-1 flex flex-col rounded-lg border border-blue-700/10 bg-blue-400/20 p-1 dark:border-sky-500 dark:bg-sky-600/50">
-          <span className="text-xs text-blue-600 dark:text-sky-100">上午5点</span>
-          <span className="text-xs font-medium text-blue-600 dark:text-sky-100">飞往温哥华的航班</span>
+          <span className="text-xs text-blue-600 dark:text-sky-100">早上5点</span>
+          <span className="text-xs font-medium text-blue-600 dark:text-sky-100">前往温哥华的航班</span>
           <span className="text-xs text-blue-600 dark:text-sky-100">多伦多 YYZ</span>
         </div>
         <div className="col-start-4 row-span-4 row-start-3 m-1 flex flex-col rounded-lg border border-purple-700/10 bg-purple-400/20 p-1 dark:border-fuchsia-500 dark:bg-fuchsia-600/50">
-          <span className="text-xs text-purple-600 dark:text-fuchsia-100">上午6点</span>
+          <span className="text-xs text-purple-600 dark:text-fuchsia-100">早上6点</span>
           <span className="text-xs font-medium text-purple-600 dark:text-fuchsia-100">早餐</span>
-          <span className="text-xs text-purple-600 dark:text-fuchsia-100">梅尔的餐馆</span>
+          <span className="text-xs text-purple-600 dark:text-fuchsia-100">美乐餐厅</span>
         </div>
         <div className="col-start-7 row-span-3 row-start-14 m-1 flex flex-col rounded-lg border border-pink-700/10 bg-pink-400/20 p-1 dark:border-indigo-500 dark:bg-indigo-600/50">
           <span className="text-xs text-pink-600 dark:text-indigo-100">下午5点</span>
@@ -658,7 +658,7 @@ export const description =
 
 </Figure>
 
-与 `overflow-auto` 不同，该工具类始终显示滚动条。注意一些操作系统（如 macOS）在该设置下隐藏不必要的滚动条。
+与 `overflow-auto` 不同，该工具类始终显示滚动条。请注意，某些操作系统（如 macOS）会隐藏不必要的滚动条，而不管此设置如何。
 
 ### 响应式设计
 

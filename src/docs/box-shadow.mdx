@@ -10,7 +10,7 @@ import { Figure } from "@/components/figure.tsx";
 import colors from "./utils/colors";
 
 export const title = "box-shadow";
-export const description = "控制元素盒子阴影的实用工具。";
+export const description = "用于控制元素盒阴影的工具类。";
 
 <ApiTable
   rows={[
@@ -43,14 +43,14 @@ export const description = "控制元素盒子阴影的实用工具。";
       `shadow-${name}`,
       `--tw-shadow-color: var(--color-${name}); /* ${value} */`,
     ]),
-    // 内嵌阴影
+    // 内阴影
     ["inset-shadow-2xs", "box-shadow: var(--inset-shadow-2xs); /* inset 0 1px rgb(0 0 0 / 0.05) */"],
     ["inset-shadow-xs", "box-shadow: var(--inset-shadow-xs); /* inset 0 1px 1px rgb(0 0 0 / 0.05) */"],
     ["inset-shadow-sm", "box-shadow: var(--inset-shadow-sm); /* inset 0 2px 4px rgb(0 0 0 / 0.05) */"],
     ["inset-shadow-none", "box-shadow: inset 0 0 #0000;"],
     ["inset-shadow-(<custom-property>)", "box-shadow: var(<custom-property>);"],
     ["inset-shadow-[<value>]", "box-shadow: <value>;"],
-    // 内嵌阴影颜色
+    // 内阴影颜色
     ["inset-shadow-inherit", "--tw-inset-shadow-color: inherit;"],
     ["inset-shadow-current", "--tw-inset-shadow-color: currentColor;"],
     ["inset-shadow-transparent", "--tw-inset-shadow-color: transparent;"],
@@ -58,12 +58,12 @@ export const description = "控制元素盒子阴影的实用工具。";
       `inset-shadow-${name}`,
       `--tw-inset-shadow-color: var(--color-${name}); /* ${value} */`,
     ]),
-    // 光环
+    // 边框阴影
     ["ring", "--tw-ring-shadow: 0 0 0 1px;"],
     ["ring-<number>", "--tw-ring-shadow: 0 0 0 <number>px;"],
     ["ring-(<custom-property>)", "--tw-ring-shadow: 0 0 0 var(<custom-property>);"],
     ["ring-[<value>]", "--tw-ring-shadow: 0 0 0 <value>;"],
-    // 光环颜色
+    // 边框阴影颜色
     ["ring-inherit", "--tw-ring-color: inherit;"],
     ["ring-current", "--tw-ring-color: currentColor;"],
     ["ring-transparent", "--tw-ring-color: transparent;"],
@@ -71,12 +71,12 @@ export const description = "控制元素盒子阴影的实用工具。";
       `ring-${name}`,
       `--tw-ring-color: var(--color-${name}); /* ${value} */`,
     ]),
-    // 内嵌光环
+    // 内边框阴影
     ["inset-ring", "--tw-inset-ring-shadow: inset 0 0 0 1px"],
     ["inset-ring-<number>", "--tw-inset-ring-shadow: inset 0 0 0 <number>px"],
     ["inset-ring-(<custom-property>)", "--tw-inset-ring-shadow: inset 0 0 0 var(<custom-property>);"],
     ["inset-ring-[<value>]", "--tw-inset-ring-shadow: inset 0 0 0 <value>;"],
-    // 内嵌光环颜色
+    // 内边框阴影颜色
     ["inset-ring-inherit", "--tw-inset-ring-color: inherit;"],
     ["inset-ring-current", "--tw-inset-ring-color: currentColor;"],
     ["inset-ring-transparent", "--tw-inset-ring-color: transparent;"],
@@ -91,7 +91,7 @@ export const description = "控制元素盒子阴影的实用工具。";
 
 ### 基本示例
 
-使用 `shadow-sm` 和 `shadow-lg` 这样的实用工具为元素应用不同大小的外部盒子阴影：
+使用像 `shadow-sm` 和 `shadow-lg` 这样的工具类为元素应用不同大小的外层盒阴影：
 
 <Figure>
 
@@ -115,7 +115,7 @@ export const description = "控制元素盒子阴影的实用工具。";
 </Example>
 
 ```html
-<!-- [!code classes:shadow-md,shadow-lg,shadow-xl] -->
+<!-- [!code 类名:shadow-md,shadow-lg,shadow-xl] -->
 <div class="shadow-md ..."></div>
 <div class="shadow-lg ..."></div>
 <div class="shadow-xl ..."></div>
@@ -123,9 +123,9 @@ export const description = "控制元素盒子阴影的实用工具。";
 
 </Figure>
 
-### Changing the opacity
+### 更改不透明度
 
-Use the opacity modifier to adjust the opacity of the box shadow:
+使用不透明度修饰符调整盒阴影的不透明度：
 
 <Figure>
 
@@ -149,7 +149,7 @@ Use the opacity modifier to adjust the opacity of the box shadow:
 </Example>
 
 ```html
-<!-- [!code classes:shadow-xl,shadow-xl/20,shadow-xl/30] -->
+<!-- [!code 类名:shadow-xl,shadow-xl/20,shadow-xl/30] -->
 <div class="shadow-xl ..."></div>
 <div class="shadow-xl/20 ..."></div>
 <div class="shadow-xl/30 ..."></div>
@@ -157,11 +157,11 @@ Use the opacity modifier to adjust the opacity of the box shadow:
 
 </Figure>
 
-The default box shadow opacities are quite low (25% or less), so increasing the opacity (to like 50%) will make the box shadows more pronounced.
+默认的盒阴影不透明度比较低（25%或更低），因此增加不透明度（比如到50%）会使盒阴影更加明显。
 
-### Setting the shadow color
+### 设置阴影颜色
 
-Use utilities like `shadow-indigo-500` and `shadow-cyan-500/50` to change the color of a box shadow:
+使用像 `shadow-indigo-500` 和 `shadow-cyan-500/50` 这样的工具类更改盒阴影的颜色：
 
 <Figure>
 
@@ -197,7 +197,7 @@ Use utilities like `shadow-indigo-500` and `shadow-cyan-500/50` to change the co
 </Example>
 
 ```html
-<!-- [!code classes:shadow-cyan-500/50,shadow-blue-500/50,shadow-indigo-500/50] -->
+<!-- [!code 类名:shadow-cyan-500/50,shadow-blue-500/50,shadow-indigo-500/50] -->
 <button class="bg-cyan-500 shadow-lg shadow-cyan-500/50 ...">订阅</button>
 <button class="bg-blue-500 shadow-lg shadow-blue-500/50 ...">订阅</button>
 <button class="bg-indigo-500 shadow-lg shadow-indigo-500/50 ...">订阅</button>
@@ -205,11 +205,11 @@ Use utilities like `shadow-indigo-500` and `shadow-cyan-500/50` to change the co
 
 </Figure>
 
-默认情况下，彩色阴影的透明度为 100%，但您可以使用透明度修饰符进行调整。
+默认情况下，着色阴影的不透明度为100%，但您可以使用不透明度修饰符进行调整。
 
-### 添加内嵌阴影
+### 添加内阴影
 
-使用 `inset-shadow-xs` 和 `inset-shadow-sm` 这样的实用工具为元素应用内嵌盒子阴影：
+使用像 `inset-shadow-xs` 和 `inset-shadow-sm` 这样的工具类为元素应用内阴影：
 
 <Figure>
 
@@ -233,7 +233,7 @@ Use utilities like `shadow-indigo-500` and `shadow-cyan-500/50` to change the co
 </Example>
 
 ```html
-<!-- [!code classes:inset-shadow-2xs,inset-shadow-xs,inset-shadow-sm] -->
+<!-- [!code 类名:inset-shadow-2xs,inset-shadow-xs,inset-shadow-sm] -->
 <div class="inset-shadow-2xs ..."></div>
 <div class="inset-shadow-xs ..."></div>
 <div class="inset-shadow-sm ..."></div>
@@ -241,11 +241,11 @@ Use utilities like `shadow-indigo-500` and `shadow-cyan-500/50` to change the co
 
 </Figure>
 
-You can adjust the opacity of an inset shadow using the opacity modifier, like `inset-shadow-sm/50`. The default inset shadow opacities are quite low (5%), so increasing the opacity (to like 50%) will make the inset shadows more pronounced.
+您可以使用不透明度修饰符调整内阴影的不透明度，例如 `inset-shadow-sm/50`。默认内阴影不透明度比较低（5%），因此增加不透明度（比如到50%）会使内阴影更加明显。
 
-### 设置内嵌阴影颜色
+### 设置内阴影颜色
 
-使用 `inset-shadow-indigo-500` 和 `inset-shadow-cyan-500/50` 这样的实用工具更改内嵌盒子阴影的颜色：
+使用像 `inset-shadow-indigo-500` 和 `inset-shadow-cyan-500/50` 这样的工具类更改内阴影的颜色：
 
 <Figure>
 
@@ -265,18 +265,18 @@ You can adjust the opacity of an inset shadow using the opacity modifier, like `
 </Example>
 
 ```html
-<!-- [!code classes:inset-shadow-indigo-500,inset-shadow-indigo-500/75] -->
+<!-- [!code 类名:inset-shadow-indigo-500,inset-shadow-indigo-500/75] -->
 <div class="inset-shadow-sm inset-shadow-indigo-500 ..."></div>
 <div class="inset-shadow-sm inset-shadow-indigo-500/50 ..."></div>
 ```
 
 </Figure>
 
-默认情况下，彩色阴影的透明度为 100%，但您可以使用透明度修饰符进行调整。
+默认情况下，着色阴影的不透明度为100%，但您可以使用不透明度修饰符进行调整。
 
-### 添加光环
+### 添加边框阴影
 
-使用 `ring` 或 `ring-<number>` 实用工具，如 `ring-2` 和 `ring-4` 为元素应用实心盒子阴影：
+使用 `ring` 或 `ring-<number>` 工具类，例如 `ring-2` 和 `ring-4`，为元素应用实心盒阴影：
 
 <Figure>
 
@@ -306,7 +306,7 @@ You can adjust the opacity of an inset shadow using the opacity modifier, like `
 </Example>
 
 ```html
-<!-- [!code classes:ring,ring-2,ring-4] -->
+<!-- [!code 类名:ring,ring-2,ring-4] -->
 <button class="ring ...">订阅</button>
 <button class="ring-2 ...">订阅</button>
 <button class="ring-4 ...">订阅</button>
@@ -314,11 +314,11 @@ You can adjust the opacity of an inset shadow using the opacity modifier, like `
 
 </Figure>
 
-默认情况下，光环与应用于其上的元素的 `currentColor` 匹配。
+默认情况下，边框阴影会与应用它们的元素的 `currentColor` 颜色匹配。
 
-### 设置光环颜色
+### 设置边框阴影颜色
 
-使用 `ring-indigo-500` 和 `ring-cyan-500/50` 这样的实用工具更改光环的颜色：
+使用像 `ring-indigo-500` 和 `ring-cyan-500/50` 这样的工具类来改变边框阴影的颜色：
 
 <Figure>
 
@@ -344,18 +344,18 @@ You can adjust the opacity of an inset shadow using the opacity modifier, like `
 </Example>
 
 ```html
-<!-- [!code classes:ring-blue-500,ring-blue-500/50] -->
+<!-- [!code 类名:ring-blue-500,ring-blue-500/50] -->
 <button class="ring-2 ring-blue-500 ...">订阅</button>
 <button class="ring-2 ring-blue-500/50 ...">订阅</button>
 ```
 
 </Figure>
 
-默认情况下，光环的透明度为 100%，但您可以使用透明度修饰符进行调整。
+默认情况下，边框阴影的不透明度为100%，但您可以使用不透明度修饰符进行调整。
 
-### 添加内嵌光环
+### 添加内边框阴影
 
-使用 `inset-ring` 或 `inset-ring-<number>` 实用工具，如 `inset-ring-2` 和 `inset-ring-4` 为元素应用实心内嵌盒子阴影：
+使用 `inset-ring` 或 `inset-ring-<number>` 工具类，例如 `inset-ring-2` 和 `inset-ring-4` 为元素应用实心内边框阴影：
 
 <Figure>
 
@@ -385,7 +385,7 @@ You can adjust the opacity of an inset shadow using the opacity modifier, like `
 </Example>
 
 ```html
-<!-- [!code classes:inset-ring,inset-ring-2,inset-ring-4] -->
+<!-- [!code 类名:inset-ring,inset-ring-2,inset-ring-4] -->
 <button class="inset-ring ...">订阅</button>
 <button class="inset-ring-2 ...">订阅</button>
 <button class="inset-ring-4 ...">订阅</button>
@@ -393,11 +393,11 @@ You can adjust the opacity of an inset shadow using the opacity modifier, like `
 
 </Figure>
 
-默认情况下，内嵌光环与应用于其上的元素的 `currentColor` 匹配。
+默认情况下，内边框阴影会与应用它们的元素的 `currentColor` 颜色匹配。
 
-### 设置内嵌光环颜色
+### 设置内边框阴影颜色
 
-使用 `inset-ring-indigo-500` 和 `inset-ring-cyan-500/50` 这样的实用工具更改内嵌光环的颜色：
+使用像 `inset-ring-indigo-500` 和 `inset-ring-cyan-500/50` 这样的工具类更改内边框阴影的颜色：
 
 <Figure>
 
@@ -425,18 +425,18 @@ You can adjust the opacity of an inset shadow using the opacity modifier, like `
 </Example>
 
 ```html
-<!-- [!code classes:inset-ring-blue-500,inset-ring-blue-500/50] -->
+<!-- [!code 类名:inset-ring-blue-500,inset-ring-blue-500/50] -->
 <button class="inset-ring-2 inset-ring-blue-500 ...">订阅</button>
 <button class="inset-ring-2 inset-ring-blue-500/50 ...">订阅</button>
 ```
 
 </Figure>
 
-默认情况下，内嵌光环的透明度为 100%，但您可以使用透明度修饰符进行调整。
+默认情况下，内边框阴影的不透明度为100%，但您可以使用不透明度修饰符进行调整。
 
-### 移除盒子阴影
+### 移除盒阴影
 
-使用 `shadow-none`、`inset-shadow-none`、`ring-0` 和 `inset-ring-0` 实用工具从元素中移除现有的盒子阴影：
+使用 `shadow-none`、`inset-shadow-none`、`ring-0` 以及 `inset-ring-0` 工具类从元素上移除已有的盒阴影：
 
 <Figure>
 
@@ -452,7 +452,7 @@ You can adjust the opacity of an inset shadow using the opacity modifier, like `
 </Example>
 
 ```html
-<!-- [!code classes:shadow-none] -->
+<!-- [!code 类名:shadow-none] -->
 <div class="shadow-none ..."></div>
 ```
 
@@ -462,7 +462,7 @@ You can adjust the opacity of an inset shadow using the opacity modifier, like `
 
 <UsingACustomValue
   utilities={["shadow", "inset-shadow", "ring", "inset-ring"]}
-  name="盒子阴影"
+  name="盒阴影"
   value="0_35px_35px_rgba(0,0,0,0.25)"
 />
 
@@ -470,24 +470,24 @@ You can adjust the opacity of an inset shadow using the opacity modifier, like `
 
 <ResponsiveDesign property="box-shadow" defaultClass="shadow-none" featuredClass="shadow-lg" />
 
-## 自定义您的主题
+## 自定义主题
 
 ### 自定义阴影
 
 <CustomizingYourTheme
   utility="shadow"
   themeKey="shadow"
-  name="盒子阴影"
+  name="盒阴影"
   customName="3xl"
   customValue="0 35px 35px rgba(0, 0, 0, 0.25)"
 />
 
-### 自定义内嵌阴影
+### 自定义内阴影
 
 <CustomizingYourTheme
   utility="inset-shadow"
   themeKey="inset-shadow"
-  name="内嵌盒子阴影"
+  name="内盒阴影"
   customName="md"
   customValue="inset 0 2px 3px rgba(0, 0, 0, 0.25)"
 />

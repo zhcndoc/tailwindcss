@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "垂直对齐";
-export const description = "用于控制行内或表格单元框的垂直对齐的工具类。";
+export const title = "vertical-align";
+export const description = "控制行内或表格单元格盒子的垂直对齐的工具";
 
 <ApiTable
   rows={[
@@ -23,9 +23,9 @@ export const description = "用于控制行内或表格单元框的垂直对齐�
 
 ## 示例
 
-### 对齐到基线
+### 基线对齐
 
-使用 `align-baseline` 工具类将元素的基线与其父元素的基线对齐：
+使用 `align-baseline` 工具将元素的基线与其父元素的基线对齐：
 
 <Figure>
 
@@ -37,7 +37,7 @@ export const description = "用于控制行内或表格单元框的垂直对齐�
         <span className="absolute top-0 h-4 w-full border-b border-dashed border-pink-400/50"></span>
       </span>
       <span className="relative z-10 px-4 font-medium text-gray-700 dark:text-gray-200">
-        快速的棕色狐狸跳过懒狗。
+        敏捷的棕色狐狸跳过懒狗。
       </span>
     </div>
   }
@@ -45,14 +45,14 @@ export const description = "用于控制行内或表格单元框的垂直对齐�
 
 ```html
 <!-- [!code classes:align-baseline] -->
-<span class="inline-block align-baseline">快速的棕色狐狸...</span>
+<span class="inline-block align-baseline">敏捷的棕色狐狸...</span>
 ```
 
 </Figure>
 
-### 对齐到顶部
+### 顶部对齐
 
-使用 `align-top` 工具类将元素及其子元素的顶部与整行的顶部对齐：
+使用 `align-top` 工具将元素及其子元素的顶部与整行顶部对齐：
 
 <Figure>
 
@@ -64,7 +64,7 @@ export const description = "用于控制行内或表格单元框的垂直对齐�
         <span className="absolute top-0 h-4 w-full border-b border-dashed border-pink-400/50"></span>
       </span>
       <span className="relative z-10 px-4 font-medium text-gray-700 dark:text-gray-200">
-        快速的棕色狐狸跳过懒狗。
+        敏捷的棕色狐狸跳过懒狗。
       </span>
     </div>
   }
@@ -72,14 +72,14 @@ export const description = "用于控制行内或表格单元框的垂直对齐�
 
 ```html
 <!-- [!code classes:align-top] -->
-<span class="inline-block align-top">快速的棕色狐狸...</span>
+<span class="inline-block align-top">敏捷的棕色狐狸...</span>
 ```
 
 </Figure>
 
-### 对齐到中间
+### 中部对齐
 
-使用 `align-middle` 工具类将元素的中线与基线加上父元素的x高度的一半对齐：
+使用 `align-middle` 工具将元素的中部与父元素的基线加上半个x高度对齐：
 
 <Figure>
 
@@ -91,7 +91,7 @@ export const description = "用于控制行内或表格单元框的垂直对齐�
         <span className="absolute top-0 h-4 w-full border-b border-dashed border-pink-400/50"></span>
       </span>
       <span className="relative z-10 px-4 font-medium text-gray-700 dark:text-gray-200">
-        快速的棕色狐狸跳过懒狗。
+        敏捷的棕色狐狸跳过懒狗。
       </span>
     </div>
   }
@@ -99,14 +99,14 @@ export const description = "用于控制行内或表格单元框的垂直对齐�
 
 ```html
 <!-- [!code classes:align-middle] -->
-<span class="inline-block align-middle">快速的棕色狐狸...</span>
+<span class="inline-block align-middle">敏捷的棕色狐狸...</span>
 ```
 
 </Figure>
 
-### 对齐到底部
+### 底部对齐
 
-使用 `align-bottom` 工具类将元素及其子元素的底部与整行的底部对齐：
+使用 `align-bottom` 工具将元素及其子元素的底部与整行的底部对齐：
 
 <Figure>
 
@@ -118,7 +118,7 @@ export const description = "用于控制行内或表格单元框的垂直对齐�
         <span className="absolute top-0 h-4 w-full border-b border-dashed border-pink-400/50"></span>
       </span>
       <span className="relative z-10 px-4 font-medium text-gray-700 dark:text-gray-200">
-        快速的棕色狐狸跳过懒狗。
+        敏捷的棕色狐狸跳过懒狗。
       </span>
     </div>
   }
@@ -126,14 +126,14 @@ export const description = "用于控制行内或表格单元框的垂直对齐�
 
 ```html
 <!-- [!code classes:align-bottom] -->
-<span class="inline-block align-bottom">快速的棕色狐狸...</span>
+<span class="inline-block align-bottom">敏捷的棕色狐狸...</span>
 ```
 
 </Figure>
 
-### 对齐到父级顶部
+### 对齐到父元素顶部
 
-使用 `align-text-top` 工具类将元素的顶部与父元素字体的顶部对齐：
+使用 `align-text-top` 工具将元素的顶部与父元素的字体顶部对齐：
 
 <Figure>
 
@@ -145,7 +145,7 @@ export const description = "用于控制行内或表格单元框的垂直对齐�
         <span className="absolute top-0 h-4 w-full border-b border-dashed border-pink-400/50"></span>
       </span>
       <span className="relative z-10 px-4 font-medium text-gray-700 dark:text-gray-200">
-        快速的棕色狐狸跳过懒狗。
+        敏捷的棕色狐狸跳过懒狗。
       </span>
     </div>
   }
@@ -153,14 +153,14 @@ export const description = "用于控制行内或表格单元框的垂直对齐�
 
 ```html
 <!-- [!code classes:align-text-top] -->
-<span class="inline-block align-text-top">快速的棕色狐狸...</span>
+<span class="inline-block align-text-top">敏捷的棕色狐狸...</span>
 ```
 
 </Figure>
 
-### 对齐到父级底部
+### 对齐到父元素底部
 
-使用 `align-text-bottom` 工具类将元素的底部与父元素字体的底部对齐：
+使用 `align-text-bottom` 工具将元素的底部与父元素的字体底部对齐：
 
 <Figure>
 
@@ -172,7 +172,7 @@ export const description = "用于控制行内或表格单元框的垂直对齐�
         <span className="absolute top-0 h-4 w-full border-b border-dashed border-pink-400/50"></span>
       </span>
       <span className="relative z-10 px-4 font-medium text-gray-700 dark:text-gray-200">
-        快速的棕色狐狸跳过懒狗。
+        敏捷的棕色狐狸跳过懒狗。
       </span>
     </div>
   }
@@ -180,7 +180,7 @@ export const description = "用于控制行内或表格单元框的垂直对齐�
 
 ```html
 <!-- [!code classes:align-text-bottom] -->
-<span class="inline-block align-text-bottom">快速的棕色狐狸...</span>
+<span class="inline-block align-text-bottom">敏捷的棕色狐狸...</span>
 ```
 
 </Figure>

@@ -6,7 +6,7 @@ import { ResponsiveDesign } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "justify-items";
-export const description = "控制网格项在其内联轴上对齐的工具类。";
+export const description = "用于控制网格项目在其行轴上对齐方式的工具。";
 
 <ApiTable
   rows={[
@@ -24,7 +24,7 @@ export const description = "控制网格项在其内联轴上对齐的工具类�
 
 ### 开始
 
-Use the `justify-items-start` utility to justify grid items against the start of their inline axis:
+使用 `justify-items-start` 工具将网格项目对齐到其行轴的起始位置：
 
 <Figure>
 
@@ -87,9 +87,9 @@ Use the `justify-items-start` utility to justify grid items against the start of
 
 ### 结束
 
-Use the `justify-items-end` or `justify-items-end-safe` utilities to justify grid items against the end of their inline axis:
+使用 `justify-items-end` 或 `justify-items-end-safe` 工具将网格项目对齐到其行轴的结束位置：
 
-<Figure hint="Resize the container to see the alignment behavior">
+<Figure hint="调整容器大小以查看对齐行为">
 
 <Example resizable>
   {
@@ -160,13 +160,13 @@ Use the `justify-items-end` or `justify-items-end-safe` utilities to justify gri
 
 </Figure>
 
-When there is not enough space available, the `justify-items-end-safe` utility will align items to the start of the container instead of the end.
+当可用空间不足时，`justify-items-end-safe` 工具将对齐项目到容器的起始位置，而不是结束位置。
 
-### Center
+### 居中
 
-Use the `justify-items-center` or `justify-items-center-safe` utilities to justify grid items against the end of their inline axis:
+使用 `justify-items-center` 或 `justify-items-center-safe` 工具将网格项目对齐到其行轴的中心位置：
 
-<Figure hint="Resize the container to see the alignment behavior">
+<Figure hint="调整容器大小以查看对齐行为">
 
 <Example resizable>
   {
@@ -239,11 +239,11 @@ Use the `justify-items-center` or `justify-items-center-safe` utilities to justi
 
 </Figure>
 
-When there is not enough space available, the `justify-items-center-safe` utility will align items to the start of the container instead of the center.
+当可用空间不足时，`justify-items-center-safe` 工具将对齐项目到容器的起始位置，而不是中心。
 
-### Stretch
+### 拉伸
 
-Use the `justify-items-stretch` utility to stretch items along their inline axis:
+使用 `justify-items-stretch` 工具在其行轴上拉伸项目：
 
 <Figure>
 

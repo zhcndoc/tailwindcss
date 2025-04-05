@@ -4,12 +4,12 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "背面可见性";
-export const description = "用于控制元素的背面是否可见的工具。";
+export const description = "控制元素背面是否可见的工具类。";
 
 <ApiTable
   rows={[
-    ["背面隐藏", "backface-visibility: hidden;"],
-    ["背面可见", "backface-visibility: visible;"],
+    ["backface-hidden", "backface-visibility: hidden;"],
+    ["backface-visible", "backface-visibility: visible;"],
   ]}
 />
 
@@ -17,7 +17,7 @@ export const description = "用于控制元素的背面是否可见的工具。"
 
 ### 基本示例
 
-使用 `backface-visible` 工具，即使元素旋转到视线外，也可以显示元素的背面，比如一个立方体：
+使用 `backface-visible` 工具类来显示元素的背面，例如立方体，即使它旋转到视线之外也能显示：
 
 <Figure>
 
@@ -26,7 +26,7 @@ export const description = "用于控制元素的背面是否可见的工具。"
     <div className="flex flex-col justify-around gap-8 text-sm leading-6 font-bold text-white sm:flex-row sm:gap-0">
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-          backface-hidden
+          背面隐藏
         </p>
         <div className="size-40 p-10">
           <div className="size-20 rotate-[0.75_1_0.75_45deg] transform-3d">
@@ -53,7 +53,7 @@ export const description = "用于控制元素的背面是否可见的工具。"
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-          backface-visible
+          背面可见
         </p>
         <div className="size-40 p-10">
           <div className="size-20 rotate-[0.75_1_0.75_45deg] transform-3d">
@@ -85,21 +85,21 @@ export const description = "用于控制元素的背面是否可见的工具。"
 ```html
 <!-- [!code classes:背面隐藏,背面可见] -->
 <div class="size-20 ...">
-  <div class="translate-z-12 rotate-x-0 bg-sky-300/75 backface-hidden ...">1</div>
-  <div class="-translate-z-12 rotate-y-180 bg-sky-300/75 backface-hidden ...">2</div>
-  <div class="translate-x-12 rotate-y-90 bg-sky-300/75 backface-hidden ...">3</div>
-  <div class="-translate-x-12 -rotate-y-90 bg-sky-300/75 backface-hidden ...">4</div>
-  <div class="-translate-y-12 rotate-x-90 bg-sky-300/75 backface-hidden ...">5</div>
-  <div class="translate-y-12 -rotate-x-90 bg-sky-300/75 backface-hidden ...">6</div>
+  <div class="translate-z-12 rotate-x-0 bg-sky-300/75 背面隐藏 ...">1</div>
+  <div class="-translate-z-12 rotate-y-180 bg-sky-300/75 背面隐藏 ...">2</div>
+  <div class="translate-x-12 rotate-y-90 bg-sky-300/75 背面隐藏 ...">3</div>
+  <div class="-translate-x-12 -rotate-y-90 bg-sky-300/75 背面隐藏 ...">4</div>
+  <div class="-translate-y-12 rotate-x-90 bg-sky-300/75 背面隐藏 ...">5</div>
+  <div class="translate-y-12 -rotate-x-90 bg-sky-300/75 背面隐藏 ...">6</div>
 </div>
 
 <div class="size-20 ...">
-  <div class="translate-z-12 rotate-x-0 bg-sky-300/75 backface-visible ...">1</div>
-  <div class="-translate-z-12 rotate-y-180 bg-sky-300/75 backface-visible ...">2</div>
-  <div class="translate-x-12 rotate-y-90 bg-sky-300/75 backface-visible ...">3</div>
-  <div class="-translate-x-12 -rotate-y-90 bg-sky-300/75 backface-visible ...">4</div>
-  <div class="-translate-y-12 rotate-x-90 bg-sky-300/75 backface-visible ...">5</div>
-  <div class="translate-y-12 -rotate-x-90 bg-sky-300/75 backface-visible ...">6</div>
+  <div class="translate-z-12 rotate-x-0 bg-sky-300/75 背面可见 ...">1</div>
+  <div class="-translate-z-12 rotate-y-180 bg-sky-300/75 背面可见 ...">2</div>
+  <div class="translate-x-12 rotate-y-90 bg-sky-300/75 背面可见 ...">3</div>
+  <div class="-translate-x-12 -rotate-y-90 bg-sky-300/75 背面可见 ...">4</div>
+  <div class="-translate-y-12 rotate-x-90 bg-sky-300/75 背面可见 ...">5</div>
+  <div class="translate-y-12 -rotate-x-90 bg-sky-300/75 背面可见 ...">6</div>
 </div>
 ```
 
@@ -107,4 +107,4 @@ export const description = "用于控制元素的背面是否可见的工具。"
 
 ### 响应式设计
 
-<ResponsiveDesign property="backface-visibility" defaultClass="backface-visible" featuredClass="backface-hidden" />
+<ResponsiveDesign property="背面可见性" defaultClass="背面可见" featuredClass="背面隐藏" />

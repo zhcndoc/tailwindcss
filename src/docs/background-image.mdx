@@ -88,7 +88,7 @@ export const description = "用于控制元素背景图像的工具类。";
 
 ### 添加线性渐变
 
-使用像 `bg-linear-to-r` 和 `bg-linear-<angle>` 这样的工具类与 [颜色停止工具](#setting-gradient-color-stops) 一起为元素添加线性渐变：
+使用像 `bg-linear-to-r` 和 `bg-linear-<angle>` 的工具类与 [颜色停止工具](#setting-gradient-color-stops) 将线性渐变添加到元素：
 
 <Figure>
 
@@ -113,9 +113,9 @@ export const description = "用于控制元素背景图像的工具类。";
 
 </Figure>
 
-### 添加放射状渐变
+### 添加径向渐变
 
-使用 `bg-radial` 和 `bg-radial-[<position>]` 工具类与 [颜色停止工具](#setting-gradient-color-stops) 一起为元素添加放射状渐变：
+使用 `bg-radial` 和 `bg-radial-[<position>]` 工具类与 [颜色停止工具](#setting-gradient-color-stops) 将径向渐变添加到元素：
 
 <Figure>
 
@@ -138,9 +138,9 @@ export const description = "用于控制元素背景图像的工具类。";
 
 </Figure>
 
-### 添加锥形渐变
+### 添加圆锥渐变
 
-使用 `bg-conic` 和 `bg-conic-<angle>` 工具类与 [颜色停止工具](#setting-gradient-color-stops) 一起为元素添加锥形渐变：
+使用 `bg-conic` 和 `bg-conic-<angle>` 工具类与 [颜色停止工具](#setting-gradient-color-stops) 将圆锥渐变添加到元素：
 
 <Figure>
 
@@ -165,7 +165,7 @@ export const description = "用于控制元素背景图像的工具类。";
 
 ### 设置渐变颜色停止
 
-使用像 `from-indigo-500`、`via-purple-500` 和 `to-pink-500` 这样的工具类设置渐变停止的颜色：
+使用像 `from-indigo-500`、`via-purple-500` 和 `to-pink-500` 的工具类设置渐变停止的颜色：
 
 <Figure>
 
@@ -206,7 +206,7 @@ export const description = "用于控制元素背景图像的工具类。";
 
 ### 设置渐变停止位置
 
-使用像 `from-10%`、`via-30%` 和 `to-90%` 这样的工具类为渐变颜色停止设置更精确的位置：
+使用像 `from-10%`、`via-30%` 和 `to-90%` 的工具类为渐变颜色停止设置更精确的位置：
 
 <Figure>
 
@@ -254,9 +254,9 @@ export const description = "用于控制元素背景图像的工具类。";
 
 </Figure>
 
-### 更改插值模式
+### 改变插值模式
 
-使用插值修饰符控制渐变的插值模式：
+使用插值修饰符来控制渐变的插值模式：
 
 <Figure>
 
@@ -320,7 +320,7 @@ export const description = "用于控制元素背景图像的工具类。";
 
 </Figure>
 
-默认情况下，渐变在 `oklab` 颜色空间中插值。
+默认情况下，渐变在 `oklab` 颜色空间中进行插值。
 
 ### 移除背景图像
 
@@ -335,7 +335,7 @@ export const description = "用于控制元素背景图像的工具类。";
 
 <UsingACustomValue
   utilities={["bg-linear", "from"]}
-  name="渐变"
+  name="gradient"
   value="25deg,red_5%,yellow_60%,lime_90%,teal"
   variable="gradient"
 />

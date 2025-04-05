@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, TargetingSpecificStates, UsingACustomValue } from "@/components/content.tsx";
 
 export const title = "背景滤镜";
-export const description = "对元素应用背景滤镜的工具类。";
+export const description = "用于为元素应用背景滤镜的工具类。";
 
 <ApiTable
   rows={[
@@ -28,7 +28,7 @@ export const description = "对元素应用背景滤镜的工具类。";
       <div className="flex shrink-0 items-center justify-around gap-6 p-8 font-mono font-bold sm:gap-4">
         <div className="flex shrink-0 flex-col items-center">
           <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-            backdrop-blur-xs
+            背景模糊（极小）
           </p>
           <div className="relative">
             <div className="absolute inset-6 size-20 bg-white/30 backdrop-blur-xs"></div>
@@ -41,7 +41,7 @@ export const description = "对元素应用背景滤镜的工具类。";
         </div>
         <div className="flex shrink-0 flex-col items-center">
           <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-            backdrop-grayscale
+            背景灰度
           </p>
           <div className="relative">
             <div className="absolute inset-6 size-20 bg-white/30 backdrop-grayscale"></div>
@@ -54,7 +54,7 @@ export const description = "对元素应用背景滤镜的工具类。";
         </div>
         <div className="flex shrink-0 flex-col items-center">
           <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 italic dark:text-gray-400">
-            combined
+            组合效果
           </p>
           <div className="relative">
             <div className="absolute inset-6 size-20 bg-white/30 backdrop-blur-xs backdrop-grayscale"></div>
@@ -71,43 +71,43 @@ export const description = "对元素应用背景滤镜的工具类。";
 </Example>
 
 ```html
-<!-- [!code classes:backdrop-blur-xs,backdrop-grayscale] -->
+<!-- [!code classes:背景模糊-xs,背景灰度] -->
 <div class="bg-[url(/img/mountains.jpg)] ...">
-  <div class="backdrop-blur-xs ..."></div>
+  <div class="背景模糊-xs ..."></div>
 </div>
 <div class="bg-[url(/img/mountains.jpg)] ...">
-  <div class="backdrop-grayscale ..."></div>
+  <div class="背景灰度 ..."></div>
 </div>
 <div class="bg-[url(/img/mountains.jpg)] ...">
-  <div class="backdrop-blur-xs backdrop-grayscale ..."></div>
+  <div class="背景模糊-xs 背景灰度 ..."></div>
 </div>
 ```
 
 </Figure>
 
-您可以组合以下背景滤镜工具类：[模糊](/docs/backdrop-filter-blur)、[亮度](/docs/backdrop-filter-brightness)、[对比度](/docs/backdrop-filter-contrast)、[灰度](/docs/backdrop-filter-grayscale)、[色相旋转](/docs/backdrop-filter-hue-rotate)、[反转](/docs/backdrop-filter-invert)、[不透明度](/docs/backdrop-filter-opacity)、[饱和度](/docs/backdrop-filter-saturate) 和 [怀旧](/docs/backdrop-filter-sepia)。
+你可以组合以下背景滤镜工具类：[模糊](/docs/backdrop-filter-blur)、[亮度](/docs/backdrop-filter-brightness)、[对比度](/docs/backdrop-filter-contrast)、[灰度](/docs/backdrop-filter-grayscale)、[色相旋转](/docs/backdrop-filter-hue-rotate)、[反转](/docs/backdrop-filter-invert)、[不透明度](/docs/backdrop-filter-opacity)、[饱和度](/docs/backdrop-filter-saturate) 和 [怀旧](/docs/backdrop-filter-sepia)。
 
 ### 移除滤镜
 
-使用 `backdrop-filter-none` 工具类移除应用于元素的所有背景滤镜：
+使用 `背景滤镜-无` 工具类来移除应用于元素的所有背景滤镜：
 
 ```html
-<!-- [!code classes:md:backdrop-filter-none] -->
-<div class="backdrop-blur-md backdrop-brightness-150 md:backdrop-filter-none"></div>
+<!-- [!code classes:md:背景滤镜-无] -->
+<div class="背景模糊-md 背景亮度-150 md:背景滤镜-无"></div>
 ```
 
 ### 使用自定义值
 
-<UsingACustomValue utility="backdrop-filter" value="url('filters.svg#filter-id')" name="背景滤镜" />
+<UsingACustomValue utility="背景滤镜" value="url('filters.svg#filter-id')" name="背景滤镜" />
 
 ### 在悬停时应用
 
 <TargetingSpecificStates
-  property="backdrop-filter"
-  defaultClass="backdrop-blur-sm"
-  featuredClass="backdrop-filter-none"
+  property="背景滤镜"
+  defaultClass="背景模糊-sm"
+  featuredClass="背景滤镜-无"
 />
 
 ### 响应式设计
 
-<ResponsiveDesign property="backdrop-filter" defaultClass="backdrop-blur-sm" featuredClass="backdrop-filter-none" />
+<ResponsiveDesign property="背景滤镜" defaultClass="背景模糊-sm" featuredClass="背景滤镜-无" />

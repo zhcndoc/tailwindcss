@@ -4,9 +4,9 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "align-items";
+export const title = "对齐项";
 export const description =
-  "控制 flex 和 grid 项在容器交叉轴上定位的工具类。";
+  "用于控制灵活盒子和网格项目在容器的交叉轴上的定位的工具类。";
 
 <ApiTable
   rows={[
@@ -25,7 +25,7 @@ export const description =
 
 ### 拉伸
 
-Use the `items-stretch` utility to stretch items to fill the container's cross axis:
+使用 `items-stretch` 工具类将项目拉伸以填满容器的交叉轴：
 
 <Figure>
 
@@ -55,7 +55,7 @@ Use the `items-stretch` utility to stretch items to fill the container's cross a
 
 ### 开始
 
-Use the `items-start` utility to align items to the start of the container's cross axis:
+使用 `items-start` 工具类将项目对齐到容器的交叉轴的开始位置：
 
 <Figure>
 
@@ -85,7 +85,7 @@ Use the `items-start` utility to align items to the start of the container's cro
 
 ### 居中
 
-Use the `items-center` utility to align items along the center of the container's cross axis:
+使用 `items-center` 工具类将项目沿容器的交叉轴居中对齐：
 
 <Figure>
 
@@ -115,7 +115,7 @@ Use the `items-center` utility to align items along the center of the container'
 
 ### 结束
 
-Use the `items-end` utility to align items to the end of the container's cross axis:
+使用 `items-end` 工具类将项目对齐到容器的交叉轴的结束位置：
 
 <Figure>
 
@@ -145,7 +145,7 @@ Use the `items-end` utility to align items to the end of the container's cross a
 
 ### 基线
 
-Use the `items-baseline` utility to align items along the container's cross axis such that all of their baselines align:
+使用 `items-baseline` 工具类将项目沿容器的交叉轴对齐，以确保它们的基线对齐：
 
 <Figure>
 
@@ -173,9 +173,9 @@ Use the `items-baseline` utility to align items along the container's cross axis
 
 </Figure>
 
-### Last baseline
+### 最后基线
 
-Use the `items-baseline-last` utility to align items along the container's cross axis such that all of their baselines align with the last baseline in the container:
+使用 `items-baseline-last` 工具类将项目沿容器的交叉轴对齐，以确保它们的基线与容器中的最后一条基线对齐：
 
 <Figure>
 
@@ -190,7 +190,7 @@ Use the `items-baseline-last` utility to align items along the container's cross
             alt=""
           />
           <div className="font-semibold text-gray-900 sm:col-start-2 dark:text-white">Spencer Sharp</div>
-          <p className="text-sm sm:col-start-2">Working on the future of astronaut recruitment at Space Recruit.</p>
+          <p className="text-sm sm:col-start-2">正在为太空招聘的未来而努力。</p>
         </div>
         <a
           href="#"
@@ -207,7 +207,7 @@ Use the `items-baseline-last` utility to align items along the container's cross
             alt=""
           />
           <div className="font-semibold text-gray-900 sm:col-start-2 dark:text-white">Alex Reed</div>
-          <p className="text-sm sm:col-start-2">A multidisciplinary designer.</p>
+          <p className="text-sm sm:col-start-2">多学科设计师。</p>
         </div>
         <a
           href="#"
@@ -226,7 +226,7 @@ Use the `items-baseline-last` utility to align items along the container's cross
   <div>
     <img src="img/spencer-sharp.jpg" />
     <h4>Spencer Sharp</h4>
-    <p>Working on the future of astronaut recruitment at Space Recruit.</p>
+    <p>正在为太空招聘的未来而努力。</p>
   </div>
   <p>spacerecruit.com</p>
 </div>
@@ -234,8 +234,8 @@ Use the `items-baseline-last` utility to align items along the container's cross
 
 </Figure>
 
-This is useful for ensuring that text items align with each other, even if they have different heights.
+这对于确保文本项目之间的对齐非常有用，即使它们的高度不同。
 
-### Responsive design
+### 响应式设计
 
-<ResponsiveDesign property="align-items" defaultClass="flex items-stretch" featuredClass="items-center" />
+<ResponsiveDesign property="对齐项" defaultClass="flex items-stretch" featuredClass="items-center" />

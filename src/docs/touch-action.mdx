@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "touch-action";
-export const description = "用于控制元素在触摸屏上的滚动和缩放的工具类。";
+export const description = "用于控制元素在触摸屏上可以如何滚动和缩放的工具类。";
 
 <ApiTable
   rows={[
@@ -25,15 +25,15 @@ export const description = "用于控制元素在触摸屏上的滚动和缩放�
 
 ### 基本示例
 
-使用工具类 `touch-pan-y` 和 `touch-pinch-zoom` 来控制元素在触摸屏上的滚动（平移）和缩放（捏合）方式：
+使用 `touch-pan-y` 和 `touch-pinch-zoom` 等工具类来控制元素在触摸屏上如何滚动（平移）和缩放（捏合）：
 
-<Figure hint="在触摸屏上尝试平移这些图像">
+<Figure hint="尝试在触摸屏上平移这些图片">
 
 <Example>
   {
     <div className="grid gap-x-6 gap-y-14 font-mono font-bold sm:grid-cols-2">
       <div className="flex flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">touch-auto</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">触摸自动</p>
         <div className="grid h-48 w-full touch-auto overflow-auto rounded-lg">
           <img
             className="col-span-1 col-start-1 col-end-1 w-[150%] max-w-none"
@@ -42,7 +42,7 @@ export const description = "用于控制元素在触摸屏上的滚动和缩放�
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">touch-none</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">触摸无</p>
         <div className="h-48 w-full touch-none overflow-auto rounded-lg">
           <img
             className="w-[150%] max-w-none"
@@ -51,7 +51,7 @@ export const description = "用于控制元素在触摸屏上的滚动和缩放�
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">touch-pan-x</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">触摸水平滑动</p>
         <div className="h-48 w-full touch-pan-x overflow-auto rounded-lg">
           <img
             className="w-[150%] max-w-none"
@@ -60,7 +60,7 @@ export const description = "用于控制元素在触摸屏上的滚动和缩放�
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">touch-pan-y</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">触摸垂直滑动</p>
         <div className="h-48 w-full touch-pan-y overflow-auto rounded-lg">
           <img
             className="w-[150%] max-w-none"

@@ -6,7 +6,7 @@ import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "mask-size";
-export const description = "Utilities for controlling the size of an element's mask image.";
+export const description = "用于控制元素遮罩图像大小的实用工具。";
 
 <ApiTable
   rows={[
@@ -18,11 +18,11 @@ export const description = "Utilities for controlling the size of an element's m
   ]}
 />
 
-## Examples
+## 示例
 
-### Filling the container
+### 填充容器
 
-Use the `mask-cover` utility to scale the mask image until it fills the mask layer, cropping the image if needed:
+使用 `mask-cover` 实用工具将遮罩图像缩放到填满遮罩层，如有需要则裁剪图像：
 
 <Figure>
 
@@ -45,9 +45,9 @@ Use the `mask-cover` utility to scale the mask image until it fills the mask lay
 
 </Figure>
 
-### Filling without cropping
+### 无裁剪填充
 
-Use the `mask-contain` utility to scale the mask image to the outer edges without cropping or stretching:
+使用 `mask-contain` 实用工具将遮罩图像缩放到外边缘，而不裁剪或拉伸：
 
 <Figure>
 
@@ -70,9 +70,9 @@ Use the `mask-contain` utility to scale the mask image to the outer edges withou
 
 </Figure>
 
-### Using the default size
+### 使用默认大小
 
-Use the `mask-auto` utility to display the mask image at its default size:
+使用 `mask-auto` 实用工具以默认大小显示遮罩图像：
 
 <Figure>
 
@@ -95,10 +95,10 @@ Use the `mask-auto` utility to display the mask image at its default size:
 
 </Figure>
 
-### Using a custom value
+### 使用自定义值
 
-<UsingACustomValue utility="mask-size" value="auto_100px" name="mask image size" variable="mask-size" />
+<UsingACustomValue utility="mask-size" value="auto_100px" name="遮罩图像大小" variable="mask-size" />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="mask-size" defaultClass="mask-auto" featuredClass="mask-contain" />

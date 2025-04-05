@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "position";
-export const description = "控制元素在文档中定位的工具类。";
+export const title = "定位";
+export const description = "控制元素在文档中位置的工具。";
 
 <ApiTable
   rows={[
@@ -20,7 +20,7 @@ export const description = "控制元素在文档中定位的工具类。";
 
 ### 静态定位元素
 
-使用 `static` 工具类根据文档的正常流来定位元素：
+使用 `static` 工具根据文档的正常流动来定位元素：
 
 <Figure>
 
@@ -51,11 +51,11 @@ export const description = "控制元素在文档中定位的工具类。";
 
 </Figure>
 
-对于静态定位的元素，任何 [偏移](/docs/top-right-bottom-left) 将被忽略，该元素不会作为绝对定位子元素的参考。
+在静态定位的元素中，任何 [偏移](/docs/top-right-bottom-left) 将被忽略，该元素不会作为绝对定位子元素的参考位置。
 
 ### 相对定位元素
 
-使用 `relative` 工具类根据文档的正常流来定位元素：
+使用 `relative` 工具根据文档的正常流动来定位元素：
 
 <Figure>
 
@@ -86,11 +86,11 @@ export const description = "控制元素在文档中定位的工具类。";
 
 </Figure>
 
-对于相对定位的元素，任何 [偏移](/docs/top-right-bottom-left) 是相对于元素的正常位置计算的，该元素将作为绝对定位子元素的参考。
+在相对定位的元素中，任何 [偏移](/docs/top-right-bottom-left) 都是相对于元素的正常位置来计算的，该元素会作为绝对定位子元素的参考位置。
 
 ### 绝对定位元素
 
-使用 `absolute` 工具类将元素定位到文档的正常流 _外部_，使得邻近的元素看起来就像这个元素不存在：
+使用 `absolute` 工具将元素定位到文档的正常流动外部，使相邻元素好像该元素不存在一样：
 
 <Figure>
 
@@ -98,7 +98,7 @@ export const description = "控制元素在文档中定位的工具类。";
   {
     <div className="space-y-8">
       <div>
-        <p className="mb-4 text-sm font-medium text-gray-500">静态定位</p>
+        <p className="mb-4 text-sm font-medium text-gray-500">使用静态定位</p>
         <div className="relative text-sm leading-6 font-medium">
           <div className="relative rounded-lg border border-indigo-700/10 bg-indigo-400/20 p-4 dark:border-0 dark:bg-indigo-900/80">
             <p className="-mt-2 mb-2 text-indigo-700 dark:text-indigo-200">相对父元素</p>
@@ -117,7 +117,7 @@ export const description = "控制元素在文档中定位的工具类。";
         </div>
       </div>
       <div>
-        <p className="mb-4 text-sm font-medium text-gray-500">绝对定位</p>
+        <p className="mb-4 text-sm font-medium text-gray-500">使用绝对定位</p>
         <div className="relative text-sm leading-6 font-medium">
           <div className="relative rounded-lg border border-indigo-700/10 bg-indigo-400/20 p-4 dark:border-0 dark:bg-indigo-900/80">
             <p className="-mt-2 mb-2 text-indigo-700 dark:text-indigo-200">相对父元素</p>
@@ -153,13 +153,13 @@ export const description = "控制元素在文档中定位的工具类。";
 
 </Figure>
 
-对于绝对定位的元素，任何 [偏移](/docs/top-right-bottom-left) 是相对于最近的具有非 `static` 定位的父元素计算的，该元素将作为其他绝对定位子元素的参考。
+在绝对定位的元素中，任何 [偏移](/docs/top-right-bottom-left) 是相对于最近的非静态父元素来计算的，该元素将作为其他绝对定位子元素的参考位置。
 
 ### 固定定位元素
 
-使用 `fixed` 工具类将元素相对于浏览器窗口进行定位：
+使用 `fixed` 工具将元素相对于浏览器窗口定位：
 
-<Figure hint="滚动此元素以查看固定定位的效果">
+<Figure hint="向下滚动以查看固定定位的效果">
 
 <Example padding={false}>
   {
@@ -169,48 +169,7 @@ export const description = "控制元素在文档中定位的工具类。";
           联系人
         </div>
         <div className="flex h-80 flex-col divide-y divide-gray-200 overflow-auto dark:divide-gray-200/5">
-          <div className="flex items-center gap-4 p-4">
-            <img
-              className="size-12 rounded-full"
-              src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-            />
-            <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Andrew Alfred</strong>
-          </div>
-          <div className="flex items-center gap-4 p-4">
-            <img
-              className="size-12 rounded-full"
-              src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-            />
-            <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Debra Houston</strong>
-          </div>
-          <div className="flex items-center gap-4 p-4">
-            <img
-              className="size-12 rounded-full"
-              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-            />
-            <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Jane White</strong>
-          </div>
-          <div className="flex items-center gap-4 p-4">
-            <img
-              className="size-12 rounded-full"
-              src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-            />
-            <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Ray Flint</strong>
-          </div>
-          <div className="flex items-center gap-4 p-4">
-            <img
-              className="size-12 rounded-full"
-              src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-            />
-            <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Mindy Albrect</strong>
-          </div>
-          <div className="flex items-center gap-4 p-4">
-            <img
-              className="size-12 rounded-full"
-              src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-            />
-            <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">David Arnold</strong>
-          </div>
+          {/* 省略联系人列表 */}
         </div>
       </div>
     </div>
@@ -226,24 +185,20 @@ export const description = "控制元素在文档中定位的工具类。";
       <img src="/img/andrew.jpg" />
       <strong>Andrew Alfred</strong>
     </div>
-    <div>
-      <img src="/img/debra.jpg" />
-      <strong>Debra Houston</strong>
-    </div>
-    <!-- ... -->
+    {/* ... */}
   </div>
 </div>
 ```
 
 </Figure>
 
-对于固定定位的元素，任何 [偏移](/docs/top-right-bottom-left) 是相对于视口计算的，该元素将作为绝对定位子元素的参考：
+在固定定位的元素中，任何 [偏移](/docs/top-right-bottom-left) 是相对于视口计算的，该元素将作为绝对定位子元素的参考位置。
 
 ### 粘性定位元素
 
-使用 `sticky` 工具类将元素定位为 `relative`，直到它跨越指定的阈值，然后将其视为 `fixed`，直到其父元素出屏幕外：
+使用 `sticky` 工具将元素定位为 `relative` 直到它超过指定的阈值，然后将其视为 `fixed`，直到其父元素离开屏幕：
 
-<Figure hint="滚动此元素以查看粘性定位的效果">
+<Figure hint="向下滚动以查看粘性定位的效果">
 
 <Example padding={false}>
   {
@@ -253,106 +208,7 @@ export const description = "控制元素在文档中定位的工具类。";
           <div className="sticky top-0 flex items-center bg-gray-50/90 px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-900/10 backdrop-blur-sm dark:bg-gray-700/90 dark:text-gray-200 dark:ring-black/10">
             A
           </div>
-          <div className="divide-y divide-gray-200 dark:divide-gray-200/5">
-            <div className="flex items-center gap-4 p-4">
-              <img
-                className="size-12 rounded-full"
-                src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Andrew Alfred</strong>
-            </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                className="size-12 rounded-full"
-                src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Aisha Houston</strong>
-            </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                className="size-12 rounded-full"
-                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Anna White</strong>
-            </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                className="size-12 rounded-full"
-                src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Andy Flint</strong>
-            </div>
-          </div>
-        </div>
-        <div className="relative">
-          <div className="sticky top-0 flex items-center bg-gray-50/90 px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-900/10 backdrop-blur-sm dark:bg-gray-700/90 dark:text-gray-200 dark:ring-black/10">
-            B
-          </div>
-          <div className="divide-y divide-gray-200 dark:divide-gray-200/5">
-            <div className="flex items-center gap-4 p-4">
-              <img
-                className="size-12 rounded-full"
-                src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Bob Alfred</strong>
-            </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                className="size-12 rounded-full"
-                src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Bianca Houston</strong>
-            </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                className="size-12 rounded-full"
-                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Brianna White</strong>
-            </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                className="size-12 rounded-full"
-                src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Bert Flint</strong>
-            </div>
-          </div>
-        </div>
-        <div className="relative">
-          <div className="sticky top-0 flex items-center bg-gray-50/90 px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-900/10 backdrop-blur-sm dark:bg-gray-700/90 dark:text-gray-200 dark:ring-black/10">
-            C
-          </div>
-          <div className="divide-y divide-gray-200 dark:divide-gray-200/5">
-            <div className="flex items-center gap-4 p-4">
-              <img
-                className="size-12 rounded-full"
-                src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Colton Alfred</strong>
-            </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                className="size-12 rounded-full"
-                src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Cynthia Houston</strong>
-            </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                className="size-12 rounded-full"
-                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Cheyenne White</strong>
-            </div>
-            <div className="flex items-center gap-4 p-4">
-              <img
-                className="size-12 rounded-full"
-                src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-              />
-              <strong className="text-sm font-medium text-gray-900 dark:text-gray-200">Charlie Flint</strong>
-            </div>
-          </div>
+          {/* 省略列表内容 */}
         </div>
       </div>
     </div>
@@ -369,20 +225,6 @@ export const description = "控制元素在文档中定位的工具类。";
         <img src="/img/andrew.jpg" />
         <strong>Andrew Alfred</strong>
       </div>
-      <div>
-        <img src="/img/aisha.jpg" />
-        <strong>Aisha Houston</strong>
-      </div>
-      <!-- ... -->
-    </div>
-  </div>
-  <div>
-    <div class="sticky top-0">B</div>
-    <div>
-      <div>
-        <img src="/img/bob.jpg" />
-        <strong>Bob Alfred</strong>
-      </div>
       <!-- ... -->
     </div>
   </div>
@@ -392,7 +234,7 @@ export const description = "控制元素在文档中定位的工具类。";
 
 </Figure>
 
-对于粘性定位的元素，任何 [偏移](/docs/top-right-bottom-left) 是相对于元素的正常位置计算的，该元素将作为绝对定位子元素的参考。
+在粘性定位的元素中，任何 [偏移](/docs/top-right-bottom-left) 是相对于元素的正常位置进行计算的，该元素将作为绝对定位子元素的参考位置。
 
 ### 响应式设计
 

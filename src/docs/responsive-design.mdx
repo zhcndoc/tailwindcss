@@ -4,30 +4,30 @@ import { Example } from "@/components/example";
 import { Figure } from "@/components/figure";
 
 export const title = "响应式设计";
-export const description = "使用响应式工具变体构建适应性用户界面。";
+export const description = "使用响应式工具的变体构建自适应用户界面。";
 
 ## 概述
 
-Tailwind中的每个工具类都可以在不同的断点有条件地应用，这使得构建复杂的响应式界面变得相当简单，而无需离开HTML。
+Tailwind 中的每个工具类都可以在不同的断点上有条件地应用，这使得构建复杂的响应式界面轻而易举，而无需离开 HTML。
 
-首先，确保您已将[视口元标签](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag)添加到文档的`<head>`中：
+首先，请确保您已将 [viewport 元标签](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) 添加到文档的 `<head>` 中：
 
 ```html
-<!-- [!code filename:index.html] -->
+<!-- [!代码文件名:index.html] -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
-然后，要添加一个工具类，但仅在特定断点生效，您只需在工具名前加上断点名称，然后加上`:`字符：
+然后，要添加一个工具类并仅在特定断点生效，您只需在工具类前面加上断点名称，后面跟上 `:` 字符：
 
 ```html
 <!-- [!code filename:HTML]  -->
 <!-- [!code word:md\:w-32] -->
 <!-- [!code word:lg\:w-48] -->
-<!-- 默认宽度为16，在中等屏幕上为32，在大屏幕上为48 -->
+<!-- Width of 16 by default, 32 on medium screens, and 48 on large screens -->
 <img class="w-16 md:w-32 lg:w-48" src="..." />
 ```
 
-默认情况下有五个断点，受常见设备分辨率的启发：
+默认情况下有五个断点，灵感来自常见的设备分辨率：
 
 {
 
@@ -99,9 +99,9 @@ Tailwind中的每个工具类都可以在不同的断点有条件地应用，这
 </table>
 }
 
-这适用于**框架中的每个工具类**，这意味着您可以在给定断点上更改任何内容 — 甚至是字母间距或光标样式等。
+这适用于框架中的 **每个工具类**，这意味着您可以在给定断点下根本改变任何东西——即使是字母间距或光标样式等。
 
-这是一个简单的示例，展示了一个使用堆叠布局的小屏幕营销页面组件，以及在大屏幕上并排布局：
+这是一个简单的营销页面组件示例，它在小屏幕上使用堆叠布局，而在大屏幕上使用并排布局：
 
 <Figure>
 
@@ -117,18 +117,18 @@ Tailwind中的每个工具类都可以在不同的断点有条件地应用，这
                 src="https://images.unsplash.com/photo-1637734433731-621aca1c8cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=404&q=80"
                 width="202"
                 height="192"
-                alt="阳光下美丽的抽象建筑"
+                alt="阳光下漂亮的抽象建筑"
               />
             </div>
             <div className="space-y-2 p-6 2xl:p-8">
-              <div className="text-sm leading-6 font-medium text-indigo-600">公司度假</div>
+              <div className="text-sm leading-6 font-medium text-indigo-600">公司团建</div>
               <a href="#" className="block text-base leading-6 font-semibold text-gray-900 hover:underline">
                 为您的团队提供令人难以置信的住宿
               </a>
               <p
                 className="text-sm leading-6 text-gray-600"
-                children={`想带着团队去度假，享受美食，晒晒太阳吗？
-              我们有一些地方的清单可以做到这一点。`}
+                children={`想带您的团队去度假，尽情享受美食，
+              沐浴阳光吗？我们有一份地方的清单可以提供。`}
               ></p>
             </div>
           </div>
@@ -139,27 +139,27 @@ Tailwind中的每个工具类都可以在不同的断点有条件地应用，这
 </Example>
 
 ```html
-<!-- [!code word:md\:max-w-2xl] -->
+<!-- [!代码 word:md\:max-w-2xl] -->
 <div class="mx-auto max-w-md overflow-hidden rounded-xl bg-white shadow-md md:max-w-2xl">
-  <!-- [!code word:md\:flex] -->
+  <!-- [!代码 word:md\:flex] -->
   <div class="md:flex">
-    <!-- [!code word:md\:shrink-0] -->
+    <!-- [!代码 word:md\:shrink-0] -->
     <div class="md:shrink-0">
-      <!-- [!code word:md\:h-full] -->
-      <!-- [!code word:md\:w-48] -->
+      <!-- [!代码 word:md\:h-full] -->
+      <!-- [!代码 word:md\:w-48] -->
       <img
         class="h-48 w-full object-cover md:h-full md:w-48"
         src="/img/building.jpg"
-        alt="现代建筑风格"
+        alt="现代建筑设计"
       />
     </div>
     <div class="p-8">
-      <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">公司度假</div>
+      <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">公司团建</div>
       <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
         为您的团队提供令人难以置信的住宿
       </a>
       <p class="mt-2 text-gray-500">
-        想带着团队去度假，享受美食，晒晒太阳吗？我们有一些地方的清单可以做到这一点。
+        想带您的团队去度假，享受美食并沐浴阳光吗？我们有一份地方的清单可以提供。
       </p>
     </div>
   </div>
@@ -168,62 +168,62 @@ Tailwind中的每个工具类都可以在不同的断点有条件地应用，这
 
 </Figure>
 
-上面示例的工作原理如下：
+以上示例的工作原理如下：
 
-- 默认情况下，外部`div`的`display`为`block`，但通过添加`md:flex`工具类，它在中等屏幕及更大屏幕上变为`flex`。
-- 当父元素是flex容器时，我们希望确保图像从不缩小，因此我们添加了`md:shrink-0`以防止在中等屏幕及更大屏幕上缩小。从技术上讲，我们只需使用`shrink-0`，因为它在小屏幕上不会产生任何效果，但由于它仅在`md`屏幕上有效，因此最好在类名中说明这一点。
-- 在小屏幕上，图像默认情况下自动为全宽。在中等屏幕及更大屏幕上，我们将宽度限制为固定大小，并确保图像用`md:h-full md:w-48`填充整个高度。
+- 默认情况下，外部 `div` 为 `display: block`，但是通过添加 `md:flex` 工具类，它在中等及以上屏幕上变为 `display: flex`。
+- 当父元素是弯曲容器时，我们希望确保图像永远不会缩小，所以我们添加了 `md:shrink-0` 来防止在中等及以上屏幕上的缩小。技术上讲，我们本可以只用 `shrink-0`，因为它在小屏幕上不会有任何效果，但由于它只在 `md` 屏幕上起效果，因此在类名中明确这一点是个好主意。
+- 在小屏幕上，图像默认是全宽的。在中等及以上屏幕上，我们将宽度限制为固定大小，并确保图像的高度是全高，使用 `md:h-full md:w-48`。
 
-在这个示例中我们只使用了一个断点，但您可以轻松使用`sm`、`lg`、`xl`或`2xl`响应前缀自定义此组件的其他尺寸。
+在本示例中我们只使用了一个断点，但您可以轻松地使用 `sm`、`lg`、`xl` 或 `2xl` 响应前缀来自定义该组件在其他尺寸下的样式。
 
 ## 移动优先工作
 
-Tailwind使用移动优先的断点系统，类似于您在Bootstrap等其他框架中可能习惯的方式。
+Tailwind 使用移动优先断点系统，类似于您在其他框架（如 Bootstrap）中可能习惯使用的方法。
 
-这意味着未加前缀的工具（如`uppercase`）在所有屏幕尺寸上生效，而带前缀的工具（如`md:uppercase`）仅在指定的断点_及以上_生效。
+这意味着未加前缀的工具类（如 `uppercase`）在所有屏幕尺寸上都生效，而带有前缀的工具类（如 `md:uppercase`）仅在指定的断点 _及以上_ 生效。
 
-### 针对移动屏幕
+### 目标移动屏幕
 
-这种方法最常让人感到惊讶的地方是，要为移动样式设置某些元素，您需要使用未加前缀的工具版本，而不是`sm:`前缀版本。不要将`sm:`视为“在小屏幕上”，而要理解为“在小_断点_”上。
+这种方法最常给人带来惊讶的是，要为移动设备样式应用某个组件，您需要使用未加前缀的工具类，而不是 `sm:` 前缀的版本。不要将 `sm:` 视为 “在小屏幕上”，而是将其视为 “在小 _断点_”。
 
 <TipBad>
   {
     <>
-      不要使用 <code>sm:</code> 来针对移动设备
+      不要使用 <code>sm:</code> 来定位移动设备
     </>
   }
 </TipBad>
 
 ```html
-<!-- [!code filename:HTML]  -->
-<!-- 这将在640px及更宽的屏幕上居中文本，而不是在小屏幕上 -->
+<!-- [!代码文件名:HTML]  -->
+<!-- 这将在 640px 及更宽的屏幕上只居中文本，而不是在小屏幕上 -->
 <div class="sm:text-center"></div>
 ```
 
-<TipGood>{<>使用未加前缀的工具来针对移动设备，并在更大的断点上覆盖它们</>}</TipGood>
+<TipGood>{<>使用未加前缀的工具类来定位移动设备，并在更大的断点上覆盖它们</>}</TipGood>
 
 ```html
-<!-- [!code filename:HTML]  -->
-<!-- 这将在移动设备上居中文本，并在640px及更宽的屏幕上左对齐 -->
+<!-- [!代码文件名:HTML]  -->
+<!-- 这将在移动设备上居中文本，在 640px 并更宽的屏幕上左对齐 -->
 <div class="text-center sm:text-left"></div>
 ```
 
-为此，通常最好先实现设计的移动布局，然后逐步添加适合`sm`屏幕的更改，再逐步添加`md`屏幕等的更改。
+因此，通常最好先为设计实现移动布局，然后再增加适合 `sm` 屏幕的任何更改，然后是 `md` 屏幕等等。
 
 ### 针对断点范围
 
-默认情况下，通过诸如`md:flex`等规则应用的样式将在该断点生效并保持在更大的断点上生效。
+默认情况下，通过类似 `md:flex` 的规则应用的样式将在该断点生效并保持在更大的断点上。
 
-如果您希望仅在特定断点范围激活时应用某个工具，可以将响应变体如`md`与`max-*`变体叠加，以限制样式到特定范围：
+如果您希望在仅在特定断点范围内应用某个工具，可以将像 `md` 这样的响应变体与 `max-*` 变体堆叠，以限制该样式到特定范围：
 
 ```html
-<!-- [!code filename:HTML]  -->
+<!-- [!代码文件名:HTML]  -->
 <div class="md:max-xl:flex">
   <!-- ... -->
 </div>
 ```
 
-Tailwind为每个断点生成相应的`max-*`变体，因此开箱即用的可用变体有：
+Tailwind 为每个断点生成相应的 `max-*` 变体，因此开箱即用地提供以下变体：
 
 {
 
@@ -279,77 +279,77 @@ Tailwind为每个断点生成相应的`max-*`变体，因此开箱即用的可�
 </table>
 }
 
-### 针对单个断点
+### 定位单个断点
 
-要针对单个断点，可以通过将响应变体如`md`与下一个断点的`max-*`变体叠加来针对该断点的范围：
+要定位单个断点，请通过将像 `md` 这样的响应变体与下一个断点的 `max-*` 变体堆叠来定位该断点的范围：
 
 ```html
-<!-- [!code filename:HTML]  -->
+<!-- [!代码文件名:HTML]  -->
 <div class="md:max-lg:flex">
   <!-- ... -->
 </div>
 ```
 
-阅读[针对断点范围](#targeting-a-breakpoint-range)以了解更多信息。
+有关 [定位断点范围](#targeting-a-breakpoint-range) 的更多信息，请参阅。
 
 ## 使用自定义断点
 
 ### 自定义主题
 
-使用`--breakpoint-*`主题变量自定义您的断点：
+使用 `--breakpoint-*` 主题变量来定制您的断点：
 
 ```css
-/* [!code filename:app.css] */
+/* [!代码文件名:app.css] */
 @import "tailwindcss";
 
 @theme {
-  /* [!code highlight:4] */
+  /* [!代码高亮:4] */
   --breakpoint-xs: 30rem;
   --breakpoint-2xl: 100rem;
   --breakpoint-3xl: 120rem;
 }
 ```
 
-这将把`2xl`断点更新为使用`100rem`而不是默认的`96rem`，并创建新的`xs`和`3xl`断点，可以在您的标记中使用：
+这将 `2xl` 断点更新为使用 `100rem`，而不是默认的 `96rem`，并创建新的 `xs` 和 `3xl` 断点，可以在标记中使用：
 
 ```html
-<!-- [!code filename:HTML]  -->
-<!-- [!code word:xs\:grid-cols-2] -->
-<!-- [!code word:3xl\:grid-cols-6] -->
+<!-- [!代码文件名:HTML]  -->
+<!-- [!代码 word:xs\:grid-cols-2] -->
+<!-- [!代码 word:3xl\:grid-cols-6] -->
 <!-- prettier-ignore -->
 <div class="grid xs:grid-cols-2 3xl:grid-cols-6">
   <!-- ... -->
 </div>
 ```
 
-请注意，在定义断点时始终使用相同的单位很重要，否则生成的工具可能会以意外的顺序排序，导致断点类相互覆盖。
+请注意，始终使用相同的单位定义您的断点很重要，否则生成的工具可能会以意想不到的顺序进行排序，导致断点类以意想不到的方式相互覆盖。
 
-Tailwind对默认断点使用`rem`，因此如果您向默认值添加其他断点，请确保使用`rem`。
+Tailwind 为默认断点使用 `rem`，因此如果您要在默认值中添加其他断点，请确保也使用 `rem`。
 
-在[主题文档](/docs/theme)中了解有关自定义主题的更多信息。
+有关自定义主题的更多信息，请参阅 [主题文档](/docs/theme)。
 
 ### 移除默认断点
 
-要移除默认断点，请将其值重置为`initial`关键字：
+要移除默认断点，请将其值重置为 `initial` 关键字：
 
 ```css
-/* [!code filename:app.css] */
+/* [!代码文件名:app.css] */
 @import "tailwindcss";
 
 @theme {
-  /* [!code highlight:2] */
+  /* [!代码高亮:2] */
   --breakpoint-2xl: initial;
 }
 ```
 
-您还可以使用`--breakpoint-*: initial`重置所有默认断点，然后从头开始定义所有断点：
+您还可以使用 `--breakpoint-*: initial` 重置所有默认断点，然后从头开始定义所有断点：
 
 ```css
-/* [!code filename:app.css] */
+/* [!代码文件名:app.css] */
 @import "tailwindcss";
 
 @theme {
-  /* [!code highlight:5] */
+  /* [!代码高亮:5] */
   --breakpoint-*: initial;
   --breakpoint-tablet: 40rem;
   --breakpoint-laptop: 64rem;
@@ -357,36 +357,36 @@ Tailwind对默认断点使用`rem`，因此如果您向默认值添加其他断�
 }
 ```
 
-在[主题文档](/docs/theme)中了解更多有关移除默认主题值的信息。
+有关删除默认主题值的更多信息，请参阅 [主题文档](/docs/theme)。
 
 ### 使用任意值
 
-如果您需要使用一个不适合包含在主题中的单次断点，请使用`min`或`max`变体，根据任何任意值动态生成自定义断点。
+如果您需要使用一个不适合放入主题的临时断点，请使用 `min` 或 `max` 变体，根据任意值动态生成自定义断点。
 
 ```html
-<!-- [!code word:min-\[320px\]\:text-center] -->
-<!-- [!code word:max-\[600px\]\:bg-sky-300] -->
+<!-- [!代码 word:min-\[320px\]\:text-center] -->
+<!-- [!代码 word:max-\[600px\]\:bg-sky-300] -->
 <div class="max-[600px]:bg-sky-300 min-[320px]:text-center">
   <!-- ... -->
 </div>
 ```
 
-在[任意值](/docs/adding-custom-styles#using-arbitrary-values)文档中了解更多有关任意值支持的信息。
+有关任意值支持的更多信息，请参阅 [任意值](/docs/adding-custom-styles#using-arbitrary-values) 文档。
 
 ## 容器查询
 
 ### 什么是容器查询？
 
-[容器查询](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries)是一个现代CSS功能，它允许您根据父元素的大小而不是整个视口的大小来样式某个元素。它们使您能够构建更加可移植和可重用的组件，因为它们可以根据该组件可用的实际空间进行更改。
+[容器查询](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries) 是一种现代 CSS 特性，允许您根据父元素的大小来为某个元素设置样式，而不是根据整个视口的大小。它们使您能够构建更具可移植性和可重用性的组件，因为它们可以根据该组件实际可用的空间进行更改。
 
 ### 基本示例
 
-使用`@container`类将元素标记为容器，然后使用像`@sm`和`@md`这样的变体根据容器的大小来样式子元素：
+使用 `@container` 类将元素标记为容器，然后使用像 `@sm` 和 `@md` 这样的变体，根据容器的大小为子元素设置样式：
 
 ```html
-<!-- [!code filename:HTML] -->
-<!-- [!code word:@container] -->
-<!-- [!code word:@md\:flex-row] -->
+<!-- [!代码文件名:HTML] -->
+<!-- [!代码 word:@container] -->
+<!-- [!代码 word:@md\:flex-row] -->
 <div class="@container">
   <div class="flex flex-col @md:flex-row">
     <!-- ... -->
@@ -394,15 +394,15 @@ Tailwind对默认断点使用`rem`，因此如果您向默认值添加其他断�
 </div>
 ```
 
-与断点变体一样，Tailwind CSS中的容器查询是移动优先的，并在目标容器大小及以上时应用。
+与断点变体一样，容器查询在 Tailwind CSS 中是移动优先的，并在目标容器大小及以上应用。
 
-### 最大宽度的容器查询
+### 最大宽度容器查询
 
-使用像`@max-sm`和`@max-md`这样的变体在小于特定容器大小的情况下应用样式：
+使用 `@max-sm` 和 `@max-md` 之类的变体在特定容器大小以下应用样式：
 
 ```html
-<!-- [!code filename:HTML] -->
-<!-- [!code word:@max-md\:flex-col] -->
+<!-- [!代码文件名:HTML] -->
+<!-- [!代码 word:@max-md\:flex-col] -->
 <div class="@container">
   <div class="flex flex-row @max-md:flex-col">
     <!-- ... -->
@@ -412,11 +412,11 @@ Tailwind对默认断点使用`rem`，因此如果您向默认值添加其他断�
 
 ### 容器查询范围
 
-将常规容器查询变体与最大宽度容器查询变体叠加，以针对特定范围：
+将常规容器查询变体与最大宽度容器查询变体堆叠，以目标特定范围：
 
 ```html
-<!-- [!code filename:HTML] -->
-<!-- [!code word:@sm\:@max-md\:flex-col] -->
+<!-- [!代码文件名:HTML] -->
+<!-- [!代码 word:@sm\:@max-md\:flex-col] -->
 <div class="@container">
   <div class="flex flex-row @sm:@max-md:flex-col">
     <!-- ... -->
@@ -426,12 +426,12 @@ Tailwind对默认断点使用`rem`，因此如果您向默认值添加其他断�
 
 ### 命名容器
 
-对于使用多个嵌套容器的复杂设计，您可以使用`@container/{name}`命名容器，并使用像`@sm/{name}`和`@md/{name}`这样的变体定位特定容器：
+对于使用多个嵌套容器的复杂设计，您可以使用 `@container/{name}` 命名容器，并使用像 `@sm/{name}` 和 `@md/{name}` 这样的变体来定位特定的容器：
 
 ```html
-<!-- [!code filename:HTML] -->
-<!-- [!code word:@container/main] -->
-<!-- [!code word:@sm/main\:flex-col] -->
+<!-- [!代码文件名:HTML] -->
+<!-- [!代码 word:@container/main] -->
+<!-- [!代码 word:@sm/main\:flex-col] -->
 <div class="@container/main">
   <!-- ... -->
   <div class="flex flex-row @sm/main:flex-col">
@@ -440,27 +440,27 @@ Tailwind对默认断点使用`rem`，因此如果您向默认值添加其他断�
 </div>
 ```
 
-这使得可以根据遥远容器的大小样式，而不仅仅是最近的容器。
+这使得根据较远容器的大小来为某个元素设置样式成为可能，而不仅仅是最近的容器。
 
 ### 使用自定义容器大小
 
-使用`--container-*`主题变量自定义您的容器大小：
+使用 `--container-*` 主题变量来定制您的容器大小：
 
 ```css
-/* [!code filename:app.css] */
+/* [!代码文件名:app.css] */
 @import "tailwindcss";
 
 @theme {
-  /* [!code highlight:2] */
+  /* [!代码高亮:2] */
   --container-8xl: 96rem;
 }
 ```
 
-这将在您的标记中添加一个新的`8xl`容器查询变体：
+这将添加一个新的 `8xl` 容器查询变体，可以在标记中使用：
 
 ```html
-<!-- [!code filename:HTML] -->
-<!-- [!code word:@8xl\:flex-row] -->
+<!-- [!代码文件名:HTML] -->
+<!-- [!代码 word:@8xl\:flex-row] -->
 <div class="@container">
   <!-- prettier-ignore -->
   <div class="flex flex-col @8xl:flex-row">
@@ -469,17 +469,17 @@ Tailwind对默认断点使用`rem`，因此如果您向默认值添加其他断�
 </div>
 ```
 
-在[主题文档](/docs/theme)中了解更多有关自定义主题的信息。
+有关自定义主题的更多信息，请参阅 [主题文档](/docs/theme)。
 
-<h3 id="using-arbitrary-container-query-values">
-  <a href="#using-arbitrary-container-query-values">使用任意值</a>
+<h3 id="使用任意容器查询值">
+  <a href="#使用任意容器查询值">使用任意值</a>
 </h3>
 
-使用像`@min-[475px]`和`@max-[960px]`这样的变体进行一次性容器查询大小，而不想添加到您的主题中：
+使用 `@min-[475px]` 和 `@max-[960px]` 等变体快速实现您不想添加到主题中的一次性容器查询大小：
 
 ```html
-<!-- [!code filename:HTML] -->
-<!-- [!code word:@min-\[475px\]\:flex-row] -->
+<!-- [!代码文件名:HTML] -->
+<!-- [!代码 word:@min-\[475px\]\:flex-row] -->
 <div class="@container">
   <div class="flex flex-col @min-[475px]:flex-row">
     <!-- ... -->
@@ -489,11 +489,11 @@ Tailwind对默认断点使用`rem`，因此如果您向默认值添加其他断�
 
 ### 使用容器查询单位
 
-使用[容器查询长度单位](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries#container_query_length_units)如`cqw`，作为其他工具类中的任意值来引用容器大小：
+使用 [容器查询长度单位](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries#container_query_length_units) 作为其他工具类中的任意值，以引用容器大小：
 
 ```html
-<!-- [!code filename:HTML] -->
-<!-- [!code word:w-\[50cqw\] -->
+<!-- [!代码文件名:HTML] -->
+<!-- [!代码 word:w-\[50cqw\] -->
 <div class="@container">
   <div class="w-[50cqw]">
     <!-- ... -->
@@ -503,7 +503,7 @@ Tailwind对默认断点使用`rem`，因此如果您向默认值添加其他断�
 
 ### 容器大小参考
 
-默认情况下，Tailwind包括范围从16rem _(256px)_ 到 80rem _(1280px)_ 的容器大小：
+默认情况下，Tailwind 包括从 16rem _(256px)_ 到 80rem _(1280px)_ 的容器大小：
 
 {
 

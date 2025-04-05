@@ -6,7 +6,7 @@ import { ResponsiveDesign } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 import { UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "内边距";
+export const title = "padding";
 export const description = "用于控制元素内边距的工具类。";
 
 <ApiTable
@@ -32,7 +32,7 @@ export const description = "用于控制元素内边距的工具类。";
 
 ### 基本示例
 
-使用 `p-<number>` 工具类，如 `p-4` 和 `p-8` 来控制元素四周的内边距：
+使用类似 `p-4` 和 `p-8` 的 `p-<number>` 工具类来控制元素四周的内边距：
 
 <Figure>
 
@@ -54,9 +54,9 @@ export const description = "用于控制元素内边距的工具类。";
 
 </Figure>
 
-### 为一侧添加内边距
+### 添加单边内边距
 
-使用 `pt-<number>`、`pr-<number>`、`pb-<number>` 和 `pl-<number>` 工具类，如 `pt-6` 和 `pr-4` 来控制元素一侧的内边距：
+使用 `pt-<number>`、`pr-<number>`、`pb-<number>` 和 `pl-<number>` 工具类，比如 `pt-6` 和 `pr-4`，来控制元素某一侧的内边距：
 
 <Figure>
 
@@ -107,7 +107,7 @@ export const description = "用于控制元素内边距的工具类。";
 
 ### 添加水平内边距
 
-使用 `px-<number>` 工具类，如 `px-4` 和 `px-8` 来控制元素的水平内边距：
+使用类似 `px-4` 和 `px-8` 的 `px-<number>` 工具类来控制元素的水平内边距：
 
 <Figure>
 
@@ -132,7 +132,7 @@ export const description = "用于控制元素内边距的工具类。";
 
 ### 添加垂直内边距
 
-使用 `py-<number>` 工具类，如 `py-4` 和 `py-8` 来控制元素的垂直内边距：
+使用类似 `py-4` 和 `py-8` 的 `py-<number>` 工具类来控制元素的垂直内边距：
 
 <Figure>
 
@@ -157,7 +157,7 @@ export const description = "用于控制元素内边距的工具类。";
 
 ### 使用逻辑属性
 
-使用 `ps-<number>` 或 `pe-<number>` 工具类，如 `ps-4` 和 `pe-8` 来设置 `padding-inline-start` 和 `padding-inline-end` 逻辑属性，这些逻辑属性根据文本方向映射到左侧或右侧：
+使用 `ps-<number>` 或 `pe-<number>` 工具类，比如 `ps-4` 和 `pe-8`，设置 `padding-inline-start` 和 `padding-inline-end` 逻辑属性，根据文本方向映射到左侧或右侧：
 
 <Figure>
 
@@ -208,7 +208,7 @@ export const description = "用于控制元素内边距的工具类。";
 
 </Figure>
 
-为了获得更多的控制，你还可以使用 [LTR 和 RTL 修饰符](/docs/hover-focus-and-other-states#rtl-support) 根据当前文本方向有条件地应用特定样式。
+为了获得更多控制，您还可以使用 [LTR 和 RTL 修饰符](/docs/hover-focus-and-other-states#rtl-support) 来根据当前文本方向有条件地应用特定样式。
 
 ### 使用自定义值
 
@@ -216,8 +216,8 @@ export const description = "用于控制元素内边距的工具类。";
 
 ### 响应式设计
 
-<ResponsiveDesign property="padding" defaultClass="py-4" featuredClass="py-8" />
+<ResponsiveDesign property="内边距" defaultClass="py-4" featuredClass="py-8" />
 
-## 自定义你的主题
+## 自定义主题
 
 <CustomizingYourSpacingScale utilities={["p", "px", "py", "ps", "pe", "pt", "pr", "pb", "pl"]} />

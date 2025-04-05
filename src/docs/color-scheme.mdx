@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { TargetingSpecificStates } from "@/components/content.tsx";
 
-export const title = "color-scheme";
-export const description = "用于控制元素颜色模式的工具类。";
+export const title = "颜色方案";
+export const description = "用于控制元素颜色方案的工具。";
 
 <ApiTable
   rows={[
@@ -21,29 +21,29 @@ export const description = "用于控制元素颜色模式的工具类。";
 
 ### 基本示例
 
-使用像 `scheme-light` 和 `scheme-light-dark` 这样的工具类来控制元素的渲染方式：
+使用 `scheme-light` 和 `scheme-light-dark` 等工具来控制元素的渲染方式：
 
-<Figure hint="尝试切换系统颜色模式以查看差异">
+<Figure hint="尝试切换系统颜色方案以查看变化">
 
 <Example>
   {
     <div className="flex justify-between gap-8 text-sm max-sm:flex-col">
       <div className="flex flex-grow flex-col items-center gap-3 text-center scheme-light">
-        <p className="font-mono font-medium text-gray-500 dark:text-gray-400">scheme-light</p>
+        <p className="font-mono font-medium text-gray-500 dark:text-gray-400">方案-明亮</p>
         <input
           type="date"
           className="w-full rounded-lg border border-gray-950/10 bg-[Field] px-3 py-2 text-[FieldText] dark:border-white/10"
         />
       </div>
       <div className="flex flex-grow flex-col items-center gap-3 text-center scheme-dark">
-        <p className="font-mono font-medium text-gray-500 dark:text-gray-400">scheme-dark</p>
+        <p className="font-mono font-medium text-gray-500 dark:text-gray-400">方案-黑暗</p>
         <input
           type="date"
           className="w-full rounded-lg border border-gray-950/10 bg-[Field] px-3 py-2 text-[FieldText] dark:border-white/10"
         />
       </div>
       <div className="flex flex-grow flex-col items-center gap-3 text-center scheme-light-dark">
-        <p className="font-medium text-gray-500 dark:text-gray-400">scheme-light-dark</p>
+        <p className="font-medium text-gray-500 dark:text-gray-400">方案-明亮-黑暗</p>
         <input
           type="date"
           className="w-full rounded-lg border border-gray-950/10 bg-[Field] px-3 py-2 text-[FieldText] dark:border-white/10"

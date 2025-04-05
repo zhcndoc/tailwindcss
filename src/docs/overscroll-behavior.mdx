@@ -5,7 +5,7 @@ import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "overscroll-behavior";
 export const description =
-  "用于控制浏览器在到达滚动区域边界时的行为的实用工具。";
+  "用于控制浏览器在滚动区域边界处的行为的工具类。";
 
 <ApiTable
   rows={[
@@ -25,7 +25,7 @@ export const description =
 
 ### 防止父元素过度滚动
 
-使用 `overscroll-contain` 实用工具来防止目标区域的滚动触发父元素的滚动，同时在支持此效果的操作系统中，当滚动超出容器末端时保留“反弹”效果：
+使用 `overscroll-contain` 工具类，可以防止目标区域的滚动触发父元素的滚动，但在支持的操作系统中保留滚动超过容器末尾时的“弹跳”效果：
 
 <Figure hint="滚动以查看行为">
 
@@ -34,22 +34,24 @@ export const description =
     <div className="h-48 space-y-4 overflow-auto overscroll-contain p-8 text-gray-600 dark:bg-gray-800 dark:text-gray-400">
       <p
         children={`
-      好吧，让我告诉你一件事，搞笑的家伙。你知道那个小邮票，
-      上面写着“纽约公共图书馆”吗？这对你来说可能没什么意义，
-      但对我来说意义重大。实在是太重要了。`}
+      Well, let me tell you something, funny boy. Y'know that little stamp, the
+      one that says "New York Public Library"? Well that may not mean anything
+      to you, but that means a lot to me. One whole hell of a lot.`}
       />
       <p
         children={`
-      当然，随便你笑。如果你想的话。我见过你这种人：炫耀，
-      显摆，蔑视常规。是的，我知道你在想什么。
-      这个家伙为什么对旧图书这样大惊小怪？好吧，让我给你个提示，小子。`}
+      Sure, go ahead, laugh if you want to. I've seen your type before: Flashy,
+      making the scene, flaunting convention. Yeah, I know what you're thinking.
+      What's this guy making such a big stink about old library books? Well, let
+      me give you a hint, junior.`}
       />
       <p
         children={`
-      也许我们可以没有图书馆，而像你和我这样的人。也许。
-      当然，我们已经太老无法改变世界，但那个孩子呢，正坐着，
-      现在在本地图书馆的一个分馆打开一本书，
-      找到了《帽子里的猫》和《五兄弟》上的小便图画？难道他不应该得到更好的吗？`}
+      Maybe we can live without libraries, people like you and me. Maybe. Sure,
+      we're too old to change the world, but what about that kid, sitting down,
+      opening a book, right now, in a branch at the local library and finding
+      drawings of pee-pees and wee-wees on the Cat in the Hat and the Five
+      Chinese Brothers? Doesn't HE deserve better?`}
       />
     </div>
   }
@@ -57,14 +59,14 @@ export const description =
 
 ```html
 <!-- [!code classes:overscroll-contain] -->
-<div class="overscroll-contain ...">好吧，让我告诉你一件事，...</div>
+<div class="overscroll-contain ...">嗯，让我告诉你一些事情，...</div>
 ```
 
 </Figure>
 
-### 防止过度滚动反弹
+### 防止过度滚动弹跳
 
-使用 `overscroll-none` 实用工具来防止目标区域的滚动触发父元素的滚动，同时也防止在滚动超出容器末端时的“反弹”效果：
+使用 `overscroll-none` 工具类，可以防止目标区域的滚动触发父元素的滚动，同时避免滚动超过容器末尾时的“弹跳”效果：
 
 <Figure hint="滚动以查看行为">
 
@@ -73,22 +75,24 @@ export const description =
     <div className="h-48 space-y-4 overflow-auto overscroll-none p-8 text-gray-600 dark:bg-gray-800 dark:text-gray-400">
       <p
         children={`
-      好吧，让我告诉你一件事，搞笑的家伙。你知道那个小邮票，
-      上面写着“纽约公共图书馆”吗？这对你来说可能没什么意义，
-      但对我来说意义重大。实在是太重要了。`}
+      Well, let me tell you something, funny boy. Y'know that little stamp, the
+      one that says "New York Public Library"? Well that may not mean anything
+      to you, but that means a lot to me. One whole hell of a lot.`}
       />
       <p
         children={`
-      当然，随便你笑。如果你想的话。我见过你这种人：炫耀，
-      显摆，蔑视常规。是的，我知道你在想什么。
-      这个家伙为什么对旧图书这样大惊小怪？好吧，让我给你个提示，小子。`}
+      Sure, go ahead, laugh if you want to. I've seen your type before: Flashy,
+      making the scene, flaunting convention. Yeah, I know what you're thinking.
+      What's this guy making such a big stink about old library books? Well, let
+      me give you a hint, junior.`}
       />
       <p
         children={`
-      也许我们可以没有图书馆，而像你和我这样的人。也许。
-      当然，我们已经太老无法改变世界，但那个孩子呢，正坐着，
-      现在在本地图书馆的一个分馆打开一本书，
-      找到了《帽子里的猫》和《五兄弟》上的小便图画？难道他不应该得到更好的吗？`}
+      Maybe we can live without libraries, people like you and me. Maybe. Sure,
+      we're too old to change the world, but what about that kid, sitting down,
+      opening a book, right now, in a branch at the local library and finding
+      drawings of pee-pees and wee-wees on the Cat in the Hat and the Five
+      Chinese Brothers? Doesn't HE deserve better?`}
       />
     </div>
   }
@@ -96,14 +100,14 @@ export const description =
 
 ```html
 <!-- [!code classes:overscroll-none] -->
-<div class="overscroll-none ...">好吧，让我告诉你一件事，...</div>
+<div class="overscroll-none ...">嗯，让我告诉你一些事情，...</div>
 ```
 
 </Figure>
 
 ### 使用默认的过度滚动行为
 
-使用 `overscroll-auto` 实用工具来让用户在达到主要滚动区域的边界时继续滚动父滚动区域：
+使用 `overscroll-auto` 工具类，使用户在到达主要滚动区域的边界时，能够继续滚动父滚动区域：
 
 <Figure hint="滚动以查看行为">
 
@@ -112,22 +116,24 @@ export const description =
     <div className="h-48 space-y-4 overflow-auto overscroll-auto p-8 text-gray-600 dark:bg-gray-800 dark:text-gray-400">
       <p
         children={`
-      好吧，让我告诉你一件事，搞笑的家伙。你知道那个小邮票，
-      上面写着“纽约公共图书馆”吗？这对你来说可能没什么意义，
-      但对我来说意义重大。实在是太重要了。`}
+      Well, let me tell you something, funny boy. Y'know that little stamp, the
+      one that says "New York Public Library"? Well that may not mean anything
+      to you, but that means a lot to me. One whole hell of a lot.`}
       />
       <p
         children={`
-      当然，随便你笑。如果你想的话。我见过你这种人：炫耀，
-      显摆，蔑视常规。是的，我知道你在想什么。
-      这个家伙为什么对旧图书这样大惊小怪？好吧，让我给你个提示，小子。`}
+      Sure, go ahead, laugh if you want to. I've seen your type before: Flashy,
+      making the scene, flaunting convention. Yeah, I know what you're thinking.
+      What's this guy making such a big stink about old library books? Well, let
+      me give you a hint, junior.`}
       />
       <p
         children={`
-      也许我们可以没有图书馆，而像你和我这样的人。也许。
-      当然，我们已经太老无法改变世界，但那个孩子呢，正坐着，
-      现在在本地图书馆的一个分馆打开一本书，
-      找到了《帽子里的猫》和《五兄弟》上的小便图画？难道他不应该得到更好的吗？`}
+      Maybe we can live without libraries, people like you and me. Maybe. Sure,
+      we're too old to change the world, but what about that kid, sitting down,
+      opening a book, right now, in a branch at the local library and finding
+      drawings of pee-pees and wee-wees on the Cat in the Hat and the Five
+      Chinese Brothers? Doesn't HE deserve better?`}
       />
     </div>
   }
@@ -135,7 +141,7 @@ export const description =
 
 ```html
 <!-- [!code classes:overscroll-auto] -->
-<div class="overscroll-auto ...">好吧，让我告诉你一件事，...</div>
+<div class="overscroll-auto ...">嗯，让我告诉你一些事情，...</div>
 ```
 
 </Figure>

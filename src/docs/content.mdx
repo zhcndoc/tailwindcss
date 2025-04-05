@@ -5,7 +5,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "内容";
-export const description = "控制伪元素前后内容的工具。";
+export const description = "用于控制 'before' 和 'after' 伪元素内容的工具。";
 
 <ApiTable
   rows={[
@@ -19,14 +19,14 @@ export const description = "控制伪元素前后内容的工具。";
 
 ### 基本示例
 
-使用 `content-[<value>]` 语法，以及 `before` 和 `after` 变体，设置 `::before` 和 `::after` 伪元素的内容：
+使用 `content-[<value>]` 语法，以及 `before` 和 `after` 变体，来设置 `::before` 和 `::after` 伪元素的内容：
 
 <Figure>
 
 <Example>
   {
     <div className="mx-auto w-full max-w-md text-gray-500 dark:text-gray-400">
-      更高的分辨率意味着的不仅仅是图像质量的提升。使用 Retina 6K 显示器，{" "}
+      更高的分辨率不仅意味着更好的图像质量。使用 Retina 6K 显示器，{" "}
       <a
         href="https://www.apple.com/pro-display-xdr/"
         className="font-medium text-blue-600 after:text-sm after:font-bold after:content-['_↗'] dark:text-sky-400"
@@ -34,7 +34,7 @@ export const description = "控制伪元素前后内容的工具。";
       >
         Pro Display XDR
       </a>{" "}
-      为您提供了比 5K 显示器多近 40% 的屏幕空间。
+      给你提供比 5K 显示器多出近 40% 的屏幕空间。
     </div>
   }
 </Example>
@@ -42,23 +42,23 @@ export const description = "控制伪元素前后内容的工具。";
 ```html
 <!-- [!code classes:after:content-['_↗']] -->
 <!-- prettier-ignore -->
-<p>更高的分辨率意味着的不仅仅是图像质量的提升。使用
-Retina 6K 显示器，<a class="text-blue-600 after:content-['_↗']" href="...">
-Pro Display XDR</a> 为您提供了比 5K 显示器多近 40% 的屏幕空间。</p>
+<p>更高的分辨率不仅意味着更好的图像质量。使用一个
+Retina 6K 显示器， <a class="text-blue-600 after:content-['_↗']" href="...">
+Pro Display XDR</a> 给你提供比 5K 显示器多出近 40% 的屏幕空间。</p>
 ```
 
 </Figure>
 
 ### 引用属性值
 
-使用 `content-[attr(<name>)]` 语法来引用使用 `attr()` CSS 函数存储在属性中的值：
+使用 `content-[attr(<name>)]` 语法来引用存储在属性中的值，使用 `attr()` CSS 函数：
 
 <Figure>
 
 <Example>
   {
     <p
-      before="你好，世界"
+      before="Hello World"
       className="text-center font-semibold text-gray-900 before:content-[attr(before)] dark:text-gray-200"
     />
   }
@@ -66,7 +66,7 @@ Pro Display XDR</a> 为您提供了比 5K 显示器多近 40% 的屏幕空间。
 
 ```html
 <!-- [!code classes:before:content-[attr(before)]] -->
-<p before="你好，世界" class="before:content-[attr(before)] ...">
+<p before="Hello World" class="before:content-[attr(before)] ...">
   <!-- ... -->
 </p>
 ```
@@ -75,12 +75,12 @@ Pro Display XDR</a> 为您提供了比 5K 显示器多近 40% 的屏幕空间。
 
 ### 使用空格和下划线
 
-由于空格在 HTML 中表示类的结束，因此将任意值中的任何空格替换为下划线：
+由于空格在 HTML 中表示一个类的结束，请将任意值中的空格替换为下划线：
 
 <Figure>
 
 <Example>
-  {<p className="text-center font-semibold text-gray-900 before:content-['你好_世界'] dark:text-gray-200" />}
+  {<p className="text-center font-semibold text-gray-900 before:content-['Hello_World'] dark:text-gray-200" />}
 </Example>
 
 ```html
@@ -90,12 +90,12 @@ Pro Display XDR</a> 为您提供了比 5K 显示器多近 40% 的屏幕空间。
 
 </Figure>
 
-如果您需要包含实际的下划线，可以通过用反斜杠转义来实现这一点：
+如果需要包含一个实际的下划线，则可以通过使用反斜杠进行转义：
 
 <Figure>
 
 <Example>
-  {<p className="text-center font-semibold text-gray-900 before:content-['你好\_世界'] dark:text-gray-200" />}
+  {<p className="text-center font-semibold text-gray-900 before:content-['Hello\_World'] dark:text-gray-200" />}
 </Example>
 
 ```html
@@ -114,7 +114,7 @@ Pro Display XDR</a> 为您提供了比 5K 显示器多近 40% 的屏幕空间。
 <p class="content-(--my-content)"></p>
 ```
 
-这只是 <code>content-{'[var(<custom-property>)]'}</code> 的缩写，自动为您添加 `var()` 函数。
+这只是为 <code>content-{'[var(<custom-property>)]'}</code> 添加 `var()` 函数的快捷方式。
 
 ### 响应式设计
 

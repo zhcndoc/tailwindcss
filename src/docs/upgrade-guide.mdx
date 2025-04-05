@@ -1,26 +1,26 @@
 export const title = "升级指南";
 export const description = "将您的 Tailwind CSS 项目从 v3 升级到 v4。";
 
-Tailwind CSS v4.0 是该框架的新主要版本，因此虽然我们非常努力地减少破坏性更改，但某些更新仍然是必要的。本指南概述了将项目从 v3 升级到 v4 所需的所有步骤。
+Tailwind CSS v4.0 是框架的新主要版本，虽然我们努力减少破坏性变更，但某些更新是必要的。本指南概述了将您的项目从 v3 升级到 v4 所需的所有步骤。
 
-**Tailwind CSS v4.0 设计用于 Safari 16.4+、Chrome 111+ 和 Firefox 128+。** 如果您需要支持旧版浏览器，请继续使用 v3.4，直到您的浏览器支持要求发生变化。
+**Tailwind CSS v4.0 设计用于 Safari 16.4+、Chrome 111+ 和 Firefox 128+。** 如果您需要支持旧版浏览器，请在浏览器支持要求变更之前继续使用 v3.4。
 
 ## 使用升级工具
 
-如果您想尝试将项目从 v3 升级到 v4，您可以使用我们的升级工具，自动处理绝大部分的工作：
+如果您想将项目从 v3 升级到 v4，可以使用我们的升级工具来处理大部分繁重工作：
 
 ```sh
-  # [!code filename:终端]
+  # [!code filename:Terminal]
 $ npx @tailwindcss/upgrade
 ```
 
-对于大多数项目，升级工具会自动化整个迁移过程，包括更新您的依赖关系、将配置文件迁移到 CSS 以及处理任何对模板文件的更改。
+对于大多数项目，升级工具会自动完成整个迁移过程，包括更新依赖项、将配置文件迁移到 CSS，以及处理模板文件的任何变更。
 
 升级工具需要 Node.js 20 或更高版本，因此请确保在运行之前更新您的环境。
 
-**我们建议在新分支中运行升级工具**，然后仔细查看差异，并在浏览器中测试您的项目，以确保所有更改看起来正确。在复杂的项目中，您可能需要手动调整一些内容，但无论如何，该工具将为您节省大量时间。
+**我们建议在新分支中运行升级工具**，然后仔细检查差异并在浏览器中测试您的项目，以确保所有更改都是正确的。在复杂项目中，您可能需要手动调整一些内容，但无论如何，该工具都将为您节省大量时间。
 
-同时，查看 v4 中的所有 [破坏性更改](#changes-from-v3) 也是个好主意，以便您充分了解已更改内容，确保对升级工具未检测到的其他内容进行更新。
+此外，查看 v4 中的所有 [破坏性变更](#changes-from-v3) 也是一个好主意，以了解变更的具体情况，以防您需要在升级工具未捕获的情况下更新项目中的其他内容。
 
 ## 手动升级
 
@@ -28,7 +28,7 @@ $ npx @tailwindcss/upgrade
 
 在 v3 中，`tailwindcss` 包是一个 PostCSS 插件，但在 v4 中，PostCSS 插件位于专用的 `@tailwindcss/postcss` 包中。
 
-此外，在 v4 中，导入和厂商前缀现在会自动为您处理，因此如果您的项目中包含 `postcss-import` 和 `autoprefixer`，则可以将其移除：
+此外，在 v4 中，导入和供应商前缀现在会自动处理，因此如果您的项目中有 `postcss-import` 和 `autoprefixer`，可以将其移除：
 
 ```js
 // [!code filename:postcss.config.mjs]
@@ -46,7 +46,7 @@ export default {
 
 ### 使用 Vite
 
-如果您正在使用 Vite，我们建议从 PostCSS 插件迁移到我们新的专用 Vite 插件，以提高性能并获得最佳开发体验：
+如果您在使用 Vite，我们建议从 PostCSS 插件迁移到我们新的专用 Vite 插件，以提高性能和开发体验：
 
 ```ts
 // [!code filename:vite.config.ts]
@@ -64,31 +64,31 @@ export default defineConfig({
 
 ### 使用 Tailwind CLI
 
-在 v4 中，Tailwind CLI 位于专用的 `@tailwindcss/cli` 包中。请更新您的构建命令以使用新包：
+在 v4 中，Tailwind CLI 位于专用的 `@tailwindcss/cli` 包中。更新您的构建命令以改用新包：
 
 ```sh
-/* [!code filename:终端] */
+/* [!code filename:Terminal] */
   # [!code --:2]
 npx tailwindcss -i input.css -o output.css
   # [!code ++:2]
 npx @tailwindcss/cli -i input.css -o output.css
 ```
 
-## 从 v3 的更改
+## 从 v3 的变更
 
-以下是 Tailwind CSS v4.0 中所有破坏性更改的综合列表。
+下面是 Tailwind CSS v4.0 中所有破坏性变更的综合列表。
 
-我们的 [升级工具](##using-the-upgrade-tool) 将自动处理大多数这些更改，如果您可以的话，我们强烈建议使用它。
+我们的 [升级工具](##using-the-upgrade-tool) 将自动处理大部分这些变更，因此如果您可以使用它，我们强烈推荐您使用。
 
 ### 浏览器要求
 
-Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrome 111 和 Firefox 128。核心框架功能依赖现代 CSS 特性（如 `@property` 和 `color-mix()`），因此该版本无法在旧版浏览器中运行。
+Tailwind CSS v4.0 旨在支持现代浏览器，目标为 Safari 16.4、Chrome 111 和 Firefox 128。我们依赖现代 CSS 特性，如 `@property` 和 `color-mix()` 来实现核心框架特性，Tailwind CSS v4.0 将不支持旧版浏览器。
 
-如需兼容旧版浏览器，我们建议您暂时继续使用 v3.4 版本。我们正在积极开发兼容模式以帮助用户更快升级，后续将公布更多进展。
+如果您需要支持旧版浏览器，我们建议暂时坚持使用 v3.4。我们正在积极探索兼容模式，以帮助人们更早地升级，我们希望在未来分享更多消息。
 
 ### 移除 @tailwind 指令
 
-在 v4 中，您使用常规 CSS `@import` 语句导入 Tailwind，而不是使用 v3 中的 `@tailwind` 指令：
+在 v4 中，您通过常规 CSS `@import` 语句导入 Tailwind，而不是使用您在 v3 中使用的 `@tailwind` 指令：
 
 ```css
 /* [!code filename:CSS] */
@@ -100,16 +100,16 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 @import "tailwindcss";
 ```
 
-### 移除已弃用的实用工具
+### 移除的弃用工具
 
-我们移除了 v3 中已弃用且没有文档记录的任何实用工具。以下是已移除的内容及其现代替代品列表：
+我们已删除在 v3 中被弃用并且多年未记录的任何工具。以下是移除的内容及其现代替代方案的列表：
 
 {
 
 <table>
   <thead>
     <tr>
-      <th>已弃用</th>
+      <th>弃用</th>
       <th>替代</th>
     </tr>
   </thead>
@@ -119,7 +119,7 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
         <code className="whitespace-nowrap">bg-opacity-*</code>
       </td>
       <td>
-        使用不透明度修饰符，比如 <code className="whitespace-nowrap">bg-black/50</code>
+        使用透明度修饰符，如 <code className="whitespace-nowrap">bg-black/50</code>
       </td>
     </tr>
     <tr>
@@ -127,7 +127,7 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
         <code className="whitespace-nowrap">text-opacity-*</code>
       </td>
       <td>
-        使用不透明度修饰符，比如 <code className="whitespace-nowrap">text-black/50</code>
+        使用透明度修饰符，如 <code className="whitespace-nowrap">text-black/50</code>
       </td>
     </tr>
     <tr>
@@ -135,7 +135,7 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
         <code className="whitespace-nowrap">border-opacity-*</code>
       </td>
       <td>
-        使用不透明度修饰符，比如 <code className="whitespace-nowrap">border-black/50</code>
+        使用透明度修饰符，如 <code className="whitespace-nowrap">border-black/50</code>
       </td>
     </tr>
     <tr>
@@ -143,7 +143,7 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
         <code className="whitespace-nowrap">divide-opacity-*</code>
       </td>
       <td>
-        使用不透明度修饰符，比如 <code className="whitespace-nowrap">divide-black/50</code>
+        使用透明度修饰符，如 <code className="whitespace-nowrap">divide-black/50</code>
       </td>
     </tr>
     <tr>
@@ -151,7 +151,7 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
         <code className="whitespace-nowrap">ring-opacity-*</code>
       </td>
       <td>
-        使用不透明度修饰符，比如 <code className="whitespace-nowrap">ring-black/50</code>
+        使用透明度修饰符，如 <code className="whitespace-nowrap">ring-black/50</code>
       </td>
     </tr>
     <tr>
@@ -159,7 +159,7 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
         <code className="whitespace-nowrap">placeholder-opacity-*</code>
       </td>
       <td>
-        使用不透明度修饰符，比如 <code className="whitespace-nowrap">placeholder-black/50</code>
+        使用透明度修饰符，如 <code className="whitespace-nowrap">placeholder-black/50</code>
       </td>
     </tr>
     <tr>
@@ -207,9 +207,9 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 
 }
 
-### 重命名的实用工具
+### 改名的工具
 
-我们在 v4 中重命名了以下实用工具，以使其更加一致和可预测：
+我们在 v4 中对以下工具进行了改名，以使其更加一致和可预测：
 
 {
 
@@ -322,11 +322,11 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 
 }
 
-#### 更新的阴影、半径和模糊比例
+#### 更新的影子、半径和模糊规模
 
-我们重命名了默认的阴影、半径和模糊比例，以确保每个实用工具都有一个命名值。虽然 "bare" 版本仍然适用于向后兼容，但 <code><em>{'<utility>'}</em>-sm</code> 实用工具将看起来与各自的 <code><em>{'<utility>'}</em>-xs</code> 版本不同。
+我们已更改默认影子、半径和模糊规模的名称，以确保每个工具都有命名值。“裸”版本仍然可以为了向后兼容，但 <code><em>{'<utility>'}</em>-sm</code> 工具的外观将不同，除非更新为各自的 <code><em>{'<utility>'}</em>-xs</code> 版本。
 
-要更新您的项目以适应这些更改，请用 v4 版本替换所有 v3 实用工具：
+要使您的项目更新这些变更，请将所有 v3 工具替换为其 v4 版本：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -341,9 +341,9 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 <input class="shadow-sm" />
 ```
 
-#### 重命名的轮廓实用工具
+#### 重命名轮廓工具
 
-`outline` 工具现在默认设置 `outline-width: 1px`，以便与边框和环形工具更加一致。此外，所有 `outline-<number>` 工具默认将 `outline-style` 设置为 `solid`，省去了与 `outline` 组合的需要：
+`outline` 工具现在默认设置 `outline-width: 1px`，以使其与边框和环工具更加一致。此外，所有 `outline-<number>` 工具默认将 `outline-style` 设置为 `solid`，省去了与 `outline` 组合的需要：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -353,11 +353,11 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 <input class="outline-2" />
 ```
 
-`outline-none` 实用工具之前实际上并没有设置 `outline-style: none`，而是设定了一条不可见的轮廓，在强制颜色模式下仍会显示，以保持可访问性。
+之前的 `outline-none` 工具实际上并未设置 `outline-style: none`，而是设置了一个不可见的轮廓，仍然会在强制颜色模式下显示，以满足可访问性原因。
 
-为了使这一点更清晰，我们将该实用工具重命名为 `outline-hidden`，并添加了一个新的 `outline-none` 实用工具，实际上设置 `outline-style: none`。
+为了解释这一点，我们将此工具重命名为 `outline-hidden`，并添加了一个新的 `outline-none` 工具，实际设置 `outline-style: none`。
 
-要更新您的项目以适应这一变化，请将任何 `outline-none` 的使用替换为 `outline-hidden`：
+要使您的项目更新这一变更，请将任何对 `outline-none` 的使用替换为 `outline-hidden`：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -367,11 +367,11 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 <input class="focus:outline-hidden" />
 ```
 
-#### 默认环宽更改
+#### 默认环宽度变更
 
-在 v3 中，`ring` 实用工具添加了一个 `3px` 的环。我们在 v4 中将其更改为 `1px`，以与边框和轮廓保持一致。
+在 v3 中，`ring` 工具添加了一个 `3px` 的环。在 v4 中我们将其改为 `1px`，以使其与边框和轮廓一致。
 
-要更新您的项目以适应这一变化，请将任何 `ring` 的使用替换为 `ring-3`：
+要使您的项目更新此变更，请将任何对 `ring` 的使用替换为 `ring-3`：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -381,9 +381,9 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 <input class="ring-3 ring-blue-500" />
 ```
 
-### 空间之间的选择器
+### 空间选择器的变更
 
-我们更改了 [`space-x-*` 和 `space-y-*` 实用工具](/docs/margin#adding-space-between-children) 使用的选择器，以解决大型页面上的严重性能问题：
+我们更改了 [`space-x-*` 和 `space-y-*` 工具](/docs/margin#adding-space-between-children) 使用的选择器，以解决大页面上的严重性能问题：
 
 ```css
 /* [!code filename:CSS] */
@@ -398,9 +398,9 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 }
 ```
 
-如果您曾经在使用这些实用工具应用于内联元素，或通过向子元素添加其他边距来调整其间距，则可能会看到项目中的更改。
+如果您之前使用这些工具与行内元素，或如果您为子元素添加其他边距以调整它们的间距，您的项目可能会看到变更。
 
-如果此更改在您的项目中造成任何问题，我们建议迁移到 Flex 或 Grid 布局，并使用 `gap` 代替：
+如果此变化在您的项目中造成任何问题，我们建议迁移到 Flex 或 Grid 布局并改用 `gap`：
 
 {/* prettier-ignore */}
 ```html
@@ -414,7 +414,7 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 
 ### 在渐变上使用变体
 
-在 v3 中，使用变体覆盖渐变的一部分会“重置”整个渐变，因此在此示例中，`to-*` 颜色在深色模式下会变为透明，而不是黄色：
+在 v3 中，使用变体覆盖渐变的部分会“重置”整个渐变，因此在这个例子中，`to-*` 颜色在深色模式下将是透明的，而不是黄色：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -424,9 +424,9 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 </div>
 ```
 
-在 v4 中，这些值被保留，这与 Tailwind 中其他实用工具的工作方式更加一致。
+在 v4 中，这些值将得以保留，这与 Tailwind 中其他工具的工作方式更加一致。
 
-这意味着如果您希望在特定状态下将三停渐变“取消设置”回二停渐变，您可能需要明确使用 `via-none`：
+这意味着如果您想在特定状态下将三段渐变“重置”为两段渐变，您可能需要明确使用 `via-none`：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -438,9 +438,9 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 
 ### 容器配置
 
-在 v3 中，`container` 实用工具有几个配置选项，比如 `center` 和 `padding`，这些在 v4 中不再存在。
+在 v3 中，`container` 工具有几个配置选项，如 `center` 和 `padding`，在 v4 中不再存在。
 
-要在 v4 中自定义 `container` 实用工具，请使用 `@utility` 指令扩展它：
+要自定义 v4 中的 `container` 工具，请使用 `@utility` 指令扩展它：
 
 ```css
 /* [!code filename:CSS] */
@@ -452,9 +452,9 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 
 ### 默认边框颜色
 
-在 v3 中，`border-*` 和 `divide-*` 实用工具默认使用您配置的 `gray-200` 颜色。我们在 v4 中将其更改为 `currentColor`，以使 Tailwind 更少偏见并与浏览器默认行为保持一致。
+在 v3 中，`border-*` 和 `divide-*` 工具默认使用您配置的 `gray-200` 颜色。我们在 v4 中将其更改为 `currentColor`，以减少 Tailwind 的主观性并匹配浏览器的默认值。
 
-要更新您的项目以适应这一变化，请确保在使用任何 `border-*` 或 `divide-*` 实用工具时指定颜色：
+要使您的项目更新此变更，请确保在使用 `border-*` 或 `divide-*` 工具的地方指定颜色：
 
 ```html
 <!-- [!code classes:border-gray-200] -->
@@ -463,7 +463,7 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 </div>
 ```
 
-或者，将这些基础样式添加到您的项目中，以保留 v3 行为：
+或者，您可以将这些基础样式添加到项目中，以保留 v3 行为：
 
 ```css
 /* [!code filename:CSS] */
@@ -480,9 +480,9 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 
 ### 默认环宽和颜色
 
-我们将 `ring` 实用工具的宽度从 3px 更改为 1px，并将默认颜色从 `blue-500` 更改为 `currentColor`，以使其与 `border-*`、`divide-*` 和 `outline-*` 实用工具保持一致。
+我们已将 `ring` 工具的宽度从 3px 更改为 1px，并将默认颜色从 `blue-500` 更改为 `currentColor`，以使其与 `border-*`、`divide-*` 和 `outline-*` 工具更加一致。
 
-要更新您的项目以适应这些更改，请用 `ring-3` 替换任何 `ring` 的使用：
+要使您的项目更新这些变更，请将任何对 `ring` 的使用替换为 `ring-3`：
 
 ```html
 <!-- prettier-ignore -->
@@ -492,7 +492,7 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 </button>
 ```
 
-然后，请确保在依赖默认环颜色的任何地方添加 `ring-blue-500`：
+然后确保在依赖默认环颜色的地方添加 `ring-blue-500`：
 
 ```html
 <!-- [!code classes:focus:ring-blue-500] -->
@@ -501,7 +501,7 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 </button>
 ```
 
-或者，将这些主题变量添加到您的 CSS 以保护 v3 行为：
+或者，将这些主题变量添加到您的 CSS 中，以保留 v3 行为：
 
 ```css
 /* [!code filename:CSS] */
@@ -511,17 +511,17 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 }
 ```
 
-请注意，这些变量仅为兼容性原因而支持，并不被视为 idiomatic 的 Tailwind CSS v4.0 用法。
+请注意，这些变量仅在兼容性方面得到支持，并且不被视为 Tailwind CSS v4.0 的规范用法。
 
-### Preflight 更改
+### Preflight 变更
 
-我们在 v4 中对 Preflight 的基本样式做了一些小更改：
+我们在 v4 中对 Preflight 的基础样式进行了一些小的更改：
 
 #### 新的默认占位符颜色
 
-在 v3 中，占位符文本默认使用您配置的 `gray-400` 颜色。我们在 v4 中将其简化为仅使用当前文本颜色的 50% 不透明度。
+在 v3 中，默认情况下占位符文本使用您配置的 `gray-400` 颜色。我们在 v4 中将其简化为仅使用当前文本颜色的 50% 不透明度。
 
-您可能不会注意到此更改（这甚至可能让您的项目看起来更好），但如果您想保留 v3 行为，请将以下 CSS 添加到您的项目中：
+您可能根本不会注意到此变化（这甚至可能使您的项目看起来更好），但如果您想保留 v3 行为，可以将此 CSS 添加到项目中：
 
 ```css
 /* [!code filename:CSS] */
@@ -535,9 +535,9 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 
 #### 按钮使用默认光标
 
-按钮现在使用 `cursor: default` 而不是 `cursor: pointer`，以匹配默认浏览器行为。
+按钮现在使用 `cursor: default`，而不是 `cursor: pointer`，以匹配默认浏览器行为。
 
-如果您希望默认继续使用 `cursor: pointer`，可以将以下基础样式添加到您的 CSS 中：
+如果您希望继续默认使用 `cursor: pointer`，请将这些基础样式添加到您的 CSS 中：
 
 ```css
 /* [!code filename:CSS] */
@@ -549,11 +549,11 @@ Tailwind CSS v4.0 专为现代浏览器设计，主要支持 Safari 16.4、Chrom
 }
 ```
 
-#### 移除对话框边距
+#### 对话框边距被移除
 
-Preflight 现在重置 `<dialog>` 元素的边距，以便在其他元素重置时保持一致。
+Preflight 现在将 `<dialog>` 元素的边距重置为与其他元素的一致性。
 
-如果您仍希望对话框默认居中，请将以下 CSS 添加到您的项目中：
+如果您仍希望对话框默认居中，可以将此 CSS 添加到项目中：
 
 ```css
 /* [!code filename:CSS] */
@@ -566,7 +566,7 @@ Preflight 现在重置 `<dialog>` 元素的边距，以便在其他元素重置�
 
 ### 使用前缀
 
-前缀现在看起来像变体，并且始终位于类名称的开头：
+前缀现在看起来像变体，并且总是在类名的开头：
 
 ```html
 <!-- [!code classes:tw:bg-red-500,tw:flex,tw:hover:bg-red-600] -->
@@ -575,7 +575,7 @@ Preflight 现在重置 `<dialog>` 元素的边距，以便在其他元素重置�
 </div>
 ```
 
-使用前缀时，您仍然应该按未使用前缀的方式配置您的主题变量：
+使用前缀时，您仍应根据不使用前缀的情况配置主题变量：
 
 ```css {{ filename: "app.css" }}
 @import "tailwindcss" prefix(tw);
@@ -593,7 +593,7 @@ Preflight 现在重置 `<dialog>` 元素的边距，以便在其他元素重置�
 }
 ```
 
-生成的 CSS 变量 _将_ 包含一个前缀，以避免与项目中现有变量的冲突：
+生成的 CSS 变量 _将_ 包含一个前缀，以避免与您项目中的现有变量冲突：
 
 ```css {{ filename: "dist.css" }}
 :root {
@@ -609,11 +609,11 @@ Preflight 现在重置 `<dialog>` 元素的边距，以便在其他元素重置�
 }
 ```
 
-### 添加自定义实用工具
+### 添加自定义工具
 
-在 v3 中，您在 `@layer utilities` 或 `@layer components` 中定义的任何自定义类将被 Tailwind 视为真正的实用工具类，并将自动与 `hover`、`focus` 或 `lg` 等变体协同工作，区别在于 `@layer components` 将始终在生成的样式表中位于首位。
+在 v3 中，您在 `@layer utilities` 或 `@layer components` 中定义的任何自定义类将被 Tailwind 视为真正的工具类，并自动与变体如 `hover`、`focus` 或 `lg` 一起工作，区别在于 `@layer components` 始终排在生成的样式表前面。
 
-在 v4 中，我们不再劫持 `@layer` at-rule，而是使用原生的级联层，并引入 `@utility` API 作为替换：
+在 v4 中，我们使用本机级联层，并不再劫持 `@layer` at-rule，因此我们引入了 `@utility` API 作为替代：
 
 ```css
 /* [!code filename:CSS] */
@@ -629,7 +629,7 @@ Preflight 现在重置 `<dialog>` 元素的边距，以便在其他元素重置�
 }
 ```
 
-自定义实用工具现在还会根据定义的属性数量进行排序。这意味着像 `.btn` 这样的组件实用工具可以被其他 Tailwind 实用工具覆盖，而无需额外配置：
+自定义工具现在也会根据其定义的属性数量进行排序。这意味着像 `.btn` 这样的组件工具可以被其他 Tailwind 工具覆盖，而无需额外配置：
 
 ```css
 /* [!code filename:CSS] */
@@ -649,13 +649,13 @@ Preflight 现在重置 `<dialog>` 元素的边距，以便在其他元素重置�
 }
 ```
 
-了解更多关于在 [添加自定义实用工具文档](/docs/adding-custom-styles#adding-custom-utilities) 中注册自定义实用工具的信息。
+了解有关在 [添加自定义工具文档](/docs/adding-custom-styles#adding-custom-utilities) 中注册自定义工具的更多信息。
 
 ### 变体堆叠顺序
 
-在 v3 中，堆叠变体是从右到左应用的，但在 v4 中，我们已更新为从左到右应用，以使其更像 CSS 语法。
+在 v3 中，堆叠的变体是从右到左应用的，但在 v4 中，我们已将其更新为从左到右应用，以看起来更像 CSS 语法。
 
-要更新您的项目以适应这一变化，请在项目中反转任何对顺序敏感的堆叠变体的顺序：
+要更新您的项目以适应此变更，请反转项目中任何对变体堆叠顺序的敏感顺序：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -664,19 +664,19 @@ Preflight 现在重置 `<dialog>` 元素的边距，以便在其他元素重置�
 <ul class="py-4 first:*:pt-0 last:*:pb-0">
 <!-- [!code ++:2] -->
 <ul class="py-4 *:first:pt-0 *:last:pb-0">
-  <li>一个</li>
-  <li>两个</li>
-  <li>三个</li>
+  <li>一</li>
+  <li>二</li>
+  <li>三</li>
 </ul>
 ```
 
-如果您有这些的使用，则数量可能非常少——直接子元素变体 (`*`) 和任何排版插件变体 (`prose-headings`) 是最可能您可能使用的，甚至在那也只有在您与其他变体堆叠时才会有这种情况。
+如果您有使用这些变体，可能数量非常少—直接子变体（`*`）和任何排版插件变体（`prose-headings`）是您可能使用的最可能的变量，甚至只有在它们与其他变量堆叠时才会这样做。
 
 ### 在任意值中使用变量
 
-在 v3 中，您能够在不使用 `var()` 的情况下将 CSS 变量用作任意值，但最近对 CSS 的更新意味着这可能会经常引起歧义，因此我们已将此在 v4 中的语法更改为使用括号而不是方括号。
+在 v3 中，您可以在没有 `var()` 的情况下将 CSS 变量用作任意值，但近期对 CSS 的更新使得这通常会很模糊，因此我们在 v4 中相应地更改了语法，以使用圆括号而不是方括号。
 
-要更新您的项目以适应这一变化，请将旧变量简写语法的使用替换为新变量简写语法：
+要更新您的项目以适应此变更，请将旧的变量简写语法替换为新的变量简写语法：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -686,9 +686,9 @@ Preflight 现在重置 `<dialog>` 元素的边距，以便在其他元素重置�
 <div class="bg-(--brand-color)"></div>
 ```
 
-### 移动设备上的悬停样式
+### 移动端的悬停样式
 
-在 v4 中，我们已将 `hover` 变体更新为仅在主要输入设备支持悬停时才应用：
+在 v4 中，我们更新了 `hover` 变体，仅在主输入设备支持悬停时才应用：
 
 ```css
 /* [!code filename:CSS] */
@@ -699,20 +699,20 @@ Preflight 现在重置 `<dialog>` 元素的边距，以便在其他元素重置�
 }
 ```
 
-如果您以某种方式构建了您的网站，以至于触摸设备在点击时触发悬停，这可能会造成问题。如果这是您的问题，您可以使用自己的变体覆盖 `hover` 变体，以使用旧实现：
+如果您以某种方式构建了您的网站，使其依赖触摸设备在点击时触发悬停，则这可能会造成问题。如果这是您的问题，您可以使用自己的变体覆盖 `hover` 变体，使用旧的实现：
 
 ```css
 /* [!code filename:CSS] */
 @custom-variant hover (&:hover);
 ```
 
-一般来说，我们建议将悬停功能视为增强，而不是依赖于它来使您的网站正常工作，因为触摸设备并不真正具备悬停能力。
+一般来说，我们建议将悬停功能视为一种增强，而不是依赖它让您的网站正常运行，因为触摸设备不能真正悬停。
 
 ### 过渡轮廓颜色
 
-`transition` 和 `transition-color` 实用工具现在包括 `outline-color` 属性。
+`transition` 和 `transition-color` 工具现在包含 `outline-color` 属性。
 
-这意味着如果您在焦点时添加了自定义颜色的轮廓，则将看到颜色从默认颜色过渡。为避免这种情况，请确保无条件设置轮廓颜色，或者明确为两个状态设置它：
+这意味着如果您在获得焦点时为轮廓添加自定义颜色，您将看到颜色从默认颜色过渡。为避免这种情况，请确保无条件设置轮廓颜色，或针对两个状态显式设置它：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -724,11 +724,11 @@ Preflight 现在重置 `<dialog>` 元素的边距，以便在其他元素重置�
 
 ### 禁用核心插件
 
-在 v3 中，有一个 `corePlugins` 选项可用于完全禁用框架中的某些实用工具。在 v4 中不再支持此功能。
+在 v3 中，有一个可以完全禁用框架中特定工具的 `corePlugins` 选项。在 v4 中不再支持此功能。
 
 ### 使用 theme() 函数
 
-由于 v4 包括您所有主题值的 CSS 变量，我们建议在可能的情况下使用这些变量，而不是使用 `theme()` 函数：
+由于 v4 为您的所有主题值包含了 CSS 变量，我们建议尽可能使用这些变量，而不是 `theme()` 函数：
 
 ```css
 /* [!code filename:CSS] */
@@ -740,7 +740,7 @@ Preflight 现在重置 `<dialog>` 元素的边距，以便在其他元素重置�
 }
 ```
 
-对于需要使用 `theme()` 函数的情况（例如在不支持 CSS 变量的媒体查询中），您应使用 CSS 变量名称，而不是旧的点号表示法：
+对于仍需要使用 `theme()` 函数的情况（例如，在 CSS 变量不受支持的媒体查询中），您应使用 CSS 变量名称，而不是旧的点表示法：
 
 ```css
 /* [!code filename:CSS] */
@@ -752,24 +752,24 @@ Preflight 现在重置 `<dialog>` 元素的边距，以便在其他元素重置�
 
 ### 使用 JavaScript 配置文件
 
-JavaScript 配置文件仍然支持向后兼容，但在 v4 中不再自动检测。
+出于向后兼容性原因，JavaScript 配置文件在 v4 中仍受支持，但不再自动检测。
 
-如果您仍然需要使用 JavaScript 配置文件，可以使用 `@config` 指令显式加载：
+如果您仍需要使用 JavaScript 配置文件，您可以通过 `@config` 指令显式加载它：
 
 ```css
 /* [!code filename:CSS] */
 @config "../../tailwind.config.js";
 ```
 
-来自基于 JavaScript 配置的 `corePlugins`、`safelist` 和 `separator` 选项在 v4.0 中不再支持。
+JavaScript 配置中的 `corePlugins`、`safelist` 和 `separator` 选项在 v4.0 中不受支持。
 
-### 在 JavaScript 中的主题值
+### JavaScript 中的主题值
 
-在 v3 中，我们导出了一个 `resolveConfig` 函数，您可以使用它将基于 JavaScript 的配置转换为您可以在其他 JavaScript 中使用的扁平对象。
+在 v3 中，我们导出了一个 `resolveConfig` 函数，您可以使用它将 JavaScript 配置转换为可以在其他 JavaScript 中使用的扁平对象。
 
-在 v4 中我们删除了这个功能，期望人们可以直接使用我们生成的 CSS 变量，这样要简单得多，并将显著减少您的包大小。
+在 v4 中，我们删除了这个功能，希望人们可以直接使用我们生成的 CSS 变量，这样会更简单，并且会显著减少您的包的大小。
 
-例如，流行的 [Motion](https://motion.dev/docs/react-quick-start) 库允许您动画到和从 CSS 变量值：
+例如，流行的 [Motion](https://motion.dev/docs/react-quick-start) 库可以让您在 CSS 变量值之间进行动画：
 
 ```jsx
 // [!code filename:JSX]
@@ -777,7 +777,7 @@ JavaScript 配置文件仍然支持向后兼容，但在 v4 中不再自动检�
 <motion.div animate={{ backgroundColor: "var(--color-blue-500)" }} />
 ```
 
-如果您需要在 JS 中访问解析的 CSS 变量值，可以使用 `getComputedStyle` 来获取文档根上主题变量的值：
+如果您需要在 JS 中访问解析后的 CSS 变量值，可以使用 `getComputedStyle` 获取文档根部主题变量的值：
 
 ```js
 // [!code filename:spaghetti.js]
@@ -785,11 +785,11 @@ let styles = getComputedStyle(document.documentElement);
 let shadow = styles.getPropertyValue("--shadow-xl");
 ```
 
-### 使用 @apply 与 Vue、Svelte 或 CSS 模块
+### 在 Vue、Svelte 或 CSS 模块中使用 @apply
 
-在 v4 中，与您的主 CSS 文件分开捆绑的样式表（例如 CSS 模块文件、Vue、Svelte 或 Astro 中的 `<style>` 块等）无法访问在其他文件中定义的主题变量、自定义实用工具和自定义变体。
+在 v4 中，与您的主要 CSS 文件单独打包的样式表（例如，CSS 模块文件、Vue、Svelte 或 Astro 中的 `<style>` 块等）无法访问在其他文件中定义的主题变量、自定义工具和自定义变体。
 
-要在这些上下文中使这些定义可用，请使用 [`@reference`](/docs/functions-and-directives#reference-directive) 导入它们，而无需在您的捆绑中重复任何 CSS：
+要使这些定义可以在这些上下文中使用，请使用 [`@reference`](/docs/functions-and-directives#reference-directive) 导入它们，而不需要在您的包中复制任何 CSS：
 
 ```html
 <!-- [!code filename:Vue] -->
@@ -807,7 +807,7 @@ let shadow = styles.getPropertyValue("--shadow-xl");
 </style>
 ```
 
-另一个选项是直接使用您的 CSS 主题变量，而不是完全使用 `@apply`，这也会提高性能，因为 Tailwind 不需要处理这些样式：
+或者，您可以直接使用 CSS 主题变量，而不是完全使用 `@apply`，这也将提高性能，因为 Tailwind 不需要处理这些样式：
 
 ```html
 <!-- [!code filename:Vue] -->
@@ -823,4 +823,4 @@ let shadow = styles.getPropertyValue("--shadow-xl");
 </style>
 ```
 
-您可以在 [使用 Tailwind 与 CSS 模块](/docs/compatibility#css-modules) 中找到更多文档。
+您可以在 [使用 Tailwind 和 CSS 模块](/docs/compatibility#css-modules) 中找到更多文档。

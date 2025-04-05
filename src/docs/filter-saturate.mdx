@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { UsingACustomValue, ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "过滤器：饱和度（saturate()）";
-export const description = "应用饱和度滤镜到元素的工具类。";
+export const title = "滤镜：saturate()";
+export const description = "用于对元素应用饱和度滤镜的工具类。";
 
 <ApiTable
   rows={[
@@ -18,7 +18,7 @@ export const description = "应用饱和度滤镜到元素的工具类。";
 
 ### 基本示例
 
-使用像 `saturate-50` 和 `saturate-100` 这样的工具类来控制元素的饱和度：
+使用 `saturate-50` 和 `saturate-100` 等工具类来控制元素的饱和度：
 
 <Figure>
 
@@ -78,7 +78,7 @@ export const description = "应用饱和度滤镜到元素的工具类。";
 </Example>
 
 ```html
-<!-- [!code classes:saturate-50,saturate-100,saturate-150,saturate-200] -->
+<!-- [!代码类:saturate-50,saturate-100,saturate-150,saturate-200] -->
 <img class="saturate-50 ..." src="/img/mountains.jpg" />
 <img class="saturate-100 ..." src="/img/mountains.jpg" />
 <img class="saturate-150 ..." src="/img/mountains.jpg" />
@@ -98,7 +98,7 @@ export const description = "应用饱和度滤镜到元素的工具类。";
   variable="saturation"
 />
 
-### 响应式设计
+### 自适应设计
 
 <ResponsiveDesign
   element="img"

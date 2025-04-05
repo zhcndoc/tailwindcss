@@ -4,8 +4,8 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "混合模式（mix-blend-mode）";
-export const description = "控制元素如何与背景混合的工具类。";
+export const title = "混合模式";
+export const description = "用于控制元素与背景混合方式的工具类。";
 
 <ApiTable
   rows={[
@@ -34,7 +34,7 @@ export const description = "控制元素如何与背景混合的工具类。";
 
 ### 基本示例
 
-使用像 `mix-blend-overlay` 和 `mix-blend-soft-light` 这样的工具类来控制元素的内容和背景与同一堆叠上下文中的其他内容如何混合：
+使用 `mix-blend-overlay` 和 `mix-blend-soft-light` 等工具类来控制元素内容与背景在同一堆叠上下文中与其他内容的混合方式：
 
 <Figure>
 
@@ -61,7 +61,7 @@ export const description = "控制元素如何与背景混合的工具类。";
 
 ### 隔离混合
 
-在父元素上使用 `isolate` 工具类来创建一个新的堆叠上下文，并防止与其后面的内容混合：
+在父元素上使用 `isolate` 工具类来创建新的堆叠上下文，并防止与其后方内容的混合：
 
 <Figure>
 

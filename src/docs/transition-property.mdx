@@ -5,7 +5,7 @@ import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import dedent from "dedent";
 
 export const title = "transition-property";
-export const description = "控制哪些 CSS 属性过渡的工具类。";
+export const description = "用于控制哪些 CSS 属性过渡的工具类。";
 
 <ApiTable
   rows={[
@@ -81,9 +81,9 @@ export const description = "控制哪些 CSS 属性过渡的工具类。";
 
 ### 基本示例
 
-使用 `transition` 和 `transition-colors` 等工具类来指定更改时应过渡哪些属性：
+使用 `transition` 和 `transition-colors` 等工具类来指定当属性变化时应进行过渡的属性：
 
-<Figure hint="悬停按钮以查看预期效果">
+<Figure hint="悬停在按钮上可以查看预期效果">
 
 <Example>
   {
@@ -105,9 +105,9 @@ export const description = "控制哪些 CSS 属性过渡的工具类。";
 
 </Figure>
 
-### 支持减少运动
+### 支持减少动画
 
-在用户指定希望减少运动的情况下，可以使用 `motion-safe` 和 `motion-reduce` 变体有条件地应用动画和过渡：
+对于用户指定希望减少动画的情况，可以使用 `motion-safe` 和 `motion-reduce` 变体有条件地应用动画和过渡：
 
 ```html
 <!-- [!code classes:motion-reduce:transition-none,motion-reduce:hover:transform-none] -->

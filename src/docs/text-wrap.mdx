@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "文本换行";
-export const description = "用于控制文本在元素内如何换行的工具。";
+export const title = "text-wrap";
+export const description = "用于控制文本在元素内如何换行的工具类。";
 
 <ApiTable
   rows={[
@@ -19,16 +19,16 @@ export const description = "用于控制文本在元素内如何换行的工具�
 
 ### 允许文本换行
 
-使用 `text-wrap` 工具在文本中逻辑点将溢出的文本换到多行：
+使用 `text-wrap` 工具类将在文本的逻辑点上将溢出的文本换到多行：
 
 <Figure>
 
 <Example padding={false}>
   {
     <div className="mx-auto grid max-w-xs gap-4 border-x border-x-pink-400/30 py-8 text-gray-700 dark:text-gray-400">
-      <div className="text-xl font-semibold text-gray-900 dark:text-white">心爱的曼哈顿汤摊关闭</div>
+      <div className="text-xl font-semibold text-gray-900 dark:text-white">备受喜爱的曼哈顿汤摊关闭</div>
       <p className="text-sm/6">
-        纽约人在这个冬天感到寒意更重，因为这座城市最受尊敬的汤摊意外关闭，接连发生的事件让社区感到困惑。
+        今年，纽约人在寒冷的冬季面临更少的温暖，因为这座城市最受尊敬的汤摊意外关闭，接连发生的事件让社区感到困惑。
       </p>
     </div>
   }
@@ -37,8 +37,8 @@ export const description = "用于控制文本在元素内如何换行的工具�
 ```html
 <!-- [!code classes:text-wrap] -->
 <article class="text-wrap">
-  <h3>心爱的曼哈顿汤摊关闭</h3>
-  <p>纽约人在这个冬天感到寒意更重...</p>
+  <h3>备受喜爱的曼哈顿汤摊关闭</h3>
+  <p>纽约人在寒冷的冬季面临...</p>
 </article>
 ```
 
@@ -46,7 +46,7 @@ export const description = "用于控制文本在元素内如何换行的工具�
 
 ### 防止文本换行
 
-使用 `text-nowrap` 工具阻止文本换行，如果需要，可以允许其溢出：
+使用 `text-nowrap` 工具类来防止文本换行，如有必要，允许其溢出：
 
 <Figure>
 
@@ -55,10 +55,10 @@ export const description = "用于控制文本在元素内如何换行的工具�
     <div className="overflow-hidden">
       <div className="mx-auto grid max-w-xs gap-4 border-x border-x-pink-400/30 py-8 text-gray-700 dark:text-gray-400">
         <div className="text-xl font-semibold text-nowrap text-gray-900 dark:text-white">
-          心爱的曼哈顿汤摊关闭
+          备受喜爱的曼哈顿汤摊关闭
         </div>
         <p className="text-sm/6 text-nowrap">
-          纽约人在这个冬天感到寒意更重，因为这座城市最受尊敬的汤摊意外关闭，接连发生的事件让社区感到困惑。
+          今年，纽约人在寒冷的冬季面临更少的温暖，因为这座城市最受尊敬的汤摊意外关闭，接连发生的事件让社区感到困惑。
         </p>
       </div>
     </div>
@@ -68,8 +68,8 @@ export const description = "用于控制文本在元素内如何换行的工具�
 ```html
 <!-- [!code classes:text-nowrap] -->
 <article class="text-nowrap">
-  <h3>心爱的曼哈顿汤摊关闭</h3>
-  <p>纽约人在这个冬天感到寒意更重...</p>
+  <h3>备受喜爱的曼哈顿汤摊关闭</h3>
+  <p>纽约人在寒冷的冬季面临...</p>
 </article>
 ```
 
@@ -77,7 +77,7 @@ export const description = "用于控制文本在元素内如何换行的工具�
 
 ### 平衡文本换行
 
-使用 `text-balance` 工具将文本均匀分布在每行上：
+使用 `text-balance` 工具类在每行之间均匀分配文本：
 
 <Figure>
 
@@ -85,10 +85,10 @@ export const description = "用于控制文本在元素内如何换行的工具�
   {
     <div className="mx-auto grid max-w-xs gap-4 border-x border-x-pink-400/30 py-8 text-gray-700 dark:text-gray-400">
       <div className="text-xl font-semibold text-balance text-gray-900 dark:text-white">
-        心爱的曼哈顿汤摊关闭
+        备受喜爱的曼哈顿汤摊关闭
       </div>
       <p className="text-sm/6">
-        纽约人在这个冬天感到寒意更重，因为这座城市最受尊敬的汤摊意外关闭，接连发生的事件让社区感到困惑。
+        今年，纽约人在寒冷的冬季面临更少的温暖，因为这座城市最受尊敬的汤摊意外关闭，接连发生的事件让社区感到困惑。
       </p>
     </div>
   }
@@ -97,18 +97,18 @@ export const description = "用于控制文本在元素内如何换行的工具�
 ```html
 <!-- [!code classes:text-balance] -->
 <article>
-  <h3 class="text-balance">心爱的曼哈顿汤摊关闭</h3>
-  <p>纽约人在这个冬天感到寒意更重...</p>
+  <h3 class="text-balance">备受喜爱的曼哈顿汤摊关闭</h3>
+  <p>纽约人在寒冷的冬季面临...</p>
 </article>
 ```
 
 </Figure>
 
-出于性能原因，浏览器将文本平衡限制在大约 6 行或更少的块上，最适合用于标题。
+出于性能原因，浏览器将文本平衡限制在约 6 行或更少的块内，因此最适合用于标题。
 
-### 美观的文本换行
+### 美观文本换行
 
-使用 `text-pretty` 工具防止孤立行（单词自己在一行）的出现：
+使用 `text-pretty` 工具类来防止孤立词（单个单词在单独一行）在文本块的末尾出现：
 
 <Figure>
 
@@ -116,10 +116,10 @@ export const description = "用于控制文本在元素内如何换行的工具�
   {
     <div className="mx-auto grid max-w-xs gap-4 border-x border-x-pink-400/30 py-8 text-gray-700 dark:text-gray-400">
       <div className="text-xl font-semibold text-pretty text-gray-900 dark:text-white">
-        心爱的曼哈顿汤摊关闭
+        备受喜爱的曼哈顿汤摊关闭
       </div>
       <p className="text-sm/6">
-        纽约人在这个冬天感到寒意更重，因为这座城市最受尊敬的汤摊意外关闭，接连发生的事件让社区感到困惑。
+        今年，纽约人在寒冷的冬季面临更少的温暖，因为这座城市最受尊敬的汤摊意外关闭，接连发生的事件让社区感到困惑。
       </p>
     </div>
   }
@@ -128,8 +128,8 @@ export const description = "用于控制文本在元素内如何换行的工具�
 ```html
 <!-- [!code classes:text-pretty] -->
 <article>
-  <h3 class="text-pretty">心爱的曼哈顿汤摊关闭</h3>
-  <p>纽约人在这个冬天感到寒意更重...</p>
+  <h3 class="text-pretty">备受喜爱的曼哈顿汤摊关闭</h3>
+  <p>纽约人在寒冷的冬季面临...</p>
 </article>
 ```
 

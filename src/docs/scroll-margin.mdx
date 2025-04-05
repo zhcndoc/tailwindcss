@@ -4,8 +4,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "滚动边距";
-export const description = "控制快照容器中项目周围滚动偏移的工具。";
+export const title = "scroll-margin";
+export const description = "控制在快照容器内项目周围的滚动偏移的工具。";
 
 <ApiTable
   rows={[
@@ -30,9 +30,9 @@ export const description = "控制快照容器中项目周围滚动偏移的工�
 
 ### 基本示例
 
-使用 `scroll-mt-<number>`、`scroll-mr-<number>`、`scroll-mb-<number>` 和 `scroll-ml-<number>` 工具，例如 `scroll-ml-4` 和 `scroll-mt-6`，在快照容器中设置项目周围的滚动偏移：
+使用 `scroll-mt-<number>`、`scroll-mr-<number>`、`scroll-mb-<number>` 和 `scroll-ml-<number>` 工具，如 `scroll-ml-4` 和 `scroll-mt-6`，设置快照容器内项目周围的滚动偏移：
 
-<Figure hint="在图像网格中滚动以查看预期行为">
+<Figure hint="在图像网格中滚动以查看预期效果">
 
 <Example padding={false}>
   {
@@ -102,7 +102,7 @@ export const description = "控制快照容器中项目周围滚动偏移的工�
 
 ### 使用负值
 
-要使用负的滚动边距值，请在类名前加上破折号以将其转换为负值：
+要使用负的滚动边距值，可以在类名前加上一个负号：
 
 ```html
 <!-- [!code classes:-scroll-ml-6] -->
@@ -113,14 +113,14 @@ export const description = "控制快照容器中项目周围滚动偏移的工�
 
 ### 使用逻辑属性
 
-使用 `scroll-ms-<number>` 和 `scroll-me-<number>` 工具设置 `scroll-margin-inline-start` 和 `scroll-margin-inline-end` [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)，这些属性基于文本方向映射至左侧或右侧：
+使用 `scroll-ms-<number>` 和 `scroll-me-<number>` 工具设置 `scroll-margin-inline-start` 和 `scroll-margin-inline-end` [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)，这些属性根据文本方向映射到左侧或右侧：
 
-<Figure hint="在图像网格中滚动以查看预期行为">
+<Figure hint="在图像网格中滚动以查看预期效果">
 
 <Example padding={false}>
   {
     <>
-      <p className="mb-4 pt-8 pl-6 text-sm font-medium">从左到右</p>
+      <p className="mb-4 pt-8 pl-6 text-sm font-medium">从左至右</p>
       <div className="flex w-full snap-x gap-12 overflow-x-auto pb-10" dir="ltr">
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pr-[calc(100%-21.5rem)]">
           <Stripes border className="absolute start-0 top-0 bottom-0 w-6" />
@@ -158,7 +158,7 @@ export const description = "控制快照容器中项目周围滚动偏移的工�
           />
         </div>
       </div>
-      <p className="mt-4 mb-4 pl-6 text-sm font-medium">从右到左</p>
+      <p className="mt-4 mb-4 pl-6 text-sm font-medium">从右至左</p>
       <div className="flex w-full snap-x gap-12 overflow-x-auto pb-10" dir="rtl">
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pl-[calc(100%-21.5rem)]">
           <Stripes border className="absolute start-0 top-0 bottom-0 w-6" />
@@ -226,7 +226,7 @@ export const description = "控制快照容器中项目周围滚动偏移的工�
 
 </Figure>
 
-为了获得更多控制，您还可以使用 [LTR 和 RTL 修饰符](/docs/hover-focus-and-other-states#rtl-support) 根据当前文本方向有条件地应用特定样式。
+为了获得更好的控制，还可以使用 [LTR 和 RTL 修饰符](/docs/hover-focus-and-other-states#rtl-support) 来根据当前文本方向有条件地应用特定样式。
 
 ### 使用自定义值
 

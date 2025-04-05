@@ -126,7 +126,7 @@ export const description = "控制元素边框宽度的工具类。";
 
 ### 基本示例
 
-使用 `border` 或 `border-<number>` 工具类，如 `border-2` 和 `border-4` 来设置元素所有边的边框宽度：
+使用 `border` 或 `border-<数字>` 工具类，如 `border-2` 和 `border-4`，设置元素的所有边框宽度：
 
 <Figure>
 
@@ -134,19 +134,19 @@ export const description = "控制元素边框宽度的工具类。";
   {
     <div className="flex flex-col items-center justify-around gap-4 text-center text-sm leading-6 font-bold text-white sm:flex-row">
       <div className="flex shrink-0 flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">border</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">边框</p>
         <div className="size-16 border border-indigo-600 p-4"></div>
       </div>
       <div className="flex shrink-0 flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">border-2</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">边框-2</p>
         <div className="size-16 border-2 border-indigo-600 p-4"></div>
       </div>
       <div className="flex shrink-0 flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">border-4</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">边框-4</p>
         <div className="size-16 border-4 border-indigo-600 p-4"></div>
       </div>
       <div className="flex shrink-0 flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">border-8</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">边框-8</p>
         <div className="size-16 border-8 border-indigo-600 p-4"></div>
       </div>
     </div>
@@ -154,18 +154,18 @@ export const description = "控制元素边框宽度的工具类。";
 </Example>
 
 ```html
-<!-- [!code classes:border,border-2,border-4,border-8] -->
-<div class="border border-indigo-600 ..."></div>
-<div class="border-2 border-indigo-600 ..."></div>
-<div class="border-4 border-indigo-600 ..."></div>
-<div class="border-8 border-indigo-600 ..."></div>
+<!-- [!code classes:边框,border-2,border-4,border-8] -->
+<div class="边框 border-indigo-600 ..."></div>
+<div class="边框-2 border-indigo-600 ..."></div>
+<div class="边框-4 border-indigo-600 ..."></div>
+<div class="边框-8 border-indigo-600 ..."></div>
 ```
 
 </Figure>
 
-### 单个边
+### 单边
 
-使用 `border-r` 和 `border-t-4` 等工具类来设置元素一个边的边框宽度：
+使用 `border-r` 和 `border-t-4` 等工具类设置某一侧的边框宽度：
 
 <Figure>
 
@@ -173,19 +173,19 @@ export const description = "控制元素边框宽度的工具类。";
   {
     <div className="flex flex-col items-center justify-around gap-4 text-center text-sm leading-6 font-bold text-white sm:flex-row">
       <div className="flex shrink-0 flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">border-t-4</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">边框-t-4</p>
         <div className="size-16 border-t-4 border-indigo-500 p-4 outline-1 -outline-offset-1 outline-gray-900/20 outline-dashed dark:outline-white/20"></div>
       </div>
       <div className="flex shrink-0 flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">border-r-4</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">边框-r-4</p>
         <div className="size-16 border-r-4 border-indigo-500 p-4 outline-1 -outline-offset-1 outline-gray-900/20 outline-dashed dark:outline-white/20"></div>
       </div>
       <div className="flex shrink-0 flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">border-b-4</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">边框-b-4</p>
         <div className="size-16 border-b-4 border-indigo-500 p-4 outline-1 -outline-offset-1 outline-gray-900/20 outline-dashed dark:outline-white/20"></div>
       </div>
       <div className="flex shrink-0 flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">border-l-4</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">边框-l-4</p>
         <div className="size-16 border-l-4 border-indigo-500 p-4 outline-1 -outline-offset-1 outline-gray-900/20 outline-dashed dark:outline-white/20"></div>
       </div>
     </div>
@@ -194,17 +194,17 @@ export const description = "控制元素边框宽度的工具类。";
 
 ```html
 <!-- [!code classes:border-t-4,border-r-4,border-b-4,border-l-4] -->
-<div class="border-t-4 border-indigo-500 ..."></div>
-<div class="border-r-4 border-indigo-500 ..."></div>
-<div class="border-b-4 border-indigo-500 ..."></div>
-<div class="border-l-4 border-indigo-500 ..."></div>
+<div class="边框-t-4 border-indigo-500 ..."></div>
+<div class="边框-r-4 border-indigo-500 ..."></div>
+<div class="边框-b-4 border-indigo-500 ..."></div>
+<div class="边框-l-4 border-indigo-500 ..."></div>
 ```
 
 </Figure>
 
 ### 水平和垂直边
 
-使用 `border-x` 和 `border-y-4` 等工具类同时设置元素两个边的边框宽度：
+使用 `border-x` 和 `border-y-4` 等工具类，设置元素两侧的边框宽度：
 
 <Figure>
 
@@ -212,11 +212,11 @@ export const description = "控制元素边框宽度的工具类。";
   {
     <div className="flex flex-col items-center justify-around gap-4 text-center text-sm leading-6 font-bold text-white sm:flex-row">
       <div className="flex shrink-0 flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">border-x-4</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">边框-x-4</p>
         <div className="size-16 border-x-4 border-indigo-500 p-4 outline-1 -outline-offset-1 outline-gray-900/20 outline-dashed dark:outline-white/20"></div>
       </div>
       <div className="flex shrink-0 flex-col items-center">
-        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">border-y-4</p>
+        <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">边框-y-4</p>
         <div className="size-16 border-y-4 border-indigo-500 p-4 outline-1 -outline-offset-1 outline-gray-900/20 outline-dashed dark:outline-white/20"></div>
       </div>
     </div>
@@ -233,7 +233,7 @@ export const description = "控制元素边框宽度的工具类。";
 
 ### 使用逻辑属性
 
-使用 `border-s` 和 `border-e-4` 等工具类来设置 `border-inline-start-width` 和 `border-inline-end-width` [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)，这些逻辑属性根据文本方向映射到左边或右边：
+使用 `border-s` 和 `border-e-4` 等工具类设置 `border-inline-start-width` 和 `border-inline-end-width` [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)，根据文本方向映射到左边或右边边框：
 
 <Figure>
 
@@ -257,16 +257,16 @@ export const description = "控制元素边框宽度的工具类。";
 <!-- [!code word:dir="rtl"] -->
 <!-- [!code classes:border-s-4] -->
 <div dir="ltr">
-  <div class="border-s-4 ..."></div>
+  <div class="边框-s-4 ..."></div>
 </div>
 <div dir="rtl">
-  <div class="border-s-4 ..."></div>
+  <div class="边框-s-4 ..."></div>
 </div>
 ```
 
 </Figure>
 
-### 在子元素之间
+### 子元素之间
 
 使用 `divide-x` 和 `divide-y-4` 等工具类在子元素之间添加边框：
 
@@ -295,7 +295,7 @@ export const description = "控制元素边框宽度的工具类。";
 
 #### 反转子元素顺序
 
-如果你的元素顺序反转（使用如 `flex-row-reverse` 或 `flex-col-reverse`），使用 `divide-x-reverse` 或 `divide-y-reverse` 工具类来确保边框添加到每个元素的正确边：
+如果你的元素顺序被反转（比如使用 `flex-row-reverse` 或 `flex-col-reverse`），使用 `divide-x-reverse` 或 `divide-y-reverse` 工具类，以确保边框添加到每个元素的正确侧面：
 
 <Figure>
 

@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "caption-side";
-export const description = "控制表格中标题元素对齐的工具。";
+export const title = "标题位置";
+export const description = "控制表格中标题元素对齐的工具类。";
 
 <ApiTable
   rows={[
@@ -15,9 +15,9 @@ export const description = "控制表格中标题元素对齐的工具。";
 
 ## 示例
 
-### 放置在表格顶部
+### 将标题放在表格顶部
 
-使用 `caption-top` 工具将标题元素定位在表格的顶部：
+使用 `caption-top` 工具类将标题元素定位于表格顶部：
 
 <Figure>
 
@@ -26,7 +26,7 @@ export const description = "控制表格中标题元素对齐的工具。";
     <div className="overflow-hidden px-4 py-8 sm:px-8">
       <table className="w-full table-auto border-collapse text-sm">
         <caption className="caption-top pb-4 text-xs text-gray-500 dark:text-gray-400">
-          表 3.1：职业摔跤手及其标志性动作。
+          表 3.1: 职业摔跤手及其招牌动作。
         </caption>
         <thead>
           <tr>
@@ -34,33 +34,33 @@ export const description = "控制表格中标题元素对齐的工具。";
               摔跤手
             </th>
             <th className="border border-gray-200 bg-gray-50 p-4 py-3 pr-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200">
-              标志性动作
+              招牌动作
             </th>
           </tr>
         </thead>
         <tbody className="bg-white dark:bg-gray-800">
           <tr>
             <td className="border border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              "石冷" 史蒂夫·奥斯汀
+              “冰冷的石头” 史蒂夫·奥斯汀
             </td>
             <td className="border border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              石冷震撼，路·瑟斯压制
+              冰冷的石头惊喜, 路·塞斯压制
             </td>
           </tr>
           <tr>
             <td className="border border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              布雷特 "杀手" 哈特
+              布雷特“杀手”哈特
             </td>
             <td className="border border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              锐 shooter 技
+              锐射手
             </td>
           </tr>
           <tr>
             <td className="border border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              剃刀拉蒙
+              刀锋拉蒙
             </td>
             <td className="border border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              剃刀边缘，落击
+              刀锋的边缘, 摔落猛击
             </td>
           </tr>
         </tbody>
@@ -73,26 +73,26 @@ export const description = "控制表格中标题元素对齐的工具。";
 <!-- [!code classes:caption-top] -->
 <table>
   <caption class="caption-top">
-    表 3.1：职业摔跤手及其标志性动作。
+    表 3.1: 职业摔跤手及其招牌动作。
   </caption>
   <thead>
     <tr>
       <th>摔跤手</th>
-      <th>标志性动作</th>
+      <th>招牌动作</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>"石冷" 史蒂夫·奥斯汀</td>
-      <td>石冷震撼，路·瑟斯压制</td>
+      <td>“冰冷的石头” 史蒂夫·奥斯汀</td>
+      <td>冰冷的石头惊喜, 路·塞斯压制</td>
     </tr>
     <tr>
-      <td>布雷特 "杀手" 哈特</td>
-      <td>锐 shooter 技</td>
+      <td>布雷特“杀手”哈特</td>
+      <td>锐射手</td>
     </tr>
     <tr>
-      <td>剃刀拉蒙</td>
-      <td>剃刀边缘，落击</td>
+      <td>刀锋拉蒙</td>
+      <td>刀锋的边缘, 摔落猛击</td>
     </tr>
   </tbody>
 </table>
@@ -100,9 +100,9 @@ export const description = "控制表格中标题元素对齐的工具。";
 
 </Figure>
 
-### 放置在表格底部
+### 将标题放在表格底部
 
-使用 `caption-bottom` 工具将标题元素定位在表格的底部：
+使用 `caption-bottom` 工具类将标题元素定位于表格底部：
 
 <Figure>
 
@@ -111,7 +111,7 @@ export const description = "控制表格中标题元素对齐的工具。";
     <div className="overflow-hidden px-4 py-8 sm:px-8">
       <table className="w-full table-auto border-collapse text-sm">
         <caption className="caption-bottom pt-4 text-xs text-gray-500 dark:text-gray-400">
-          表 3.1：职业摔跤手及其标志性动作。
+          表 3.1: 职业摔跤手及其招牌动作。
         </caption>
         <thead>
           <tr>
@@ -119,33 +119,33 @@ export const description = "控制表格中标题元素对齐的工具。";
               摔跤手
             </th>
             <th className="border border-gray-200 bg-gray-50 p-4 py-3 pr-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200">
-              标志性动作
+              招牌动作
             </th>
           </tr>
         </thead>
         <tbody className="bg-white dark:bg-gray-800">
           <tr>
             <td className="border border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              "石冷" 史蒂夫·奥斯汀
+              “冰冷的石头” 史蒂夫·奥斯汀
             </td>
             <td className="border border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              石冷震撼，路·瑟斯压制
+              冰冷的石头惊喜, 路·塞斯压制
             </td>
           </tr>
           <tr>
             <td className="border border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              布雷特 "杀手" 哈特
+              布雷特“杀手”哈特
             </td>
             <td className="border border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              锐 shooter 技
+              锐射手
             </td>
           </tr>
           <tr>
             <td className="border border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              剃刀拉蒙
+              刀锋拉蒙
             </td>
             <td className="border border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              剃刀边缘，落击
+              刀锋的边缘, 摔落猛击
             </td>
           </tr>
         </tbody>
@@ -158,26 +158,26 @@ export const description = "控制表格中标题元素对齐的工具。";
 <!-- [!code word:caption-bottom] -->
 <table>
   <caption class="caption-bottom">
-    表 3.1：职业摔跤手及其标志性动作。
+    表 3.1: 职业摔跤手及其招牌动作。
   </caption>
   <thead>
     <tr>
       <th>摔跤手</th>
-      <th>标志性动作</th>
+      <th>招牌动作</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>"石冷" 史蒂夫·奥斯汀</td>
-      <td>石冷震撼，路·瑟斯压制</td>
+      <td>“冰冷的石头” 史蒂夫·奥斯汀</td>
+      <td>冰冷的石头惊喜, 路·塞斯压制</td>
     </tr>
     <tr>
-      <td>布雷特 "杀手" 哈特</td>
-      <td>锐 shooter 技</td>
+      <td>布雷特“杀手”哈特</td>
+      <td>锐射手</td>
     </tr>
     <tr>
-      <td>剃刀拉蒙</td>
-      <td>剃刀边缘，落击</td>
+      <td>刀锋拉蒙</td>
+      <td>刀锋的边缘, 摔落猛击</td>
     </tr>
   </tbody>
 </table>

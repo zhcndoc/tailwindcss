@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "overflow-wrap";
-export const description = "Utilities for controlling line breaks within words in an overflowing element.";
+export const description = "用于控制溢出元素中文字换行的工具。";
 
 <ApiTable
   rows={[
@@ -14,11 +14,11 @@ export const description = "Utilities for controlling line breaks within words i
   ]}
 />
 
-## Examples
+## 示例
 
-### Wrapping mid-word
+### 中间换行
 
-Use the `wrap-break-word` utility to allow line breaks between letters in a word if needed:
+使用 `wrap-break-word` 工具，当需要时允许单词中间的字母换行：
 
 <Figure>
 
@@ -35,14 +35,14 @@ Use the `wrap-break-word` utility to allow line breaks between letters in a word
 
 ```html
 <!-- [!code classes:wrap-break-word] -->
-<p class="wrap-break-word">The longest word in any of the major...</p>
+<p class="wrap-break-word">在所有主要的英语字典中，最长的单词是...</p>
 ```
 
 </Figure>
 
-### Wrapping anywhere
+### 随处换行
 
-The `wrap-anywhere` utility behaves similarly to `wrap-break-word`, except that the browser factors in mid-word line breaks when calculating the intrinsic size of the element:
+`wrap-anywhere` 工具的行为与 `wrap-break-word` 类似，除了浏览器在计算元素的固有大小时考虑了单词中间的换行：
 
 <Figure>
 
@@ -99,11 +99,11 @@ The `wrap-anywhere` utility behaves similarly to `wrap-break-word`, except that 
 
 </Figure>
 
-This is useful for wrapping text inside of `flex` containers, where you would usually need to set `min-width: 0` on the child element to allow it to shrink below its content size.
+这在 `flex` 容器内包裹文本时非常有用，通常需要在子元素上设置 `min-width: 0` 以允许其缩小到内容大小以下。
 
-### Wrapping normally
+### 正常换行
 
-Use the `wrap-normal` utility to only allow line breaks at natural wrapping points, like spaces, hyphens, and punctuation:
+使用 `wrap-normal` 工具仅允许在自然换行点进行换行，比如空格、连字符和标点符号：
 
 <Figure>
 
@@ -120,11 +120,11 @@ Use the `wrap-normal` utility to only allow line breaks at natural wrapping poin
 
 ```html
 <!-- [!code classes:wrap-normal] -->
-<p class="wrap-normal">The longest word in any of the major...</p>
+<p class="wrap-normal">在所有主要的英语字典中，最长的单词是...</p>
 ```
 
 </Figure>
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign element="p" property="overflow-wrap" defaultClass="wrap-normal" featuredClass="wrap-break-word" />

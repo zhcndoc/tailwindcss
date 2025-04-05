@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "list-style-position";
-export const description = "用于控制列表中项目符号和数字位置的工具。";
+export const title = "列表样式位置";
+export const description = "控制列表中项目符号和数字位置的工具。";
 
 <ApiTable
   rows={[
@@ -17,7 +17,7 @@ export const description = "用于控制列表中项目符号和数字位置的�
 
 ### 基本示例
 
-使用 `list-inside` 和 `list-outside` 等工具来控制列表中标记和文本缩进的位置：
+使用类似 `list-inside` 和 `list-outside` 的工具来控制列表中标记和文本缩进的位置：
 
 <Figure>
 
@@ -26,20 +26,20 @@ export const description = "用于控制列表中项目符号和数字位置的�
     <div className="flex flex-col gap-8 sm:flex-row">
       <div className="relative">
         <div className="absolute -top-8 -bottom-8 left-8 w-px bg-pink-400/40 dark:bg-pink-400/30"></div>
-        <p className="mb-3 ml-8 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">list-inside</p>
+        <p className="mb-3 ml-8 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">列表内部</p>
         <ul className="list-inside list-disc rounded-xl p-4 pl-8 text-gray-900 dark:text-gray-200">
-          <li>5 杯切碎的松茸</li>
-          <li>1/2 杯橄榄油</li>
-          <li>3 磅芹菜</li>
+          <li>5杯切碎的波尔奇尼蘑菇</li>
+          <li>1/2杯橄榄油</li>
+          <li>3磅芹菜</li>
         </ul>
       </div>
       <div className="relative">
         <div className="absolute -top-0 -bottom-8 left-8 w-px bg-pink-400/40 sm:-top-8 dark:bg-pink-400/30"></div>
-        <p className="mb-3 ml-8 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">list-outside</p>
+        <p className="mb-3 ml-8 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">列表外部</p>
         <ul className="list-outside list-disc rounded-xl p-4 pl-8 text-gray-900 dark:text-gray-200">
-          <li>5 杯切碎的松茸</li>
-          <li>1/2 杯橄榄油</li>
-          <li>3 磅芹菜</li>
+          <li>5杯切碎的波尔奇尼蘑菇</li>
+          <li>1/2杯橄榄油</li>
+          <li>3磅芹菜</li>
         </ul>
       </div>
     </div>
@@ -49,13 +49,13 @@ export const description = "用于控制列表中项目符号和数字位置的�
 ```html
 <!-- [!code classes:list-inside] -->
 <ul class="list-inside">
-  <li>5 杯切碎的松茸</li>
+  <li>5杯切碎的波尔奇尼蘑菇</li>
   <!-- ... -->
 </ul>
 
 <!-- [!code classes:list-outside] -->
 <ul class="list-outside">
-  <li>5 杯切碎的松茸</li>
+  <li>5杯切碎的波尔奇尼蘑菇</li>
   <!-- ... -->
 </ul>
 ```

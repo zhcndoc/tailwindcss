@@ -3,7 +3,7 @@ import { Example } from "@/components/example.tsx";
 import { UsingACustomValue } from "@/components/content.tsx";
 
 export const title = "will-change";
-export const description = "用于优化预计将要变化的元素的即将到来的动画的工具类。";
+export const description = "用于优化即将发生变化的元素的动画的工具。";
 
 <ApiTable
   rows={[
@@ -18,9 +18,9 @@ export const description = "用于优化预计将要变化的元素的即将到�
 
 ## 示例
 
-### 使用 will-change 进行优化
+### 使用 will-change 优化
 
-使用 `will-change-scroll`、`will-change-contents` 和 `will-change-transform` 工具类来优化一个预计将在不久的将来发生变化的元素，通过指示浏览器在动画实际开始之前准备必要的动画：
+使用 `will-change-scroll`、`will-change-contents` 和 `will-change-transform` 工具来优化预期在不久的将来会发生变化的元素，通过指示浏览器在实际开始动画之前准备必要的动画：
 
 ```html
 <!-- [!code classes:will-change-scroll] -->
@@ -29,9 +29,9 @@ export const description = "用于优化预计将要变化的元素的即将到�
 </div>
 ```
 
-建议在元素变化之前立即应用这些工具类，然后在动画完成后不久使用 `will-change-auto` 将其移除。
+建议在元素发生变化之前应用这些工具，并在动画结束后不久使用 `will-change-auto` 将其移除。
 
-`will-change` 属性旨在作为处理**已知性能问题**的最后手段来使用。避免过多使用这些工具类，或仅仅因为预期的性能问题而使用它们，因为这实际上可能导致页面性能降低。
+`will-change` 属性旨在作为处理**已知性能问题**时的最后手段。避免过度使用这些工具，或者仅仅是为了预防性能问题，因为这实际上可能导致页面性能下降。
 
 ### 使用自定义值
 

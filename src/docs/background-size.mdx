@@ -4,8 +4,8 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "background-size";
-export const description = "用于控制元素背景图像背景大小的工具类。";
+export const title = "背景大小";
+export const description = "用于控制元素背景图像大小的工具类。";
 
 <ApiTable
   rows={[
@@ -19,9 +19,9 @@ export const description = "用于控制元素背景图像背景大小的工具�
 
 ## 示例
 
-### 填充容器
+### 填满容器
 
-使用 `bg-cover` 工具类缩放背景图像，使其填满背景层，必要时裁剪图像：
+使用 `bg-cover` 工具类缩放背景图像，直到填满背景层，如有必要则裁剪图像：
 
 <Figure>
 
@@ -43,9 +43,9 @@ export const description = "用于控制元素背景图像背景大小的工具�
 
 </Figure>
 
-### 无裁剪填充
+### 填满而不裁剪
 
-使用 `bg-contain` 工具类将背景图像缩放至外边缘，而不裁剪或拉伸：
+使用 `bg-contain` 工具类将背景图像缩放到外边缘，而不裁剪或拉伸：
 
 <Figure>
 
@@ -69,7 +69,7 @@ export const description = "用于控制元素背景图像背景大小的工具�
 
 ### 使用默认大小
 
-使用 `bg-auto` 工具类以默认大小显示背景图像：
+使用 `bg-auto` 工具类以其默认大小显示背景图像：
 
 <Figure>
 
@@ -93,8 +93,8 @@ export const description = "用于控制元素背景图像背景大小的工具�
 
 ### 使用自定义值
 
-<UsingACustomValue utility="bg-size" value="auto_100px" name="background size" variable="image-size" />
+<UsingACustomValue utility="bg-size" value="auto_100px" name="背景大小" variable="image-size" />
 
 ### 响应式设计
 
-<ResponsiveDesign property="background-size" defaultClass="bg-auto" featuredClass="bg-contain" />
+<ResponsiveDesign property="背景大小" defaultClass="bg-auto" featuredClass="bg-contain" />

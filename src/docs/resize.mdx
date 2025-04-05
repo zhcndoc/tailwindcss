@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "调整大小";
-export const description = "用于控制元素如何调整大小的工具。";
+export const title = "resize";
+export const description = "用于控制元素可以如何调整大小的工具。";
 
 <ApiTable
   rows={[
@@ -17,11 +17,11 @@ export const description = "用于控制元素如何调整大小的工具。";
 
 ## 示例
 
-### 在所有方向上调整大小
+### 全向调整大小
 
 使用 `resize` 使元素在水平和垂直方向上可调整大小：
 
-<Figure hint="在演示中拖动文本区域的控件以查看预期行为">
+<Figure hint="在演示中拖动文本区域的手柄以查看预期行为">
 
 <Example>
   {
@@ -43,7 +43,7 @@ export const description = "用于控制元素如何调整大小的工具。";
 
 使用 `resize-y` 使元素在垂直方向上可调整大小：
 
-<Figure hint="在演示中拖动文本区域的控件以查看预期行为">
+<Figure hint="在演示中拖动文本区域的手柄以查看预期行为">
 
 <Example>
   {
@@ -65,7 +65,7 @@ export const description = "用于控制元素如何调整大小的工具。";
 
 使用 `resize-x` 使元素在水平方向上可调整大小：
 
-<Figure hint="在演示中拖动文本区域的控件以查看预期行为">
+<Figure hint="在演示中拖动文本区域的手柄以查看预期行为">
 
 <Example>
   {
@@ -83,11 +83,11 @@ export const description = "用于控制元素如何调整大小的工具。";
 
 </Figure>
 
-### 防止调整大小
+### 禁止调整大小
 
-使用 `resize-none` 防止元素可调整大小：
+使用 `resize-none` 禁止元素可调整大小：
 
-<Figure hint="注意文本区域的控件消失了">
+<Figure hint="注意文本区域的手柄消失了">
 
 <Example>
   {

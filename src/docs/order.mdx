@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "顺序";
-export const description = "用于控制弹性盒子和网格项顺序的工具。";
+export const title = "排序";
+export const description = "用于控制弹性盒子和网格项目顺序的工具类。";
 
 <ApiTable
   rows={[
@@ -22,7 +22,7 @@ export const description = "用于控制弹性盒子和网格项顺序的工具�
 
 ### 显式设置排序顺序
 
-使用 `order-<number>` 工具，如 `order-1` 和 `order-3`，以不同于它们在文档中出现的顺序渲染弹性盒子和网格项：
+使用 `order-<number>` 工具类，如 `order-1` 和 `order-3`，可以按照不同于文档中显示顺序的方式呈现弹性盒子和网格项目：
 
 <Figure>
 
@@ -47,9 +47,9 @@ export const description = "用于控制弹性盒子和网格项顺序的工具�
 
 </Figure>
 
-### 使项位于第一或最后
+### 将项目置于首位或末位
 
-使用 `order-first` 和 `order-last` 工具将弹性盒子和网格项渲染为第一或最后：
+使用 `order-first` 和 `order-last` 工具类可以将弹性盒子和网格项目呈现为首位或末位：
 
 <Figure>
 
@@ -76,7 +76,7 @@ export const description = "用于控制弹性盒子和网格项顺序的工具�
 
 ### 使用负值
 
-要使用负的顺序值，请在类名之前加上连字符以将其转换为负值：
+要使用负的排序值，可以在类名前添加一个短横线来将其转换为负值：
 
 ```html
 <!-- [!code classes:-order-1] -->

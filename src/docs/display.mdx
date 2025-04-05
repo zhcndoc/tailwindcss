@@ -5,8 +5,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "display";
-export const description = "控制元素的显示盒子类型的工具。";
+export const title = "显示";
+export const description = "控制元素显示框类型的工具类。";
 
 <ApiTable
   rows={[
@@ -65,32 +65,32 @@ export const description = "控制元素的显示盒子类型的工具。";
 
 ### 块级和行内
 
-使用 `inline`、`inline-block` 和 `block` 工具来控制文本和元素的流动：
+使用 `inline`、`inline-block` 和 `block` 工具类来控制文本和元素的流动：
 
 <Figure>
 
 <Example>
   {
     <div className="mx-auto max-w-xs px-4 text-sm leading-6 text-gray-500 sm:text-base sm:leading-7 dark:text-gray-300">
-      控制文本流动时，使用 CSS 属性{" "}
+      在控制文本流动时，使用 CSS 属性{" "}
       <span className="inline rounded bg-sky-100 font-mono text-sm font-bold text-gray-900 dark:bg-white/15 dark:text-gray-200">
         display: inline
       </span>{" "}
-      会使元素内的文本正常换行。
+      会使元素内部的文本正常换行。
       <br />
       <br />
-      使用属性{" "}
+      而使用属性{" "}
       <span className="inline-block rounded bg-sky-100 font-mono text-sm font-bold text-gray-900 dark:bg-white/15 dark:text-gray-200">
         display: inline-block
       </span>{" "}
-      会限制元素的宽度，防止文本超出其父元素。
+      则会将元素包裹起来，以防止内部文本超出其父级。
       <br />
       <br />
       最后，使用属性{" "}
       <span className="block rounded bg-sky-100 font-mono text-sm font-bold text-gray-900 dark:bg-white/15 dark:text-gray-200">
         display: block
       </span>{" "}
-      会使元素独占一行并填满其父元素。
+      会将元素放在单独的一行中并填满其父级。
     </div>
   }
 </Example>
@@ -98,13 +98,13 @@ export const description = "控制元素的显示盒子类型的工具。";
 ```html
 <!-- [!code classes:inline,inline-block,block] -->
 <p>
-  控制文本流动时，使用 CSS 属性 <span class="inline">display: inline</span> 会使元素内的文本正常换行。
+  在控制文本流动时，使用 CSS 属性 <span class="inline">display: inline</span> 会使元素内部的文本正常换行。
 </p>
 <p>
-  使用属性 <span class="inline-block">display: inline-block</span> 会限制元素的宽度，防止文本超出其父元素。
+  而使用属性 <span class="inline-block">display: inline-block</span> 则会将元素包裹起来，以防止内部文本超出其父级。
 </p>
 <p>
-  最后，使用属性 <span class="block">display: block</span> 会使元素独占一行并填满其父元素。
+  最后，使用属性 <span class="block">display: block</span> 会将元素放在单独的一行中并填满其父级。
 </p>
 ```
 
@@ -112,7 +112,7 @@ export const description = "控制元素的显示盒子类型的工具。";
 
 ### 流根
 
-使用 `flow-root` 工具创建具有自己 [块格式化上下文](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context) 的块级元素：
+使用 `flow-root` 工具类来创建一个具有自己 [块格式上下文](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context) 的块级元素：
 
 <Figure>
 
@@ -127,7 +127,7 @@ export const description = "控制元素的显示盒子类型的工具。";
           <Stripes border className="h-4" />
         </div>
         <div className="my-4">
-          嗯，让我告诉你点什么，搞笑的小子。你知道那个小邮票吗，上面写着“纽约公共图书馆”？那对你可能没什么意义，但对我意义重大。真是太重要了。
+          好吧，让我告诉你一些事情，幽默的小子。你知道那张印有“纽约公共图书馆”的小邮票吗？这可能对你没有什么意义，但对我来说，这意味着很多。绝对是非常重要。
         </div>
       </div>
       <div className="relative mt-0.5 flow-root">
@@ -138,7 +138,7 @@ export const description = "控制元素的显示盒子类型的工具。";
           <Stripes border className="h-4" />
         </div>
         <div className="my-4">
-          当然，可以的话尽管笑。我见过你这种类型：华丽、引人注目、标榜常规。是的，我知道你在想什么。这个家伙为什么对旧图书馆书籍这么大惊小怪？好吧，让我给你一个提示，年轻人。
+          当然，如果你想，可以笑。 我见过你这一类型的人：张扬，喜欢出风头，蔑视传统。是的，我知道你在想什么。这个家伙在为旧图书馆书籍发什么愁呢？好吧，让我给你一个提示，小子。
         </div>
       </div>
     </div>
@@ -149,10 +149,10 @@ export const description = "控制元素的显示盒子类型的工具。";
 <!-- [!code classes:flow-root] -->
 <div class="p-4">
   <div class="flow-root ...">
-    <div class="my-4 ...">嗯，让我告诉你点什么，...</div>
+    <div class="my-4 ...">好吧，让我告诉你一些事情，...</div>
   </div>
   <div class="flow-root ...">
-    <div class="my-4 ...">当然，可以的话尽管笑...</div>
+    <div class="my-4 ...">当然，如果你想，可以笑...</div>
   </div>
 </div>
 ```
@@ -161,7 +161,7 @@ export const description = "控制元素的显示盒子类型的工具。";
 
 ### Flex
 
-使用 `flex` 工具创建一个块级弹性容器：
+使用 `flex` 工具类创建一个块级的 flex 容器：
 
 <Figure>
 
@@ -197,23 +197,23 @@ export const description = "控制元素的显示盒子类型的工具。";
 
 ### 行内 Flex
 
-使用 `inline-flex` 工具创建一个与文本流动的行内弹性容器：
+使用 `inline-flex` 工具类创建一个与文本流动的行内 flex 容器：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-lg p-4 text-sm leading-6 text-gray-500 sm:text-base/7 dark:text-gray-300">
-      今天我花了大部分时间研究如何利用在密歇根州瓶子可以退回10美分，而在这里只能退回5美分的事实。{" "}
+      今天我花了大部分时间研究如何利用在密歇根州可以退瓶拿到 10 美分，而在这里只能退到 5 美分。{" "}
       <span className="ml-1 inline-flex items-baseline">
         <img
           src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80"
           alt=""
           className="mr-1 size-5 self-center rounded-full"
         />
-        <span className="font-medium text-gray-900 dark:text-gray-100">克雷默</span>
+        <span className="font-medium text-gray-900 dark:text-gray-100">克拉默</span>
       </span>{" "}
-      一直告诉我没有办法让它工作，他已经对每种可能的方法进行了计算，但我只需相信一定有办法让它工作，这里机会实在太多了。
+      还不断告诉我，没有办法让它奏效，他已经对每种可能的方法都进行了计算，但我只能相信，总有办法让它奏效，这里绝对有太多机会。
     </p>
   }
 </Example>
@@ -221,12 +221,12 @@ export const description = "控制元素的显示盒子类型的工具。";
 ```html
 <!-- [!code classes:inline-flex] -->
 <p>
-  今天我花了大部分时间研究如何利用 ...
+  今天我花了大部分时间研究如何 ...
   <span class="inline-flex items-baseline">
     <img src="/img/kramer.jpg" class="mx-1 size-5 self-center rounded-full" />
-    <span>克雷默</span>
+    <span>克拉默</span>
   </span>
-  一直告诉我没有办法让它工作，那 ...
+  还不断告诉我，没有办法让它奏效，...
 </p>
 ```
 
@@ -234,7 +234,7 @@ export const description = "控制元素的显示盒子类型的工具。";
 
 ### 网格
 
-使用 `grid` 工具创建一个网格容器：
+使用 `grid` 工具类创建一个网格容器：
 
 <Figure>
 
@@ -268,7 +268,7 @@ export const description = "控制元素的显示盒子类型的工具。";
 
 ### 行内网格
 
-使用 `inline-grid` 工具创建一个行内网格容器：
+使用 `inline-grid` 工具类创建一个行内网格容器：
 
 <Figure>
 
@@ -325,7 +325,7 @@ export const description = "控制元素的显示盒子类型的工具。";
 
 ### 内容
 
-使用 `contents` 工具创建一个“虚幻”容器，其子元素像父元素的直接子元素一样表现：
+使用 `contents` 工具类创建一个“幽灵”容器，其子元素行为像其父元素的直接子元素：
 
 <Figure>
 
@@ -361,7 +361,7 @@ export const description = "控制元素的显示盒子类型的工具。";
 
 ### 表格
 
-使用 `table`、`table-row`、`table-cell`、`table-caption`、`table-column`、`table-column-group`、`table-header-group`、`table-row-group` 和 `table-footer-group` 工具创建类似于相应表格元素的元素：
+使用 `table`、`table-row`、`table-cell`、`table-caption`、`table-column`、`table-column-group`、`table-header-group`、`table-row-group` 和 `table-footer-group` 工具类来创建行为类似于其各自表格元素的元素：
 
 <Figure>
 
@@ -385,10 +385,10 @@ export const description = "控制元素的显示盒子类型的工具。";
         <div className="table-row-group dark:bg-black/5">
           <div className="table-row">
             <div className="table-cell border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-white/10 dark:text-gray-300">
-              滑动的骨头先生 (下一站，波特斯维尔)
+              The Sliding Mr. Bones (Next Stop, Pottersville)
             </div>
             <div className="table-cell border-b border-gray-100 p-4 text-gray-500 dark:border-white/10 dark:text-gray-300">
-              马尔科姆·洛克耶
+              Malcolm Lockyer
             </div>
             <div className="table-cell border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-white/10 dark:text-gray-300">
               1961
@@ -396,10 +396,10 @@ export const description = "控制元素的显示盒子类型的工具。";
           </div>
           <div className="table-row">
             <div className="table-cell border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-white/10 dark:text-gray-300">
-              女巫女郎
+              Witchy Woman
             </div>
             <div className="table-cell border-b border-gray-100 p-4 text-gray-500 dark:border-white/10 dark:text-gray-300">
-              老鹰乐队
+              The Eagles
             </div>
             <div className="table-cell border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-white/10 dark:text-gray-300">
               1972
@@ -407,10 +407,10 @@ export const description = "控制元素的显示盒子类型的工具。";
           </div>
           <div className="table-row">
             <div className="table-cell border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-white/20 dark:text-gray-300">
-              闪亮之星
+              Shining Star
             </div>
             <div className="table-cell border-b border-gray-100 p-4 text-gray-500 dark:border-white/20 dark:text-gray-300">
-              大地、风与火
+              Earth, Wind, and Fire
             </div>
             <div className="table-cell border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-white/20 dark:text-gray-300">
               1975
@@ -434,18 +434,18 @@ export const description = "控制元素的显示盒子类型的工具。";
   </div>
   <div class="table-row-group">
     <div class="table-row">
-      <div class="table-cell ...">滑动的骨头先生 (下一站，波特斯维尔)</div>
-      <div class="table-cell ...">马尔科姆·洛克耶</div>
+      <div class="table-cell ...">The Sliding Mr. Bones (Next Stop, Pottersville)</div>
+      <div class="table-cell ...">Malcolm Lockyer</div>
       <div class="table-cell ...">1961</div>
     </div>
     <div class="table-row">
-      <div class="table-cell ...">女巫女郎</div>
-      <div class="table-cell ...">老鹰乐队</div>
+      <div class="table-cell ...">Witchy Woman</div>
+      <div class="table-cell ...">The Eagles</div>
       <div class="table-cell ...">1972</div>
     </div>
     <div class="table-row">
-      <div class="table-cell ...">闪亮之星</div>
-      <div class="table-cell ...">大地、风与火</div>
+      <div class="table-cell ...">Shining Star</div>
+      <div class="table-cell ...">Earth, Wind, and Fire</div>
       <div class="table-cell ...">1975</div>
     </div>
   </div>
@@ -456,7 +456,7 @@ export const description = "控制元素的显示盒子类型的工具。";
 
 ### 隐藏
 
-使用 `hidden` 工具从文档中移除一个元素：
+使用 `hidden` 工具类从文档中移除一个元素：
 
 <Figure>
 
@@ -484,11 +484,11 @@ export const description = "控制元素的显示盒子类型的工具。";
 
 </Figure>
 
-为了在视觉上隐藏一个元素但保持其在文档中，可以使用 [visibility](/docs/visibility#making-elements-invisible) 属性。
+要在视觉上隐藏一个元素但仍保持它在文档中，请使用 [visibility](/docs/visibility#making-elements-invisible) 属性。
 
-### 仅限屏幕阅读器
+### 仅屏幕阅读器
 
-使用 `sr-only` 视觉上隐藏一个元素而不从屏幕阅读器中隐藏它：
+使用 `sr-only` 来视觉上隐藏一个元素，同时不让屏幕阅读器隐藏它：
 
 ```html
 <!-- [!code classes:sr-only] -->
@@ -498,7 +498,7 @@ export const description = "控制元素的显示盒子类型的工具。";
 </a>
 ```
 
-使用 `not-sr-only` 撤销 `sr-only`，使一个元素对视力用户以及屏幕阅读器可见：
+使用 `not-sr-only` 来撤销 `sr-only`，使元素对视力用户和屏幕阅读器都可见：
 
 ```html
 <!-- [!code classes:sm:not-sr-only] -->
@@ -508,7 +508,7 @@ export const description = "控制元素的显示盒子类型的工具。";
 </a>
 ```
 
-当您想在小屏幕上视觉隐藏某些内容但在较大屏幕上显示它时，这会很有用。
+当你想在小屏幕上视觉上隐藏某样东西，但在大屏幕上显示它时，这会很有用。
 
 ### 响应式设计
 

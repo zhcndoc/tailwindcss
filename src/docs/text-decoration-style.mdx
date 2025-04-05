@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "text-decoration-style";
-export const description = "用于控制文本装饰样式的工具。";
+export const description = "用于控制文本装饰样式的工具类。";
 
 <ApiTable
   rows={[
@@ -20,7 +20,7 @@ export const description = "用于控制文本装饰样式的工具。";
 
 ### 基本示例
 
-使用 `decoration-dotted` 和 `decoration-dashed` 等工具来改变元素的 [文本装饰](/docs/text-decoration-line) 样式：
+使用 `decoration-dotted` 和 `decoration-dashed` 等工具类来改变元素的 [文本装饰](/docs/text-decoration-line) 样式：
 
 <Figure>
 
@@ -29,26 +29,26 @@ export const description = "用于控制文本装饰样式的工具。";
     <div className="flex flex-col gap-8 text-gray-900 dark:text-gray-200">
       <div>
         <div className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">decoration-solid</div>
-        <p className="text-lg font-medium underline decoration-solid">The quick brown fox jumps over the lazy dog.</p>
+        <p className="text-lg font-medium underline decoration-solid">敏捷的棕色狐狸跳过懒狗。</p>
       </div>
       <div>
         <div className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">decoration-double</div>
         <p
           className="text-lg font-medium underline decoration-double"
-          children="快速的棕色狐狸跳过懒狗。"
+          children="敏捷的棕色狐狸跳过懒狗。"
         />
       </div>
       <div>
         <div className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">decoration-dotted</div>
-        <p className="text-lg font-medium underline decoration-dotted">The quick brown fox jumps over the lazy dog.</p>
+        <p className="text-lg font-medium underline decoration-dotted">敏捷的棕色狐狸跳过懒狗。</p>
       </div>
       <div>
         <div className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">decoration-dashed</div>
-        <p className="text-lg font-medium underline decoration-dashed">The quick brown fox jumps over the lazy dog.</p>
+        <p className="text-lg font-medium underline decoration-dashed">敏捷的棕色狐狸跳过懒狗。</p>
       </div>
       <div>
         <div className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">decoration-wavy</div>
-        <p className="text-lg font-medium underline decoration-wavy">The quick brown fox jumps over the lazy dog.</p>
+        <p className="text-lg font-medium underline decoration-wavy">敏捷的棕色狐狸跳过懒狗。</p>
       </div>
     </div>
   }
@@ -56,11 +56,11 @@ export const description = "用于控制文本装饰样式的工具。";
 
 ```html
 <!-- [!code classes:decoration-solid,decoration-double,decoration-dotted,decoration-dashed,decoration-wavy] -->
-<p class="underline decoration-solid">快速的棕色狐狸...</p>
-<p class="underline decoration-double">快速的棕色狐狸...</p>
-<p class="underline decoration-dotted">快速的棕色狐狸...</p>
-<p class="underline decoration-dashed">快速的棕色狐狸...</p>
-<p class="underline decoration-wavy">快速的棕色狐狸...</p>
+<p class="underline decoration-solid">敏捷的棕色狐狸...</p>
+<p class="underline decoration-double">敏捷的棕色狐狸...</p>
+<p class="underline decoration-dotted">敏捷的棕色狐狸...</p>
+<p class="underline decoration-dashed">敏捷的棕色狐狸...</p>
+<p class="underline decoration-wavy">敏捷的棕色狐狸...</p>
 ```
 
 </Figure>

@@ -10,7 +10,7 @@ import { Figure } from "@/components/figure.tsx";
 import colors from "./utils/colors";
 
 export const title = "颜色";
-export const description = "用于控制元素文本颜色的工具。";
+export const description = "用于控制元素文本颜色的工具类。";
 
 <ApiTable
   rows={[
@@ -25,40 +25,40 @@ export const description = "用于控制元素文本颜色的工具。";
 
 ## 示例
 
-### 基础示例
+### 基本示例
 
-使用像 `text-blue-600` 和 `text-sky-400` 这样的工具来控制元素的文本颜色：
+使用类似 `text-blue-600` 和 `text-sky-400` 的工具类来控制元素的文本颜色：
 
 <Figure>
 
 <Example>
   {
     <div className="relative text-center text-xl leading-6 font-medium">
-      <p className="text-blue-600 dark:text-sky-400">快速的棕色狐狸跳过懒狗。</p>
+      <p className="text-blue-600 dark:text-sky-400">敏捷的棕色狐狸跳过懒狗。</p>
     </div>
   }
 </Example>
 
 ```html
 <!-- [!code classes:text-blue-600,dark:text-sky-400] -->
-<p class="text-blue-600 dark:text-sky-400">快速的棕色狐狸...</p>
+<p class="text-blue-600 dark:text-sky-400">敏捷的棕色狐狸...</p>
 ```
 
 </Figure>
 
-### 改变不透明度
+### 更改不透明度
 
-使用颜色不透明度修饰符来控制元素的文本颜色不透明度：
+使用颜色不透明度修饰符来控制元素文本颜色的不透明度：
 
 <Figure>
 
 <Example>
   {
     <div className="space-y-4 text-center text-xl leading-6 font-medium">
-      <p className="text-blue-600/100 dark:text-sky-400/100">快速的棕色狐狸跳过懒狗。</p>
-      <p className="text-blue-600/75 dark:text-sky-400/75">快速的棕色狐狸跳过懒狗。</p>
-      <p className="text-blue-600/50 dark:text-sky-400/50">快速的棕色狐狸跳过懒狗。</p>
-      <p className="text-blue-600/25 dark:text-sky-400/25">快速的棕色狐狸跳过懒狗。</p>
+      <p className="text-blue-600/100 dark:text-sky-400/100">敏捷的棕色狐狸跳过懒狗。</p>
+      <p className="text-blue-600/75 dark:text-sky-400/75">敏捷的棕色狐狸跳过懒狗。</p>
+      <p className="text-blue-600/50 dark:text-sky-400/50">敏捷的棕色狐狸跳过懒狗。</p>
+      <p className="text-blue-600/25 dark:text-sky-400/25">敏捷的棕色狐狸跳过懒狗。</p>
     </div>
   }
 </Example>
@@ -68,10 +68,10 @@ export const description = "用于控制元素文本颜色的工具。";
 <!-- [!code word:\/75] -->
 <!-- [!code word:\/50] -->
 <!-- [!code word:\/25] -->
-<p class="text-blue-600/100 dark:text-sky-400/100">快速的棕色狐狸...</p>
-<p class="text-blue-600/75 dark:text-sky-400/75">快速的棕色狐狸...</p>
-<p class="text-blue-600/50 dark:text-sky-400/50">快速的棕色狐狸...</p>
-<p class="text-blue-600/25 dark:text-sky-400/25">快速的棕色狐狸...</p>
+<p class="text-blue-600/100 dark:text-sky-400/100">敏捷的棕色狐狸...</p>
+<p class="text-blue-600/75 dark:text-sky-400/75">敏捷的棕色狐狸...</p>
+<p class="text-blue-600/50 dark:text-sky-400/50">敏捷的棕色狐狸...</p>
+<p class="text-blue-600/25 dark:text-sky-400/25">敏捷的棕色狐狸...</p>
 ```
 
 </Figure>
@@ -80,16 +80,16 @@ export const description = "用于控制元素文本颜色的工具。";
 
 <UsingACustomValue element="p" utility="text" name="文本颜色" variable="color" value="#50d71e" />
 
-### 在悬停时应用
+### 悬停时应用
 
 <TargetingSpecificStates property="color">
 
-<Figure hint="移动到文本上以查看预期行为">
+<Figure hint="悬停在文本上以查看预期行为">
 
 <Example>
   {
     <p className="text-center text-xl font-medium text-gray-900 dark:text-gray-200">
-      哦，我必须去弄那个{" "}
+      哦，我得去上网了{" "}
       <a
         href="https://en.wikipedia.org/wiki/Internet"
         target="_blank"
@@ -97,7 +97,7 @@ export const description = "用于控制元素文本颜色的工具。";
       >
         互联网
       </a>
-      ，我在一切上都落后了！
+      ，我对一切都迟到了！
     </p>
   }
 </Example>
@@ -106,9 +106,9 @@ export const description = "用于控制元素文本颜色的工具。";
 <!-- [!code classes:hover:text-blue-600,dark:hover:text-blue-400] -->
 <!-- prettier-ignore -->
 <p class="...">
-  哦，我必须去弄那个
+  哦，我得去上网了
   <a class="underline hover:text-blue-600 dark:hover:text-blue-400" href="https://en.wikipedia.org/wiki/Internet">互联网</a>,
-  我在一切上都落后了！
+  我对一切都迟到了！
 </p>
 ```
 

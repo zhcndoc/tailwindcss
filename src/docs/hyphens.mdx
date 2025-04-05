@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "连字符";
-export const description = "用于控制单词如何被连字符分隔的工具。";
+export const description = "控制单词如何分割的工具性类名。";
 
 <ApiTable
   rows={[
@@ -16,20 +16,20 @@ export const description = "用于控制单词如何被连字符分隔的工具�
 
 ## 示例
 
-### 防止连字符分隔
+### 防止分割
 
-使用 `hyphens-none` 工具可以防止单词被连字符分隔，即使使用了换行建议 `&shy;`：
+使用 `hyphens-none` 工具类可以防止单词被分割，即便使用了换行建议 `&shy;`：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs border-x border-x-pink-400/30 py-8 break-normal hyphens-none text-gray-900 dark:text-gray-200">
-      根据 Duden 词典的官方认可，德语中最长的单词是{" "}
+      官方认定为德语中最长的单词，{" "}
       <span className="font-bold" lang="de">
         Kraftfahrzeug&shy;haftpflichtversicherung
       </span>{" "}
-      ，这是一个36个字母的汽车责任保险的词。
+      是一个36个字母的关于机动车责任保险的术语。
     </p>
   }
 </Example>
@@ -45,20 +45,20 @@ export const description = "用于控制单词如何被连字符分隔的工具�
 
 </Figure>
 
-### 手动连字符分隔
+### 手动分割
 
-使用 `hyphens-manual` 工具只在使用换行建议 `&shy;` 的地方设置连字符分隔点：
+使用 `hyphens-manual` 工具类仅在使用换行建议 `&shy;` 的地方设置分割点：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs border-x border-x-pink-400/30 py-8 break-normal hyphens-manual text-gray-900 dark:text-gray-200">
-      根据 Duden 词典的官方认可，德语中最长的单词是{" "}
+      官方认定为德语中最长的单词，{" "}
       <span className="font-bold" lang="de">
         Kraftfahrzeug&shy;haftpflichtversicherung
       </span>{" "}
-      ，这是一个36个字母的汽车责任保险的词。
+      是一个36个字母的关于机动车责任保险的术语。
     </p>
   }
 </Example>
@@ -74,22 +74,22 @@ export const description = "用于控制单词如何被连字符分隔的工具�
 
 </Figure>
 
-这是默认的浏览器行为。
+这是浏览器的默认行为。
 
-### 自动连字符分隔
+### 自动分割
 
-使用 `hyphens-auto` 工具允许浏览器根据语言自动选择连字符分隔点：
+使用 `hyphens-auto` 工具类允许浏览器根据语言自动选择分割点：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs border-x border-x-pink-400/30 py-8 break-normal hyphens-auto text-gray-900 dark:text-gray-200">
-      根据 Duden 词典的官方认可，德语中最长的单词是{" "}
+      官方认定为德语中最长的单词，{" "}
       <span className="font-bold" lang="de">
         Kraftfahrzeughaftpflichtversicherung
       </span>{" "}
-      ，这是一个36个字母的汽车责任保险的词。
+      是一个36个字母的关于机动车责任保险的术语。
     </p>
   }
 </Example>
@@ -105,7 +105,7 @@ export const description = "用于控制单词如何被连字符分隔的工具�
 
 </Figure>
 
-换行建议 `&shy;` 会优先于自动连字符分隔点。
+换行建议 `&shy;` 会优先于自动分割点。
 
 ### 响应式设计
 

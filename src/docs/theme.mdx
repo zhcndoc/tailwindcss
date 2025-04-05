@@ -5,19 +5,19 @@ import { Example } from "@/components/example";
 import { Figure } from "@/components/figure";
 
 export const title = "主题变量";
-export const description = "将工具类用作设计令牌的 API。";
+export const description = "使用工具类作为设计令牌的 API。";
 
-## 概述
+## 概览
 
-Tailwind 是一个用于构建自定义设计的框架，而不同的设计需要不同的排版、颜色、阴影、中断点等。
+Tailwind 是一个用于构建自定义设计的框架，不同的设计需要不同的排版、颜色、阴影、中断点等。
 
-这些低层次的设计决策通常被称为 _设计令牌_，在 Tailwind 项目中，你将这些值存储在 _主题变量_ 中。
+这些低级设计决策通常称为 _设计令牌_，在 Tailwind 项目中，您将这些值存储在 _主题变量_ 中。
 
 ### 什么是主题变量？
 
-主题变量是使用 `@theme` 指令定义的特殊 CSS 变量，它们影响你项目中存在的工具类。
+主题变量是通过 `@theme` 指令定义的特殊 CSS 变量，它影响您项目中存在的工具类。
 
-例如，你可以通过定义一个主题变量如 `--color-mint-500` 来向项目添加新的颜色：
+例如，您可以通过定义主题变量如 `--color-mint-500` 来为项目添加一种新颜色：
 
 ```css
 /* [!code filename:app.css] */
@@ -29,7 +29,7 @@ Tailwind 是一个用于构建自定义设计的框架，而不同的设计需�
 }
 ```
 
-现在你可以在 HTML 中使用类似 `bg-mint-500`、`text-mint-500` 或 `fill-mint-500` 的工具类：
+现在您可以在 HTML 中使用像 `bg-mint-500`、`text-mint-500` 或 `fill-mint-500` 的工具类：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -39,7 +39,7 @@ Tailwind 是一个用于构建自定义设计的框架，而不同的设计需�
 </div>
 ```
 
-Tailwind 还为你的主题变量生成常规 CSS 变量，因此你可以在任意值或内联样式中引用你的设计令牌：
+Tailwind 还会为您的主题变量生成常规 CSS 变量，以便您可以在任意值或内联样式中引用您的设计令牌：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -49,19 +49,19 @@ Tailwind 还为你的主题变量生成常规 CSS 变量，因此你可以在任
 </div>
 ```
 
-在 [主题变量命名空间](#theme-variable-namespaces) 文档中了解更多关于主题变量如何映射到不同工具类的信息。
+有关主题变量如何映射到不同工具类的更多信息，请参见 [主题变量命名空间](#theme-variable-namespaces) 文档。
 
-#### 为什么用 `@theme` 而不是 `:root`？
+#### 为什么使用 `@theme` 而不是 `:root`？
 
-主题变量不仅仅是 _CSS 变量_ — 它们还指示 Tailwind 创建新的工具类，你可以在 HTML 中使用。
+主题变量并不是 _仅仅_ 的 CSS 变量——它们还指示 Tailwind 创建您可以在 HTML 中使用的新工具类。
 
-由于它们的作用超出了常规 CSS 变量，Tailwind 使用特殊语法，以便始终明确地定义主题变量。主题变量还要求在顶层定义，而不能嵌套在其他选择器或媒体查询下，使用特殊语法使得 enforcement 变得可能。
+由于它们除了常规 CSS 变量之外还具有其他功能，因此 Tailwind 使用特殊语法，使得定义主题变量始终具有明确性。主题变量还必须在顶层定义，而不能嵌套在其他选择器或媒体查询下，使用特殊语法可以强制执行这一点。
 
-在 Tailwind 项目中使用 `:root` 定义常规 CSS 变量仍然是有用的，当你想定义一个不打算连接到工具类的变量时。使用 `@theme` 当你希望设计令牌直接映射到工具类时，而对于定义常规 CSS 变量且不应有相应的工具类时使用 `:root`。
+在 Tailwind 项目中，使用 `:root` 定义常规 CSS 变量仍然是有用的，当您想定义一个不打算与工具类连接的变量时。使用 `@theme` 当您希望一个设计令牌直接映射到一个工具类时，而使用 `:root` 适用于定义不应具有对应工具类的常规 CSS 变量。
 
 ### 与工具类的关系
 
-Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且在项目之间始终是相同的。但是许多其他工具类是由主题变量驱动的，并且仅在你定义的主题变量存在时才存在。
+Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且在项目中始终相同。但许多其他工具类则由主题变量驱动，仅因您定义的主题变量而存在。
 
 例如，在 `--font-*` 命名空间中定义的主题变量决定了项目中存在的所有 `font-family` 工具类：
 
@@ -80,7 +80,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 
 `font-sans`、`font-serif` 和 `font-mono` 工具类之所以默认存在，是因为 Tailwind 的默认主题定义了 `--font-sans`、`--font-serif` 和 `--font-mono` 主题变量。
 
-如果定义了其他主题变量如 `--font-poppins`，则对应的 `font-poppins` 工具类将可用：
+如果定义了另一个主题变量如 `--font-poppins`，则将会提供一个 `font-poppins` 工具类来配合它：
 
 ```css
 /* [!code filename:app.css] */
@@ -95,14 +95,14 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 ```html
 <!-- [!code filename:HTML] -->
 <!-- [!code word:font-poppins] -->
-<h1 class="font-poppins">这个标题将使用 Poppins。</h1>
+<h1 class="font-poppins">这个标题将使用 Poppins 字体。</h1>
 ```
 
-你可以在这些命名空间中将主题变量命名为你想要的任何名称，具有相同名称的对应工具类将可在 HTML 中使用。
+您可以在这些命名空间内对主题变量进行任意命名，具有相同名称的相应工具类将可用于 HTML 中。
 
 #### 与变体的关系
 
-一些主题变量用于定义变体，而不是工具类。例如，在 `--breakpoint-*` 命名空间中的主题变量决定项目中存在的响应式断点变体：
+一些主题变量被用来定义变体，而不是工具类。例如，在 `--breakpoint-*` 命名空间中的主题变量决定了您项目中存在的响应式断点变体：
 
 ```css
 /* [!code filename:app.css] */
@@ -114,7 +114,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 }
 ```
 
-现在你可以使用 `3xl:*` 变体，仅在视口宽度为 120rem 或更宽时触发工具类：
+现在您可以使用 `3xl:*` 变体，以便仅在视口宽度为 120rem 或以上时触发工具类：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -124,13 +124,13 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 </div>
 ```
 
-在 [主题变量命名空间](#theme-variable-namespaces) 文档中了解更多关于主题变量如何映射到不同工具类和变体的信息。
+有关主题变量如何映射到不同工具类和变体的更多信息，请参见 [主题变量命名空间](#theme-variable-namespaces) 文档。
 
 ### 主题变量命名空间
 
-主题变量是在 _命名空间_ 中定义的，每个命名空间对应一个或多个工具类或变体 API。
+主题变量在 _命名空间_ 中定义，每个命名空间对应一个或多个工具类或变体 API。
 
-在这些命名空间中定义新的主题变量将使你的项目中可用新的相应工具类和变体：
+在这些命名空间中定义新的主题变量将使新的相应工具类和变体在您的项目中可用：
 
 {
 
@@ -147,7 +147,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--color-*</code>
       </td>
       <td>
-        颜色工具类，如 <code>bg-red-500</code>、<code>text-sky-300</code> 等等
+        颜色工具类，如 <code>bg-red-500</code>、<code>text-sky-300</code> 等。
       </td>
     </tr>
     <tr>
@@ -155,7 +155,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--font-*</code>
       </td>
       <td>
-        字体家族工具类，如 <code>font-sans</code>
+        字体家族工具类，如 <code>font-sans</code>。
       </td>
     </tr>
     <tr>
@@ -163,7 +163,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--text-*</code>
       </td>
       <td>
-        字体大小工具类，如 <code>text-xl</code>
+        字体大小工具类，如 <code>text-xl</code>。
       </td>
     </tr>
     <tr>
@@ -171,7 +171,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--font-weight-*</code>
       </td>
       <td>
-        字体粗细工具类，如 <code>font-bold</code>
+        字体粗细工具类，如 <code>font-bold</code>。
       </td>
     </tr>
     <tr>
@@ -179,7 +179,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--tracking-*</code>
       </td>
       <td>
-        字母间距工具类，如 <code>tracking-wide</code>
+        字母间距工具类，如 <code>tracking-wide</code>。
       </td>
     </tr>
     <tr>
@@ -187,7 +187,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--leading-*</code>
       </td>
       <td>
-        行高工具类，如 <code>leading-tight</code>
+        行高工具类，如 <code>leading-tight</code>。
       </td>
     </tr>
     <tr>
@@ -195,7 +195,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--breakpoint-*</code>
       </td>
       <td>
-        响应式断点变体，如 <code>sm:*</code>
+        响应式断点变体，如 <code>sm:*</code>。
       </td>
     </tr>
     <tr>
@@ -203,7 +203,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--container-*</code>
       </td>
       <td>
-        容器查询变体，如 <code>@sm:*</code> 和尺寸工具类如 <code>max-w-md</code>
+        容器查询变体，如 <code>@sm:*</code> 和大小工具类，如 <code>max-w-md</code>。
       </td>
     </tr>
     <tr>
@@ -211,7 +211,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--spacing-*</code>
       </td>
       <td>
-        间距和尺寸工具类，如 <code>px-4</code>、<code>max-h-16</code> 等等
+        间距和大小工具类，如 <code>px-4</code>、<code>max-h-16</code> 等。
       </td>
     </tr>
     <tr>
@@ -219,7 +219,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--radius-*</code>
       </td>
       <td>
-        边框半径工具类，如 <code>rounded-sm</code>
+        边框半径工具类，如 <code>rounded-sm</code>。
       </td>
     </tr>
     <tr>
@@ -227,7 +227,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--shadow-*</code>
       </td>
       <td>
-        盒子阴影工具类，如 <code>shadow-md</code>
+        盒子阴影工具类，如 <code>shadow-md</code>。
       </td>
     </tr>
     <tr>
@@ -235,7 +235,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--inset-shadow-*</code>
       </td>
       <td>
-        内嵌盒子阴影工具类，如 <code>inset-shadow-xs</code>
+        内阴影工具类，如 <code>inset-shadow-xs</code>。
       </td>
     </tr>
     <tr>
@@ -243,7 +243,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--drop-shadow-*</code>
       </td>
       <td>
-        降影过滤器工具类，如 <code>drop-shadow-md</code>
+        投影滤镜工具类，如 <code>drop-shadow-md</code>。
       </td>
     </tr>
     <tr>
@@ -251,7 +251,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--blur-*</code>
       </td>
       <td>
-        模糊过滤器工具类，如 <code>blur-md</code>
+        模糊滤镜工具类，如 <code>blur-md</code>。
       </td>
     </tr>
     <tr>
@@ -259,7 +259,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--perspective-*</code>
       </td>
       <td>
-        透视工具类，如 <code>perspective-near</code>
+        透视工具类，如 <code>perspective-near</code>。
       </td>
     </tr>
     <tr>
@@ -267,7 +267,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--aspect-*</code>
       </td>
       <td>
-        宽高比工具类，如 <code>aspect-video</code>
+        纵横比工具类，如 <code>aspect-video</code>。
       </td>
     </tr>
     <tr>
@@ -275,7 +275,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--ease-*</code>
       </td>
       <td>
-        过渡时间函数工具类，如 <code>ease-out</code>
+        过渡计时函数工具类，如 <code>ease-out</code>。
       </td>
     </tr>
     <tr>
@@ -283,20 +283,20 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
         <code>--animate-*</code>
       </td>
       <td>
-        动画工具类，如 <code>animate-spin</code>
+        动画工具类，如 <code>animate-spin</code>。
       </td>
     </tr>
   </tbody>
 </table>
 }
 
-有关所有默认主题变量的列表，请参见 [默认主题变量参考](#default-theme-variable-reference)。
+有关所有默认主题变量的列表，请见 [默认主题变量参考](#default-theme-variable-reference)。
 
 ### 默认主题变量
 
-当你在 CSS 文件的顶部导入 `tailwindcss` 时，它包括一个默认主题变量集，让你能开始使用。
+当您在 CSS 文件顶部导入 `tailwindcss` 时，它将包含一组默认主题变量以供您使用。
 
-以下是你在导入 `tailwindcss` 时实际上导入的内容：
+这是您导入 `tailwindcss` 时实际导入的内容：
 
 ```css
 /* [!code filename:node_modules/tailwindcss/index.css] */
@@ -308,7 +308,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 @import "./utilities.css" layer(utilities);
 ```
 
-该 `theme.css` 文件包含默认的颜色调色板、类型比例、阴影、字体等：
+该 `theme.css` 文件包括默认的颜色调色板、字体比例、阴影、字体等：
 
 ```css
 /* [!code filename:node_modules/tailwindcss/theme.css] */
@@ -330,17 +330,17 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 }
 ```
 
-这就是为什么像 `bg-red-200`、`font-serif` 和 `shadow-sm` 这样的工具类在开箱即用时就存在，因为它们是由默认主题驱动的，而不是像 `flex-col` 或 `pointer-events-none` 这样的硬编码在框架中的。
+这就是为什么像 `bg-red-200`、`font-serif` 和 `shadow-sm` 等工具类会开箱即用存在的原因——它们是由默认主题驱动的，而不是像 `flex-col` 或 `pointer-events-none` 这样硬编码到框架中。
 
-有关所有默认主题变量的列表，请参见 [默认主题变量参考](#default-theme-variable-reference)。
+有关所有默认主题变量的列表，请见 [默认主题变量参考](#default-theme-variable-reference)。
 
-## 自定义你的主题
+## 自定义主题
 
-默认主题变量非常通用，适合构建截然不同的设计，但它们仍然只是一个起点。自定义颜色调色板、字体和阴影等内容以构建确切设计的事情是非常常见的。
+默认主题变量用途广泛，适用于构建截然不同的设计，但它们仍然只是一个起点。定制颜色调色板、字体和阴影以构建您心目中的设计是非常普遍的。
 
 ### 扩展默认主题
 
-使用 `@theme` 定义新的主题变量并扩展默认主题：
+使用 `@theme` 定义新主题变量并扩展默认主题：
 
 ```css
 /* [!code filename:app.css] */
@@ -352,19 +352,19 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 }
 ```
 
-这将使新的 `font-script` 工具类可用，你可以像使用默认的 `font-sans` 或 `font-mono` 工具类一样在 HTML 中使用：
+这将使一个新的 `font-script` 工具类可用于您在 HTML 中使用，就像默认的 `font-sans` 或 `font-mono` 工具类一样：
 
 ```html
 <!-- [!code filename:HTML] -->
 <!-- [!code word:font-script] -->
-<p class="font-script">这将使用 Great Vibes 字体系列。</p>
+<p class="font-script">这将使用 Great Vibes 字体族。</p>
 ```
 
-在 [主题变量命名空间](#theme-variable-namespaces) 文档中了解更多关于主题变量如何映射到不同工具类和变体的信息。
+有关主题变量如何映射到不同工具类和变体的更多信息，请参见 [主题变量命名空间](#theme-variable-namespaces) 文档。
 
-### 重写默认主题
+### 覆盖默认主题
 
-通过在 `@theme` 中重新定义默认主题变量值来重写它：
+通过在 `@theme` 中重新定义它，覆盖默认主题变量的值：
 
 ```css
 /* [!code filename:app.css] */
@@ -376,7 +376,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 }
 ```
 
-现在 `sm:*` 变体将在 30rem 时触发，而不是默认的 40rem 视口大小：
+现在 `sm:*` 变体将在 30rem 而不是默认的 40rem 视口大小时触发：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -386,7 +386,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 </div>
 ```
 
-要完全覆盖默认主题中的整个命名空间，请使用特殊的星号语法将整个命名空间设置为 `initial`：
+要完全覆盖默认主题中的整个命名空间，将整个命名空间设置为 `initial`，使用特殊的其他语法：
 
 ```css
 /* [!code filename:app.css] */
@@ -394,7 +394,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 
 @theme {
   /* [!code highlight:2] */
-  --color-*: initial;
+  --color-*: initial; /* 会清空 color-* 命名空间的所有值 */
   --color-white: #fff;
   --color-purple: #3f3cbb;
   --color-midnight: #121063;
@@ -403,13 +403,13 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 }
 ```
 
-这样做时，使用该命名空间的所有默认工具类 _(如 `bg-red-500`)_ 将被移除，并且仅使用你的自定义值 _(如 `bg-midnight`)_。
+这样，所有使用该命名空间的默认工具类 _(如 `bg-red-500`)_ 将被移除，只有您的自定义值 _(如 `bg-midnight`)_ 将可用。
 
-在 [主题变量命名空间](#theme-variable-namespaces) 文档中了解更多关于主题变量如何映射到不同工具类和变体的信息。
+有关主题变量如何映射到不同工具类和变体的更多信息，请参见 [主题变量命名空间](#theme-variable-namespaces) 文档。
 
 ### 使用自定义主题
 
-要完全禁用默认主题并仅使用自定义值，请将全局主题变量命名空间设置为 `initial`：
+要完全禁用默认主题并仅使用自定义值，将全局主题变量命名空间设置为 `initial`：
 
 ```css
 /* [!code filename:app.css] */
@@ -417,7 +417,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 
 @theme {
   /* [!code highlight:2] */
-  --*: initial;
+  --*: initial; /* 会清空所有的命名空间 */
 
   --spacing: 4px;
 
@@ -431,11 +431,11 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 }
 ```
 
-现在，所有由主题变量驱动的默认工具类都将不可用，你只能使用匹配你的自定义主题变量的工具类，如 `font-body` 和 `text-dusk`。
+现在所有由主题变量驱动的默认工具类将不可用，您只能使用与自定义主题变量相匹配的工具类，如 `font-body` 和 `text-dusk`。
 
 ### 定义动画关键帧
 
-在 `@theme` 中定义 `--animate-*` 主题变量的 `@keyframes` 规则，以将它们包含在生成的 CSS 中：
+在 `@theme` 内定义 `@keyframes` 规则，以便将其包含在您生成的 CSS 中：
 
 ```css
 /* [!code filename:app.css] */
@@ -457,11 +457,11 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 }
 ```
 
-如果你希望自定义 `@keyframes` 规则始终被包含，即使未添加 `--animate-*` 主题变量，请将它们定义在 `@theme` 之外。
+如果您希望自定义的 `@keyframes` 规则始终被包含，即使没有添加 `--animate-*` 主题变量，也可以将其在 `@theme` 之外定义。
 
 ### 引用其他变量
 
-定义引用其他变量的主题变量时，使用 `inline` 选项：
+在定义主题变量时引用其他变量，请使用 `inline` 选项：
 
 ```css
 /* [!code filename:app.css] */
@@ -482,9 +482,9 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 }
 ```
 
-如果不使用 `inline`，由于 CSS 中的变量解析方式，你的工具类可能会解析为意外的值。
+不使用 `inline`，由于 CSS 中变量的解析方式，您的工具类可能会解析为意外值。
 
-例如，这段文本将回退到 `sans-serif` 而不使用 `Inter`，像你可能期望的那样：
+例如，这段文本将回退到 `sans-serif` 而不是像您预期的那样使用 `Inter`：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -497,11 +497,11 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 </div>
 ```
 
-这发生是因为 `var(--font-sans)` 在定义其位置 _(在 `#parent` 上)_ 被解析，而 `--font-inter` 在那儿没有值，因为它直到树的更深处 _(在 `#child` 上)_ 才被定义。
+之所以会这样，是因为 `var(--font-sans)` 的解析发生在定义 `--font-sans` 的地方 _(在 `#parent` 上)_，而 `--font-inter` 在那里没有值，因为只有在树的更深处 _(在 `#child` 上)_ 定义时才有值。
 
 ### 生成所有 CSS 变量
 
-默认情况下，只有使用的 CSS 变量将被生成到最终 CSS 输出中。如果你希望始终生成所有 CSS 变量，可以使用 `static` 主题选项：
+默认情况下，只有使用过的 CSS 变量会在最终的 CSS 输出中生成。如果您希望始终生成所有 CSS 变量，您可以使用 `static` 主题选项：
 
 ```css
 /* [!code filename:app.css] */
@@ -514,9 +514,9 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 }
 ```
 
-### 跨项目共享
+### 在项目间共享
 
-由于主题变量是在 CSS 中定义的，因此跨项目共享它们仅仅是将它们放入自己的 CSS 文件，然后在每个项目中导入：
+由于主题变量在 CSS 中定义，只需将它们放入自己的 CSS 文件中，您就可以在每个项目中导入它们，方便共享：
 
 ```css
 /* [!code filename:./packages/brand/theme.css] */
@@ -535,7 +535,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 }
 ```
 
-然后，你可以使用 `@import` 将主题变量包含在其他项目中：
+然后您可以使用 `@import` 在其他项目中包含这些主题变量：
 
 ```css
 /* [!code filename:./packages/admin/app.css] */
@@ -544,11 +544,11 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 @import "../brand/theme.css";
 ```
 
-你可以将共享的主题变量放在它们自己的包中，在 monorepo 设置中，甚至将它们发布到 NPM，并像其他任何第三方 CSS 文件一样导入它们。
+您可以将共享的主题变量放在自己的包中，尤其是在单体仓库设置中，或者甚至将其发布到 NPM 并像其他第三方 CSS 文件一样导入它们。
 
-## 使用你的主题变量
+## 使用您的主题变量
 
-你所有的主题变量在编译 CSS 时都会转换为常规 CSS 变量：
+在您编译 CSS 时，所有主题变量都会转化为常规 CSS 变量：
 
 ```css
 /* [!code filename:dist.css] */
@@ -570,11 +570,11 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 }
 ```
 
-这使得在任何自定义 CSS 或内联样式中引用你的设计令牌变得容易。
+这使得在您编写自定义 CSS 或内联样式时，可以轻松引用所有设计令牌。
 
-### 与自定义 CSS 一起使用
+### 使用自定义 CSS
 
-使用你的主题变量，以便在编写需要使用相同值的自定义 CSS 时访问你的设计令牌：
+使用您的主题变量，以便在编写需要使用相同值的自定义 CSS 时可以访问到您的设计令牌：
 
 ```css
 /* [!code filename:app.css] */
@@ -608,11 +608,11 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 }
 ```
 
-这在样式化你无法控制的 HTML 内容时非常有用，例如从数据库或 API 获取的 Markdown 内容并呈现为 HTML。
+这通常在样式化您无法控制的 HTML 时很有用，例如来自数据库或 API 的 Markdown 内容并呈现为 HTML。
 
-### 与任意值一起使用
+### 使用任意值
 
-在任意值中使用主题变量可能会很有用，特别是结合 `calc()` 函数。
+在任意值中使用主题变量可能很有用，尤其是结合使用 `calc()` 函数时。
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -626,13 +626,13 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 </div>
 ```
 
-在上面的示例中，我们从嵌套的内嵌元素的 `--radius-xl` 值中减去 1px，以确保它具有一个同心边框半径。
+在上面的例子中，我们从 `--radius-xl` 的值中减去 1px，以确保嵌套的内嵌元素具有同心边框半径。
 
 ### 在 JavaScript 中引用
 
-通常，当你需要在 JS 中引用主题变量时，只需像任何其他 CSS 值一样直接使用 CSS 变量。
+在大多数情况下，当您需要在 JS 中引用主题变量时，可以像任何其他 CSS 值一样直接使用 CSS 变量。
 
-例如，流行的 [Motion](https://motion.dev/docs/react-quick-start) 库让你能够到达和离开 CSS 变量值：
+例如，流行的 [Motion](https://motion.dev/docs/react-quick-start) 库可让您在对 CSS 变量值进行动画处理时进行切换和过渡：
 
 ```jsx
 // [!code filename:JSX]
@@ -640,7 +640,7 @@ Tailwind 中的一些工具类如 `flex` 和 `object-cover` 是静态的，且�
 <motion.div animate={{ backgroundColor: "var(--color-blue-500)" }} />
 ```
 
-如果你需要在 JS 中访问解析的 CSS 变量值，可以使用 `getComputedStyle` 获取文档根上主题变量的值：
+如果您需要在 JS 中访问主题变量的解析 CSS 变量值，可以使用 `getComputedStyle` 获取文档根上主题变量的值：
 
 ```js
 // [!code filename:spaghetti.js]
@@ -650,7 +650,7 @@ let shadow = styles.getPropertyValue("--shadow-xl");
 
 ## 默认主题变量参考
 
-供参考，这里是导入 Tailwind CSS 到你的项目时包含的主题变量的完整列表：
+作为参考，以下是导入 Tailwind CSS 到项目时默认包含的主题变量的完整列表：
 
 ```css
 /* [!code filename:tailwindcss/theme.css] */
@@ -1085,4 +1085,3 @@ let shadow = styles.getPropertyValue("--shadow-xl");
     }
   }
 }
-```

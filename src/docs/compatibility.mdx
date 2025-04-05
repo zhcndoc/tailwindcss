@@ -1,31 +1,31 @@
 import { TipGood, TipBad, TipCompat, TipInfo } from "@/components/tips";
 
 export const title = "兼容性";
-export const description = "了解浏览器支持情况以及与其他工具的兼容性。";
+export const description = "了解浏览器支持以及与其他工具的兼容性。";
 
 ## 浏览器支持
 
-Tailwind CSS v4.0 为现代浏览器而设计，并进行了测试，框架的核心功能特别依赖于以下浏览器版本：
+Tailwind CSS v4.0 针对现代浏览器进行了设计和测试，框架的核心功能特别依赖于以下浏览器版本：
 
 - **Chrome 111** _(发布于 2023 年 3 月)_
 - **Safari 16.4** _(发布于 2023 年 3 月)_
 - **Firefox 128** _(发布于 2024 年 7 月)_
 
-Tailwind 还包括对许多前沿平台特性的支持，如 `field-sizing: content`、`@starting-style` 和 `text-wrap: balance`，这些特性在浏览器支持上较为有限。您是否在项目中使用这些现代特性取决于您选择的浏览器 — 如果您目标的浏览器不支持它们，那么只需不使用这些实用工具和变体即可。
+Tailwind 还支持许多前沿平台特性，如 `field-sizing: content`、`@starting-style` 和 `text-wrap: balance`，这些特性在浏览器中的支持有限。在你的项目中是否使用这些现代特性取决于你——如果你针对的浏览器不支持这些特性，那么就不要使用这些工具类和变体。
 
-如果您不确定某个现代平台特性的支持情况，[Can I use](https://caniuse.com/mdn-css_at-rules_starting-style) 数据库是一个很好的资源。
+如果不确定某个现代平台特性的支持情况，可以参考 [Can I use](https://caniuse.com/mdn-css_at-rules_starting-style) 数据库。
 
 ## Sass、Less 和 Stylus
 
-Tailwind CSS v4.0 是一个功能齐全的 CSS 构建工具，旨在用于特定工作流程，并不设计为与 Sass、Less 或 Stylus 等 CSS 预处理器一起使用。
+Tailwind CSS v4.0 是一种功能齐全的 CSS 构建工具，旨在特定工作流程中使用，不适合与像 Sass、Less 或 Stylus 这样的 CSS 预处理器一起使用。
 
-**将 Tailwind CSS 本身视为您的预处理器** — 您不应将 Tailwind 与 Sass 一起使用，其原因与您不应将 Sass 与 Stylus 一起使用相同。
+**将 Tailwind CSS 本身视为你的预处理器**——你不应该将 Tailwind 与 Sass 一起使用，就像你不会将 Sass 与 Stylus 一起使用一样。
 
-由于 Tailwind 是为现代浏览器设计的，因此您实际上不需要预处理器来处理嵌套或变量，Tailwind 本身会处理像打包您的导入和添加厂商前缀之类的事情。
+由于 Tailwind 是为现代浏览器设计的，因此在嵌套或变量等方面实际上不需要预处理器，Tailwind 本身会处理诸如打包导入和添加厂商前缀等内容。
 
 ### 构建时导入
 
-Tailwind 将自动打包您通过 `@import` 包含的其他 CSS 文件，无需单独的预处理工具。
+Tailwind 会自动打包你用 `@import` 包含的其他 CSS 文件，而无需单独的预处理工具。
 
 ```css
 /* [!code filename:app.css] */
@@ -33,11 +33,11 @@ Tailwind 将自动打包您通过 `@import` 包含的其他 CSS 文件，无需�
 @import "./typography.css";
 ```
 
-在这个示例中，`typography.css` 文件将由 Tailwind 自动打包进您的编译 CSS 中，无需其他工具，如 Sass 或 `postcss-import`。
+在这个示例中，`typography.css` 文件会被 Tailwind 打包到你的编译 CSS 中，而无需像 Sass 或 `postcss-import` 这样的其他工具。
 
 ### 变量
 
-所有现代浏览器都支持 [原生 CSS 变量](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)，无需任何类型的预处理器：
+所有现代浏览器都支持 [原生 CSS 变量](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)，无需任何预处理器：
 
 ```css
 /* [!code filename:typography.css] */
@@ -48,11 +48,11 @@ Tailwind 将自动打包您通过 `@import` 包含的其他 CSS 文件，无需�
 }
 ```
 
-Tailwind 在内部大量依赖 CSS 变量，因此只要您可以在项目中使用 Tailwind，您就可以使用原生 CSS 变量。
+Tailwind 在内部大量依赖 CSS 变量，因此如果你可以在项目中使用 Tailwind，就可以使用原生 CSS 变量。
 
 ### 嵌套
 
-在底层，Tailwind 使用 [Lightning CSS](https://lightningcss.dev/) 处理像这样的嵌套 CSS：
+在底层，Tailwind 使用 [Lightning CSS](https://lightningcss.dev/) 来处理像这样的嵌套 CSS：
 
 ```css
 /* [!code filename:typography.css] */
@@ -66,7 +66,7 @@ Tailwind 在内部大量依赖 CSS 变量，因此只要您可以在项目中使
 }
 ```
 
-Tailwind 会将嵌套 CSS 扁平化，以便所有现代浏览器都能理解：
+Tailwind 会为你扁平化这些嵌套 CSS，以便所有现代浏览器都能理解：
 
 ```css
 [!code filename:output.css]
@@ -80,19 +80,19 @@ Tailwind 会将嵌套 CSS 扁平化，以便所有现代浏览器都能理解：
 }
 ```
 
-原生 CSS 对嵌套支持如今也很好，所以即使您不使用 Tailwind，您也确实不需要预处理器来处理嵌套。
+如今，原生 CSS 嵌套的支持也非常良好，因此即使不使用 Tailwind，你实际上也不需要预处理器来实现嵌套。
 
 ### 循环
 
-在 Tailwind 中，您在过去可能用于循环的类（如 `col-span-1`、`col-span-2` 等）会在您使用它们时按需生成，而不需要预先定义。
+在 Tailwind 中，你可能过去用于循环生成的类（如 `col-span-1`、`col-span-2` 等）会在你使用它们时按需生成，而无需预定义。
 
-此外，当您使用 Tailwind CSS 构建内容时，您处理绝大多数样式是在 HTML 中，而不是在 CSS 文件中。由于您根本不需要编写大量 CSS，因此您根本不需要设计用于程序化生成大量自定义 CSS 规则的功能，如循环。
+除此之外，当你使用 Tailwind CSS 构建项目时，你大多数样式是在 HTML 中完成的，而不是在 CSS 文件中。由于你并没有编写大量的 CSS，因此不需要为了编写大量自定义 CSS 规则而设计的循环等特性。
 
 ### 颜色和数学函数
 
-在使用像 Sass 或 Less 的预处理器时，您可能使用 `darken` 或 `lighten` 等函数来调整颜色。
+使用像 Sass 或 Less 这样的预处理器时，你可能会使用 `darken` 或 `lighten` 等函数来调整颜色。
 
-在使用 Tailwind 时，推荐的工作流程是使用一个预定义的颜色调色板，其中包括每种颜色的浅色和深色阴影，例如框架中包含的精心设计的 [默认颜色调色板](/docs/colors)。
+使用 Tailwind 时，推荐的工作流程是使用包含每种颜色的浅色和深色阴影的预定义色板，像框架中精心设计的 [默认配色方案](/docs/colors) 。
 
 ```html
 <!-- [!code word:hover\:bg-indigo-600] -->
@@ -101,31 +101,31 @@ Tailwind 会将嵌套 CSS 扁平化，以便所有现代浏览器都能理解：
 </button>
 ```
 
-您还可以使用现代 CSS 特性，如 [color-mix()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix)，在运行时直接在浏览器中调整颜色。这甚至允许您调整使用 CSS 变量或 `currentcolor` 关键字定义的颜色，而这是预处理器无法做到的。
+你还可以使用现代 CSS 特性，如 [color-mix()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix)，直接在浏览器端调整颜色。这甚至可以让你调整使用 CSS 变量或 `currentcolor` 关键字定义的颜色，这是预处理器无法做到的。
 
-同样，浏览器现在也原生支持 `min()`、`max()` 和 `round()` 等数学函数，因此不再需要依赖预处理器来使用这些功能。
+同样，浏览器现在也原生支持数学函数，如 `min()`、`max()` 和 `round()`，因此不再需要依赖预处理器来实现这些特性。
 
 ## CSS 模块
 
-Tailwind 与 CSS 模块兼容，并可以与它们共存，如果您在已经使用 CSS 模块的项目中引入 Tailwind，但 **我们不建议将 CSS 模块与 Tailwind 一起使用**，如果可以避免的话。
+Tailwind 与 CSS 模块兼容，如果你在已经使用 CSS 模块的项目中引入 Tailwind，可以共存，但 **如果可以避免，建议不要将 CSS 模块与 Tailwind 一起使用**。
 
 ### 范围问题
 
-CSS 模块旨在解决在 HTML 中组合实用程序类时并不存在的范围问题。
+CSS 模块旨在解决在 HTML 中组合工具类时并不存在的范围问题。
 
-使用 Tailwind，样式自然范围化，因为每个实用程序类始终执行相同的操作，无论其用在哪里 — 将实用程序类添加到用户界面的一个部分并不会引发其他地方的意外副作用。
+使用 Tailwind 样式时因为每个工具类无论在哪里使用都是同样的效果，自然就提供了作用域——将一个工具类添加到 UI 的某个部分不会在其他地方产生意外的副作用。
 
 ### 性能
 
-使用 CSS 模块时，Vite、Parcel 和 Turbopack 等构建工具会单独处理每个 CSS 模块。这意味着如果您在项目中有 50 个 CSS 模块，**Tailwind 需要运行 50 次**，这会导致构建时间大幅减慢，并且开发体验变差。
+使用 CSS 模块时，构建工具如 Vite、Parcel 和 Turbopack 会单独处理每个 CSS 模块。这意味着如果你的项目中有 50 个 CSS 模块，**Tailwind 需要运行 50 次**，这会导致构建时间大幅延长，开发体验变差。
 
 ### 显式上下文共享
 
-由于 CSS 模块是单独处理的，因此除非您导入一个，否则它们没有 `@theme`。
+由于 CSS 模块是分别处理的，因此它们没有 `@theme` 除非你导入一个。
 
-这意味着像 `@apply` 这样的特性将不会像您期望的那样工作，除非您显式导入全局样式作为引用：
+这意味着像 `@apply` 这样的特性不会像你预期的那样工作，除非你显式导入全局样式作为参考：
 
-<TipInfo>{<>导入您的全局样式作为引用，以确保您的主题变量被定义</>}</TipInfo>
+<TipInfo>{<>导入全局样式作为参考，以确保你的主题变量被定义</>}</TipInfo>
 
 ```css
 /* [!code filename:Button.module.css] */
@@ -137,7 +137,7 @@ button {
 }
 ```
 
-或者，您也可以使用 CSS 变量代替 `@apply`，这样可以让 Tailwind 跳过对这些文件的处理，从而提高构建性能：
+或者，你也可以直接使用 CSS 变量，而不是使用 `@apply`，这还具有让 Tailwind 跳过处理这些文件并改善构建性能的额外好处：
 
 ```css
 /* [!code filename:Button.module.css] */
@@ -149,14 +149,14 @@ button {
 
 ## Vue、Svelte 和 Astro
 
-Vue、Svelte 和 Astro 支持在组件文件中使用 `<style>` 块，这些块的行为与 [CSS 模块](#css-modules) 非常相似，这意味着它们也被构建工具单独处理，并具有所有相同的缺点。
+Vue、Svelte 和 Astro 支持在组件文件中使用 `<style>` 块，这些块的行为非常类似于 [CSS 模块](#css-modules)，这意味着它们都是被你的构建工具完全独立处理的，并具备相同的缺陷。
 
-如果您将 Tailwind 与这些工具一起使用，**我们建议避免在组件中使用 `<style>` 块**，而是直接在标记中使用实用程序类进行样式设置，这正是 Tailwind 设计的方式。
+如果你在这些工具中使用 Tailwind，**建议避免在组件中使用 `<style>` 块**，而是直接在标记中使用工具类进行样式，这是 Tailwind 应该使用的方式。
 
-如果您确实使用 `<style>` 块，如果希望 `@apply` 等特性正常工作，请确保导入全局样式作为引用：
+如果你确实使用 `<style>` 块，确保导入全局样式作为参考，以使得 `@apply` 等特性按预期工作：
 
 <TipInfo
-  children={`导入您的全局样式作为引用，以确保您的主题变量被定义`}
+  children={`导入全局样式作为参考，以确保你的主题变量被定义`}
 />
 
 ```html
@@ -175,7 +175,7 @@ Vue、Svelte 和 Astro 支持在组件文件中使用 `<style>` 块，这些块�
 </style>
 ```
 
-或者只需使用您全局定义的 CSS 变量，而不是像 `@apply` 这样的特性，这样就不需要 Tailwind 对您的组件 CSS 进行处理：
+或者，只需使用全局定义的 CSS 变量，而不是像 `@apply` 这样的特性，这样就不需要 Tailwind 来处理你的组件 CSS：
 
 ```html
 <!-- [!code filename:Button.vue] -->
@@ -189,4 +189,3 @@ Vue、Svelte 和 Astro 支持在组件文件中使用 `<style>` 块，这些块�
     background-color: var(--color-blue-500);
   }
 </style>
-```

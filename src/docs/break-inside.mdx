@@ -2,7 +2,7 @@ import { ApiTable } from "@/components/api-table.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "break-inside";
-export const description = "用于控制元素内部如何进行列或页面换行的工具。";
+export const description = "用于控制元素内列或页面如何换行的工具。";
 
 <ApiTable
   rows={[
@@ -17,15 +17,15 @@ export const description = "用于控制元素内部如何进行列或页面换�
 
 ### 基本示例
 
-使用 `break-inside-column` 和 `break-inside-avoid-page` 等工具来控制元素内部列或页面换行的行为：
+使用 `break-inside-column` 和 `break-inside-avoid-page` 等工具来控制元素内列或页面的换行行为：
 
 ```html
 <!-- [!code classes:break-inside-avoid-column] -->
 <div class="columns-2">
-  <p>好吧，让我告诉你一些事情，...</p>
-  <p class="break-inside-avoid-column">当然，继续，笑吧...</p>
-  <p>也许我们可以没有...</p>
-  <p>看。如果你认为这是...</p>
+  <p>那么，告诉你一件事，...</p>
+  <p class="break-inside-avoid-column">当然，继续笑吧...</p>
+  <p>也许我们可以不需要...</p>
+  <p>看看。如果你认为这是...</p>
 </div>
 ```
 

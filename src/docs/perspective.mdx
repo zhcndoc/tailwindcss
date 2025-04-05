@@ -3,8 +3,8 @@ import { CustomizingYourTheme, ResponsiveDesign, UsingACustomValue } from "@/com
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "perspective";
-export const description = "Utilities for controlling an element's perspective when placed in 3D space.";
+export const title = "透视";
+export const description = "用于控制元素在三维空间中的透视效果的工具类。";
 
 <ApiTable
   rows={[
@@ -23,7 +23,7 @@ export const description = "Utilities for controlling an element's perspective w
 
 ### 基本示例
 
-使用诸如 `perspective-normal` 和 `perspective-distant` 这样的工具来控制 z 平面与屏幕之间的距离：
+使用诸如 `perspective-normal` 和 `perspective-distant` 等工具类来控制 z 轴平面距离屏幕的远近：
 
 <Figure>
 
@@ -32,7 +32,7 @@ export const description = "Utilities for controlling an element's perspective w
     <div className="flex flex-col justify-around gap-8 text-sm leading-6 font-bold text-white sm:flex-row sm:gap-0">
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-          perspective-dramatic
+          透视效果（dramatic）
         </p>
         <div className="size-56 p-10 py-24">
           <div className="size-20 rotate-[0.75_1_0.75_45deg] perspective-dramatic transform-3d *:backface-visible">
@@ -59,7 +59,7 @@ export const description = "Utilities for controlling an element's perspective w
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-          perspective-normal
+          透视效果（normal）
         </p>
         <div className="size-56 p-10">
           <div className="size-20 rotate-[0.75_1_0.75_45deg] perspective-normal transform-3d *:backface-visible">
@@ -111,11 +111,11 @@ export const description = "Utilities for controlling an element's perspective w
 
 </Figure>
 
-这就像将相机移近或移远物体。
+这就像是将相机移近或远离一个物体。
 
 ### 移除透视
 
-使用 `perspective-none` 工具从元素中移除透视变换：
+使用 `perspective-none` 工具类来从元素中移除透视变换：
 
 ```html
 <!-- [!code classes:perspective-none] -->
@@ -134,4 +134,4 @@ export const description = "Utilities for controlling an element's perspective w
 
 ## 自定义主题
 
-<CustomizingYourTheme utility="perspective" name="perspective" customName="远程" customValue="1800px" />
+<CustomizingYourTheme utility="perspective" name="透视" customName="remote" customValue="1800px" />

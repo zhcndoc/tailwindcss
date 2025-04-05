@@ -4,8 +4,8 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 import dedent from "dedent";
 
-export const title = "文本溢出";
-export const description = "用于控制元素文本如何溢出的工具类。";
+export const title = "text-overflow";
+export const description = "用于控制元素文本溢出效果的工具类。";
 
 <ApiTable
   rows={[
@@ -24,73 +24,76 @@ export const description = "用于控制元素文本如何溢出的工具类。"
 
 ## 示例
 
-### 文本截断
+### 截断文本
 
-使用 `truncate` 工具类来防止文本换行，并在需要时使用省略号 (…) 截断溢出的文本：
+使用 `truncate` 工具类以防止文本换行，并在需要时用省略号 (…) 来截断溢出的文本：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs truncate border-x border-x-pink-400/30 py-8 text-gray-900 dark:text-gray-200">
-      在任何主要英语词典中，最长的单词是{" "}
-      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是从吸入非常细的二氧化硅颗粒（特别是来自火山）而感染的肺病；在医学上，它与矽肺病是一样的。
+      英语主要词典中最长的单词是{" "}
+      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是一种由于
+      吸入非常细的硅酸盐颗粒（特别是来自火山）而引发的肺部疾病；在医学上，它与硅肺病是相同的。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:truncate] -->
-<p class="truncate">在任何主要英语词典中，最长的单词是...</p>
+<p class="truncate">英语主要词典中最长的单词是...</p>
 ```
 
 </Figure>
 
 ### 添加省略号
 
-使用 `text-ellipsis` 工具类在需要时用省略号 (…) 截断溢出的文本：
+使用 `text-ellipsis` 工具类在需要时用省略号 (…) 来截断溢出的文本：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs overflow-hidden border-x border-x-pink-400/30 py-8 text-ellipsis text-gray-900 dark:text-gray-200">
-      在任何主要英语词典中，最长的单词是{" "}
-      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是从吸入非常细的二氧化硅颗粒（特别是来自火山）而感染的肺病；在医学上，它与矽肺病是一样的。
+      英语主要词典中最长的单词是{" "}
+      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是一种由于
+      吸入非常细的硅酸盐颗粒（特别是来自火山）而引发的肺部疾病；在医学上，它与硅肺病是相同的。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:text-ellipsis] -->
-<p class="overflow-hidden text-ellipsis">在任何主要英语词典中，最长的单词是...</p>
+<p class="overflow-hidden text-ellipsis">英语主要词典中最长的单词是...</p>
 ```
 
 </Figure>
 
-### 剪裁文本
+### 裁剪文本
 
-使用 `text-clip` 工具类在内容区域的限制处截断文本：
+使用 `text-clip` 工具类在内容区域的边界处截断文本：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs overflow-hidden border-x border-x-pink-400/30 py-8 text-clip text-gray-900 dark:text-gray-200">
-      在任何主要英语词典中，最长的单词是{" "}
-      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是从吸入非常细的二氧化硅颗粒（特别是来自火山）而感染的肺病；在医学上，它与矽肺病是一样的。
+      英语主要词典中最长的单词是{" "}
+      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是一种由于
+      吸入非常细的硅酸盐颗粒（特别是来自火山）而引发的肺部疾病；在医学上，它与硅肺病是相同的。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:text-clip] -->
-<p class="overflow-hidden text-clip">在任何主要英语词典中，最长的单词是...</p>
+<p class="overflow-hidden text-clip">英语主要词典中最长的单词是...</p>
 ```
 
 </Figure>
 
-这是默认的浏览器行为。
+这是浏览器的默认行为。
 
 ### 响应式设计
 

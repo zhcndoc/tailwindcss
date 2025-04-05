@@ -4,7 +4,7 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
 export const title = "字体系列";
-export const description = "控制元素字体系列的工具类。";
+export const description = "用于控制元素字体系列的工具。";
 
 <ApiTable
   rows={[
@@ -26,7 +26,7 @@ export const description = "控制元素字体系列的工具类。";
 
 ### 基本示例
 
-使用诸如 `font-sans` 和 `font-mono` 的工具类来设置元素的字体系列：
+使用像 `font-sans` 和 `font-mono` 这样的工具来设置元素的字体系列：
 
 <Figure>
 
@@ -36,19 +36,19 @@ export const description = "控制元素字体系列的工具类。";
       <div>
         <span className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">font-sans</span>
         <p className="font-sans text-lg font-medium text-gray-900 dark:text-gray-200">
-          灵活的棕色狐狸跳过懒狗。
+          快速棕色狐狸跳过懒狗。
         </p>
       </div>
       <div>
         <span className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">font-serif</span>
         <p className="font-serif text-lg font-medium text-gray-900 dark:text-gray-200">
-          灵活的棕色狐狸跳过懒狗。
+          快速棕色狐狸跳过懒狗。
         </p>
       </div>
       <div>
         <span className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">font-mono</span>
         <p className="font-mono text-lg font-medium text-gray-900 dark:text-gray-200">
-          灵活的棕色狐狸跳过懒狗。
+          快速棕色狐狸跳过懒狗。
         </p>
       </div>
     </div>
@@ -57,9 +57,9 @@ export const description = "控制元素字体系列的工具类。";
 
 ```html
 <!-- [!code classes:font-sans,font-serif,font-mono] -->
-<p class="font-sans ...">灵活的棕色狐狸 ...</p>
-<p class="font-serif ...">灵活的棕色狐狸 ...</p>
-<p class="font-mono ...">灵活的棕色狐狸 ...</p>
+<p class="font-sans ...">快速棕色狐狸 ...</p>
+<p class="font-serif ...">快速棕色狐狸 ...</p>
+<p class="font-mono ...">快速棕色狐狸 ...</p>
 ```
 
 </Figure>
@@ -91,7 +91,7 @@ export const description = "控制元素字体系列的工具类。";
 }
 ```
 
-如有需要，使用 [@font-face](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) 规则加载自定义字体：
+如果需要，使用 [@font-face](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) at-rule 来加载自定义字体：
 
 ```css
 @font-face {
@@ -103,7 +103,7 @@ export const description = "控制元素字体系列的工具类。";
 }
 ```
 
-如果您从 [Google Fonts](https://fonts.google.com/) 等服务加载字体，请确保将 `@import` 放在 CSS 文件的最顶部：
+如果从类似 [Google Fonts](https://fonts.google.com/) 的服务加载字体，请确保将 `@import` 置于 CSS 文件的最顶部：
 
 ```css
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap"); /* [!code highlight] */
@@ -114,6 +114,6 @@ export const description = "控制元素字体系列的工具类。";
 }
 ```
 
-浏览器要求 `@import` 语句位于任何其他规则之前，因此 URL 导入需要在像 `@import "tailwindcss"` 这样的导入之上，这些导入在编译后的 CSS 中是内联的。
+浏览器要求 `@import` 语句必须在其他规则之前，因此 URL 引入需要在诸如 `@import "tailwindcss"` 之类的内联作用的引入之上。
 
 </CustomizingYourTheme>

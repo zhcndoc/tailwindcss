@@ -4,7 +4,7 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "可见性";
+export const title = "visibility";
 export const description = "用于控制元素可见性的工具类。";
 
 <ApiTable
@@ -19,7 +19,7 @@ export const description = "用于控制元素可见性的工具类。";
 
 ### 使元素不可见
 
-使用 `invisible` 工具类来隐藏一个元素，但仍然保持它在文档中的位置，从而影响其他元素的布局：
+使用 `invisible` 工具类隐藏元素，但仍然保持其在文档中的位置，影响其他元素的布局：
 
 <Figure>
 
@@ -47,11 +47,11 @@ export const description = "用于控制元素可见性的工具类。";
 
 </Figure>
 
-要完全从文档中移除一个元素，请使用 [display](/docs/display#hidden) 属性代替。
+要完全从文档中移除一个元素，请使用 [display](/docs/display#hidden) 属性。
 
 ### 折叠元素
 
-使用 `collapse` 工具类可以像设置为 `display: none` 一样隐藏表格行、行组、列和列组，但不会影响其他行和列的大小：
+使用 `collapse` 工具类隐藏表格行、行组、列和列组，效果与设置为 `display: none` 相似，但不影响其他行和列的大小：
 
 <Figure>
 
@@ -63,7 +63,7 @@ export const description = "用于控制元素可见性的工具类。";
         <thead className="bg-gray-50 dark:bg-gray-700">
           <tr>
             <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900 first:border-l-0 last:border-r-0 dark:border-gray-600 dark:text-gray-200">
-              发票编号
+              发票号
             </th>
             <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900 first:border-l-0 last:border-r-0 dark:border-gray-600 dark:text-gray-200">
               客户
@@ -97,13 +97,13 @@ export const description = "用于控制元素可见性的工具类。";
             </td>
           </tr>
           <tr>
-            <td className="border border-gray-300 px-4 py-3 text-gray-500 first:border-l-0 last:border-r-0 dark:border-gray-700 dark:text-gray-400">
+            <td className="border border-gray-300 px-4 py-3 text-gray-500 first:border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
               #102
             </td>
-            <td className="border border-gray-300 px-4 py-3 text-gray-500 first:border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
+            <td className="border border-gray-300 px-4 py-3 text-gray-500 first:border-l-0 last:border-r-0 dark:border-gray-700 dark:text-gray-400">
               J. Peterman
             </td>
-            <td className="border border-gray-300 px-4 py-3 text-right text-gray-500 tabular-nums first:border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
+            <td className="border border-gray-300 px-4 py-3 text-right text-gray-500 tabular-nums first-border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
               $10,000.25
             </td>
           </tr>
@@ -115,13 +115,13 @@ export const description = "用于控制元素可见性的工具类。";
       <table className="w-full border-collapse border-y border-gray-400 bg-white text-sm dark:border-gray-500 dark:bg-gray-800">
         <thead className="bg-gray-50 dark:bg-gray-700">
           <tr>
-            <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900 first:border-l-0 last:border-r-0 dark:border-gray-600 dark:text-gray-200">
-              发票编号
+            <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900 first:border-l-0 last-border-r-0 dark:border-gray-600 dark:text-gray-200">
+              发票号
             </th>
             <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900 first:border-l-0 last-border-r-0 dark:border-gray-600 dark:text-gray-200">
               客户
             </th>
-            <th className="border border-gray-300 px-4 py-3 text-right font-semibold text-gray-900 first:border-l-0 last:border-r-0 dark:border-gray-600 dark:text-gray-200">
+            <th className="border border-gray-300 px-4 py-3 text-right font-semibold text-gray-900 first:border-l-0 last-border-r-0 dark:border-gray-600 dark:text-gray-200">
               金额
             </th>
           </tr>
@@ -142,7 +142,7 @@ export const description = "用于控制元素可见性的工具类。";
             <td className="border border-gray-300 px-4 py-3 text-gray-500 first:border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
               #101
             </td>
-            <td className="border border-gray-300 px-4 py-3 text-gray-500 first-border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
+            <td className="border border-gray-300 px-4 py-3 text-gray-500 first:border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
               Kruger Industrial Smoothing
             </td>
             <td className="border border-gray-300 px-4 py-3 text-right text-gray-500 tabular-nums first-border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
@@ -168,48 +168,48 @@ export const description = "用于控制元素可见性的工具类。";
       <table className="w-full border-collapse border-y border-gray-400 bg-white text-sm dark:border-gray-500 dark:bg-gray-800">
         <thead className="bg-gray-50 dark:bg-gray-700">
           <tr>
-            <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900 first:border-l-0 last:border-r-0 dark:border-gray-600 dark:text-gray-200">
-              发票编号
+            <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900 first:border-l-0 last-border-r-0 dark:border-gray-600 dark:text-gray-200">
+              发票号
             </th>
-            <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900 first;border-l-0 last:border-r-0 dark:border-gray-600 dark:text-gray-200">
+            <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900 first:border-l-0 last-border-r-0 dark:border-gray-600 dark:text-gray-200">
               客户
             </th>
-            <th className="border border-gray-300 px-4 py-3 text-right font-semibold text-gray-900 first;border-l-0 last:border-r-0 dark:border-gray-600 dark:text-gray-200">
+            <th className="border border-gray-300 px-4 py-3 text-right font-semibold text-gray-900 first-border-l-0 last:border-r-0 dark:border-gray-600 dark:text-gray-200">
               金额
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className="border border-gray-300 px-4 py-3 text-gray-500 first:border-l-0 last;border-r-0 dark:border-gray-700 dark:text-gray-400">
+            <td className="border border-gray-300 px-4 py-3 text-gray-500 first:border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
               #100
             </td>
-            <td className="border border-gray-300 px-4 py-3 text-gray-500 first;border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
+            <td className="border border-gray-300 px-4 py-3 text-gray-500 first:border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
               Pendant Publishing
             </td>
-            <td className="border border-gray-300 px-4 py-3 text-right text-gray-500 tabular-nums first;border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
+            <td className="border border-gray-300 px-4 py-3 text-right text-gray-500 tabular-nums first-border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
               $2,000.00
             </td>
           </tr>
           <tr className="hidden">
-            <td className="border border-gray-300 px-4 py-3 text-gray-500 first;border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
+            <td className="border border-gray-300 px-4 py-3 text-gray-500 first:border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
               #101
             </td>
-            <td className="border border-gray-300 px-4 py-3 text-gray-500 first;border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
+            <td className="border border-gray-300 px-4 py-3 text-gray-500 first:border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
               Kruger Industrial Smoothing
             </td>
-            <td className="border border-gray-300 px-4 py-3 text-right text-gray-500 tabular-nums first;border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
+            <td className="border border-gray-300 px-4 py-3 text-right text-gray-500 tabular-nums first-border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
               $545.00
             </td>
           </tr>
           <tr>
-            <td className="border border-gray-300 px-4 py-3 text-gray-500 first;border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
+            <td className="border border-gray-300 px-4 py-3 text-gray-500 first-border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
               #102
             </td>
-            <td className="border border-gray-300 px-4 py-3 text-gray-500 first;border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
+            <td className="border border-gray-300 px-4 py-3 text-gray-500 first-border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
               J. Peterman
             </td>
-            <td className="border border-gray-300 px-4 py-3 text-right text-gray-500 tabular-nums first;border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
+            <td className="border border-gray-300 px-4 py-3 text-right text-gray-500 tabular-nums first-border-l-0 last-border-r-0 dark:border-gray-700 dark:text-gray-400">
               $10,000.25
             </td>
           </tr>
@@ -224,7 +224,7 @@ export const description = "用于控制元素可见性的工具类。";
 <table>
   <thead>
     <tr>
-      <th>发票编号</th>
+      <th>发票号</th>
       <th>客户</th>
       <th>金额</th>
     </tr>
@@ -251,7 +251,7 @@ export const description = "用于控制元素可见性的工具类。";
 
 </Figure>
 
-这使得能够动态切换行和列而不影响表格布局。
+这使得动态切换行和列成为可能，而不影响表格布局。
 
 ### 使元素可见
 
@@ -280,7 +280,7 @@ export const description = "用于控制元素可见性的工具类。";
 
 </Figure>
 
-这在不同屏幕尺寸下，主要用于撤销 `invisible` 工具类的效果。
+这主要用于在不同屏幕尺寸下撤销 `invisible` 工具类。
 
 ### 响应式设计
 

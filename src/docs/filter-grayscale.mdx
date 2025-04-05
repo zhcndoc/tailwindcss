@@ -3,15 +3,15 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "过滤器: 灰度()";
-export const description = "用于将灰度滤镜应用于元素的工具类。";
+export const title = "滤镜：灰度( grayscale() )";
+export const description = "用于将灰度滤镜应用于元素的工具类.";
 
 <ApiTable
   rows={[
-    ["grayscale", "filter: grayscale(100%);"],
-    ["grayscale-<number>", "filter: grayscale(<number>%);"],
-    ["grayscale-(<custom-property>)", "filter: grayscale(var(<custom-property>));"],
-    ["grayscale-[<value>]", "filter: grayscale(<value>);"],
+    ["灰度", "filter: grayscale(100%);"],
+    ["灰度-<数字>", "filter: grayscale(<数字>%);"],
+    ["灰度-(<自定义属性>)", "filter: grayscale(var(<自定义属性>));"],
+    ["灰度-[<值>]", "filter: grayscale(<值>);"],
   ]}
 />
 
@@ -19,7 +19,7 @@ export const description = "用于将灰度滤镜应用于元素的工具类。"
 
 ### 基本示例
 
-使用 `grayscale` 和 `grayscale-75` 等工具类来控制应用于元素的灰度效果的程度：
+使用像 `grayscale` 和 `grayscale-75` 的工具类来控制应用于元素的灰度效果的强度：
 
 <Figure>
 
@@ -28,7 +28,7 @@ export const description = "用于将灰度滤镜应用于元素的工具类。"
     <div className="flex scroll-p-8 justify-center overflow-scroll sm:block sm:overflow-visible">
       <div className="flex shrink-0 items-center justify-around gap-6 p-8 font-mono font-bold sm:gap-4">
         <div className="flex shrink-0 flex-col items-center">
-          <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">grayscale-0</p>
+          <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">灰度-0</p>
           <div className="relative grayscale-0">
             <img
               className="size-24 rounded-lg object-cover"
@@ -39,7 +39,7 @@ export const description = "用于将灰度滤镜应用于元素的工具类。"
         </div>
         <div className="flex shrink-0 flex-col items-center">
           <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-            grayscale-25
+            灰度-25
           </p>
           <div className="relative grayscale-25">
             <img
@@ -51,7 +51,7 @@ export const description = "用于将灰度滤镜应用于元素的工具类。"
         </div>
         <div className="flex shrink-0 flex-col items-center">
           <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-            grayscale-50
+            灰度-50
           </p>
           <div className="relative grayscale-50">
             <img
@@ -62,7 +62,7 @@ export const description = "用于将灰度滤镜应用于元素的工具类。"
           </div>
         </div>
         <div className="flex shrink-0 flex-col items-center">
-          <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">grayscale</p>
+          <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">灰度</p>
           <div className="relative grayscale">
             <img
               className="size-24 rounded-lg object-cover"

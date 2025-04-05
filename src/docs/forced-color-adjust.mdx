@@ -6,22 +6,22 @@ import Image from "next/image";
 import tshirtImage from "./img/t-shirt.jpg";
 
 export const title = "forced-color-adjust";
-export const description = "用于选择强制颜色的工具。";
+export const description = "用于选择是否启用强制颜色的工具。";
 
 <ApiTable
   rows={[
-    ["forced-color-adjust-auto", "强制颜色调整: 自动;"],
-    ["forced-color-adjust-none", "强制颜色调整: 无;"],
+    ["forced-color-adjust-auto", "forced-color-adjust: auto;"],
+    ["forced-color-adjust-none", "forced-color-adjust: none;"],
   ]}
 />
 
 ## 示例
 
-### 退出强制颜色模式
+### 取消强制颜色
 
-使用 `forced-color-adjust-none` 工具将元素排除在强制颜色模式强制的颜色之外。这在强制限制调色板会降低可用性的情况下非常有用。
+使用 `forced-color-adjust-none` 工具来让元素不受强制颜色模式强制的颜色影响。这在局限的调色板会降低可用性的情况下尤其有用。
 
-<Figure hint="尝试在开发者工具中模拟 `forced-colors: active` 以查看更改">
+<Figure hint="尝试在开发者工具中模拟 `forced-colors: active` 以查看变化">
 
 <Example>
   {
@@ -29,7 +29,7 @@ export const description = "用于选择强制颜色的工具。";
       <div className="aspect-h-3 aspect-w-3 overflow-hidden">
         <Image
           src={tshirtImage}
-          alt="两件灰色、白色和黑色的衬衫平铺在一起。"
+          alt="两件灰色、白色和黑色的T恤平放。"
           className="h-full w-full object-cover object-center"
         />
       </div>
@@ -114,11 +114,11 @@ export const description = "用于选择强制颜色的工具。";
 
 </Figure>
 
-您还可以使用[强制颜色变体](/docs/hover-focus-and-other-states#forced-colors)在用户启用强制颜色模式时有条件地添加样式。
+您还可以使用 [强制颜色变体](/docs/hover-focus-and-other-states#forced-colors)，当用户启用了强制颜色模式时有条件地添加样式。
 
 ### 恢复强制颜色
 
-使用 `forced-color-adjust-auto` 工具让元素遵循强制颜色模式强制的颜色：
+使用 `forced-color-adjust-auto` 工具使元素遵循强制颜色模式强制的颜色：
 
 ```html
 <!-- [!code classes:lg:forced-color-adjust-auto] -->
@@ -141,7 +141,7 @@ export const description = "用于选择强制颜色的工具。";
 </form>
 ```
 
-这在您希望撤销 `forced-color-adjust-none` 工具时非常有用，例如在较大屏幕上。
+这在您想要撤销 `forced-color-adjust-none` 工具时非常有用，例如在更大的屏幕尺寸上。
 
 ### 响应式设计
 

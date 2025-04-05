@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "user-select";
-export const description = "控制用户是否可以选择元素中文本的实用工具。";
+export const description = "用于控制用户是否可以在元素中选择文本的工具类。";
 
 <ApiTable
   rows={[
@@ -19,7 +19,7 @@ export const description = "控制用户是否可以选择元素中文本的实�
 
 ### 禁用文本选择
 
-使用 `select-none` 工具来防止在一个元素及其子元素中选择文本：
+使用 `select-none` 工具类来阻止在元素及其子元素中选择文本：
 
 <Figure hint="尝试选择文本以查看预期行为">
 
@@ -27,7 +27,7 @@ export const description = "控制用户是否可以选择元素中文本的实�
   {
     <div className="flex justify-center">
       <div className="dark:highlight-white/5 inline-flex rounded-lg bg-white px-4 py-3 text-center font-sans text-sm font-semibold text-gray-900 ring-1 ring-gray-900/5 select-none dark:bg-gray-800 dark:text-gray-200 dark:ring-0">
-        快速的棕色狐狸跳过懒惰的狗。
+        快速的棕色狐狸跳过懒狗。
       </div>
     </div>
   }
@@ -35,14 +35,14 @@ export const description = "控制用户是否可以选择元素中文本的实�
 
 ```html
 <!-- [!code classes:select-none] -->
-<div class="select-none ...">快速的棕色狐狸跳过懒惰的狗。</div>
+<div class="select-none ...">快速的棕色狐狸跳过懒狗。</div>
 ```
 
 </Figure>
 
 ### 允许文本选择
 
-使用 `select-text` 工具允许在一个元素及其子元素中选择文本：
+使用 `select-text` 工具类来允许在元素及其子元素中选择文本：
 
 <Figure hint="尝试选择文本以查看预期行为">
 
@@ -50,7 +50,7 @@ export const description = "控制用户是否可以选择元素中文本的实�
   {
     <div className="flex justify-center">
       <div className="dark:highlight-white/5 inline-flex rounded-lg bg-white px-4 py-3 text-center font-sans text-sm font-semibold text-gray-900 ring-1 ring-gray-900/5 select-text dark:bg-gray-800 dark:text-gray-200 dark:ring-0">
-        快速的棕色狐狸跳过懒惰的狗。
+        快速的棕色狐狸跳过懒狗。
       </div>
     </div>
   }
@@ -58,22 +58,22 @@ export const description = "控制用户是否可以选择元素中文本的实�
 
 ```html
 <!-- [!code classes:select-text] -->
-<div class="select-text ...">快速的棕色狐狸跳过懒惰的狗。</div>
+<div class="select-text ...">快速的棕色狐狸跳过懒狗。</div>
 ```
 
 </Figure>
 
-### 一次点击选择所有文本
+### 单击选择所有文本
 
-使用 `select-all` 工具，在用户点击时自动选择元素中的所有文本：
+使用 `select-all` 工具类，当用户单击时自动选择元素中的所有文本：
 
-<Figure hint="尝试点击文本以查看预期行为">
+<Figure hint="尝试单击文本以查看预期行为">
 
 <Example>
   {
     <div className="flex justify-center">
       <div className="dark:highlight-white/5 inline-flex rounded-lg bg-white px-4 py-3 text-center font-sans text-sm font-semibold text-gray-900 ring-1 ring-gray-900/5 select-all dark:bg-gray-800 dark:text-gray-200 dark:ring-0">
-        快速的棕色狐狸跳过懒惰的狗。
+        快速的棕色狐狸跳过懒狗。
       </div>
     </div>
   }
@@ -81,14 +81,14 @@ export const description = "控制用户是否可以选择元素中文本的实�
 
 ```html
 <!-- [!code classes:select-all] -->
-<div class="select-all ...">快速的棕色狐狸跳过懒惰的狗。</div>
+<div class="select-all ...">快速的棕色狐狸跳过懒狗。</div>
 ```
 
 </Figure>
 
 ### 使用自动选择行为
 
-使用 `select-auto` 工具来使用浏览器对于选择文本的默认行为：
+使用 `select-auto` 工具类以使用浏览器的默认文本选择行为：
 
 <Figure hint="尝试选择文本以查看预期行为">
 
@@ -96,7 +96,7 @@ export const description = "控制用户是否可以选择元素中文本的实�
   {
     <div className="flex justify-center">
       <div className="dark:highlight-white/5 inline-flex rounded-lg bg-white px-4 py-3 text-center font-sans text-sm font-semibold text-gray-900 ring-1 ring-gray-900/5 select-auto dark:bg-gray-800 dark:text-gray-200 dark:ring-0">
-        快速的棕色狐狸跳过懒惰的狗。
+        快速的棕色狐狸跳过懒狗。
       </div>
     </div>
   }
@@ -104,7 +104,7 @@ export const description = "控制用户是否可以选择元素中文本的实�
 
 ```html
 <!-- [!code classes:select-auto] -->
-<div class="select-auto ...">快速的棕色狐狸跳过懒惰的狗。</div>
+<div class="select-auto ...">快速的棕色狐狸跳过懒狗。</div>
 ```
 
 </Figure>

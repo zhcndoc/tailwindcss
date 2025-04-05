@@ -6,7 +6,7 @@ import { ResponsiveDesign } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "justify-self";
-export const description = "用于控制单个网格项目在其内联轴上对齐的工具。";
+export const description = "用于控制单个网格项在其行内轴上对齐方式的工具。";
 
 <ApiTable
   rows={[
@@ -22,9 +22,9 @@ export const description = "用于控制单个网格项目在其内联轴上对�
 
 ## 示例
 
-### 自动
+### 自动对齐
 
-Use the `justify-self-auto` utility to align an item based on the value of the grid's `justify-items` property:
+使用 `justify-self-auto` 工具来根据网格的 `justify-items` 属性的值对齐一个元素：
 
 <Figure>
 
@@ -55,9 +55,9 @@ Use the `justify-self-auto` utility to align an item based on the value of the g
 
 </Figure>
 
-### 开始
+### 开始对齐
 
-Use the `justify-self-start` utility to align a grid item to the start of its inline axis:
+使用 `justify-self-start` 工具将网格项对齐到其行内轴的开始部分：
 
 <Figure>
 
@@ -88,17 +88,17 @@ Use the `justify-self-start` utility to align a grid item to the start of its in
 
 </Figure>
 
-### 中心
+### 居中对齐
 
-Use the `justify-self-center` or `justify-self-center-safe` utilities to align a grid item along the center of its inline axis:
+使用 `justify-self-center` 或 `justify-self-center-safe` 工具将一个网格项在其行内轴上居中对齐：
 
-<Figure hint="Resize the container to see the alignment behavior">
+<Figure hint="调整容器大小以查看对齐行为">
 
 <Example resizable>
   {
     <div className="grid grid-cols-1 gap-8">
       <div>
-        <p className="text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">justify-center-end</p>
+        <p className="text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">justify-self-center</p>
         <div className="mt-4 grid auto-rows-fr grid-cols-3 justify-items-stretch gap-10 text-center font-mono text-sm leading-6 font-bold text-white">
           <div className="rounded-lg bg-indigo-300 p-4 dark:bg-indigo-800 dark:text-indigo-500">01</div>
           <div className="grid grid-cols-1">
@@ -109,9 +109,7 @@ Use the `justify-self-center` or `justify-self-center-safe` utilities to align a
         </div>
       </div>
       <div>
-        <p className="text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-          justify-self-center-safe
-        </p>
+        <p className="text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">justify-self-center-safe</p>
         <div className="mt-4 grid auto-rows-fr grid-cols-3 justify-items-stretch gap-10 text-center font-mono text-sm leading-6 font-bold text-white">
           <div className="rounded-lg bg-sky-300 p-4 dark:bg-sky-800 dark:text-sky-500">01</div>
           <div className="grid grid-cols-1">
@@ -151,13 +149,13 @@ Use the `justify-self-center` or `justify-self-center-safe` utilities to align a
 
 </Figure>
 
-When there is not enough space available, the `justify-self-center-safe` utility will align the item to the start of the container instead of the end.
+当可用空间不足时，`justify-self-center-safe` 工具会将元素对齐到容器的开始部分，而不是结束部分。
 
-### End
+### 结束对齐
 
-Use the `justify-self-end` or `justify-self-end-safe` utilities to align a grid item to the end of its inline axis:
+使用 `justify-self-end` 或 `justify-self-end-safe` 工具将一个网格项对齐到其行内轴的结束部分：
 
-<Figure hint="Resize the container to see the alignment behavior">
+<Figure hint="调整容器大小以查看对齐行为">
 
 <Example resizable>
   {
@@ -174,9 +172,7 @@ Use the `justify-self-end` or `justify-self-end-safe` utilities to align a grid 
         </div>
       </div>
       <div>
-        <p className="text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-          justify-self-end-safe
-        </p>
+        <p className="text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">justify-self-end-safe</p>
         <div className="mt-4 grid auto-rows-fr grid-cols-3 justify-items-stretch gap-10 text-center font-mono text-sm leading-6 font-bold text-white">
           <div className="rounded-lg bg-purple-300 p-4 dark:bg-purple-800 dark:text-purple-500">01</div>
           <div className="grid grid-cols-1">
@@ -216,11 +212,11 @@ Use the `justify-self-end` or `justify-self-end-safe` utilities to align a grid 
 
 </Figure>
 
-When there is not enough space available, the `justify-self-end-safe` utility will align the item to the start of the container instead of the end.
+当可用空间不足时，`justify-self-end-safe` 工具会将元素对齐到容器的开始部分，而不是结束部分。
 
-### Stretch
+### 拉伸对齐
 
-Use the `justify-self-stretch` utility to stretch a grid item to fill the grid area on its inline axis:
+使用 `justify-self-stretch` 工具使网格项在其行内轴上拉伸以填充网格区域：
 
 <Figure>
 

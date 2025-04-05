@@ -1,11 +1,11 @@
-export const title = "Preflight";
-export const description = "Tailwind 项目的一组意见明确的基础样式。";
+export const title = "预检";
+export const description = "为 Tailwind 项目提供一套有见地的基础样式。";
 
 ## 概述
 
-构建在 [modern-normalize](https://github.com/sindresorhus/modern-normalize) 之上，Preflight 是一组针对 Tailwind 项目的基础样式，旨在平滑浏览器间的不一致性，并使你在设计系统的约束下更容易工作。
+基于 [modern-normalize](https://github.com/sindresorhus/modern-normalize)，预检是一套为 Tailwind 项目设计的基础样式，旨在消除跨浏览器的不一致性，使您能够更轻松地在设计系统的约束内进行工作。
 
-当你将 `tailwindcss` 导入到你的项目中时，Preflight 会自动注入到 `base` 层中：
+当您将 `tailwindcss` 导入到项目中时，预检会自动注入到 `base` 层：
 
 ```css
 /* [!code filename:CSS] */
@@ -17,13 +17,13 @@ export const description = "Tailwind 项目的一组意见明确的基础样式�
 @import "tailwindcss/utilities.css" layer(utilities);
 ```
 
-尽管 Preflight 中的大多数样式旨在不被注意——它们只是让事物的表现更像你所期望的那样——其中一些更富有主观性，当你首次遇到时可能会感到惊讶。
+虽然预检中的大多数样式在设计上是为了使其不被察觉——它们只是使行为更符合您的预期——但有些样式更具观点，初次接触时可能会令人感到意外。
 
-有关 Preflight 应用的所有样式的完整参考，[请参见样式表](https://github.com/tailwindlabs/tailwindcss/blob/main/packages/tailwindcss/preflight.css)。
+有关预检应用的所有样式的完整参考，请 [查看样式表](https://github.com/tailwindlabs/tailwindcss/blob/main/packages/tailwindcss/preflight.css)。
 
-### 边距被删除
+### 去掉边距
 
-Preflight 从所有元素（包括标题、引用、段落等）中删除了所有默认边距：
+预检移除了所有元素（包括标题、引用、段落等）的默认边距：
 
 ```css
 /* [!code filename:CSS] */
@@ -37,11 +37,11 @@ Preflight 从所有元素（包括标题、引用、段落等）中删除了所�
 }
 ```
 
-这使得不小心依赖于用户代理样式表应用的边距变得更加困难，而这些边距并不是你间距比例的一部分。
+这使得意外依赖于用户代理样式表应用的边距值变得更加困难，这些值并不属于您的间距尺度。
 
-### 边框样式被重置
+### 边框样式重置
 
-为了通过简单地添加 `border` 类来轻松添加边框，Tailwind 覆盖了所有元素的默认边框样式，规则如下：
+为了便于通过简单地添加 `border` 类来添加边框，Tailwind 使用以下规则覆盖所有元素的默认边框样式：
 
 ```css
 /* [!code filename:CSS] */
@@ -55,11 +55,11 @@ Preflight 从所有元素（包括标题、引用、段落等）中删除了所�
 }
 ```
 
-由于 `border` 类仅设置 `border-width` 属性，因此此重置确保添加该类始终会添加一个固体的 `1px` 边框，使用 `currentColor`。
+由于 `border` 类仅设置 `border-width` 属性，此重置确保添加该类时始终添加一个使用 `currentColor` 的实心 `1px` 边框。
 
-这在集成某些第三方库时可能会导致一些意外结果，比如 [Google 地图](https://github.com/tailwindlabs/tailwindcss/issues/484)。
+这可能会在集成某些第三方库时造成一些意外结果，例如 [Google 地图](https://github.com/tailwindlabs/tailwindcss/issues/484) 。
 
-当你遇到这样的情况时，可以通过用你自己的自定义 CSS 重写 Preflight 样式来解决它们：
+当遇到此类情况时，您可以通过自定义 CSS 来覆盖预检样式：
 
 ```css
 /* [!code filename:CSS] */
@@ -72,7 +72,7 @@ Preflight 从所有元素（包括标题、引用、段落等）中删除了所�
 
 ### 标题无样式
 
-所有标题元素默认完全无样式，并且与正常文本的字体大小和字重相同：
+所有标题元素默认完全无样式，与普通文本拥有相同的字体大小和粗细：
 
 ```css
 /* [!code filename:CSS] */
@@ -89,14 +89,14 @@ h6 {
 
 这样做的原因有两个：
 
-- **它帮助你避免不小心偏离你的排版比例**。默认情况下，浏览器为标题分配的大小在 Tailwind 的默认排版比例中不存在，并且不保证在你自己的排版比例中存在。
-- **在 UI 开发中，标题往往应该被视觉上降低强调**。默认使标题无样式意味着你对标题应用的任何样式都是有意识和故意的。
+- **帮助您避免意外偏离您的字体比例**。默认情况下，浏览器为标题分配的大小在 Tailwind 的默认字体比例中不存在，并且不保证在您自己的字体比例中存在。
+- **在 UI 开发中，标题通常应该被视觉上弱化**。默认让标题无样式意味着您对标题应用的任何样式都是有意识和故意的。
 
-你始终可以通过 [添加自己的基础样式](/docs/adding-custom-styles#adding-base-styles) 来为项目添加默认标题样式。
+您始终可以通过 [添加您自己的基础样式](/docs/adding-custom-styles#adding-base-styles) 为项目添加默认标题样式。
 
 ### 列表无样式
 
-有序和无序列表默认无样式，没有项目符号或数字：
+有序列表和无序列表默认无样式，没有项目符号或数字：
 
 ```css
 /* [!code filename:CSS] */
@@ -107,7 +107,7 @@ menu {
 }
 ```
 
-如果你想要给列表添加样式，可以使用 [list-style-type](/docs/list-style-type) 和 [list-style-position](/docs/list-style-position) 工具：
+如果您想为列表添加样式，可以使用 [list-style-type](/docs/list-style-type) 和 [list-style-position](/docs/list-style-position) 工具：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -118,11 +118,11 @@ menu {
 </ul>
 ```
 
-你始终可以通过 [添加自己的基础样式](/docs/adding-custom-styles#adding-base-styles) 来为项目添加默认列表样式。
+您始终可以通过 [添加您自己的基础样式](/docs/adding-custom-styles#adding-base-styles) 为项目添加默认列表样式。
 
 #### 可访问性考虑
 
-无样式的列表 [不会被 VoiceOver 宣布为列表](https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/)。如果你的内容确实是列表，但你想保持无样式，请 [添加“list”角色](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html) 到该元素：
+无样式的列表不会被 VoiceOver [宣布为列表](https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/)。如果您的内容确实是一个列表，但您希望保持无样式，请向元素 [添加 "list" 角色](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html)：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -135,7 +135,7 @@ menu {
 
 ### 图片为块级元素
 
-图片和其他替换元素（如 `svg`、`video`、`canvas` 和其他）默认 `display: block`：
+默认情况下，图片及其他替换元素（如 `svg`、`video`、`canvas` 等）为 `display: block`：
 
 ```css
 /* [!code filename:CSS] */
@@ -154,16 +154,16 @@ object {
 
 这有助于避免使用浏览器默认的 `display: inline` 时经常遇到的意外对齐问题。
 
-如果你希望将这些元素中的一个设置为 `inline` 而不是 `block`，只需使用 `inline` 工具：
+如果您需要将这些元素之一设置为 `inline` 而不是 `block`，只需使用 `inline` 工具：
 
 ```html
 <!-- [!code filename:HTML] -->
 <img class="inline" src="..." alt="..." />
 ```
 
-### 图片被限制
+### 图片有宽度限制
 
-图片和视频根据其固有的宽高比限制为父容器的宽度：
+图片和视频的宽度会限制在父级容器的宽度内，同时保持其固有的宽高比：
 
 ```css
 /* [!code filename:CSS] */
@@ -174,16 +174,16 @@ video {
 }
 ```
 
-这防止它们超出其容器，并使其默认响应式。如果你需要重写此行为，请使用 `max-w-none` 工具：
+这防止它们溢出其容器，使其默认情况下是响应式的。如果您需要覆盖此行为，请使用 `max-w-none` 工具：
 
 ```html
 <!-- [!code filename:HTML] -->
 <img class="max-w-none" src="..." alt="..." />
 ```
 
-## 扩展 Preflight
+## 扩展预检
 
-如果你想在 Preflight 的基础上添加自己的基础样式，请使用 `@layer base` 将其添加到 CSS 的 `base` 层中：
+如果您想在预检之上添加自己的基础样式，请在 CSS 中通过 `@layer base` 将它们添加到 `base` CSS 层中：
 
 ```css
 /* [!code filename:CSS] */
@@ -204,13 +204,13 @@ video {
 }
 ```
 
-在 [添加基础样式文档](/docs/adding-custom-styles#adding-base-styles) 中了解更多。
+了解更多信息，请查阅 [添加基础样式文档](/docs/adding-custom-styles#adding-base-styles)。
 
-## 禁用 Preflight
+## 禁用预检
 
-如果你想完全禁用 Preflight——也许是因为你将 Tailwind 集成到现有项目中，或者你更喜欢定义自己的基础样式——你可以通过仅导入你需要的 Tailwind 部分来实现。
+如果您想完全禁用预检——可能是因为您正在将 Tailwind 集成到现有项目中，或者您希望定义自己的基础样式——可以通过仅导入所需的 Tailwind 部分来实现。
 
-默认情况下，`@import "tailwindcss";` 会注入以下内容：
+默认情况下，`@import "tailwindcss";` 注入的内容是：
 
 ```css
 /* [!code filename:CSS] */
@@ -221,7 +221,7 @@ video {
 @import "tailwindcss/utilities.css" layer(utilities);
 ```
 
-要禁用 Preflight，只需省略它的导入，同时保留其他部分：
+要禁用预检，只需省略它的导入，同时保留其他内容：
 
 ```css
 /* [!code filename:CSS] */

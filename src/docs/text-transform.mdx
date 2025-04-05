@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "文本转换";
-export const description = "用于控制文本大写的工具。";
+export const title = "text-transform";
+export const description = "控制文本大小写的工具类.";
 
 <ApiTable
   rows={[
@@ -17,86 +17,86 @@ export const description = "用于控制文本大写的工具。";
 
 ## 示例
 
-### 文本大写
+### 将文本转换为大写
 
-使用 `uppercase` 工具将元素的文本转换为大写：
+使用 `uppercase` 工具类将元素文本转换为大写：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 uppercase dark:text-gray-200">
-      敏捷的棕色狐狸跃过懒狗。
+      快速的棕色狐狸跳过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:uppercase] -->
-<p class="uppercase">敏捷的棕色狐狸 ...</p>
+<p class="uppercase">快速的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
-### 文本小写
+### 将文本转换为小写
 
-使用 `lowercase` 工具将元素的文本转换为小写：
+使用 `lowercase` 工具类将元素文本转换为小写：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 lowercase dark:text-gray-200">
-      敏捷的棕色狐狸跃过懒狗。
+      快速的棕色狐狸跳过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:lowercase] -->
-<p class="lowercase">敏捷的棕色狐狸 ...</p>
+<p class="lowercase">快速的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
-### 文本首字母大写
+### 将文本首字母大写
 
-使用 `capitalize` 工具将元素的文本首字母大写：
+使用 `capitalize` 工具类将元素文本的首字母大写：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 capitalize dark:text-gray-200">
-      敏捷的棕色狐狸跃过懒狗。
+      快速的棕色狐狸跳过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:capitalize] -->
-<p class="capitalize">敏捷的棕色狐狸 ...</p>
+<p class="capitalize">快速的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
 ### 重置文本大小写
 
-使用 `normal-case` 工具来保留元素原始的文本大小写—通常用于在不同的断点重置大写：
+使用 `normal-case` 工具类保留元素文本的原始大小写——通常用于在不同的断点重置大小写：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 normal-case dark:text-gray-200">
-      敏捷的棕色狐狸跃过懒狗。
+      快速的棕色狐狸跳过懒狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:normal-case] -->
-<p class="normal-case">敏捷的棕色狐狸 ...</p>
+<p class="normal-case">快速的棕色狐狸 ...</p>
 ```
 
 </Figure>

@@ -1,15 +1,15 @@
 import { CodeExampleStack } from "@/components/code-example";
 
 export const title = "函数和指令";
-export const description = "Tailwind 提供给你的 CSS 参考自定义函数和指令。";
+export const description = "Tailwind 为你的 CSS 提供的自定义函数和指令的参考。";
 
 ## 指令
 
-指令是特定于 Tailwind 的自定义 [at-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)，你可以在 CSS 中使用它们，为 Tailwind CSS 项目提供特殊功能。
+指令是 Tailwind 特有的自定义 [at-rules](https://developer.mozilla.org/zh-CN/docs/Web/CSS/At-rule)，可在你的 CSS 中使用，为 Tailwind CSS 项目提供特殊功能。
 
 <h3 id="import-directive">@import</h3>
 
-使用 `@import` 指令内联导入 CSS 文件，包括 Tailwind 自身：
+使用 `@import` 指令来内联导入 CSS 文件，包括 Tailwind 自身：
 
 ```css
 /* [!code filename:CSS] */
@@ -18,7 +18,7 @@ export const description = "Tailwind 提供给你的 CSS 参考自定义函数�
 
 <h3 id="theme-directive">@theme</h3>
 
-使用 `@theme` 指令定义项目的自定义设计变量，如字体、颜色和断点：
+使用 `@theme` 指令来定义你项目的自定义设计令牌，如字体、颜色和断点：
 
 ```css
 /* [!code filename:CSS] */
@@ -41,22 +41,22 @@ export const description = "Tailwind 提供给你的 CSS 参考自定义函数�
 }
 ```
 
-了解更多关于自定义主题的信息，请参阅 [主题变量文档](/docs/theme)。
+有关自定义主题的更多信息，请参见 [主题变量文档](/docs/theme)。
 
 <h3 id="source-directive">@source</h3>
 
-使用 `@source` 指令显式指定不被 Tailwind 自动内容检测识别的源文件：
+使用 `@source` 指令显式指定未被 Tailwind 自动内容检测捕获的源文件：
 
 ```css
 /* [!code filename:CSS] */
 @source "../node_modules/@my-company/ui-lib";
 ```
 
-了解更多关于自动内容检测的信息，请参阅 [源文件中的类检测文档](/docs/detecting-classes-in-source-files)。
+有关自动内容检测的更多信息，请参见 [在源文件中检测类的文档](/docs/detecting-classes-in-source-files)。
 
 <h3 id="utility-directive">@utility</h3>
 
-使用 `@utility` 指令向项目中添加自定义工具类，支持 `hover`、`focus` 和 `lg` 等变体：
+使用 `@utility` 指令向项目中添加与 `hover`、`focus` 和 `lg` 等变体兼容的自定义工具类：
 
 ```css
 /* [!code filename:CSS] */
@@ -65,11 +65,11 @@ export const description = "Tailwind 提供给你的 CSS 参考自定义函数�
 }
 ```
 
-了解更多关于注册自定义工具类的信息，请参阅 [添加自定义工具类文档](/docs/adding-custom-styles#adding-custom-utilities)。
+有关注册自定义工具类的更多信息，请参见 [添加自定义工具类的文档](/docs/adding-custom-styles#adding-custom-utilities)。
 
 <h3 id="variant-directive">@variant</h3>
 
-使用 `@variant` 指令将 Tailwind 变体应用于 CSS 中的样式：
+使用 `@variant` 指令将 Tailwind 变体应用于你的 CSS 中的样式：
 
 ```css
 /* [!code filename:CSS] */
@@ -83,24 +83,24 @@ export const description = "Tailwind 提供给你的 CSS 参考自定义函数�
 }
 ```
 
-Learn more using variants in the [using variants documentation](/docs/adding-custom-styles#using-variants).
+有关使用变体的更多信息，请参见 [使用变体的文档](/docs/adding-custom-styles#using-variants)。
 
 <h3 id="custom-variant-directive">@custom-variant</h3>
 
-使用 `@custom-variant` 指令添加项目中的自定义变体：
+使用 `@custom-variant` 指令为项目添加自定义变体：
 
 ```css
 /* [!code filename:CSS] */
 @custom-variant theme-midnight (&:where([data-theme="midnight"] *));
 ```
 
-This lets you write utilities `theme-midnight:bg-black` and `theme-midnight:text-white`.
+这使你能够使用 `theme-midnight:bg-black` 和 `theme-midnight:text-white` 这样的工具类。
 
-Learn more about adding custom variants in the [adding custom variants documentation](/docs/adding-custom-styles#adding-custom-variants).
+有关添加自定义变体的更多信息，请参见 [添加自定义变体的文档](/docs/adding-custom-styles#adding-custom-variants)。
 
 <h3 id="apply-directive">@apply</h3>
 
-使用 `@apply` 指令将任何现有的工具类内联到你自己的自定义 CSS 中：
+使用 `@apply` 指令将现有的工具类内联到你自己的自定义 CSS 中：
 
 ```css
 /* [!code filename:CSS] */
@@ -120,18 +120,18 @@ Learn more about adding custom variants in the [adding custom variants documenta
 }
 ```
 
-当你需要编写自定义 CSS（比如覆盖第三方库中的样式）但仍希望使用你的设计变量和保持在 HTML 中使用的相同语法时，这是很有用的。
+当你需要编写自定义 CSS（比如覆盖第三方库中的样式）时，这非常有用，同时仍希望使用你的设计令牌并使用你在 HTML 中习惯的语法。
 
 <h3 id="reference-directive">@reference</h3>
 
-如果你想在 Vue 或 Svelte 组件的 `<style>` 块中，或在 CSS 模块中使用 `@apply` 或 `@variant`，你需要导入你的主题变量、自定义工具类和自定义变体，以使这些值在该上下文中可用。
+如果你想在 Vue 或 Svelte 组件的 `<style>` 块中，或在 CSS 模块中使用 `@apply` 或 `@variant`，你需要导入你的主题变量、自定义工具类和自定义变体，以便在该上下文中使用那些值。
 
-为了在输出中不重复任何 CSS，可以使用 `@reference` 指令导入你的主样式表作为参考，而不实际包含样式：
+为此，请使用 `@reference` 指令来导入你的主要样式表，以便参考而不实际包含样式，避免在输出中重复任何 CSS：
 
 ```html
 <!-- [!code filename:Vue] -->
 <template>
-  <h1>Hello world!</h1>
+  <h1>你好，世界！</h1>
 </template>
 
 <style>
@@ -144,12 +144,12 @@ Learn more about adding custom variants in the [adding custom variants documenta
 </style>
 ```
 
-如果你只是使用没有自定义的默认主题，你可以直接导入 `tailwindcss`：
+如果你只是使用没有自定义的默认主题，可以直接导入 `tailwindcss`：
 
 ```html
 <!-- [!code filename:Vue] -->
 <template>
-  <h1>Hello world!</h1>
+  <h1>你好，世界！</h1>
 </template>
 
 <style>
@@ -164,7 +164,7 @@ Learn more about adding custom variants in the [adding custom variants documenta
 
 ## 函数
 
-Tailwind 提供了以下构建时函数，以便更轻松地处理颜色和间距比例。
+Tailwind 提供以下构建时函数，以简化与颜色和间距比例的操作。
 
 <h3 id="alpha-function">--alpha()</h3>
 
@@ -191,7 +191,7 @@ Tailwind 提供了以下构建时函数，以便更轻松地处理颜色和间�
 
 <h3 id="spacing-function">--spacing()</h3>
 
-使用 `--spacing()` 函数根据你的主题生成间距值：
+使用 `--spacing()` 函数生成基于你的主题的间距值：
 
 <CodeExampleStack>
 
@@ -212,7 +212,7 @@ Tailwind 提供了以下构建时函数，以便更轻松地处理颜色和间�
 
 </CodeExampleStack>
 
-这在任意值中也很有用，尤其是在与 `calc()` 结合使用时：
+这在任意值中也是有用的，尤其是与 `calc()` 结合使用时：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -224,33 +224,33 @@ Tailwind 提供了以下构建时函数，以便更轻松地处理颜色和间�
 
 ## 兼容性
 
-以下指令和函数仅为与 Tailwind CSS v3.x 的兼容性而存在。
+以下指令和函数仅用于与 Tailwind CSS v3.x 的兼容性。
 
 <h3 id="config-directive">@config</h3>
 
-使用 `@config` 指令加载一个基于 JavaScript 的旧配置文件：
+使用 `@config` 指令加载遗留的基于 JavaScript 的配置文件：
 
 ```css
 /* [!code filename:CSS] */
 @config "../../tailwind.config.js";
 ```
 
-JavaScript 基于的配置中的 `corePlugins`、`safelist` 和 `separator` 选项在 v4.0 中不受支持。
+JavaScript 基于的配置中的 `corePlugins`、`safelist` 和 `separator` 选项在 v4.0 中不再支持。
 
 <h3 id="plugin-directive">@plugin</h3>
 
-使用 `@plugin` 指令加载一个基于 JavaScript 的旧插件：
+使用 `@plugin` 指令加载遗留的基于 JavaScript 的插件：
 
 ```css
 /* [!code filename:CSS] */
 @plugin "@tailwindcss/typography";
 ```
 
-`@plugin` 指令接受包名称或本地路径。
+`@plugin` 指令接受包名或本地路径。
 
 <h3 id="theme-function">theme()</h3>
 
-使用 `theme()` 函数通过点符号访问你的 Tailwind 主题值：
+使用 `theme()` 函数通过点表示法访问你的 Tailwind 主题值：
 
 ```css
 /* [!code filename:CSS] */
@@ -260,4 +260,4 @@ JavaScript 基于的配置中的 `corePlugins`、`safelist` 和 `separator` 选�
 }
 ```
 
-此函数已被弃用，我们建议 [使用 CSS 主题变量](/docs/theme#using-your-theme-variables)。
+此函数已被弃用，并建议使用 [CSS 主题变量](/docs/theme#using-your-theme-variables) 代替。

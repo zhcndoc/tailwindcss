@@ -9,8 +9,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import colors from "./utils/colors";
 
-export const title = "文本装饰颜色";
-export const description = "控制文本装饰颜色的工具类。";
+export const title = "text-decoration-color";
+export const description = "用于控制文本装饰颜色的工具类。";
 
 <ApiTable
   rows={[
@@ -30,26 +30,26 @@ export const description = "控制文本装饰颜色的工具类。";
 
 ### 基本示例
 
-使用工具类 `decoration-sky-500` 和 `decoration-pink-500` 来改变元素的 [文本装饰](/docs/text-decoration-line) 颜色：
+使用类似于 `decoration-sky-500` 和 `decoration-pink-500` 的工具类来改变元素的 [文本装饰](/docs/text-decoration-line) 颜色：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-sm gap-4 p-8 text-sm/6 text-gray-900 dark:text-gray-200">
-      我是德里克，一名来自塔图因的宇航工程师。我喜欢在{" "}
+      我是德里克，一名来自塔图因的星际工程师。我喜欢在{" "}
       <a href="#" className="font-bold underline decoration-sky-500 decoration-2 dark:text-gray-200">
-        我的公司
+        我的公司，Inc
       </a>
-      工作。工作之外，我喜欢{" "}
+      工作。在工作之余，我喜欢{" "}
       <a href="#" className="font-bold underline decoration-pink-500 decoration-2 dark:text-gray-200">
-        看跑车比赛
+        观看飞船赛车
       </a>{" "}
-      和进行{" "}
+      并进行{" "}
       <a href="#" className="font-bold underline decoration-indigo-500 decoration-2 dark:text-gray-200">
         光剑
       </a>{" "}
-      战斗。
+      打斗。
     </p>
   }
 </Example>
@@ -58,7 +58,7 @@ export const description = "控制文本装饰颜色的工具类。";
 <!-- [!code classes:decoration-sky-500,decoration-pink-500,decoration-indigo-500] -->
 <!-- prettier-ignore -->
 <p>
-  我是德里克，一名来自塔图因的宇航工程师。我喜欢在 <a class="underline decoration-sky-500">我的公司</a> 工作。工作之外，我喜欢 <a class="underline decoration-pink-500">看跑车比赛</a> 和进行 <a class="underline decoration-indigo-500">光剑</a> 战斗。
+  我是德里克，一名来自塔图因的星际工程师。我喜欢在 <a class="underline decoration-sky-500">我的公司，Inc</a> 工作。在工作之余，我喜欢 <a class="underline decoration-pink-500">观看飞船赛车</a> 并进行 <a class="underline decoration-indigo-500">光剑</a> 打斗。
 </p>
 ```
 
@@ -73,19 +73,19 @@ export const description = "控制文本装饰颜色的工具类。";
 <Example padding={false}>
   {
     <p className="mx-auto max-w-sm gap-4 p-8 text-sm/6 text-gray-900 dark:text-gray-200">
-      我是德里克，一名来自塔图因的宇航工程师。我喜欢在{" "}
+      我是德里克，一名来自塔图因的星际工程师。我喜欢在{" "}
       <a href="#" className="font-bold underline decoration-sky-500/30 decoration-2 dark:text-gray-200">
-        我的公司
+        我的公司，Inc
       </a>
-      工作。工作之外，我喜欢{" "}
+      工作。在工作之余，我喜欢{" "}
       <a href="#" className="font-bold underline decoration-pink-500/30 decoration-2 dark:text-gray-200">
-        看跑车比赛
+        观看飞船赛车
       </a>{" "}
-      和进行{" "}
+      并进行{" "}
       <a href="#" className="font-bold underline decoration-indigo-500/30 decoration-2 dark:text-gray-200">
         光剑
       </a>{" "}
-      战斗。
+      打斗。
     </p>
   }
 </Example>
@@ -94,7 +94,7 @@ export const description = "控制文本装饰颜色的工具类。";
 <!-- [!code word:\/30] -->
 <!-- prettier-ignore -->
 <p>
-  我是德里克，一名来自塔图因的宇航工程师。我喜欢在 <a class="underline decoration-sky-500/30">我的公司</a> 工作。工作之外，我喜欢 <a class="underline decoration-pink-500/30">看跑车比赛</a> 和进行 <a class="underline decoration-indigo-500/30">光剑</a> 战斗。
+  我是德里克，一名来自塔图因的星际工程师。我喜欢在 <a class="underline decoration-sky-500/30">我的公司，Inc</a> 工作。在工作之余，我喜欢 <a class="underline decoration-pink-500/30">观看飞船赛车</a> 并进行 <a class="underline decoration-indigo-500/30">光剑</a> 打斗。
 </p>
 ```
 
@@ -104,31 +104,31 @@ export const description = "控制文本装饰颜色的工具类。";
 
 <UsingACustomValue element="p" utility="decoration" name="文本装饰颜色" value="#50d71e" variable="color" />
 
-### 应用于悬停
+### 在悬停时应用
 
 <TargetingSpecificStates property="text-decoration-color">
 
-<Figure hint="将鼠标悬停在文本上以查看预期效果">
+<Figure hint="将鼠标悬停在文本上以查看预期的效果">
 
 <Example>
   {
     <div className="text-center text-lg font-medium text-gray-900 no-underline dark:text-gray-200">
-      快{" "}
+      那只{" "}
       <a
         href="https://en.wikipedia.org/wiki/The_quick_brown_fox_jumps_over_the_lazy_dog"
         target="blank"
         className="underline hover:decoration-pink-500"
       >
-        棕色疾走狐狸
+        快速的棕色狐狸
       </a>{" "}
-      跃过懒狗。
+      跳过懒狗。
     </div>
   }
 </Example>
 
 ```html
 <!-- [!code classes:hover:decoration-pink-500] -->
-<p>快 <a href="..." class="underline hover:decoration-pink-500 ...">棕色疾走狐狸</a> 跃过懒狗。</p>
+<p>那只 <a href="..." class="underline hover:decoration-pink-500 ...">快速的棕色狐狸</a> 跳过懒狗。</p>
 ```
 
 </Figure>

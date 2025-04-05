@@ -4,14 +4,14 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { TargetingSpecificStates } from "@/components/content.tsx";
 
-export const title = "不透明度";
-export const description = "用于控制元素不透明度的工具类。";
+export const title = "透明度";
+export const description = "用于控制元素透明度的工具类。";
 
 <ApiTable
   rows={[
-    ["opacity-<数字>", "opacity: <数字>%;"],
-    ["opacity-(<自定义属性>)", "opacity: var(<自定义属性>);"],
-    ["opacity-[<值>]", "opacity: <值>;"],
+    ["opacity-<number>", "opacity: <number>%;"],
+    ["opacity-(<custom-property>)", "opacity: var(<custom-property>);"],
+    ["opacity-[<value>]", "opacity: <value>;"],
   ]}
 />
 
@@ -19,7 +19,7 @@ export const description = "用于控制元素不透明度的工具类。";
 
 ### 基本示例
 
-使用 `opacity-<数字>` 工具类，如 `opacity-25` 和 `opacity-100` 来设置元素的不透明度：
+使用 `opacity-<number>` 工具类，如 `opacity-25` 和 `opacity-100` 来设置元素的透明度：
 
 <Figure>
 

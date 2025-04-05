@@ -3,14 +3,14 @@ import { Iframe } from "@/components/iframe";
 import { Example } from "@/components/example";
 import { Figure } from "@/components/figure";
 
-export const title = "黑暗模式";
-export const description = "使用变体为您的网站设置黑暗模式样式。";
+export const title = "暗黑模式";
+export const description = "使用变体将您的网站样式设为暗黑模式。";
 
 ## 概述
 
-现在黑暗模式是许多操作系统的一个重要特性，因此为您的网站设计黑暗版本变得越来越普遍，以与默认设计相匹配。
+现在，暗黑模式已成为许多操作系统的一等功能，因此设计一个与默认设计相配合的暗黑版本的网站变得越来越普遍。
 
-为了尽可能简化这一过程，Tailwind 包含了一个 `dark` 变体，允许您在启用黑暗模式时以不同的方式为您的网站设置样式：
+为尽可能简化此操作，Tailwind 包含了一个 `dark` 变体，可以在启用暗黑模式时为您的网站设置不同的样式：
 
 <Figure>
 
@@ -39,16 +39,16 @@ export const description = "使用变体为您的网站设置黑暗模式样式�
               </svg>
             </span>
           </div>
-          <p className="mt-5 text-base font-medium tracking-tight text-gray-900">可以倒写</p>
+          <p className="mt-5 text-base font-medium tracking-tight text-gray-900">可倒着书写</p>
           <p
             className="mt-2 text-sm text-gray-500"
             children={`零重力笔可以用于任何方向书写，
-          包括倒写。它甚至也能在外太空中使用。`}
+          包括倒着书写。它甚至可以在外太空中使用。`}
           />
         </div>
       </div>
       <div className="bg-gray-900 p-8 pt-7">
-        <p className="mb-2 text-sm font-medium text-gray-400">黑暗模式</p>
+        <p className="mb-2 text-sm font-medium text-gray-400">暗黑模式</p>
         <div className="rounded-lg bg-gray-800 px-6 py-8 shadow-xl ring ring-gray-900/5">
           <div>
             <span className="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
@@ -69,11 +69,11 @@ export const description = "使用变体为您的网站设置黑暗模式样式�
               </svg>
             </span>
           </div>
-          <p className="mt-5 text-base font-medium tracking-tight text-white">可以倒写</p>
+          <p className="mt-5 text-base font-medium tracking-tight text-white">可倒着书写</p>
           <p
             className="mt-2 text-sm text-gray-400"
             children={`零重力笔可以用于任何方向书写，
-          包括倒写。它甚至也能在外太空中使用。`}
+          包括倒着书写。它甚至可以在外太空中使用。`}
           />
         </div>
       </div>
@@ -94,22 +94,22 @@ export const description = "使用变体为您的网站设置黑暗模式样式�
   </div>
   <!-- prettier-ignore -->
   <!-- [!code word:dark\:text-white] -->
-  <h3 class="text-gray-900 dark:text-white mt-5 text-base font-medium tracking-tight ">可以倒写</h3>
+  <h3 class="text-gray-900 dark:text-white mt-5 text-base font-medium tracking-tight ">可倒着书写</h3>
   <!-- prettier-ignore -->
   <!-- [!code word:dark\:text-gray-400] -->
   <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm ">
-    零重力笔可以用于任何方向书写，包括倒写。它甚至能在外太空中使用。
+    零重力笔可以用于任何方向书写，包括倒着书写。它甚至可以在外太空中使用。
   </p>
 </div>
 ```
 
 </Figure>
 
-默认情况下，这使用 `prefers-color-scheme` CSS 媒体特性，但您还可以通过覆盖黑暗变体构建支持 [手动切换黑暗模式](#toggling-dark-mode-manually) 的网站。
+默认情况下，这使用 `prefers-color-scheme` CSS 媒体特征，但您也可以构建支持 [手动切换暗黑模式](#手动切换暗黑模式) 的网站，通过覆盖暗黑变体。
 
-## 手动切换黑暗模式
+## 手动切换暗黑模式
 
-如果您希望您的黑暗主题由 CSS 选择器驱动，而不是 `prefers-color-scheme` 媒体查询，请覆盖 `dark` 变体以使用您的自定义选择器：
+如果您希望您的暗黑主题通过 CSS 选择器驱动而不是 `prefers-color-scheme` 媒体查询，请覆盖 `dark` 变体以使用您的自定义选择器：
 
 ```css
 /* [!code filename:app.css] */
@@ -119,7 +119,7 @@ export const description = "使用变体为您的网站设置黑暗模式样式�
 @custom-variant dark (&:where(.dark, .dark *));
 ```
 
-现在，而不是基于 `prefers-color-scheme` 应用 `dark:*` 工具，当 `dark` 类在 HTML 树中较早出现时，它们将被应用：
+现在，`dark:*` 实用程序将根据在 HTML 树中更早存在的 `dark` 类而应用：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -134,11 +134,11 @@ export const description = "使用变体为您的网站设置黑暗模式样式�
 </html>
 ```
 
-如何将 `dark` 类添加到 `html` 元素取决于您，但一种常见的方法是使用少量 JavaScript 更新 `class` 属性，并将该首选项同步到 `localStorage`。
+如何将 `dark` 类添加到 `html` 元素取决于您，但一种常见的方法是使用一些 JavaScript，更新 `class` 属性并将该偏好同步到 `localStorage` 中。
 
 ### 使用数据属性
 
-要使用数据属性而不是类来激活黑暗模式，只需使用属性选择器覆盖 `dark` 变体即可：
+要使用数据属性而不是类来激活暗黑模式，只需用属性选择器覆盖 `dark` 变体即可：
 
 ```css
 /* [!code filename:app.css] */
@@ -148,7 +148,7 @@ export const description = "使用变体为您的网站设置黑暗模式样式�
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 ```
 
-现在，只要在树的某个地方将 `data-theme` 属性设置为 `dark`，黑暗模式实用工具将应用：
+现在，无论何时 `data-theme` 属性被设置为 `dark`，暗黑模式实用程序将被应用于树的上层：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -163,29 +163,29 @@ export const description = "使用变体为您的网站设置黑暗模式样式�
 </html>
 ```
 
-### 使用系统主题支持
+### 支持系统主题
 
-要构建支持亮色模式、黑暗模式和系统主题的三方主题切换器，请使用自定义黑暗模式选择器和 [`window.matchMedia()` API](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) 来检测系统主题并在需要时更新 `html` 元素。
+要构建支持亮色模式、暗黑模式和您的系统主题的三种主题切换，使用自定义暗黑模式选择器和 [`window.matchMedia()` API](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) 来检测系统主题，并在需要时更新 `html` 元素。
 
-以下是一个简单示例，展示如何支持亮色模式、黑暗模式，以及尊重操作系统的首选项：
+以下是一个简单的示例，演示如何支持亮色模式、暗黑模式，并遵循操作系统的偏好设置：
 
 ```js
 // [!code filename:spaghetti.js]
-// 在页面加载时或更改主题时，最好将其内联添加到 `head` 以避免 FOUC
+// 在页面加载或更改主题时，最好在 `head` 中添加内联样式以避免 FOUC
 document.documentElement.classList.toggle(
   "dark",
   localStorage.theme === "dark" ||
     (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
 );
 
-// 每当用户明确选择亮色模式
+// 当用户明确选择亮色模式时
 localStorage.theme = "light";
 
-// 每当用户明确选择黑暗模式
+// 当用户明确选择暗黑模式时
 localStorage.theme = "dark";
 
-// 每当用户明确选择尊重操作系统的首选项
+// 当用户明确选择尊重操作系统偏好时
 localStorage.removeItem("theme");
 ```
 
-您可以根据需要自行管理这一切，甚至可以在服务器端数据库中存储首选项，并在服务器上渲染类——这完全取决于您。
+您可以根据需要管理此设置，甚至可以将偏好存储在服务器端数据库中并在服务器上渲染类 — 完全取决于您。

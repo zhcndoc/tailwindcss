@@ -5,7 +5,7 @@ import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "网格列";
-export const description = "用于控制元素在网格列的位置和大小的工具类。";
+export const description = "用于控制元素在网格列中如何尺寸和位置的工具类。";
 
 <ApiTable
   rows={[
@@ -71,9 +71,9 @@ export const description = "用于控制元素在网格列的位置和大小的�
 
 </Figure>
 
-### 起始和结束线
+### 开始和结束行
 
-使用 `col-start-<number>` 或 `col-end-<number>` 工具类，如 `col-start-2` 和 `col-end-3`，使元素在 _n_ 网格线处开始或结束：
+使用 `col-start-<number>` 或 `col-end-<number>` 工具类，如 `col-start-2` 和 `col-end-3`，使元素在 _n_ 网格线开始或结束：
 
 <Figure>
 
@@ -104,14 +104,14 @@ export const description = "用于控制元素在网格列的位置和大小的�
 
 </Figure>
 
-这些工具类也可以与 `col-span-<number>` 工具类结合使用，以跨越特定数量的列。
+这些工具类也可以与 `col-span-<number>` 工具类结合，以跨越特定数量的列。
 
 ### 使用自定义值
 
 <UsingACustomValue
   utilities={["col", "col-span", "col-start", "col-end"]}
   variable="columns"
-  name="网格列的大小和位置"
+  name="网格列大小和位置"
   value="16_/_span_16"
 />
 

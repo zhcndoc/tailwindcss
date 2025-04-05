@@ -3,8 +3,8 @@ import { CustomizingYourSpacingScale, ResponsiveDesign, UsingACustomValue } from
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "宽度";
-export const description = "用于设置元素宽度的工具。";
+export const title = "width";
+export const description = "用于设置元素宽度的工具类。";
 
 <ApiTable
   rows={[
@@ -61,7 +61,7 @@ export const description = "用于设置元素宽度的工具。";
 
 ### 基本示例
 
-使用 `w-<number>` 实用工具，如 `w-24` 和 `w-64` 来根据间距比例设置元素的固定宽度：
+使用 `w-<number>` 工具类，如 `w-24` 和 `w-64`，根据间距比例设置元素的固定宽度：
 
 <Figure>
 
@@ -96,7 +96,7 @@ export const description = "用于设置元素宽度的工具。";
 
 ### 使用百分比
 
-使用 `w-full` 或 `w-<fraction>` 实用工具，如 `w-1/2` 和 `w-2/5` 给元素设置基于百分比的宽度：
+使用 `w-full` 或 `w-<fraction>` 工具类，如 `w-1/2` 和 `w-2/5`，为元素设置基于百分比的宽度：
 
 <Figure>
 
@@ -165,7 +165,7 @@ export const description = "用于设置元素宽度的工具。";
 
 ### 使用容器比例
 
-使用 `w-sm` 和 `w-xl` 等工具，根据容器比例设置元素的固定宽度：
+使用 `w-sm` 和 `w-xl` 等工具类，根据容器比例设置元素的固定宽度：
 
 <Figure>
 
@@ -200,7 +200,7 @@ export const description = "用于设置元素宽度的工具。";
 
 ### 匹配视口
 
-使用 `w-screen` 实用工具使元素延伸到视口的整个宽度：
+使用 `w-screen` 工具类使元素横跨整个视口宽度：
 
 ```html
 <!-- [!code classes:w-screen] -->
@@ -209,11 +209,11 @@ export const description = "用于设置元素宽度的工具。";
 </div>
 ```
 
-另外，您可以使用 `w-lvw`、`w-svw` 和 `w-dvw` 实用工具来匹配大、小或动态视口的宽度。
+您也可以使用 `w-lvw`、`w-svw` 和 `w-dvw` 工具类匹配大、小或动态视口的宽度。
 
 ### 重置宽度
 
-使用 `w-auto` 实用工具在特定条件下移除元素的指定宽度，例如在特定的断点处：
+使用 `w-auto` 工具类在特定条件下移除元素的指定宽度，例如在特定断点时：
 
 ```html
 <!-- [!code classes:w-full,w-auto] -->
@@ -224,7 +224,7 @@ export const description = "用于设置元素宽度的工具。";
 
 ### 同时设置宽度和高度
 
-使用 `size-px`、`size-4` 和 `size-full` 等实用工具可以同时设置元素的宽度和高度：
+使用如 `size-px`、`size-4` 和 `size-full` 的工具类，同时设置元素的宽度和高度：
 
 <Figure>
 
@@ -253,12 +253,12 @@ export const description = "用于设置元素宽度的工具。";
 
 ### 使用自定义值
 
-<UsingACustomValue utility="w" value="5px" name="width" variable="width" />
+<UsingACustomValue utility="w" value="5px" name="宽度" variable="width" />
 
 ### 响应式设计
 
-<ResponsiveDesign property="width" defaultClass="w-1/2" featuredClass="w-full" />
+<ResponsiveDesign property="宽度" defaultClass="w-1/2" featuredClass="w-full" />
 
-## 定制您的主题
+## 自定义主题
 
 <CustomizingYourSpacingScale utilities={["w", "size"]} />

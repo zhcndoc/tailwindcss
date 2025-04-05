@@ -1,7 +1,7 @@
 import { ApiTable } from "@/components/api-table.tsx";
 import { UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "变换";
+export const title = "transform";
 export const description = "用于变换元素的工具。";
 
 <ApiTable
@@ -24,7 +24,7 @@ export const description = "用于变换元素的工具。";
 
 ### 硬件加速
 
-如果您的过渡在GPU渲染时比在CPU渲染时表现更好，您可以通过添加 `transform-gpu` 工具强制使用硬件加速：
+如果您的过渡在 GPU 渲染时比在 CPU 渲染时效果更好，可以通过添加 `transform-gpu` 工具来强制使用硬件加速：
 
 ```html
 <!-- [!code classes:transform-gpu] -->
@@ -33,7 +33,7 @@ export const description = "用于变换元素的工具。";
 </div>
 ```
 
-如果您需要有条件地撤销此状态，请使用 `transform-cpu` 工具强制恢复到CPU。
+如果您需要有条件地撤销此状态，可以使用 `transform-cpu` 工具将其强制切换回 CPU。
 
 ### 移除变换
 

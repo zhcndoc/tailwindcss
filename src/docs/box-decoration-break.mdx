@@ -3,9 +3,9 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "box-decoration-break";
+export const title = "盒子装饰断裂";
 export const description =
-  "用于控制元素片段如何在多行、多列或多个页面上呈现的工具。";
+  "控制元素片段在多行、多列或多个页面上如何渲染的工具类。";
 
 <ApiTable
   rows={[
@@ -18,7 +18,7 @@ export const description =
 
 ### 基本示例
 
-使用 `box-decoration-slice` 和 `box-decoration-clone` 工具来控制背景、边框、边框图像、盒阴影、剪切路径、边距和内边距等属性是否应被呈现为一个连续的片段，或作为不同的块：
+使用 `盒子装饰切片` 和 `盒子装饰克隆` 工具类来控制背景、边框、边框图像、盒子阴影、裁剪路径、外边距和内边距等属性是否应该渲染为单个连续片段，或是独立的块：
 
 <Figure>
 
@@ -26,7 +26,7 @@ export const description =
   {
     <div className="grid grid-cols-1 gap-10 px-10 font-mono font-bold sm:grid-cols-2">
       <div className="flex flex-col">
-        <p className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">box-decoration-slice</p>
+        <p className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">盒子装饰切片</p>
         <div className="font-sans text-5xl leading-none font-extrabold tracking-tight">
           <span className="bg-linear-to-r from-indigo-600 to-pink-500 box-decoration-slice px-2 leading-[3.5rem] text-white">
             你好
@@ -36,7 +36,7 @@ export const description =
         </div>
       </div>
       <div className="flex flex-col">
-        <p className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">box-decoration-clone</p>
+        <p className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">盒子装饰克隆</p>
         <div className="font-sans text-5xl leading-none font-extrabold tracking-tight">
           <span className="bg-linear-to-r from-indigo-600 to-pink-500 box-decoration-clone px-2 leading-[3.5rem] text-white">
             你好
@@ -51,11 +51,11 @@ export const description =
 
 {/* prettier-ignore */}
 ```html
-<!-- [!code classes:box-decoration-slice,box-decoration-clone] -->
-<span class="box-decoration-slice bg-linear-to-r from-indigo-600 to-pink-500 px-2 text-white ...">
+<!-- [!code classes:盒子装饰切片,盒子装饰克隆] -->
+<span class="盒子装饰切片 bg-linear-to-r from-indigo-600 to-pink-500 px-2 text-white ...">
   你好<br />世界
 </span>
-<span class="box-decoration-clone bg-linear-to-r from-indigo-600 to-pink-500 px-2 text-white ...">
+<span class="盒子装饰克隆 bg-linear-to-r from-indigo-600 to-pink-500 px-2 text-white ...">
   你好<br />世界
 </span>
 ```
@@ -65,7 +65,7 @@ export const description =
 ### 响应式设计
 
 <ResponsiveDesign
-  property="box-decoration-break"
-  defaultClass="box-decoration-clone"
-  featuredClass="box-decoration-slice"
+  property="盒子装饰断裂"
+  defaultClass="盒子装饰克隆"
+  featuredClass="盒子装饰切片"
 />

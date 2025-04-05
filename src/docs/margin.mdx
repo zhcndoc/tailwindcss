@@ -6,7 +6,7 @@ import { Figure } from "@/components/figure.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "外边距";
-export const description = "控制元素外边距的工具类。";
+export const description = "用于控制元素外边距的工具类。";
 
 <ApiTable
   rows={[
@@ -30,8 +30,8 @@ export const description = "控制元素外边距的工具类。";
       [`${prefix}-[<value>]`, `${property}: <value>;`],
     ]),
     ...[
-      ["space-x", "内联外边距"],
-      ["space-y", "块级外边距"],
+      ["space-x", "margin-inline"],
+      ["space-y", "margin-block"],
     ].flatMap(([prefix, property]) => [
       [
         `${prefix}-<number>`,
@@ -84,25 +84,25 @@ export const description = "控制元素外边距的工具类。";
     ]),
     [
       "space-x-reverse",
-      dedent`& > :not(:last-child) {
+      dedent`& > :not(:last-child)) {
         --tw-space-x-reverse: 1;
       }`,
     ],
     [
       "space-y-reverse",
-      dedent`& > :not(:last-child) {
+      dedent`& > :not(:last-child)) {
         --tw-space-y-reverse: 1;
       }`,
     ],
 
-]}
+  ]}
 />
 
 ## 示例
 
 ### 基本示例
 
-使用 `m-<number>` 工具类，如 `m-4` 和 `m-8` 来控制元素四周的外边距：
+使用 `m-<number>` 工具类，例如 `m-4` 和 `m-8` 来控制元素四周的外边距：
 
 <Figure>
 
@@ -126,9 +126,9 @@ export const description = "控制元素外边距的工具类。";
 
 </Figure>
 
-### 单侧添加外边距
+### 为单边添加外边距
 
-使用 `mt-<number>`、`mr-<number>`、`mb-<number>` 和 `ml-<number>` 工具类，如 `ml-2` 和 `mt-6` 来控制元素一侧的外边距：
+使用 `mt-<number>`、`mr-<number>`、`mb-<number>` 和 `ml-<number>` 工具类，例如 `ml-2` 和 `mt-6` 来控制元素一侧的外边距：
 
 <Figure>
 
@@ -175,7 +175,7 @@ export const description = "控制元素外边距的工具类。";
 
 ### 添加水平外边距
 
-使用 `mx-<number>` 工具类，如 `mx-4` 和 `mx-8` 控制元素的水平外边距：
+使用 `mx-<number>` 工具类，例如 `mx-4` 和 `mx-8` 来控制元素的水平外边距：
 
 <Figure>
 
@@ -201,7 +201,7 @@ export const description = "控制元素外边距的工具类。";
 
 ### 添加垂直外边距
 
-使用 `my-<number>` 工具类，如 `my-4` 和 `my-8` 来控制元素的垂直外边距：
+使用 `my-<number>` 工具类，例如 `my-4` 和 `my-8` 来控制元素的垂直外边距：
 
 <Figure>
 
@@ -227,7 +227,7 @@ export const description = "控制元素外边距的工具类。";
 
 ### 使用负值
 
-要使用负的外边距值，在类名前面加上短横线，使其变为负值：
+要使用负的外边距值，请在类名前加上减号以将其转换为负值：
 
 <Figure>
 
@@ -252,7 +252,7 @@ export const description = "控制元素外边距的工具类。";
 
 ### 使用逻辑属性
 
-使用 `ms-<number>` 或 `me-<number>` 工具类，如 `ms-4` 和 `me-8` 来设置 `margin-inline-start` 和 `margin-inline-end` 逻辑属性：
+使用 `ms-<number>` 或 `me-<number>` 工具类，例如 `ms-4` 和 `me-8` 来设置 `margin-inline-start` 和 `margin-inline-end` 逻辑属性：
 
 <Figure>
 
@@ -303,9 +303,9 @@ export const description = "控制元素外边距的工具类。";
 
 </Figure>
 
-### 在子元素之间添加空间
+### 在子元素之间添加间距
 
-使用 `space-x-<number>` 或 `space-y-<number>` 工具类，如 `space-x-4` 和 `space-y-8` 来控制元素之间的空间：
+使用 `space-x-<number>` 或 `space-y-<number>` 工具类，例如 `space-x-4` 和 `space-y-8` 来控制元素之间的间距：
 
 <Figure>
 
@@ -337,7 +337,7 @@ export const description = "控制元素外边距的工具类。";
 
 #### 反转子元素顺序
 
-如果你的元素处于反向顺序（使用例如 `flex-row-reverse` 或 `flex-col-reverse`），使用 `space-x-reverse` 或 `space-y-reverse` 工具类，以确保空间被添加到每个元素的正确侧面：
+如果您的元素顺序是反向的（例如使用 `flex-row-reverse` 或 `flex-col-reverse`），请使用 `space-x-reverse` 或 `space-y-reverse` 工具类，以确保间距添加到每个元素的正确侧面：
 
 <Figure>
 
@@ -369,20 +369,20 @@ export const description = "控制元素外边距的工具类。";
 
 #### 限制
 
-空间工具实际上只是为一组中的倒数第二个元素添加外边距的快捷方式，并且不设计用于处理复杂情况，例如网格、换行的布局，或在复杂订单中渲染的子元素，而不是它们的自然 DOM 顺序。
+空间工具实际上只是为一组中的所有但最后一个元素添加外边距的快捷方式，并不设计用于处理复杂情况，如网格、换行布局，或子元素以复杂自定义顺序而非其自然 DOM 顺序渲染的情况。
 
-对于这些情况，最好在可能的情况下使用 [gap 工具](/docs/gap)，或者在每个元素上添加外边距，并在父元素上设置匹配的负边距。
+在这些情况下，最好在可能的情况下使用 [gap 工具](/docs/gap)，或对每个元素添加外边距，并在父元素上应用匹配的负外边距。
 
-此外，空间工具不设计用于与 [divide 工具](/docs/border-width#between-children) 一起使用。在这些情况下，考虑在子元素上添加外边距/内边距工具。
+此外，空间工具并不设计与 [divide 工具](/docs/border-width#between-children) 一起使用。在这些情况下，考虑在子元素上添加外边距/内边距工具。
 
 ### 使用自定义值
 
 <UsingACustomValue utilities={["m", "mx", "mb"]} name="外边距" variable="margin" value="5px" />
 
-### 响应设计
+### 响应式设计
 
-<ResponsiveDesign property="外边距" defaultClass="mt-4" featuredClass="mt-8" />
+<ResponsiveDesign property="margin" defaultClass="mt-4" featuredClass="mt-8" />
 
-## 自定义你的主题
+## 自定义主题
 
 <CustomizingYourSpacingScale utilities={["m", "mx", "my", "ms", "me", "mt", "mr", "mb", "ml"]} />

@@ -5,7 +5,7 @@ import { Figure } from "@/components/figure.tsx";
 import { DynamicViewportExample } from "@/components/dynamic-viewport-example.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "高度";
+export const title = "height";
 export const description = "设置元素高度的工具类。";
 
 <ApiTable
@@ -50,7 +50,7 @@ export const description = "设置元素高度的工具类。";
 
 ### 基本示例
 
-使用 `h-<number>` 工具类，如 `h-24` 和 `h-64` 来设置元素的固定高度，基于间距比例：
+使用 `h-<数字>` 工具类，如 `h-24` 和 `h-64`，根据间距比例设置元素的固定高度：
 
 <Figure>
 
@@ -97,7 +97,7 @@ export const description = "设置元素高度的工具类。";
 
 ### 使用百分比
 
-使用 `h-full` 或 `h-<fraction>` 工具类，如 `h-1/2` 和 `h-2/5` 来给元素设置基于百分比的高度：
+使用 `h-full` 或 `h-<分数>` 工具类，如 `h-1/2` 和 `h-2/5`，给元素设置基于百分比的高度：
 
 <Figure>
 
@@ -149,9 +149,9 @@ export const description = "设置元素高度的工具类。";
 
 </Figure>
 
-### 匹配视口
+### 匹配视口高度
 
-使用 `h-screen` 工具类使元素跨越整个视口的高度：
+使用 `h-screen` 工具，使一个元素的高度覆盖整个视口：
 
 ```html
 <!-- [!code classes:h-screen] -->
@@ -162,9 +162,9 @@ export const description = "设置元素高度的工具类。";
 
 ### 匹配动态视口
 
-使用 `h-dvh` 工具类使元素跨越整个视口的高度，随着浏览器 UI 的展开或收缩而变化：
+使用 `h-dvh` 工具，使一个元素的高度覆盖动态变化的视口高度：
 
-<Figure hint="滚动视口以查看视口高度变化">
+<Figure hint="滚动视口以查看视口高度的变化">
 
 <Example padding={false}>
   {<DynamicViewportExample unit="dvh" colorStyles="dark:bg-pink-500 bg-pink-500 border border-pink-400" />}
@@ -181,9 +181,9 @@ export const description = "设置元素高度的工具类。";
 
 ### 匹配大视口
 
-使用 `h-lvh` 工具类设置元素的高度为视口可能的最大高度：
+使用 `h-lvh` 工具，将元素的高度设置为视口的最大高度：
 
-<Figure hint="滚动视口以查看视口高度变化">
+<Figure hint="滚动视口以查看视口高度的变化">
 
 <Example padding={false}>
   {<DynamicViewportExample unit="lvh" colorStyles="dark:bg-indigo-500 bg-indigo-500 border border-indigo-400" />}
@@ -200,9 +200,9 @@ export const description = "设置元素高度的工具类。";
 
 ### 匹配小视口
 
-使用 `h-svh` 工具类设置元素的高度为视口可能的最小高度：
+使用 `h-svh` 工具，将元素的高度设置为视口的最小高度：
 
-<Figure hint="滚动视口以查看视口高度变化">
+<Figure hint="滚动视口以查看视口高度的变化">
 
 <Example padding={false}>
   {<DynamicViewportExample unit="svh" colorStyles="dark:bg-purple-500 bg-purple-500 border border-purple-400" />}
@@ -248,7 +248,7 @@ export const description = "设置元素高度的工具类。";
 
 ### 使用自定义值
 
-<UsingACustomValue utility="h" value="32rem" name="height" variable="height" />
+<UsingACustomValue utility="h" value="32rem" name="高度" variable="height" />
 
 ### 响应式设计
 

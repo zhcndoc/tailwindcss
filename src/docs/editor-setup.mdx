@@ -10,38 +10,38 @@ export const description = "在使用 Tailwind CSS 时改善开发者体验的�
 
 ## 语法支持
 
-Tailwind CSS 使用自定义 CSS 语法，如 `@theme`、`@variant` 和 `@source`，在某些编辑器中可能会触发警告或错误，因为这些规则未被识别。
+Tailwind CSS 使用了类似 `@theme`、`@variant` 和 `@source` 的自定义 CSS 语法，在某些编辑器中，这可能会触发警告或错误，因为这些规则未被识别。
 
-如果您使用的是 VS Code，我们的官方 [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) 插件包括一个专门的 Tailwind CSS 语言模式，支持 Tailwind 使用的所有自定义 at-rules 和函数。
+如果你在使用 VS Code，我们官方的 [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) 插件包含了一个专用的 Tailwind CSS 语言模式，支持 Tailwind 使用的所有自定义 at-rules 和函数。
 
-在某些情况下，如果您的编辑器对 CSS 文件中期望的语法非常严格，您可能需要禁用原生 CSS 语法检查/验证。
+在某些情况下，如果你的编辑器对 CSS 文件中预期的语法非常严格，可能需要禁用原生的 CSS 检查/验证。
 
 ## VS Code 的 IntelliSense
 
-官方的 [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) 扩展为 Visual Studio Code 提升了 Tailwind 开发体验，提供了高级功能，如自动完成、语法高亮和语法检查。
+官方的 [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) 扩展增强了 Visual Studio Code 的 Tailwind 开发体验，为用户提供了自动补全、语法高亮和代码检查等高级功能。
 
 <img
   src={require("./img/intellisense.png").default.src}
-  alt="Visual Studio Code 的 Tailwind CSS IntelliSense 扩展"
+  alt="Visual Studio Code 的 Tailwind CSS IntelliSense 插件"
   width={1344}
   height={672}
   className="rounded-lg"
 />
 
-- **自动完成** — 为实用类提供智能建议，以及 [CSS 函数和指令](/docs/functions-and-directives)。
-- **语法检查** — 高亮显示您 CSS 和标记中的错误和潜在问题。
-- **悬停预览** — 当您将鼠标悬停在实用类上时，显示完整的 CSS。
-- **语法高亮** — 以正确高亮使用自定义 CSS 语法的 Tailwind 特性。
+- **自动补全** — 为工具类提供智能建议，以及 [CSS 函数和指令](/docs/functions-and-directives)。
+- **代码检查** — 在你的 CSS 和标记中突出显示错误和潜在的 bug。
+- **悬停预览** — 当你将鼠标悬停在工具类上时，显示完整的 CSS。
+- **语法高亮** — 确保使用自定义 CSS 语法的 Tailwind 特性被正确高亮。
 
-查看项目 [在 GitHub 上](https://github.com/tailwindcss/intellisense) 以了解更多信息，或 [添加到 Visual Studio Code](vscode:extension/bradlc.vscode-tailwindcss) 以立即开始使用。
+了解更多信息，请查看项目 [在 GitHub 上](https://github.com/tailwindcss/intellisense)，或者 [在 Visual Studio Code 中添加它](vscode:extension/bradlc.vscode-tailwindcss) 开始使用。
 
-## 使用 Prettier 进行类排序
+## 使用 Prettier 排序类名
 
-我们维护一个官方的 [Prettier 插件](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)，该插件会自动按我们的 [推荐类顺序](/blog/automatic-class-sorting-with-prettier#how-classes-are-sorted) 对您的类进行排序。
+我们为 Tailwind CSS 维护了一个官方的 [Prettier 插件](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)，自动按照我们 [推荐的类顺序](/blog/automatic-class-sorting-with-prettier#how-classes-are-sorted) 排序类名。
 
 <img src={require("./img/prettier-banner.jpg").default.src} alt="" width={2400} height={819} className="rounded-lg" />
 
-它与自定义的 Tailwind 配置无缝工作，并且由于它只是一种 Prettier 插件，因此它在 Prettier 能工作的任何地方都可以使用，包括每个流行的编辑器和 IDE，当然也包括命令行。
+它可以与自定义的 Tailwind 配置无缝协作，并且作为一个 Prettier 插件，它适用于所有 Prettier 可以使用的地方，包括每个流行的编辑器和 IDE，当然也包括命令行。
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -53,10 +53,10 @@ Tailwind CSS 使用自定义 CSS 语法，如 `@theme`、`@variant` 和 `@source
 <button class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">提交</button>
 ```
 
-查看这个插件 [在 GitHub 上](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) 以了解更多并开始使用。
+查看插件 [在 GitHub 上](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) 了解更多信息并开始使用。
 
-## JetBrains IDEs
+## JetBrains IDE
 
-JetBrains 的 IDE，如 WebStorm、PhpStorm 等，在 HTML 中支持智能的 Tailwind CSS 补全。
+JetBrains IDE，比如 WebStorm、PhpStorm 等，支持在你的 HTML 中提供智能的 Tailwind CSS 完成。
 
 [了解更多关于 JetBrains IDE 中的 Tailwind CSS 支持 &rarr;](https://www.jetbrains.com/help/webstorm/tailwind-css.html)

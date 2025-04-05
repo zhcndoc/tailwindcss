@@ -4,8 +4,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "mask-mode";
-export const description = "Utilities for controlling an element's mask mode.";
+export const title = "mask-mode"; // 遮罩模式
+export const description = "用于控制元素的遮罩模式的工具."; // 用于控制元素的遮罩模式的工具
 
 <svg className="sr-only">
   <defs>
@@ -41,11 +41,11 @@ export const description = "Utilities for controlling an element's mask mode.";
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use the `mask-alpha`, `mask-luminance` and `mask-match` utilities to control the mode of an element's mask:
+使用 `mask-alpha`、`mask-luminance` 和 `mask-match` 工具来控制元素的遮罩模式：
 
 <Figure>
 
@@ -107,8 +107,8 @@ Use the `mask-alpha`, `mask-luminance` and `mask-match` utilities to control the
 
 </Figure>
 
-When using `mask-luminance` the luminance value of the mask determines visibility, so sticking with grayscale colors will produce the most predictable results. With `mask-alpha`, the opacity of the mask determines the visibility of the masked element.
+在使用 `mask-luminance` 时，遮罩的亮度值决定了可见性，因此使用灰度颜色将产生最可预测的结果。而在 `mask-alpha` 中，遮罩的透明度决定了遮罩元素的可见性。
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="mask-mode" defaultClass="mask-alpha" featuredClass="mask-luminance" />

@@ -4,8 +4,8 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "align-content";
-export const description = "控制多行 Flex 和 Grid 容器中行的位置的工具类。";
+export const title = "对齐内容 (align-content)";
+export const description = "用于控制在多行弹性盒子和网格容器中行的位置的工具类。";
 
 <ApiTable
   rows={[
@@ -23,9 +23,9 @@ export const description = "控制多行 Flex 和 Grid 容器中行的位置的�
 
 ## 示例
 
-### 开始
+### 开始 (Start)
 
-使用 `content-start` 将容器中的行靠交叉轴的开始位置排列：
+使用 `content-start` 将容器中的行压缩到交叉轴的起始位置：
 
 <Figure>
 
@@ -57,9 +57,9 @@ export const description = "控制多行 Flex 和 Grid 容器中行的位置的�
 
 </Figure>
 
-### 中心
+### 居中 (Center)
 
-使用 `content-center` 将容器中的行靠交叉轴的中心位置排列：
+使用 `content-center` 将容器中的行压缩到交叉轴的中心位置：
 
 <Figure>
 
@@ -91,9 +91,9 @@ export const description = "控制多行 Flex 和 Grid 容器中行的位置的�
 
 </Figure>
 
-### 结束
+### 结束 (End)
 
-使用 `content-end` 将容器中的行靠交叉轴的结束位置排列：
+使用 `content-end` 将容器中的行压缩到交叉轴的结束位置：
 
 <Figure>
 
@@ -125,9 +125,9 @@ export const description = "控制多行 Flex 和 Grid 容器中行的位置的�
 
 </Figure>
 
-### 行间距
+### 行间距 (Space between)
 
-使用 `content-between` 在容器中分配行，使每一行之间的间距相等：
+使用 `content-between` 将容器中的行分布，使每行之间有相等的空间：
 
 <Figure>
 
@@ -159,9 +159,9 @@ export const description = "控制多行 Flex 和 Grid 容器中行的位置的�
 
 </Figure>
 
-### 环绕
+### 周围的空间 (Space around)
 
-使用 `content-around` 在容器中分配行，使每一行周围的间距相等：
+使用 `content-around` 将容器中的行分布，使每行周围的空间相等：
 
 <Figure>
 
@@ -193,9 +193,9 @@ export const description = "控制多行 Flex 和 Grid 容器中行的位置的�
 
 </Figure>
 
-### 均匀间距
+### 均等间距 (Space evenly)
 
-使用 `content-evenly` 在容器中分配行，使每个项目周围的间距相等，同时考虑使用 `content-around` 时通常看到的每个项目之间的双倍间距：
+使用 `content-evenly` 将容器中的行分布，使每个项目周围的空间相等，同时考虑到使用 `content-around` 时，项目之间空间加倍的情况：
 
 <Figure>
 
@@ -227,9 +227,9 @@ export const description = "控制多行 Flex 和 Grid 容器中行的位置的�
 
 </Figure>
 
-### 拉伸
+### 拉伸 (Stretch)
 
-使用 `content-stretch` 使内容项充满容器的交叉轴上的可用空间：
+使用 `content-stretch` 允许内容项沿着容器的交叉轴填充可用空间：
 
 <Figure>
 
@@ -261,9 +261,9 @@ export const description = "控制多行 Flex 和 Grid 容器中行的位置的�
 
 </Figure>
 
-### 正常
+### 默认 (Normal)
 
-使用 `content-normal` 将内容项打包在其默认位置，就像没有设置 `align-content` 的值一样：
+使用 `content-normal` 将内容项按默认位置压缩，就像没有设置 `align-content` 值一样：
 
 <Figure>
 
@@ -295,6 +295,6 @@ export const description = "控制多行 Flex 和 Grid 容器中行的位置的�
 
 </Figure>
 
-### 响应式设计
+### 响应式设计 (Responsive design)
 
 <ResponsiveDesign property="align-content" defaultClass="grid content-start" featuredClass="content-around" />

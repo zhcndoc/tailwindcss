@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, TargetingSpecificStates } from "@/components/content.tsx";
 
-export const title = "文本装饰线";
-export const description = "控制文本装饰的工具类。";
+export const title = "text-decoration-line";
+export const description = "控制文本装饰的实用工具。";
 
 <ApiTable
   rows={[
@@ -19,14 +19,14 @@ export const description = "控制文本装饰的工具类。";
 
 ### 添加下划线文本
 
-使用 `underline` 工具类在元素的文本上添加下划线：
+使用 `underline` 实用工具为元素的文本添加下划线：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 underline dark:text-gray-200">
-      敏捷的棕色狐狸跳过懒狗。
+      敏捷的棕色狐狸跳过懒惰的狗。
     </p>
   }
 </Example>
@@ -38,16 +38,16 @@ export const description = "控制文本装饰的工具类。";
 
 </Figure>
 
-### 添加横线文本
+### 为文本添加上划线
 
-使用 `overline` 工具类在元素的文本上添加横线：
+使用 `overline` 实用工具为元素的文本添加上划线：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 overline dark:text-gray-200">
-      敏捷的棕色狐狸跳过懒狗。
+      敏捷的棕色狐狸跳过懒惰的狗。
     </p>
   }
 </Example>
@@ -59,16 +59,16 @@ export const description = "控制文本装饰的工具类。";
 
 </Figure>
 
-### 添加删除线文本
+### 为文本添加删除线
 
-使用 `line-through` 工具类在元素的文本上添加删除线：
+使用 `line-through` 实用工具为元素的文本添加删除线：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 line-through dark:text-gray-200">
-      敏捷的棕色狐狸跳过懒狗。
+      敏捷的棕色狐狸跳过懒惰的狗。
     </p>
   }
 </Example>
@@ -80,16 +80,16 @@ export const description = "控制文本装饰的工具类。";
 
 </Figure>
 
-### 从文本中移除线条
+### 从文本中移除线
 
-使用 `no-underline` 工具类从元素的文本中移除线条：
+使用 `no-underline` 实用工具从元素的文本中移除线：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 no-underline dark:text-gray-200">
-      敏捷的棕色狐狸跳过懒狗。
+      敏捷的棕色狐狸跳过懒惰的狗。
     </p>
   }
 </Example>
@@ -101,31 +101,31 @@ export const description = "控制文本装饰的工具类。";
 
 </Figure>
 
-### 悬停应用
+### 鼠标悬停时应用
 
 <TargetingSpecificStates property="text-decoration-line">
 
-<Figure hint="将鼠标悬停在文本上查看预期行为">
+<Figure hint="将鼠标悬停在文本上以查看预期效果">
 
 <Example>
   {
     <div className="text-center text-lg font-medium text-gray-900 no-underline dark:text-gray-200">
       敏捷的{" "}
       <a
-        href="https://en.wikipedia.org/wiki/The_quick_brown_fox_jumps_over_the_lazy_dog"
+        href="https://zh.wikipedia.org/wiki/%E6%95%8F%E8%BD%BD%E7%9A%84%E6%A3%95%E8%8D%B7%E7%8D%A9%E7%89%A9"
         target="blank"
         className="text-sky-600 no-underline hover:underline dark:text-sky-400"
       >
         棕色狐狸
       </a>{" "}
-      跳过懒狗。
+      跳过懒惰的狗。
     </div>
   }
 </Example>
 
 ```html
 <!-- [!code classes:hover:underline] -->
-<p>敏捷的 <a href="..." class="no-underline hover:underline ...">棕色狐狸</a> 跳过懒狗。</p>
+<p>敏捷的 <a href="..." class="no-underline hover:underline ...">棕色狐狸</a> 跳过懒惰的狗。</p>
 ```
 
 </Figure>

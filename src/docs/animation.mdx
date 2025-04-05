@@ -5,14 +5,14 @@ import { Figure } from "@/components/figure.tsx";
 import dedent from "dedent";
 
 export const title = "动画";
-export const description = "用于通过 CSS 动画给元素添加动画的工具类。";
+export const description = "用于使用 CSS 动画对元素进行动画处理的工具。";
 
 <ApiTable
   rows={[
     [
       "animate-spin",
       dedent`
-        animation: var(--animate-spin); /* 旋转 1s 线性无限 */
+        animation: var(--animate-spin); /* spin 1s linear infinite */
 
         @keyframes spin {
           to {
@@ -24,7 +24,7 @@ export const description = "用于通过 CSS 动画给元素添加动画的工�
     [
       "animate-ping",
       dedent`
-        animation: var(--animate-ping); /* 像雷达一样 ping 1s 套装 (0, 0, 0.2, 1) 无限 */
+        animation: var(--animate-ping); /* ping 1s cubic-bezier(0, 0, 0.2, 1) infinite */
 
         @keyframes ping {
           75%, 100% {
@@ -37,7 +37,7 @@ export const description = "用于通过 CSS 动画给元素添加动画的工�
     [
       "animate-pulse",
       dedent`
-        animation: var(--animate-pulse); /* 脉冲 2s 套装 (0.4, 0, 0.6, 1) 无限 */
+        animation: var(--animate-pulse); /* pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite */
 
         @keyframes pulse {
           50% {
@@ -49,7 +49,7 @@ export const description = "用于通过 CSS 动画给元素添加动画的工�
     [
       "animate-bounce",
       dedent`
-        animation: var(--animate-bounce); /* 反弹 1s 无限 */
+        animation: var(--animate-bounce); /* bounce 1s infinite */
 
         @keyframes bounce {
           0%, 100% {
@@ -66,14 +66,15 @@ export const description = "用于通过 CSS 动画给元素添加动画的工�
     ["animate-none", "animation: none;"],
     ["animate-(<custom-property>)", "animation: var(<custom-property>);"],
     ["animate-[<value>]", "animation: <value>;"],
-  ]}
+
+]}
 />
 
 ## 示例
 
 ### 添加旋转动画
 
-使用 `animate-spin` 工具类为加载指示器等元素添加线性旋转动画：
+使用 `animate-spin` 工具为元素添加线性旋转动画，例如加载指示器：
 
 <Figure>
 
@@ -98,7 +99,7 @@ export const description = "用于通过 CSS 动画给元素添加动画的工�
             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
           ></path>
         </svg>
-        正在处理…
+        处理中…
       </button>
     </div>
   }
@@ -110,7 +111,7 @@ export const description = "用于通过 CSS 动画给元素添加动画的工�
   <svg class="mr-3 size-5 animate-spin ..." viewBox="0 0 24 24">
     <!-- ... -->
   </svg>
-  正在处理…
+  处理中…
 </button>
 ```
 
@@ -118,7 +119,7 @@ export const description = "用于通过 CSS 动画给元素添加动画的工�
 
 ### 添加 ping 动画
 
-使用 `animate-ping` 工具类使元素像雷达 ping 或水波一样缩放和消失——对于通知徽章等非常有用：
+使用 `animate-ping` 工具使元素像雷达 ping 或水波那样缩放和褪色——对通知徽章等元素非常有用：
 
 <Figure>
 
@@ -154,7 +155,7 @@ export const description = "用于通过 CSS 动画给元素添加动画的工�
 
 ### 添加脉冲动画
 
-使用 `animate-pulse` 工具类使元素轻柔地淡入淡出——对于骨架加载器等非常有用：
+使用 `animate-pulse` 工具使元素轻轻地渐显和渐隐——对骨架加载器等元素非常有用：
 
 <Figure>
 
@@ -201,9 +202,9 @@ export const description = "用于通过 CSS 动画给元素添加动画的工�
 
 </Figure>
 
-### 添加反弹动画
+### 添加跳跃动画
 
-使用 `animate-bounce` 工具类使元素上下反弹——对于“向下滚动”指示器等非常有用：
+使用 `animate-bounce` 工具使元素上下跳跃——对“向下滚动”指示器等元素非常有用：
 
 <Figure>
 
@@ -238,7 +239,7 @@ export const description = "用于通过 CSS 动画给元素添加动画的工�
 
 ### 支持减少运动
 
-在用户指定希望减少运动的情况下，可以使用 `motion-safe` 和 `motion-reduce` 变体有条件地应用动画和过渡：
+对于用户已指定希望减少运动的情况，可以使用 `motion-safe` 和 `motion-reduce` 变体有条件地应用动画和过渡：
 
 ```html
 <!-- [!code classes:motion-safe:animate-spin] -->
@@ -246,7 +247,7 @@ export const description = "用于通过 CSS 动画给元素添加动画的工�
   <svg class="mr-3 size-5 motion-safe:animate-spin ..." viewBox="0 0 24 24">
     <!-- ... -->
   </svg>
-  正在处理
+  处理中
 </button>
 ```
 
@@ -258,7 +259,7 @@ export const description = "用于通过 CSS 动画给元素添加动画的工�
 
 <ResponsiveDesign property="animation" defaultClass="animate-none" featuredClass="animate-spin" />
 
-## 自定义你的主题
+## 自定义主题
 
 <CustomizingYourTheme
   utility="animate"
@@ -281,4 +282,5 @@ export const description = "用于通过 CSS 动画给元素添加动画的工�
         }
       }
     `}
+
 />

@@ -9,7 +9,7 @@ import { Stripes } from "@/components/stripes.tsx";
 import dedent from "dedent";
 
 export const title = "mask-image";
-export const description = "Utilities for controlling an element's mask image.";
+export const description = "用于控制元素遮罩图像的工具类。";
 
 <svg className="sr-only">
   <defs>
@@ -473,11 +473,11 @@ export const description = "Utilities for controlling an element's mask image.";
   ]}
 />
 
-## Examples
+## 示例
 
-### Using an image mask
+### 使用图像遮罩
 
-Use the `mask-[<value>]` syntax to set the mask image of an element:
+使用 `mask-[<value>]` 语法设置元素的遮罩图像：
 
 <Figure>
 
@@ -505,9 +505,9 @@ Use the `mask-[<value>]` syntax to set the mask image of an element:
 
 </Figure>
 
-### Masking edges
+### 遮罩边缘
 
-Use utilities like `mask-b-from-<value>` and `mask-t-to-<value>` to add a linear gradient mask to a single side of an element:
+使用像 `mask-b-from-<value>` 和 `mask-t-to-<value>` 这样的工具类，为元素的单侧添加线性渐变遮罩：
 
 <Figure>
 
@@ -557,7 +557,7 @@ Use utilities like `mask-b-from-<value>` and `mask-t-to-<value>` to add a linear
 
 </Figure>
 
-Additionally, use utilities like `mask-x-from-70%` and `mask-y-to-90%` to apply a mask to two sides of an element at the same time:
+此外，使用像 `mask-x-from-70%` 和 `mask-y-to-90%` 这样的工具类，可以同时对元素的两个侧面应用遮罩：
 
 <Figure>
 
@@ -591,11 +591,11 @@ Additionally, use utilities like `mask-x-from-70%` and `mask-y-to-90%` to apply 
 
 </Figure>
 
-By default, linear gradient masks transition from black to transparent, but you can customize the gradient colors using the `mask-<side>-from-<color>` and `mask-<side>-to-<color>` utilities.
+默认情况下，线性渐变遮罩从黑色过渡到透明，但你可以使用 `mask-<side>-from-<color>` 和 `mask-<side>-to-<color>` 工具类自定义渐变颜色。
 
-### Adding an angled linear mask
+### 添加斜线性遮罩
 
-Use utilities like `mask-linear-<angle>`, `mask-linear-from-20`, and `mask-linear-to-40` to add a custom linear gradient mask to an element:
+使用像 `mask-linear-<angle>`、`mask-linear-from-20` 和 `mask-linear-to-40` 这样的工具类，为元素添加自定义线性渐变遮罩：
 
 <Figure>
 
@@ -629,9 +629,9 @@ Use utilities like `mask-linear-<angle>`, `mask-linear-from-20`, and `mask-linea
 
 </Figure>
 
-### Adding a radial mask
+### 添加径向遮罩
 
-Use the `mask-radial-from-<value>` and `mask-radial-to-<value>` utilities to add a radial gradient mask to an element:
+使用 `mask-radial-from-<value>` 和 `mask-radial-to-<value>` 工具类，为元素添加径向渐变遮罩：
 
 <Figure>
 
@@ -649,10 +649,10 @@ Use the `mask-radial-from-<value>` and `mask-radial-to-<value>` utilities to add
         alt=""
       />
       <div className="font-medium max-sm:-mx-3">
-        <p className="font-mono text-xs text-blue-500 uppercase dark:text-blue-400">Speed</p>
-        <p className="mt-2 text-base whitespace-nowrap text-gray-700 dark:text-gray-300">Built for power users</p>
+        <p className="font-mono text-xs text-blue-500 uppercase dark:text-blue-400">速度</p>
+        <p className="mt-2 text-base whitespace-nowrap text-gray-700 dark:text-gray-300">为强大用户而设计</p>
         <p className="mt-1 text-sm leading-relaxed text-balance text-gray-500">
-          Work faster than ever with our keyboard shortcuts
+          通过我们的键盘快捷键，比以往更快地工作
         </p>
       </div>
     </div>
@@ -664,10 +664,10 @@ Use the `mask-radial-from-<value>` and `mask-radial-to-<value>` utilities to add
 <div class="flex items-center gap-4">
   <img class="mask-radial-[100%_100%] mask-radial-from-75% mask-radial-at-left ..." src="/img/keyboard.png" />
   <div class="font-medium">
-    <p class="font-mono text-xs text-blue-500 uppercase dark:text-blue-400">Speed</p>
-    <p class="mt-2 text-base text-gray-700 dark:text-gray-300">Built for power users</p>
+    <p class="font-mono text-xs text-blue-500 uppercase dark:text-blue-400">速度</p>
+    <p class="mt-2 text-base text-gray-700 dark:text-gray-300">为强大用户而设计</p>
     <p class="mt-1 text-sm leading-relaxed text-balance text-gray-500">
-      Work faster than ever with customizable keyboard shortcuts
+      通过可自定义的快捷键，比以往更快地工作
     </p>
   </div>
 </div>
@@ -675,11 +675,11 @@ Use the `mask-radial-from-<value>` and `mask-radial-to-<value>` utilities to add
 
 </Figure>
 
-By default, radial gradient masks transition from black to transparent, but you can customize the gradient colors using the `mask-radial-from-<color>` and `mask-radial-to-<color>` utilities.
+默认情况下，径向渐变遮罩从黑色过渡到透明，但你可以使用 `mask-radial-from-<color>` 和 `mask-radial-to-<color>` 工具类自定义渐变颜色。
 
-#### Setting the radial position
+#### 设置径向位置
 
-Use utilities like `mask-radial-at-bottom-left` and `mask-radial-at-[35%_35%]` to set the position of the center of the radial gradient mask:
+使用像 `mask-radial-at-bottom-left` 和 `mask-radial-at-[35%_35%]` 这样的工具类，设置径向渐变遮罩的中心位置：
 
 <Figure>
 
@@ -769,11 +769,11 @@ Use utilities like `mask-radial-at-bottom-left` and `mask-radial-at-[35%_35%]` t
 
 </Figure>
 
-This is different from [`mask-position`](/docs/mask-position) which sets the position of the mask image itself, not the radial gradient.
+这与 [`mask-position`](/docs/mask-position) 不同，后者设置的是遮罩图像本身的位置，而非径向渐变。
 
-#### Setting the radial size
+#### 设置径向大小
 
-Use utilities like `mask-radial-closest-corner` and `mask-radial-farthest-side` to set the size of the radial gradient mask:
+使用像 `mask-radial-closest-corner` 和 `mask-radial-farthest-side` 这样的工具类设置径向渐变遮罩的大小：
 
 <Figure>
 
@@ -823,13 +823,13 @@ Use utilities like `mask-radial-closest-corner` and `mask-radial-farthest-side` 
 
 </Figure>
 
-When setting a custom radial gradient size, the units you can use depend on the `<ending-shape>` of the gradient which is set to `ellipse` by default.
+设置自定义的径向渐变大小时，可以使用的单位取决于渐变的 `<ending-shape>`，默认设置为 `ellipse`。
 
-With `mask-circle`, you can only use a single fixed length, like `mask-radial-[5rem]`. Whereas with `mask-ellipse`, you can specify each axis as a fixed length or percentage, like `mask-radial-[40%_80%]`.
+使用 `mask-circle` 时，只能使用单个固定长度，例如 `mask-radial-[5rem]`。而使用 `mask-ellipse`，则可以为每个轴指定固定长度或百分比，例如 `mask-radial-[40%_80%]`。
 
-### Adding a conic mask
+### 添加锥形遮罩
 
-Use the `mask-conic-from-<value>`, `mask-conic-to-<value>` and `mask-conic-<angle>` utilities to add a conic gradient mask to an element:
+使用 `mask-conic-from-<value>`、`mask-conic-to-<value>` 和 `mask-conic-<angle>` 工具类，为元素添加锥形渐变遮罩：
 
 <Figure>
 
@@ -841,9 +841,9 @@ Use the `mask-conic-from-<value>`, `mask-conic-to-<value>` and `mask-conic-<angl
         <div className="col-start-1 row-start-1 size-12 rounded-full border-4 border-amber-500 mask-conic-from-75% mask-conic-to-75% dark:border-amber-400" />
       </div>
       <div className="w-0 flex-1 text-sm text-gray-950 dark:text-white">
-        <p className="font-medium">Storage used: 75%</p>
+        <p className="font-medium">已用存储：75%</p>
         <p className="mt-1 text-gray-500 dark:text-gray-400">
-          <span className="font-medium">0.48 GB</span> out of 2 GB remaining
+          <span className="font-medium">0.48 GB</span> 剩余 2 GB
         </p>
       </div>
     </div>
@@ -858,19 +858,19 @@ Use the `mask-conic-from-<value>`, `mask-conic-to-<value>` and `mask-conic-<angl
     <div class="border-4 border-amber-500 mask-conic-from-75% mask-conic-to-75% dark:border-amber-400 ..."></div>
   </div>
   <div class="w-0 flex-1 text-sm text-gray-950 dark:text-white">
-    <p class="font-medium">Storage used: 75%</p>
-    <p class="mt-1 text-gray-500 dark:text-gray-400"><span class="font-medium">0.48 GB</span> out of 2 GB remaining</p>
+    <p class="font-medium">已用存储：75%</p>
+    <p class="mt-1 text-gray-500 dark:text-gray-400"><span class="font-medium">0.48 GB</span> 剩余 2 GB</p>
   </div>
 </div>
 ```
 
 </Figure>
 
-By default, conic gradient masks transition from black to transparent, but you can customize the gradient colors using the `mask-conic-from-<color>` and `mask-conic-to-<color>` utilities.
+默认情况下，锥形渐变遮罩从黑色过渡到透明，但你可以使用 `mask-conic-from-<color>` 和 `mask-conic-to-<color>` 工具类自定义渐变颜色。
 
-### Combining masks
+### 组合遮罩
 
-Gradient mask utilities, like `mask-radial-from-<value>`, `mask-conic-to-<value>`, and `mask-l-from-<value>` can be combined to create more complex gradient masks:
+渐变遮罩工具类，如 `mask-radial-from-<value>`、`mask-conic-to-<value>` 和 `mask-l-from-<value>` 可以组合使用，以创建更复杂的渐变遮罩：
 
 <Figure>
 
@@ -902,11 +902,11 @@ Gradient mask utilities, like `mask-radial-from-<value>`, `mask-conic-to-<value>
 
 </Figure>
 
-This behavior relies on the fact that Tailwind sets the [`mask-composite` property](/docs/mask-composite) to `intersect` by default. Changing this property will affect how the gradient masks are combined.
+这种行为依赖于 Tailwind 默认将 [`mask-composite` 属性](/docs/mask-composite) 设置为 `intersect`。更改此属性将影响渐变遮罩的组合方式。
 
-### Removing mask images
+### 移除遮罩图像
 
-Use the `mask-none` utility to remove an existing mask image from an element:
+使用 `mask-none` 工具类从元素中移除现有的遮罩图像：
 
 ```html
 <!-- [!code classes:mask-none] -->
@@ -915,19 +915,19 @@ Use the `mask-none` utility to remove an existing mask image from an element:
 </div>
 ```
 
-### Using a custom value
+### 使用自定义值
 
 <UsingACustomValue
   utilities={["mask-linear", "mask-radial"]}
-  name="mask image"
+  name="遮罩图像"
   value="70deg,transparent_10%,black,transparent_80%"
   variable="mask"
 />
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="mask-image" defaultClass="mask-radial-from-70%" featuredClass="mask-radial-from-50%" />
 
-## Customizing your theme
+## 自定义主题
 
 <CustomizingYourThemeColors utilities={["mask-radial-from", "mask-conic-to", "mask-b-from"]} />

@@ -4,7 +4,7 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
 export const title = "字母间距";
-export const description = "用于控制元素的字母间距或字距的工具类。";
+export const description = "用于控制元素字母间距的工具类。";
 
 <ApiTable
   rows={[
@@ -23,7 +23,7 @@ export const description = "用于控制元素的字母间距或字距的工具�
 
 ### 基本示例
 
-使用诸如 `tracking-tight` 和 `tracking-wide` 的工具类来设置元素的字母间距：
+使用 `tracking-tight` 和 `tracking-wide` 等工具类设置元素的字母间距：
 
 <Figure>
 
@@ -33,19 +33,19 @@ export const description = "用于控制元素的字母间距或字距的工具�
       <div>
         <span className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">tracking-tight</span>
         <p className="text-lg font-medium tracking-tight text-gray-900 dark:text-gray-200">
-          快速的棕色狐狸跳过懒狗。
+          敏捷的棕色狐狸跃过懒狗。
         </p>
       </div>
       <div>
         <span className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">tracking-normal</span>
         <p className="text-lg font-medium tracking-normal text-gray-900 dark:text-gray-200">
-          快速的棕色狐狸跳过懒狗。
+          敏捷的棕色狐狸跃过懒狗。
         </p>
       </div>
       <div>
         <span className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">tracking-wide</span>
         <p className="text-lg font-medium tracking-wide text-gray-900 dark:text-gray-200">
-          快速的棕色狐狸跳过懒狗。
+          敏捷的棕色狐狸跃过懒狗。
         </p>
       </div>
     </div>
@@ -54,16 +54,16 @@ export const description = "用于控制元素的字母间距或字距的工具�
 
 ```html
 <!-- [!code classes:tracking-tight,tracking-normal,tracking-wide] -->
-<p class="tracking-tight ...">快速的棕色狐狸 ...</p>
-<p class="tracking-normal ...">快速的棕色狐狸 ...</p>
-<p class="tracking-wide ...">快速的棕色狐狸 ...</p>
+<p class="tracking-tight ...">敏捷的棕色狐狸 ...</p>
+<p class="tracking-normal ...">敏捷的棕色狐狸 ...</p>
+<p class="tracking-wide ...">敏捷的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
 ### 使用负值
 
-使用负值在 Tailwind 默认的命名字母间距规模中没有太大意义，但如果您自定义了规模以使用数字，它可能会很有用：
+使用负值在 Tailwind 默认的命名字母间距缩放中并没有太大意义，但如果你自定义了你的缩放以使用数字，则可以非常有用：
 
 ```css
 @theme {
@@ -74,11 +74,11 @@ export const description = "用于控制元素的字母间距或字距的工具�
 }
 ```
 
-要使用负的字母间距值，请在类名前加上短横线将其转换为负值：
+要使用负的字母间距值，请在类名之前加上一个短划线，将其转换为负值：
 
 ```html
 <!-- [!code classes:-tracking-2] -->
-<p class="-tracking-2">快速的棕色狐狸 ...</p>
+<p class="-tracking-2">敏捷的棕色狐狸 ...</p>
 ```
 
 ### 使用自定义值

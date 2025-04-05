@@ -6,7 +6,7 @@ import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "align-self";
 export const description =
-  "用于控制单个 flex 或 grid 项在其容器的交叉轴上如何定位的工具类。";
+  "用于控制单个弹性或网格项在其容器的交叉轴上定位的工具类。";
 
 <ApiTable
   rows={[
@@ -26,7 +26,7 @@ export const description =
 
 ### 自动
 
-Use the `self-auto` utility to align an item based on the value of the container's `align-items` property:
+使用 `self-auto` 工具类根据容器的 `align-items` 属性值对元素进行对齐：
 
 <Figure>
 
@@ -58,9 +58,9 @@ Use the `self-auto` utility to align an item based on the value of the container
 
 </Figure>
 
-### 开始
+### 起始
 
-Use the `self-start` utility to align an item to the start of the container's cross axis, despite the container's `align-items` value:
+使用 `self-start` 工具类将元素对齐到容器的交叉轴的起始位置，尽管容器的 `align-items` 值可能不同：
 
 <Figure>
 
@@ -92,9 +92,9 @@ Use the `self-start` utility to align an item to the start of the container's cr
 
 </Figure>
 
-### 中心
+### 居中
 
-Use the `self-center` utility to align an item along the center of the container's cross axis, despite the container's `align-items` value:
+使用 `self-center` 工具类将元素对齐到容器的交叉轴中心，尽管容器的 `align-items` 值可能不同：
 
 <Figure>
 
@@ -128,7 +128,7 @@ Use the `self-center` utility to align an item along the center of the container
 
 ### 结束
 
-Use the `self-end` utility to align an item to the end of the container's cross axis, despite the container's `align-items` value:
+使用 `self-end` 工具类将元素对齐到容器的交叉轴结束位置，尽管容器的 `align-items` 值可能不同：
 
 <Figure>
 
@@ -162,7 +162,7 @@ Use the `self-end` utility to align an item to the end of the container's cross 
 
 ### 拉伸
 
-Use the `self-stretch` utility to stretch an item to fill the container's cross axis, despite the container's `align-items` value:
+使用 `self-stretch` 工具类将元素拉伸填充容器的交叉轴，尽管容器的 `align-items` 值可能不同：
 
 <Figure>
 
@@ -194,9 +194,9 @@ Use the `self-stretch` utility to stretch an item to fill the container's cross 
 
 </Figure>
 
-### Baseline
+### 基线
 
-Use the `self-baseline` utility to align an item such that its baseline aligns with the baseline of the flex container's cross axis:
+使用 `self-baseline` 工具类对齐元素，使其基线与弹性容器的交叉轴基线对齐：
 
 <Figure>
 
@@ -228,9 +228,9 @@ Use the `self-baseline` utility to align an item such that its baseline aligns w
 
 </Figure>
 
-### Last baseline
+### 最后基线
 
-Use the `self-baseline-last` utility to align an item along the container's cross axis such that its baseline aligns with the last baseline in the container:
+使用 `self-baseline-last` 工具类对齐元素，使其基线与容器中的最后一条基线对齐：
 
 <Figure>
 
@@ -245,7 +245,7 @@ Use the `self-baseline-last` utility to align an item along the container's cros
         />
         <div className="font-semibold text-gray-900 sm:col-start-2 dark:text-white">Spencer Sharp</div>
         <p className="self-baseline-last text-sm sm:col-start-2">
-          Working on the future of astronaut recruitment at Space Recruit.
+          从事宇航员招聘未来发展工作。
         </p>
         <a
           href="#"
@@ -261,7 +261,7 @@ Use the `self-baseline-last` utility to align an item along the container's cros
           alt=""
         />
         <div className="font-semibold text-gray-900 sm:col-start-2 dark:text-white">Alex Reed</div>
-        <p className="self-baseline-last text-sm sm:col-start-2">A multidisciplinary designer.</p>
+        <p className="self-baseline-last text-sm sm:col-start-2">一名多学科设计师。</p>
         <a
           href="#"
           className="self-baseline-last font-mono text-xs font-medium text-gray-400 underline hover:text-blue-500 dark:text-gray-500"
@@ -279,7 +279,7 @@ Use the `self-baseline-last` utility to align an item along the container's cros
   <div>
     <img src="img/spencer-sharp.jpg" />
     <h4>Spencer Sharp</h4>
-    <p class="self-baseline-last">Working on the future of astronaut recruitment at Space Recruit.</p>
+    <p class="self-baseline-last">从事宇航员招聘未来发展工作。</p>
   </div>
   <p class="self-baseline-last">spacerecruit.com</p>
 </div>
@@ -287,8 +287,8 @@ Use the `self-baseline-last` utility to align an item along the container's cros
 
 </Figure>
 
-This is useful for ensuring that text items align with each other, even if they have different heights.
+这对于确保文本项彼此对齐即使它们的高度不同也很有用。
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign property="align-self" defaultClass="self-auto" featuredClass="self-end" />

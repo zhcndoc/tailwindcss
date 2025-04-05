@@ -1,17 +1,17 @@
 import { CodeExampleStack } from "@/components/code-example";
 
-export const title = "Adding custom styles";
-export const description = "Best practices for adding your own custom styles in Tailwind projects.";
+export const title = "添加自定义样式";
+export const description = "在 Tailwind 项目中添加自定义样式的最佳实践。";
 
-在使用框架时，通常面临的最大挑战是要弄清楚当你需要框架没有处理的内容时该怎么办。
+在使用框架时，最大的挑战通常是弄清楚当框架无法满足某个需求时该怎么办。
 
-Tailwind 从一开始就设计成可扩展和可定制的，因此无论你构建什么，都不会觉得自己在与框架对抗。
+Tailwind 从一开始就被设计为可扩展和可定制，无论你构建什么项目，都不会让你觉得你在与框架抗衡。
 
-本指南将涵盖定制设计令牌、如何在必要时突破这些约束、添加自定义 CSS 和使用插件扩展框架等主题。
+本指南涵盖了自定义设计令牌、在必要时打破这些限制、添加自定义 CSS 以及通过插件扩展框架等主题。
 
-## 定制你的主题
+## 自定义主题
 
-如果你想更改颜色调色板、间距比例、排版比例或断点等内容，请使用 CSS 中的 `@theme` 指令添加自定义：
+如果你想更改颜色调色板、间距比例、排版比例或断点，可以在 CSS 中使用 `@theme` 指令添加自定义设置：
 
 ```css
 /* [!code filename:CSS] */
@@ -34,13 +34,13 @@ Tailwind 从一开始就设计成可扩展和可定制的，因此无论你构�
 }
 ```
 
-要了解有关定制主题的更多信息，请查看 [主题变量文档](/docs/theme)。
+详细了解如何自定义主题，请参见 [主题变量文档](/docs/theme)。
 
 ## 使用任意值
 
-尽管通常可以使用有限的设计令牌集构建大部分精心设计的内容，但偶尔你需要突破这些约束以获得完美的像素效果。
+通常，你可以使用有限的设计令牌构建大部分精心制作的设计，但偶尔你需要打破这些限制，以实现像素完美的效果。
 
-当你发现在需要 `top: 117px` 的时候，以将背景图像放置在正确的位置时，可以使用 Tailwind 的方括号表示法动态生成具有任意值的类：
+当你确实需要 `top: 117px` 来让背景图像恰好位于适当位置时，使用 Tailwind 的方括号表示法动态生成带有任意值的类：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -50,7 +50,7 @@ Tailwind 从一开始就设计成可扩展和可定制的，因此无论你构�
 </div>
 ```
 
-这基本上就像内联样式，主要好处是你可以与 `hover` 和响应式修饰符（如 `lg`）结合使用：
+这基本上像是内联样式，但主要的好处是你可以将其与交互式修饰符（如 `hover`）和响应式修饰符（如 `lg`）组合使用：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -70,7 +70,7 @@ Tailwind 从一开始就设计成可扩展和可定制的，因此无论你构�
 </div>
 ```
 
-如果你将 CSS 变量作为任意值引用，可以使用自定义属性语法：
+如果你正在引用 CSS 变量作为任意值，可以使用自定义属性语法：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -80,11 +80,11 @@ Tailwind 从一开始就设计成可扩展和可定制的，因此无论你构�
 </div>
 ```
 
-这实际上是 <code>fill-{'[var(--my-brand-color)]'}</code> 的简写，自动添加了 `var()` 函数。
+这只是 <code>fill-{'[var(--my-brand-color)]'}</code> 的简写，它会自动为你添加 `var()` 函数。
 
 ### 任意属性
 
-如果你需要使用 Tailwind 默认未包含工具的 CSS 属性，还可以使用方括号表示法编写完全任意的 CSS：
+如果你需要使用 Tailwind 没有提供的 CSS 属性，可以使用方括号表示法编写完全任意的 CSS：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -94,7 +94,7 @@ Tailwind 从一开始就设计成可扩展和可定制的，因此无论你构�
 </div>
 ```
 
-这 _真的_ 像内联样式，但再次强调它的好处是你可以使用修饰符：
+这 _确实_ 类似于内联样式，但再次具有你可以使用修饰符的好处：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -104,7 +104,7 @@ Tailwind 从一开始就设计成可扩展和可定制的，因此无论你构�
 </div>
 ```
 
-这对于 CSS 变量等情况也非常有用，尤其是当它们在不同条件下需要更改时：
+这在 CSS 变量等内容中也很有用，尤其是在需要在不同条件下更改它们时：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -116,7 +116,7 @@ Tailwind 从一开始就设计成可扩展和可定制的，因此无论你构�
 
 ### 任意变体
 
-任意 _变体_ 就像任意值，但用于动态选择器修改，就像使用内置伪类变体 `hover:{utility}` 或响应式变体 `md:{utility}` 一样，但可以直接在 HTML 中使用方括号表示法。
+任意 _变体_ 类似于任意值，但用于动态选择器修改，就像你可以使用内置的伪类变体（例如 `hover:{utility}`）或响应式变体（例如 `md:{utility}`）一样，但直接在 HTML 中使用方括号表示法。
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -128,11 +128,11 @@ Tailwind 从一开始就设计成可扩展和可定制的，因此无论你构�
 </ul>
 ```
 
-在 [任意变体](/docs/hover-focus-and-other-states#using-arbitrary-variants) 文档中了解更多信息。
+在 [任意变体](/docs/hover-focus-and-other-states#using-arbitrary-variants) 文档中了解更多。
 
 ### 处理空格
 
-当任意值需要包含空格时，请使用下划线 (`_`) 代替，Tailwind 会在构建时自动将其转换为空格：
+当任意值需要包含空格时，请改用下划线（`_`），Tailwind 会在构建时自动将其转换为空格：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -142,7 +142,7 @@ Tailwind 从一开始就设计成可扩展和可定制的，因此无论你构�
 </div>
 ```
 
-在常见需要下划线但空格无效的情况下，Tailwind 会保留下划线而不是转换为空格，例如在 URL 中：
+在下划线常见但空格无效的情况下，Tailwind 会保留下划线而不是将其转换为空格，例如在 URLs 中：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -152,7 +152,7 @@ Tailwind 从一开始就设计成可扩展和可定制的，因此无论你构�
 </div>
 ```
 
-在罕见的情况下，如果你确实需要使用下划线，但由于空格也是有效的而导致歧义，可以用反斜杠转义下划线，Tailwind 不会将其转换为空格：
+在极少数情况下，如果你确实需要使用下划线，但由于空格也是有效的而导致歧义，请用反斜杠转义下划线，Tailwind 不会将其转换为空格：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -162,7 +162,7 @@ Tailwind 从一开始就设计成可扩展和可定制的，因此无论你构�
 </div>
 ```
 
-如果你在使用 JSX 之类的内容，反斜杠会从渲染的 HTML 中去掉，可以使用 [String.raw()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw) 以确保反斜杠不会被视为 JavaScript 转义字符：
+如果你正在使用 JSX 等内容，反斜杠在渲染的 HTML 中被剥离，请使用 [String.raw()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw)，以便反斜杠不被视为 JavaScript 转义字符：
 
 ```jsx
 <div className={String.raw`before:content-['hello\_world']`}>
@@ -172,21 +172,21 @@ Tailwind 从一开始就设计成可扩展和可定制的，因此无论你构�
 
 ### 解决歧义
 
-Tailwind 中的许多实用工具共享一个公共命名空间，但映射到不同的 CSS 属性。例如 `text-lg` 和 `text-black` 都共享 `text-` 命名空间，但一个用于设置 `font-size`，另一个用于设置 `color`。
+Tailwind 中许多实用工具共享一个共同的命名空间，但映射到不同的 CSS 属性。例如，`text-lg` 和 `text-black` 都共享 `text-` 命名空间，但一个是用于 `font-size`，另一个是用于 `color`。
 
-在使用任意值时，Tailwind 通常可以根据你传递的值自动处理这种歧义：
+在使用任意值时，Tailwind 通常可以基于你传入的值自动处理这种歧义：
 
 ```html
 <!-- [!code filename:HTML] -->
 <!-- [!code classes:text-[22px],text-[#bada55]] -->
-<!-- 将生成字体大小工具 -->
+<!-- 将生成一个字体大小实用工具 -->
 <div class="text-[22px]">...</div>
 
-<!-- 将生成颜色工具 -->
+<!-- 将生成一个颜色实用工具 -->
 <div class="text-[#bada55]">...</div>
 ```
 
-不过有时确实会存在歧义，例如在使用 CSS 变量时：
+有时确实存在歧义，例如在使用 CSS 变量时：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -194,21 +194,21 @@ Tailwind 中的许多实用工具共享一个公共命名空间，但映射到�
 <div class="text-(--my-var)">...</div>
 ```
 
-在这种情况下，可以通过在值之前添加 [CSS 数据类型](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types) 来“提示” Tailwind 基础类型：
+在这些情况下，你可以通过在值之前添加 [CSS 数据类型](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types) 来“提示” Tailwind 基础类型：
 
 ```html
 <!-- [!code filename:HTML] -->
 <!-- [!code classes:text-(length:--my-var),text-(color:--my-var)] -->
-<!-- 将生成字体大小工具 -->
+<!-- 将生成一个字体大小实用工具 -->
 <div class="text-(length:--my-var)">...</div>
 
-<!-- 将生成颜色工具 -->
+<!-- 将生成一个颜色实用工具 -->
 <div class="text-(color:--my-var)">...</div>
 ```
 
 ## 使用自定义 CSS
 
-虽然 Tailwind 旨在处理大部分样式需求，但在需要时完全可以直接写普通 CSS：
+虽然 Tailwind 设计用于处理大部分样式需求，但在需要时完全可以直接编写普通 CSS：
 
 ```css
 /* [!code filename:CSS] */
@@ -220,9 +220,9 @@ Tailwind 中的许多实用工具共享一个公共命名空间，但映射到�
 }
 ```
 
-### 添加基本样式
+### 添加基础样式
 
-如果你只想为页面设置一些默认值（如文本颜色、背景颜色或字体系列），最简单的选项是将一些类添加到 `html` 或 `body` 元素：
+如果你想为页面设置一些默认值（如文本颜色、背景颜色或字体系列），最简单的选项就是向 `html` 或 `body` 元素添加一些类：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -233,9 +233,9 @@ Tailwind 中的许多实用工具共享一个公共命名空间，但映射到�
 </html>
 ```
 
-这将基本样式决策保存在标记中，而不是隐藏在单独的文件中。
+这样可以将基础样式决策与所有其他样式一起保留在标记中，而不是将其隐藏在单独的文件中。
 
-如果你想为特定 HTML 元素添加默认基本样式，请使用 `@layer` 指令将这些样式添加到 Tailwind 的 `base` 层：
+如果你想为特定 HTML 元素添加自己的默认基础样式，请使用 `@layer` 指令将这些样式添加到 Tailwind 的 `base` 层：
 
 ```css
 /* [!code filename:CSS] */
@@ -254,7 +254,7 @@ Tailwind 中的许多实用工具共享一个公共命名空间，但映射到�
 
 ### 添加组件类
 
-使用 `components` 层为你想添加到项目中的任何复杂类，这些类仍然希望能够通过实用工具类进行重写。
+对于任何你希望能够通过实用类覆盖的更复杂的类，请使用 `components` 层。
 
 传统上，这些类如 `card`、`btn`、`badge` 等。
 
@@ -272,20 +272,20 @@ Tailwind 中的许多实用工具共享一个公共命名空间，但映射到�
 }
 ```
 
-通过在 `components` 层中定义组件类，你仍然可以在必要时使用实用工具类来覆盖它们：
+通过在 `components` 层中定义组件类，你仍然可以在必要时使用实用类覆盖它们：
 
 ```html
 <!-- [!code filename:HTML] -->
 <!-- [!code classes:card,rounded-none] -->
-<!-- 将看起来像一个卡片，但具有平方角 -->
+<!-- 将看起来像一个卡片，但具有方角 -->
 <div class="card rounded-none">
   <!-- ... -->
 </div>
 ```
 
-使用 Tailwind 时，你可能不需要这些类型的类，阅读我们关于 [管理重复](/docs/styling-with-utility-classes#managing-duplication) 的指南以获取我们的建议。
+使用 Tailwind，你可能不需要这些类型的类，正如你想的那样。阅读我们的指南 [管理重复](/docs/styling-with-utility-classes#managing-duplication) 以获取我们的建议。
 
-`components` 层也是放置自定义样式的好地方，以便使用任何你正在使用的第三方组件：
+`components` 层也是放置你使用的任何第三方组件的自定义样式的好地方：
 
 ```css
 /* [!code filename:CSS] */
@@ -296,9 +296,9 @@ Tailwind 中的许多实用工具共享一个公共命名空间，但映射到�
 }
 ```
 
-### Using variants
+### 使用变体
 
-Use the `@variant` directive to apply a Tailwind variant within custom CSS:
+使用 `@variant` 指令在自定义 CSS 中应用 Tailwind 变体：
 
 <CodeExampleStack>
 
@@ -328,7 +328,7 @@ Use the `@variant` directive to apply a Tailwind variant within custom CSS:
 
 </CodeExampleStack>
 
-If you need to apply multiple variants at the same time, use nesting:
+如果你需要同时应用多个变体，请使用嵌套：
 
 <CodeExampleStack>
 
@@ -364,13 +364,13 @@ If you need to apply multiple variants at the same time, use nesting:
 
 </CodeExampleStack>
 
-## Adding custom utilities
+## 添加自定义实用类
 
-### Simple utilities
+### 简单实用类
 
-In addition to using the utilities that ship with Tailwind, you can also add your own custom utilities. This can be useful when there's a CSS feature you'd like to use in your project that Tailwind doesn't include utilities for out of the box.
+除了使用 Tailwind 预置的实用类外，您还可以添加自己的自定义实用类。当某个 CSS 特性在 Tailwind 中没有内置实用类时，这非常有用。
 
-Use the `@utility` directive to add a custom utility to your project:
+使用 `@utility` 指令向项目添加自定义实用类：
 
 ```css
 /* [!code filename:CSS] */
@@ -379,7 +379,7 @@ Use the `@utility` directive to add a custom utility to your project:
 }
 ```
 
-你现在可以在 HTML 中使用此工具：
+现在你可以在 HTML 中使用这个实用类：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -389,7 +389,7 @@ Use the `@utility` directive to add a custom utility to your project:
 </div>
 ```
 
-它也可以与 `hover`、`focus` 和 `lg` 等变体一起使用：
+该实用类也会与 `hover`、`focus` 和 `lg` 等变体一起工作：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -399,11 +399,11 @@ Use the `@utility` directive to add a custom utility to your project:
 </div>
 ```
 
-自定义工具会自动插入到 `utilities` 层中，并与框架中的所有内置工具一起工作。
+自定义实用类会自动插入到与框架中所有内置实用类相同的 `utilities` 层中。
 
-### 复杂工具
+### 复杂实用类
 
-如果你的自定义工具比单个类名复杂，请使用嵌套定义工具：
+如果自定义实用类比单个类名更复杂，可以使用嵌套定义该实用类：
 
 ```css
 /* [!code filename:CSS] */
@@ -414,9 +414,9 @@ Use the `@utility` directive to add a custom utility to your project:
 }
 ```
 
-### 功能性工具
+### 功能实用类
 
-除了使用 `@utility` 指令注册简单工具外，你还可以注册接受参数的功能性工具：
+除了使用 `@utility` 指令注册简单实用类外，你还可以注册接受参数的功能实用类：
 
 ```css
 /* [!code filename:CSS] */
@@ -426,11 +426,11 @@ Use the `@utility` directive to add a custom utility to your project:
 }
 ```
 
-特殊的 `--value()` 函数用于解析工具值。
+特殊的 `--value()` 函数用于解析实用类值。
 
 #### 匹配主题值
 
-使用 `--value(--theme-key-*)` 语法，将工具值解析为一组主题键：
+使用 `--value(--theme-key-*)` 语法在一组主题键中解析实用类值：
 
 ```css
 /* [!code filename:CSS] */
@@ -447,11 +447,11 @@ Use the `@utility` directive to add a custom utility to your project:
 }
 ```
 
-这将匹配工具如 `tab-2`、`tab-4` 和 `tab-github`。
+这将匹配像 `tab-2`、`tab-4` 和 `tab-github` 的实用类。
 
-#### 光秃值
+#### 原始值
 
-要将值解析为光秃值，请使用 `--value({type})` 语法，其中 `{type}` 是你希望验证该光秃值的数据类型：
+要将值解析为原始值，使用 `--value({type})` 语法，其中 `{type}` 是你想验证原始值的数据类型：
 
 ```css
 /* [!code filename:CSS] */
@@ -460,11 +460,11 @@ Use the `@utility` directive to add a custom utility to your project:
 }
 ```
 
-这将匹配工具如 `tab-1` 和 `tab-76`。
+这将匹配像 `tab-1` 和 `tab-76` 的实用类。
 
 #### 任意值
 
-要支持任意值，请使用 `--value([{type}])` 语法（请注意方括号），以告诉 Tailwind 哪些类型支持作为任意值：
+要支持任意值，使用 `--value([{type}])` 语法（注意方括号）告诉 Tailwind 允许哪些类型作为任意值：
 
 ```css
 /* [!code filename:CSS] */
@@ -473,11 +473,11 @@ Use the `@utility` directive to add a custom utility to your project:
 }
 ```
 
-这将匹配工具如 `tab-[1]` 和 `tab-[76]`。如果要支持任何数据类型，可以使用 `--value([*])`。
+这将匹配像 `tab-[1]` 和 `tab-[76]` 的实用类。如果你希望支持任何数据类型，可以使用 `--value([*])`。
 
-#### 同时支持主题、光秃和任意值
+#### 同时支持主题、原始和任意值
 
-这三种形式的 `--value()` 函数可以在规则内作为多个声明使用，任何未能解析的声明将在输出中被省略：
+三种形式的 `--value()` 函数都可以在一个规则中作为多个声明使用，任何无法解析的声明将在输出中省略：
 
 ```css
 /* [!code filename:CSS] */
@@ -493,7 +493,7 @@ Use the `@utility` directive to add a custom utility to your project:
 }
 ```
 
-如果有必要，可以在每种情况下不同地处理该值，例如将光秃整数转换为百分比：
+这使得在必要时可以在每种情况下以不同的方式对待值，例如将原始整数转换为百分比：
 
 ```css
 /* [!code filename:CSS] */
@@ -506,7 +506,7 @@ Use the `@utility` directive to add a custom utility to your project:
 }
 ```
 
-`--value()` 函数还可以接受多个参数，并从左到右解析它们，如果你不需要在不同情况下不同地处理返回值：
+`--value()` 函数还可以接受多个参数，并从左到右解析它们，如果你不需要在不同情况下以不同的方式对待返回值：
 
 ```css
 /* [!code filename:CSS] */
@@ -530,7 +530,7 @@ Use the `@utility` directive to add a custom utility to your project:
 
 #### 负值
 
-要支持负值，将正值和负值分别注册为单独的实用工具：
+要支持负值，请将正值和负值实用类分别注册到不同的声明中：
 
 ```css
 /* [!code filename:CSS] */
@@ -546,7 +546,7 @@ Use the `@utility` directive to add a custom utility to your project:
 
 #### 修饰符
 
-通过使用 `--modifier()` 函数处理修饰符，它的工作方式与 `--value()` 函数完全相同，但针对存在的修饰符操作：
+修饰符使用 `--modifier()` 函数处理，该函数的工作方式与 `--value()` 函数完全相同，但操作的是修饰符（如果存在）：
 
 ```css
 /* [!code filename:CSS] */
@@ -559,11 +559,11 @@ Use the `@utility` directive to add a custom utility to your project:
 }
 ```
 
-如果没有修饰符，则任何依赖于修饰符的声明在输出中将不会包含。
+如果修饰符不存在，任何依赖于修饰符的声明都不会包含在输出中。
 
 #### 分数
 
-为了处理分数，我们依赖 CSS 的 `ratio` 数据类型。如果与 `--value()` 一起使用，则信号 Tailwind 将值和修饰符视为一个值：
+为了处理分数，我们依赖于 CSS `ratio` 数据类型。如果与 `--value()` 一起使用，它会向 Tailwind 发出信号，表示值和修饰符将作为单个值处理：
 
 ```css
 /* [!code filename:CSS] */
@@ -574,11 +574,11 @@ Use the `@utility` directive to add a custom utility to your project:
 }
 ```
 
-这将匹配工具如 `aspect-square`、`aspect-3/4` 和 `aspect-[7/9]`。
+这将匹配像 `aspect-square`、`aspect-3/4` 和 `aspect-[7/9]` 的实用类。
 
 ## 添加自定义变体
 
-In addition to using the variants that ship with Tailwind, you can also add your own custom variants using the `@custom-variant` directive:
+除了使用 Tailwind 预置的变体外，你还可以使用 `@custom-variant` 指令添加自己的自定义变体：
 
 ```css
 @custom-variant theme-midnight {
@@ -588,7 +588,7 @@ In addition to using the variants that ship with Tailwind, you can also add your
 }
 ```
 
-Now you can use the `theme-midnight:<utility>` variant in your HTML:
+现在你可以在 HTML 中使用 `theme-midnight:<utility>` 变体：
 
 ```html
 <!-- [!code classes:theme-midnight:bg-black] -->
@@ -597,13 +597,13 @@ Now you can use the `theme-midnight:<utility>` variant in your HTML:
 </html>
 ```
 
-You can create variants using the shorthand syntax when nesting isn't required:
+当不需要嵌套时，你可以使用简写语法创建变体：
 
 ```css
 @custom-variant theme-midnight (&:where([data-theme="midnight"] *));
 ```
 
-When a custom variant has multiple rules, they can be nested within each other:
+当自定义变体具有多个规则时，可以嵌套在一起：
 
 ```css
 @custom-variant any-hover {

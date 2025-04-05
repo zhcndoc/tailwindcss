@@ -3,8 +3,8 @@ import { CustomizingYourTheme, ResponsiveDesign, UsingACustomValue } from "@/com
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "边框半径";
-export const description = "用于控制元素边框半径的工具。";
+export const title = "边框圆角";
+export const description = "用于控制元素的边框圆角的工具类.";
 
 <ApiTable
   rows={[
@@ -49,7 +49,7 @@ export const description = "用于控制元素边框半径的工具。";
 
 ### 基本示例
 
-使用诸如 `rounded-sm` 和 `rounded-md` 的工具为元素应用不同的边框半径大小：
+使用 `rounded-sm` 和 `rounded-md` 等工具类，为元素应用不同的边框圆角大小：
 
 <Figure>
 
@@ -86,9 +86,9 @@ export const description = "用于控制元素边框半径的工具。";
 
 </Figure>
 
-### 单独圆角处理
+### 分别圆角
 
-使用诸如 `rounded-t-md` 和 `rounded-r-lg` 的工具仅对元素的一侧进行圆角处理：
+使用 `rounded-t-md` 和 `rounded-r-lg` 等工具类，只对元素的一侧进行圆角处理：
 
 <Figure>
 
@@ -125,9 +125,9 @@ export const description = "用于控制元素边框半径的工具。";
 
 </Figure>
 
-### 单独划分角落
+### 分别圆角
 
-使用诸如 `rounded-tr-md` 和 `rounded-tl-lg` 的工具仅对元素的一个角进行圆角处理：
+使用 `rounded-tr-md` 和 `rounded-tl-lg` 等工具类，仅对元素的一个角进行圆角处理：
 
 <Figure>
 
@@ -166,7 +166,7 @@ export const description = "用于控制元素边框半径的工具。";
 
 ### 使用逻辑属性
 
-使用诸如 `rounded-s-md` 和 `rounded-se-xl` 的工具，使用 [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts) 设置边框半径，这将根据文本方向映射到适当的角落：
+使用 `rounded-s-md` 和 `rounded-se-xl` 等工具类，利用[逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)设置边框圆角，这些属性根据文本方向映射到适当的角：
 
 <Figure>
 
@@ -200,7 +200,7 @@ export const description = "用于控制元素边框半径的工具。";
 
 </Figure>
 
-这里是所有可用的边框半径逻辑属性工具及其在 LTR 和 RTL 模式下的物理属性等价物。
+以下是所有可用的边框圆角逻辑属性工具类及其在LTR和RTL模式下的物理属性等价物。
 
 {
 
@@ -284,11 +284,11 @@ export const description = "用于控制元素边框半径的工具。";
 
 }
 
-为了获得更多控制，您还可以使用 [LTR 和 RTL 修饰符](/docs/hover-focus-and-other-states#rtl-support) 根据当前文本方向有条件地应用特定样式。
+为了获得更多的控制，您还可以使用[LTR和RTL修饰符](/docs/hover-focus-and-other-states#rtl-support)根据当前文本方向条件应用特定样式。
 
 ### 创建药丸按钮
 
-使用 `rounded-full` 工具创建药丸按钮：
+使用 `rounded-full` 工具类创建药丸按钮：
 
 <Figure>
 
@@ -297,7 +297,7 @@ export const description = "用于控制元素边框半径的工具。";
     <div className="flex justify-center gap-4 text-center text-sm leading-6 font-bold text-white">
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">rounded-full</p>
-        <button className="rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold text-white">Save Changes</button>
+        <button className="rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold text-white">保存更改</button>
       </div>
     </div>
   }
@@ -310,9 +310,9 @@ export const description = "用于控制元素边框半径的工具。";
 
 </Figure>
 
-### 移除边框半径
+### 移除边框圆角
 
-使用 `rounded-none` 工具从元素中移除现有的边框半径：
+使用 `rounded-none` 工具类从元素中移除现有的边框圆角：
 
 <Figure>
 
@@ -321,7 +321,7 @@ export const description = "用于控制元素边框半径的工具。";
     <div className="flex justify-center gap-4 text-center text-sm leading-6 font-bold text-white">
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">rounded-none</p>
-        <button className="rounded-none bg-sky-500 px-4 py-2 text-sm font-semibold text-white">Save Changes</button>
+        <button className="rounded-none bg-sky-500 px-4 py-2 text-sm font-semibold text-white">保存更改</button>
       </div>
     </div>
   }
@@ -336,7 +336,7 @@ export const description = "用于控制元素边框半径的工具。";
 
 ### 使用自定义值
 
-<UsingACustomValue utility="rounded" name="边框半径" value="2vw" variable="radius" />
+<UsingACustomValue utility="rounded" name="边框圆角" value="2vw" variable="radius" />
 
 ### 响应式设计
 
@@ -344,4 +344,4 @@ export const description = "用于控制元素边框半径的工具。";
 
 ## 自定义主题
 
-<CustomizingYourTheme utility="rounded" themeKey="radius" name="边框半径" customName="5xl" customValue="3rem" />
+<CustomizingYourTheme utility="rounded" themeKey="radius" name="边框圆角" customName="5xl" customValue="3rem" />

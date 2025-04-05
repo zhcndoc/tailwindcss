@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "背景附着";
-export const description = "用于控制背景图像在滚动时的行为的工具。";
+export const title = "背景附着属性";
+export const description = "用于控制背景图像在滚动时的行为的工具类.";
 
 <ApiTable
   rows={[
@@ -18,9 +18,9 @@ export const description = "用于控制背景图像在滚动时的行为的工�
 
 ### 固定背景图像
 
-使用 `bg-fixed` 工具将背景图像相对于视口固定：
+使用 `bg-fixed` 工具类将背景图像固定相对于视口：
 
-<Figure hint="滚动内容以查看背景图像固定在位置">
+<Figure hint="滚动内容以查看背景图像固定在位置上">
 
 <Example padding={false}>
   {
@@ -28,17 +28,14 @@ export const description = "用于控制背景图像在滚动时的行为的工�
       <div className="mt-45">
         <div className="border-x border-x-gray-200 bg-white p-4 text-gray-500 sm:p-8 dark:border-x-gray-800 dark:bg-gray-900 dark:text-gray-400">
           <div className="font-inter text-2xl font-extrabold tracking-tight text-black dark:text-white">
-            我登顶之旅
+            我爬到山顶的旅行
           </div>
-          <div className="mt-1 text-sm font-medium text-gray-500">2021年11月16日 · 4分钟阅读</div>
+          <div className="mt-1 text-sm font-medium text-gray-500">2021年11月16日 · 阅读时间 4 分钟</div>
           <p className="mt-4 leading-7">
-            也许我们可以不依赖书籍，你我这样的普通人也可以。也许。确实，我们太老了，无法改变世界，
-            但是那个小孩呢，现在就坐在地方图书馆里打开一本书，看到《帽子里的猫》和《五个中国兄弟》上的小便和屁股的图画？难道他不值得更好吗？
+            也许我们可以不依赖图书馆，对于像你我这样的人来说，或许可以。没错，我们年纪大了，无法改变世界，但那个现在坐在当地图书馆分馆，打开书本，发现《帽子里的猫》和《五个中国兄弟》上面有尿尿图案的小孩呢？难道他不值得更好的体验吗？
           </p>
           <p className="mt-4 leading-7">
-            听着。如果你认为这只是关于逾期罚款和丢失书籍，那你最好再想一想。这关乎那个孩子的权利——
-            他有权阅读一本书而不被扭曲心智！或者：也许这正好让你兴奋，塞恩菲尔德；
-            也许这样你才能得到快乐。你和你那些爱玩乐的朋友们。
+            请看。如果你觉得这与逾期罚款和丢失的书籍有关，那你最好再想想。这关乎那个小孩的权利，让他不被扭曲地阅读书籍！或者：也许这正是你的乐趣，塞尔菲尔德；也许这正是你享受的方式。你和你那些玩乐的朋友们。
           </p>
         </div>
       </div>
@@ -55,11 +52,11 @@ export const description = "用于控制背景图像在滚动时的行为的工�
 
 </Figure>
 
-### 与容器一起滚动
+### 随容器滚动
 
-使用 `bg-local` 工具，让背景图像与容器和视口一起滚动：
+使用 `bg-local` 工具类使背景图像随容器和视口一起滚动：
 
-<Figure hint="滚动内容以查看背景图像与容器一起滚动">
+<Figure hint="滚动内容以查看背景图像随容器滚动">
 
 <Example padding={false}>
   {
@@ -67,8 +64,7 @@ export const description = "用于控制背景图像在滚动时的行为的工�
       <div className="h-64 overflow-y-scroll bg-[url('https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&h=666&q=80')] bg-cover bg-local">
         <div className="min-h-full bg-black/40 p-8 sm:px-16 sm:py-12">
           <p className="text-center font-serif text-xl leading-6 text-white italic sm:text-2xl sm:leading-8">
-            因为邮件从来没有停止过。它不断地来，永不停歇。每天都在不断积累，你得把它处理掉，
-            但是你处理得越多，它就越多。然后条形码扫描仪坏了，今天是出版商清理日。
+            因为邮件从未停止。它不断涌来，源源不断，没有间断。每天它积累得越来越多。你需要把它处理掉，但你处理得越多，它涌来的越多。然后条形码读取器坏了，今天是邮政清算日。
           </p>
           <div className="font-inter mt-6 text-center text-sm font-bold text-white sm:text-base">&mdash; 纽曼</div>
         </div>
@@ -86,9 +82,9 @@ export const description = "用于控制背景图像在滚动时的行为的工�
 
 </Figure>
 
-### 与视口一起滚动
+### 随视口滚动
 
-使用 `bg-scroll` 工具，使背景图像与视口一起滚动，而不是与容器一起滚动：
+使用 `bg-scroll` 工具类使背景图像随视口滚动，但不随容器滚动：
 
 <Figure hint="滚动内容以查看背景图像在容器中固定">
 
@@ -98,8 +94,7 @@ export const description = "用于控制背景图像在滚动时的行为的工�
       <div className="h-64 overflow-y-scroll bg-[url('https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&h=666&q=80')] bg-cover bg-scroll">
         <div className="min-h-full bg-black/40 p-8 sm:px-16 sm:py-12">
           <p className="text-center font-serif text-xl leading-6 text-white italic sm:text-2xl sm:leading-8">
-            因为邮件从来没有停止过。它不断地来，永不停歇。每天都在不断积累，你得把它处理掉，
-            但是你处理得越多，它就越多。然后条形码扫描仪坏了，今天是出版商清理日。
+            因为邮件从未停止。它不断涌来，源源不断，没有间断。每天它积累得越来越多。你需要把它处理掉，但你处理得越多，它涌来的越多。然后条形码读取器坏了，今天是邮政清算日。
           </p>
           <div className="font-inter mt-6 text-center text-sm font-bold text-white sm:text-base">&mdash; 纽曼</div>
         </div>

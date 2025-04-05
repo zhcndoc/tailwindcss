@@ -4,8 +4,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import colors from "./utils/colors";
 
-export const title = "描边";
-export const description = "用于样式化 SVG 元素的描边的工具。";
+export const title = "stroke";
+export const description = "用于样式化 SVG 元素的描边工具。";
 
 <ApiTable
   rows={[
@@ -26,7 +26,7 @@ export const description = "用于样式化 SVG 元素的描边的工具。";
 
 ### 基本示例
 
-使用像 `stroke-indigo-500` 和 `stroke-lime-600` 的工具来改变 SVG 的描边颜色：
+使用 `stroke-indigo-500` 和 `stroke-lime-600` 等工具来改变 SVG 的描边颜色：
 
 <Figure>
 
@@ -53,13 +53,13 @@ export const description = "用于样式化 SVG 元素的描边的工具。";
 
 </Figure>
 
-这对于样式化图标集如 [Heroicons](https://heroicons.com) 很有用。
+这对于样式化像 [Heroicons](https://heroicons.com) 这样的图标集非常有用。
 
 ### 使用当前颜色
 
 使用 `stroke-current` 工具将描边颜色设置为当前文本颜色：
 
-<Figure hint="悬停在按钮上以查看描边颜色变化">
+<Figure hint="将鼠标悬停在按钮上以查看描边颜色变化">
 
 <Example>
   {
@@ -98,6 +98,6 @@ export const description = "用于样式化 SVG 元素的描边的工具。";
 
 <ResponsiveDesign element="svg" property="stroke" defaultClass="stroke-cyan-500" featuredClass="stroke-cyan-700" />
 
-## 自定义主题
+## 自定义您的主题
 
 <CustomizingYourThemeColors element="svg" utility="stroke" />

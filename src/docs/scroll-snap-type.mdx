@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "scroll-snap-type";
-export const description = "控制快照容器中快照点严格程度的实用工具。";
+export const description = "Utilities for controlling how strictly snap points are enforced in a snap container."; // 控制快照点在快照容器中强度的实用工具
 
 <ApiTable
   rows={[
@@ -21,7 +21,7 @@ export const description = "控制快照容器中快照点严格程度的实用�
 
 ### 水平滚动快照
 
-使用 `snap-x` 实用工具在元素内启用水平滚动快照：
+使用 `snap-x` 工具类在元素内启用水平滚动快照：
 
 <Figure hint="在图片网格中滚动以查看预期行为">
 
@@ -30,7 +30,7 @@ export const description = "控制快照容器中快照点严格程度的实用�
     <div className="relative">
       <div className="mb-6 ml-[50%] flex items-end justify-start pt-10">
         <div className="dark:highlight-white/10 ml-2 rounded bg-indigo-50 px-1.5 font-mono text-[0.625rem] leading-6 text-indigo-600 ring-1 ring-indigo-600 ring-inset dark:bg-indigo-500 dark:text-white dark:ring-0">
-          快照点
+          snap point
         </div>
         <div className="absolute top-0 bottom-0 left-1/2 border-l border-indigo-500"></div>
       </div>
@@ -108,11 +108,11 @@ export const description = "控制快照容器中快照点严格程度的实用�
 
 </Figure>
 
-要使滚动快照工作，您还需要在子元素上设置 [滚动快照对齐](/docs/scroll-snap-align)。
+要使滚动快照有效，您还需要在子元素上设置 [scroll snap alignment](/docs/scroll-snap-align)。
 
 ### 强制滚动快照
 
-使用 `snap-mandatory` 实用工具强制快照容器始终停靠在快照点上：
+使用 `snap-mandatory` 工具类强制快照容器始终停留在快照点上：
 
 <Figure hint="在图片网格中滚动以查看预期行为">
 
@@ -121,7 +121,7 @@ export const description = "控制快照容器中快照点严格程度的实用�
     <div className="relative">
       <div className="mb-6 ml-[50%] flex items-end justify-start pt-10">
         <div className="dark:highlight-white/10 ml-2 rounded bg-indigo-50 px-1.5 font-mono text-[0.625rem] leading-6 text-indigo-600 ring-1 ring-indigo-600 ring-inset dark:bg-indigo-500 dark:text-white dark:ring-0">
-          快照点
+          snap point
         </div>
         <div className="absolute top-0 bottom-0 left-1/2 border-l border-indigo-500"></div>
       </div>
@@ -199,9 +199,9 @@ export const description = "控制快照容器中快照点严格程度的实用�
 
 </Figure>
 
-### 邻近滚动快照
+### 近距离滚动快照
 
-使用 `snap-proximity` 实用工具使快照容器停驻在靠近的快照点上：
+使用 `snap-proximity` 工具类使快照容器停留在互相靠近的快照点上：
 
 <Figure hint="在图片网格中滚动以查看预期行为">
 
@@ -210,7 +210,7 @@ export const description = "控制快照容器中快照点严格程度的实用�
     <div className="relative">
       <div className="mb-6 ml-[50%] flex items-end justify-start pt-10">
         <div className="dark:highlight-white/10 ml-2 rounded bg-indigo-50 px-1.5 font-mono text-[0.625rem] leading-6 text-indigo-600 ring-1 ring-indigo-600 ring-inset dark:bg-indigo-500 dark:text-white dark:ring-0">
-          快照点
+          snap point
         </div>
         <div className="absolute top-0 bottom-0 left-1/2 border-l border-indigo-500"></div>
       </div>

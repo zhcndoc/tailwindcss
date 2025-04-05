@@ -2,8 +2,8 @@ import { ApiTable } from "@/components/api-table.tsx";
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
-export const title = "pointer-events";
-export const description = "控制元素是否响应指针事件的实用工具。";
+export const title = "指针事件";
+export const description = "控制元素是否响应指针事件的工具类。";
 
 <ApiTable
   rows={[
@@ -16,9 +16,9 @@ export const description = "控制元素是否响应指针事件的实用工具�
 
 ### 忽略指针事件
 
-使用 `pointer-events-none` 实用程序使元素忽略指针事件，例如 `:hover` 和 `click` 事件：
+使用 `pointer-events-none` 工具类使元素忽略指针事件，例如 `:hover` 和 `click` 事件：
 
-<Figure hint="点击搜索图标以查看预期行为">
+<Figure hint="点击搜索图标查看预期效果">
 
 <Example>
   {
@@ -88,11 +88,11 @@ export const description = "控制元素是否响应指针事件的实用工具�
 
 </Figure>
 
-子元素的指针事件仍会被触发，并传递给“目标”下方的元素。
+指针事件仍然会在子元素上触发，并传递到“目标下方”的元素。
 
 ### 恢复指针事件
 
-使用 `pointer-events-auto` 实用程序恢复默认的浏览器指针事件行为：
+使用 `pointer-events-auto` 工具类恢复指针事件的默认浏览器行为：
 
 ```html
 <div class="pointer-events-none md:pointer-events-auto ...">

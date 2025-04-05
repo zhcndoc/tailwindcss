@@ -4,7 +4,7 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 
 export const title = "边框间距";
-export const description = "控制表格边框之间间距的工具。";
+export const description = "用于控制表格边框之间间距的工具类。";
 
 <ApiTable
   rows={[
@@ -24,7 +24,7 @@ export const description = "控制表格边框之间间距的工具。";
 
 ### 基本示例
 
-使用 `border-spacing-<number>` 工具类，例如 `border-spacing-2` 和 `border-spacing-x-3`，来控制具有 [分离边框](/docs/border-collapse#separating-table-borders) 的表格单元格之间的间距：
+使用 `border-spacing-<number>` 工具类，如 `border-spacing-2` 和 `border-spacing-x-3` 来控制表格单元格边框之间的间距，适用于[分隔边框的表格](/docs/border-collapse#separating-table-borders):
 
 <Figure>
 
@@ -45,21 +45,21 @@ export const description = "控制表格边框之间间距的工具。";
         <tbody>
           <tr>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              印第安纳
+              印第安纳州
             </td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              印第安纳波利斯
+              印第安波利斯
             </td>
           </tr>
           <tr>
-            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">俄亥俄</td>
+            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">俄亥俄州</td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
               哥伦布
             </td>
           </tr>
           <tr>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              密歇根
+              密歇根州
             </td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
               底特律
@@ -82,15 +82,15 @@ export const description = "控制表格边框之间间距的工具。";
   </thead>
   <tbody>
     <tr>
-      <td class="border border-gray-300 dark:border-gray-700">印第安纳</td>
-      <td class="border border-gray-300 dark:border-gray-700">印第安纳波利斯</td>
+      <td class="border border-gray-300 dark:border-gray-700">印第安纳州</td>
+      <td class="border border-gray-300 dark:border-gray-700">印第安波利斯</td>
     </tr>
     <tr>
-      <td class="border border-gray-300 dark:border-gray-700">俄亥俄</td>
+      <td class="border border-gray-300 dark:border-gray-700">俄亥俄州</td>
       <td class="border border-gray-300 dark:border-gray-700">哥伦布</td>
     </tr>
     <tr>
-      <td class="border border-gray-300 dark:border-gray-700">密歇根</td>
+      <td class="border border-gray-300 dark:border-gray-700">密歇根州</td>
       <td class="border border-gray-300 dark:border-gray-700">底特律</td>
     </tr>
   </tbody>

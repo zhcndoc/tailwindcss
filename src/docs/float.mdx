@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "float";
-export const description = "用于控制内容环绕元素的实用工具。";
+export const title = "浮动";
+export const description = "控制内容环绕元素的工具类。";
 
 <ApiTable
   rows={[
@@ -18,9 +18,9 @@ export const description = "用于控制内容环绕元素的实用工具。";
 
 ## 示例
 
-### 元素向右浮动
+### 将元素浮动到右侧
 
-使用 `float-right` 工具将元素浮动到其容器的右侧：
+使用 `float-right` 工具类将元素浮动到其容器的右侧：
 
 <Figure>
 
@@ -32,11 +32,8 @@ export const description = "用于控制内容环绕元素的实用工具。";
         src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&h=1000&q=90"
       />
       <p className="text-justify">
-        也许我们可以不依赖图书馆，像你我这样的人。也许。当然，我们已经太老而无法改变世界，但是
-        那个孩子呢？他现在正坐在本地图书馆的分支里，打开一本书，发现《猫帽子》与五个中国兄弟里
-        有小便和尿尿的画画？难道他不配更好的吗？你看。如果你认为这与逾期罚款和丢失的书籍有关，
-        你最好再想想。这是关于那个孩子阅读书籍的权利，而不让他的心智受到扭曲！或者：也许这让你兴奋，
-        我的朋友；也许这就是你获得乐趣的方式。你和你的好朋友们。
+        也许我们可以没有图书馆，像你和我这样的人。也许。我们确实太老而无法改变世界，但
+        现在那个坐下来打开书的小孩呢，在当地图书馆的某个分馆里发现《帽子里的猫》和《五个中国兄弟》上的尿尿和便便的画？难道他不值得更好吗？看看。如果你认为这与滞纳金和丢失的书籍有关，那你最好再想想。这关乎那个孩子的权利，能阅读一本书而不让他的思想扭曲！或者：也许这让你兴奋，赛尔芬；也许这就是你获得乐趣的方式。你和你的好朋友们。
       </p>
     </>
   }
@@ -46,15 +43,15 @@ export const description = "用于控制内容环绕元素的实用工具。";
 <!-- [!code classes:float-right] -->
 <article>
   <img class="float-right ..." src="/img/mountains.jpg" />
-  <p>也许我们可以不依赖图书馆，像你我这样的人。...</p>
+  <p>也许我们可以没有图书馆，像你和我这样的人。 ...</p>
 </article>
 ```
 
 </Figure>
 
-### 元素向左浮动
+### 将元素浮动到左侧
 
-使用 `float-left` 工具将元素浮动到其容器的左侧：
+使用 `float-left` 工具类将元素浮动到其容器的左侧：
 
 <Figure>
 
@@ -66,11 +63,8 @@ export const description = "用于控制内容环绕元素的实用工具。";
         src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&h=1000&q=90"
       />
       <p className="text-justify">
-        也许我们可以不依赖图书馆，像你我这样的人。也许。当然，我们已经太老而无法改变世界，但是
-        那个孩子呢？他现在正坐在本地图书馆的分支里，打开一本书，发现《猫帽子》与五个中国兄弟里
-        有小便和尿尿的画画？难道他不配更好的吗？你看。如果你认为这与逾期罚款和丢失的书籍有关，
-        你最好再想想。这是关于那个孩子阅读书籍的权利，而不让他的心智受到扭曲！或者：也许这让你兴奋，
-        我的朋友；也许这就是你获得乐趣的方式。你和你的好朋友们。
+        也许我们可以没有图书馆，像你和我这样的人。也许。我们确实太老而无法改变世界，但
+        现在那个坐下来打开书的小孩呢，在当地图书馆的某个分馆里发现《帽子里的猫》和《五个中国兄弟》上的尿尿和便便的画？难道他不值得更好吗？看看。如果你认为这与滞纳金和丢失的书籍有关，那你最好再想想。这关乎那个孩子的权利，能阅读一本书而不让他的思想扭曲！或者：也许这让你兴奋，赛尔芬；也许这就是你获得乐趣的方式。你和你的好朋友们。
       </p>
     </>
   }
@@ -80,7 +74,7 @@ export const description = "用于控制内容环绕元素的实用工具。";
 <!-- [!code classes:float-left] -->
 <article>
   <img class="float-left ..." src="/img/mountains.jpg" />
-  <p>也许我们可以不依赖图书馆，像你我这样的人。...</p>
+  <p>也许我们可以没有图书馆，像你和我这样的人。 ...</p>
 </article>
 ```
 
@@ -88,7 +82,7 @@ export const description = "用于控制内容环绕元素的实用工具。";
 
 ### 使用逻辑属性
 
-使用 `float-start` 和 `float-end` 工具，这些工具使用 [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts) 根据文本方向映射到左侧或右侧：
+使用 `float-start` 和 `float-end` 工具类，这些工具类使用 [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts) 根据文本方向映射到左侧或右侧：
 
 <Figure>
 
@@ -96,23 +90,23 @@ export const description = "用于控制内容环绕元素的实用工具。";
   {
     <>
       <div dir="ltr">
-        <p className="mb-4 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">left-to-right</p>
+        <p className="mb-4 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">从左到右</p>
         <div>
           <img
             className="float-start me-6 aspect-16/9 w-2/5 rounded-lg object-cover outline -outline-offset-1 outline-black/10"
             src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&h=1000&q=90"
           />
           <p className="text-justify">
-            也许我们可以不依赖图书馆，像你我这样的人。也许。当然，我们已经太老而无法改变世界，
-            但是那个孩子呢？他现在正坐在本地图书馆的分支里，打开一本书，发现《猫帽子》与五个中国兄弟里
-            有小便和尿尿的画画？难道他不配更好的吗？你看。如果你认为这与逾期罚款和丢失的书籍有关，
-            你最好再想想。这是关于那个孩子阅读书籍的权利，而不让他的心智受到扭曲！或者：也许这让你兴奋，
-            我的朋友；也许这就是你获得乐趣的方式。你和你的好朋友们。
+            也许我们可以没有图书馆，像你和我这样的人。也许。我们确实太老而无法改变世界，
+            但现在那个坐下来打开书的小孩呢，在当地图书馆的某个分馆里发现《帽子里的猫》和
+            《五个中国兄弟》上的尿尿和便便的画？难道他不值得更好吗？看看。如果你认为这与滞纳金和丢失的书籍有关，那你最好再想想。
+            这关乎那个孩子的权利，能阅读一本书而不让他的思想扭曲！或者：也许这让你兴奋，赛尔芬；
+            也许这就是你获得乐趣的方式。你和你的好朋友们。
           </p>
         </div>
       </div>
       <div dir="rtl" className="mt-6">
-        <p className="mb-4 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">right-to-left</p>
+        <p className="mb-4 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">从右到左</p>
         <div>
           <img
             className="float-start me-6 aspect-16/9 w-2/5 rounded-lg object-cover outline -outline-offset-1 outline-black/10"
@@ -122,8 +116,8 @@ export const description = "用于控制内容环绕元素的实用工具。";
             ربما يمكننا العيش بدون مكتبات، أشخاص مثلي ومثلك. ربما. بالتأكيد، نحن أكبر من أن نغير العالم، ولكن ماذا عن
             ذلك الطفل الذي يجلس ويفتح كتابًا الآن في أحد فروع المكتبة المحلية ويجد رسومات للتبول والبول على القطة في
             القبعة والإخوة الصينيون الخمسة؟ ألا يستحق الأفضل؟ ينظر. إذا كنت تعتقد أن الأمر يتعلق بالغرامات المتأخرة
-            والكتب المفقودة، فمن الأفضل أن تفكر مرة أخرى. يتعلق الأمر بحق ذلك الطفل في قراءة كتاب دون أن يتشوه عقله! أو:
-            ربما يثيرك هذا يا سينفيلد؛ ربما هذه هي الطريقة التي تحصل بها على ركلاتك. أنت ورفاقك الطيبين.
+            والكتب المفقودة، فمن الأفضل أن تفكر مرة أخرى. يتعلق الأمر بحق ذلك الطفل في قراءة كتاب دون أن يتشوه عقله! أو：
+            ربما يثيرك هذا يا سينفيلد؛ ربما هذه هي الطريقة التي تحصل بها على ركلاتك。 أنت ورفاقك الطيبين.
           </p>
         </div>
       </div>
@@ -136,7 +130,7 @@ export const description = "用于控制内容环绕元素的实用工具。";
 <!-- [!code classes:float-start] -->
 <article>
   <img class="float-start ..." src="/img/mountains.jpg" />
-  <p>也许我们可以不依赖图书馆，像你我这样的人。...</p>
+  <p>也许我们可以没有图书馆，像你和我这样的人。 ...</p>
 </article>
 
 <article dir="rtl">
@@ -149,7 +143,7 @@ export const description = "用于控制内容环绕元素的实用工具。";
 
 ### 禁用浮动
 
-使用 `float-none` 工具重置应用于元素的任何浮动：
+使用 `float-none` 工具类重置应用于元素的任何浮动：
 
 <Figure>
 
@@ -161,11 +155,8 @@ export const description = "用于控制内容环绕元素的实用工具。";
         src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&h=1000&q=90"
       />
       <p className="text-justify">
-        也许我们可以不依赖图书馆，像你我这样的人。也许。当然，我们已经太老而无法改变世界，但是
-        那个孩子呢？他现在正坐在本地图书馆的分支里，打开一本书，发现《猫帽子》与五个中国兄弟里
-        有小便和尿尿的画画？难道他不配更好的吗？你看。如果你认为这与逾期罚款和丢失的书籍有关，
-        你最好再想想。这是关于那个孩子阅读书籍的权利，而不让他的心智受到扭曲！或者：也许这让你兴奋，
-        我的朋友；也许这就是你获得乐趣的方式。你和你的好朋友们。
+        也许我们可以没有图书馆，像你和我这样的人。也许。我们确实太老而无法改变世界，但
+        现在那个坐下来打开书的小孩呢，在当地图书馆的某个分馆里发现《帽子里的猫》和《五个中国兄弟》上的尿尿和便便的画？难道他不值得更好吗？看看。如果你认为这与滞纳金和丢失的书籍有关，那你最好再想想。这关乎那个孩子的权利，能阅读一本书而不让他的思想扭曲！或者：也许这让你兴奋，赛尔芬；也许这就是你获得乐趣的方式。你和你的好朋友们。
       </p>
     </>
   }
@@ -175,7 +166,7 @@ export const description = "用于控制内容环绕元素的实用工具。";
 <!-- [!code classes:float-none] -->
 <article>
   <img class="float-none ..." src="/img/mountains.jpg" />
-  <p>也许我们可以不依赖图书馆，像你我这样的人。...</p>
+  <p>也许我们可以没有图书馆，像你和我这样的人。 ...</p>
 </article>
 ```
 

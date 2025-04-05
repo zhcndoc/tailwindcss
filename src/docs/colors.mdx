@@ -5,18 +5,18 @@ import { Stripes } from "@/components/stripes.tsx";
 import { TipGood, TipBad, TipCompat, TipInfo } from "@/components/tips";
 
 export const title = "颜色";
-export const description = "在 Tailwind CSS 项目中使用和自定义颜色调色板。";
+export const description = "Using and customizing the color palette in Tailwind CSS projects.";
 
-Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计师精心打造，适合多种不同的设计风格。
+Tailwind CSS 默认提供了一个丰富而美丽的色板，这些颜色经过专业设计师精心设计，适用于各种不同的设计风格。
 
 <div className="my-10">
-  {/* <TipInfo>{<>点击复制 OKLCH，按住 shift 点击复制最近的 hex</>}</TipInfo> */}
+  {/* <TipInfo>{<>点击复制 OKLCH，Shift+点击复制最近的十六进制色值</>}</TipInfo> */}
   {/* <div className="mt-6"> */}
   <ColorPalette />
   {/* </div> */}
 </div>
 
-默认调色板中的每个颜色包含 11 个步骤，50 为最浅，950 为最深：
+默认色板中的每种颜色都包含 11 个级别，50 为最浅色，950 为最深色：
 
 <Figure>
 
@@ -88,13 +88,13 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
 
 </Figure>
 
-整个颜色调色板可用于所有颜色相关的工具，包括 [背景颜色](/docs/background-color)，[边框颜色](/docs/border-color)，[填充](/docs/fill)，[光标颜色](/docs/caret-color)等许多其他功能。
+整个颜色色板可用于所有与颜色相关的工具，包括[背景颜色](/docs/background-color)、[边框颜色](/docs/border-color)、[填充](/docs/fill)、[光标颜色](/docs/caret-color)等。
 
 ## 处理颜色
 
 ### 使用颜色工具
 
-使用颜色工具如 `bg-white`, `border-pink-300` 和 `text-gray-950` 来设置设计中元素的不同颜色属性：
+使用颜色工具，如 `bg-white`、`border-pink-300` 和 `text-gray-950`，设置设计中元素的不同颜色属性：
 
 <Figure>
 
@@ -119,10 +119,10 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
         </span>
         <div>
           <p className="text-gray-700 dark:text-gray-400">
-            <span className="font-medium text-gray-950 dark:text-white">Tom Watson</span> 提到您在{" "}
-            <span className="font-medium text-gray-950 dark:text-white">Logo 重新设计</span>
+            <span className="font-medium text-gray-950 dark:text-white">Tom Watson</span> 在{" "}
+            <span className="font-medium text-gray-950 dark:text-white">Logo 重塑</span>中提到了你
           </p>
-          <p className="mt-1 text-gray-500">9:37am</p>
+          <p className="mt-1 text-gray-500">上午9:37</p>
         </div>
       </div>
     </div>
@@ -138,17 +138,17 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
   </span>
   <div>
     <p class="text-gray-700 dark:text-gray-400">
-      <span class="font-medium text-gray-950 dark:text-white">Tom Watson</span> 提到您在
-      <span class="font-medium text-gray-950 dark:text-white">Logo 重新设计</span>
+      <span class="font-medium text-gray-950 dark:text-white">Tom Watson</span> 在
+      <span class="font-medium text-gray-950 dark:text-white">Logo 重塑</span>中提到了你
     </p>
-    <time class="mt-1 block text-gray-500" datetime="9:37">9:37am</time>
+    <time class="mt-1 block text-gray-500" datetime="9:37">上午9:37</time>
   </div>
 </div>
 ```
 
 </Figure>
 
-以下是使用您颜色调色板的工具的完整列表：
+这是一个完整的使用颜色色板的工具列表：
 
 {
 
@@ -165,7 +165,7 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
         <code>bg-*</code>
       </td>
       <td>
-        设置元素的 <a href="/docs/background-color">背景颜色</a>
+        设置一个元素的 <a href="/docs/background-color">背景颜色</a>
       </td>
     </tr>
     <tr>
@@ -173,7 +173,7 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
         <code>text-*</code>
       </td>
       <td>
-        设置元素的 <a href="/docs/text-color">文本颜色</a>
+        设置一个元素的 <a href="/docs/text-color">文本颜色</a>
       </td>
     </tr>
     <tr>
@@ -181,7 +181,7 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
         <code>decoration-*</code>
       </td>
       <td>
-        设置元素的 <a href="/docs/text-decoration-color">文本装饰颜色</a>
+        设置一个元素的 <a href="/docs/text-decoration-color">文本装饰颜色</a>
       </td>
     </tr>
     <tr>
@@ -189,7 +189,7 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
         <code>border-*</code>
       </td>
       <td>
-        设置元素的 <a href="/docs/border-color">边框颜色</a>
+        设置一个元素的 <a href="/docs/border-color">边框颜色</a>
       </td>
     </tr>
     <tr>
@@ -197,7 +197,7 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
         <code>outline-*</code>
       </td>
       <td>
-        设置元素的 <a href="/docs/outline-color">轮廓颜色</a>
+        设置一个元素的 <a href="/docs/outline-color">轮廓颜色</a>
       </td>
     </tr>
     <tr>
@@ -270,7 +270,7 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
 
 ### 调整不透明度
 
-您可以使用语法如 `bg-black/75` 调整颜色的不透明度，其中 `75` 将颜色的 alpha 通道设置为 75%：
+您可以使用类似于 `bg-black/75` 的语法来调整颜色的不透明度，其中 `75` 将颜色的 alpha 通道设置为 75%：
 
 <Figure>
 
@@ -340,7 +340,7 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
 
 </Figure>
 
-这种语法还支持任意值和 CSS 变量简写：
+该语法也支持任意值和 CSS 变量简写：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -349,9 +349,9 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
 <div class="bg-cyan-400/(--my-alpha-value)"><!-- ... --></div>
 ```
 
-### 针对暗模式
+### 针对深色模式
 
-使用 `dark` 变体来编写类似 `dark:bg-gray-800` 的类，仅在暗模式激活时应用颜色：
+使用 `dark` 变体编写类似 `dark:bg-gray-800` 的类，仅在深色模式激活时应用颜色：
 
 <Figure>
 
@@ -359,7 +359,7 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
   {
     <div className="grid grid-cols-1 sm:grid-cols-2">
       <div className="p-8 pt-7">
-        <p className="mb-2 text-sm font-medium text-gray-500">亮模式</p>
+        <p className="mb-2 text-sm font-medium text-gray-500">浅色模式</p>
         <div className="rounded-lg bg-white px-6 py-8 shadow-xl ring ring-gray-900/5">
           <div>
             <span className="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
@@ -383,13 +383,13 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
           <p className="mt-5 text-base font-medium tracking-tight text-gray-900">可以倒着写</p>
           <p
             className="mt-2 text-sm text-gray-500"
-            children={`零重力钢笔可以在任何方向书写，
-          包括倒写。它甚至可以在外太空中使用。`}
+            children={`零重力笔可以在任何方向上书写，
+          包括倒着写。它甚至在外太空中也能使用。`}
           />
         </div>
       </div>
       <div className="bg-gray-900 p-8 pt-7">
-        <p className="mb-2 text-sm font-medium text-gray-400">暗模式</p>
+        <p className="mb-2 text-sm font-medium text-gray-400">深色模式</p>
         <div className="rounded-lg bg-gray-800 px-6 py-8 shadow-xl ring ring-gray-900/5">
           <div>
             <span className="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
@@ -413,8 +413,8 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
           <p className="mt-5 text-base font-medium tracking-tight text-white">可以倒着写</p>
           <p
             className="mt-2 text-sm text-gray-400"
-            children={`零重力钢笔可以在任何方向书写，
-          包括倒写。它甚至可以在外太空中使用。`}
+            children={`零重力笔可以在任何方向上书写，
+          包括倒着写。它甚至在外太空中也能使用。`}
           />
         </div>
       </div>
@@ -439,18 +439,18 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
   <!-- prettier-ignore -->
   <!-- [!code word:dark\:text-gray-400] -->
   <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm ">
-    零重力钢笔可以在任何方向书写，包括倒写。它甚至可以在外太空中使用。
+    零重力笔可以在任何方向上书写，包括倒着写。它甚至在外太空中也能使用。
   </p>
 </div>
 ```
 
 </Figure>
 
-了解有关暗模式样式的更多信息，请参见 [暗模式文档](/docs/dark-mode)。
+了解有关深色模式样式的更多信息，请参阅 [深色模式文档](/docs/dark-mode)。
 
 ### 在 CSS 中引用
 
-颜色以 `--color-*` 命名空间以 CSS 变量的形式暴露，因此您可以使用诸如 `--color-blue-500` 和 `--color-pink-700` 的变量在 CSS 中引用它们：
+颜色以 `--color-*` 命名空间的 CSS 变量形式暴露，因此您可以使用像 `--color-blue-500` 和 `--color-pink-700` 的变量在 CSS 中引用它们：
 
 ```css
 /* [!code filename:CSS] */
@@ -472,7 +472,7 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
 }
 ```
 
-您还可以将这些用作 [任意值]() 在工具类中：
+您还可以将这些作为[任意值]()在工具类中使用：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -482,7 +482,7 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
 </div>
 ```
 
-要快速调整通过 CSS 中的变量引用的颜色的不透明度，Tailwind 包含一个特殊的 <code>--alpha()</code> 函数：
+要在以变量引用颜色时快速调整不透明度，Tailwind 提供了一个特殊的 <code>--alpha()</code> 函数：
 
 ```css
 /* [!code filename:CSS] */
@@ -498,7 +498,7 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
 
 ## 自定义您的颜色
 
-使用 `@theme` 在 `--color-*` 主题命名空间下将自定义颜色添加到您的项目中：
+使用 `@theme` 在 `--color-*` 主题命名空间下为您的项目添加自定义颜色：
 
 ```css
 /* [!code filename:CSS] */
@@ -512,13 +512,13 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
 }
 ```
 
-现在，像 `bg-midnight`、`text-tahiti` 和 `fill-bermuda` 这样的工具将在您的项目中可用，除此之外还有默认颜色。
+现在，像 `bg-midnight`、`text-tahiti` 和 `fill-bermuda` 这样的工具将在您的项目中可用，以及默认颜色。
 
-了解有关主题变量的更多信息，请参见 [主题变量文档](/docs/theme)。
+了解有关主题变量的更多信息，请查看 [主题变量文档](/docs/theme)。
 
-### 重写默认颜色
+### 覆盖默认颜色
 
-通过定义与同名的新主题变量，可以覆盖任何默认颜色：
+通过定义相同名称的新主题变量来覆盖任何默认颜色：
 
 ```css
 /* [!code filename:CSS] */
@@ -542,7 +542,7 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
 
 ### 禁用默认颜色
 
-通过将其主题命名空间设置为 `initial`，可以禁用任何默认颜色：
+通过将该颜色的主题命名空间设置为 `initial` 来禁用任何默认颜色：
 
 ```css
 /* [!code filename:CSS] */
@@ -555,11 +555,11 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
 }
 ```
 
-这对于移除您打算不使用的颜色的对应 CSS 变量特别有用。
+这对于从输出中删除您不打算使用的颜色对应的 CSS 变量特别有用。
 
 ### 使用自定义调色板
 
-使用 `--color-*: initial` 完全禁用所有默认颜色并定义自己的自定义颜色调色板：
+使用 `--color-*: initial` 完全禁用所有默认颜色，并定义您自己的自定义调色板：
 
 ```css
 /* [!code filename:CSS] */
@@ -598,11 +598,11 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
 }
 ```
 
-要了解更多信息，请参见主题文档中关于 [引用其他变量](/docs/theme#referencing-other-variables)。
+在主题文档中了解更多关于[引用其他变量的内容](/docs/theme#referencing-other-variables)。
 
-## 默认颜色调色板参考
+## 默认色板参考
 
-这是默认颜色及其值的完整列表以供参考：
+以下是完整的默认颜色及其值的参考列表：
 
 ```css
 /* [!code filename:CSS] */
@@ -876,4 +876,4 @@ Tailwind CSS 内置了一个庞大而美丽的颜色调色板，由专业设计�
 }
 ```
 
-这非常有用，如果您想在不同的名称下重用这些色阶，例如重新定义 `--color-gray-*` 为使用 `--color-slate-*` 色阶。
+如果您希望以不同的名称重用这些色阶，例如重新定义 `--color-gray-*` 以使用 `--color-slate-*` 色阶，这将非常有用。

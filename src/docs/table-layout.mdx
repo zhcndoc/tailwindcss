@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "表格布局";
-export const description = "用于控制表格布局算法的工具类。";
+export const title = "table-layout";
+export const description = "控制表格布局算法的实用工具.";
 
 <ApiTable
   rows={[
@@ -17,7 +17,7 @@ export const description = "用于控制表格布局算法的工具类。";
 
 ### 自动调整列宽
 
-使用 `table-auto` 工具类自动调整表格列的宽度，以适应其单元格的内容：
+使用 `table-auto` 工具自动调整表格列宽以适应单元格内容：
 
 <Figure>
 
@@ -41,10 +41,10 @@ export const description = "用于控制表格布局算法的工具类。";
         <tbody className="bg-white dark:bg-gray-800">
           <tr>
             <td className="border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              The Sliding Mr. Bones (Next Stop, Pottersville)
+              《滑行的博恩斯先生》（下一站，波特斯维尔）
             </td>
             <td className="border-b border-gray-100 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Malcolm Lockyer
+              马尔科姆·洛基尔
             </td>
             <td className="border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-gray-700 dark:text-gray-400">
               1961
@@ -52,10 +52,10 @@ export const description = "用于控制表格布局算法的工具类。";
           </tr>
           <tr>
             <td className="border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Witchy Woman
+              《女巫女人》
             </td>
             <td className="border-b border-gray-100 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              The Eagles
+              老鹰乐队
             </td>
             <td className="border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-gray-700 dark:text-gray-400">
               1972
@@ -63,10 +63,10 @@ export const description = "用于控制表格布局算法的工具类。";
           </tr>
           <tr>
             <td className="border-b border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              Shining Star
+              《闪亮的星》
             </td>
             <td className="border-b border-gray-200 p-4 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              Earth, Wind, and Fire
+              地球、风和火
             </td>
             <td className="border-b border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
               1975
@@ -90,18 +90,18 @@ export const description = "用于控制表格布局算法的工具类。";
   </thead>
   <tbody>
     <tr>
-      <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-      <td>Malcolm Lockyer</td>
+      <td>《滑行的博恩斯先生》（下一站，波特斯维尔）</td>
+      <td>马尔科姆·洛基尔</td>
       <td>1961</td>
     </tr>
     <tr>
-      <td>Witchy Woman</td>
-      <td>The Eagles</td>
+      <td>《女巫女人》</td>
+      <td>老鹰乐队</td>
       <td>1972</td>
     </tr>
     <tr>
-      <td>Shining Star</td>
-      <td>Earth, Wind, and Fire</td>
+      <td>《闪亮的星》</td>
+      <td>地球、风和火</td>
       <td>1975</td>
     </tr>
   </tbody>
@@ -112,7 +112,7 @@ export const description = "用于控制表格布局算法的工具类。";
 
 ### 使用固定列宽
 
-使用 `table-fixed` 工具类忽略表格单元格的内容，并为每列设置固定宽度：
+使用 `table-fixed` 工具忽略单元格内容，为每一列使用固定宽度：
 
 <Figure>
 
@@ -136,10 +136,10 @@ export const description = "用于控制表格布局算法的工具类。";
         <tbody className="bg-white dark:bg-gray-800">
           <tr>
             <td className="border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              The Sliding Mr. Bones (Next Stop, Pottersville)
+              《滑行的博恩斯先生》（下一站，波特斯维尔）
             </td>
             <td className="border-b border-gray-100 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Malcolm Lockyer
+              马尔科姆·洛基尔
             </td>
             <td className="border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-gray-700 dark:text-gray-400">
               1961
@@ -147,10 +147,10 @@ export const description = "用于控制表格布局算法的工具类。";
           </tr>
           <tr>
             <td className="border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Witchy Woman
+              《女巫女人》
             </td>
             <td className="border-b border-gray-100 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              The Eagles
+              老鹰乐队
             </td>
             <td className="border-b border-gray-100 p-4 pr-8 text-gray-500 dark:border-gray-700 dark:text-gray-400">
               1972
@@ -158,10 +158,10 @@ export const description = "用于控制表格布局算法的工具类。";
           </tr>
           <tr>
             <td className="border-b border-gray-200 p-4 pl-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              Shining Star
+              《闪亮的星》
             </td>
             <td className="border-b border-gray-200 p-4 text-gray-500 dark:border-gray-600 dark:text-gray-400">
-              Earth, Wind, and Fire
+              地球、风和火
             </td>
             <td className="border-b border-gray-200 p-4 pr-8 text-gray-500 dark:border-gray-600 dark:text-gray-400">
               1975
@@ -185,18 +185,18 @@ export const description = "用于控制表格布局算法的工具类。";
   </thead>
   <tbody>
     <tr>
-      <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-      <td>Malcolm Lockyer</td>
+      <td>《滑行的博恩斯先生》（下一站，波特斯维尔）</td>
+      <td>马尔科姆·洛基尔</td>
       <td>1961</td>
     </tr>
     <tr>
-      <td>Witchy Woman</td>
-      <td>The Eagles</td>
+      <td>《女巫女人》</td>
+      <td>老鹰乐队</td>
       <td>1972</td>
     </tr>
     <tr>
-      <td>Shining Star</td>
-      <td>Earth, Wind, and Fire</td>
+      <td>《闪亮的星》</td>
+      <td>地球、风和火</td>
       <td>1975</td>
     </tr>
   </tbody>
@@ -205,7 +205,7 @@ export const description = "用于控制表格布局算法的工具类。";
 
 </Figure>
 
-您可以手动为某些列设置宽度，其余可用的宽度将均匀分配给没有显式宽度的列。第一行设置的宽度将为整个表格的列宽设置。
+您可以手动为某些列设置宽度，其余可用宽度将均匀分配给没有显式宽度的列。第一行设置的宽度将为整张表格设置列宽。
 
 ### 响应式设计
 

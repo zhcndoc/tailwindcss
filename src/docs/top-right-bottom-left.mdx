@@ -5,8 +5,8 @@ import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import { CustomizingYourSpacingScale } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
-export const title = "上 / 右 / 下 / 左";
-export const description = "控制位置元素放置的工具类。";
+export const title = "top / right / bottom / left";
+export const description = "控制定位元素放置的工具类。";
 
 <ApiTable
   rows={[
@@ -173,7 +173,7 @@ export const description = "控制位置元素放置的工具类。";
 
 ### 使用负值
 
-要使用负的上/右/下/左值，在类名前加上一个dash以将其转换为负值：
+要使用负的 top/right/bottom/left 值，请在类名前加上一个负号以转换为负值：
 
 <Figure>
 
@@ -201,7 +201,7 @@ export const description = "控制位置元素放置的工具类。";
 
 ### 使用逻辑属性
 
-使用 `start-<number>` 或 `end-<number>` 工具类，如 `start-0` 和 `end-4` 来设置 `inset-inline-start` 和 `inset-inline-end` [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)，这些属性根据文本方向可以映射到左边或右边：
+使用 `start-<number>` 或 `end-<number>` 工具类，如 `start-0` 和 `end-4` 来设置 `inset-inline-start` 和 `inset-inline-end` 的 [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)，这些属性根据文本方向映射到左侧或右侧：
 
 <Figure>
 
@@ -249,7 +249,7 @@ export const description = "控制位置元素放置的工具类。";
 
 </Figure>
 
-如果需要更多控制，您还可以使用 [LTR 和 RTL 修饰符](/docs/hover-focus-and-other-states#rtl-support) 根据当前文本方向有条件地应用特定样式。
+为了更好的控制，你还可以使用 [LTR 和 RTL 修饰符](/docs/hover-focus-and-other-states#rtl-support) 来根据当前文本方向有条件地应用特定样式。
 
 ### 使用自定义值
 
@@ -263,7 +263,7 @@ export const description = "控制位置元素放置的工具类。";
   featuredClass="top-6"
 />
 
-## 自定义您的主题
+## 定制你的主题
 
 <CustomizingYourSpacingScale
   utilities={["inset", "inset-x", "inset-y", "start", "end", "top", "left", "bottom", "right"]}

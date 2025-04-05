@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "white-space";
-export const description = "用于控制元素的 white-space 属性的工具类。";
+export const description = "用于控制元素的白空间属性的工具类。";
 
 <ApiTable
   rows={[
@@ -31,7 +31,7 @@ export const description = "用于控制元素的 white-space 属性的工具类
       <p
         className="whitespace-normal"
         children={
-          "大家好！\n\n快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。\n\n你永远不会知道。"
+          "Hey everyone!\n\nIt’s almost 2022       and we still don’t know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.\n\nYou will never know."
         }
       />
     </div>
@@ -41,11 +41,11 @@ export const description = "用于控制元素的 white-space 属性的工具类
 ```html
 <!-- [!code classes:whitespace-normal] -->
 <!-- prettier-ignore -->
-<p class="whitespace-normal">大家好！
+<p class="whitespace-normal">Hey everyone!
 
-快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。
+It's almost 2022       and we still don't know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.
 
-你永远不会知道。</p>
+You will never know.</p>
 ```
 
 </Figure>
@@ -62,7 +62,7 @@ export const description = "用于控制元素的 white-space 属性的工具类
       <p
         className="whitespace-nowrap"
         children={
-          "大家好！\n\n快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。\n\n你永远不会知道。"
+          "Hey everyone!\n\nIt’s almost 2022       and we still don’t know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.\n\nYou will never know."
         }
       />
     </div>
@@ -72,18 +72,18 @@ export const description = "用于控制元素的 white-space 属性的工具类
 ```html
 <!-- [!code classes:whitespace-nowrap] -->
 <!-- prettier-ignore -->
-<p class="overflow-auto whitespace-nowrap">大家好！
+<p class="overflow-auto whitespace-nowrap">Hey everyone!
 
-快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。
+It's almost 2022       and we still don't know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.
 
-你永远不会知道。</p>
+You will never know.</p>
 ```
 
 </Figure>
 
-### 保留
+### 保持格式
 
-使用 `whitespace-pre` 工具类在元素内保留换行符和空格。文本将不会换行：
+使用 `whitespace-pre` 工具类保留元素内的换行符和空格。文本不会换行：
 
 <Figure>
 
@@ -93,7 +93,7 @@ export const description = "用于控制元素的 white-space 属性的工具类
       <p
         className="whitespace-pre"
         children={
-          "大家好！\n\n快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。\n\n你永远不会知道。"
+          "Hey everyone!\n\nIt’s almost 2022       and we still don’t know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.\n\nYou will never know."
         }
       />
     </div>
@@ -103,16 +103,16 @@ export const description = "用于控制元素的 white-space 属性的工具类
 ```html
 <!-- [!code classes:whitespace-pre] -->
 <!-- prettier-ignore -->
-<p class="overflow-auto whitespace-pre">大家好！
+<p class="overflow-auto whitespace-pre">Hey everyone!
 
-快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。
+It's almost 2022       and we still don't know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.
 
-你永远不会知道。</p>
+You will never know.</p>
 ```
 
 </Figure>
 
-### 保留行
+### 保持换行
 
 使用 `whitespace-pre-line` 工具类保留换行符但不保留空格。文本将正常换行：
 
@@ -124,7 +124,7 @@ export const description = "用于控制元素的 white-space 属性的工具类
       <p
         className="whitespace-pre-line"
         children={
-          "大家好！\n\n快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。\n\n你永远不会知道。"
+          "Hey everyone!\n\nIt’s almost 2022       and we still don’t know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.\n\nYou will never know."
         }
       />
     </div>
@@ -134,18 +134,18 @@ export const description = "用于控制元素的 white-space 属性的工具类
 ```html
 <!-- [!code classes:whitespace-pre-line] -->
 <!-- prettier-ignore -->
-<p class="whitespace-pre-line">大家好！
+<p class="whitespace-pre-line">Hey everyone!
 
-快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。
+It's almost 2022       and we still don't know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.
 
-你永远不会知道。</p>
+You will never know.</p>
 ```
 
 </Figure>
 
-### 保留换行
+### 包裹格式
 
-使用 `whitespace-pre-wrap` 工具类在元素内保留换行符和空格。文本将正常换行：
+使用 `whitespace-pre-wrap` 工具类保留换行符和空格。文本将正常换行：
 
 <Figure>
 
@@ -155,7 +155,7 @@ export const description = "用于控制元素的 white-space 属性的工具类
       <p
         className="whitespace-pre-wrap"
         children={
-          "大家好！\n\n快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。\n\n你永远不会知道。"
+          "Hey everyone!\n\nIt’s almost 2022       and we still don’t know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.\n\nYou will never know."
         }
       />
     </div>
@@ -166,18 +166,18 @@ export const description = "用于控制元素的 white-space 属性的工具类
 ```html
 <!-- [!code classes:whitespace-pre-wrap] -->
 <!-- prettier-ignore -->
-<p class="whitespace-pre-wrap">大家好！
+<p class="whitespace-pre-wrap">Hey everyone!
 
-快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。
+It's almost 2022       and we still don't know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.
 
-你永远不会知道。</p>
+You will never know.</p>
 ```
 
 </Figure>
 
-### 换行空格
+### 符号换行
 
-使用 `whitespace-break-spaces` 工具类在元素内保留换行符和空格。行末的空格不会悬挂，而是换到下一行：
+使用 `whitespace-break-spaces` 工具类保留换行符和空格。行末的空白不会悬挂，而是会换到下一行：
 
 <Figure>
 
@@ -187,7 +187,7 @@ export const description = "用于控制元素的 white-space 属性的工具类
       <p
         className="whitespace-break-spaces"
         children={
-          "大家好！\n\n快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。\n\n你永远不会知道。"
+          "Hey everyone!\n\nIt’s almost 2022       and we still don’t know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.\n\nYou will never know."
         }
       />
     </div>
@@ -197,11 +197,11 @@ export const description = "用于控制元素的 white-space 属性的工具类
 ```html
 <!-- [!code classes:whitespace-break-spaces] -->
 <!-- prettier-ignore -->
-<p class="whitespace-break-spaces">大家好！
+<p class="whitespace-break-spaces">Hey everyone!
 
-快到2022年了，我们仍然不知道是否有外星人生活在我们当中，还是我们不知道？也许写这篇文章的人就是外星人。
+It's almost 2022       and we still don't know if there             are aliens living among us, or do we? Maybe the person writing this is an alien.
 
-你永远不会知道。</p>
+You will never know.</p>
 ```
 
 </Figure>

@@ -7,12 +7,12 @@ import { MultiCursorAnimation, MultiCursorPreview } from "@/components/multi-cur
 import { MultiCursorCode } from "@/components/multi-cursor/example.tsx";
 import erinLindford from "./img/erin-lindford.jpg";
 
-export const title = "使用实用类进行样式设置";
-export const description = "从一组受限的原始实用工具构建复杂组件。";
+export const title = "使用工具类进行样式设计";
+export const description = "从有限的基础实用工具构建复杂组件。";
 
 ## 概述
 
-您可以通过在标记中直接组合多个单一目的的表现类 _(实用类)_ 来使用 Tailwind 进行样式设置：
+通过将许多单用途的表现类（称为“工具类”）直接结合在您的标记中，您可以使用 Tailwind 来设计：
 
 <Figure>
 
@@ -49,7 +49,7 @@ export const description = "从一组受限的原始实用工具构建复杂组�
       </svg>
       <div>
         <div className="text-xl font-medium text-black dark:text-white">ChitChat</div>
-        <p className="text-gray-500 dark:text-gray-400">You have a new message!</p>
+        <p className="text-gray-500 dark:text-gray-400">您有新的消息!</p>
       </div>
     </div>
   }
@@ -61,43 +61,43 @@ export const description = "从一组受限的原始实用工具构建复杂组�
   <img class="size-12 shrink-0" src="/img/logo.svg" alt="ChitChat Logo" />
   <div>
     <div class="text-xl font-medium text-black dark:text-white">ChitChat</div>
-    <p class="text-gray-500 dark:text-gray-400">You have a new message!</p>
+    <p class="text-gray-500 dark:text-gray-400">您有新的消息!</p>
   </div>
 </div>
 ```
 
 </Figure>
 
-例如，在上面的 UI 中，我们使用了：
+例如，以上 UI 中我们使用了：
 
-- [display](/docs/display#flex) 和 [padding](/docs/padding) 工具 (`flex`, `shrink-0`, 和 `p-6`) 来控制整体布局
-- [max-width](/docs/max-width) 和 [margin](/docs/margin) 工具 (`max-w-sm` 和 `mx-auto`) 来限制卡片宽度并使其水平居中
-- [background-color](/docs/background-color)、[border-radius](/docs/border-radius) 和 [box-shadow](/docs/box-shadow) 工具 (`bg-white`, `rounded-xl` 和 `shadow-lg`) 来设置卡片的外观
-- [width](/docs/width) 和 [height](/docs/height) 工具 (`size-12`) 来设置 logo 图片的宽度和高度
-- [gap](/docs/gap) 工具 (`gap-x-4`) 来处理 logo 和文本之间的间距
-- [font-size](/docs/font-size)、[color](/docs/text-color) 和 [font-weight](/docs/font-weight) 工具 (`text-xl`, `text-black`, `font-medium`, 等等) 来设置卡片文本的样式
+- [显示](/docs/display#flex)和[填充](/docs/padding)工具类（`flex`、`shrink-0`和`p-6`）来控制整体布局
+- [最大宽度](/docs/max-width)和[边距](/docs/margin)工具类（`max-w-sm`和`mx-auto`）来限制卡片宽度并在水平上居中
+- [背景颜色](/docs/background-color)、[边框半径](/docs/border-radius)和[盒阴影](/docs/box-shadow)工具类（`bg-white`、`rounded-xl`和`shadow-lg`）来美化卡片的外观
+- [宽度](/docs/width)和[高度](/docs/height)工具类（`size-12`）设置标志图像的宽度和高度
+- [间距](/docs/gap)工具类（`gap-x-4`）用来处理标志与文本之间的间距
+- [字体大小](/docs/font-size)、[颜色](/docs/text-color)和[字体粗细](/docs/font-weight)工具类（`text-xl`、`text-black`、`font-medium`等）来美化卡片文本
 
-以这种方式设置样式与许多传统最佳实践相悖，但一旦您尝试了，您会很快注意到一些非常重要的好处：
+以这种方式为事物设样式与许多传统最佳实践相违背，但一旦尝试后，您将迅速发现一些非常重要的好处：
 
-- **您可以更快地完成事情** — 您无需花时间想出类名、做选择器的决定，或在 HTML 和 CSS 文件之间切换，因此您的设计迅速成型。
-- **更改感觉更安全** — 向元素添加或删除一个实用类只会影响该元素，因此您永远不必担心意外破坏使用相同 CSS 的其他页面。
-- **维护旧项目更容易** — 改变某些内容只需在项目中找到该元素并更改类名，而无需尝试记住六个月未触碰的所有自定义 CSS 是如何工作的。
-- **您的代码更加便携** — 由于结构和样式都存在于同一个地方，您可以轻松地在不同项目之间复制和粘贴整个 UI 块。
-- **您的 CSS 不再增长** — 因为实用类如此可重用，您的 CSS 不会随着您向项目添加的新功能线性增长。
+- **您能更快完成工作** — 您无需为类名而苦恼，不必花时间决定选择器或在 HTML 和 CSS 文件之间切换，因此设计能非常快速地组合在一起。
+- **进行更改时感觉更安全** — 向元素添加或删除一个工具类仅影响该元素，因此您永远无须担心意外破坏使用相同 CSS 的其他页面。
+- **维护旧项目更容易** — 更改某些内容只需在项目中找到该元素并更改类，而无须试图记住所有未接触六个月的自定义 CSS 是如何工作的。
+- **您的代码更具可移植性** — 由于结构和样式都位于同一位置，您可以轻松地复制和粘贴整个 UI 块，甚至在不同项目之间。
+- **您的 CSS 停止增长** — 由于工具类可以重用，因此您的 CSS 不再随着添加项目中的每个新功能而线性增长。
 
-这些好处在小型项目上有很大的区别，但对于大型项目上开展长期工作的团队价值更高。
+这些好处在小型项目上产生重大影响，但对于在规模较大的长期项目中工作的团队而言，它们的价值更为显著。
 
 ### 为什么不直接使用内联样式？
 
-对这种方法的常见反应是想知道，“这不就是内联样式吗？”从某种意义上来说，它确实是——您是直接将样式应用于元素，而不是分配一个类名然后再对该类进行样式设置。
+对此方法的常见反应是：“这不就是内联样式吗？”在某些方面是这样的，您确实是将样式直接应用于元素，而不是先给它们指定类名再为该类进行样式设置。
 
-但使用实用类与内联样式相比，有很多重要的优势，例如：
+但使用工具类相较于内联样式有许多重要优势，例如：
 
-- **在约束中设计** — 使用内联样式，每个值都是一个魔法数字。而使用实用类，您是从一个 [预定义设计系统](/docs/theme) 中选择样式，这使得构建视觉一致的 UI 更加容易。
-- **悬停、焦点和其他状态** — 内联样式无法针对悬停或焦点等状态，但 Tailwind 的 [状态变体](/docs/hover-focus-and-other-states) 使之能够轻松使用实用类来为这些状态设置样式。
-- **媒体查询** — 您无法在内联样式中使用媒体查询，但您可以使用 Tailwind 的 [响应式变体](/docs/responsive-design) 轻松构建完全响应的接口。
+- **在限制下设计** — 使用内联样式时，每个值都是一个魔法数字。使用工具类时，您从[预定义设计系统](/docs/theme)中选择样式，这使得构建视觉一致的 UI 更加容易。
+- **悬停、焦点及其他状态** — 内联样式无法定位像悬停或焦点这样的状态，但 Tailwind 的[状态变体](/docs/hover-focus-and-other-states)使得使用工具类轻松即成样式。
+- **媒体查询** — 您无法在内联样式中使用媒体查询，但可以使用 Tailwind 的[响应式变体](/docs/responsive-design)轻松构建完全响应的界面。
 
-这个组件是完全响应的，包含一个具有悬停和活动样式的按钮，完全由实用类构建：
+这个组件是完全响应式的，并且包含一个具有悬停和激活样式的按钮，并完全通过工具类构建：
 
 <Figure>
 
@@ -107,15 +107,15 @@ export const description = "从一组受限的原始实用工具构建复杂组�
       <img
         className="mx-auto block h-24 rounded-full @sm:mx-0 @sm:shrink-0"
         src={erinLindford.src}
-        alt="Woman's Face"
+        alt="女人的脸"
       />
       <div className="space-y-2 text-center @sm:text-left">
         <div className="space-y-0.5">
           <p className="text-lg font-semibold text-black">Erin Lindford</p>
-          <p className="font-medium text-gray-500">Product Engineer</p>
+          <p className="font-medium text-gray-500">产品工程师</p>
         </div>
         <button className="rounded-full border border-purple-200 px-4 py-1 text-sm font-semibold text-purple-600 hover:border-transparent hover:bg-purple-600 hover:text-white active:bg-purple-700">
-          Message
+          消息
         </button>
       </div>
     </div>
@@ -130,11 +130,11 @@ export const description = "从一组受限的原始实用工具构建复杂组�
   <div class="space-y-2 text-center sm:text-left">
     <div class="space-y-0.5">
       <p class="text-lg font-semibold text-black">Erin Lindford</p>
-      <p class="font-medium text-gray-500">Product Engineer</p>
+      <p class="font-medium text-gray-500">产品工程师</p>
     </div>
     <!-- prettier-ignore -->
     <button class="border-purple-200 text-purple-600 hover:border-transparent hover:bg-purple-600 hover:text-white active:bg-purple-700 ...">
-      Message
+      消息
     </button>
   </div>
 </div>
@@ -142,13 +142,13 @@ export const description = "从一组受限的原始实用工具构建复杂组�
 
 </Figure>
 
-## 以实用类的思维
+## 使用工具类思维
 
-### 为悬停和焦点状态设置样式
+### 样式悬停和焦点状态
 
-要为诸如悬停或焦点等状态为元素设置样式，只需在任何工具前加上您要定位的状态前缀，例如 `hover:bg-sky-700`：
+要在悬停或焦点等状态下为元素设计样式，只需在希望针对的状态前添加任何工具类前缀，例如 `hover:bg-sky-700`：
 
-<Figure hint="悬停在这个按钮上以查看背景颜色变化">
+<Figure hint="悬停这个按钮查看背景颜色变化">
 
 <Example>
   {
@@ -167,12 +167,12 @@ export const description = "从一组受限的原始实用工具构建复杂组�
 
 </Figure>
 
-这些前缀在 Tailwind 中称为 [变体](/docs/hover-focus-and-other-states)，它们仅在条件匹配时应用实用类的样式。
+这些前缀在 Tailwind 中称为[变体](/docs/hover-focus-and-other-states)，当该变体条件匹配时，仅在此时应用工具类的样式。
 
-对于类 `hover:bg-sky-700` 生成的 CSS 如下所示：
+以下是 `hover:bg-sky-700` 类生成的 CSS 样式：
 
 ```css
-/* [!code filename: Generated CSS] */
+/* [!code filename: 生成的 CSS] */
 .hover\:bg-sky-700 {
   &:hover {
     background-color: var(--color-sky-700);
@@ -180,9 +180,9 @@ export const description = "从一组受限的原始实用工具构建复杂组�
 }
 ```
 
-注意此类在元素被悬停时才会生效吗？它的 _唯一_ 作用是提供悬停样式——没有其他。
+注意到这个类只有在元素被悬停时才会生效吗？它的“唯一”任务是提供悬停样式—没有别的。
 
-这与您编写传统 CSS 的方式不同，传统 CSS 通常一个类会为许多状态提供样式：
+这与您书写传统 CSS 的方式不同，通常一个类会为多个状态提供样式：
 
 ```html
 /* [!code filename:HTML] */
@@ -198,20 +198,20 @@ export const description = "从一组受限的原始实用工具构建复杂组�
 </style>
 ```
 
-您甚至可以在 Tailwind 中叠加变体，以在多个条件匹配时应用一个实用类，如结合 `hover:` 和 `disabled:`：
+您甚至可以在 Tailwind 中叠加变体，以在多个条件匹配时应用工具类，例如将 `hover:` 和 `disabled:` 结合起来。
 
 ```html
 <!-- [!code classes:disabled:hover:bg-sky-500] -->
 <button class="bg-sky-500 disabled:hover:bg-sky-500 ...">保存更改</button>
 ```
 
-在文档中了解有关在 [悬停、焦点和其他状态](/docs/hover-focus-and-other-states) 上样式化元素的更多信息。
+在文档中了解更多关于在[悬停、焦点和其他状态下样式化元素](/docs/hover-focus-and-other-states)的信息。
 
-### 媒体查询和断点
+### 媒体查询与断点
 
-就像悬停和焦点状态一样，您可以通过在任何工具前加上您希望样式应用的断点前缀，在不同的断点处为元素设置样式：
+就像悬停和焦点状态一样，您可以通过在希望应用样式的断点前加上任何工具类前缀来为不同断点下的元素样式设定：
 
-<Figure hint="调整此示例的大小以查看布局更改">
+<Figure hint="调整此示例的大小以查看布局变化">
 
 <Example className="@container" resizable>
   {
@@ -235,10 +235,10 @@ export const description = "从一组受限的原始实用工具构建复杂组�
 
 </Figure>
 
-在上面的示例中，`sm:` 前缀确保 `grid-cols-3` 仅在 `sm` 断点及以上触发，默认值为 40rem：
+在上面的示例中，`sm:` 前缀确保 `grid-cols-3` 仅在 `sm` 断点及以上触发，默认情况为 40rem：
 
 ```css
-/* [!code filename: Generated CSS] */
+/* [!code filename: 生成的 CSS] */
 .sm\:grid-cols-3 {
   @media (width >= 40rem) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -246,11 +246,11 @@ export const description = "从一组受限的原始实用工具构建复杂组�
 }
 ```
 
-在 [响应式设计](/docs/responsive-design) 文档中了解更多信息。
+在[响应式设计](/docs/responsive-design)文档中了解更多信息。
 
 ### 针对暗模式
 
-在暗模式中设置元素样式只需在您希望在暗模式激活时应用的任何工具前添加 `dark:` 前缀：
+在暗模式中为元素设置样式，只需在希望在暗模式激活时应用的任何工具类前加上 `dark:` 前缀：
 
 <Figure>
 
@@ -258,7 +258,7 @@ export const description = "从一组受限的原始实用工具构建复杂组�
   {
     <div className="grid grid-cols-1 sm:grid-cols-2">
       <div className="p-8 pt-7">
-        <p className="mb-2 text-sm font-medium text-gray-500">Light mode</p>
+        <p className="mb-2 text-sm font-medium text-gray-500">明亮模式</p>
         <div className="rounded-lg bg-white px-6 py-8 shadow-xl ring ring-gray-900/5">
           <div>
             <span className="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
@@ -278,16 +278,15 @@ export const description = "从一组受限的原始实用工具构建复杂组�
               </svg>
             </span>
           </div>
-          <p className="mt-5 text-base font-medium tracking-tight text-gray-900">Writes upside-down</p>
+          <p className="mt-5 text-base font-medium tracking-tight text-gray-900">可以上下书写</p>
           <p
             className="mt-2 text-sm text-gray-500"
-            children={`The Zero Gravity Pen can be used to write in any orientation,
-          including upside-down. It even works in outer space.`}
+            children={`零重力笔可以以任何方向书写，包括倒着书写。它甚至能在外层空间中工作。`}
           />
         </div>
       </div>
       <div className="bg-gray-900 p-8 pt-7">
-        <p className="mb-2 text-sm font-medium text-gray-400">Dark mode</p>
+        <p className="mb-2 text-sm font-medium text-gray-400">暗模式</p>
         <div className="rounded-lg bg-gray-800 px-6 py-8 shadow-xl ring ring-gray-900/5">
           <div>
             <span className="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
@@ -307,11 +306,10 @@ export const description = "从一组受限的原始实用工具构建复杂组�
               </svg>
             </span>
           </div>
-          <p className="mt-5 text-base font-medium tracking-tight text-white">Writes upside-down</p>
+          <p className="mt-5 text-base font-medium tracking-tight text-white">可以上下书写</p>
           <p
             className="mt-2 text-sm text-gray-400"
-            children={`The Zero Gravity Pen can be used to write in any orientation,
-          including upside-down. It even works in outer space.`}
+            children={`零重力笔可以以任何方向书写，包括倒着书写。它甚至能在外层空间中工作。`}
           />
         </div>
       </div>
@@ -327,7 +325,6 @@ export const description = "从一组受限的原始实用工具构建复杂组�
     <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
       <svg
         class="h-6 w-6 text-white"
-
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -339,21 +336,21 @@ export const description = "从一组受限的原始实用工具构建复杂组�
   </div>
   <!-- prettier-ignore -->
   <!-- [!code word:dark\:text-white] -->
-  <h3 class="text-gray-900 dark:text-white mt-5 text-base font-medium tracking-tight ">Writes upside-down</h3>
+  <h3 class="text-gray-900 dark:text-white mt-5 text-base font-medium tracking-tight">可以上下书写</h3>
   <!-- prettier-ignore -->
   <!-- [!code word:dark\:text-gray-400] -->
-  <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm ">
-    The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in outer space.
+  <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">
+    零重力笔可以以任何方向书写，包括倒着书写。它甚至能在外层空间中工作。
   </p>
 </div>
 ```
 
 </Figure>
 
-和悬停状态或媒体查询一样，重要的事情是要理解单个实用类永远不会包含 _两者_ 的亮模式和暗模式样式——您使用多个类来在暗模式中设置样式，一个用于亮模式样式，另一个用于暗模式样式。
+就像悬停状态或媒体查询一样，重要的是要理解，单个工具类从来不会同时包含明亮和暗模式样式——在暗模式中为事物设样式的方式是使用多个类，一个用于明亮模式样式，另一个用于暗模式样式。
 
 ```css
-/* [!code filename: Generated CSS] */
+/* [!code filename: 生成的 CSS] */
 .dark\:bg-gray-800 {
   @media (prefers-color-scheme: dark) {
     background-color: var(--color-gray-800);
@@ -361,11 +358,11 @@ export const description = "从一组受限的原始实用工具构建复杂组�
 }
 ```
 
-在 [暗模式](/docs/dark-mode) 文档中了解更多信息。
+在[暗模式](/docs/dark-mode)文档中了解更多信息。
 
 ### 使用类组合
 
-在 Tailwind 中，您经常可以使用多个类来构建单个 CSS 属性的值，例如向元素添加多个滤镜：
+在 Tailwind 中，您经常需要使用多个类来为单个 CSS 属性构建值，例如为元素添加多个滤镜：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -375,10 +372,10 @@ export const description = "从一组受限的原始实用工具构建复杂组�
 </div>
 ```
 
-这两种效果都依赖于 CSS 中的 `filter` 属性，因此 Tailwind 使用 CSS 变量使其能够组合这些效果：
+这两种效果均依赖 CSS 中的 `filter` 属性，因此 Tailwind 使用 CSS 变量使得这些效果能够组合在一起：
 
 ```css
-/* [!code filename:Generated CSS] */
+/* [!code filename:生成的 CSS] */
 .blur-sm {
   --tw-blur: blur(var(--blur-sm));
   filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-grayscale,);
@@ -389,15 +386,15 @@ export const description = "从一组受限的原始实用工具构建复杂组�
 }
 ```
 
-上面生成的 CSS 略微简化，但这里的诀窍是每个实用类仅设置针对其要应用的效果的 CSS 变量。然后 `filter` 属性检查所有这些变量，如果变量未设置，则回退到无。
+上面的生成 CSS 稍有简化，但窍门在于每个工具类都设置一个仅适用于其所应用效果的 CSS 变量。然后，`filter` 属性会查看所有这些变量，如果某个变量未设置，则会回退到空值。
 
-Tailwind 对 [渐变](/docs/background-image#adding-a-linear-gradient)、[阴影颜色](/docs/box-shadow#setting-the-shadow-color)、[变换](/docs/translate) 等使用相同的方法。
+Tailwind 在[渐变](/docs/background-image#adding-a-linear-gradient)、[阴影颜色](/docs/box-shadow#setting-the-shadow-color)、[变换](/docs/translate)等方面采用相同的方法。
 
 ### 使用任意值
 
-Tailwind 中的许多实用类由 [主题变量](/docs/theme) 驱动，如 `bg-blue-500`、`text-xl` 和 `shadow-md`，它们映射到您的基本颜色调色板、字体尺度和阴影。
+Tailwind 中的许多工具类都是通过[主题变量](/docs/theme)驱动的，例如 `bg-blue-500`、`text-xl` 和 `shadow-md`，它们映射到您的基本颜色调色板、类型比例和阴影。
 
-当您需要使用主题之外的一次性值时，请使用专门的方括号语法来指定任意值：
+当您需要使用一个在主题之外的特定值时，可以使用特殊的方括号语法来指定任意值：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -408,7 +405,7 @@ Tailwind 中的许多实用类由 [主题变量](/docs/theme) 驱动，如 `bg-b
 </button>
 ```
 
-这对于调色板外的一次性颜色 _(如上面的 Facebook 蓝色)_ 非常有用，但当您需要一个非常特定网格等复杂自定义值时也有用：
+这在您需要使用不在调色板中的一次性颜色时（例如上面的 Facebook 蓝色），以及需要一个复杂的自定义值（例如非常具体的网格）时都非常有用：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -418,7 +415,7 @@ Tailwind 中的许多实用类由 [主题变量](/docs/theme) 驱动，如 `bg-b
 </div>
 ```
 
-当您需要使用 CSS 特性如 `calc()` 时，它也很有用，即使您使用的是主题值：
+当您需要使用像 `calc()` 这样的 CSS 特性时，即使您使用的是主题值，它也非常有用：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -428,7 +425,7 @@ Tailwind 中的许多实用类由 [主题变量](/docs/theme) 驱动，如 `bg-b
 </div>
 ```
 
-甚至还有一种语法，用于生成完全任意的 CSS，包括任意属性名，这在设置 CSS 变量时非常有用：
+实际上，还有一种语法可以生成完全任意的 CSS，包括任意的属性名称，这在设置 CSS 变量时非常有用：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -438,13 +435,13 @@ Tailwind 中的许多实用类由 [主题变量](/docs/theme) 驱动，如 `bg-b
 </div>
 ```
 
-在 [使用任意值](/docs/adding-custom-styles#using-arbitrary-values) 的文档中了解更多信息。
+在[使用任意值](/docs/adding-custom-styles#using-arbitrary-values)文档中了解更多信息。
 
-#### 这究竟是如何工作的？
+#### 这到底是如何工作的？
 
-Tailwind CSS 并不是像您可能熟悉的其他 CSS 框架那样的一个大的静态样式表——它根据您编译 CSS 时实际使用的类生成所需的 CSS。
+Tailwind CSS 不是像您在其他 CSS 框架中可能习惯的那样的一个静态样式表——它根据您在编译 CSS 时实际使用的类生成所需的 CSS。
 
-它通过扫描您项目中的所有文件，寻找任何看起来像类名的符号来实现：
+它通过扫描项目中的所有文件，寻找任何看起来可能是类名的符号来实现这一点：
 
 ```jsx
 // [!code filename:Button.jsx]
@@ -471,17 +468,17 @@ export default function Button({ size, children }) {
 }
 ```
 
-在找到所有潜在的类后，Tailwind 会为每个类生成 CSS，并将其编译为一份仅包含您实际需要的样式的样式表。
+在找到所有潜在的类之后，Tailwind 为每个类生成 CSS，并将其编译为只包含实际需要的样式的样式表。
 
-由于 CSS 是基于类名生成的，Tailwind 可以识别使用任意值的类，如 `bg-[#316ff6]` 并生成所需的 CSS，即使该值不是您主题的一部分。
+由于 CSS 基于类名生成，Tailwind 能够识别使用任意值的类，如 `bg-[#316ff6]`，并生成必要的 CSS，即使该值不是您主题的一部分。
 
-在 [检测源文件中的类](/docs/detecting-classes-in-source-files) 中了解更多关于这方面的工作原理。
+在[检测源文件中的类](/docs/detecting-classes-in-source-files)中了解有关此功能的更多信息。
 
 ### 复杂选择器
 
-有时您需要在多个条件下为元素设置样式，例如在暗模式中，在特定断点时，当悬停时，以及元素具有特定数据属性时。
+有时您需要根据多个条件为元素设置样式，例如在暗模式下、在特定断点、悬停时和元素具有特定数据属性时。
 
-以下是使用 Tailwind 的示例：
+这里是 Tailwind 中如何处理的示例：
 
 <CodeExampleStack>
 
@@ -494,7 +491,7 @@ export default function Button({ size, children }) {
 ```
 
 ```css
-/* [!code filename:Simplified CSS] */
+/* [!code filename:简化的 CSS] */
 @media (prefers-color-scheme: dark) and (width >= 64rem) {
   button[data-current]:hover {
     background-color: var(--color-indigo-600);
@@ -504,7 +501,7 @@ export default function Button({ size, children }) {
 
 </CodeExampleStack>
 
-Tailwind 还支持像 `group-hover` 这样的功能，允许您在特定父级被悬停时为元素设置样式：
+Tailwind 还支持 `group-hover` 等功能，可以让您在特定父元素被悬停时为元素设置样式：
 
 <CodeExampleStack>
 
@@ -518,7 +515,7 @@ Tailwind 还支持像 `group-hover` 这样的功能，允许您在特定父级�
 ```
 
 ```css
-/* [!code filename:Simplified CSS] */
+/* [!code filename:简化的 CSS] */
 @media (hover: hover) {
   a:hover span {
     text-decoration-line: underline;
@@ -528,9 +525,9 @@ Tailwind 还支持像 `group-hover` 这样的功能，允许您在特定父级�
 
 </CodeExampleStack>
 
-这个 `group-*` 语法也适用于其他变体，例如 `group-focus`、`group-active` 和 [更多](/docs/hover-focus-and-other-states#styling-based-on-parent-state)。
+此 `group-*` 语法还与其他变体一起使用，例如 `group-focus`、`group-active` 以及[更多](/docs/hover-focus-and-other-states#styling-based-on-parent-state)。
 
-对于非常复杂的情况 _(尤其是样式设置您无法控制的 HTML)_, Tailwind 支持 [任意变体](/docs/adding-custom-styles#arbitrary-variants)，它允许您直接在类名中编写任何选择器：
+对于非常复杂的场景（尤其是在样式化 HTML 时您无法控制的情况），Tailwind 支持[任意变体](/docs/adding-custom-styles#arbitrary-variants)，可以让您在类名中直接写任何选择器：
 
 <CodeExampleStack>
 
@@ -540,12 +537,12 @@ Tailwind 还支持像 `group-hover` 这样的功能，允许您在特定父级�
 <div class="[&>[data-active]+span]:text-blue-600 ...">
   <span data-active><!-- ... --></span>
   <!-- [!code highlight:2] -->
-  <span>这段文字将变为蓝色</span>
+  <span>这段文字将变成蓝色</span>
 </div>
 ```
 
 ```css
-/* [!code filename:Simplified CSS] */
+/* [!code filename:简化的 CSS] */
 div > [data-active] + span {
   color: var(--color-blue-600);
 }
@@ -555,7 +552,7 @@ div > [data-active] + span {
 
 ### 何时使用内联样式
 
-在 Tailwind CSS 项目中，当值来自动态源（如数据库或 API）时，内联样式仍然非常有用：
+内联样式在 Tailwind CSS 项目中仍然非常有用，尤其是当某个值来自于数据库或 API 等动态源时：
 
 ```jsx
 // [!code filename:branded-button.jsx]
@@ -575,7 +572,7 @@ export function BrandedButton({ buttonColor, textColor, children }) {
 }
 ```
 
-对于当类名格式化时很难阅读的非常复杂的任意值，您也可能会使用内联样式：
+您可能还会出于对非常复杂的任意值的阅读难度考虑，考虑使用内联样式，在格式化为类名时读起来较为复杂：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -587,7 +584,7 @@ export function BrandedButton({ buttonColor, textColor, children }) {
 </div>
 ```
 
-另一种有用的模式是基于使用内联样式从动态源设置 CSS 变量，然后使用实用类引用这些变量：
+另一个有用的模式是基于动态源设定 CSS 变量，使用内联样式，然后使用工具类引用这些变量：
 
 ```jsx
 // [!code filename:branded-button.jsx]
@@ -611,9 +608,9 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
 
 ## 管理重复
 
-当您仅使用实用类构建整个项目时，您不可避免地会发现某些模式在不同的地方重复以重现相同的设计。
+当您仅使用工具类构建整个项目时，您不可避免地会发现自己在不同地方重复某些模式以重现相同的设计。
 
-例如，这里每个头像图像的实用类被重复五次：
+例如，以下每个头像图像的工具类重复了五次：
 
 <Figure>
 
@@ -621,7 +618,7 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
   <div className="bg-white">
     <div className="mx-auto w-72 px-8 py-6 sm:w-96 sm:px-12 sm:py-8">
       <div className="flex items-center space-x-2 text-base">
-        <h4 className="text-base font-semibold text-slate-900">Contributors</h4>
+        <h4 className="text-base font-semibold text-slate-900">贡献者</h4>
         <span className="rounded-full bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-700">204</span>
       </div>
       <div className="mt-3 flex -space-x-2 overflow-hidden">
@@ -653,7 +650,7 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
       </div>
       <div className="mt-3 text-sm font-medium">
         <a href="#" className="text-blue-500">
-          + 198 others
+          + 198 其他
         </a>
       </div>
     </div>
@@ -664,7 +661,7 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
 <!-- [!code classes:inline-block,h-12,w-12,rounded-full,ring-2,ring-white] -->
 <div>
   <div class="flex items-center space-x-2 text-base">
-    <h4 class="font-semibold text-slate-900">Contributors</h4>
+    <h4 class="font-semibold text-slate-900">贡献者</h4>
     <span class="bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-700 ...">204</span>
   </div>
   <div class="mt-3 flex -space-x-2 overflow-hidden">
@@ -680,20 +677,20 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
     <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
   </div>
   <div class="mt-3 text-sm font-medium">
-    <a href="#" class="text-blue-500">+ 198 others</a>
+    <a href="#" class="text-blue-500">+ 198 其他</a>
   </div>
 </div>
 ```
 
 </Figure>
 
-不要慌张！实际上，这并不是您可能担心的问题，而是处理它的策略是您每天都在做的事情。
+别担心！在实际操作中，这并不是您可能担心的问题，应对它的策略是您每天都会使用的东西。
 
 ### 使用循环
 
-许多时候，渲染页面中显示多次的设计元素实际上只被编写了一次，因为实际标记是在循环中渲染的。
+在渲染页面中多次出现的设计元素，通常可能在实际编写时只编写了一次，因为实际标记是在循环中渲染的。
 
-例如，这个指南开头的重复头像几乎肯定会在真实项目中以循环方式渲染：
+例如，前面提到的重复头像在真实项目中几乎肯定会在循环中渲染：
 
 <Figure>
 
@@ -701,7 +698,7 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
   <div className="bg-white">
     <div className="mx-auto w-72 px-8 py-6 sm:w-96 sm:px-12 sm:py-8">
       <div className="flex items-center space-x-2 text-base">
-        <h4 className="text-base font-semibold text-slate-900">Contributors</h4>
+        <h4 className="text-base font-semibold text-slate-900">贡献者</h4>
         <span className="rounded-full bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-700">204</span>
       </div>
       <div className="mt-3 flex -space-x-2 overflow-hidden">
@@ -733,7 +730,7 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
       </div>
       <div className="mt-3 text-sm font-medium">
         <a href="#" className="text-blue-500">
-          + 198 others
+          + 198 其他
         </a>
       </div>
     </div>
@@ -743,7 +740,7 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
 ```svelte
 <div>
   <div class="flex items-center space-x-2 text-base">
-    <h4 class="font-semibold text-slate-900">Contributors</h4>
+    <h4 class="font-semibold text-slate-900">贡献者</h4>
     <span class="bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-700 ...">204</span>
   </div>
   <div class="mt-3 flex -space-x-2 overflow-hidden">
@@ -754,20 +751,20 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
     {/each}
   </div>
   <div class="mt-3 text-sm font-medium">
-    <a href="#" class="text-blue-500">+ 198 others</a>
+    <a href="#" class="text-blue-500">+ 198 其他</a>
   </div>
 </div>
 ```
 
 </Figure>
 
-当元素像这样以循环方式渲染时，实际的类列表只写了一次，所以并没有实际的重复问题需要解决。
+当元素以这种方式在循环中渲染时，实际的类列表只会写入一次，因此并不存在重复的问题需要解决。
 
 ### 使用多光标编辑
 
-当重复局限于单个文件中一组元素时，处理它的最简单方法是使用 [多光标编辑](https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor) 快速选择并同时编辑每个元素的类列表：
+当重复局限于单个文件中的一组元素时，处理它的最简单的方法是使用[multi-cursor编辑](https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor)快速选择并同时编辑每个元素的类列表：
 
-您会惊讶于这通常会成为最佳解决方案。如果您可以快速同时编辑所有重复的类列表，那么引入任何额外的抽象就没有意义。
+您会惊讶于这种方法有多么常见。如果可以迅速在所有重复的类列表上进行编辑，则没有必要引入任何额外的抽象。
 
 <MultiCursorAnimation>
   <Figure>
@@ -782,7 +779,7 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
 
 ### 使用组件
 
-如果您需要在多个文件中重用一些样式，最佳策略是创建一个 _组件_，如果您使用的是 React、Svelte 或 Vue 等前端框架，或是 _模板部分_，如果您使用的是 Blade、ERB、Twig 或 Nunjucks 等模板语言。
+如果您需要在多个文件中重用某些样式，最佳策略是如果您使用像 React、Svelte 或 Vue 这样的前端框架，则创建一个_组件_，如果您使用像 Blade、ERB、Twig 或 Nunjucks 这样的模板语言，则创建一个_模板局部_。
 
 <Figure>
 
@@ -795,14 +792,14 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
         src="https://images.unsplash.com/photo-1452784444945-3f422708fe5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=512&q=80"
         width="512"
         height="341"
-        alt="Beach"
+        alt="海滩"
       />
       <div className="mt-4">
-          <div className="text-xs font-bold text-sky-500">Private Villa</div>
+          <div className="text-xs font-bold text-sky-500">私密别墅</div>
           <div className="mt-1 font-bold text-gray-700">
-            <a href="#" className="hover:underline">Relaxing All-Inclusive Resort in Cancun</a>
+            <a href="#" className="hover:underline">在坎昆放松的全包度假村</a>
           </div>
-          <div className="mt-2 text-sm text-gray-600">$299 USD per night</div>
+          <div className="mt-2 text-sm text-gray-600">$299 美元每晚</div>
       </div>
     </div>
   </div>
@@ -831,15 +828,15 @@ export function VacationCard({ img, imgAlt, eyebrow, title, pricing, url }) {
 
 </Figure>
 
-现在您可以在任意位置使用此组件，同时仍然拥有样式的单一真实来源，这样它们就可以在一个地方轻松更新。
+现在，您可以在任意多的地方使用该组件，同时仍然拥有样式的单一来源使其能够在一个地方轻松进行更新。
 
 ### 使用自定义 CSS
 
-如果您使用的是诸如 ERB 或 Twig 的模板语言，而不是 React 或 Vue 等框架，为一个小到按钮的东西创建模板部分可能会感觉很重，而一简单的 CSS 类如 `btn`。
+如果您使用的是像 ERB 或 Twig 这样的模板语言，而不是像 React 或 Vue 这样的框架，对于这样的小按钮创建模板部分可能感觉有些过于繁琐，相比于简单的 CSS 类 `btn`。
 
-虽然强烈建议您为更复杂的组件创建适当的模板部分，但在模板部分感觉笨重时编写一些自定义 CSS 是完全可以的。
+虽然我们强烈建议您为更复杂的组件创建适当的模板局部，但当模板局部感觉太繁琐时，编写一些自定义 CSS 是完全可以接受的。
 
-以下是可能看起来像的 `btn-primary` 类，使用 [主题变量](/docs/theme#with-custom-css) 来保持设计一致性：
+以下是一个 `btn-primary` 类的示例，使用[主题变量](/docs/theme#with-custom-css)保持设计一致：
 
 <Figure>
 
@@ -889,20 +886,20 @@ export function VacationCard({ img, imgAlt, eyebrow, title, pricing, url }) {
 
 </Figure>
 
-再次强调，对于任何复杂于单个 HTML 元素的内容，我们强烈建议使用模板部分，以便样式和结构可以在一个地方封装。
+不过，除了单个 HTML 元素之外，针对比这更复杂的内容，我们强烈建议使用模板局部来封装样式和结构。
 
 ## 管理样式冲突
 
-### 冲突的实用类
+### 冲突的工具类
 
-当您添加两个针对相同 CSS 属性的类时，样式表中位置较后的类会赢。因此在这个示例中，尽管 `flex` 在实际的 `class` 属性中最后出现，元素将会接收 `display: grid`：
+当您添加两个针对同一 CSS 属性的类时，样式表中后出现的类会胜出。因此在下面的示例中，元素将获得 `display: grid`，即便 `flex` 实际上是最后出现的类：
 
 <CodeExampleStack>
 
 ```html
 <!-- [!code filename:HTML] -->
 <!-- prettier-ignore -->
-<div class="grid">
+<div class="grid flex">
   <!-- ... -->
 </div>
 ```
@@ -919,7 +916,7 @@ export function VacationCard({ img, imgAlt, eyebrow, title, pricing, url }) {
 
 </CodeExampleStack>
 
-一般来说，您应该永远不要向同一元素添加两个冲突的类——只添加您希望生效的那个：
+一般来说，您 never 应该向同一元素添加两个冲突的类——只添加您真正希望生效的类：
 
 ```jsx
 // [!code filename:example.jsx]
@@ -929,11 +926,11 @@ export function Example({ gridLayout }) {
 }
 ```
 
-使用如 React 或 Vue 的基于组件的库，这通常意味着公开特定的属性以进行样式自定义，而不是让消费者从外部添加额外的类，因为这些样式往往会冲突。
+使用像 React 或 Vue 这种基于组件的库，通常意味着要为样式定制公开特定的 props，而不是让消费者从组件外部添加额外的类，因为这些样式通常会冲突。
 
 ### 使用重要修饰符
 
-当您确实需要强制特定的实用类生效，而没有其他管理特异性的办法时，可以向类名的末尾添加 `!`，使所有声明为 `!important`：
+当您确实需要强制特定的工具类生效，并没有其他方法来管理特异性时，可以在类名末尾添加 `!` 将所有声明标记为 `!important`：
 
 <CodeExampleStack>
 
@@ -941,13 +938,13 @@ export function Example({ gridLayout }) {
 <!-- [!code filename:HTML] -->
 <!-- [!code classes:bg-red-500!] -->
 <!-- prettier-ignore -->
-<div class="bg-red-500!">
+<div class="bg-teal-500 bg-red-500!">
   <!-- ... -->
 </div>
 ```
 
 ```css
-/* [!code filename: Generated CSS] */
+/* [!code filename: 生成的 CSS] */
 /* [!code word:!important] */
 .bg-red-500\! {
   background-color: var(--color-red-500) !important;
@@ -959,9 +956,9 @@ export function Example({ gridLayout }) {
 
 </CodeExampleStack>
 
-### 使用重要标志
+### 使用重要标记
 
-如果您正在向具有复杂 CSS 及高特异性规则的项目添加 Tailwind，则可以在导入 Tailwind 时使用 `important` 标志将 _所有_ 实用类标记为 `!important`：
+如果您将 Tailwind 添加到具有现有复杂 CSS 及高特异性规则的项目中，可以在导入 Tailwind 时使用 `important` 标记将_所有_工具类标记为 `!important`：
 
 <CodeExampleStack>
 
@@ -972,7 +969,7 @@ export function Example({ gridLayout }) {
 ```
 
 ```css
-/* [!code filename:Compiled CSS] */
+/* [!code filename:已编译的 CSS] */
 /* [!code word:!important] */
 @layer utilities {
   .flex {
@@ -991,7 +988,7 @@ export function Example({ gridLayout }) {
 
 ### 使用前缀选项
 
-如果您的项目具有与 Tailwind CSS 工具冲突的类名，可以使用 `prefix` 选项为所有生成的 Tailwind 类和 CSS 变量添加前缀：
+如果您的项目中有与 Tailwind CSS 工具类冲突的类名，您可以使用 `prefix` 选项为所有生成的 Tailwind 类和 CSS 变量加上前缀：
 
 <CodeExampleStack>
 
@@ -1002,7 +999,7 @@ export function Example({ gridLayout }) {
 ```
 
 ```css
-/* [!code filename:Compiled CSS] */
+/* [!code filename:已编译的 CSS] */
 /* [!code word:tw\:] */
 @layer theme {
   :root {

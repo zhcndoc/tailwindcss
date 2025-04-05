@@ -6,8 +6,8 @@ import { Figure } from "@/components/figure.tsx";
 import { UsingACustomValue } from "@/components/content.tsx";
 import colors from "./utils/colors";
 
-export const title = "光标颜色"; // caret-color
-export const description = "用于控制文本输入光标颜色的工具。"; // Utilities for controlling the color of the text input cursor.
+export const title = "光标颜色";
+export const description = "控制文本输入光标颜色的工具类。";
 
 <ApiTable
   rows={[
@@ -26,9 +26,9 @@ export const description = "用于控制文本输入光标颜色的工具。"; /
 
 ### 基本示例
 
-使用诸如 `caret-rose-500` 和 `caret-lime-600` 的工具来改变文本输入光标的颜色：
+使用像 `caret-rose-500` 和 `caret-lime-600` 的工具类来改变文本输入光标的颜色：
 
-<Figure hint="聚焦文本区域以查看新的光标颜色">
+<Figure hint="聚焦到文本区域以查看新的光标颜色">
 
 <Example>
   {
@@ -50,7 +50,7 @@ export const description = "用于控制文本输入光标颜色的工具。"; /
 
 ### 使用自定义值
 
-<UsingACustomValue element="textarea" utility="caret" value="#50d71e" name="光标颜色" variable="caret-color" /> // caret color
+<UsingACustomValue element="textarea" utility="caret" value="#50d71e" name="光标颜色" variable="caret-color" />
 
 ### 响应式设计
 

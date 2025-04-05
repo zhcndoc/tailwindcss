@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
 export const title = "轮廓偏移";
-export const description = "用于控制元素轮廓偏移的工具。";
+export const description = "用于控制元素轮廓偏移的工具类.";
 
 <ApiTable
   rows={[
@@ -19,7 +19,7 @@ export const description = "用于控制元素轮廓偏移的工具。";
 
 ### 基本示例
 
-使用像 `outline-offset-2` 和 `outline-offset-4` 这样的工具来改变元素轮廓的偏移：
+使用类似 `轮廓偏移-2` 和 `轮廓偏移-4` 的工具类来改变元素的轮廓偏移:
 
 <Figure>
 
@@ -28,7 +28,7 @@ export const description = "用于控制元素轮廓偏移的工具。";
     <div className="grid grid-cols-1 gap-8 text-center text-sm font-bold text-white sm:grid-cols-3 sm:gap-4">
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-          outline-offset-0
+          轮廓偏移-0
         </p>
         <button className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 outline-2 outline-offset-0 outline-sky-500 dark:border-transparent dark:bg-gray-700 dark:text-gray-200">
           按钮 A
@@ -36,7 +36,7 @@ export const description = "用于控制元素轮廓偏移的工具。";
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-          outline-offset-2
+          轮廓偏移-2
         </p>
         <button className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 outline-2 outline-offset-2 outline-sky-500 dark:border-transparent dark:bg-gray-700 dark:text-gray-200">
           按钮 B
@@ -44,7 +44,7 @@ export const description = "用于控制元素轮廓偏移的工具。";
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-          outline-offset-4
+          轮廓偏移-4
         </p>
         <button className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 outline-2 outline-offset-4 outline-sky-500 dark:border-transparent dark:bg-gray-700 dark:text-gray-200">
           按钮 C
@@ -55,7 +55,7 @@ export const description = "用于控制元素轮廓偏移的工具。";
 </Example>
 
 ```html
-<!-- [!code classes:outline-offset-0,outline-offset-2,outline-offset-4] -->
+<!-- [!code classes:outline-offset-0,轮廓偏移-2,轮廓偏移-4] -->
 <button class="outline-2 outline-offset-0 ...">按钮 A</button>
 <button class="outline-2 outline-offset-2 ...">按钮 B</button>
 <button class="outline-2 outline-offset-4 ...">按钮 C</button>

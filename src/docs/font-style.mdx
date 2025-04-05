@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "字体样式";
-export const description = "用于控制文本样式的工具。";
+export const description = "用于控制文本样式的工具类。";
 
 <ApiTable
   rows={[
@@ -17,42 +17,42 @@ export const description = "用于控制文本样式的工具。";
 
 ### 斜体文本
 
-使用 `italic` 工具将文本设置为斜体：
+使用 `italic` 工具类将文本设置为斜体：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 italic dark:text-gray-200">
-      灵活的棕色狐狸跳过懒惰的狗。
+      快速的棕色狐狸跳过懒惰的狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:italic] -->
-<p class="italic ...">灵活的棕色狐狸 ...</p>
+<p class="italic ...">快速的棕色狐狸 ...</p>
 ```
 
 </Figure>
 
 ### 正常显示文本
 
-使用 `not-italic` 工具正常显示文本：
+使用 `not-italic` 工具类将文本正常显示：
 
 <Figure>
 
 <Example>
   {
     <p className="text-center text-lg font-medium text-gray-900 not-italic dark:text-gray-200">
-      灵活的棕色狐狸跳过懒惰的狗。
+      快速的棕色狐狸跳过懒惰的狗。
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:not-italic] -->
-<p class="not-italic ...">灵活的棕色狐狸 ...</p>
+<p class="not-italic ...">快速的棕色狐狸 ...</p>
 ```
 
 </Figure>

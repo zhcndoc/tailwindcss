@@ -1,8 +1,8 @@
 import { ApiTable } from "@/components/api-table.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
-export const title = "break-before";
-export const description = "用于控制列或页面在元素之前如何换行的工具。";
+export const title = "页面断点控制";
+export const description = "用于控制在元素之前如何进行列或页面断点的实用工具。";
 
 <ApiTable
   rows={[
@@ -19,17 +19,17 @@ export const description = "用于控制列或页面在元素之前如何换行�
 
 ## 示例
 
-### 基础示例
+### 基本示例
 
-使用 `break-before-column` 和 `break-before-page` 等工具来控制在元素之前列或页面换行的行为：
+使用 `break-before-column` 和 `break-before-page` 等实用工具来控制在元素前如何进行列或页面断点：
 
 ```html
-<!-- [!code classes:break-before-column] -->
+<!-- [!代码 类:break-before-column] -->
 <div class="columns-2">
   <p>好吧，让我告诉你一些事情，...</p>
-  <p class="break-before-column">当然，可以笑啊...</p>
-  <p>也许我们可以不需要...</p>
-  <p>听着。如果你认为这是...</p>
+  <p class="break-before-column">当然，继续，笑吧...</p>
+  <p>也许我们可以没有...</p>
+  <p>看。如果你认为这是...</p>
 </div>
 ```
 

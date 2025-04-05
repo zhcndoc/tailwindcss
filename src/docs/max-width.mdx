@@ -54,11 +54,11 @@ export const description = "设置元素最大宽度的工具类。";
   ]}
 />
 
-## 例子
+## 示例
 
-### 基本例子
+### 基本示例
 
-使用 `max-w-<number>` 工具类，比如 `max-w-24` 和 `max-w-64`，将元素设置为基于空间比例的固定最大宽度：
+使用 `max-w-<number>` 工具类，如 `max-w-24` 和 `max-w-64`，根据间距比例设置元素的固定最大宽度：
 
 <Figure hint="调整示例大小以查看预期行为">
 
@@ -112,7 +112,7 @@ export const description = "设置元素最大宽度的工具类。";
 
 ### 使用百分比
 
-使用 `max-w-full` 或 `max-w-<fraction>` 工具类，比如 `max-w-1/2` 和 `max-w-2/5`，给元素设置基于百分比的最大宽度：
+使用 `max-w-full` 或 `max-w-<fraction>` 工具类，如 `max-w-1/2` 和 `max-w-2/5`，为元素设置基于百分比的最大宽度：
 
 <Figure hint="调整示例大小以查看预期行为">
 
@@ -151,7 +151,7 @@ export const description = "设置元素最大宽度的工具类。";
 
 ### 使用容器比例
 
-使用如 `max-w-sm` 和 `max-w-xl` 的工具类，将元素设置为基于容器比例的固定最大宽度：
+使用工具类，如 `max-w-sm` 和 `max-w-xl`，根据容器比例设置元素的固定最大宽度：
 
 <Figure hint="调整示例大小以查看预期行为">
 
@@ -183,7 +183,7 @@ export const description = "设置元素最大宽度的工具类。";
 
 ### 使用断点容器
 
-使用 `container` 工具类将元素的最大宽度设置为当前断点的 `min-width`。如果你更喜欢针对固定的屏幕尺寸进行设计，而不是尝试适应完全流体的视口，这非常有用：
+使用 `container` 工具类将元素的最大宽度设置为当前断点的最小宽度。当您更喜欢为固定的一组屏幕尺寸设计而不是试图适应完全流式的视口时，这非常有用：
 
 ```html
 <!-- [!code classes:container] -->
@@ -192,7 +192,7 @@ export const description = "设置元素最大宽度的工具类。";
 </div>
 ```
 
-注意，与您可能在其他框架中使用的容器不同，Tailwind 的容器不会自动居中，并且没有任何内置的水平填充。使用 `mx-auto` 和 `px-<number>` 工具类来添加这些：
+注意，与您可能在其他框架中使用的容器不同，Tailwind 的容器不会自动居中，并且没有内置的水平填充。使用 `mx-auto` 和 `px-<number>` 工具类添加这些：
 
 ```html
 <!-- [!code classes:mx-auto,px-4] -->
@@ -209,6 +209,6 @@ export const description = "设置元素最大宽度的工具类。";
 
 <ResponsiveDesign property="max-width" defaultClass="max-w-sm" featuredClass="max-w-lg" />
 
-## 自定义你的主题
+## 自定义主题
 
 <CustomizingYourSpacingScale utility="max-w" />

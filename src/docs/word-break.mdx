@@ -4,7 +4,7 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "word-break";
-export const description = "控制元素中文字断开的工具类。";
+export const description = "用于控制元素中的单词换行的工具类。";
 
 <ApiTable
   rows={[
@@ -18,51 +18,55 @@ export const description = "控制元素中文字断开的工具类。";
 
 ### 正常
 
-使用 `break-normal` 工具类仅在正常单词断点处添加换行：
+使用 `break-normal` 工具类，仅在正常的单词换行点添加换行：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs border-x border-x-pink-400/30 py-8 break-normal text-gray-900 dark:text-gray-200">
-      在任何主要英语字典中最长的单词是{" "}
-      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是一种因吸入非常细小的硅颗粒而感染的肺病，尤其是来自火山的颗粒；在医学上，这和硅肺病是相同的。
+      The longest word in any of the major English language dictionaries is{" "}
+      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> a word that refers to a lung
+      disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it
+      is the same as silicosis.
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:break-normal] -->
-<p class="break-normal">The longest word in any of the major...</p>
+<p class="break-normal">所有主要英语词典中最长的单词是...</p>
 ```
 
 </Figure>
 
-### 断行所有
+### 强制换行
 
-使用 `break-all` 工具类在必要时随意添加换行，而不尝试保留完整的单词：
+使用 `break-all` 工具类，在必要时添加换行，而不是尝试保留完整单词：
 
 <Figure>
 
 <Example padding={false}>
   {
     <p className="mx-auto max-w-xs border-x border-x-pink-400/30 py-8 break-all text-gray-900 dark:text-gray-200">
-      在任何主要英语字典中最长的单词是{" "}
-      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> 这个词指的是一种因吸入非常细小的硅颗粒而感染的肺病，尤其是来自火山的颗粒；在医学上，这和硅肺病是相同的。
+      The longest word in any of the major English language dictionaries is{" "}
+      <span className="font-bold">pneumonoultramicroscopicsilicovolcanoconiosis,</span> a word that refers to a lung
+      disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it
+      is the same as silicosis.
     </p>
   }
 </Example>
 
 ```html
 <!-- [!code classes:break-all] -->
-<p class="break-all">在任何主要英语字典中最长的单词是...</p>
+<p class="break-all">所有主要英语词典中最长的单词是...</p>
 ```
 
 </Figure>
 
-### 保持断行
+### 保持换行
 
-使用 `break-keep` 工具类防止对中文/日文/韩文 (CJK) 文本应用换行：
+使用 `break-keep` 工具类，防止对中文/日文/韩文（CJK）文本应用换行：
 
 <Figure>
 

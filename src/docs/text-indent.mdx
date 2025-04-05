@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "文本缩进";
-export const description = "用于控制块中文本前显示的空白空间量的工具。";
+export const title = "text-indent";
+export const description = "用于控制文本在块级元素前显示的空白空间的实用工具。";
 
 <ApiTable
   rows={[
@@ -21,14 +21,14 @@ export const description = "用于控制块中文本前显示的空白空间量�
 
 ### 基本示例
 
-使用 `indent-<number>` 工具类，如 `indent-2` 和 `indent-8` 来设置块中文本前的空白空间（缩进）量：
+使用 `indent-<number>` 工具类，例如 `indent-2` 和 `indent-8` 来设置文本在块级元素前显示的空白空间（缩进）：
 
 <Figure>
 
 <Example>
   {
     <p className="mx-auto max-w-sm indent-8 text-gray-900 dark:text-gray-200">
-      所以我开始走进水中。我不会对你们撒谎，伙计们，我很害怕。但是我继续前进，当我穿过破浪时，一种奇怪的平静笼罩了我。我不知道那是神的干预还是所有生物之间的亲密关系，但我告诉你，杰瑞，在那一刻，我<em>是</em>一名海洋生物学家。
+      所以我开始走进水中。我不会对你们撒谎，伙计们，我感到非常害怕。但是我还是继续前进，当我走过浪头时，一种奇怪的平静笼罩了我。我不知道这是否是神的干预，或是所有生物之间的亲密关系，但我告诉你，杰瑞，在那一刻，我 <em>是</em> 一名海洋生物学家。
     </p>
   }
 </Example>
@@ -42,14 +42,14 @@ export const description = "用于控制块中文本前显示的空白空间量�
 
 ### 使用负值
 
-要使用负的文本缩进值，在类名前加一个破折号以将其转换为负值：
+要使用负的文本缩进值，请在类名称前加上一个短横线，使其变为负值：
 
 <Figure>
 
 <Example>
   {
     <p className="mx-auto max-w-sm -indent-8 text-gray-900 dark:text-gray-200">
-      所以我开始走进水中。我不会对你们撒谎，伙计们，我很害怕。但是我继续前进，当我穿过破浪时，一种奇怪的平静笼罩了我。我不知道那是神的干预还是所有生物之间的亲密关系，但我告诉你，杰瑞，在那一刻，我<em>是</em>一名海洋生物学家。
+      所以我开始走进水中。我不会对你们撒谎，伙计们，我感到非常害怕。但是我还是继续前进，当我走过浪头时，一种奇怪的平静笼罩了我。我不知道这是否是神的干预，或是所有生物之间的亲密关系，但我告诉你，杰瑞，在那一刻，我 <em>是</em> 一名海洋生物学家。
     </p>
   }
 </Example>

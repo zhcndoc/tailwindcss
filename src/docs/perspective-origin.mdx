@@ -3,8 +3,8 @@ import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 
-export const title = "透视原点";
-export const description = "控制元素在三维空间中的透视原点的工具。";
+export const title = "perspective-origin";
+export const description = "用于控制元素在三维空间中视角原点的工具。";
 
 <ApiTable
   rows={[
@@ -26,7 +26,7 @@ export const description = "控制元素在三维空间中的透视原点的工�
 
 ### 基本示例
 
-使用 `透视原点-顶部` 和 `透视原点-底部左侧` 等工具来控制透视消失点的位置：
+使用类似 `视角原点-顶部` 和 `视角原点-底部左` 的工具，控制视角消失点的位置：
 
 <Figure>
 
@@ -35,7 +35,7 @@ export const description = "控制元素在三维空间中的透视原点的工�
     <div className="flex flex-col justify-around gap-8 text-sm leading-6 font-bold text-white sm:flex-row sm:gap-0">
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-          perspective-origin-top-left
+          视角原点-顶部左
         </p>
         <div className="size-40 p-10">
           <div className="size-20 rotate-[0.75_1_0.75_45deg] perspective-near perspective-origin-top-left transform-3d *:backface-visible">
@@ -62,7 +62,7 @@ export const description = "控制元素在三维空间中的透视原点的工�
       </div>
       <div className="flex shrink-0 flex-col items-center">
         <p className="mb-3 text-center font-mono text-xs font-medium text-gray-500 dark:text-gray-400">
-          perspective-origin-bottom-right
+          视角原点-底部右
         </p>
         <div className="size-40 p-10">
           <div className="size-20 rotate-[0.75_1_0.75_45deg] perspective-near perspective-origin-bottom-right transform-3d *:backface-visible">
@@ -92,10 +92,10 @@ export const description = "控制元素在三维空间中的透视原点的工�
 </Example>
 
 ```html
-<!-- [!code classes:perspective-origin-top-left,perspective-origin-bottom-right] -->
+<!-- [!code classes:视角原点-顶部左,视角原点-底部右] -->
 <div class="size-20 perspective-near perspective-origin-top-left ...">
   <div class="translate-z-12 rotate-x-0 bg-sky-300/75 ...">1</div>
-  <div class="-translate-z-12 rotate-y-18 bg-sky-300/75 ...">2</div>
+  <div class="-translate-z-12 rotate-y-180 bg-sky-300/75 ...">2</div>
   <div class="translate-x-12 rotate-y-90 bg-sky-300/75 ...">3</div>
   <div class="-translate-x-12 -rotate-y-90 bg-sky-300/75 ...">4</div>
   <div class="-translate-y-12 rotate-x-90 bg-sky-300/75 ...">5</div>
@@ -104,7 +104,7 @@ export const description = "控制元素在三维空间中的透视原点的工�
 
 <div class="size-20 perspective-near perspective-origin-bottom-right …">
   <div class="translate-z-12 rotate-x-0 bg-sky-300/75 ...">1</div>
-  <div class="-translate-z-12 rotate-y-18 bg-sky-300/75 ...">2</div>
+  <div class="-translate-z-12 rotate-y-180 bg-sky-300/75 ...">2</div>
   <div class="translate-x-12 rotate-y-90 bg-sky-300/75 ...">3</div>
   <div class="-translate-x-12 -rotate-y-90 bg-sky-300/75 ...">4</div>
   <div class="-translate-y-12 rotate-x-90 bg-sky-300/75 ...">5</div>
@@ -116,12 +116,12 @@ export const description = "控制元素在三维空间中的透视原点的工�
 
 ### 使用自定义值
 
-<UsingACustomValue utility="perspective-origin" value="200%_150%" name="perspective origin" />
+<UsingACustomValue utility="视角原点" value="200%_150%" name="视角原点" />
 
 ### 响应式设计
 
 <ResponsiveDesign
-  property="perspective-origin"
-  defaultClass="perspective-origin-center"
-  featuredClass="perspective-origin-bottom-left"
+  property="视角原点"
+  defaultClass="视角原点-中心"
+  featuredClass="视角原点-底部左"
 />

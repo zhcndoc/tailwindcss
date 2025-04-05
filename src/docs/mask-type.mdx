@@ -5,7 +5,7 @@ import { ResponsiveDesign } from "@/components/content.tsx";
 import { Stripes } from "@/components/stripes.tsx";
 
 export const title = "mask-type";
-export const description = "Utilities for controlling how an SVG mask is interpreted.";
+export const description = "控制 SVG 蒙版解释方式的工具。";
 
 <ApiTable
   rows={[
@@ -14,11 +14,11 @@ export const description = "Utilities for controlling how an SVG mask is interpr
   ]}
 />
 
-## Examples
+## 示例
 
-### Basic example
+### 基本示例
 
-Use the `mask-type-alpha` and `mask-type-luminance` utilities to control the type of an SVG mask:
+使用 `mask-type-alpha` 和 `mask-type-luminance` 工具来控制 SVG 蒙版的类型：
 
 <Figure>
 
@@ -86,9 +86,9 @@ Use the `mask-type-alpha` and `mask-type-luminance` utilities to control the typ
 
 </Figure>
 
-When using `mask-type-luminance` the luminance value of the SVG mask determines visibility, so sticking with grayscale colors will produce the most predictable results. With `mask-alpha`, the opacity of the SVG mask determines the visibility of the masked element.
+使用 `mask-type-luminance` 时，SVG 蒙版的亮度值决定了可见性，因此使用灰度颜色将产生最可靠的结果。而使用 `mask-alpha` 时，SVG 蒙版的不透明度决定了被蒙版元素的可见性。
 
-### Responsive design
+### 响应式设计
 
 <ResponsiveDesign
   element="mask"

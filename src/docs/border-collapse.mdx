@@ -4,12 +4,12 @@ import { Figure } from "@/components/figure.tsx";
 import { ResponsiveDesign } from "@/components/content.tsx";
 
 export const title = "边框合并";
-export const description = "控制表格边框是否应合并或分开的工具类。";
+export const description = "用于控制表格边框是合并还是分开的实用工具。";
 
 <ApiTable
   rows={[
-    ["边框合并", "border-collapse: collapse;"],
-    ["边框分隔", "border-collapse: separate;"],
+    ["border-collapse", "border-collapse: collapse;"],
+    ["border-separate", "border-collapse: separate;"],
   ]}
 />
 
@@ -17,7 +17,7 @@ export const description = "控制表格边框是否应合并或分开的工具�
 
 ### 合并表格边框
 
-使用 `border-collapse` 工具类在可能的情况下将相邻单元格的边框合并为一个边框：
+使用 `border-collapse` 工具来将相邻单元格的边框合并为一个边框（如果可能的话）：
 
 <Figure>
 
@@ -38,21 +38,21 @@ export const description = "控制表格边框是否应合并或分开的工具�
         <tbody>
           <tr>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              印第安纳州
+              印第安纳
             </td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
               印第安纳波利斯
             </td>
           </tr>
           <tr>
-            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">俄亥俄州</td>
+            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">俄亥俄</td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
               哥伦布
             </td>
           </tr>
           <tr>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              密歇根州
+              密歇根
             </td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
               底特律
@@ -75,15 +75,15 @@ export const description = "控制表格边框是否应合并或分开的工具�
   </thead>
   <tbody>
     <tr>
-      <td class="border border-gray-300 ...">印第安纳州</td>
+      <td class="border border-gray-300 ...">印第安纳</td>
       <td class="border border-gray-300 ...">印第安纳波利斯</td>
     </tr>
     <tr>
-      <td class="border border-gray-300 ...">俄亥俄州</td>
+      <td class="border border-gray-300 ...">俄亥俄</td>
       <td class="border border-gray-300 ...">哥伦布</td>
     </tr>
     <tr>
-      <td class="border border-gray-300 ...">密歇根州</td>
+      <td class="border border-gray-300 ...">密歇根</td>
       <td class="border border-gray-300 ...">底特律</td>
     </tr>
   </tbody>
@@ -92,11 +92,11 @@ export const description = "控制表格边框是否应合并或分开的工具�
 
 </Figure>
 
-注意，这包括了顶层 `<table>` 标签上的合并边框。
+注意，这包括在顶层 `<table>` 标签上的边框合并。
 
-### 分隔表格边框
+### 分开表格边框
 
-使用 `border-separate` 工具类强制每个单元格显示自己的分隔边框：
+使用 `border-separate` 工具强制每个单元格显示自己的分开边框：
 
 <Figure>
 
@@ -117,21 +117,21 @@ export const description = "控制表格边框是否应合并或分开的工具�
         <tbody>
           <tr>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              印第安纳州
+              印第安纳
             </td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
               印第安纳波利斯
             </td>
           </tr>
           <tr>
-            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">俄亥俄州</td>
+            <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">俄亥俄</td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
               哥伦布
             </td>
           </tr>
           <tr>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              密歇根州
+              密歇根
             </td>
             <td className="border border-gray-300 p-4 text-gray-500 dark:border-gray-700 dark:text-gray-400">
               底特律
@@ -154,15 +154,15 @@ export const description = "控制表格边框是否应合并或分开的工具�
   </thead>
   <tbody>
     <tr>
-      <td class="border border-gray-300 ...">印第安纳州</td>
+      <td class="border border-gray-300 ...">印第安纳</td>
       <td class="border border-gray-300 ...">印第安纳波利斯</td>
     </tr>
     <tr>
-      <td class="border border-gray-300 ...">俄亥俄州</td>
+      <td class="border border-gray-300 ...">俄亥俄</td>
       <td class="border border-gray-300 ...">哥伦布</td>
     </tr>
     <tr>
-      <td class="border border-gray-300 ...">密歇根州</td>
+      <td class="border border-gray-300 ...">密歇根</td>
       <td class="border border-gray-300 ...">底特律</td>
     </tr>
   </tbody>
