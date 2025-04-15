@@ -30,7 +30,7 @@ export let steps: Step[] = [
     body: (
       <p>
         首先创建一个新的 Laravel 项目，如果尚未设置。最常见的方法是使用{" "}
-        <a href="https://laravel.com/docs/11.x#creating-an-application">Laravel 安装器</a>。
+        <a href="https://laravel.com/docs#creating-an-application">Laravel 安装器</a>。
       </p>
     ),
     code: {

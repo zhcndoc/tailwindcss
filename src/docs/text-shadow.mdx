@@ -36,8 +36,8 @@ export const description = "控制文本元素阴影的工具类。";
     ["text-shadow-current", "--tw-shadow-color currentColor;"],
     ["text-shadow-transparent", "--tw-shadow-color transparent;"],
     ...Object.entries(colors).map(([name, value]) => [
-      `shadow-${name}`,
-      `--tw-shadow-color var(--color-${name}); /* ${value} */`,
+      `text-shadow-${name}`,
+      `--tw-text-shadow-color var(--color-${name}); /* ${value} */`,
     ]),
   ]}
 />
