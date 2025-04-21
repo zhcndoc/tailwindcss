@@ -1,6 +1,6 @@
 import { adamwathan } from "@/app/blog/authors";
 import card from "./card.jpg";
-import Image from "next/image";
+import { YouTubeVideo } from "@/components/media";
 import Link from "next/link";
 
 export const meta = {
@@ -26,14 +26,8 @@ export const meta = {
 今天我们很高兴地宣布 David 已全职加入团队！
 
 <figure>
-  <iframe
-    src="https://www.youtube.com/embed/djg8WoRGrq0"
-    frameBorder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-    className="aspect-video w-full"
-  ></iframe>
-  <figcaption>观看 David 在他的 YouTube 频道上实时构建一些 Tailwind UI 组件！</figcaption>
+  <YouTubeVideo id="djg8WoRGrq0" />
+  <figcaption>Watch David build some Tailwind UI components in Figma live on his YouTube channel!</figcaption>
 </figure>
 
 David 是一位无障碍专家，一位世界级的前端开发者，一位天赋异禀的教育者，以及一位富有同情心的领导者。他在 Figma 中运用了 Tailwind UI 的黑魔法，连我和 Steve 都不知道这是可能的，他在将 Steve 的 Tailwind UI 设计转化为像素完美的 HTML 和 CSS 方面表现得令人难以置信，这些代码适用于所有人。

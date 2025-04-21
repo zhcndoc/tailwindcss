@@ -2,7 +2,7 @@ import { adamwathan } from "@/app/blog/authors";
 import card from "./card.jpg";
 import * as icons from "@heroicons/react/16/solid";
 import Link from "next/link";
-import Image from "next/image";
+import { Image } from "@/components/media";
 import miniVsMicroDetails from "./mini-vs-micro-details.jpg";
 import miniVsMicroDropdown from "./mini-vs-micro-dropdown.jpg";
 
@@ -20,13 +20,11 @@ export const meta = {
   ),
 };
 
-我们刚刚发布了 [Heroicons v2.1](https://heroicons.com)，其中包含全新的微型风格——一整套近三百个设计用于更紧凑、更高密度 UI 的 16&times;16 图标。
+<Link href="https://heroicons.com">
+  <Image src={card} alt="Heroicons Micro" />
+</Link>
 
-<p>
-  <Link href="https://heroicons.com">
-    <Image src={card} alt="Heroicons Micro" />
-  </Link>
-</p>
+We just released [Heroicons v2.1](https://heroicons.com) which includes a brand new micro style — a full set of almost three hundred 16&times;16 icons designed for tighter, higher density UIs.
 
 我们一直想做这样一个尺寸的图标集合，但直到今年早些时候开始制作 [一个新的 React UI 套件项目](https://twitter.com/steveschoger/status/1725246591269769363) 时，我们才急需这些图标，因此决定狠下心来设计它们。
 
@@ -42,9 +40,9 @@ export const meta = {
 
 <Image alt="为 Heroicons Micro 调整的细节示例" src={miniVsMicroDetails} />
 
-大约一个月后，我们有了一套全新的 288 个图标，精心设计用于像 Catalyst 这样的高密度界面。
+About a month later we had a brand new set of icons, meticulously crafted for higher density interfaces like what we've been working on with Catalyst.
 
-<div className="my-12">
+<div className="my-12 px-2">
   <div className="not-prose grid grid-cols-[repeat(auto-fill,1rem)] justify-between gap-x-12 gap-y-8">
     {Object.entries(icons)
       .sort(([a], [b]) => a.localeCompare(b))

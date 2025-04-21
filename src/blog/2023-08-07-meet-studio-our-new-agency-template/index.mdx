@@ -1,7 +1,7 @@
 import { adamwathan } from "@/app/blog/authors";
 import twitterCard from "./twitter-card.png";
 import Link from "next/link";
-import Image from "next/image";
+import { Image, Video } from "@/components/media";
 import template from "./template.png";
 
 export const meta = {
@@ -20,46 +20,34 @@ export const meta = {
 
 我们刚刚发布了 [Studio](https://tailwindui.com/templates/studio)——一个美丽的新代理网站模板，我们过去几个月为了 Tailwind UI 一直在努力工作。
 
-<p>
-  <Link href="https://tailwindui.com/templates/studio">
-    <Image src={template} alt="了解 Studio 模板" />
-  </Link>
-</p>
+<Link href="https://tailwindui.com/templates/studio">
+  <Image src={template} alt="Learn about the Studio template" />
+</Link>
 
-我们使用 Next.js、MDX 和当然还有 Tailwind CSS 构建了它，并且这是我们发布的第一个使用新 Next.js [App Router](https://nextjs.org/docs/app) 的模板。
+We built it with Next.js, MDX, and of course Tailwind CSS, and it's the first template we've published using the new Next.js [App Router](https://nextjs.org/docs/app).
 
-设计一个代理模板是一个有趣的项目，因为创意代理通常使用他们自己的网站展示一些非常闪耀的、定制的想法，而使用模板在目标是展示自己公司能做到什么时，感觉有些奇怪。
+Designing an agency template is an interesting project, because creative agencies commonly use their own website to show off some really flashy, bespoke ideas, and using a template just kind of feels strange when the goal is to show what your own company is capable of.
 
-因此，我们尝试在这里以两个目标为导向，真正使其对人们有用：
+So we tried to approach this one with two goals in mind to actually make it useful to people:
 
-1. **教人们如何做一些你在闪亮代理网站上看到的酷东西**——我一直相信我们的模板不仅仅是模板，而且作为教育资源同样（如果不是更）有价值，因此我们希望利用这个模板来展示我们如何构建你在这些网站上看到的许多酷炫的互动和动画细节。
-2. **为不出售设计的代理设计它**——有很多代理专注于工程工作，很多时候这些公司在设计方面很难脱颖而出。我们试图以一种不依赖于众多设计工作截图等东西来让它看起来好的方式设计这个模板，以便一个专注于代码的代理可以将其作为自己网站的起点。
+1. **Teach people how to do some of the cool stuff you see on flash agency sites** — I've always believed our templates are just as (if not more) valuable as an educational resource than as simply templates, so we wanted to use this template as an opportunity to show off how we'd build a lot of the cool interactive and animated details you see on these sorts of sites.
+2. **Design it for agencies that don't sell design** — there are a lot of agencies out there who just focus on engineering work, and a lot of the time those companies struggle to stand out design-wise. We tried to design this template in a way that it didn't depend on tons of screenshots of design work and stuff to look good, so that an agency that focuses on code could use it as a starting point for their own site.
 
-我认为我们想出的方案达到了这两个目标，我对它的结果感到非常自豪。
+I think what we came up with nailed these two goals and I'm really proud of how it all turned out.
 
-像往常一样，查看 [实时预览](https://studio.tailwindui.com/) 以获得完整体验——这个模板中有许多酷炫的细节，你必须在浏览器中查看才能真正欣赏。
+Check out the [live preview](https://studio.tailwindui.com/) as always for the full experience — there are tons of cool details in this one that you have to see in the browser to really appreciate.
 
 ---
 
-## 令人愉悦的动画
+## Delightfully animated
 
-代理网站的一个不成文的规则是它们必须闪耀。我们没有完全替换鼠标光标或使用 WebGL 渲染整个网站，但我们确实寻找机会，以优雅的方式在各处引入动画和交互性。
+One of the unspoken rules of agency websites is that they've gotta be flashy. We didn't go full replace-the-mouse-cursor or render-the-entire-site-with-WebGL but we did look for opportunities to tastefully introduce animations and interactivity wherever we could.
 
-例如，我们围绕 [Framer Motion](https://www.framer.com/motion/) 的一些功能构建了一个轻量声明式的组件基础 API，使得执行滚动触发的进入动画变得简单：
+For instance, we built a light declarative component-based API around some features of [Framer Motion](https://www.framer.com/motion/) to make it easy to do scroll-triggered entrance animations:
 
-<div className="relative overflow-hidden rounded-2xl">
-  <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
-  <video
-    src="https://assets.tailwindcss.com/blog/2023-08-07-meet-studio-our-new-agency-template/scroll-entrance-animations.mp4"
-    autoPlay
-    playsInline
-    loop
-    muted
-    className="m-0 block"
-  />
-</div>
+<Video src="https://assets.tailwindcss.com/blog/2023-08-07-meet-studio-our-new-agency-template/scroll-entrance-animations.mp4" />
 
-这些类型动画的创作体验也变得非常不错——只需用 `FadeIn` 或 `FadeInStagger` 组件包装你想要淡入的内容，你就可以开始了：
+The authoring experience for these types of animations turned out really nice — just wrap the stuff you want to fade in with a `FadeIn` or `FadeInStagger` component and you're in business:
 
 ```jsx
 function Clients() {
@@ -89,63 +77,33 @@ function Clients() {
 }
 ```
 
-我们还为徽标添加了一个不错的小动画，当鼠标悬停时，标志被填充上颜色：
+We also added this nice little animation to the logo where the mark is filled with a solid color on hover:
 
-<div className="relative overflow-hidden rounded-2xl">
-  <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
-  <video
-    src="https://assets.tailwindcss.com/blog/2023-08-07-meet-studio-our-new-agency-template/logo-hover-animation.mp4"
-    autoPlay
-    playsInline
-    loop
-    muted
-    className="m-0 block"
-  />
-</div>
+<Video src="https://assets.tailwindcss.com/blog/2023-08-07-meet-studio-our-new-agency-template/logo-hover-animation.mp4" />
 
-这个小细节看上去微小但有趣的是，没有客户端导航你无法做到这一点，因为点击徽标返回主页时动画将重新运行。使用像 Next.js 这样的框架，我们能够保持在悬停时徽标的填充，即使跨越 URL 变化，也让人感觉更加不错。
+This little detail looks small but interestingly you can't really do it without client-side navigation, because the animation would re-run when clicking the logo to go back to the homepage. Using a framework like Next.js, we're able to keep the logo filled in while hovering, even across URL changes, which feels a lot nicer.
 
-菜单抽屉动画效果也非常不错，打开时整个页面下推：
+The menu drawer animation turned out really nice as well, pushing the whole page down when it opens:
 
-<div className="relative overflow-hidden rounded-2xl">
-  <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
-  <video
-    src="https://assets.tailwindcss.com/blog/2023-08-07-meet-studio-our-new-agency-template/menu-slide-animation.mp4"
-    autoPlay
-    playsInline
-    loop
-    muted
-    className="m-0 block"
-  />
-</div>
+<Video src="https://assets.tailwindcss.com/blog/2023-08-07-meet-studio-our-new-agency-template/menu-slide-animation.mp4" />
 
-如果你仔细观察，徽标和按钮不仅仅是简单地改变颜色——它们实际上是由滑动下来的面板位置精确驱动的，当面板边缘与之相交时，徽标实际上是部分白色和部分黑色的。
+If you look closely, the logo and button don't just naively change color either — it's actually driven precisely by the position of the sheet that's sliding down, and the logo is actually partially white and partially black at the same time when the edge of the sheet is intersecting with it.
 
-我特别喜欢的另一个细节是我们为案例研究页面上的图像想出的这种交互：
+Another detail I really love is this interaction we came up with for the images on the case study pages:
 
-<div className="relative overflow-hidden rounded-2xl">
-  <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
-  <video
-    src="https://assets.tailwindcss.com/blog/2023-08-07-meet-studio-our-new-agency-template/scroll-saturation-animation.mp4"
-    autoPlay
-    playsInline
-    loop
-    muted
-    className="m-0 block"
-  />
-</div>
+<Video src="https://assets.tailwindcss.com/blog/2023-08-07-meet-studio-our-new-agency-template/scroll-saturation-animation.mp4" />
 
-我们希望整个网站感觉是黑白的，但始终展示黑白图像并不合适。因此，我们想出了这种处理方式：图像最初是黑白的，当图像接近屏幕中心时饱和度随着滚动动画逐渐恢复。我们还在悬停时显示全彩图像。
+We wanted the whole site to feel black and white, but showing black and white images all of the time didn't feel right. So we came up with this treatment where the image starts off black and white, and the saturation animates back in as the image gets close to the center of the screen when scrolling. We also show the full color image on hover.
 
-我们还小心地试图以一种体贴的方式实现所有这些动画，考虑到有前庭运动障碍且对这些类型的大动画敏感的人。使用 Framer Motion 的 `useReducedMotion` 钩子和 Tailwind 中的 `motion-safe` 变体，我们可以根据需要禁用导航菜单动画，并将滚动驱动的进入动画限制为仅不透明度，以便屏幕上没有东西在移动。
+We were also careful to try and implement all of these animations in a way that's mindful of people with vestibular motion disorders and are sensitive to these types of big animations. Using Framer Motion's `useReducedMotion` hook and the `motion-safe` variant in Tailwind, we do things like conditionally disable the navigation menu animation, and limit the scroll-driven entrance animations to opacity only so things aren't moving on the screen.
 
 ---
 
 ## 针对开发者的案例研究和博客工作流程
 
-Studio 支持 [案例研究](https://studio.tailwindui.com/work/family-fund) 和 [博客文章](https://studio.tailwindui.com/blog/future-of-web-development)，如果你玩过我们的任何其他模板，可能已经猜到，我们利用这个机会将 [MDX](https://mdxjs.com/) 集成到项目中。
+Studio includes support for both [case studies](https://studio.tailwindui.com/work/family-fund) and [blog posts](https://studio.tailwindui.com/blog/future-of-web-development), and as you might have guessed if you've played with any of our other templates, we used this an excuse to integrate [MDX](https://mdxjs.com/) into the project.
 
-以下是一个基本案例研究的示例——主要通过 markdown 撰写，包含一些常见的元数据和与内容混合使用的自定义组件支持：
+Here's an example of what a basic case study looks like — authored mostly in markdown with some common metadata and support for custom components mixed in to the content:
 
 ```mdx
 import logo from "@/images/clients/phobia/logomark-dark.svg";

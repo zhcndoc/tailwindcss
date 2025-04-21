@@ -1,6 +1,6 @@
 import { adamwathan } from "@/app/blog/authors";
 import card from "./card.jpg";
-import Image from "next/image";
+import { Image } from "@/components/media";
 import Link from "next/link";
 
 export const meta = {
@@ -47,7 +47,7 @@ export const meta = {
 
 例如，这个部分其实跟您可能在营销网站上看到的英雄部分并没有太大不同：
 
-![](https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/adidas-hero.jpg)
+<Image src="https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/adidas-hero.jpg" />
 
 那么电子商务工具包是否也应该有“英雄部分”，就像营销工具包一样？如果是的话，它们有什么不同——为什么要有两个重复的类别？
 
@@ -67,7 +67,7 @@ export const meta = {
 
 因此，对于电子商务包，我们从一开始就将 _所有内容_ 设计为页面示例。到目前为止，我们设计了大约 50 个完整的页面，包括主页、类别列表、产品页面、结账表单等。
 
-![](https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/50-pages.jpg)
+<Image src="https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/50-pages.jpg" />
 
 我们会在页面之间重用一些东西以快速推进（如页脚或导航栏的想法），但通常我们会尽量使每个页面的每个核心元素都是独特的，以生成尽可能多的创意。
 
@@ -79,7 +79,7 @@ export const meta = {
 
 这是一个在构建过程中变化 _很大_ 的设计示例——左图是 Figma，右图是最终的 HTML 版本：
 
-![](https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/figma-vs-html.jpg)
+<Image src="https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/figma-vs-html.jpg" />
 
 我绝对认为，当我们在这个过程中对设计保持开放，进行迭代时，一切都会变得更好，而不仅仅是将其抛给其他人。
 
@@ -87,7 +87,7 @@ export const meta = {
 
 这就是它的样子：
 
-![](https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/templating-sample.jpg)
+<Image src="https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/templating-sample.jpg" />
 
 如果你对更多细节感兴趣，可以在我 4 月份发的 [这封邮件中阅读更多](https://blog.tailwindcss.com/building-react-and-vue-support-for-tailwind-ui)！
 
@@ -95,7 +95,7 @@ export const meta = {
 
 **接下来，我们提取了各个组件。** 一旦页面设计最终确定并构建完成，我们就将各个元素提取到自己的模板中。这是“产品概述”从产品页面提取、“产品列表”从类别页面提取，以及“促销部分”从商店主页提取的地方。
 
-![](https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/exploded-view.jpg)
+<Image src="https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/exploded-view.jpg" />
 
 这个过程的难点在于，它并不仅仅是“一个页面由组件组成”那么简单——正如你可能知道的，甚至 _组件_ 也是由组件组成的，因此确切决定如何切分 Tailwind UI 的内容始终很具挑战性。
 
@@ -103,13 +103,13 @@ export const meta = {
 
 我喜欢将其想象成我们在试图给你提供预构建的 LEGO 创作，而不仅仅是砖块。
 
-![](https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/lego.jpeg)
+<Image src="https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/lego.jpeg" />
 
 如果你只需要轮子，拆下卡车的轮子是很容易的——但从头开始将轮子、座位和前灯转变为一个漂亮的卡车就比较难了。
 
 例如，这个单一的“产品概述”部分可以拆分成许多较小的组件：
 
-![](https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/product-overview.jpg)
+<Image src="https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/product-overview.jpg" />
 
 至少包括一个图像画廊、一个星级评价小部件、一个颜色样本选择器和一个特性手风琴。但我认为以这种整体方式提供它是更好的起点——如果你需要，你仍然可以获取所有这些内容，但作为一个较大的组件，它也充当了 _灵感_，这是使 Tailwind UI 成为一个很酷的产品的重要成分。
 
@@ -123,11 +123,11 @@ export const meta = {
 
 我们注意到一开始有许多我们视而不见的东西，例如，我们只有两个大菜单的想法——这可能是因为在设计新页面时很容易不去设计任何导航栏的“打开”状态。所以我们回到设计步骤，想出了许多新概念来丰富类别。
 
-![](https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/mega-menu-concepts.jpg)
+<Image src="https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/mega-menu-concepts.jpg" />
 
 我们还注意到，我们在乳白色背景上的卡片式设计数量过多，而简单的平面设计明显不足，我认为这在电子商务设计中更为常见。因此，我们回到最初，设计了一堆新页面以填补这一空白：
 
-![](https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/white-backgrounds.jpg)
+<Image src="https://tailwindui.nyc3.cdn.digitaloceanspaces.com/20210806-ecommerce-update/white-backgrounds.jpg" />
 
 距离我们希望发布这个工具包还有不到一周的时间，每天我们 _仍然_ 在设计新的内容，以填补我们在接近完成时识别的空缺。这个产品每天都在变得更加出色，我认为这是我们为 Tailwind UI 想出的最佳设计 _(感谢上帝，变得更糟糕将是令人沮丧的。)_
 

@@ -4,7 +4,7 @@ import heroPatternsPreview from "./heropatterns-preview.jpg";
 import banner from "./banner.png";
 import iconStyles from "./icon-styles.png";
 import { Figure } from "@/components/figure.tsx";
-import Image from "next/image";
+import { Image } from "@/components/media";
 import Link from "next/link";
 
 export const meta = {
@@ -20,13 +20,13 @@ export const meta = {
   ),
 };
 
-几个月前，我们悄然发布了 <Link href="https://www.heroicons.com/">Heroicons</Link>，这是一套我们最初设计用于支持 Tailwind UI 组件的免费 SVG 图标。今天，我们推出了官方的 <Link href="https://www.heroicons.com/">Heroicons 网络体验</Link>，使得搜索图标和快速将其复制到你的剪贴板中，格式为适用于 Tailwind 的 HTML 或 JSX，变得比以往任何时候都更简单。
-
 <Link href="https://heroicons.com">
   <Image alt="heroicons.com" src={banner} />
 </Link>
 
-目前有超过 220 个图标可供选择，提供中型和小型两种尺寸，设计用以适应不同的使用场景：
+A few months back we quietly released <Link href="https://www.heroicons.com/">Heroicons</Link>, a set of free SVG icons we initially designed to support the components in Tailwind UI. Today we’re launching the official <Link href="https://www.heroicons.com/">Heroicons web experience</Link>, which makes it easier than ever to search for icons and quickly copy them to your clipboard as Tailwind-ready HTML or JSX.
+
+There are currently over 220 icons available in both medium and small sizes, with size designed to serve a different use-case:
 
 - 中型图标设计为 24x24 渲染，适合用于主导航和营销部分等场合。
 - 小型图标设计为 20x20 渲染，适合用于按钮、表单元素和支持文本。

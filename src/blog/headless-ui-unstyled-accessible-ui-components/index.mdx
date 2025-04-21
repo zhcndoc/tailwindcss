@@ -2,7 +2,7 @@ import { adamwathan } from "@/app/blog/authors";
 import card from "./card.jpg";
 import headlessUiCard from "./headless-ui-card.png";
 import { CodeExample, js, CodeBlock, CodeExampleGroup } from "@/components/code-example";
-import Image from "next/image";
+import { Image, Iframe } from "@/components/media";
 import Link from "next/link";
 
 export const meta = {
@@ -18,7 +18,9 @@ export const meta = {
   ),
 };
 
-在构建现代 Web 应用程序时，最大的问题之一是构建自定义组件，例如选择菜单、下拉菜单、切换、模态框、选项卡、单选组——这些组件在项目之间非常相似，但从未完全相同。
+<Image alt="Headless UI Logo" src={headlessUiCard} />
+
+One of the biggest pain points when building modern web applications is building custom components like select menus, dropdowns, toggles, modals, tabs, radio groups — components that are pretty similar from project to project, but never quite the _same_.
 
 您可以使用现成的包，但它们通常与自己提供的样式紧密耦合。这使得使它们与您自己的项目的外观和感觉相匹配变得非常困难，并且几乎总是需要编写一堆 CSS 覆盖，这在使用 Tailwind CSS 时感觉像是一个巨大的退步。
 
@@ -26,9 +28,7 @@ export const meta = {
 
 我们认为有更好的选择，因此我们正在构建它。
 
-**[无样式的 UI](https://headlessui.dev) 是一组完全无样式、完全可访问的 UI 组件，适用于 React 和 Vue** _(并即将支持 Alpine.js)_，使您能够轻松构建这些自定义组件，而无需担心任何复杂的实现细节，并且仍然能够使用简单的实用工具类从头开始进行样式设置。
-
-<Image alt="无样式的 UI 标志" src={headlessUiCard} />
+**[Headless UI](https://headlessui.dev) is a set of completely unstyled, fully accessible UI components for React and Vue** _(and soon Alpine.js)_ that make it easy to build these sorts of custom components without worrying about any of the complex implementation details yourself, and without sacrificing the ability to style them from scratch with simple utility classes.
 
 以下是使用 `@headlessui/react` 构建自定义下拉菜单的样子 _(这是库中许多组件之一)_，具有完整的键盘导航支持和 ARIA 属性管理，并使用简单的 Tailwind CSS 工具进行样式设置：
 
@@ -81,14 +81,10 @@ function MyDropdown() {
 
 这是一个完整样式的实时演示 _(取自 [Tailwind UI](https://tailwindui.com))_，让您看到它的实际效果：
 
-<iframe
+<Iframe
   src="https://codesandbox.io/embed/headlessuireact-menu-example-b6xje?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark"
-  className="w-full overflow-hidden rounded border-0"
-  style={{ height: "480px" }}
-  title="@headlessui/react 菜单示例"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+  title="@headlessui/react Menu Example"
+/>
 
 确保尝试使用键盘或屏幕阅读器真正体验它！
 

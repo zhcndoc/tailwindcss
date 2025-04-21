@@ -1,7 +1,7 @@
 import { adamwathan } from "@/app/blog/authors";
 import card from "./card.png";
 import catalystUiKit from "./catalyst-ui-kit.png";
-import Image from "next/image";
+import { Image, Video } from "@/components/media";
 import catalystInstallation from "./catalyst-installation.jpg";
 import catalystComponents from "./catalyst-components.png";
 import catalystComponentsDarkMode from "./catalyst-components-dark-mode.png";
@@ -22,9 +22,9 @@ export const meta = {
   ),
 };
 
-今天是大日子 — 我们刚刚发布了 [Catalyst](https://tailwindui.com/templates/catalyst) 的第一个开发预览，正好适合您假期的动手项目。
+<Image alt="Overview of components included in Catalyst" src={catalystUiKit} />
 
-<Image alt="Catalyst 中包含的组件概述" src={catalystUiKit} />
+Today's the day — we just published the first development preview of [Catalyst](https://tailwindui.com/templates/catalyst), just in time for your holiday hacking sessions.
 
 **Catalyst 是我们第一个全组件化、包含全部功能的应用 UI 套件** — 真正的 React 组件，设计精良的 API，彼此叠加以构建真正的组件架构，这就像我们在真实应用中所做的一样。
 
@@ -74,19 +74,9 @@ Catalyst 是一个“消失的 UI 套件” — 在您安装六个月后，您�
 
 <Image alt="" src={catalystTable} />
 
-我们还限制了过渡和动画的使用，仅在感觉重要的地方使用，即使这样也确保它们速度很快，以便您永远感觉不到在等待 UI。
+We also limited our use of transitions and animations only to places where it felt important, and even then tried to keep them fast so it never feels like you're waiting on the UI.
 
-<div className="relative my-8 overflow-hidden rounded-2xl">
-  <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
-  <video
-    src="https://assets.tailwindcss.com/blog/introducing-catalyst/catalyst-switch.mp4"
-    autoPlay
-    playsInline
-    loop
-    muted
-    className="m-0 block"
-  />
-</div>
+<Video src="https://assets.tailwindcss.com/blog/introducing-catalyst/catalyst-switch.mp4" />
 
 **Catalyst 还提供了完整的暗模式支持**，使用 Catalyst 组件构建的任何东西会自动适应明暗模式。
 

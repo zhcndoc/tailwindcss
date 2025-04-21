@@ -1,7 +1,7 @@
 import { adamwathan } from "@/app/blog/authors";
 import twitterCard from "./twitter-card.png";
 import Link from "next/link";
-import Image from "next/image";
+import { Image } from "@/components/media";
 import commitTemplate from "./commit-template.png";
 import commitTemplateDarkMode from "./commit-template-dark-mode.png";
 import commitTemplateForMotionOne from "./commit-template-for-motion-one.png";
@@ -35,11 +35,9 @@ export const meta = {
 
 就在几天前，我们发布了 [Commit](https://tailwindui.com/templates/commit)，这是我们为 Tailwind UI 设计的全新变更日志模板——当然是使用 Tailwind CSS 和 Next.js 构建的。
 
-<p>
-  <Link href="https://tailwindui.com/templates/commit">
-    <Image src={commitTemplate} alt="Commit 模板" />
-  </Link>
-</p>
+<Link href="https://tailwindui.com/templates/commit">
+  <Image src={commitTemplate} alt="The Commit template" />
+</Link>
 
 公共变更日志已成为一种非常流行的方式，帮助人们了解您正在进行的工作，并保持责任感、提升出货能力。当然，它们并不是一个新的概念，但我认为直到 [Linear](https://linear.app/changelog) 开始在他们的变更日志网站上发布，其他人才开始对使用它们作为公司博客的替代品感到兴奋。
 

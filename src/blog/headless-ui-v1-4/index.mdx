@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from "@/components/media";
 import Link from "next/link";
 import card from "./card.jpg";
 import banner from "./banner.jpg";
@@ -19,13 +19,13 @@ export const meta = {
   ),
 };
 
-我们刚刚发布了 Headless UI v1.4，其中包括一个全新的 `Tab` 组件，以及更便于手动关闭 `Popover` 和 `Disclosure` 组件的新 API。
-
 <Link href="https://headlessui.dev">
   <Image alt="Headless UI v1.4" src={banner} />
 </Link>
 
-## 选项卡
+We just released Headless UI v1.4, which includes a brand new `Tab` component, and new APIs for manually closing `Popover` and `Disclosure` components more easily.
+
+## Tabs
 
 今年早些时候，我们开始着手开发 [Tailwind UI Ecommerce](https://tailwindui.com/ecommerce)，并很快意识到我们需要在 Headless UI 中支持选项卡，以能够构建我们正在设计的新界面。
 
@@ -100,7 +100,7 @@ export const meta = {
 
 [查看文档](https://headlessui.dev/react/tabs)了解更多信息。
 
-### 关闭 Disclosure 和 Popover
+### Closing disclosures and popovers
 
 到目前为止，无法在不点击实际用于打开的按钮的情况下关闭 `Disclosure`。对于典型的披露用例，这并不是大问题，但通常在移动导航等场景中使用披露是有意义的，当您希望在有人点击其内部的链接时关闭它。
 

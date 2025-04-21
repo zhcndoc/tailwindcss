@@ -2,7 +2,7 @@ import { adamwathan } from "@/app/blog/authors";
 import card from "./card.jpg";
 import productPagePreview from "./product-page-preview.jpg";
 import Link from "next/link";
-import Image from "next/image";
+import { Image } from "@/components/media";
 
 export const meta = {
   title: "介绍 Tailwind UI 电子商务",
@@ -18,32 +18,33 @@ export const meta = {
   ),
 };
 
-经过将近 6 个月的努力，我们终于发布了自 <Link href="https://tailwindui.com">Tailwind UI</Link> 于 2020 年 2 月首次推出以来的第一个全新组件包！
-
 <Link href="https://tailwindui.com">
   <Image alt="Tailwind UI 电子商务现已上线" src={card} />
 </Link>
 
-[Tailwind UI 电子商务](https://tailwindui.com/#product-ecommerce) 新增了超过 100 个组成部分，涵盖 14 个新的组件类别和 7 个新的页面示例类别，包括：
+Almost 6 months in the making, we finally released the first all-new component kit for <Link href="https://tailwindui.com">Tailwind UI</Link> since the initial launch back in February 2020!
 
-- 产品概览
-- 产品列表
-- 类别预览
-- 购物车
-- 类别过滤器
-- 产品快速查看
-- 商店导航
-- 促销部分
-- 结账表单
-- 客户评价
-- 订单摘要
-- 店面页面
-- 产品页面
-- 订单历史页面
+[Tailwind UI Ecommerce](https://tailwindui.com/#product-ecommerce) adds over 100 new components across 14 new component categories and 7
+new page example categories, including stuff like:
 
-...等等。
+- Product Overviews
+- Product Lists
+- Category Previews
+- Shopping Carts
+- Category Filters
+- Product Quickviews
+- Store Navigation
+- Promo Sections
+- Checkout Forms
+- Customer Reviews
+- Order Summaries
+- Storefront Pages
+- Product Pages
+- Order History Pages
 
-要快速预览，请查看我们上周通过通讯分享的这个产品页面示例：
+...and more.
+
+For a quick preview, check out this product page example we shared via our newsletter last week:
 
 <Link href="https://tailwindui.com/components/ecommerce/page-examples/product-pages">
   <Image alt="预览新的产品页面示例之一" src={productPagePreview} />

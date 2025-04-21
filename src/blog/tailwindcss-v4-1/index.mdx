@@ -1,6 +1,5 @@
 import { adamwathan, danhollick } from "@/app/blog/authors";
 import card from "./card.jpg";
-import Image from "next/image";
 import SafariDark from "./safari-15-dark.png";
 import SafariLight from "./safari-15-light.png";
 import KeyboardLight from "./keyboard-light.png";
@@ -9,6 +8,7 @@ import { Figure } from "@/components/figure";
 import { Example } from "@/components/example";
 import { Stripes } from "@/components/stripes";
 import { CodeExampleStack } from "@/components/code-example";
+import { Image, YouTubeVideo } from "@/components/media";
 
 export const meta = {
   title: "Tailwind CSS v4.1: 文本阴影、遮罩及更多",
@@ -24,15 +24,7 @@ export const meta = {
   ),
 };
 
-<div className="my-12 overflow-hidden rounded-xl bg-slate-700">
-  <iframe
-    className="aspect-video w-full rounded-xl"
-    src="https://www.youtube.com/embed/HTFHoA12MJk?si=MLnoXcId4wCIdHVZ&amp;controls=0"
-    frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-  ></iframe>
-</div>
+<YouTubeVideo id="HTFHoA12MJk" />
 
 我曾不知道这是否会发生，但我们做到了——我们发布了一个包含 `text-shadow` 工具的 Tailwind CSS 版本。
 
@@ -319,13 +311,13 @@ npm install tailwindcss@latest @tailwindcss/postcss@latest
 <Image
   alt="Tailwind CSS v4.0（左）与 Tailwind CSS v4.1（右）在 Safari 15.5 中的渲染比较。Tailwind CSS v4.0 未能渲染某些背景渐变，而现在在 Tailwind CSS v4.1 中可见。"
   src={SafariLight}
-  className="block border border-black/5 dark:hidden"
+  className="dark:hidden"
 />
 
 <Image
   alt="Tailwind CSS v4.0（左）与 Tailwind CSS v4.1（右）在 Safari 15.5 中的渲染比较。Tailwind CSS v4.0 未能渲染某些背景渐变，而现在在 Tailwind CSS v4.1 中可见。"
   src={SafariDark}
-  className="hidden border border-white/10 dark:block"
+  className="hidden dark:block"
 />
 
 以下是我们在此次发布中所改善的一些内容：

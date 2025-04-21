@@ -1,6 +1,6 @@
 import { adamwathan } from "@/app/blog/authors";
 import card from "./card.jpg";
-import Image from "next/image";
+import { Image, Video } from "@/components/media";
 
 export const meta = {
   title: "自动清理多余的空白和重复的类名",
@@ -29,17 +29,7 @@ export const meta = {
 
 现在我们的 Prettier 插件将为你自动处理这些问题，因此你无需自己进行清理。
 
-<div className="relative overflow-hidden rounded-2xl">
-  <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
-  <video
-    src="https://assets.tailwindcss.com/blog/2024-05-30-prettier-plugin-collapse-whitespace/collapse-whitespace.mp4"
-    autoPlay
-    playsInline
-    loop
-    muted
-    className="m-0 block"
-  />
-</div>
+<Video src="https://assets.tailwindcss.com/blog/2024-05-30-prettier-plugin-collapse-whitespace/collapse-whitespace.mp4" />
 
 ---
 
@@ -47,17 +37,7 @@ export const meta = {
 
 我们的 [VS Code 扩展](/docs/editor-setup#intellisense-for-vs-code) 很久以来一直在警告你关于重复类名的问题，但现在我们的 Prettier 插件可以自动为你移除这些重复的类。
 
-<div className="relative overflow-hidden rounded-2xl">
-  <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-slate-900/10 ring-inset"></div>
-  <video
-    src="https://assets.tailwindcss.com/blog/2024-05-30-prettier-plugin-collapse-whitespace/remove-duplicates.mp4"
-    autoPlay
-    playsInline
-    loop
-    muted
-    className="m-0 block"
-  />
-</div>
+<Video src="https://assets.tailwindcss.com/blog/2024-05-30-prettier-plugin-collapse-whitespace/remove-duplicates.mp4" />
 
 ---
 

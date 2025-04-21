@@ -1,6 +1,6 @@
 import { Figure } from "@/components/figure.tsx";
 import { CodeBlock } from "@/components/code-example";
-import Image from "next/image";
+import { Image } from "@/components/media";
 import Link from "next/link";
 import { reinink, adamwathan } from "@/app/blog/authors";
 import card from "./card.jpg";
@@ -21,13 +21,13 @@ export const meta = {
   ),
 };
 
-人们在讨论如何在 Tailwind 项目中最好地排序您的实用类，已经 <Link href="https://github.com/tailwindlabs/discuss/issues/97">至少有四年了</Link>。今天我们很高兴地宣布，随着我们正式发布的 <Link href="https://github.com/tailwindlabs/prettier-plugin-tailwindcss">Prettier 插件</Link>，您终于可以不再担心这个问题。
-
 <Link href="https://github.com/tailwindlabs/prettier-plugin-tailwindcss">
   <Image alt="Tailwind CSS v3.4" src={banner} />
 </Link>
 
-该插件扫描您的模板中的类属性，查找包含 Tailwind CSS 类的属性，然后自动按照我们的 [推荐类顺序](#how-classes-are-sorted) 对这些类进行排序。
+People have been talking about the best way to sort your utility classes in Tailwind projects for <Link href="https://github.com/tailwindlabs/discuss/issues/97">at least four years</Link>. Today we're excited to announce that you can finally stop worrying about it with the release of our official <Link href="https://github.com/tailwindlabs/prettier-plugin-tailwindcss">Prettier plugin for Tailwind CSS</Link>.
+
+This plugin scans your templates for class attributes containing Tailwind CSS classes, and then sorts those classes automatically following our [recommended class order](#how-classes-are-sorted).
 
 {/* prettier-ignore */}
 ```html {{ filename: 'HTML' }}

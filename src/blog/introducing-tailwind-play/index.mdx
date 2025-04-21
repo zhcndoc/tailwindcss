@@ -1,7 +1,7 @@
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
 import Link from "next/link";
-import Image from "next/image";
+import { YouTubeVideo } from "@/components/media";
 import { adamwathan } from "@/app/blog/authors";
 import image from "./card.jpg";
 
@@ -21,21 +21,15 @@ export const meta = {
   ),
 };
 
-要充分利用 Tailwind，您需要一个构建步骤。这是自定义您的 [`tailwind.config.js`](https://v2.tailwindcss.com/docs/configuration) 文件，使用 [`@apply`](https://v2.tailwindcss.com/docs/functions-and-directives#apply) 提取组件，或者包括 [插件](https://v2.tailwindcss.com/docs/plugins) 的唯一方法。
+<YouTubeVideo id="eCWhTZ34Hck" />
+
+To get the most out of Tailwind, you need a build step. It's the only way to be able to customize your [`tailwind.config.js`](https://v2.tailwindcss.com/docs/configuration) file, extract components with [`@apply`](https://v2.tailwindcss.com/docs/functions-and-directives#apply), or include [plugins](https://v2.tailwindcss.com/docs/plugins).
 
 如果您已经支持这个框架，这不是一个问题，但如果您只是第一次尝试，这会有很多摩擦。您要么必须设置一个支持 PostCSS 的本地开发环境，要么只能使用静态 CDN 构建，这意味着您将失去许多很酷的功能。
 
 所以今天我们很高兴发布 [**Tailwind Play**](https://play.tailwindcss.com) 的第一个版本，这是一个高级在线游乐场，专为 Tailwind CSS 设计，允许您直接在浏览器中使用 Tailwind 的所有构建时功能。
 
-<iframe
-  src="https://www.youtube.com/embed/eCWhTZ34Hck"
-  frameBorder="0"
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-  className="aspect-video w-full"
-></iframe>
-
-它支持 Tailwind 所有最酷的功能，还有许多在 Tailwind Play 中比在您的编辑器中更好的功能，例如：
+It includes support for all of Tailwind's coolest features, plus tons of stuff that's even better in Tailwind Play than it is in your editor, like:
 
 - 自定义您的 Tailwind 主题
 - 启用特殊变体，如 `group-hover` 或 `focus-within`

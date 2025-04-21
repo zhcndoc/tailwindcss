@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image, YouTubeVideo } from "@/components/media";
 import Link from "next/link";
 import { Example } from "@/components/example";
 import { Figure } from "@/components/figure";
@@ -19,15 +19,9 @@ export const meta = {
   ),
 };
 
-Tailwind CSS v3.0 已经来临 — 带来了令人难以置信的性能提升、巨大的工作流程改进，以及大量荒唐的新特性。
+<YouTubeVideo id="TmWIrBPE6Bc" />
 
-<iframe
-  src="https://www.youtube.com/embed/TmWIrBPE6Bc"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-  className="aspect-video w-full"
-></iframe>
+Tailwind CSS v3.0 is here — bringing incredible performance gains, huge workflow improvements, and a seriously ridiculous number of new features.
 
 想要了解一些最酷的新特性，请查看我们YouTube频道上的{" "}<Link href="https://www.youtube.com/watch?v=mSC6GwizOag">"Tailwind CSS v3.0 新特性"</Link> 视频。
 
@@ -56,47 +50,41 @@ Tailwind CSS v3.0 绝对是我们有史以来最令人兴奋的版本，包含�
 npm install -D tailwindcss@latest postcss autoprefixer
 ```
 
-...或访问 [Tailwind Play](https://play.tailwindcss.com) 来直接在浏览器中试用最新功能。
+...or head over to [Tailwind Play](https://play.tailwindcss.com) to try out the latest features right in the browser.
 
-Tailwind CSS v3.0 是框架的新主要版本，并且有一些小的破坏性更改，但我们努力使升级过程尽可能顺利，对于大多数项目，您应该可以在不进行任何更改的情况下安装 v3.0。
+Tailwind CSS v3.0 is a new major version of the framework and there are some minor breaking changes, but we've worked really hard to make the upgrade process as smooth as possible, and for most projects you should be able to install v3.0 without making any changes.
 
-例如， [Tailwind UI](https://tailwindui.com) 可能是地球上最大的 Tailwind 项目，每个模板在 v2 和 v3 中都是完全兼容的，且不需要任何更改。
+For example, [Tailwind UI](https://tailwindui.com) is probably the biggest Tailwind project on earth and every template is totally compatible with both v2 and v3 with no changes required.
 
-有关迁移到 v3.0 的更多详细信息和逐步说明，请查看 <Link href="https://v3.tailwindcss.com/docs/upgrade-guide">升级指南</Link>。
-
----
-
-## 时刻即刻
-
-在三月，我们推出了全新的 <Link href="/blog/just-in-time-the-next-generation-of-tailwind-css">即刻引擎</Link>，它带来了巨大的性能提升，解锁了令人兴奋的新特性，如 <Link href="https://v3.tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values">任意值</Link>，并使复杂的变体配置成为过去。
-
-<iframe
-  src="https://www.youtube.com/embed/3O_3X7InOw8"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-  className="aspect-video w-full"
-></iframe>
-
-在 Tailwind CSS v3.0 中，这个新引擎已经稳定并替代了经典引擎，因此每一个 Tailwind 项目都能够立即受益于这些改进。
+For more details and step-by-step instructions on migrating to v3.0, check out the <Link href="https://v3.tailwindcss.com/docs/upgrade-guide">upgrade guide</Link>.
 
 ---
 
-## 开箱即用的每一种颜色
+## Just-in-Time, all the time
 
-在新引擎推出之前，我们在开发过程中总是需要小心控制 CSS 文件的大小，而我们必须做出的最大的权衡之一是仔细限制颜色调色板。
+Back in March we introduced the brand new <Link href="/blog/just-in-time-the-next-generation-of-tailwind-css">Just-in-Time engine</Link> which brought huge performance gains, unlocked exciting new features like <Link href="https://v3.tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values">arbitrary values</Link>, and made complex variant configurations a thing of the past.
 
-在 v3.0 中，扩展色调色板中的每种颜色默认启用，包括石灰色、青色、天空、洋红色、玫瑰和五十种灰色。
+<YouTubeVideo id="3O_3X7InOw8" />
 
-查看 <Link href="https://v3.tailwindcss.com/docs/customizing-colors">颜色调色板参考</Link> 以了解更多信息。
+In Tailwind CSS v3.0, the new engine has gone stable and replaced the classic engine, so every Tailwind project can benefit from these improvements out of the box.
 
 ---
 
-## 彩色盒阴影
+## Every color out of the box
 
-多年来人们一直在要求我们实现有色阴影，但以一种真正有意义的可组合方式支持它比我预期的要困难得多。
+Before the new engine, we always had to be careful with CSS file size in development, and one of the biggest trade-offs we had to make was carefully limiting the color palette.
 
-经过大约五次的失败尝试，我们终于找到了一个我们喜欢的方法，现在 Tailwind CSS v3.0 包含有色阴影：
+In v3.0, every single color in the extended color palette is enabled by default, including lime, cyan, sky, fuchsia, rose, and fifty shades of gray.
+
+Check out the <Link href="https://v3.tailwindcss.com/docs/customizing-colors">color palette reference</Link> to learn more.
+
+---
+
+## Colored box shadows
+
+People have been asking us for colored shadows for years, but supporting it in a composable way that actually made sense was way harder than I expected it to be.
+
+After about five false starts, we finally figured out an approach we liked, and now Tailwind CSS v3.0 includes colored shadows:
 
 <Figure>
 

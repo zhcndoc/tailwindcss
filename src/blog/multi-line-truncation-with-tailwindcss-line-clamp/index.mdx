@@ -1,6 +1,6 @@
 import { adamwathan } from "@/app/blog/authors";
 import card from "./card.jpg";
-import Image from "next/image";
+import { YouTubeVideo } from "@/components/media";
 import Link from "next/link";
 import { CodeExample, CodeBlock } from "@/components/code-example";
 import Example from "@/components/example";
@@ -24,21 +24,15 @@ export const meta = {
   ),
 };
 
-几周前我们发布了 [`@tailwindcss/line-clamp`](https://github.com/tailwindlabs/tailwindcss-line-clamp)，这是一个官方的 Tailwind CSS 插件，用于将文本截断为特定数量的行。
+<YouTubeVideo id="klh-jMTm5PU" />
+
+A few weeks back we released [`@tailwindcss/line-clamp`](https://github.com/tailwindlabs/tailwindcss-line-clamp), an official Tailwind CSS plugin for truncating text to a specific number of lines.
 
 想象一下，你正在实现一个漂亮的设计，这个设计是你或你团队中的某人精心在 Figma 中制作的。你已经在每个断点上完美地调整了不同的布局，完善了空白和排版，你使用的摄影作品真的为设计增添了生机。
 
 它看起来非常惊人——直到你将其连接到实际的生产内容时，才意识到你漂亮的博客卡片网格分崩离析，因为当然，_真实的_ 文章摘录并不是 magically 刚好都是三行长，而现在每个卡片的高度都不同。
 
-听起来熟悉吗？如果是这样，line-clamp 插件可以帮你解决这个问题。
-
-<iframe
-  className="aspect-video w-full"
-  src="https://www.youtube.com/embed/klh-jMTm5PU"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-></iframe>
+Sound familiar? If so, the line-clamp plugin is here to save your bacon.
 
 首先，安装插件并将其添加到你的 `tailwind.config.js` 文件中：
 
