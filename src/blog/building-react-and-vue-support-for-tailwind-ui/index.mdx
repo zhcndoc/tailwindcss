@@ -18,54 +18,54 @@ export const meta = {
 
 来点爆米花吧...
 
-## The backstory
+## 背景故事
 
-From the day we started working on Tailwind UI somewhere in mid-2019 I knew that ultimately it would be 10x more valuable to people if they could grab fully interactive examples built using their favorite JS framework. Trying to make that happen for the first release was way too ambitious though, so we had to figure out how to get there one step at a time.
+从我们在 2019 年中开始开发 Tailwind UI 的那天起，我就知道，如果人们能够抓住使用他们喜爱的 JS 框架构建的完全交互示例，最终会对他们更有价值。但是为了第一次发布而试图实现这一点太过雄心勃勃，因此我们必须一步一步地找出实现的方法。
 
-We decided to focus on vanilla HTML first because it's totally universal, and even if something like JSX would be more helpful for some people, there are lots of existing tools out there for converting HTML to JSX that people could lean on already.
+我们决定先专注于原生 HTML，因为它是完全通用的，即使像 JSX 这样的东西对某些人更有帮助，已经有很多现有工具可以将 HTML 转换为 JSX 供人们使用。
 
-We also made the hard trade-off not to provide any JS for interactions like toggling a responsive menu or opening and closing a modal dialog in the first version. I felt like anything we provided would just do more harm than good, because there's no one JS framework that makes up the majority of the Tailwind user base. If we catered to React developers, we'd be making it harder to use for the 70% of people _not_ using React. If we catered to Vue developers, we'd be making it harder for the 70% of people _not_ using Vue. If we tried to write it in custom vanilla JS, well we'd be making it harder for literally everyone _(seriously do you have any idea how much code it takes to build a robust enter/leave transition system from scratch in JS?)_
+我们还做出了一个艰难的取舍，不提供任何用于交互的 JS，比如切换响应式菜单或打开和关闭模态对话框。在我看来，任何我们提供的东西只会适得其反，因为没有一个 JS 框架可以占据 Tailwind 用户基础的绝大多数。如果我们迎合 React 开发者，就会让 70% 不使用 React 的人使用起来更困难。如果我们迎合 Vue 开发者，就会让 70% 不使用 Vue 的人使用起来更困难。如果我们尝试用自定义的原生 JS 编写，那 literally 让每个人都更困难（_真的，你知道用 JS 从头构建一个健壮的进出过渡系统需要多少代码吗？_）
 
-So instead I just documented the different states using comments in the HTML, and left it to the end user to wire it up with their favorite JS framework. I know a lot of people love that about [Bulma](https://bulma.io), and I think it was a great approach for us to start with as well.
+所以我只是用 HTML 中的注释记录下不同的状态，把它留给最终用户去和他们最喜欢的 JS 框架连接起来。我知道很多人喜欢 [Bulma](https://bulma.io) 的这种做法，我也认为这对于我们开始来说是一个很好的方法。
 
-But once we felt like Tailwind UI was pretty fleshed out with hundreds of great examples, we decided it was time to tackle the JS problem and see what we could do.
+但一旦我们感觉到 Tailwind UI 已经有了数百个很棒的示例，我们决定是时候解决 JS 问题，看看我们能做些什么。
 
-## What should it even be?
+## 这应该是什么样的？
 
-As an abstract concept adding "JavaScript support" to Tailwind UI sounds straightforward, but when you dig in to the details it is _not_. There are _so_ many decisions to make about what to even build, and so many trade-offs you have to consider when trying to make something useful for as many people as possible.
+作为一个抽象概念，为 Tailwind UI 添加“JavaScript 支持”听起来很简单，但深入到细节就 _不是_。在决定构建什么以及在尝试让尽可能多的人使用时需要考虑的权衡决策有 _如此_ 多。
 
-I tossed the whole concept around in the back of my head for a full year while working on Tailwind UI before I actually had a plan I was happy with. Ultimately, these are the core values I decided on when designing a solution:
+在我为 Tailwind UI 工作的整整一年中，我把整个概念在我的脑海中反复斟酌，直到我有了一个让我满意的计划。最终，这是我在设计解决方案时决定的核心价值：
 
-1. **The promise of Tailwind UI is that it's just a code snippet** — it's easy to customize and adapt by directly editing the code. Any JS examples we provide need to respect this foundational idea.
-2. **The JS needs to be updateable**. Unlike the markup which we expect people to just totally own and edit to their heart's content, the JS needs to come from `node_modules` _somehow_, because building these things right is hard, there are going to be bugs, and we want to be able to fix them for people without asking them to copy a new code snippet. On top of that, we don't want people to have to carefully transport 200 lines of JS they didn't write around their codebase, and constantly worry about accidentally breaking some small implementation detail by mistake.
-3. **It just has to be better than vanilla HTML**. At the end of the day, the most important thing is that we make the existing experience _better_ for people using the JS frameworks we decide to add support for first. Any time I found myself frustrated by two competing trade-offs that made it hard to make something _perfect_, asking myself "is this still strictly better and in no ways worse for framework X users than vanilla HTML?" provided a lot of clarity.
+1. **Tailwind UI 的承诺是它只是一个代码片段** — 通过直接编辑代码，容易定制和适应。我们提供的任何 JS 示例都需要尊重这个基础思想。
+2. **JS 需要可更新**。与我们期望人们完全拥有并随心所欲地编辑的标记不同，JS 需要以 _某种方式_ 来自 `node_modules`，因为正确构建这些东西是困难的，必然会有错误，我们希望能为人们修复这些错误，而不要求他们复制新的代码片段。此外，我们不希望人们不得不小心翼翼地把 200 行他们没有写的 JS 带到他们的代码库，时刻担心因为错误而意外破坏某些小的实现细节。
+3. **它必须比原生 HTML 更优秀**。归根结底，最重要的是，我们为最先添加支持的 JS 框架的用户改善现有体验。每当我发现自己被两个竞争的权衡所困扰而难以做到 _完美_ 时，问自己“这对于框架 X 用户来说仍然严格优于原生 HTML 吗？”给了我很大的清晰度。
 
-The other thing that was really important to me is that none of the underlying JS stuff was proprietary or Tailwind UI-specific. To me, Tailwind UI is not a UI kit like Ant Design or Material UI — those are great projects but it's not what I wanted to build.
+对我来说，另一方面非常重要的是，所有底层的 JS 东西都不是专有的或 Tailwind UI 特定的。对我而言，Tailwind UI 不是像 Ant Design 或 Material UI 这样的 UI 套件 — 那些都是很棒的项目，但这不是我想构建的东西。
 
-To me, Tailwind UI is a collection of _blueprints_, showing you how to build awesome stuff using tools that are _already available_ to you. If you want to use things exactly as they come off the shelf you totally can and you'll get great results. But you should also be able to use Tailwind UI as a helpful starting point, tweak it to the nines, and end up with something that feels uniquely _yours_, even if we gave you a boost at the beginning.
+对我来说，Tailwind UI 是一系列 _蓝图_，它向你展示如何使用 _已经可用_ 的工具构建出很棒的东西。如果你想按原样使用它们，你当然可以，它会得到很好的结果。但你也应该能够将 Tailwind UI 作为一个有用的起点，加以调整，然后得到一个感觉独一无二的 _你_ 的东西，即使我们一开始给了你推动。
 
-So before we could add JavaScript support to Tailwind UI, we needed to build some tools.
+因此，在我们能够为 Tailwind UI 添加 JavaScript 支持之前，我们需要构建一些工具。
 
-## Building Headless UI
+## 构建 Headless UI
 
-Years ago I remember seeing Kent C. Dodds' [downshift](https://www.downshift-js.com) library and thinking _"man, this is a cool concept — all of the complex behavior is tucked away in the library, but all of the actual markup and styling is left to the user"_.
+几年前，我记得看到 Kent C. Dodds 的 [downshift](https://www.downshift-js.com) 库并且想 _“哇，这个概念真酷——所有复杂行为都隐藏在库中，但所有实际的标记和样式都留给用户”_。
 
-This sort of approach is the perfect fit for Tailwind philosophically, because the entire goal of Tailwind is to help you build totally custom designs more quickly. Tailwind + a library of JS components that abstract away all of the keyboard navigation and accessibility logic without including any design opinions would be such a powerful combo — it would let teams building totally custom UIs move almost as fast as teams who were content to use hard-to-customize, opinionated frameworks.
+这种方法在哲学上完美适合 Tailwind，因为 Tailwind 的整个目标是帮助你更快地构建完全自定义的设计。Tailwind 和一个抽象了所有键盘导航和可访问性逻辑而不包含任何设计意见的 JS 组件库将是如此强大的组合 — 它将让构建完全自定义 UI 的团队几乎与那些满足于使用难以定制的、带有主观意见的框架的团队一样快。
 
-We looked to see if there were any other tools out there solving these same problems, and while there were a few awesome projects in the space ([Reach UI](https://reach.tech) and [Reakit](https://reakit.io) especially at the time, and [react-aria](https://react-spectrum.adobe.com/react-aria/) since starting on our own library, phenomenal work by all those folks), ultimately we decided that something so important for our company would be best to build and control ourselves.
+我们查看了是否有其他工具解决同样的问题，尽管当时有一些很不错的项目（特别是 [Reach UI](https://reach.tech) 和 [Reakit](https://reakit.io)，以及 [react-aria](https://react-spectrum.adobe.com/react-aria/) 自我们开始自己的库以来，那些人都做出了出色的工作），但最终我们决定，像这样对我们公司如此重要的东西最好还是自己构建和控制。
 
-There were two big reasons we ended up starting our own project:
+我们最终开始自己的项目有两个主要原因：
 
-1. **We wanted the APIs to work well with a class-based styling solution like Tailwind.** A lot of the other tools out there expected you to write custom CSS to target the different bits of each component, which is very different than the workflow you use to style things with Tailwind. We wanted to design something that was very class-friendly.
-2. **We wanted to support multiple frameworks using a consistent API.** There are React libraries, Vue libraries, Angular libraries, and others, but each one is different, designed by different people with different tastes. We wanted something that would be as consistent as possible from framework to framework, so that the framework-specific examples in Tailwind UI wouldn't be radically different from each other.
+1. **我们希望 API 可以与像 Tailwind 这样的基于类的样式解决方案很好配合**。许多其他工具期望你编写自定义 CSS 来针对每个组件的不同部分，这与使用 Tailwind 样式事物的工作流程非常不同。我们希望设计一个非常友好类的解决方案。
+2. **我们希望支持多个框架，使用一致的 API**。有 React 库、Vue 库、Angular 库等等，但每一个都是不同的，由不同的人设计，具有不同的品味。我们想要一些尽可能框架间一致的东西，这样 Tailwind UI 的框架特定示例之间就不会有巨大差异。
 
-I was really excited about what we were going to end up with at the end, but holy crap this was going to be a lot of work.
+我对我们最终将得到的东西感到兴奋，但天哪，这将是大量的工作。
 
-### Getting the ball rolling
+### 开始
 
-We decided to call this project "Headless UI" and in August of last year [Robin Malfait](https://twitter.com/malfaitrobin) joined the team to work on it full-time, pretty much exclusively.
+我们决定将这个项目称为“Headless UI”，去年 8 月 [Robin Malfait](https://twitter.com/malfaitrobin) 加入团队，几乎专职开展这个项目。
 
-The very first thing he worked on was a `Transition` component for React that would allow you to add enter/leave animations to elements, entirely using classes, and was very inspired by the [`<transition>`](https://v3.vuejs.org/guide/transitions-enterleave.html#enter-leave-transitions) component in Vue:
+他工作中的第一件事情是一个 `Transition` 组件，让你能够为元素添加进出动画，完全使用类，灵感来自于 Vue 的 [`<transition>`](https://v3.vuejs.org/guide/transitions-enterleave.html#enter-leave-transitions) 组件：
 
 ```jsx
 <Transition

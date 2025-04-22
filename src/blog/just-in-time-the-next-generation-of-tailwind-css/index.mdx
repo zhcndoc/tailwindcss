@@ -19,13 +19,13 @@ export const meta = {
 
 <YouTubeVideo id="3O_3X7InOw8" />
 
-_**Update**: As of Tailwind CSS v2.1, the new Just-in-Time engine is included right in Tailwind CSS itself, so you don't need the `@tailwindcss/jit` package anymore. <Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">Learn more in the documentation</Link>._
+_**更新**: 从 Tailwind CSS v2.1 开始，新的即时编译引擎已经直接包含在 Tailwind CSS 中，因此您不再需要 `@tailwindcss/jit` 包了。<Link href="https://v2.tailwindcss.com/docs/just-in-time-mode">在文档中了解更多</Link>._
 
 随着我们多年来逐步改进 Tailwind CSS，最困难的限制之一就是开发中生成的文件大小。通过对配置文件进行大量自定义，生成的 CSS 可能会达到 10MB 或更多，而构建工具甚至浏览器本身只能容忍有限的 CSS。
 
 出于这个原因，您总是需要小心像添加太多额外断点或启用 `disabled` 或 `focus-visible` 等额外变体这样的昂贵更改。
 
-Today I'm super excited to share a new project we've been working on that makes these considerations a thing of the past: <Link href="https://github.com/tailwindlabs/tailwindcss-jit">**a just-in-time compiler for Tailwind CSS**</Link>.
+今天我非常激动地分享我们一直在开发的新项目，这将使这些考虑成为过去：<Link href="https://github.com/tailwindlabs/tailwindcss-jit">**一个 Tailwind CSS 的即时编译器**</Link>。
 
 [@tailwindcss/jit](https://github.com/tailwindlabs/tailwindcss-jit) 是一个新的实验性库，它在您编写模板文件时按需编译您所有的 CSS，而不是事先生成整个样式表。
 
