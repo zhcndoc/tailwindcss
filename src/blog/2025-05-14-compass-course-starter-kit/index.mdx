@@ -1,0 +1,164 @@
+import { adamwathan } from "@/app/blog/authors";
+import card from "./card.jpg";
+import { Figure } from "@/components/figure";
+import { Example } from "@/components/example";
+import { Stripes } from "@/components/stripes";
+import { CodeExampleStack } from "@/components/code-example";
+import { Image, YouTubeVideo, Video } from "@/components/media";
+import Link from "next/link";
+import headerImage from "./preview-01.jpg";
+import transcriptImage from "./transcript.png";
+import lightDarkDiagram from "./light-dark-diagram.png";
+
+export const meta = {
+  title: "Compass: 在线课程的入门套件",
+  description:
+    "我最近一直渴望重返屏幕录制和教学，而第一步自然是构建我们自己的课程平台。因此，我们刚刚发布了 Compass，这是一个用于发布自己在线课程的 Next.js 入门套件。",
+  date: "2025-05-14T19:00:00.000Z",
+  authors: [adamwathan],
+  image: card,
+  excerpt: (
+    <>
+      我最近一直渴望重返屏幕录制和教学，而第一步自然是构建我们自己的课程平台。因此，我们刚刚发布了 <Link href="/plus/templates/compass">Compass</Link>，这是一个用于发布自己在线课程的 Next.js 入门套件。
+    </>
+  ),
+};
+
+我最近一直渴望重返屏幕录制和教学，因此几个月前我整理了这个免费的 [构建不糟糕的用户界面](/build-uis-that-dont-suck) 迷你课程。人们似乎喜欢它，现在我想做一些更大的视频项目，但有一个问题。
+
+我是一名软件开发人员。
+
+作为一名软件开发人员，就像我需要先编写自己的静态网站生成器才能构建自己的个人网站一样，我需要先构建自己的课程平台才能考虑汇编视频课程。
+
+好吧，快进六周后，我们刚刚发布了 [Compass](/plus/templates/compass)，这是我们为发布自己在线课程而设计的一个使用 Tailwind CSS 和 Next.js 的入门套件。
+
+<Link href="/plus/templates/compass">
+  <Image src={headerImage} alt="Compass" />
+</Link>
+
+如往常一样，请查看 [实时预览](/plus/templates/compass/preview)，以获得完整体验。
+
+我们在这个项目上玩得非常开心，玩了一堆新工具和新技术，解决了一些有趣的问题。
+
+---
+
+## 画中画视频
+
+你可能以前没见过，但大多数现代浏览器都支持 [原生画中画](https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API)。这些 API 允许你将视频弹出到一个用户可以移动和调整大小的独立窗口，同时仍然浏览网站。
+
+我们对 Compass 有这个想法：如果你开始播放课程视频并向下滚动页面，视频会移动到屏幕的右下角，这样你仍然可以在阅读页面内容时观看视频。
+
+<Video src="https://assets.tailwindcss.com/blog/2025-05-14-compass-course-starter-kit/compass-pip-demo.mp4" />
+
+我们希望使用画中画 API 来实现，但事实证明你不能在滚动时被动触发它们 _(出于隐私/安全原因吗？)_ —— 用户必须实际点击某个东西，类似于剪贴板 API。
+
+我们最终自己打造了一个简单的解决方案，使用 [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)、视频事件以及一些状态来检测视频何时播放和是否在屏幕外，并向 `<video>` 元素添加数据属性，以便我们可以通过工具类进行目标设置：
+
+```jsx
+// [!code filename:video-player.tsx]
+// [!code classes:data-offscreen:data-playing:fixed,data-offscreen:data-playing:right-4,data-offscreen:data-playing:bottom-4]
+<video
+  data-offscreen={isOffscreen ? "" : undefined}
+  data-playing={isPlaying ? "" : undefined}
+  className="data-offscreen:data-playing:fixed data-offscreen:data-playing:right-4 data-offscreen:data-playing:bottom-4"
+/>
+```
+
+我喜欢用数据属性来做这些事情，发现代码的可读性比起在 JavaScript 中使用三元运算符和条件逻辑要强得多。
+
+---
+
+## 将 VTT 文件解析为转录文本
+
+Compass 中有一个采访部分，每个采访的顶部都有一个视频，但下面还有一个相当自定义的转录 UI：
+
+<Image src={transcriptImage} alt="Tom Harris 和 Annie King 之间的采访的风格化转录" />
+
+一开始我们不太确定该如何处理这个问题。我们的第一个想法是为这些内容编写一些 React 组件，然后直接将内容扔进一个 MDX 文件，但让任何人以这种完全自定义的格式编写转录文本似乎不太现实。
+
+然后我想到使用一种标准的字幕文件格式，比如 [SRT](https://en.wikipedia.org/wiki/SubRip)。问题是就我们的需求而言，我们需要编码当前说话者（上面截图中的 Tom 或 Annie），而 SRT 没有标准化的方式来在文件中编码此信息。
+
+我做了一些进一步的研究，最终选择了 [WebVTT](https://en.wikipedia.org/wiki/WebVTT)，它类似于 SRT，但支持说话者信息，并且方便地为网络设计。
+
+```txt
+// [!code filename:annie-king.vtt]
+WEBVTT
+
+00:00.000 --> 00:20.000
+<v Tom Harris>大家好，欢迎来到 Compass 播客。今天，我们有特邀嘉宾，Annie King。她是《不可避免的你：如何拥抱你的道路并以无情的精确度取得成功》的作者。Annie，欢迎来到节目。
+
+00:20.000 --> 00:35.000
+<v Annie King>谢谢！我很高兴能在这里。谢谢你提前把问题发给我——我真的很兴奋能和你的观众分享一些书里的想法。我想我们会很有趣地讨论什么是真正拥抱你的道路。
+
+00:35.000 --> 00:45.000
+<v Tom Harris>当然！我想讨论你的书，但首先我得问——在一个几乎把组织视为…一项运动的家庭中长大是什么感觉？
+```
+
+所以我们将转录数据从 `.vtt` 文件解析，并在该数据上进行映射，以使用 React 渲染自定义 UI：
+
+```jsx
+// [!code filename:src/interview/[slug]/page.tsx]
+<div>
+  {transcript.map(({ start, speaker, text }) => (
+    <div key={start} className="col-span-2 grid grid-cols-subgrid items-baseline">
+      <TimestampButton start={start} videoId="video" className="justify-self-end" />
+      <div>
+        <p className="text-sm/7 font-semibold text-gray-950 dark:text-white">{speaker}</p>
+        {text.map((p, index) => (
+          <p key={index} className="mt-2 text-sm/7 whitespace-pre-wrap text-gray-700 dark:text-gray-400">
+            {p}
+          </p>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+```
+
+效果很不错——我可以想象有人只需用 AI 生成 VTT 格式的转录文本，将其放入项目中，它就会自动以漂亮的自定义 UI 渲染。
+
+---
+
+## 扩展 Markdown 图像以适应深色模式和布局偏移
+
+我们为 Compass 提出的示例内容包含许多图表，我们希望在亮色和深色模式之间进行适配。
+
+<Image src={lightDarkDiagram} alt="一个图表的示例，使用不同的颜色用于亮色和深色模式" />
+
+你可以使用很多不同的方法来做到这一点（例如，`<picture>` 标签本身就支持），但我们真的希望让内容文件尽可能保持原始 Markdown 的感觉。
+
+因此我们想出了在图像 URL 中使用 `{scheme}` 占位符的想法，我们动态替换为 `light` 或 `dark`，根据用户的配色方案加载正确的图像：
+
+```md
+## 自由意志的神话
+
+![神经学证明](/img/neuro-proof.{scheme}.png) <!-- [!code highlight:1] -->
+
+你的大脑在你意识到它们之前就已经做出决定。
+```
+
+现在底层图像组件将自动根据当前配色方案渲染 `neuro-proof.light.png` 或 `neuro-proof.dark.png`。如果你只想在两者中使用相同的图像，只需在 URL 中完全不包含 `{scheme}`。
+
+我们还希望避免内容中的布局偏移，这如今相对容易做到，只需确保给图像指定 `width` 和 `height` 属性，以便浏览器可以计算纵横比并在加载图像时预留空间。
+
+在 Markdown 的图像语法中没有标准的表达方式，但经过一些研究，我们发现 [Obsidian](https://help.obsidian.md/syntax#External+images) 中有一些先例。
+
+Obsidian 会将图像尺寸添加到替代文本中，像这样：
+
+```md
+## 自由意志的神话
+
+![神经学证明|2000x990](/img/neuro-proof.{scheme}.png) <!-- [!code highlight:1] -->
+
+你的大脑在你意识到它们之前就已经做出决定。
+```
+
+因此我们使用自定义 MDX 组件通过相同的格式提取尺寸，并将这些添加到图像上，以确保在内容加载时没有布局偏移。
+
+---
+
+所以，这就是 Compass！一如既往，对于拥有 [Tailwind Plus](/plus) 许可证的任何人来说，这是免费的更新，请前往 [下载代码库](/plus/templates/compass)，探索一下，享受其中的乐趣。
+
+如果你还没有 Tailwind Plus 许可证，考虑一下获取一个！获取许可证是支持我们在 Tailwind CSS 上工作的最佳方式，并且那里有很多有用的内容。
+
+期待在接下来的几个月中使用这个模板进行一些即将到来的项目！
