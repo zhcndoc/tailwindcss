@@ -823,4 +823,10 @@ let shadow = styles.getPropertyValue("--shadow-xl");
 </style>
 ```
 
-您可以在 [使用 Tailwind 和 CSS 模块](/docs/compatibility#css-modules) 中找到更多文档。
+您可以在[使用 Tailwind 和 CSS 模块](/docs/compatibility#css-modules)中找到更多文档。
+
+### 使用 Sass、Less 和 Stylus
+
+Tailwind CSS v4.0 并不设计为与 CSS 预处理器如 Sass、Less 或 Stylus 一起使用。可以将 Tailwind CSS 本身视为您的预处理器——您不应该将 Tailwind 与 Sass 一起使用，原因与您不应该将 Sass 与 Stylus 一起使用相同。因此，您无法在 Vue、Svelte、Astro 等中的样式表或 `<style>` 块中使用 Sass、Less 或 Stylus。
+
+在[兼容性文档](/docs/compatibility#sass-less-and-stylus)中了解更多信息。
