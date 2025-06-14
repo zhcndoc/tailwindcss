@@ -29,7 +29,7 @@ export default async function Showcase() {
       <GridContainer className="mt-10">
         <p className="prose mx-2 max-w-(--breakpoint-md) text-lg leading-8 text-gray-600 dark:text-gray-400">
           几乎什么东西都可以，但你不能用它来建造一艘宇宙飞船。不过你绝对可以用它建造宇宙飞船的网站，
-          <a href="https://www.nasa.gov/" target="_blank" rel="noreferrer">
+          <a href="https://www.jpl.nasa.gov/" target="_blank" rel="noreferrer">
             NASA
           </a>{" "}
           就是这么做的。
@@ -171,7 +171,7 @@ const showcase = [
   },
   {
     name: "NASA Jet Propulsion Laboratory",
-    url: "https://jpl.nasa.gov",
+    url: "https://www.jpl.nasa.gov",
     thumbnail: require("./img/jpl.nasa.gov.png").default,
     video: "/showcase-videos/jpl.nasa.gov.mp4",
     description: "Space laboratory website",

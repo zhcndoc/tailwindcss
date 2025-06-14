@@ -762,9 +762,7 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
 
 ### 使用多光标编辑
 
-当重复局限于单个文件中的一组元素时，处理它的最简单的方法是使用[multi-cursor编辑](https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor)快速选择并同时编辑每个元素的类列表：
-
-您会惊讶于这种方法有多么常见。如果可以迅速在所有重复的类列表上进行编辑，则没有必要引入任何额外的抽象。
+当重复局限于单个文件中的一组元素时，处理它的最简单方法是使用 [多光标编辑](https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor) 快速选择并一次性编辑每个元素的类列表：
 
 <MultiCursorAnimation>
   <Figure>
@@ -777,9 +775,11 @@ export function BrandedButton({ buttonColor, buttonColorHover, textColor, childr
   </Figure>
 </MultiCursorAnimation>
 
+你会惊讶于这通常是最佳解决方案的频率。如果你可以快速同时编辑所有重复的类列表，那么引入任何额外的抽象就没有好处。
+
 ### 使用组件
 
-如果您需要在多个文件中重用某些样式，最佳策略是如果您使用像 React、Svelte 或 Vue 这样的前端框架，则创建一个_组件_，如果您使用像 Blade、ERB、Twig 或 Nunjucks 这样的模板语言，则创建一个_模板局部_。
+如果你需要在多个文件中重用一些样式，最佳策略是在使用像 React、Svelte 或 Vue 这样的前端框架时创建一个 _组件_，或者在使用像 Blade、ERB、Twig 或 Nunjucks 这样的模板语言时创建一个 _模板部分_。
 
 <Figure>
 

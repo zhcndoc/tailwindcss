@@ -91,8 +91,9 @@ export default function Page() {
           安装 Tailwind CLI
         </h3>
         <p>
-          从头开始使用 Tailwind CSS 的最简单和最快的方法是使用 Tailwind CLI 工具。CLI 也可以作为一个
-          <Link href="/blog/standalone-cli">独立可执行文件</Link> 使用，如果你想在不安装 Node.js 的情况下使用它。
+          从头开始快速启动和运行 Tailwind CSS 的最简单方法是使用 Tailwind CLI 工具。如果您想在不安装 Node.js 的情况下使用它，CLI 还可以作为{" "}
+          <Link href="https://github.com/tailwindlabs/tailwindcss/releases/latest">独立可执行文件</Link>
+          提供。
         </p>
       </div>
       <Steps steps={steps} />
