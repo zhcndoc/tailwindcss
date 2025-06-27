@@ -548,12 +548,14 @@ Tailwind 中许多实用工具共享一个共同的命名空间，但映射到�
 ```css
 /* [!code filename:CSS] */
 @utility inset-* {
-  inset: calc(var(--spacing) * --value([percentage], [length]));
+  inset: --spacing(--value(integer));
+  inset: --value([percentage], [length]);
 }
 
 /* [!code highlight:4] */
 @utility -inset-* {
-  inset: calc(var(--spacing) * --value([percentage], [length]) * -1);
+  inset: --spacing(--value(integer) * -1);
+  inset: calc(--value([percentage], [length]) * -1);
 }
 ```
 
