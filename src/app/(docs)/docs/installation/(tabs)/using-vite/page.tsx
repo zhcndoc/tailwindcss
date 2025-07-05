@@ -18,6 +18,23 @@ export const metadata: Metadata = {
 
 const steps: Step[] = [
   {
+    title: "创建你的项目",
+    body: (
+      <p>
+        首先，如果你还没有设置 Vite 项目，请创建一个新的 Vite 项目。最常见的方法是使用{" "}
+        <a href="https://vite.dev/guide/#scaffolding-your-first-vite-project">Create Vite</a>。
+      </p>
+    ),
+    code: {
+      name: "终端",
+      lang: "shell",
+      code: dedent`
+        npm create vite@latest my-project
+        cd my-project
+      `,
+    },
+  },
+  {
     title: "安装 Tailwind CSS",
     body: (
       <p>
@@ -103,7 +120,7 @@ const steps: Step[] = [
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <!-- [!code highlight:2] -->
-          <link href="/src/styles.css" rel="stylesheet">
+          <link href="/src/style.css" rel="stylesheet">
         </head>
         <body>
           <!-- [!code highlight:4] -->

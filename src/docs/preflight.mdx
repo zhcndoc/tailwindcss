@@ -1,5 +1,5 @@
-export const title = "预检";
-export const description = "为 Tailwind 项目提供一套有见地的基础样式。";
+export const title = "Preflight";
+export const description = "提供一套对 Tailwind 项目有见地的基础样式。";
 
 ## 概述
 
@@ -230,4 +230,51 @@ video {
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/preflight.css" layer(base); /* [!code --] */
 @import "tailwindcss/utilities.css" layer(utilities);
+```
+
+当单独导入 Tailwind CSS 文件时，诸如 `source()`、`theme()` 和 `prefix()` 之类的功能应当放在各自的导入语句上。
+
+例如，源检测影响生成的工具类，所以 `source(…)` 应添加在 `utilities.css` 的导入上：
+
+```css
+/* [!code filename:CSS] */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities); /* [!code --] */
+@import "tailwindcss/utilities.css" layer(utilities) source(none); /* [!code ++] */
+```
+
+同样，`important` 也会影响工具类，应放在工具类导入语句上：
+
+```css
+/* [!code filename:CSS] */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities); /* [!code --] */
+@import "tailwindcss/utilities.css" layer(utilities) important; /* [!code ++] */
+```
+
+类似地，`theme(static)` 和 `theme(inline)` 影响生成的主题变量，应该放在 `theme.css` 导入语句上：
+
+```css
+/* [!code filename:CSS] */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme); /* [!code --] */
+@import "tailwindcss/theme.css" layer(theme) theme(static); /* [!code ++] */
+@import "tailwindcss/utilities.css" layer(utilities);
+```
+
+最后，使用 `prefix(tw)` 影响工具类和变量，应同时加在两个导入语句上：
+
+```css
+/* [!code filename:CSS] */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme); /* [!code --] */
+@import "tailwindcss/utilities.css" layer(utilities); /* [!code --] */
+@import "tailwindcss/theme.css" layer(theme) prefix(tw); /* [!code ++] */
+@import "tailwindcss/utilities.css" layer(utilities) prefix(tw); /* [!code ++] */
 ```

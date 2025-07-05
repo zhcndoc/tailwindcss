@@ -56,7 +56,7 @@ export default function WhyTailwindCssSection() {
       </div>
 
       <GridContainer className="2xl:before:hidden 2xl:after:hidden">
-        <CategoryHeader className="text-sky-500 dark:text-sky-400">为什么选择 Tailwind CSS？</CategoryHeader>
+        <CategoryHeader className="text-pink-500 dark:text-pink-400">为什么选择 Tailwind CSS？</CategoryHeader>
       </GridContainer>
 
       <GridContainer>
