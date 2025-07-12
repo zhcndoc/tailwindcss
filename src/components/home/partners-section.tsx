@@ -4,8 +4,7 @@ import GridContainer from "../grid-container";
 import CategoryHeader from "./category-header";
 
 export default function WhyTailwindCssSection() {
-  const randomAmbassador = ambassadors[Math.floor(Math.random() * ambassadors.length)];
-  const sponsors = [...partners, randomAmbassador];
+  const sponsors = [...partners, ...ambassadors];
 
   return (
     <div className="relative max-w-full">
@@ -70,6 +69,7 @@ export default function WhyTailwindCssSection() {
                 key={index}
                 href={company.url}
                 target="_blank"
+                rel="noopener sponsored"
                 className="grid place-content-center transition-colors hover:bg-gray-950/2.5 max-lg:nth-[2n+1]:line-y sm:px-2 sm:py-4 lg:max-xl:nth-[3n+1]:line-y xl:nth-[4n+1]:line-y dark:hover:bg-white/2.5"
               >
                 <company.logo className="w-full max-w-80" aria-label={`${company.name} logo`} />

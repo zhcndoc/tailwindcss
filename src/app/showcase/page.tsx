@@ -29,7 +29,7 @@ export default async function Showcase() {
       <GridContainer className="mt-10">
         <p className="prose mx-2 max-w-(--breakpoint-md) text-lg leading-8 text-gray-600 dark:text-gray-400">
           几乎什么东西都可以，但你不能用它来建造一艘宇宙飞船。不过你绝对可以用它建造宇宙飞船的网站，
-          <a href="https://www.jpl.nasa.gov/" target="_blank" rel="noreferrer">
+          <a href="https://www.jpl.nasa.gov/" target="_blank" rel="noopener noreferrer">
             NASA
           </a>{" "}
           就是这么做的。
@@ -50,19 +50,70 @@ export default async function Showcase() {
 }
 
 const showcase = [
+  // Partners
+  {
+    name: "Resend",
+    url: "https://go.resend.com/tailwind",
+    thumbnail: require("./img/resend.com.png").default,
+    video: "/showcase-videos/resend.com.mp4",
+    description: "Email platform website",
+  },
+  {
+    name: "Polar",
+    url: "https://polar.sh",
+    thumbnail: require("./img/polar.sh.png").default,
+    video: "/showcase-videos/polar.sh.mp4",
+    description: "Payment platform website",
+  },
+  {
+    name: "Cal.com",
+    url: "https://cal.com",
+    thumbnail: require("./img/cal.com.png").default,
+    video: "/showcase-videos/cal.com.mp4",
+    description: "SaaS application",
+  },
+  {
+    name: "Namespace",
+    url: "https://namespace.so/",
+    thumbnail: require("./img/namespace.so.png").default,
+    video: "/showcase-videos/namespace.so.mp4",
+    description: "SaaS application",
+  },
+  {
+    name: "Tiptap",
+    url: "https://tiptap.dev",
+    thumbnail: require("./img/tiptap.dev.png").default,
+    video: "/showcase-videos/tiptap.dev.mp4",
+    description: "Developer tool website",
+  },
+  {
+    name: "Mux",
+    url: "https://mux.com/",
+    thumbnail: require("./img/mux.com.png").default,
+    video: "/showcase-videos/mux.com.mp4",
+    description: "SaaS application",
+  },
+
+  // Ambassadors
+  {
+    name: "Bento",
+    url: "https://bentonow.com/",
+    thumbnail: require("./img/bentonow.com.png").default,
+    video: "/showcase-videos/bentonow.com.mp4",
+    description: "Email platform website",
+  },
+
+  // Others
   {
     name: "OpenAI / ChatGPT",
     url: "https://openai.com",
     thumbnail: require("./img/openai.com.png").default,
     video: "/showcase-videos/openai.com.mp4",
     description: "Marketing website & chat interface",
-  },
-  {
-    name: "Lemon Squeezy",
-    url: "https://app.lemonsqueezy.com",
-    thumbnail: require("./img/app.lemonsqueezy.com.png").default,
-    video: "/showcase-videos/app.lemonsqueezy.com.mp4",
-    description: "SaaS application",
+    dark: {
+      thumbnail: require("./img/dark-openai.com.png").default,
+      video: "/showcase-videos/dark-openai.com.mp4",
+    },
   },
   {
     name: "Shopify",
@@ -78,13 +129,6 @@ const showcase = [
     video: "/showcase-videos/wealthfront.com.mp4",
     description: "Fintech marketing website",
   },
-  // {
-  //   name: "Netflix Global Top 10",
-  //   url: "https://top10.netflix.com",
-  //   thumbnail: require("./img/top10.netflix.com.png").default,
-  //   video: "/showcase-videos/top10.netflix.com.mp4",
-  //   description: "Microsite",
-  // },
   {
     name: "Loom",
     url: "https://www.loom.com",
@@ -100,10 +144,10 @@ const showcase = [
     description: "News website",
   },
   {
-    name: "Laracon Online",
-    url: "https://laracon.net",
-    thumbnail: require("./img/laracon.net.png").default,
-    video: "/showcase-videos/laracon.net.mp4",
+    name: "Laracon 2025",
+    url: "https://laracon.us",
+    thumbnail: require("./img/laracon.us.png").default,
+    video: "/showcase-videos/laracon.us.mp4",
     description: "Conference website",
   },
   {
@@ -156,11 +200,25 @@ const showcase = [
     description: "SaaS marketing website",
   },
   {
+    name: "Slate Auto",
+    url: "https://slate.auto",
+    thumbnail: require("./img/slate.auto.png").default,
+    video: "/showcase-videos/slate.auto.mp4",
+    description: "Automotive website",
+  },
+  {
     name: "Algolia Docs",
-    url: "https://www.algolia.com/doc",
-    thumbnail: require("./img/algolia.com.png").default,
-    video: "/showcase-videos/algolia.com.mp4",
+    url: "https://www.algolia.com/doc/",
+    thumbnail: require("./img/algolia-docs.com.png").default,
+    video: "/showcase-videos/algolia-docs.com.mp4",
     description: "Documentation website",
+  },
+  {
+    name: "React Email",
+    url: "https://react.email/",
+    thumbnail: require("./img/react.email.png").default,
+    video: "/showcase-videos/react.email.mp4",
+    description: "Developer tool website",
   },
   {
     name: "MrBeast Feastables",
@@ -168,6 +226,13 @@ const showcase = [
     thumbnail: require("./img/feastables.com.png").default,
     video: "/showcase-videos/feastables.com.mp4",
     description: "Direct-to-consumer store",
+  },
+  {
+    name: "Algolia",
+    url: "https://www.algolia.com",
+    thumbnail: require("./img/algolia.com.png").default,
+    video: "/showcase-videos/algolia.com.mp4",
+    description: "SaaS marketing website",
   },
   {
     name: "NASA Jet Propulsion Laboratory",
@@ -211,29 +276,11 @@ const showcase = [
     },
   },
   {
-    name: "Clearbit",
-    url: "https://clearbit.com",
-    thumbnail: require("./img/clearbit.com.png").default,
-    video: "/showcase-videos/clearbit.com.mp4",
-    description: "SaaS marketing website",
-  },
-  {
-    name: "Dizzie",
-    url: "https://getdizzie.com",
-    thumbnail: require("./img/getdizzie.com.png").default,
-    video: "/showcase-videos/getdizzie.com.mp4",
-    description: "E-commerce store",
-  },
-  {
     name: "Google I/O",
     url: "https://io.google",
     thumbnail: require("./img/io.google.png").default,
     video: "/showcase-videos/io.google.mp4",
     description: "Conference website",
-    dark: {
-      thumbnail: require("./img/io.google-dark.png").default,
-      video: "/showcase-videos/io.google-dark.mp4",
-    },
   },
   {
     name: "Keynote",
@@ -274,13 +321,6 @@ const showcase = [
     isTemplate: true,
   },
   {
-    name: "Modern Treasury",
-    url: "https://moderntreasury.com",
-    thumbnail: require("./img/moderntreasury.com.png").default,
-    video: "/showcase-videos/moderntreasury.com.mp4",
-    description: "Fintech marketing website",
-  },
-  {
     name: "National Park Foundation",
     url: "https://nationalparks.org",
     thumbnail: require("./img/nationalparks.org.png").default,
@@ -312,17 +352,6 @@ const showcase = [
     thumbnail: require("./img/opalcamera.com.png").default,
     video: "/showcase-videos/opalcamera.com.mp4",
     description: "Product marketing website",
-  },
-  {
-    name: "Coinbase NFT",
-    url: "https://nft.coinbase.com",
-    thumbnail: require("./img/nft.coinbase.com.png").default,
-    video: "/showcase-videos/nft.coinbase.com.mp4",
-    description: "Online marketplace",
-    dark: {
-      thumbnail: require("./img/nft.coinbase.com-dark.png").default,
-      video: "/showcase-videos/nft.coinbase.com-dark.mp4",
-    },
   },
   {
     name: "Primer",
