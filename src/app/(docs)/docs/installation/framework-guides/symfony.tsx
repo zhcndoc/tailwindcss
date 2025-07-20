@@ -108,7 +108,7 @@ export let steps: Step[] = [
     title: "导入 Tailwind CSS",
     body: (
       <p>
-        在 <code>./assets/styles/app.css</code> 文件中添加导入 Tailwind CSS 的 <code>@import</code>。
+        在 <code>./assets/styles/app.css</code> 中添加一个 <code>@import</code>，以导入 Tailwind CSS，以及一个 <code>@source</code>，以忽略公共目录，以防止在监视模式下的重新编译循环。
       </p>
     ),
     code: {
@@ -116,6 +116,7 @@ export let steps: Step[] = [
       lang: "css",
       code: css`
         @import "tailwindcss";
+        @source not "../../public";
       `,
     },
   },
