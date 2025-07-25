@@ -17,15 +17,14 @@ export let steps: Step[] = [
     title: "创建你的项目",
     body: (
       <p>
-        如果你还没有设置好的 Nuxt 项目，请首先创建一个新的 Nuxt 项目。最常见的方法是使用
-        <a href="https://nuxt.zhcndoc.com/docs/getting-started/installation">Nuxt 命令行界面</a>。
+        如果您还没有设置 Nuxt 项目，请首先创建一个新的 Nuxt 项目。最常见的方法是使用 <a href="https://nuxt.zhcndoc.com/docs/4.x/getting-started/installation#new-project">Create Nuxt</a>。
       </p>
     ),
     code: {
       name: "终端",
       lang: "shell",
       code: shell`
-        npx nuxi init my-project
+        npm create nuxt my-project
         cd my-project
       `,
     },
@@ -60,7 +59,7 @@ export let steps: Step[] = [
         import tailwindcss from "@tailwindcss/vite";
 
         export default defineNuxtConfig({
-          compatibilityDate: "2024-11-01",
+          compatibilityDate: "2025-07-15",
           devtools: { enabled: true },
           vite: {
             plugins: [
@@ -76,7 +75,7 @@ export let steps: Step[] = [
     title: "导入 Tailwind CSS",
     body: (
       <p>
-        创建一个 <code>./assets/css/main.css</code> 文件，并添加一个 <code>@import</code> 来导入 Tailwind CSS。
+        创建一个 <code>./app/assets/css/main.css</code> 文件，并添加一个 <code>@import</code> 来导入 Tailwind CSS。
       </p>
     ),
     code: {
@@ -91,7 +90,7 @@ export let steps: Step[] = [
     title: "全局添加 CSS 文件",
     body: (
       <p>
-        将您新创建的 <code>./assets/css/main.css</code> 添加到 <code>nuxt.config.ts</code> 文件中的 <code>css</code> 数组。
+        将您新创建的 <code>./app/assets/css/main.css</code> 添加到 <code>nuxt.config.ts</code> 文件中的 <code>css</code> 数组。
       </p>
     ),
     code: {
@@ -101,7 +100,7 @@ export let steps: Step[] = [
         import tailwindcss from "@tailwindcss/vite";
 
         export default defineNuxtConfig({
-          compatibilityDate: "2024-11-01",
+          compatibilityDate: "2025-07-15",
           devtools: { enabled: true },
           // [!code highlight:2]
           css: ['~/assets/css/main.css'],
