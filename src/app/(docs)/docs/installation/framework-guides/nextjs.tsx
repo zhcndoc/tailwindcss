@@ -73,7 +73,7 @@ export let steps: Step[] = [
     title: "导入 Tailwind CSS",
     body: (
       <p>
-        在 <code>./src/app/globals.css</code> 中添加一个 <code>@import</code> 来导入 Tailwind CSS。
+        在 <code>./app/globals.css</code> 中添加一个 <code>@import</code> 来导入 Tailwind CSS。
       </p>
     ),
     code: {

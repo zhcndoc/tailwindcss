@@ -500,16 +500,20 @@ function PartnerPlans() {
           description: "access to the UI Kit, templates, and 500+ components for your team.",
         },
         {
+          name: "Access to sponsor Discord",
+          description: "A private Discord channel for sponsors to talk to the Tailwind team.",
+        },
+        {
           name: "Support Tailwind CSS",
           description: "sleep easy knowing that you’re supporting the development of Tailwind CSS.",
         },
       ],
-      remaining: 21,
+      remaining: 22,
     },
     {
       name: "Partner",
       price: "$5,000",
-      url: "https://buy.polar.sh/polar_cl_Ae2EFQATomRTUPq3DVTqzjOCAEsI7m7GNrmoh1n6ZRk",
+      url: "mailto:support@tailwindcss.com?subject=Tailwind%20CSS%20Partner%20waitlist",
       description: "For companies who want increased exposure and easy access to the Tailwind team.",
       features: [
         {
@@ -538,7 +542,7 @@ function PartnerPlans() {
           description: "sleep easy knowing that you’re supporting the development of Tailwind CSS.",
         },
       ],
-      remaining: 2,
+      remaining: 0,
     },
   ];
 
@@ -552,7 +556,7 @@ function PartnerPlans() {
           <div className="flex h-full flex-col gap-y-6 rounded-2xl bg-white p-6 sm:rounded-4xl sm:p-10 xl:p-8 2xl:p-10 dark:bg-gray-950/80 dark:outline dark:outline-white/10">
             <div className="flex items-center justify-between gap-4">
               <Eyebrow as="h3">{plan.name}</Eyebrow>
-              {plan.remaining && (
+              {plan.remaining !== null && (
                 <p
                   className={clsx(
                     "rounded-full px-2 py-0.5 text-[0.6875rem]/4 font-semibold",
@@ -561,7 +565,7 @@ function PartnerPlans() {
                       : "bg-sky-400/25 text-sky-700 dark:text-sky-400",
                   )}
                 >
-                  {plan.remaining} spots left
+                  {plan.remaining} {plan.remaining === 1 ? 'spot' : 'spots'} left
                 </p>
               )}
             </div>
@@ -575,7 +579,7 @@ function PartnerPlans() {
               </div>
 
               <DarkButtonLink className="max-sm:hidden xl:hidden" href={plan.url}>
-                Become {plan.name.toLowerCase().match(/^[aeiou]/i) ? "an" : "a"} {plan.name.toLowerCase()}
+                {plan.name === "Partner" ? "Join waitlist" : `Become ${plan.name.toLowerCase().match(/^[aeiou]/i) ? "an" : "a"} ${plan.name.toLowerCase()}`}
               </DarkButtonLink>
             </div>
             <p className="max-w-2xl text-sm/7 text-gray-600 dark:text-gray-400">{plan.description}</p>
@@ -597,7 +601,7 @@ function PartnerPlans() {
               </ul>
             </div>
             <DarkButtonLink className="mt-auto sm:max-xl:hidden" href={plan.url}>
-              Become {plan.name.toLowerCase().match(/^[aeiou]/i) ? "an" : "a"} {plan.name.toLowerCase()}
+              {plan.name === "Partner" ? "Join waitlist" : `Become ${plan.name.toLowerCase().match(/^[aeiou]/i) ? "an" : "a"} ${plan.name.toLowerCase()}`}
             </DarkButtonLink>
           </div>
         </div>

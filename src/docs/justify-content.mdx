@@ -285,7 +285,7 @@ export const description =
 
 ### 拉伸
 
-使用 `justify-stretch` 工具类使内容项目填满容器主轴上的可用空间：
+使用 `justify-stretch` 工具，使自动大小的内容项填充容器主轴上的可用空间：
 
 <Figure>
 
@@ -293,7 +293,7 @@ export const description =
   {
     <div className="grid grid-cols-1">
       <Stripes border className="col-start-1 row-start-1 rounded-lg" />
-      <div className="col-start-1 row-start-1 grid grid-flow-col justify-stretch gap-4 rounded-lg font-mono text-sm leading-6 font-bold text-white">
+      <div className="col-start-1 row-start-1 grid grid-cols-[4rem_auto_4rem] justify-stretch gap-4 rounded-lg font-mono text-sm leading-6 font-bold text-white">
         <div className="flex h-14 items-center justify-center rounded-lg bg-fuchsia-500">01</div>
         <div className="flex h-14 items-center justify-center rounded-lg bg-fuchsia-500">02</div>
         <div className="flex h-14 items-center justify-center rounded-lg bg-fuchsia-500">03</div>
@@ -304,7 +304,7 @@ export const description =
 
 ```html
 <!-- [!code classes:justify-stretch] -->
-<div class="flex justify-stretch ...">
+<div class="grid grid-cols-[4rem_auto_4rem] justify-stretch ...">
   <div>01</div>
   <div>02</div>
   <div>03</div>
