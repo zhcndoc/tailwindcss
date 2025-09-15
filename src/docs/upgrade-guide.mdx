@@ -564,9 +564,13 @@ Preflight 现在将 `<dialog>` 元素的边距重置为与其他元素的一致�
 }
 ```
 
+#### 隐藏属性优先
+
+像 `block` 或 `flex` 这样的显示类不再优先于元素上的 `hidden` 属性。如果您希望元素对用户可见，请移除 `hidden` 属性。请注意，这不适用于 `hidden="until-found"`。
+
 ### 使用前缀
 
-前缀现在看起来像变体，并且总是在类名的开头：
+前缀现在看起来像变体，并且始终位于类名的开头：
 
 ```html
 <!-- [!code classes:tw:bg-red-500,tw:flex,tw:hover:bg-red-600] -->

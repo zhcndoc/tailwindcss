@@ -2,6 +2,7 @@ import { ApiTable } from "@/components/api-table.tsx";
 import { CustomizingYourTheme, ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
 import { Example } from "@/components/example.tsx";
 import { Figure } from "@/components/figure.tsx";
+import { CodeExample } from "@/components/code-example.tsx";
 
 export const title = "字体粗细";
 export const description = "用于控制元素字体粗细的工具类。";
@@ -80,7 +81,14 @@ export const description = "用于控制元素字体粗细的工具类。";
 
 ### 使用自定义值
 
-<UsingACustomValue element="p" utility="font" value="1000" name="字体粗细" variable="font-weight" />
+<UsingACustomValue
+  element="p"
+  utility="font"
+  value="1000"
+  name="字体粗细"
+  variable="font-weight"
+  dataType="weight"
+/>
 
 ### 响应式设计
 

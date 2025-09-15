@@ -181,9 +181,20 @@ video {
 <img class="max-w-none" src="..." alt="..." />
 ```
 
-## 扩展预检
+#### 带有 `hidden` 属性的元素保持隐藏状态。
 
-如果您想在预检之上添加自己的基础样式，请在 CSS 中通过 `@layer base` 将它们添加到 `base` CSS 层中：
+```css
+/* [!code filename:CSS] */
+[hidden]:where(:not([hidden='until-found'])) {
+  display: none !important;
+}
+```
+
+这确保了带有 `hidden` 属性的元素保持不可见，除非使用 `hidden="until-found"`。如果您希望元素对用户可见，请移除 `hidden` 属性。
+
+## 扩展 Preflight
+
+如果您想在 Preflight 的基础上添加自己的基础样式，请在您的 CSS 中使用 `@layer base` 将它们添加到 `base` CSS 层。
 
 ```css
 /* [!code filename:CSS] */
