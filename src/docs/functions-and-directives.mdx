@@ -160,7 +160,7 @@ export const description = "Tailwind 为你的 CSS 提供的自定义函数和�
 </style>
 ```
 
-如果你只是使用没有自定义的默认主题，可以直接导入 `tailwindcss`：
+如果你只是使用默认主题，没有进行任何自定义（例如没有使用 `@theme`、`@custom-variant`、`@plugin` 等），你可以直接导入 `tailwindcss`：
 
 ```html
 <!-- [!code filename:Vue] -->
@@ -178,9 +178,40 @@ export const description = "Tailwind 为你的 CSS 提供的自定义函数和�
 </style>
 ```
 
+### 子路径导入
+
+在使用 CLI、Vite 或 PostCSS 时，指令 `@import`、`@reference`、`@plugin` 和 `@config` 都支持[子路径导入](https://nodejs.org/api/packages.html#subpath-imports)，其工作方式类似于打包工具和 TypeScript 路径别名：
+
+```json
+// [!code filename:package.json]
+{
+  // ...
+  "imports": {
+    /* [!code highlight:2] */
+    "#app.css": "./src/css/app.css"
+  }
+}
+```
+
+```html
+<!-- [!code filename:Vue] -->
+<template>
+  <h1>Hello world!</h1>
+</template>
+
+<style>
+  /* [!code highlight:2] */
+  @reference "#app.css";
+
+  h1 {
+    @apply text-2xl font-bold text-red-500;
+  }
+</style>
+```
+
 ## 函数
 
-Tailwind 提供以下构建时函数，以简化与颜色和间距比例的操作。
+Tailwind 提供了以下构建时函数，以便更轻松地处理颜色和间距比例。
 
 <h3 id="alpha-function">
   <a href="#alpha-function">--alpha()</a>

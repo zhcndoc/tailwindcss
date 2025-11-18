@@ -508,12 +508,12 @@ function PartnerPlans() {
           description: "sleep easy knowing that you’re supporting the development of Tailwind CSS.",
         },
       ],
-      remaining: 22,
+      remaining: 23,
     },
     {
       name: "Partner",
       price: "$5,000",
-      url: "mailto:support@tailwindcss.com?subject=Tailwind%20CSS%20Partner%20waitlist",
+      url: "https://buy.polar.sh/polar_cl_Ae2EFQATomRTUPq3DVTqzjOCAEsI7m7GNrmoh1n6ZRk",
       description: "For companies who want increased exposure and easy access to the Tailwind team.",
       features: [
         {
@@ -542,7 +542,7 @@ function PartnerPlans() {
           description: "sleep easy knowing that you’re supporting the development of Tailwind CSS.",
         },
       ],
-      remaining: 0,
+      remaining: 3,
     },
   ];
 
@@ -565,7 +565,7 @@ function PartnerPlans() {
                       : "bg-sky-400/25 text-sky-700 dark:text-sky-400",
                   )}
                 >
-                  {plan.remaining} {plan.remaining === 1 ? 'spot' : 'spots'} left
+                  {plan.remaining} {plan.remaining === 1 ? "spot" : "spots"} left
                 </p>
               )}
             </div>
@@ -579,7 +579,7 @@ function PartnerPlans() {
               </div>
 
               <DarkButtonLink className="max-sm:hidden xl:hidden" href={plan.url}>
-                {plan.name === "Partner" ? "Join waitlist" : `Become ${plan.name.toLowerCase().match(/^[aeiou]/i) ? "an" : "a"} ${plan.name.toLowerCase()}`}
+                {`Become ${plan.name.toLowerCase().match(/^[aeiou]/i) ? "an" : "a"} ${plan.name.toLowerCase()}`}
               </DarkButtonLink>
             </div>
             <p className="max-w-2xl text-sm/7 text-gray-600 dark:text-gray-400">{plan.description}</p>
@@ -601,7 +601,7 @@ function PartnerPlans() {
               </ul>
             </div>
             <DarkButtonLink className="mt-auto sm:max-xl:hidden" href={plan.url}>
-              {plan.name === "Partner" ? "Join waitlist" : `Become ${plan.name.toLowerCase().match(/^[aeiou]/i) ? "an" : "a"} ${plan.name.toLowerCase()}`}
+              {`Become ${plan.name.toLowerCase().match(/^[aeiou]/i) ? "an" : "a"} ${plan.name.toLowerCase()}`}
             </DarkButtonLink>
           </div>
         </div>

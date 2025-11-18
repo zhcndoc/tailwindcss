@@ -52,6 +52,27 @@ export default async function Showcase() {
 const showcase = [
   // Partners
   {
+    name: "Greptile",
+    url: "https://www.greptile.com/?utm_source=tailwind",
+    thumbnail: require("./img/greptile.com.png").default,
+    video: "/showcase-videos/greptile.com.mp4",
+    description: "Developer tool website",
+  },
+  {
+    name: "CodeRabbit",
+    url: "https://www.coderabbit.ai/",
+    thumbnail: require("./img/coderabbit.ai.png").default,
+    video: "/showcase-videos/coderabbit.ai.mp4",
+    description: "Developer tool website",
+  },
+  {
+    name: "Shopify",
+    url: "https://shopify.com",
+    thumbnail: require("./img/shopify.com.png").default,
+    video: "/showcase-videos/shopify.com.mp4",
+    description: "Ecommerce platform website",
+  },
+  {
     name: "Base UI",
     url: "https://base-ui.com",
     thumbnail: require("./img/base-ui.com.png").default,
@@ -87,13 +108,6 @@ const showcase = [
     description: "Fintech application website",
   },
   {
-    name: "Cal.com",
-    url: "https://cal.com",
-    thumbnail: require("./img/cal.com.png").default,
-    video: "/showcase-videos/cal.com.mp4",
-    description: "SaaS application website",
-  },
-  {
     name: "Namespace",
     url: "https://namespace.so/",
     thumbnail: require("./img/namespace.so.png").default,
@@ -116,6 +130,13 @@ const showcase = [
   },
 
   // Ambassadors
+  {
+    name: "Zed",
+    url: "https://zed.dev/?utm_source=tailwind",
+    thumbnail: require("./img/zed.dev.png").default,
+    video: "/showcase-videos/zed.dev.mp4",
+    description: "Code editor website",
+  },
   {
     name: "PostHog",
     url: "https://posthog.com/",
@@ -142,13 +163,6 @@ const showcase = [
       thumbnail: require("./img/dark-openai.com.png").default,
       video: "/showcase-videos/dark-openai.com.mp4",
     },
-  },
-  {
-    name: "Shopify",
-    url: "https://shopify.com",
-    thumbnail: require("./img/shopify.com.png").default,
-    video: "/showcase-videos/shopify.com.mp4",
-    description: "Ecommerce platform website",
   },
   {
     name: "Wealthfront",

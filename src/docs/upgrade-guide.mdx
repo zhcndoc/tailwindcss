@@ -690,9 +690,23 @@ Preflight 现在将 `<dialog>` 元素的边距重置为与其他元素的一致�
 <div class="bg-(--brand-color)"></div>
 ```
 
+### 网格和 object-position 工具中的任意值
+
+在任意值中，`grid-cols-*`、`grid-rows-*` 和 `object-*` 工具之前会将逗号替换为空格。这种特殊行为在 Tailwind CSS v3 中是为了兼容 v2 而存在的。在 v4.0 中，这种兼容性已不再存在，必须使用下划线来表示空格。
+
+要针对此更改更新您的项目，请将原本用作空格的逗号替换为下划线：
+
+```html
+<!-- [!code filename:HTML] -->
+<!-- [!code --:2] -->
+<div class="grid-cols-[max-content,auto]"></div>
+<!-- [!code ++:2] -->
+<div class="grid-cols-[max-content_auto]"></div>
+```
+
 ### 移动端的悬停样式
 
-在 v4 中，我们更新了 `hover` 变体，仅在主输入设备支持悬停时才应用：
+在 v4 中，我们更新了 `hover` 变体，仅在主要输入设备支持悬停时才应用：
 
 ```css
 /* [!code filename:CSS] */

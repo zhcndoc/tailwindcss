@@ -11,7 +11,7 @@ export let tile: Tile = {
 
 export let page: Page = {
   title: "在 Ruby on Rails 中安装 Tailwind CSS",
-  description: "在 Ruby on Rails v7+ 项目中设置 Tailwind CSS。",
+  description: "在 Ruby on Rails v8+ 项目中设置 Tailwind CSS。",
 
   // 注意：目前未使用此介绍，但作为参考保留在此，因为当 rails gem 更新为稳定版 v4 版本时，我们希望重新启用它。
   intro: (
@@ -44,7 +44,7 @@ export let steps: Step[] = [
     title: "安装 Tailwind CSS",
     body: (
       <p>
-        安装 <code>tailwindcss-ruby</code> 和 <code>tailwindcss-rails</code> gems，然后运行安装命令在项目中设置 Tailwind CSS。
+        安装 <code>tailwindcss-rails</code> gem，然后运行安装命令，在你的项目中设置 Tailwind CSS。
       </p>
     ),
 
@@ -52,8 +52,7 @@ export let steps: Step[] = [
       name: "终端",
       lang: "shell",
       code: shell`
-        ./bin/bundle add tailwindcss-ruby
-        ./bin/bundle add tailwindcss-rails
+        bundle add tailwindcss-rails
         ./bin/rails tailwindcss:install
       `,
     },
