@@ -170,7 +170,7 @@ export default async function RootLayout({
         <Script src={`data:text/javascript;base64,${btoa(darkModeScript)}`} />
       </head>
       <body>
-        <Fathom />
+        {/* <Fathom /> */}
         <SearchProvider>
           <ThemeProvider>
             <div className="isolate">{children}</div>

@@ -56,6 +56,17 @@ export const description = "用于控制CSS过渡延迟的工具类。";
 
 </Figure>
 
+### 支持减少动态效果
+
+在用户指定偏好减少动态效果的情况下，可以使用 `motion-safe` 和 `motion-reduce` 变体有条件地应用动画和过渡效果：
+
+```html
+<!-- [!code classes:motion-reduce:delay-0] -->
+<button type="button" class="delay-300 motion-reduce:delay-0 ...">
+  <!-- ... -->
+</button>
+```
+
 ### 使用自定义值
 
 <UsingACustomValue element="button" utility="delay" value="1s,250ms" name="过渡延迟" />

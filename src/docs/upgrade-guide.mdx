@@ -412,9 +412,28 @@ Tailwind CSS v4.0 旨在支持现代浏览器，目标为 Safari 16.4、Chrome 1
 </div>
 ```
 
-### 在渐变上使用变体
+### Divide 选择器
 
-在 v3 中，使用变体覆盖渐变的部分会“重置”整个渐变，因此在这个例子中，`to-*` 颜色在深色模式下将是透明的，而不是黄色：
+我们更改了 [`divide-x-*` 和 `divide-y-*` 工具](/docs/border-width#between-children) 使用的选择器，以解决大页面上的严重性能问题：
+
+```css
+/* [!code filename:CSS] */
+/* 之前 */
+.divide-y-4 > :not([hidden]) ~ :not([hidden]) {
+  border-top-width: 4px;
+}
+
+/* 现在 */
+.divide-y-4 > :not(:last-child) {
+  border-bottom-width: 4px;
+}
+```
+
+如果您曾经与行内元素一起使用这些工具，或为子元素添加其他边距/内边距以调整其间距，或调整特定子元素的边框，您的项目可能会看到变化。
+
+### 在渐变中使用变体
+
+在 v3 中，使用变体覆盖渐变的部分会“重置”整个渐变，因此在此示例中，暗模式下的 `to-*` 颜色会变成透明，而不是黄色：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -424,7 +443,7 @@ Tailwind CSS v4.0 旨在支持现代浏览器，目标为 Safari 16.4、Chrome 1
 </div>
 ```
 
-在 v4 中，这些值将得以保留，这与 Tailwind 中其他工具的工作方式更加一致。
+在 v4 中，这些值会被保留，这与 Tailwind 中其他工具的工作方式更加一致。
 
 这意味着如果您想在特定状态下将三段渐变“重置”为两段渐变，您可能需要明确使用 `via-none`：
 
@@ -613,11 +632,24 @@ Preflight 现在将 `<dialog>` 元素的边距重置为与其他元素的一致�
 }
 ```
 
+### The important modifier
+
+在 v3 中，您可以通过在实用程序名称开头（但在任何变体之后）放置 `!` 来标记实用程序为重要。在 v4 中，您应该将 `!` 放在类名的末尾：
+
+```html
+<!-- [!code classes:bg-red-500!,flex!,hover:bg-red-600/50!] -->
+<div class="flex! bg-red-500! hover:bg-red-600/50!">
+  <!-- ... -->
+</div>
+```
+
+旧方式仍然支持以兼容性，但已被弃用。
+
 ### 添加自定义工具
 
-在 v3 中，您在 `@layer utilities` 或 `@layer components` 中定义的任何自定义类将被 Tailwind 视为真正的工具类，并自动与变体如 `hover`、`focus` 或 `lg` 一起工作，区别在于 `@layer components` 始终排在生成的样式表前面。
+在 v3 中，您在 `@layer utilities` 或 `@layer components` 中定义的任何自定义类都会被 Tailwind 识别为真正的实用程序类，并且会自动支持像 `hover`、`focus` 或 `lg` 这样的变体，区别在于 `@layer components` 总是在生成的样式表中优先出现。
 
-在 v4 中，我们使用本机级联层，并不再劫持 `@layer` at-rule，因此我们引入了 `@utility` API 作为替代：
+在 v4 中，我们使用原生层叠层（cascade layers），不再劫持 `@layer` 规则，因此引入了 `@utility` API 作为替代：
 
 ```css
 /* [!code filename:CSS] */
@@ -657,9 +689,9 @@ Preflight 现在将 `<dialog>` 元素的边距重置为与其他元素的一致�
 
 ### 变体堆叠顺序
 
-在 v3 中，堆叠的变体是从右到左应用的，但在 v4 中，我们已将其更新为从左到右应用，以看起来更像 CSS 语法。
+在 v3 中，堆叠的变体是从右向左应用，但在 v4 中，我们已更新为从左向右应用，以更类似 CSS 的语法。
 
-要更新您的项目以适应此变更，请反转项目中任何对变体堆叠顺序的敏感顺序：
+要更新您的项目以适应此变更，请反转项目中任何对变体堆叠顺序敏感的顺序：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -674,13 +706,13 @@ Preflight 现在将 `<dialog>` 元素的边距重置为与其他元素的一致�
 </ul>
 ```
 
-如果您有使用这些变体，可能数量非常少—直接子变体（`*`）和任何排版插件变体（`prose-headings`）是您可能使用的最可能的变量，甚至只有在它们与其他变量堆叠时才会这样做。
+如果您使用了这些变体，数量可能非常少 —— 直接子变体（`*`）和任何排版插件变体（`prose-headings`）是最可能使用的，且仅在它们与其他变体堆叠时才需要注意。
 
 ### 在任意值中使用变量
 
-在 v3 中，您可以在没有 `var()` 的情况下将 CSS 变量用作任意值，但近期对 CSS 的更新使得这通常会很模糊，因此我们在 v4 中相应地更改了语法，以使用圆括号而不是方括号。
+在 v3 中，您可以在没有 `var()` 的情况下将 CSS 变量用作任意值，但最近的 CSS 更新使这通常会引起歧义，因此我们在 v4 中相应更改了语法，使用圆括号代替方括号。
 
-要更新您的项目以适应此变更，请将旧的变量简写语法替换为新的变量简写语法：
+要更新项目，请将旧变量简写语法替换为新的变量简写语法：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -692,9 +724,9 @@ Preflight 现在将 `<dialog>` 元素的边距重置为与其他元素的一致�
 
 ### 网格和 object-position 工具中的任意值
 
-在任意值中，`grid-cols-*`、`grid-rows-*` 和 `object-*` 工具之前会将逗号替换为空格。这种特殊行为在 Tailwind CSS v3 中是为了兼容 v2 而存在的。在 v4.0 中，这种兼容性已不再存在，必须使用下划线来表示空格。
+在任意值中，`grid-cols-*`、`grid-rows-*` 和 `object-*` 工具之前会将逗号替换为空格。这种特殊处理在 Tailwind CSS v3 中是为了向 v2 保持兼容。在 v4.0 中，这种兼容性已取消，必须使用下划线表示空格。
 
-要针对此更改更新您的项目，请将原本用作空格的逗号替换为下划线：
+要针对该更改更新项目，请将逗号替换为下划线：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -717,20 +749,20 @@ Preflight 现在将 `<dialog>` 元素的边距重置为与其他元素的一致�
 }
 ```
 
-如果您以某种方式构建了您的网站，使其依赖触摸设备在点击时触发悬停，则这可能会造成问题。如果这是您的问题，您可以使用自己的变体覆盖 `hover` 变体，使用旧的实现：
+如果您的网站依赖触摸设备的点击触发悬停，这可能造成问题。如果是这样，您可以使用自定义变体覆盖 `hover`，使用旧实现：
 
 ```css
 /* [!code filename:CSS] */
 @custom-variant hover (&:hover);
 ```
 
-一般来说，我们建议将悬停功能视为一种增强，而不是依赖它让您的网站正常运行，因为触摸设备不能真正悬停。
+一般建议将悬停视为一种增强，而非必须，因为触摸设备无法真正悬停。
 
 ### 过渡轮廓颜色
 
 `transition` 和 `transition-color` 工具现在包含 `outline-color` 属性。
 
-这意味着如果您在获得焦点时为轮廓添加自定义颜色，您将看到颜色从默认颜色过渡。为避免这种情况，请确保无条件设置轮廓颜色，或针对两个状态显式设置它：
+这意味着如果您为焦点状态设置了自定义轮廓颜色，颜色将从默认颜色过渡。为避免该问题，请确保无条件设置轮廓颜色，或对两种状态都显式设置：
 
 ```html
 <!-- [!code filename:HTML] -->
@@ -740,13 +772,41 @@ Preflight 现在将 `<dialog>` 元素的边距重置为与其他元素的一致�
 <button class="outline-cyan-500 transition hover:outline-2"></button>
 ```
 
+### 独立的变换属性
+
+`rotate-*`、`scale-*` 和 `translate-*` 工具现在基于 CSS 中的独立 `rotate`、`scale` 和 `translate` 属性。通常不会影响行为，但有几点需要注意：
+
+#### 重置变换
+
+之前您可以通过 `transform-none` 重置旋转、缩放和平移工具。现在不行，需分别重置各个属性：
+
+```html
+<!-- [!code filename:HTML] -->
+<!-- [!code --:2] -->
+<button class="scale-150 focus:transform-none"></button>
+<!-- [!code ++:2] -->
+<button class="scale-150 focus:scale-none"></button>
+```
+
+#### 过渡
+
+如果您自定义了过渡属性列表并包含 `transform`（例如 `transition-[opacity,transform]`），则这些工具将不再过渡。请改为使用单独属性。如需对 `opacity-*` 和 `scale-*` 使用过渡，应使用 `transition-[opacity,scale]`：
+
+```html
+<!-- [!code filename:HTML] -->
+<!-- [!code --:2] -->
+<button class="hover:scale-150 transition-[opacity,transform]"></button>
+<!-- [!code ++:2] -->
+<button class="hover:scale-150 transition-[opacity,scale]"></button>
+```
+
 ### 禁用核心插件
 
-在 v3 中，有一个可以完全禁用框架中特定工具的 `corePlugins` 选项。在 v4 中不再支持此功能。
+在 v3 中，存在 `corePlugins` 选项可完全禁用某些工具，v4 不再支持。
 
 ### 使用 theme() 函数
 
-由于 v4 为您的所有主题值包含了 CSS 变量，我们建议尽可能使用这些变量，而不是 `theme()` 函数：
+由于 v4 为所有主题值生成了 CSS 变量，我们建议尽可能使用这些变量，而非 `theme()` 函数：
 
 ```css
 /* [!code filename:CSS] */
@@ -758,7 +818,7 @@ Preflight 现在将 `<dialog>` 元素的边距重置为与其他元素的一致�
 }
 ```
 
-对于仍需要使用 `theme()` 函数的情况（例如，在 CSS 变量不受支持的媒体查询中），您应使用 CSS 变量名称，而不是旧的点表示法：
+仍需用到 `theme()` 的情况（如 CSS 变量不支持的媒体查询），应使用 CSS 变量名而非旧点表示法：
 
 ```css
 /* [!code filename:CSS] */
@@ -770,24 +830,24 @@ Preflight 现在将 `<dialog>` 元素的边距重置为与其他元素的一致�
 
 ### 使用 JavaScript 配置文件
 
-出于向后兼容性原因，JavaScript 配置文件在 v4 中仍受支持，但不再自动检测。
+出于向后兼容，JavaScript 配置文件在 v4 中仍支持，但不再自动检测。
 
-如果您仍需要使用 JavaScript 配置文件，您可以通过 `@config` 指令显式加载它：
+若仍需使用 JS 配置，可通过 `@config` 指令显式加载：
 
 ```css
 /* [!code filename:CSS] */
 @config "../../tailwind.config.js";
 ```
 
-JavaScript 配置中的 `corePlugins`、`safelist` 和 `separator` 选项在 v4.0 中不受支持。要在 v4 中安全列出工具，请使用 [`@source inline()`](/docs/detecting-classes-in-source-files#safelisting-specific-utilities)。
+JS 配置中的 `corePlugins`、`safelist` 和 `separator` 选项在 v4.0 中不支持。请使用 [`@source inline()`](/docs/detecting-classes-in-source-files#safelisting-specific-utilities) 实现工具的安全列举。
 
 ### JavaScript 中的主题值
 
-在 v3 中，我们导出了一个 `resolveConfig` 函数，您可以使用它将 JavaScript 配置转换为可以在其他 JavaScript 中使用的扁平对象。
+在 v3 中，我们导出了 `resolveConfig` 函数，可将 JS 配置转换为平铺对象。
 
-在 v4 中，我们删除了这个功能，希望人们可以直接使用我们生成的 CSS 变量，这样会更简单，并且会显著减少您的包的大小。
+v4 中删除此功能，建议直接使用生成的 CSS 变量，更简单且显著减小包体积。
 
-例如，流行的 [Motion](https://motion.dev/docs/react-quick-start) 库可以让您在 CSS 变量值之间进行动画：
+例如，流行的 [Motion](https://motion.dev/docs/react-quick-start) 库支持在 CSS 变量值之间动画：
 
 ```jsx
 // [!code filename:JSX]
@@ -795,7 +855,7 @@ JavaScript 配置中的 `corePlugins`、`safelist` 和 `separator` 选项在 v4.
 <motion.div animate={{ backgroundColor: "var(--color-blue-500)" }} />
 ```
 
-如果您需要在 JS 中访问解析后的 CSS 变量值，可以使用 `getComputedStyle` 获取文档根部主题变量的值：
+若需要在 JS 中访问解析的 CSS 变量值，可使用 `getComputedStyle` 获取根元素主题变量：
 
 ```js
 // [!code filename:spaghetti.js]
@@ -805,9 +865,9 @@ let shadow = styles.getPropertyValue("--shadow-xl");
 
 ### 在 Vue、Svelte 或 CSS 模块中使用 @apply
 
-在 v4 中，与您的主要 CSS 文件单独打包的样式表（例如，CSS 模块文件、Vue、Svelte 或 Astro 中的 `<style>` 块等）无法访问在其他文件中定义的主题变量、自定义工具和自定义变体。
+v4 中，与您主 CSS 文件分开打包的样式表（如 CSS 模块文件、Vue、Svelte 或 Astro 中的 `<style>` 块等）无法访问其他文件中定义的主题变量、自定义工具和自定义变体。
 
-要使这些定义可以在这些上下文中使用，请使用 [`@reference`](/docs/functions-and-directives#reference-directive) 导入它们，而不需要在您的包中复制任何 CSS：
+要在这些环境使用这些定义，请使用 [`@reference`](/docs/functions-and-directives#reference-directive) 导入，而无需复制任何 CSS：
 
 ```html
 <!-- [!code filename:Vue] -->
@@ -825,7 +885,7 @@ let shadow = styles.getPropertyValue("--shadow-xl");
 </style>
 ```
 
-或者，您可以直接使用 CSS 主题变量，而不是完全使用 `@apply`，这也将提高性能，因为 Tailwind 不需要处理这些样式：
+或者，可以直接使用 CSS 主题变量，代替完全使用 `@apply`，这也提升性能，因为 Tailwind 不需处理这些样式：
 
 ```html
 <!-- [!code filename:Vue] -->
@@ -841,10 +901,10 @@ let shadow = styles.getPropertyValue("--shadow-xl");
 </style>
 ```
 
-您可以在[使用 Tailwind 和 CSS 模块](/docs/compatibility#css-modules)中找到更多文档。
+详见[使用 Tailwind 和 CSS 模块](/docs/compatibility#css-modules)文档。
 
 ### 使用 Sass、Less 和 Stylus
 
-Tailwind CSS v4.0 并不设计为与 CSS 预处理器如 Sass、Less 或 Stylus 一起使用。可以将 Tailwind CSS 本身视为您的预处理器——您不应该将 Tailwind 与 Sass 一起使用，原因与您不应该将 Sass 与 Stylus 一起使用相同。因此，您无法在 Vue、Svelte、Astro 等中的样式表或 `<style>` 块中使用 Sass、Less 或 Stylus。
+Tailwind CSS v4.0 并非设计用于与 CSS 预处理器（如 Sass、Less 或 Stylus）配合使用。Tailwind 本身就是您的预处理器——您不应将 Tailwind 与 Sass 一起用，原因与您不应将 Sass 与 Stylus 一起用相同。因此，您不能在 Vue、Svelte、Astro 等中的样式表或 `<style>` 块中使用 Sass、Less 或 Stylus。
 
-在[兼容性文档](/docs/compatibility#sass-less-and-stylus)中了解更多信息。
+详见[兼容性文档](/docs/compatibility#sass-less-and-stylus)了解更多信息。

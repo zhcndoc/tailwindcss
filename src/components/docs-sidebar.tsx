@@ -153,7 +153,7 @@ function TopNav() {
             />
           </svg>
 
-          <span>Community</span>
+          <span>社区</span>
         </TopNavLink>
       </li>
     </ul>

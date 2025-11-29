@@ -57,6 +57,17 @@ export const description = "用于控制 CSS 过渡时长的工具类。";
 
 </Figure>
 
+### 支持减少动画
+
+对于用户指定偏好减少动画的情况，可以使用 `motion-safe` 和 `motion-reduce` 变体有条件地应用动画和过渡效果：
+
+```html
+<!-- [!code classes:motion-reduce:duration-0] -->
+<button type="button" class="duration-300 motion-reduce:duration-0 ...">
+  <!-- ... -->
+</button>
+```
+
 ### 使用自定义值
 
 <UsingACustomValue element="button" utility="duration" value="1s,15s" name="过渡时长" />

@@ -53,6 +53,17 @@ export default function TableOfContents({ tableOfContents }: { tableOfContents: 
 
   return (
     <NavList>
+      <div className="relative mt-6 w-full rounded-md border border-gray-950/5 p-2 dark:border-white/10">
+        <a
+          href="https://www.rainyun.com/mm_?s=zhcndoc"
+          target="_blank"
+          className="absolute inset-0 z-10"
+          data-umami-event="ads-tailwindcss-right"
+        />
+        <div className="flex w-full justify-center">
+          <img src="/ads/rainyun_1.png" className="w-full rounded-sm" />
+        </div>
+      </div>
       <NavListHeading>目录</NavListHeading>
       <NavListItems data-toc="true">
         {tableOfContents.map(({ text, slug, children }, i) => (
