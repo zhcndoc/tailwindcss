@@ -124,7 +124,7 @@ export function Header(props: React.PropsWithChildren) {
             <Logo className="h-5 text-black dark:text-white" />
           </Link>
           <VersionPicker />
-          {/* <BlackFriday /> */}
+          <BlackFriday />
         </div>
         <div className="flex items-center gap-6 max-md:hidden">
           <SearchButton className="inline-flex items-center gap-1 rounded-full bg-gray-950/2 px-2 py-1 inset-ring inset-ring-gray-950/8 dark:bg-white/5 dark:inset-ring-white/2">
@@ -152,14 +152,14 @@ export function Header(props: React.PropsWithChildren) {
             博客
           </Link>
           <Link href="/showcase" className="text-sm/6 text-gray-950 dark:text-white">
-            展示柜
+            展示
           </Link>
           <Link href="/sponsor" className="text-sm/6 text-gray-950 dark:text-white">
-            Sponsor
+            赞助
           </Link>
-          <a href="/plus?ref=top" className="group relative px-1.5 text-sm/6 text-sky-800 dark:text-sky-300">
+          <a href="https://www.zhcndoc.com" target="_blank" className="group relative px-1.5 text-sm/6 text-sky-800 dark:text-sky-300">
             <span className="absolute inset-0 border border-dashed border-sky-300/60 bg-sky-400/10 group-hover:bg-sky-400/15 dark:border-sky-300/30" />
-            Plus
+            简中文档
             <svg
               width="5"
               height="5"
@@ -278,21 +278,23 @@ export function Header(props: React.PropsWithChildren) {
 function BlackFriday() {
   return (
     <Link
-      href="https://tailwindcss.com/plus/black-friday"
+      data-umami-event="ads-rainyun"
+      href="https://www.rainyun.com/mm_?s=zhcndoc"
+      target="_blank"
       className="hidden items-center gap-2 rounded-full bg-gray-950 px-2.5 py-0.5 text-xs leading-5 text-white -outline-offset-1 hover:bg-gray-800 min-[71rem]:flex dark:bg-white/10 dark:hover:bg-white/20"
     >
-      <svg viewBox="0 0 16 16" className="size-4 fill-sky-400">
+      {/* <svg viewBox="0 0 16 16" className="size-4 fill-sky-400">
         <path d="M15 3.5a.5.5 0 0 0-.5-.5h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5zm1 9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5z"></path>
         <path d="M7 9.5v4H6v-4zM7 2.5v1H6v-1zM2.5 7v1h-2V7zM15.5 7v1h-5V7zM6 6a1 1 0 1 0-1 1h1zm1 2H5a2 2 0 1 1 2-2z"></path>
         <path d="M6.586 4.586A2 2 0 1 1 8 8H6V6c0-.511.196-1.024.586-1.414M7 7h1a1 1 0 1 0-1-1z"></path>
         <path d="M6.5 7c.794 0 1.492.4 2.035 1.004.54.602.952 1.429 1.199 2.369a.5.5 0 0 1-.967.254c-.216-.825-.566-1.498-.977-1.955C7.381 8.217 6.935 8 6.5 8s-.882.217-1.292.672c-.41.457-.759 1.13-.975 1.955a.5.5 0 0 1-.967-.254c.247-.94.658-1.767 1.2-2.37C5.007 7.402 5.705 7 6.498 7"></path>
-      </svg>
+      </svg> */}
       <div className="flex items-center gap-x-2">
-        Black Friday
+        雨云 RainYun - 企业级云计算服务提供商
         <svg width="2" height="2" fill="currentColor" aria-hidden="true" className="text-gray-400">
           <circle cx="1" cy="1" r="1" />
         </svg>
-        Get Tailwind Plus for up to 33% off
+        新用户注册立享五折
         <svg width="3" height="6" className="ml-1 overflow-visible text-gray-300 dark:text-gray-400" aria-hidden="true">
           <path
             d="M0 0L3 3L0 6"
