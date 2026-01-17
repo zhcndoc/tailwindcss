@@ -57,9 +57,17 @@ export function FooterMeta({ className }: { className?: string }) {
       >
         <ThemeToggle />
         <div className="flex flex-col gap-4 text-sm/6 text-gray-700 sm:flex-row sm:gap-2 sm:pr-4 dark:text-gray-400">
-          <a target="_blank" href="https://www.zhcndoc.com"> 简中文档 </a>
-          {" - "}
-          <a rel="nofollow" target="_blank" href="https://beian.miit.gov.cn"> 沪ICP备2024070610号-3 </a>
+          <span>
+            <a target="_blank" href="https://www.zhcndoc.com">
+              简中文档
+            </a>
+          </span>
+          <span className="max-sm:hidden">&middot;</span>
+          <span>
+            <a rel="nofollow" target="_blank" href="https://beian.miit.gov.cn">
+              沪ICP备2024070610号-3
+            </a>
+          </span>
         </div>
       </div>
     </div>

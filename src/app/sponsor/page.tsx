@@ -8,7 +8,9 @@ import InsidersGitHubRepositoryDarkImage from "./insiders-github-repository-dark
 import InsidersGitHubRepositoryImage from "./insiders-github-repository.png";
 import TailwindcssRaycastExtensionImage from "./tailwindcss-raycast-extension.png";
 import TailwindCSSVsCodeThemeImage from "./tailwindcss-vs-theme.png";
-import { partners, ambassadors, supporters } from "./sponsors";
+import { getShuffledSponsors, type Sponsor } from "@/lib/sponsors";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Sponsor",
@@ -138,7 +140,7 @@ function MessageFromAdam() {
   );
 }
 
-function FeaturedPartners() {
+function FeaturedPartners({ partners }: { partners: Sponsor[] }) {
   return (
     <section>
       <div className="relative mt-4">
@@ -152,7 +154,7 @@ function FeaturedPartners() {
           {partners.map((company, index) => (
             <li key={index} className="max-lg:nth-[2n+1]:line-y lg:max-xl:nth-[3n+1]:line-y xl:nth-[4n+1]:line-y">
               <a
-                href={company.url}
+                href={company.sponsorPageUrl ?? company.url}
                 target="_blank"
                 rel="noopener sponsored"
                 className="grid place-content-center transition-colors hover:bg-gray-950/2.5 sm:px-2 sm:py-4 dark:hover:bg-white/2.5"
@@ -543,7 +545,7 @@ function PartnerPlans() {
           description: "sleep easy knowing that you’re supporting the development of Tailwind CSS.",
         },
       ],
-      remaining: 3,
+      remaining: 2,
     },
   ];
 
@@ -555,21 +557,7 @@ function PartnerPlans() {
           className="bg-gray-950/5 py-[calc(--spacing(2)+1px)] max-lg:-mx-px max-lg:px-[calc(--spacing(2)+1px)] not-first:max-lg:pt-0 lg:-mx-px lg:border-gray-950/5 lg:pr-2 lg:pl-[calc(--spacing(2)+1px)] lg:not-first:border-l lg:not-last:border-r dark:bg-white/10 dark:lg:border-white/10"
         >
           <div className="flex h-full flex-col gap-y-6 rounded-2xl bg-white p-6 sm:rounded-4xl sm:p-10 xl:p-8 2xl:p-10 dark:bg-gray-950/80 dark:outline dark:outline-white/10">
-            <div className="flex items-center justify-between gap-4">
-              <Eyebrow as="h3">{plan.name}</Eyebrow>
-              {plan.remaining !== null && (
-                <p
-                  className={clsx(
-                    "rounded-full px-2 py-0.5 text-[0.6875rem]/4 font-semibold",
-                    plan.remaining < 10
-                      ? "bg-pink-400/25 text-pink-700 dark:text-pink-400"
-                      : "bg-sky-400/25 text-sky-700 dark:text-sky-400",
-                  )}
-                >
-                  {plan.remaining} {plan.remaining === 1 ? "spot" : "spots"} left
-                </p>
-              )}
-            </div>
+            <Eyebrow as="h3">{plan.name}</Eyebrow>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-x-4">
                 <p className="text-5xl font-medium first-letter:font-light">{plan.price}</p>
@@ -743,7 +731,15 @@ function Faqs() {
   );
 }
 
-function Sponsors() {
+function Sponsors({
+  partners,
+  ambassadors,
+  supporters,
+}: {
+  partners: Sponsor[];
+  ambassadors: Sponsor[];
+  supporters: Sponsor[];
+}) {
   return (
     <div>
       <div id="sponsors" className="line-y mt-40 grid scroll-mt-24 grid-cols-1 gap-10 xl:grid-cols-2">
@@ -772,7 +768,7 @@ function Sponsors() {
           {partners.map((company, index) => (
             <li key={index} className="max-lg:nth-[2n+1]:line-y lg:max-xl:nth-[3n+1]:line-y xl:nth-[4n+1]:line-y">
               <a
-                href={company.url}
+                href={company.sponsorPageUrl ?? company.url}
                 target="_blank"
                 rel="noopener sponsored"
                 className="grid place-content-center transition-colors hover:bg-gray-950/2.5 sm:px-2 sm:py-4 dark:hover:bg-white/2.5"
@@ -785,19 +781,17 @@ function Sponsors() {
       </div>
       <h2 className="mt-16 px-4 text-2xl/10 font-medium tracking-tight sm:px-2">Ambassadors</h2>
       <div className="relative mt-4">
-        <div className="pointer-events-none absolute inset-0 z-10 grid grid-cols-2 gap-10 max-md:gap-5 lg:grid-cols-4 xl:grid-cols-6">
+        <div className="pointer-events-none absolute inset-0 z-10 grid grid-cols-2 gap-10 max-md:gap-5 lg:grid-cols-3 xl:grid-cols-4">
           <div className="border-r border-gray-950/5 dark:border-white/10"></div>
           <div className="border-l border-gray-950/5 lg:border-x dark:border-white/10"></div>
-          <div className="border-l border-gray-950/5 max-lg:hidden lg:border-x dark:border-white/10"></div>
-          <div className="border-l border-gray-950/5 max-xl:hidden xl:border-x dark:border-white/10"></div>
-          <div className="border-l border-gray-950/5 max-xl:hidden xl:border-x dark:border-white/10"></div>
-          <div className="border-l border-gray-950/5 max-lg:hidden dark:border-white/10"></div>
+          <div className="border-l border-gray-950/5 max-lg:hidden xl:border-x dark:border-white/10"></div>
+          <div className="border-l border-gray-950/5 max-xl:hidden dark:border-white/10"></div>
         </div>
-        <ul className="grid grid-cols-2 gap-5 md:gap-10 lg:grid-cols-4 xl:grid-cols-6">
+        <ul className="grid grid-cols-2 gap-5 md:gap-10 lg:grid-cols-3 xl:grid-cols-4">
           {ambassadors.map((company, index) => (
-            <li key={index} className="max-lg:nth-[2n+1]:line-y lg:max-xl:nth-[4n+1]:line-y xl:nth-[6n+1]:line-y">
+            <li key={index} className="max-lg:nth-[2n+1]:line-y lg:max-xl:nth-[3n+1]:line-y xl:nth-[4n+1]:line-y">
               <a
-                href={company.url}
+                href={company.sponsorPageUrl ?? company.url}
                 target="_blank"
                 rel="noopener sponsored"
                 className="grid place-content-center transition-colors hover:bg-gray-950/2.5 sm:px-2 sm:py-4 dark:hover:bg-white/2.5"
@@ -810,21 +804,17 @@ function Sponsors() {
       </div>
       <h2 className="mt-16 px-4 text-2xl/10 font-medium tracking-tight sm:px-2">Supporters</h2>
       <div className="relative mt-4">
-        <div className="pointer-events-none absolute inset-0 z-10 grid grid-cols-2 gap-10 max-md:gap-5 lg:grid-cols-6 xl:grid-cols-8">
+        <div className="pointer-events-none absolute inset-0 z-10 grid grid-cols-2 gap-10 max-md:gap-5 lg:grid-cols-3 xl:grid-cols-4">
           <div className="border-r border-gray-950/5 dark:border-white/10"></div>
           <div className="border-l border-gray-950/5 lg:border-x dark:border-white/10"></div>
-          <div className="border-l border-gray-950/5 max-lg:hidden lg:border-x dark:border-white/10"></div>
-          <div className="border-l border-gray-950/5 max-lg:hidden lg:border-x dark:border-white/10"></div>
-          <div className="border-l border-gray-950/5 max-lg:hidden lg:border-x dark:border-white/10"></div>
-          <div className="border-l border-gray-950/5 max-xl:hidden xl:border-x dark:border-white/10"></div>
-          <div className="border-l border-gray-950/5 max-xl:hidden xl:border-x dark:border-white/10"></div>
-          <div className="border-l border-gray-950/5 max-lg:hidden dark:border-white/10"></div>
+          <div className="border-l border-gray-950/5 max-lg:hidden xl:border-x dark:border-white/10"></div>
+          <div className="border-l border-gray-950/5 max-xl:hidden dark:border-white/10"></div>
         </div>
-        <ul className="grid grid-cols-2 gap-5 md:gap-10 lg:grid-cols-6 xl:grid-cols-8">
+        <ul className="grid grid-cols-2 gap-5 md:gap-10 lg:grid-cols-3 xl:grid-cols-4">
           {supporters.map((company, index) => (
-            <li key={index} className="max-lg:nth-[2n+1]:line-y lg:max-xl:nth-[6n+1]:line-y xl:nth-[8n+1]:line-y">
+            <li key={index} className="max-lg:nth-[2n+1]:line-y lg:max-xl:nth-[3n+1]:line-y xl:nth-[4n+1]:line-y">
               <a
-                href={company.url}
+                href={company.sponsorPageUrl ?? company.url}
                 target="_blank"
                 rel="noopener sponsored"
                 className="grid place-content-center transition-colors hover:bg-gray-950/2.5 sm:px-2 sm:py-4 dark:hover:bg-white/2.5"
@@ -840,12 +830,14 @@ function Sponsors() {
 }
 
 export default async function Sponsor() {
+  const { partners, ambassadors, supporters } = getShuffledSponsors();
+
   return (
     <div className="mt-24">
       <Header />
       <div className="isolate">
         <MessageFromAdam />
-        <FeaturedPartners />
+        <FeaturedPartners partners={partners} />
         <Insiders />
         <InsiderPerks />
         <InsiderPerkScreenshots />
@@ -853,7 +845,7 @@ export default async function Sponsor() {
         <PartnerPerks />
         <PartnerPlans />
         <Faqs />
-        <Sponsors />
+        <Sponsors partners={partners} ambassadors={ambassadors} supporters={supporters} />
         <FooterMeta className="px-4 md:px-6 lg:px-8" />
       </div>
     </div>

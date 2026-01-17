@@ -88,18 +88,8 @@ export default async function DocPage(props: Props) {
           <div className="prose mt-10" data-content="true">
             <post.Component />
           </div>
-          <div className="relative mt-6 w-full rounded-md border border-gray-950/5 p-2 dark:border-white/10">
-            <a
-              href="https://www.rainyun.com/mm_?s=zhcndoc"
-              target="_blank"
-              className="absolute inset-0 z-10"
-              data-umami-event="ads-tailwindcss-bottom"
-            />
-            <div className="flex w-full justify-center">
-              <img src="/ads/rainyun_2.png" className="w-full rounded-sm" />
-            </div>
-          </div>
           <Pagination slug={params.slug} />
+          <div className="wwads-cn wwads-horizontal w-full" data-id="354"></div>
         </div>
         <div className="max-xl:hidden">
           <div className="sticky top-14 max-h-[calc(100svh-3.5rem)] overflow-x-hidden px-6 pt-10 pb-24">

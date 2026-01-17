@@ -7,46 +7,43 @@ import { Example } from "@/components/example";
 import { CodeExampleStack } from "@/components/code-example";
 
 export const meta = {
-  title: "Vanilla JavaScript support for Tailwind Plus",
+  title: "Tailwind Plus 的原生 JavaScript 支持",
   description:
-    "Every UI block in Tailwind Plus is now fully functional, accessible, and interactive, even if you don't use a framework like React or Vue.",
+    "Tailwind Plus 中的每个 UI 模块现在都完全可用、无障碍且具备交互功能，即使您不使用 React 或 Vue 这类框架。",
   date: "2025-07-25T14:30:00.000Z",
   authors: [philippspiess, adamwathan],
   image: card,
   excerpt: (
     <>
-      There are a lot of UI blocks in Tailwind Plus that need JavaScript to really be useful, like dialogs, dropdowns,
-      command palettes, and more. And unless you're a React or Vue user, using those UI blocks has always meant writing
-      all of that tricky JavaScript yourself. Well today that finally changes — every UI block in Tailwind Plus is now
-      fully functional, accessible, and interactive, including the plain HTML examples.
+      Tailwind Plus 中有许多 UI 模块需要 JavaScript 才能真正发挥作用，比如对话框、下拉菜单、命令面板等等。如果您不是 React 或 Vue 用户，以前使用这些 UI 模块就意味着必须自己编写所有那些复杂的 JavaScript 代码。今天这一切终于改变了——Tailwind Plus 中的每个 UI 模块现在都完全可用、无障碍且具备交互功能，包括纯 HTML 的示例。
     </>
   ),
 };
 
-<Image src={hero} alt="Tailwind Plus Elements" />
+<Image src={hero} alt="Tailwind Plus 元素" />
 
-There are a lot of UI blocks in Tailwind Plus that need JavaScript to really be useful, like dialogs, dropdowns, command palettes, and more. And unless you're a React or Vue user, using those UI blocks has always meant writing all of that tricky JavaScript yourself.
+Tailwind Plus 中有许多 UI 模块需要 JavaScript 才能真正发挥作用，比如对话框、下拉菜单、命令面板等等。如果您不是 React 或 Vue 用户，以前使用这些 UI 模块就意味着必须自己编写所有那些复杂的 JavaScript 代码。
 
-Well today that finally changes — **every UI block in Tailwind Plus is now fully functional, accessible, and interactive**, including the plain HTML examples.
+今天这一切终于改变了——**Tailwind Plus 中的每个 UI 模块现在都完全可用、无障碍且具备交互功能**，包括纯 HTML 示例。
 
-Now you can use any [dropdown](https://tailwindcss.com/plus/ui-blocks/application-ui/elements/dropdowns), [command palette](https://tailwindcss.com/plus/ui-blocks/application-ui/navigation/command-palettes), [dialog](https://tailwindcss.com/plus/ui-blocks/application-ui/overlays/modal-dialogs), [drawer](https://tailwindcss.com/plus/ui-blocks/application-ui/overlays/drawers), and more in any project you're working on — no JavaScript framework required.
+现在，您可以在任何项目中使用任意 [下拉菜单](https://tailwindcss.com/plus/ui-blocks/application-ui/elements/dropdowns)、[命令面板](https://tailwindcss.com/plus/ui-blocks/application-ui/navigation/command-palettes)、[对话框](https://tailwindcss.com/plus/ui-blocks/application-ui/overlays/modal-dialogs)、[抽屉](https://tailwindcss.com/plus/ui-blocks/application-ui/overlays/drawers) 等，无需任何 JavaScript 框架。
 
 ---
 
-## No framework required
+## 无需框架
 
-To pull this off, we built `@tailwindplus/elements` — a library we're releasing exclusively for [Tailwind Plus](https://tailwindcss.com/plus) customers.
+为实现这一点，我们构建了 `@tailwindplus/elements` —— 这是一个专门为 [Tailwind Plus](https://tailwindcss.com/plus) 用户发布的库。
 
-Elements is a collection of headless [custom elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements) that wrap up all of the complex behavior needed to build custom interactive UIs using just HTML, and can be styled any way you like using utility classes or custom CSS.
+Elements 是一组无界面（headless）的 [自定义元素](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements)，封装了构建交互式自定义 UI 需要的所有复杂行为，仅用 HTML 即可实现，样式可以用工具类或自定义 CSS 任意调整。
 
-Instead of being coupled to a specific JavaScript framework, these custom elements work anywhere you can use a `<script>` tag:
+这些自定义元素不依赖特定的 JavaScript 框架，能在任何能使用 `<script>` 标签的地方运行：
 
 ```html
 /* [!code filename:index.html] */
 <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 ```
 
-Here's what it look like to build a [custom dropdown](https://tailwindcss.com/plus/ui-blocks/application-ui/elements/dropdowns#component-f8a14da22f26a67757b19f2fe3ca00ed) menu with Elements:
+下面是用 Elements 构建一个 [自定义下拉菜单](https://tailwindcss.com/plus/ui-blocks/application-ui/elements/dropdowns#component-f8a14da22f26a67757b19f2fe3ca00ed) 的示例：
 
 <Video
   src="https://assets.tailwindcss.com/blog/vanilla-js-support-for-tailwind-plus/intro-video.mp4"
@@ -67,11 +64,11 @@ Here's what it look like to build a [custom dropdown](https://tailwindcss.com/pl
   <!-- [!code highlight:2] -->
   <el-menu anchor="bottom end" popover class="w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
     <div class="py-1">
-      <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Account settings</a>
-      <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Support</a>
-      <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">License</a>
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">账号设置</a>
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">支持</a>
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">许可证</a>
       <form action="#" method="POST">
-        <button type="submit" class="block w-full px-4 py-2 text-left text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">Sign out</button>
+        <button type="submit" class="block w-full px-4 py-2 text-left text-sm text-gray-700 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden">登出</button>
       </form>
     </div>
   <!-- [!code highlight:3] -->
@@ -79,13 +76,13 @@ Here's what it look like to build a [custom dropdown](https://tailwindcss.com/pl
 </el-dropdown>
 ```
 
-And here's what it looks like to build a [custom select](https://tailwindcss.com/plus/ui-blocks/application-ui/forms/select-menus#component-e0f6280e5501d69e188768909fda485e):
+下面是创建一个 [自定义选择框](https://tailwindcss.com/plus/ui-blocks/application-ui/forms/select-menus#component-e0f6280e5501d69e188768909fda485e) 的示例：
 
 <Video src="https://assets.tailwindcss.com/blog/vanilla-js-support-for-tailwind-plus/select.mp4" alt="Select" />
 
 {/* prettier-ignore */}
 ```html
-<label for="select" class="block text-sm/6 font-medium text-gray-900">Assigned to</label>
+<label for="select" class="block text-sm/6 font-medium text-gray-900">分配给</label>
 <!-- [!code highlight:2] -->
 <el-select id="select" name="selected" value="4" class="mt-2 block">
   <button type="button" class="grid w-full cursor-default grid-cols-1 ...">
@@ -104,7 +101,7 @@ And here's what it looks like to build a [custom select](https://tailwindcss.com
         <span aria-hidden="true" class="inline-block size-2 shrink-0 ..."></span>
         <span class="ml-3 block group-aria-selected/option:font-semibold ...">
           Wade Cooper
-          <span class="sr-only"> is online</span>
+          <span class="sr-only"> 在线</span>
         </span>
       </div>
       <span class="group-not-aria-selected/option:hidden group-focus/option:text-white in-[el-selectedcontent]:hidden ...">
@@ -121,9 +118,9 @@ And here's what it looks like to build a [custom select](https://tailwindcss.com
 </el-select>
 ```
 
-See those custom HTML elements like `<el-select>` and `<el-options>`? Those are the secret sauce that make everything work, including automatic ARIA attribute management, focus handling, keyboard support, and more.
+看到这些像 `<el-select>` 和 `<el-options>` 这样的自定义 HTML 元素了吗？它们就是实现所有功能的秘诀，包括自动 ARIA 属性管理、焦点处理、键盘支持等等。
 
-You can even build something as sophisticated as a custom [command palette](https://tailwindcss.com/plus/ui-blocks/application-ui/navigation/command-palettes#component-5e859372042e1b3b308dc51f3ac8bad6) with Elements, without having to write any of your own JavaScript:
+您甚至可以用 Elements 构建一个和 [命令面板](https://tailwindcss.com/plus/ui-blocks/application-ui/navigation/command-palettes#component-5e859372042e1b3b308dc51f3ac8bad6) 一样复杂的功能，而无需自己写任何 JavaScript：
 
 <Video
   src="https://assets.tailwindcss.com/blog/vanilla-js-support-for-tailwind-plus/command-palette-demo.mp4"
@@ -133,7 +130,7 @@ You can even build something as sophisticated as a custom [command palette](http
 {/* prettier-ignore */}
 ```html
 <button command="show-modal" commandfor="dialog" class="rounded-md bg-white/80 px-2.5 py-1.5 text-sm font-semibold text-gray-900 hover:bg-white/90">
-  Open command palette
+  打开命令面板
 </button>
 
 <!-- [!code highlight:2] -->
@@ -146,7 +143,7 @@ You can even build something as sophisticated as a custom [command palette](http
       <el-dialog-panel class="mx-auto block max-w-3xl transform overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black/5 transition-all data-closed:scale-95 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in">
         <el-command-palette class="divide-y divide-gray-100">
           <div class="grid grid-cols-1">
-            <input type="text" autofocus placeholder="Search..." class="col-start-1 row-start-1 h-12 w-full pr-4 pl-11 text-base text-gray-900 outline-hidden placeholder:text-gray-400 sm:text-sm" />
+            <input type="text" autofocus placeholder="搜索..." class="col-start-1 row-start-1 h-12 w-full pr-4 pl-11 text-base text-gray-900 outline-hidden placeholder:text-gray-400 sm:text-sm" />
             <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 ml-4 size-5 self-center text-gray-400">
               <path d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" fill-rule="evenodd" />
             </svg>
@@ -157,7 +154,7 @@ You can even build something as sophisticated as a custom [command palette](http
               <!-- [!code highlight:3] -->
               <el-command-list class="-mx-2 block text-sm text-gray-700">
                 <el-defaults>
-                  <h2 class="mx-2 mt-2 mb-4 text-xs font-semibold text-gray-500">Recent searches</h2>
+                  <h2 class="mx-2 mt-2 mb-4 text-xs font-semibold text-gray-500">最近搜索</h2>
                   <div class="text-sm text-gray-700">
                     <a id="person-suggestion-6" href="#" class="group flex cursor-default items-center rounded-md p-2 select-none focus:outline-hidden aria-selected:bg-gray-100 aria-selected:text-gray-900">
                       <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-6 flex-none rounded-full" />
@@ -187,8 +184,8 @@ You can even build something as sophisticated as a custom [command palette](http
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="mx-auto size-6 text-gray-400">
                   <path d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <p class="mt-4 font-semibold text-gray-900">No people found</p>
-                <p class="mt-2 text-gray-500">We couldn't find anything with that term. Please try again.</p>
+                <p class="mt-4 font-semibold text-gray-900">未找到用户</p>
+                <p class="mt-2 text-gray-500">未找到匹配的内容，请重试。</p>
                 <!-- [!code highlight:2] -->
               </el-no-results>
             </div>
@@ -198,18 +195,18 @@ You can even build something as sophisticated as a custom [command palette](http
               <div class="flex-none p-6 text-center">
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="mx-auto size-16 rounded-full" />
                 <h2 class="mt-3 font-semibold text-gray-900">Leslie Alexander</h2>
-                <p class="text-sm/6 text-gray-500">Co-Founder / CEO</p>
+                <p class="text-sm/6 text-gray-500">联合创始人 / CEO</p>
               </div>
               <div class="flex flex-auto flex-col justify-between p-6">
                 <dl class="grid grid-cols-1 gap-x-6 gap-y-3 text-sm text-gray-700">
-                  <dt class="col-end-1 font-semibold text-gray-900">Phone</dt>
+                  <dt class="col-end-1 font-semibold text-gray-900">电话</dt>
                   <dd>1-493-747-9031</dd>
-                  <dt class="col-end-1 font-semibold text-gray-900">URL</dt>
+                  <dt class="col-end-1 font-semibold text-gray-900">网址</dt>
                   <dd class="truncate"><a href="https://example.com" class="text-indigo-600 underline">https://example.com</a></dd>
-                  <dt class="col-end-1 font-semibold text-gray-900">Email</dt>
+                  <dt class="col-end-1 font-semibold text-gray-900">邮箱</dt>
                   <dd class="truncate"><a href="mailto:lesliealexander@example.com" class="text-indigo-600 underline">lesliealexander@example.com</a></dd>
                 </dl>
-                <button type="button" class="mt-6 w-full rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Send message</button>
+                <button type="button" class="mt-6 w-full rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">发送消息</button>
               </div>
               <!-- [!code highlight:2] -->
             </el-command-preview>
@@ -224,40 +221,40 @@ You can even build something as sophisticated as a custom [command palette](http
 </el-dialog>
 ```
 
-To support all of the UI blocks in Tailwind Plus, we're shipping the following primitives in this first release of Elements:
+为了支持 Tailwind Plus 中所有 UI 模块，这个 Elements 首个版本中包含了以下基础组件：
 
-- [Autocomplete](https://tailwindcss.com/plus/ui-blocks/documentation/autocomplete) — for building things like custom [Comboboxes](https://tailwindcss.com/plus/ui-blocks/application-ui/forms/comboboxes).
-- [Command palette](https://tailwindcss.com/plus/ui-blocks/documentation/command-palette) — for building custom [Command Palettes](https://tailwindcss.com/plus/ui-blocks/application-ui/navigation/command-palettes).
-- [Dialog](https://tailwindcss.com/plus/ui-blocks/documentation/dialog) — for building custom [Modal Dialogs](https://tailwindcss.com/plus/ui-blocks/application-ui/overlays/modal-dialogs), [Drawers](https://tailwindcss.com/plus/ui-blocks/application-ui/overlays/drawers), and more.
-- [Disclosure](https://tailwindcss.com/plus/ui-blocks/documentation/disclosure) — for building collapsible [FAQs](https://tailwindcss.com/plus/ui-blocks/marketing/sections/faq-sections#component-8699d80b13ef524eb573e54b4d4b89d1), mobile menus in [Navbars](https://tailwindcss.com/plus/ui-blocks/application-ui/navigation/navbars), and more.
-- [Dropdown menu](https://tailwindcss.com/plus/ui-blocks/documentation/dropdown-menu) — for building custom [Dropdowns](https://tailwindcss.com/plus/ui-blocks/application-ui/elements/dropdowns), of course.
-- [Popover](https://tailwindcss.com/plus/ui-blocks/documentation/popover) — for building custom [Flyout Menus](https://tailwindcss.com/plus/ui-blocks/marketing/elements/flyout-menus) and more.
-- [Select](https://tailwindcss.com/plus/ui-blocks/documentation/select) — for building custom [Select Menus](https://tailwindcss.com/plus/ui-blocks/application-ui/forms/select-menus#component-8298198b136afab3bb19391ae716077f).
-- [Tabs](https://tailwindcss.com/plus/ui-blocks/documentation/tabs) — for building custom tabs, like we use in custom [Textareas](https://tailwindcss.com/plus/ui-blocks/application-ui/forms/textareas#component-532d35bcb49664c16a4f877d71658b12) and [Product Overviews](https://tailwindcss.com/plus/ui-blocks/ecommerce/components/product-overviews#component-13a89c2dc50a31afd66541dc28fa3c13).
+- [自动完成](https://tailwindcss.com/plus/ui-blocks/documentation/autocomplete)—— 用于构建自定义的 [组合框](https://tailwindcss.com/plus/ui-blocks/application-ui/forms/comboboxes)。
+- [命令面板](https://tailwindcss.com/plus/ui-blocks/documentation/command-palette)—— 用于构建自定义的 [命令面板](https://tailwindcss.com/plus/ui-blocks/application-ui/navigation/command-palettes)。
+- [对话框](https://tailwindcss.com/plus/ui-blocks/documentation/dialog)—— 用于自定义 [模态对话框](https://tailwindcss.com/plus/ui-blocks/application-ui/overlays/modal-dialogs)、[抽屉](https://tailwindcss.com/plus/ui-blocks/application-ui/overlays/drawers) 等。
+- [可展开内容](https://tailwindcss.com/plus/ui-blocks/documentation/disclosure)—— 用于构建可折叠的 [常见问题](https://tailwindcss.com/plus/ui-blocks/marketing/sections/faq-sections#component-8699d80b13ef524eb573e54b4d4b89d1)、移动端菜单（在 [导航栏](https://tailwindcss.com/plus/ui-blocks/application-ui/navigation/navbars)中）等。
+- [下拉菜单](https://tailwindcss.com/plus/ui-blocks/documentation/dropdown-menu)—— 用于构建自定义的 [下拉菜单](https://tailwindcss.com/plus/ui-blocks/application-ui/elements/dropdowns)。
+- [弹出框](https://tailwindcss.com/plus/ui-blocks/documentation/popover)—— 用于构建自定义的 [飞出菜单](https://tailwindcss.com/plus/ui-blocks/marketing/elements/flyout-menus)等。
+- [选择框](https://tailwindcss.com/plus/ui-blocks/documentation/select)—— 用于构建自定义的 [选择菜单](https://tailwindcss.com/plus/ui-blocks/application-ui/forms/select-menus#component-8298198b136afab3bb19391ae716077f)。
+- [选项卡](https://tailwindcss.com/plus/ui-blocks/documentation/tabs)—— 用于构建自定义选项卡，就像我们在自定义 [多行文本框](https://tailwindcss.com/plus/ui-blocks/application-ui/forms/textareas#component-532d35bcb49664c16a4f877d71658b12)和[产品概览](https://tailwindcss.com/plus/ui-blocks/ecommerce/components/product-overviews#component-13a89c2dc50a31afd66541dc28fa3c13)中使用的那样。
 
-If you're a Tailwind Plus customer, head over to the brand new [Elements documentation](https://tailwindcss.com/plus/ui-blocks/documentation/elements) to learn more about how everything works and check out some examples.
-
----
-
-## Leveraging the modern web
-
-We leaned on a lot of modern platform features to keep Elements as light and native as a possible.
-
-- [Custom elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements) as a cross-platform component abstraction.
-- [The `popover` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover) to manage overlays and popovers with automatic top-layer rendering together with [`beforetoggle`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/beforetoggle_event) to control transitions.
-- [Native `<dialog>` elements](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement) for focus trapping and top-layer rendering.
-- [Invoker commands](https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API) to declaratively manage interactive elements, like toggling a custom disclosure.
-- [`ElementInternals`](https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals) to make our custom form controls work like native form controls.
-
-We also bundle any necessary polyfills for these features to make sure that Elements works in all of the same [browsers supported by Tailwind CSS v4.0](https://tailwindcss.com/docs/compatibility#browser-support). This means Elements will only get smaller as these modern platform features become more widely available.
+如果您是 Tailwind Plus 用户，请访问全新的 [Elements 文档](https://tailwindcss.com/plus/ui-blocks/documentation/elements) 了解详细原理并查看示例。
 
 ---
 
-## Components that work everywhere
+## 利用现代 Web 技术
 
-Since HTML is the lowest common denominator between all web frameworks, Elements makes it possible for all of HTML-only UI blocks in Tailwind Plus to work literally anywhere.
+我们大量依赖现代平台特性，确保 Elements 轻量且尽可能原生高效。
 
-Here's one of our [Combobox](https://tailwindcss.com/plus/ui-blocks/application-ui/forms/comboboxes) examples wired up with two-way binding in [Svelte](https://svelte.dev/):
+- 使用 [自定义元素](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements) 作为跨平台组件抽象。
+- 利用 [`popover` 属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover) 管理弹出层和弹出框，配合 [`beforetoggle`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/beforetoggle_event) 控制过渡动画。
+- 使用原生的 `<dialog>` 元素实现焦点锁定和顶层渲染。
+- 通过 [Invoker 命令](https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API) 声明式管理交互元素，比如切换自定义折叠内容。
+- 利用 [`ElementInternals`](https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals) 实现自定义表单控件与原生表单控件一样的行为。
+
+我们还打包了这些特性所需的所有 polyfill，确保 Elements 能在所有 [Tailwind CSS v4.0 支持的浏览器](https://tailwindcss.com/docs/compatibility#browser-support)中正常运行。随着现代平台特性的普及，Elements 会变得更加轻量。
+
+---
+
+## 适用于所有环境的组件
+
+HTML 是所有 Web 框架间的最低公共分母，Elements 让所有仅用 HTML 的 Tailwind Plus UI 模块都能在任何地方运行。
+
+下面是我们一个带双向绑定的 [组合框](https://tailwindcss.com/plus/ui-blocks/application-ui/forms/comboboxes) 示例，使用的是 [Svelte](https://svelte.dev/)：
 
 {/* prettier-ignore */}
 ```html
@@ -265,12 +262,12 @@ Here's one of our [Combobox](https://tailwindcss.com/plus/ui-blocks/application-
 <script>
   let input = $state("");
   function handleSubmit() {
-    alert(`Selected: ${input}`);
+    alert(`已选中: ${input}`);
   }
 </script>
 
 <form onsubmit={handleSubmit}>
-  <label for="autocomplete" class="block text-sm/6 font-medium text-gray-900">Assigned to</label>
+  <label for="autocomplete" class="block text-sm/6 font-medium text-gray-900">分配给</label>
   <el-autocomplete class="relative mt-2 block">
     <input bind:value={input} id="autocomplete" type="text" class="block w-full rounded-md ..." />
     <button type="button" class="absolute inset-y-0 right-0 flex ...">
@@ -283,11 +280,11 @@ Here's one of our [Combobox](https://tailwindcss.com/plus/ui-blocks/application-
       <el-option value="Leslie Alexander" class="block truncate aria-selected:bg-indigo-600 aria-selected:text-white ...">Leslie Alexander</el-option>
     </el-options>
   </el-autocomplete>
-  <button type="submit">Submit</button>
+  <button type="submit">提交</button>
 </form>
 ```
 
-Or here's a custom select in [Rails](https://rubyonrails.org/) that's included in form submissions, just like a native form control:
+或者这是一个在 [Rails](https://rubyonrails.org/) 中使用的自定义选择框，可以像原生表单控件一样参与表单提交：
 
 <CodeExampleStack>
 
@@ -301,7 +298,7 @@ class OrdersController < ApplicationController
 
   def create
     car = Car.find(params[:car_id])
-    flash[:notice] = "Selected car: #{car.name}"
+    flash[:notice] = "选中的车辆: #{car.name}"
     redirect_to root_path
   end
 end
@@ -310,7 +307,7 @@ end
 ```erb
 // [!code filename:app/views/orders/new.html.erb]
 <%= form_with do |form| %>
-  <%= form.label :car_id, "Select model:" %>
+  <%= form.label :car_id, "选择车型：" %>
 
   <el-select name="car_id" id="car_id" value="<%= @selected_car.id %>">
     <button type="button" class="grid w-full cursor-default grid-cols-1 ...">
@@ -338,13 +335,13 @@ end
     </el-options>
   </el-select>
 
-  <%= form.submit "Place order" %>
+  <%= form.submit "下单" %>
 <% end %>
 ```
 
 </CodeExampleStack>
 
-You can even use Elements in [React](https://react.dev/) instead of using a React-only library like Headless UI or React Aria if you want:
+如果你愿意，也可以在 [React](https://react.dev/) 中使用 Elements，而不是只能用 Headless UI 或 React Aria 这种仅适用于 React 的库：
 
 {/* prettier-ignore */}
 ```jsx
@@ -354,7 +351,7 @@ export function Menu() {
   return (
     <el-dropdown className="relative inline-block text-left">
       <button className="inline-flex w-full justify-center ...">
-        Menu
+        菜单
         <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="-mr-1 size-5 text-gray-400">
           <path d="M5.22 8.22a.75.75 ..." clip-rule="evenodd" fill-rule="evenodd" />
         </svg>
@@ -362,9 +359,9 @@ export function Menu() {
 
       <el-menu anchor="bottom end" popover className="transition transition-discrete [--anchor-gap:--spacing(2)] focus:outline-hidden data-closed:scale-95 ...">
         <div className="py-1">
-          <Link href="/" className="block px-4 py-2 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden ...">Home</Link>
-          <Link href="/about" className="block px-4 py-2 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden ...">About</Link>
-          <Link href="/faq" className="block px-4 py-2 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden ...">FAQ</Link>
+          <Link href="/" className="block px-4 py-2 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden ...">首页</Link>
+          <Link href="/about" className="block px-4 py-2 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden ...">关于</Link>
+          <Link href="/faq" className="block px-4 py-2 focus:bg-gray-100 focus:text-gray-900 focus:outline-hidden ...">常见问题</Link>
         </div>
       </el-menu>
     </el-dropdown>
@@ -374,10 +371,10 @@ export function Menu() {
 
 ---
 
-## Try it out today
+## 现在就试试吧
 
-All of the updated UI blocks and the new Elements library are available now to all [Tailwind Plus](https://tailwindcss.com/plus) customers.
+所有更新后的 UI 模块和新的 Elements 库现已提供给所有 [Tailwind Plus](https://tailwindcss.com/plus) 用户。
 
-Check out UI block categories like [Dropdowns](https://tailwindcss.com/plus/ui-blocks/application-ui/elements/dropdowns) and [Command Palettes](https://tailwindcss.com/plus/ui-blocks/application-ui/navigation/command-palettes) to play with these updated interactive examples yourself, and explore the new [Elements documentation](https://tailwindcss.com/plus/ui-blocks/documentation/elements) to learn how it all works and how to customize things for your projects.
+访问像 [下拉菜单](https://tailwindcss.com/plus/ui-blocks/application-ui/elements/dropdowns) 和 [命令面板](https://tailwindcss.com/plus/ui-blocks/application-ui/navigation/command-palettes) 这样的 UI 模块分类，亲自体验这些更新的交互式示例，探索全新的 [Elements 文档](https://tailwindcss.com/plus/ui-blocks/documentation/elements)，了解所有功能如何工作，以及如何为你的项目定制。
 
-We can't wait to see what you'll build with this stuff!
+我们迫不及待想看到你用这些东西创造出什么！
