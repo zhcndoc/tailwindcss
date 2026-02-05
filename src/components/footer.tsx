@@ -15,9 +15,9 @@ export function FooterSitemap({ className }: { className?: string }) {
           </div>
         </div>
         <div className="flex flex-1 flex-col gap-10">
-          <div>
+          {/* <div>
             <TailwindPlus />
-          </div>
+          </div> */}
           <div>
             <Community />
           </div>
@@ -32,9 +32,9 @@ export function FooterSitemap({ className }: { className?: string }) {
         <div className="border-x border-b border-gray-950/5 py-10 pl-2 not-md:border-0 md:border-b-0 dark:border-white/10">
           <TailwindCSS />
         </div>
-        <div className="border-x border-b border-gray-950/5 py-10 pl-2 not-md:border-0 md:border-b-0 dark:border-white/10">
+        {/* <div className="border-x border-b border-gray-950/5 py-10 pl-2 not-md:border-0 md:border-b-0 dark:border-white/10">
           <TailwindPlus />
-        </div>
+        </div> */}
         <div className="border-x border-b border-gray-950/5 py-10 pl-2 not-md:border-0 sm:border-b-0 dark:border-white/10">
           <Resources />
         </div>

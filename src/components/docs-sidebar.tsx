@@ -41,7 +41,7 @@ function TopNav() {
           文档
         </TopNavLink>
       </li>
-      <li>
+      {/* <li>
         <TopNavLink href="/plus/ui-blocks?ref=sidebar">
           <svg viewBox="0 0 16 16" fill="none">
             <path data-outline d="m11 8 .5.25L15 10.5 8 15l-7-4.5 3.5-2.25L5 8" />
@@ -77,9 +77,9 @@ function TopNav() {
           </svg>
           UI 套件
         </TopNavLink>
-      </li>
+      </li> */}
       <li>
-        <TopNavLink href="https://play.tailwindcss.com/">
+        <TopNavLink href="https://play.tailwindcss.com/" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 16 16" fill="none">
             <rect data-highlight x="1.5" y="1.5" width="13" height="13" rx="2" />
             <rect data-outline x="1.5" y="1.5" width="13" height="13" rx="2" />

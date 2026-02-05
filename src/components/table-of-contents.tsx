@@ -53,7 +53,7 @@ export default function TableOfContents({ tableOfContents }: { tableOfContents: 
 
   return (
     <NavList>
-      <div className="wwads-cn wwads-vertical w-full mt-0!" data-id="354"></div>
+      <div className="wwads-cn wwads-vertical max-w-50 mt-0!" data-id="354"></div>
       <NavListHeading>目录</NavListHeading>
       <NavListItems data-toc="true">
         {tableOfContents.map(({ text, slug, children }, i) => (
