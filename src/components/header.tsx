@@ -9,7 +9,8 @@ import { IconButton } from "./icon-button";
 import { SearchButton } from "./search";
 import { version } from "tailwindcss/package.json";
 
-const TAILWINDCSS_VERSION = version.split(".").slice(0, 2).join(".");
+let TAILWINDCSS_VERSION = version.split(".").slice(0, 2).join(".");
+TAILWINDCSS_VERSION = "4.2";
 
 function Logo(props: React.ComponentProps<"svg">) {
   return (
