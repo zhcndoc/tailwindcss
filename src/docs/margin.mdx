@@ -16,6 +16,8 @@ export const description = "用于控制元素外边距的工具类。";
       ["my", "margin-block"],
       ["ms", "margin-inline-start"],
       ["me", "margin-inline-end"],
+      ["mbs", "margin-block-start"],
+      ["mbe", "margin-block-end"],
       ["mt", "margin-top"],
       ["mr", "margin-right"],
       ["mb", "margin-bottom"],
@@ -303,6 +305,13 @@ export const description = "用于控制元素外边距的工具类。";
 
 </Figure>
 
+### 通过 `mbs-<number>` 和 `mbe-<number>` 设置块逻辑起始和结束的外边距，这两个属性会根据书写模式映射到上边或下边：
+
+```html
+<!-- [!code classes:mbs-8] -->
+<div class="mbs-8 ...">mbs-8</div>
+```
+
 ### 在子元素之间添加间距
 
 使用 `space-x-<number>` 或 `space-y-<number>` 工具类，例如 `space-x-4` 和 `space-y-8` 来控制元素之间的间距：
@@ -385,4 +394,4 @@ export const description = "用于控制元素外边距的工具类。";
 
 ## 自定义主题
 
-<CustomizingYourSpacingScale utilities={["m", "mx", "my", "ms", "me", "mt", "mr", "mb", "ml"]} />
+<CustomizingYourSpacingScale utilities={["m", "mx", "my", "ms", "me", "mbs", "mbe", "mt", "mr", "mb", "ml"]} />

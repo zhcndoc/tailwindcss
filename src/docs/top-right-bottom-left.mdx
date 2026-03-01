@@ -13,8 +13,10 @@ export const description = "控制定位元素放置的工具类。";
     { prefix: "inset", property: "inset" },
     { prefix: "inset-x", property: "inset-inline" },
     { prefix: "inset-y", property: "inset-block" },
-    { prefix: "start", property: "inset-inline-start" },
-    { prefix: "end", property: "inset-inline-end" },
+    { prefix: "inset-s", property: "inset-inline-start" },
+    { prefix: "inset-e", property: "inset-inline-end" },
+    { prefix: "inset-bs", property: "inset-block-start" },
+    { prefix: "inset-be", property: "inset-block-end" },
     { prefix: "top", property: "top" },
     { prefix: "right", property: "right" },
     { prefix: "bottom", property: "bottom" },
@@ -201,7 +203,7 @@ export const description = "控制定位元素放置的工具类。";
 
 ### 使用逻辑属性
 
-使用 `start-<number>` 或 `end-<number>` 工具类，如 `start-0` 和 `end-4` 来设置 `inset-inline-start` 和 `inset-inline-end` 的 [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)，这些属性根据文本方向映射到左侧或右侧：
+使用 `inset-s-<number>` 或 `inset-e-<number>` 工具类，如 `inset-s-0` 和 `inset-e-4` 来设置 `inset-inline-start` 和 `inset-inline-end` 的 [逻辑属性](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)，这些属性根据文本方向映射到左侧或右侧：
 
 <Figure>
 
@@ -231,15 +233,15 @@ export const description = "控制定位元素放置的工具类。";
 </Example>
 
 ```html
-<!-- [!code classes:start-0] -->
+<!-- [!code classes:inset-s-0] -->
 <div dir="ltr">
   <div class="relative size-32 ...">
-    <div class="absolute start-0 top-0 size-14 ..."></div>
+    <div class="absolute inset-s-0 top-0 size-14 ..."></div>
   </div>
   <div>
     <div dir="rtl">
       <div class="relative size-32 ...">
-        <div class="absolute start-0 top-0 size-14 ..."></div>
+        <div class="absolute inset-s-0 top-0 size-14 ..."></div>
       </div>
       <div></div>
     </div>
@@ -258,7 +260,19 @@ export const description = "控制定位元素放置的工具类。";
 ### 响应式设计
 
 <ResponsiveDesign
-  properties={["inset", "inset-x", "inset-y", "start", "end", "top", "left", "bottom", "right"]}
+  properties={[
+    "inset",
+    "inset-x",
+    "inset-y",
+    "inset-s",
+    "inset-e",
+    "inset-bs",
+    "inset-be",
+    "top",
+    "left",
+    "bottom",
+    "right",
+  ]}
   defaultClass="top-4"
   featuredClass="top-6"
 />
@@ -266,5 +280,17 @@ export const description = "控制定位元素放置的工具类。";
 ## 定制你的主题
 
 <CustomizingYourSpacingScale
-  utilities={["inset", "inset-x", "inset-y", "start", "end", "top", "left", "bottom", "right"]}
+  utilities={[
+    "inset",
+    "inset-x",
+    "inset-y",
+    "inset-s",
+    "inset-e",
+    "inset-bs",
+    "inset-be",
+    "top",
+    "left",
+    "bottom",
+    "right",
+  ]}
 />

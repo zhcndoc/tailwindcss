@@ -16,6 +16,8 @@ export const description = "用于控制元素内边距的工具类。";
     ["py", "padding-block"],
     ["ps", "padding-inline-start"],
     ["pe", "padding-inline-end"],
+    ["pbs", "padding-block-start"],
+    ["pbe", "padding-block-end"],
     ["pt", "padding-top"],
     ["pr", "padding-right"],
     ["pb", "padding-bottom"],
@@ -210,6 +212,15 @@ export const description = "用于控制元素内边距的工具类。";
 
 为了获得更多控制，您还可以使用 [LTR 和 RTL 修饰符](/docs/hover-focus-and-other-states#rtl-support) 来根据当前文本方向有条件地应用特定样式。
 
+### 使用 `pbs-<number>` 和 `pbe-<number>`
+
+使用 `pbs-<number>` 和 `pbe-<number>` 工具类来设置 `padding-block-start` 和 `padding-block-end` 逻辑属性，这些属性根据书写模式映射到顶部或底部：
+
+```html
+<!-- [!code classes:pbs-8] -->
+<div class="pbs-8 ...">pbs-8</div>
+```
+
 ### 使用自定义值
 
 <UsingACustomValue utilities={["p", "px", "pb"]} name="内边距" variable="padding" value="5px" />
@@ -220,4 +231,4 @@ export const description = "用于控制元素内边距的工具类。";
 
 ## 自定义主题
 
-<CustomizingYourSpacingScale utilities={["p", "px", "py", "ps", "pe", "pt", "pr", "pb", "pl"]} />
+<CustomizingYourSpacingScale utilities={["p", "px", "py", "ps", "pe", "pbs", "pbe", "pt", "pr", "pb", "pl"]} />

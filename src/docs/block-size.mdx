@@ -1,0 +1,190 @@
+import { ApiTable } from "@/components/api-table.tsx";
+import { CustomizingYourSpacingScale, ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
+import { Example } from "@/components/example.tsx";
+import { Figure } from "@/components/figure.tsx";
+import { Stripes } from "@/components/stripes.tsx";
+
+export const title = "block-size";
+export const description = "用于设置元素块大小的工具类。";
+
+<ApiTable
+  rows={[
+    ["block-<number>", "block-size: calc(var(--spacing) * <number>);"],
+    ["block-<fraction>", "block-size: calc(<fraction> * 100%);"],
+    ["block-auto", "block-size: auto;"],
+    ["block-px", "block-size: 1px;"],
+    ["block-full", "block-size: 100%;"],
+    ["block-screen", "block-size: 100vh;"],
+    ["block-dvh", "block-size: 100dvh;"],
+    ["block-dvw", "block-size: 100dvw;"],
+    ["block-lvh", "block-size: 100lvh;"],
+    ["block-lvw", "block-size: 100lvw;"],
+    ["block-svh", "block-size: 100svh;"],
+    ["block-svw", "block-size: 100svw;"],
+    ["block-min", "block-size: min-content;"],
+    ["block-max", "block-size: max-content;"],
+    ["block-fit", "block-size: fit-content;"],
+    ["block-lh", "block-size: 1lh;"],
+    ["block-(<custom-property>)", "block-size: var(<custom-property>);"],
+    ["block-[<value>]", "block-size: <value>;"],
+  ]}
+/>
+
+## 示例
+
+### 基本示例
+
+使用像 `block-24` 和 `block-64` 这样的 `block-<number>` 工具类，基于间距刻度为元素设置固定的块大小：
+
+<Figure>
+
+<Example>
+  {
+    <div className="flex items-end justify-center space-x-4 font-mono text-xs font-bold text-white">
+      <div className="relative flex w-8 items-end justify-center rounded-lg bg-blue-500 block-96">
+        <div className="mb-1 transform-[rotate(-90deg)_translate(50%)] text-left text-nowrap">block-96</div>
+      </div>
+      <div className="relative flex w-8 items-end justify-center rounded-lg bg-blue-500 block-80">
+        <div className="mb-1 transform-[rotate(-90deg)_translate(50%)] text-left text-nowrap">block-80</div>
+      </div>
+      <div className="relative flex w-8 items-end justify-center rounded-lg bg-blue-500 block-64">
+        <div className="mb-1 transform-[rotate(-90deg)_translate(50%)] text-left text-nowrap">block-64</div>
+      </div>
+      <div className="relative flex w-8 items-end justify-center rounded-lg bg-blue-500 block-48">
+        <div className="mb-1 transform-[rotate(-90deg)_translate(50%)] text-left text-nowrap">block-48</div>
+      </div>
+      <div className="relative flex w-8 items-end justify-center rounded-lg bg-blue-500 block-40">
+        <div className="mb-1 transform-[rotate(-90deg)_translate(50%)] text-left text-nowrap">block-40</div>
+      </div>
+      <div className="relative flex w-8 items-end justify-center rounded-lg bg-blue-500 block-32">
+        <div className="mb-1 transform-[rotate(-90deg)_translate(50%)] text-left text-nowrap">block-32</div>
+      </div>
+      <div className="relative flex w-8 items-end justify-center rounded-lg bg-blue-500 block-24">
+        <div className="mb-1 transform-[rotate(-90deg)_translate(50%)] text-left text-nowrap">block-24</div>
+      </div>
+    </div>
+  }
+</Example>
+
+```html
+<!-- [!code classes:block-96,block-80,block-64,block-48,block-40,block-32,block-24] -->
+<div class="block-96 ...">block-96</div>
+<div class="block-80 ...">block-80</div>
+<div class="block-64 ...">block-64</div>
+<div class="block-48 ...">block-48</div>
+<div class="block-40 ...">block-40</div>
+<div class="block-32 ...">block-32</div>
+<div class="block-24 ...">block-24</div>
+```
+
+</Figure>
+
+### 使用百分比
+
+使用 `block-full` 或 `block-<fraction>` 工具类，如 `block-1/2` 和 `block-2/5`，为元素设置基于百分比的块大小：
+
+<Figure>
+
+<Example>
+  {
+    <div className="flex items-end justify-center space-x-4 font-mono text-xs font-bold text-white block-96">
+      <div className="relative flex items-end block-full">
+        <Stripes border className="absolute inset-0 rounded-lg block-full" />
+        <div className="relative flex w-8 items-end justify-center rounded-lg bg-sky-500 block-full">
+          <div className="mb-1 transform-[rotate(-90deg)_translate(50%)] text-left text-nowrap">block-full</div>
+        </div>
+      </div>
+      <div className="relative flex items-end block-full">
+        <Stripes border className="absolute inset-0 rounded-lg block-full" />
+        <div className="relative flex w-8 items-end justify-center rounded-lg bg-sky-500 block-9/10">
+          <div className="mb-1 transform-[rotate(-90deg)_translate(50%)] text-left text-nowrap">block-9/10</div>
+        </div>
+      </div>
+      <div className="relative flex items-end block-full">
+        <Stripes border className="absolute inset-0 rounded-lg block-full" />
+        <div className="relative flex w-8 items-end justify-center rounded-lg bg-sky-500 block-3/4">
+          <div className="mb-1 transform-[rotate(-90deg)_translate(50%)] text-left text-nowrap">block-3/4</div>
+        </div>
+      </div>
+      <div className="relative flex items-end block-full">
+        <Stripes border className="absolute inset-0 rounded-lg block-full" />
+        <div className="relative flex w-8 items-end justify-center rounded-lg bg-sky-500 block-1/2">
+          <div className="mb-1 transform-[rotate(-90deg)_translate(50%)] text-left text-nowrap">block-1/2</div>
+        </div>
+      </div>
+      <div className="relative flex items-end block-full">
+        <Stripes border className="absolute inset-0 rounded-lg block-full" />
+        <div className="relative flex w-8 items-end justify-center rounded-lg bg-sky-500 block-1/3">
+          <div className="mb-1 transform-[rotate(-90deg)_translate(50%)] text-left text-nowrap">block-1/3</div>
+        </div>
+      </div>
+    </div>
+  }
+</Example>
+
+```html
+<!-- [!code classes:block-9/10,block-3/4,block-1/2,block-1/3,block-full] -->
+<div class="block-full ...">block-full</div>
+<div class="block-9/10 ...">block-9/10</div>
+<div class="block-3/4 ...">block-3/4</div>
+<div class="block-1/2 ...">block-1/2</div>
+<div class="block-1/3 ...">block-1/3</div>
+```
+
+</Figure>
+
+### 匹配视口大小
+
+使用 `block-screen` 工具类，使元素块大小等于视口的整个块尺寸：
+
+```html
+<!-- [!code classes:block-screen] -->
+<div class="block-screen">
+  <!-- ... -->
+</div>
+```
+
+### 匹配动态视口
+
+使用 `block-dvh` 工具类，使元素块大小等于随着浏览器 UI 展开或收缩而变化的视口块尺寸：
+
+```html
+<!-- [!code classes:block-dvh] -->
+<div class="block-dvh">
+  <!-- ... -->
+</div>
+```
+
+### 匹配最大视口
+
+使用 `block-lvh` 工具类，将元素的块大小设置为视口可能的最大块尺寸：
+
+```html
+<!-- [!code classes:block-lvh] -->
+<div class="block-lvh">
+  <!-- ... -->
+</div>
+```
+
+### 匹配最小视口
+
+使用 `block-svh` 工具类，将元素的块大小设置为视口可能的最小块尺寸：
+
+```html
+<!-- [!code classes:block-svh] -->
+<div class="block-svh">
+  <!-- ... -->
+</div>
+```
+
+### 使用自定义值
+
+<UsingACustomValue utility="block" value="32rem" name="块大小" variable="block-size" />
+
+### 响应式设计
+
+<ResponsiveDesign property="block-size" defaultClass="block-1/2" featuredClass="block-full" />
+
+## 自定义主题
+
+<CustomizingYourSpacingScale utility="block" />

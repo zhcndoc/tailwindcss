@@ -21,6 +21,8 @@ export const description = "用于控制元素边框颜色的工具类。";
       ["border-y", (value) => `border-block-color: ${value}`],
       ["border-s", (value) => `border-inline-start-color: ${value}`],
       ["border-e", (value) => `border-inline-end-color: ${value}`],
+      ["border-bs", (value) => `border-block-start-color: ${value}`],
+      ["border-be", (value) => `border-block-end-color: ${value}`],
       ["border-t", (value) => `border-top-color: ${value}`],
       ["border-r", (value) => `border-right-color: ${value}`],
       ["border-b", (value) => `border-bottom-color: ${value}`],
@@ -238,6 +240,15 @@ export const description = "用于控制元素边框颜色的工具类。";
 ```
 
 </Figure>
+
+### 使用 `border-bs-*` 和 `border-be-*` 工具类
+
+使用 `border-bs-*` 和 `border-be-*` 工具类来设置 `border-block-start-color` 和 `border-block-end-color` 逻辑属性，这些属性会根据书写模式映射到顶部或底部边框：
+
+```html
+<!-- [!code classes:border-bs-indigo-500] -->
+<div class="border-bs-indigo-500 ..."></div>
+```
 
 ### 子元素之间的分隔线
 

@@ -14,6 +14,8 @@ export const description = "用于控制元素在捕捉容器内的滚动偏移�
     ["scroll-py", "scroll-padding-block"],
     ["scroll-ps", "scroll-padding-inline-start"],
     ["scroll-pe", "scroll-padding-inline-end"],
+    ["scroll-pbs", "scroll-padding-block-start"],
+    ["scroll-pbe", "scroll-padding-block-end"],
     ["scroll-pt", "scroll-padding-top"],
     ["scroll-pr", "scroll-padding-right"],
     ["scroll-pb", "scroll-padding-bottom"],
@@ -201,6 +203,17 @@ export const description = "用于控制元素在捕捉容器内的滚动偏移�
 
 </Figure>
 
+### 使用逻辑属性 `scroll-pbs` 和 `scroll-pbe`
+
+使用 `scroll-pbs-<number>` 和 `scroll-pbe-<number>` 工具类设置 `scroll-padding-block-start` 和 `scroll-padding-block-end` 逻辑属性，这两个属性会根据书写模式映射到顶部或底部：
+
+```html
+<!-- [!code classes:scroll-pbs-6] -->
+<div class="snap-y scroll-pbs-6 ...">
+  <!-- ... -->
+</div>
+```
+
 ### 使用负值
 
 要使用负的滚动内边距值，请用短横线作为前缀将类名转换为负值：
@@ -234,6 +247,8 @@ export const description = "用于控制元素在捕捉容器内的滚动偏移�
     "scroll-py",
     "scroll-ps",
     "scroll-pe",
+    "scroll-pbs",
+    "scroll-pbe",
     "scroll-pt",
     "scroll-pr",
     "scroll-pb",

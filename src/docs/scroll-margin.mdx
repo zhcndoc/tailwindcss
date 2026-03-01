@@ -14,6 +14,8 @@ export const description = "控制在快照容器内项目周围的滚动偏移�
     ["scroll-my", "scroll-margin-block"],
     ["scroll-ms", "scroll-margin-inline-start"],
     ["scroll-me", "scroll-margin-inline-end"],
+    ["scroll-mbs", "scroll-margin-block-start"],
+    ["scroll-mbe", "scroll-margin-block-end"],
     ["scroll-mt", "scroll-margin-top"],
     ["scroll-mr", "scroll-margin-right"],
     ["scroll-mb", "scroll-margin-bottom"],
@@ -228,6 +230,19 @@ export const description = "控制在快照容器内项目周围的滚动偏移�
 
 为了获得更好的控制，还可以使用 [LTR 和 RTL 修饰符](/docs/hover-focus-and-other-states#rtl-support) 来根据当前文本方向有条件地应用特定样式。
 
+### 使用 `scroll-mbs-<number>` 和 `scroll-mbe-<number>`
+
+使用 `scroll-mbs-<number>` 和 `scroll-mbe-<number>` 工具设置 `scroll-margin-block-start` 和 `scroll-margin-block-end` 逻辑属性，这些属性根据书写模式映射到顶部或底部：
+
+```html
+<!-- [!code classes:scroll-mbs-6] -->
+<div class="snap-y ...">
+  <div class="snap-start scroll-mbs-6 ...">
+    <!-- ... -->
+  </div>
+</div>
+```
+
 ### 使用自定义值
 
 <UsingACustomValue utilities={["scroll-ml", "scroll-me"]} value="24rem" name="滚动边距" variable="scroll-margin" />
@@ -245,6 +260,8 @@ export const description = "控制在快照容器内项目周围的滚动偏移�
     "scroll-my",
     "scroll-ms",
     "scroll-me",
+    "scroll-mbs",
+    "scroll-mbe",
     "scroll-mt",
     "scroll-mr",
     "scroll-mb",

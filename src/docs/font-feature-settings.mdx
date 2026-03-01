@@ -1,0 +1,52 @@
+import { ApiTable } from "@/components/api-table.tsx";
+import { ResponsiveDesign, UsingACustomValue } from "@/components/content.tsx";
+
+export const title = "font-feature-settings";
+export const description = "用于控制高级排版功能的工具类。";
+
+<ApiTable
+  rows={[
+    ["font-features-[<value>]", "font-feature-settings: <value>;"],
+    ["font-features-(<custom-property>)", "font-feature-settings: var(<custom-property>);"],
+  ]}
+/>
+
+## 示例
+
+### 基本示例
+
+使用 `font-features-[<value>]` 工具类来启用支持的字体中的 OpenType 功能：
+
+```html
+<!-- [!code classes:font-features-["smcp"]] -->
+<p class="font-features-['smcp'] ...">这段文字使用小型大写字母。</p>
+```
+
+### 启用多个功能
+
+你可以通过逗号分隔来启用多个 OpenType 功能：
+
+```html
+<!-- [!code classes:font-features-["smcp","onum"]] -->
+<p class="font-features-['smcp','onum'] ...">这段文字使用小型大写字母和旧式数字。</p>
+```
+
+### 使用 CSS 变量
+
+使用 `font-features-(<custom-property>)` 语法从 CSS 变量应用字体功能设置：
+
+```html
+<!-- [!code classes:font-features-(--my-features)] -->
+<p class="font-features-(--my-features) ...">
+  <!-- ... -->
+</p>
+```
+
+### 响应式设计
+
+<ResponsiveDesign
+  property="font-feature-settings"
+  defaultClass="font-features-['tnum']"
+  featuredClass="font-features-['smcp']"
+  element="p"
+/>
