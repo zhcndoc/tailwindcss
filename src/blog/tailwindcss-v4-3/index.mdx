@@ -185,18 +185,22 @@ The dedicated loader skips that extra work, and we've seen it make Tailwind over
 <table>
   <thead>
     <tr>
-      <th></th>
-      <th className="text-right">@tailwindcss/postcss</th>
-      <th className="text-right">@tailwindcss/webpack</th>
-      <th className="text-right">Improvement</th>
+      <th>Package</th>
+      <th className="text-right">Build time</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Build time</td>
-      <td className="text-right">931.53ms</td>
+      <td>@tailwindcss/postcss</td>
+      <td className="text-right">932ms</td>
+    </tr>
+    <tr>
+      <td>@tailwindcss/webpack</td>
       <td className="text-right">429ms</td>
-      <td className="text-right">2.17x</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td className="text-right font-medium text-gray-950 dark:text-white">2.17x faster</td>
     </tr>
   </tbody>
 </table>
