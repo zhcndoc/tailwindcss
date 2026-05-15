@@ -1,0 +1,184 @@
+import { ApiTable } from "@/components/api-table.tsx";
+import { CustomizingYourThemeColors, ResponsiveDesign, TargetingSpecificStates } from "@/components/content.tsx";
+import { Example } from "@/components/example.tsx";
+import { Figure } from "@/components/figure.tsx";
+import colors from "./utils/colors";
+
+export const title = "scrollbar-color";
+export const description = "Utilities for controlling the color of an element's scrollbar.";
+
+<ApiTable
+  rows={[
+    [
+      "scrollbar-thumb-inherit",
+      "--tw-scrollbar-thumb: inherit;\nscrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-track);",
+    ],
+    [
+      "scrollbar-thumb-current",
+      "--tw-scrollbar-thumb: currentColor;\nscrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-track);",
+    ],
+    [
+      "scrollbar-thumb-transparent",
+      "--tw-scrollbar-thumb: transparent;\nscrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-track);",
+    ],
+    ...Object.entries(colors).map(([name, value]) => [
+      `scrollbar-thumb-${name}`,
+      `--tw-scrollbar-thumb: var(--color-${name}); /* ${value} */\nscrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-track);`,
+    ]),
+    [
+      "scrollbar-thumb-(<custom-property>)",
+      "--tw-scrollbar-thumb: var(<custom-property>);\nscrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-track);",
+    ],
+    [
+      "scrollbar-thumb-[<value>]",
+      "--tw-scrollbar-thumb: <value>;\nscrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-track);",
+    ],
+    [
+      "scrollbar-track-inherit",
+      "--tw-scrollbar-track: inherit;\nscrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-track);",
+    ],
+    [
+      "scrollbar-track-current",
+      "--tw-scrollbar-track: currentColor;\nscrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-track);",
+    ],
+    [
+      "scrollbar-track-transparent",
+      "--tw-scrollbar-track: transparent;\nscrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-track);",
+    ],
+    ...Object.entries(colors).map(([name, value]) => [
+      `scrollbar-track-${name}`,
+      `--tw-scrollbar-track: var(--color-${name}); /* ${value} */\nscrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-track);`,
+    ]),
+    [
+      "scrollbar-track-(<custom-property>)",
+      "--tw-scrollbar-track: var(<custom-property>);\nscrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-track);",
+    ],
+    [
+      "scrollbar-track-[<value>]",
+      "--tw-scrollbar-track: <value>;\nscrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-track);",
+    ],
+  ]}
+/>
+
+## 示例
+
+### 设置滚动条颜色
+
+使用像 `scrollbar-thumb-sky-700` 和 `scrollbar-track-sky-100` 这样的工具类来控制滚动条的颜色：
+
+<Figure hint="垂直滚动">
+
+<Example>
+  {
+    <div className="mx-auto h-72 max-w-sm scrollbar-thumb-sky-700 scrollbar-track-sky-100 overflow-auto rounded-xl bg-white p-6 text-sm/6 text-gray-600 shadow-lg ring-1 ring-black/5 dark:scrollbar-thumb-sky-400 dark:scrollbar-track-gray-700 dark:bg-gray-800 dark:text-gray-300">
+      <div className="space-y-4">
+        <p>
+          碧蓝档案馆占据了旧天文台上方三层狭窄的楼层，每层都排列着装有星图、考察笔记和黄铜仪器的抽屉，所有内容都由人工编目。
+        </p>
+        <p>
+          在冬日清晨，工作人员会在书架之间推着梯子穿行，淡淡的光线穿过屋顶窗户，落在阅读桌上。
+        </p>
+        <p>
+          访客可以申请馆藏中的任何资料，但大多数人是为了那些描绘了现代地图上已不复存在海岸线的地图集而来。
+        </p>
+        <p>
+          每一本归还的藏书都会先经过检查、除尘和包裹，然后才被送回书架，等待下一位研究者。
+        </p>
+      </div>
+    </div>
+  }
+</Example>
+
+```html
+<!-- [!code classes:scrollbar-thumb-sky-700,scrollbar-track-sky-100] -->
+<div class="scrollbar-thumb-sky-700 scrollbar-track-sky-100 overflow-auto ...">
+  <!-- ... -->
+</div>
+```
+
+</Figure>
+
+你可以独立设置拇指和轨道的颜色。如果只设置其中一个而不设置另一个，未设置的颜色默认为透明。
+
+### 更改不透明度
+
+使用颜色不透明度修饰符来控制元素滚动条颜色的不透明度：
+
+<Figure hint="垂直滚动">
+
+<Example>
+  {
+    <div className="mx-auto h-72 max-w-sm scrollbar-thumb-slate-900/60 scrollbar-track-slate-900/10 overflow-auto rounded-xl bg-white p-6 text-sm/6 text-gray-600 shadow-lg ring-1 ring-black/5 dark:scrollbar-thumb-white/40 dark:scrollbar-track-white/10 dark:bg-gray-800 dark:text-gray-300">
+      <div className="space-y-4">
+        <p>
+          碧蓝档案馆占据了旧天文台上方三层狭窄的楼层，每层都排列着装有星图、考察笔记和黄铜仪器的抽屉，所有内容都由人工编目。
+        </p>
+        <p>
+          在冬日清晨，工作人员会在书架之间推着梯子穿行，淡淡的光线穿过屋顶窗户，落在阅读桌上。
+        </p>
+        <p>
+          访客可以申请馆藏中的任何资料，但大多数人是为了那些描绘了现代地图上已不复存在海岸线的地图集而来。
+        </p>
+        <p>
+          每一本归还的藏书都会先经过检查、除尘和包裹，然后才被送回书架，等待下一位研究者。
+        </p>
+      </div>
+    </div>
+  }
+</Example>
+
+```html
+<!-- [!code word:/60] -->
+<!-- [!code word:/10] -->
+<div class="scrollbar-thumb-slate-900/60 scrollbar-track-slate-900/10 ...">
+  <!-- ... -->
+</div>
+```
+
+</Figure>
+
+### 使用自定义值
+
+使用像 `scrollbar-thumb-[<value>]` 和 `scrollbar-track-[<value>]` 这样的工具类，基于完全自定义的值来设置滚动条颜色：
+
+```html
+<!-- [!code classes:scrollbar-thumb-[#0f766e],scrollbar-track-[#ccfbf1]] -->
+<div class="scrollbar-thumb-[#0f766e] scrollbar-track-[#ccfbf1] ...">
+  <!-- ... -->
+</div>
+```
+
+对于 CSS 变量，你也可以使用 `scrollbar-thumb-(<custom-property>)` 和
+`scrollbar-track-(<custom-property>)` 语法：
+
+```html
+<!-- [!code classes:scrollbar-thumb-(--my-scrollbar-thumb),scrollbar-track-(--my-scrollbar-track)] -->
+<div class="scrollbar-thumb-(--my-scrollbar-thumb) scrollbar-track-(--my-scrollbar-track) ...">
+  <!-- ... -->
+</div>
+```
+
+### 在悬停时应用
+
+<TargetingSpecificStates property="scrollbar-color">
+
+```html
+<!-- [!code classes:hover:scrollbar-thumb-sky-500] -->
+<div class="scrollbar-thumb-sky-700 hover:scrollbar-thumb-sky-500 ...">
+  <!-- ... -->
+</div>
+```
+
+</TargetingSpecificStates>
+
+### 响应式设计
+
+<ResponsiveDesign
+  property="scrollbar-color"
+  defaultClass="scrollbar-thumb-slate-900 scrollbar-track-slate-200"
+  featuredClass="scrollbar-thumb-sky-700"
+/>
+
+## 自定义你的主题
+
+<CustomizingYourThemeColors utilities={["scrollbar-thumb", "scrollbar-track"]} />

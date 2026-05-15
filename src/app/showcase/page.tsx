@@ -80,13 +80,6 @@ const showcase = [
     description: "Developer tool website",
   },
   {
-    name: "Open",
-    url: "https://www.open.cx/?utm_source=tailwindcss",
-    thumbnail: require("./img/open.cx.png").default,
-    video: "/showcase-videos/open.cx.mp4",
-    description: "SaaS application website",
-  },
-  {
     name: "Vercel",
     url: "https://vercel.com/?utm_source=tailwindcss",
     thumbnail: require("./img/vercel.com.png").default,
@@ -212,13 +205,6 @@ const showcase = [
     url: "https://www.braintrust.dev/?utm_source=tailwindcss",
     thumbnail: require("./img/braintrust.dev.png").default,
     video: "/showcase-videos/braintrust.dev.mp4",
-    description: "Developer tool website",
-  },
-  {
-    name: "Bytebase",
-    url: "https://www.bytebase.com/?utm_source=tailwindcss",
-    thumbnail: require("./img/bytebase.com.png").default,
-    video: "/showcase-videos/bytebase.com.mp4",
     description: "Developer tool website",
   },
   {

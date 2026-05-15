@@ -1,0 +1,682 @@
+import { adamwathan, robinmalfait } from "@/app/blog/authors";
+import { CodeExampleStack } from "@/components/code-example";
+import { Example } from "@/components/example";
+import { Figure } from "@/components/figure";
+
+export const meta = {
+  title: "Tailwind CSS v4.3：滚动条、新颜色等",
+  description:
+    "Tailwind CSS v4.3 来了，带来了第一方滚动条样式、更多逻辑属性工具类、新的 zoom 和 tab-size 工具类、更好的 @variant 支持，以及我们在忘记博客存在期间发布的所有 v4.2 内容。",
+  date: "2026-05-08T20:00:00.000Z",
+  authors: [adamwathan, robinmalfait],
+  excerpt: (
+    <>
+      Tailwind CSS v4.3 来了，带来官方的滚动条样式设置、更多逻辑属性工具类、新的 zoom 和 tab-size 工具类、更好的 @variant 支持，以及我们在忘记博客存在的情况下发布的 v4.2 所有内容。
+    </>
+  ),
+};
+
+Tailwind CSS v4.3 来了，而且显然，发布 v4.2 比起记得写博客要容易得多，所以这篇文章其实偷偷讲了两个版本的新内容。
+
+以下是 v4.2 中新增的内容：
+
+- [新的 `mauve`、`olive`、`mist` 和 `taupe` 调色板](#new-mauve-olive-mist-and-taupe-palettes) — 当 gray、zinc、neutral、stone 和 slate 不知为何都让你不满意时，再多四套偏中性的调色板。
+- [一等公民的 webpack 插件](#first-class-webpack-plugin) — 为 Next.js 之类的框架带来巨大的性能提升。
+- [更多逻辑属性工具类](#more-logical-property-utilities) — 包括 `pbs-*`、`mbs-*`、`inline-*`、`block-*`，以及新的逻辑 inset 工具类。
+- [新的 `font-features-*` 工具类](#new-font-features-utility) — 无需每次都编写自定义 CSS，就能控制底层 OpenType 特性。
+
+……而以下是 v4.3 中新增的内容：
+
+- [新的滚动条工具类](#new-scrollbar-utilities) — 无需纠结这周到底该用哪个半支持的浏览器 API，就能为滚动条设置样式。
+- [新的 `@container-size` 工具类](#new-container-size-utility) — 在你的容器查询也需要关注高度时，用它来创建尺寸容器。
+- [新的 `zoom-*` 工具类](#new-zoom-utilities) — 现在既然每个浏览器终于都同意它存在了，就可以直接在标记中使用 CSS `zoom` 属性。
+- [新的 `tab-*` 工具类](#new-tab-utilities) — 控制制表符字符的渲染宽度，只是别像 GitHub 以前那样把它设成 8。
+- [叠加 + 复合 `@variant` 支持](#stacked-compound-variant-support) — 可直接在 CSS 中使用叠加和复合变体。
+- [函数式工具类的默认值](#default-values-for-functional-utilities) — 定义既可带值也可不带值的工具类。
+
+v4.2 的许多改进，包括新的逻辑属性工具类和 `font-features-*` 支持，都是我们通过 [Partners Program](/sponsor#partners) 与 Netflix 和 Vercel 团队合作的成果。如果有这类框架层面的改进能让 Tailwind CSS 更适合你的团队，我们很乐意提供帮助。
+
+通过从 npm 安装最新版 `tailwindcss` 来升级你的项目：
+
+<CodeExampleStack>
+
+```sh
+# [!code filename:使用 Tailwind CLI]
+npm install tailwindcss@latest @tailwindcss/cli@latest
+```
+
+```sh
+# [!code filename:使用 Vite]
+npm install tailwindcss@latest @tailwindcss/vite@latest
+```
+
+```sh
+# [!code filename:使用 PostCSS]
+npm install tailwindcss@latest @tailwindcss/postcss@latest
+```
+
+```sh
+# [!code filename:使用 webpack]
+npm install tailwindcss@latest @tailwindcss/webpack@latest
+```
+
+</CodeExampleStack>
+
+---
+
+## 新的 `mauve`、`olive`、`mist` 和 `taupe` 调色板
+
+在 v4.2 中，我们在默认主题里新增了四套颜色调色板：`mauve`、`olive`、`mist` 和 `taupe`。
+
+它们最初来自 [Oatmeal](https://tailwindcss.com/plus/changelog#2025-12-18)，也就是我们去年 12 月为 Tailwind Plus 发布的多主题营销站点套件。在那里，我们需要比现有灰色系更多一些、但仍然有明显区分度的中性色调。
+
+它们都属于那种很实用的“近中性”类别：你想要一种仍然像灰色一样运作，但又多一点个性的颜色：
+
+<Figure>
+
+<Example padding={false}>
+  <div className="grid gap-5 p-6 sm:p-8">
+    <div className="grid grid-cols-[auto_1fr] items-center gap-x-5 gap-y-3 text-sm/6 sm:gap-x-6">
+      <div />
+      <div className="grid grid-cols-11 justify-items-center gap-1.5 font-mono text-xs text-gray-500 dark:text-gray-400">
+        <div>50</div>
+        <div>100</div>
+        <div>200</div>
+        <div>300</div>
+        <div>400</div>
+        <div>500</div>
+        <div>600</div>
+        <div>700</div>
+        <div>800</div>
+        <div>900</div>
+        <div>950</div>
+      </div>
+
+      <div className="font-mono font-medium text-gray-950 dark:text-white">mauve</div>
+      <div className="grid grid-cols-11 gap-1.5">
+        <div className="aspect-square rounded bg-mauve-50 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mauve-100 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mauve-200 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mauve-300 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mauve-400 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mauve-500 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mauve-600 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mauve-700 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mauve-800 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mauve-900 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mauve-950 inset-ring inset-ring-gray-950/5" />
+      </div>
+
+      <div className="font-mono font-medium text-gray-950 dark:text-white">olive</div>
+      <div className="grid grid-cols-11 gap-1.5">
+        <div className="aspect-square rounded bg-olive-50 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-olive-100 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-olive-200 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-olive-300 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-olive-400 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-olive-500 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-olive-600 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-olive-700 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-olive-800 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-olive-900 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-olive-950 inset-ring inset-ring-gray-950/5" />
+      </div>
+
+      <div className="font-mono font-medium text-gray-950 dark:text-white">mist</div>
+      <div className="grid grid-cols-11 gap-1.5">
+        <div className="aspect-square rounded bg-mist-50 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mist-100 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mist-200 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mist-300 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mist-400 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mist-500 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mist-600 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mist-700 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mist-800 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mist-900 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-mist-950 inset-ring inset-ring-gray-950/5" />
+      </div>
+
+      <div className="font-mono font-medium text-gray-950 dark:text-white">taupe</div>
+      <div className="grid grid-cols-11 gap-1.5">
+        <div className="aspect-square rounded bg-taupe-50 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-taupe-100 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-taupe-200 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-taupe-300 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-taupe-400 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-taupe-500 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-taupe-600 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-taupe-700 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-taupe-800 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-taupe-900 inset-ring inset-ring-gray-950/5" />
+        <div className="aspect-square rounded bg-taupe-950 inset-ring inset-ring-gray-950/5" />
+      </div>
+    </div>
+
+  </div>
+</Example>
+
+</Figure>
+
+当你想让整个设计略微偏暖、偏冷、偏绿，或者……偏 mauve 时，它们是现有灰色调色板的一个不错替代。
+
+```html
+<!-- [!code classes:bg-mauve-950,text-mauve-100,bg-olive-100,text-olive-950,border-mist-200,shadow-taupe-950/10] -->
+<div class="bg-mauve-950 text-mauve-100 ...">Mauve</div>
+<div class="bg-olive-100 text-olive-950 ...">Olive</div>
+<div class="border border-mist-200 shadow-taupe-950/10 ...">Mist and taupe</div>
+```
+
+查看 [颜色文档](/docs/colors)，可以看到所有可用颜色的漂亮网格。
+
+---
+
+## 一等公民的 webpack 插件
+
+Tailwind CSS v4.2 新增了专用的 `@tailwindcss/webpack` 加载器，用于在 webpack 项目中集成 Tailwind CSS。
+
+在此之前，webpack 项目通常通过 `postcss-loader` 和 `@tailwindcss/postcss` 运行 Tailwind，这虽然可行，但意味着 CSS 需要先通过 PostCSS 绕一小圈，Tailwind 才能拿到一个它本来就知道如何编译的字符串。
+
+{
+
+<table>
+  <thead>
+    <tr>
+      <th>Package</th>
+      <th className="text-right">Build time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>@tailwindcss/postcss</td>
+      <td className="text-right">932ms</td>
+    </tr>
+    <tr>
+      <td>@tailwindcss/webpack</td>
+      <td className="text-right">429ms</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td className="text-right font-medium text-gray-950 dark:text-white">2.17x faster</td>
+    </tr>
+  </tbody>
+</table>
+}
+
+使用它的方式与你熟悉的其他 webpack loader 的设置方式是一样的：
+
+```js
+// [!code filename:webpack.config.js]
+// [!code word:@tailwindcss/webpack]
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+module.exports = {
+  plugins: [new MiniCssExtractPlugin()],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "@tailwindcss/webpack"],
+      },
+    ],
+  },
+};
+```
+
+由于 Turbopack 通过其兼容层支持 webpack loaders，这些改进也会一并适用，这对 Next.js 这样的框架来说意义重大，因为 Turbopack 正在成为默认选项。
+
+查看 [`@tailwindcss/webpack` README](https://github.com/tailwindlabs/tailwindcss/tree/main/packages/%40tailwindcss-webpack) 了解更多详情。
+
+---
+
+## 更多逻辑属性工具类
+
+Tailwind CSS v4.2 新增了大量逻辑属性工具类，让构建能够在不同书写模式和方向下正确适配的布局变得更容易。
+
+对于间距，现在有了用于 padding、margin、scroll padding、scroll margin 和 border 的 block-start 与 block-end 工具类：
+
+```html
+<!-- [!code classes:pbs-4,pbe-8,mbs-6,mbe-2] -->
+<div class="mbs-6 mbe-2 pbs-4 pbe-8 ...">
+  <!-- ... -->
+</div>
+```
+
+```html
+<!-- [!code classes:scroll-pbs-12,scroll-pbe-12,scroll-mbs-4,scroll-mbe-4] -->
+<div class="scroll-mbs-4 scroll-mbe-4 scroll-pbs-12 scroll-pbe-12 ...">
+  <!-- ... -->
+</div>
+```
+
+```html
+<!-- [!code classes:border-bs,border-be-2] -->
+<div class="border-bs border-be-2 ...">
+  <!-- ... -->
+</div>
+```
+
+我们还为 `inline-size` 和 `block-size` 添加了逻辑尺寸工具类，以及最小和最大变体：
+
+```html
+<!-- [!code classes:inline-full,min-inline-0,max-inline-lg,block-64,min-block-24,max-block-screen] -->
+<div class="block-64 inline-full max-block-screen max-inline-lg min-block-24 min-inline-0 ...">
+  <!-- ... -->
+</div>
+```
+
+此外，我们还为元素定位添加了逻辑 inset 工具类：
+
+```html
+<!-- [!code classes:inset-s-0,inset-e-4,inset-bs-2,inset-be-8] -->
+<div class="absolute inset-s-0 inset-e-4 inset-bs-2 inset-be-8 ...">
+  <!-- ... -->
+</div>
+```
+
+现有的 `start-*` 和 `end-*` 工具类仍然可用，但它们现在已被弃用，建议改用 `inset-s-*` 和 `inset-e-*`，这样整个 API 就能与 `inset-bs-*` 和 `inset-be-*` 保持一致。
+
+查看 [`padding`](/docs/padding#using-logical-properties)、[`margin`](/docs/margin#using-logical-properties)、[`scroll-padding`](/docs/scroll-padding#using-logical-properties)、[`scroll-margin`](/docs/scroll-margin#using-logical-properties)、[`border-width`](/docs/border-width#using-logical-properties)、[`inline-size`](/docs/inline-size)、[`block-size`](/docs/block-size) 以及 [`top / right / bottom / left`](/docs/top-right-bottom-left#using-logical-properties) 文档了解更多详情。
+
+---
+
+## 新的 `font-features-*` 工具类
+
+我们还添加了 `font-features-*` 工具类来控制 `font-feature-settings`：
+
+<Figure>
+
+<Example>
+  <div className="mx-auto grid max-w-xl grid-cols-1 gap-4 font-medium text-gray-700 sm:grid-cols-2 dark:text-gray-300">
+    <div className="rounded-xl bg-gray-50 p-5 ring-1 ring-gray-950/5 dark:bg-white/5 dark:ring-white/10">
+      <p className="font-mono text-xs text-gray-500 dark:text-gray-400">normal</p>
+      <div className="mt-3 grid gap-1 text-3xl tracking-tight">
+        <p>100.00</p>
+        <p>218.40</p>
+        <p>864.12</p>
+      </div>
+    </div>
+    <div className='rounded-xl bg-gray-50 p-5 font-features-["tnum"] ring-1 ring-gray-950/5 dark:bg-white/5 dark:ring-white/10'>
+      <p className="font-mono text-xs text-gray-500 dark:text-gray-400">font-features-[&quot;tnum&quot;]</p>
+      <div className="mt-3 grid gap-1 text-3xl tracking-tight">
+        <p>100.00</p>
+        <p>218.40</p>
+        <p>864.12</p>
+      </div>
+    </div>
+  </div>
+</Example>
+
+```html
+<!-- [!code classes:font-features-["tnum"]] -->
+<div class='font-features-["tnum"] ...'>
+  <!-- ... -->
+</div>
+```
+
+</Figure>
+
+对于诸如表格数字之类的常见情况，你仍然应该优先使用更高层级的工具类，比如 `tabular-nums`，因为没人应该去记住 `"tnum"` 这种东西。
+
+但当你需要启用某个字体特定的样式集或其他我们没有专用工具类的 OpenType 特性时，`font-features-*` 就提供了一个简洁的替代方案。
+
+查看 [`font-feature-settings`](/docs/font-feature-settings) 文档了解更多详情。
+
+---
+
+## 新的滚动条工具类
+
+Tailwind CSS v4.3 为 CSS scrollbar API 添加了官方工具类，这样你终于可以不用再打开第二个标签页、也不用记住哪个浏览器支持什么，就能完成那些“无聊但有用”的滚动条相关工作了。
+
+使用 `scrollbar-auto`、`scrollbar-thin` 和 `scrollbar-none` 来控制 `scrollbar-width`：
+
+<Figure hint="垂直滚动">
+
+<Example>
+  {
+    <div className="mx-auto h-72 max-w-sm scrollbar-thin scrollbar-thumb-sky-700 scrollbar-track-sky-100 overflow-auto rounded-xl bg-white p-6 text-sm/6 text-gray-600 shadow-lg ring-1 ring-black/5 dark:scrollbar-thumb-sky-400 dark:scrollbar-track-gray-700 dark:bg-gray-800 dark:text-gray-300">
+      <div className="space-y-4">
+        <p>
+          Cerulean Archives 占据了旧天文台上方三层狭长的楼层，每一层都排列着由人工编目的星图、探险笔记和黄铜仪器抽屉。
+        </p>
+        <p>
+          在冬日清晨，工作人员会在书架间推着梯子来回穿梭，苍白的光线从屋顶窗切入，落在阅览桌上。
+        </p>
+        <p>
+          访客可以申请调阅馆藏中的任何内容，但大多数人都是为了那些记录着现代地图上已不再存在的海岸线的地图集而来。
+        </p>
+        <p>
+          每一本归还的卷册都会经过检查、除尘和包裹，然后再被送回书库，等待下一位研究者。
+        </p>
+      </div>
+    </div>
+  }
+</Example>
+
+```html
+<!-- [!code classes:scrollbar-thin,scrollbar-thumb-sky-700,scrollbar-track-sky-100] -->
+<div class="scrollbar-thin scrollbar-thumb-sky-700 scrollbar-track-sky-100 overflow-auto ...">
+  <!-- ... -->
+</div>
+```
+
+</Figure>
+
+你也可以使用 `scrollbar-thumb-*` 和 `scrollbar-track-*` 工具类来控制滚动条颜色：
+
+```html
+<!-- [!code classes:scrollbar-thumb-sky-700,scrollbar-track-sky-100] -->
+<div class="scrollbar-thumb-sky-700 scrollbar-track-sky-100 overflow-auto ...">
+  <!-- ... -->
+</div>
+```
+
+它们也同样支持常见的颜色透明度修饰符：
+
+```html
+<!-- [!code classes:scrollbar-thumb-slate-900/60,scrollbar-track-slate-900/10] -->
+<div class="scrollbar-thumb-slate-900/60 scrollbar-track-slate-900/10 ...">
+  <!-- ... -->
+</div>
+```
+
+此外，为了防止滚动条出现时造成布局偏移，我们还添加了 `scrollbar-gutter-auto`、`scrollbar-gutter-stable` 和 `scrollbar-gutter-both`：
+
+<Figure>
+
+<Example>
+  {
+    <div className="mx-auto grid max-w-xl grid-cols-1 gap-6 text-sm/6 text-gray-600 sm:grid-cols-2 dark:text-gray-300">
+      <div>
+        <p className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">scrollbar-gutter-auto</p>
+        <div className="h-40 scrollbar-gutter-auto overflow-auto rounded-lg bg-gray-50 py-4 dark:bg-white/5">
+          <p className="text-justify">
+            大家好！现在都快 2027 年了，我们仍然不知道外星人是否生活在我们中间，还是说我们知道？也许写这段话的人就是个外星人。你永远不会知道。
+          </p>
+        </div>
+      </div>
+      <div>
+        <p className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">scrollbar-gutter-stable</p>
+        <div className="relative h-40 scrollbar-gutter-stable overflow-auto rounded-lg bg-gray-50 py-4 pr-4 dark:bg-white/5">
+          <p className="text-justify">
+            大家好！现在都快 2027 年了，我们仍然不知道外星人是否生活在我们中间，还是说我们知道？也许写这段话的人就是个外星人。你永远不会知道。
+          </p>
+          <div className="absolute top-0 right-0 bottom-0 w-4 rounded-r-lg border bg-[image:repeating-linear-gradient(315deg,currentColor_0,currentColor_1px,transparent_0,transparent_50%)] bg-[size:8px_8px] bg-top-left text-black/10 dark:text-white/12.5" />
+        </div>
+      </div>
+    </div>
+  }
+</Example>
+
+```html
+<!-- [!code classes:scrollbar-gutter-stable] -->
+<div class="scrollbar-gutter-stable overflow-auto ...">
+  <!-- ... -->
+</div>
+```
+
+</Figure>
+
+查看 [`scrollbar-width`](/docs/scrollbar-width)、[`scrollbar-color`](/docs/scrollbar-color) 和 [`scrollbar-gutter`](/docs/scrollbar-gutter) 文档了解更多详情。
+
+---
+
+## 新的 `@container-size` 工具类
+
+在 Tailwind CSS v4.0 中，我们通过 `@container` 工具类添加了官方的容器查询支持，它会创建一个 inline-size 容器。
+
+这通常正是你想要的，但像 `cqb` 和 `cqh` 这样的容器查询长度单位依赖于容器的 block size，而 inline-size 容器不会暴露这类信息。
+
+因此在 v4.3 中，我们添加了 `@container-size`，它会创建一个 size 容器：
+
+```html
+<!-- [!code word:@container-size] -->
+<!-- [!code word:h-\[50cqb\]] -->
+<div class="@container-size">
+  <div class="h-[50cqb]">
+    <!-- ... -->
+  </div>
+</div>
+```
+
+你也可以像 `@container/{name}` 一样，使用 `@container-size/{name}` 为 size 容器命名。
+
+查看 [响应式设计文档](/docs/responsive-design#using-size-containers) 了解更多详情。
+
+---
+
+## 新的 `zoom-*` 工具类
+
+Tailwind CSS v4.3 为 CSS `zoom` 属性添加了 `zoom-*` 工具类，这是那些古老的浏览器特性之一：早在 2008 年就已在 Chrome 1 中得到支持，但直到 2024 年，经过一些长期存在的 SVG bug 的曲折历程后，才在所有主流浏览器中全面支持：
+
+```html
+<!-- [!code classes:zoom-75,zoom-100,zoom-125] -->
+<div class="zoom-75 ...">缩小</div>
+<div class="zoom-100 ...">正常</div>
+<div class="zoom-125 ...">放大</div>
+```
+
+你也可以使用任意值和 CSS 变量：
+
+```html
+<!-- [!code classes:zoom-[1.1],zoom-(--preview-zoom)] -->
+<div class="zoom-[1.1] ...">稍微放大</div>
+<div class="zoom-(--preview-zoom) ...">使用变量进行缩放</div>
+```
+
+查看 [`zoom`](/docs/zoom) 文档了解更多详情。
+
+---
+
+## 新的 `tab-*` 工具类
+
+我们还添加了用于通过 `tab-size` 控制制表符渲染宽度的 `tab-*` 工具类。
+
+这主要适用于代码示例、编辑器，以及任何其他需要渲染可能包含真实制表符的预格式化文本的 UI：
+
+<Figure>
+
+<Example>
+  <div className="grid gap-6 sm:grid-cols-2">
+    <div className="tab-2">
+      <span className="mb-3 block font-mono text-xs font-medium text-gray-500 dark:text-gray-400">tab-2</span>
+
+{/* prettier-ignore */}
+```jsx
+function indent() {
+	return '带制表符的';
+}
+```
+
+    </div>
+    <div className="tab-8">
+      <span className="mb-3 block font-mono text-xs font-medium text-gray-500 dark:text-gray-400">tab-8</span>
+
+{/* prettier-ignore */}
+```jsx
+function indent() {
+	return '带制表符的';
+}
+```
+
+    </div>
+
+  </div>
+</Example>
+
+```html
+<!-- [!code classes:tab-2,tab-8] -->
+<pre class="tab-2 ...">function indent() {&#10;&#9;return 'tabbed'&#10;}</pre>
+<pre class="tab-8 ...">function indent() {&#10;&#9;return 'tabbed'&#10;}</pre>
+```
+
+</Figure>
+
+这里也支持任意值和 CSS 变量：
+
+```html
+<!-- [!code classes:tab-[12px],tab-(--tab-size)] -->
+<pre class="tab-[12px] ...">...</pre>
+<pre class="tab-(--tab-size) ...">...</pre>
+```
+
+查看 [`tab-size`](/docs/tab-size) 文档了解更多详情。
+
+---
+
+## 对堆叠式 + 复合 `@variant` 的支持
+
+当你在 CSS 中而不是直接在标记中使用变体时，Tailwind CSS v4.3 让 `@variant` 更加灵活了。
+
+现在你可以使用堆叠变体：
+
+<CodeExampleStack>
+
+```css
+/* [!code filename:CSS] */
+/* [!code word:hover\:focus] */
+.button {
+  background: var(--color-sky-500);
+
+  @variant hover:focus {
+    background: var(--color-sky-600);
+  }
+}
+```
+
+```css
+/* [!code filename:Compiled CSS] */
+.button {
+  background: var(--color-sky-500);
+
+  /* [!code highlight:8] */
+  &:hover {
+    @media (hover: hover) {
+      &:focus {
+        background: var(--color-sky-600);
+      }
+    }
+  }
+}
+```
+
+</CodeExampleStack>
+
+而且你可以使用复合变体，在多个变体之间共享同一段 CSS：
+
+<CodeExampleStack>
+
+```css
+/* [!code filename:CSS] */
+/* [!code word:hover, focus] */
+.button {
+  background: var(--color-sky-500);
+
+  @variant hover, focus {
+    background: var(--color-sky-600);
+  }
+}
+```
+
+```css
+/* [!code filename:Compiled CSS] */
+.button {
+  background: var(--color-sky-500);
+
+  /* [!code highlight:6] */
+  &:hover {
+    @media (hover: hover) {
+      background: var(--color-sky-600);
+    }
+  }
+
+  /* [!code highlight:4] */
+  &:focus {
+    background: var(--color-sky-600);
+  }
+}
+```
+
+</CodeExampleStack>
+
+通常更好的做法是创建一个真正的组件，并直接使用 Tailwind CSS 类进行样式设置，但当 CSS 才是合适的工具时，这会让 `@variant` 更好用很多。
+
+查看 [`@variant`](/docs/adding-custom-styles#adding-custom-variants) 文档了解更多详情。
+
+---
+
+## 函数式工具类的默认值
+
+Tailwind CSS v4.0 引入了函数式 `@utility` 定义，你可以使用 `--value(…)` 和 `--modifier(…)` 来定义接受主题值、裸值、任意值和修饰符的工具类。
+
+在 v4.3 中，当某个工具类需要在有值和无值两种情况下都能工作时，你现在可以把 `--default(…)` 传给 `--value(…)` 和 `--modifier(…)`：
+
+```css
+/* [!code filename:CSS] */
+/* [!code word:--default(4)] */
+@utility tab-* {
+  tab-size: --value(integer, --default(4));
+}
+```
+
+现在，裸的 `tab` 工具类可以回退到 `4`，而 `tab-2` 仍然会解析为 `2`：
+
+<CodeExampleStack>
+
+```html
+<!-- [!code filename:HTML] -->
+<!-- [!code classes:tab,tab-2] -->
+<pre class="tab ...">...</pre>
+<pre class="tab-2 ...">...</pre>
+```
+
+```css
+/* [!code filename:Generated CSS] */
+.tab {
+  /* [!code word:4] */
+  tab-size: 4;
+}
+
+.tab-2 {
+  /* [!code word:2] */
+  tab-size: 2;
+}
+```
+
+</CodeExampleStack>
+
+这让定义 API 变得更容易：裸工具类执行显而易见的操作，同时仍然支持同一工具类家族中的显式值。
+
+这虽是小事，但它让插件作者以及任何编写自定义工具类的人都能创建出更像我们在框架本身中提供的那些 API。
+
+---
+
+所以，这就是 Tailwind CSS v4.2 和 v4.3！
+
+使用 npm 更新到最新版本，并从今天开始试用它：
+
+<CodeExampleStack>
+
+```sh
+# [!code filename:使用 Tailwind CLI]
+npm install tailwindcss@latest @tailwindcss/cli@latest
+```
+
+```sh
+# [!code filename:使用 Vite]
+npm install tailwindcss@latest @tailwindcss/vite@latest
+```
+
+```sh
+# [!code filename:使用 PostCSS]
+npm install tailwindcss@latest @tailwindcss/postcss@latest
+```
+
+```sh
+# [!code filename:使用 webpack]
+npm install tailwindcss@latest @tailwindcss/webpack@latest
+```
+
+</CodeExampleStack>
+
+试试这些新内容，并告诉我们你遇到了什么。只要记住，制表符大小超过 4 是犯罪行为，可能会导致你的软件工程师执照被吊销。

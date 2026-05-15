@@ -100,8 +100,8 @@ function TailwindCSS() {
           </Link>
         </li>
         <li>
-          <Link href="/sponsor" className="hover:underline">
-            赞助
+          <Link href="/partners" className="hover:underline">
+            合作伙伴
           </Link>
         </li>
       </ul>
@@ -179,7 +179,7 @@ function Community() {
           </Link>
         </li>
         <li>
-          <Link href="/sponsor#insiders" className="hover:underline">
+          <Link href="/partners#insiders" className="hover:underline">
             Discord
           </Link>
         </li>

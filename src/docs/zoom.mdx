@@ -1,0 +1,48 @@
+import { ApiTable } from "@/components/api-table.tsx";
+import {
+  ResponsiveDesign,
+  TargetingSpecificStates,
+  UsingACustomValue,
+} from "@/components/content.tsx";
+
+export const title = "zoom";
+export const description = "Utilities for scaling elements using zoom.";
+
+<ApiTable
+  rows={[
+    ["zoom-<number>", "zoom: <number>%;"],
+    ["zoom-(<custom-property>)", "zoom: var(<custom-property>);"],
+    ["zoom-[<value>]", "zoom: <value>;"],
+  ]}
+/>
+
+## 示例
+
+### 基本示例
+
+使用 `zoom-<number>` 工具类，如 `zoom-75` 和 `zoom-125`，通过 CSS `zoom` 属性缩放元素：
+
+```html
+<!-- [!code classes:zoom-75,zoom-100,zoom-125] -->
+<div class="zoom-75 ...">
+  <!-- ... -->
+</div>
+<div class="zoom-100 ...">
+  <!-- ... -->
+</div>
+<div class="zoom-125 ...">
+  <!-- ... -->
+</div>
+```
+
+### 使用自定义值
+
+<UsingACustomValue utility="zoom" value="1.1" />
+
+### 悬停时应用
+
+<TargetingSpecificStates property="zoom" defaultClass="zoom-100" featuredClass="zoom-125" />
+
+### 响应式设计
+
+<ResponsiveDesign property="zoom" defaultClass="zoom-100" featuredClass="zoom-125" />

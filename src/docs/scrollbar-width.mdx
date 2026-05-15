@@ -1,0 +1,81 @@
+import { ApiTable } from "@/components/api-table.tsx";
+import { ResponsiveDesign } from "@/components/content.tsx";
+import { Example } from "@/components/example.tsx";
+import { Figure } from "@/components/figure.tsx";
+
+export const title = "scrollbar-width";
+export const description = "Utilities for controlling the width of an element's scrollbar.";
+
+<ApiTable
+  rows={[
+    ["scrollbar-auto", "scrollbar-width: auto;"],
+    ["scrollbar-thin", "scrollbar-width: thin;"],
+    ["scrollbar-none", "scrollbar-width: none;"],
+  ]}
+/>
+
+## 示例
+
+### 使用默认滚动条宽度
+
+使用 `scrollbar-auto` 工具类来使用浏览器的默认滚动条宽度：
+
+```html
+<!-- [!code classes:scrollbar-auto] -->
+<div class="scrollbar-auto overflow-auto ...">
+  <!-- ... -->
+</div>
+```
+
+### 使用细滚动条
+
+使用 `scrollbar-thin` 工具类来使用更细的滚动条：
+
+<Figure hint="垂直滚动">
+
+<Example>
+  {
+    <div className="mx-auto h-72 max-w-sm scrollbar-thin overflow-auto rounded-xl bg-white p-6 text-sm/6 text-gray-600 shadow-lg ring-1 ring-black/5 dark:bg-gray-800 dark:text-gray-300">
+      <div className="space-y-4">
+        <p>
+          塞留蓝档案馆占据了旧天文台上方三层狭窄的楼层，每层都排列着装有星图、探险笔记和黄铜仪器的抽屉，这些都由人工编目。
+        </p>
+        <p>
+          在冬日清晨，工作人员会在书架间推着梯子穿行，淡淡的光线透过屋顶窗户洒下，落在阅览桌上。
+        </p>
+        <p>
+          访客可以申请馆藏中的任何资料，但大多数人来这里是为了那些描绘海岸线的地图集，而这些海岸线已不再出现在现代地图上。
+        </p>
+        <p>
+          每一本归还的卷册都会先经过检查、除尘和包裹，然后再被送回书库，等待下一位研究者。
+        </p>
+      </div>
+    </div>
+  }
+</Example>
+
+```html
+<!-- [!code classes:scrollbar-thin] -->
+<div class="scrollbar-thin overflow-auto ...">
+  <!-- ... -->
+</div>
+```
+
+</Figure>
+
+### 隐藏滚动条
+
+使用 `scrollbar-none` 工具类来隐藏滚动条，同时仍然允许元素滚动：
+
+```html
+<!-- [!code classes:scrollbar-none] -->
+<div class="scrollbar-none overflow-auto ...">
+  <!-- ... -->
+</div>
+```
+
+这些工具类仅支持浏览器关键字 `auto`、`thin` 和 `none`。
+
+### 响应式设计
+
+<ResponsiveDesign property="scrollbar-width" defaultClass="scrollbar-none" featuredClass="scrollbar-auto" />

@@ -1,0 +1,86 @@
+import { ApiTable } from "@/components/api-table.tsx";
+import { ResponsiveDesign } from "@/components/content.tsx";
+import { Example } from "@/components/example.tsx";
+import { Figure } from "@/components/figure.tsx";
+
+export const title = "scrollbar-gutter";
+export const description = "Utilities for controlling the gutter space reserved for an element's scrollbar.";
+
+<ApiTable
+  rows={[
+    ["scrollbar-gutter-auto", "scrollbar-gutter: auto;"],
+    ["scrollbar-gutter-stable", "scrollbar-gutter: stable;"],
+    ["scrollbar-gutter-both", "scrollbar-gutter: stable both-edges;"],
+  ]}
+/>
+
+## 示例
+
+### 为滚动条预留空间
+
+使用 `scrollbar-gutter-stable` 工具，即使元素没有溢出，也为滚动条预留空间：
+
+<Figure>
+
+<Example>
+  {
+    <div className="mx-auto grid max-w-xl grid-cols-1 gap-6 text-sm/6 text-gray-600 sm:grid-cols-2 dark:text-gray-300">
+      <div>
+        <p className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">scrollbar-gutter-auto</p>
+        <div className="h-40 overflow-auto rounded-lg bg-gray-50 py-4 scrollbar-gutter-auto dark:bg-white/5">
+          <p className="text-justify">
+            嘿，大家好！现在已经快到 2027 年了，而我们仍然不知道是否有外星人生活在我们之中，还是说有呢？也许写这段话的人就是一个外星人。你永远不会知道。
+          </p>
+        </div>
+      </div>
+      <div>
+        <p className="mb-3 font-mono text-xs font-medium text-gray-500 dark:text-gray-400">scrollbar-gutter-stable</p>
+        <div className="relative h-40 rounded-lg bg-gray-50 py-4 pr-4 scrollbar-gutter-stable dark:bg-white/5">
+          <p className="text-justify">
+            嘿，大家好！现在已经快到 2027 年了，而我们仍然不知道是否有外星人生活在我们之中，还是说有呢？也许写这段话的人就是一个外星人。你永远不会知道。
+          </p>
+          <div className="absolute top-0 right-0 bottom-0 w-4 rounded-r-lg border bg-[image:repeating-linear-gradient(315deg,currentColor_0,currentColor_1px,transparent_0,transparent_50%)] bg-[size:8px_8px] bg-top-left text-black/10 dark:text-white/12.5"></div>
+        </div>
+      </div>
+    </div>
+  }
+</Example>
+
+```html
+<!-- [!code classes:scrollbar-gutter-stable] -->
+<div class="overflow-auto scrollbar-gutter-stable ...">
+  <!-- ... -->
+</div>
+```
+
+</Figure>
+
+### 两侧都预留空间
+
+使用 `scrollbar-gutter-both` 工具，为元素两侧预留相匹配的槽位空间：
+
+```html
+<!-- [!code classes:scrollbar-gutter-both] -->
+<div class="overflow-auto scrollbar-gutter-both ...">
+  <!-- ... -->
+</div>
+```
+
+### 使用默认槽位
+
+使用 `scrollbar-gutter-auto` 工具，仅在浏览器通常会显示滚动条时预留槽位空间：
+
+```html
+<!-- [!code classes:scrollbar-gutter-auto] -->
+<div class="overflow-auto scrollbar-gutter-auto ...">
+  <!-- ... -->
+</div>
+```
+
+### 响应式设计
+
+<ResponsiveDesign
+  property="scrollbar-gutter"
+  defaultClass="scrollbar-gutter-auto"
+  featuredClass="scrollbar-gutter-stable"
+/>
