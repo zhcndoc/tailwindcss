@@ -1,12 +1,32 @@
+export type SponsorCta = {
+  label: string;
+  href: string;
+};
+
+export type SponsorCtas = {
+  primary?: SponsorCta;
+  secondary?: SponsorCta;
+};
+
 export const partners = [
   {
     name: "Cursor",
     categories: ["AI Code Editors"],
     directory: true,
     url: "https://cursor.com?utm_source=tailwindcss",
+    careersUrl: "https://cursor.com/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Cursor supports Tailwind CSS",
+      summary:
+        "Cursor is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Cursor is a coding agent for building ambitious software. It spans the full development lifecycle, from planning to writing to reviewing code. For complex tasks, Cursor asks clarifying questions, builds a plan, then executes in the background, editing files, running terminal commands, and searching the web as it works. The same agents run anywhere you do: desktop, CLI, or from your browser or phone.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
-        <svg fill="currentColor" viewBox="0 0 213 50" {...props}>
+        <svg fill="currentColor" viewBox="-53.5 -23 320 96" {...props}>
           <path d="M43.522 11.8359L23.255 0.277922C22.9343 0.0957656 22.5718 0 22.203 0C21.8342 0 21.4717 0.0957656 21.151 0.277922L0.884998 11.8359C0.616792 11.9872 0.39355 12.207 0.238068 12.4728C0.0825848 12.7387 0.000432977 13.041 0 13.3489V36.6529C0 37.2769 0.337998 37.8539 0.884998 38.1669L21.152 49.7229C21.802 50.0939 22.605 50.0939 23.256 49.7229L43.523 38.1669C44.07 37.8549 44.408 37.2769 44.408 36.6529V13.3489C44.408 12.7249 44.07 12.1469 43.523 11.8349L43.522 11.8359ZM42.249 14.2829L22.684 47.7509C22.552 47.9769 22.203 47.8849 22.203 47.6239V25.7089C22.203 25.2709 21.966 24.8659 21.582 24.6459L2.366 13.6889C2.138 13.5589 2.231 13.2139 2.496 13.2139H41.625C42.18 13.2139 42.528 13.8089 42.25 14.2839M68.736 12.9759H77.36V17.6679H69.028C64.534 17.6679 61.026 20.2309 61.026 25.6439C61.026 31.0569 64.534 33.6199 69.028 33.6199H77.36V38.3119H68.371C60.843 38.3119 55.508 33.9449 55.508 25.6449C55.508 17.3449 61.208 12.9779 68.736 12.9779V12.9759ZM81.745 12.9759H87.08V28.4579C87.08 32.3199 88.87 34.1249 93.073 34.1249C97.276 34.1249 99.066 32.3209 99.066 28.4579V12.9759H104.401V29.5409C104.401 35.1709 100.784 38.7439 93.073 38.7439C85.362 38.7439 81.745 35.1339 81.745 29.5049V12.9759ZM132.281 20.1569C132.281 22.9729 130.637 25.1369 128.444 26.0769V26.1489C130.747 26.4739 131.916 28.0979 131.952 30.2989L132.062 38.3109H126.727L126.617 31.1659C126.581 29.5779 125.631 28.6029 123.731 28.6029H114.851V38.3109H109.516V12.9759H124.243C129.066 12.9759 132.281 15.3939 132.281 20.1579M126.909 20.8809C126.909 18.7159 125.74 17.5239 123.548 17.5239H114.851V24.2359H123.62C125.63 24.2359 126.909 23.0469 126.909 20.8809ZM152.451 30.9119C152.451 29.1079 151.282 28.3499 149.528 28.2059L143.608 27.6649C138.493 27.1949 135.825 25.2099 135.825 20.4099C135.825 15.6099 139.114 12.9749 143.827 12.9749H156.909V17.5229H144.193C142.366 17.5229 141.197 18.4609 141.197 20.2649C141.197 22.0689 142.402 22.9359 144.23 23.0809L150.259 23.5859C154.827 23.9829 157.823 26.0409 157.823 30.8759C157.823 35.7119 154.644 38.3109 150.15 38.3109H136.483V33.7639H149.638C151.355 33.7639 152.451 32.6089 152.451 30.9139V30.9119ZM173.427 12.5429C181.465 12.5429 186.545 17.6309 186.545 25.6069C186.545 33.5839 181.247 38.7439 173.208 38.7439C165.169 38.7439 160.089 33.5839 160.089 25.6069C160.089 17.6309 165.388 12.5429 173.427 12.5429ZM181.027 25.6429C181.027 20.3019 177.884 17.1629 173.316 17.1629C168.748 17.1629 165.606 20.3019 165.606 25.6429C165.606 30.9839 168.748 34.1229 173.316 34.1229C177.884 34.1229 181.027 30.9839 181.027 25.6429ZM213 20.1569C213 22.9729 211.356 25.1369 209.163 26.0769V26.1489C211.465 26.4739 212.635 28.0979 212.671 30.2989L212.78 38.3109H207.446L207.336 31.1659C207.3 29.5779 206.349 28.6029 204.449 28.6029H195.57V38.3109H190.235V12.9759H204.961C209.785 12.9759 213 15.3939 213 20.1579M207.628 20.8809C207.628 18.7159 206.459 17.5239 204.267 17.5239H195.57V24.2359H204.339C206.349 24.2359 207.628 23.0469 207.628 20.8809Z" />
         </svg>
       );
@@ -20,59 +40,22 @@ export const partners = [
     },
   },
   {
-    name: "Polar",
-    categories: ["Commerce"],
-    directory: true,
-    url: "https://polar.sh/?utm_source=tailwindcss",
-    logo: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path d="M140.641 63.702V31.903h12.752c1.676 0 3.2.424 4.571 1.272 1.372.818 2.453 1.953 3.246 3.407.822 1.454 1.234 3.074 1.234 4.86 0 1.848-.412 3.514-1.234 4.998-.793 1.484-1.874 2.665-3.246 3.543-1.371.878-2.895 1.317-4.571 1.317h-8.776v12.402h-3.976Zm3.976-16.263h8.868c.914 0 1.737-.257 2.468-.772.731-.545 1.31-1.272 1.737-2.18.427-.91.64-1.924.64-3.044 0-1.09-.213-2.06-.64-2.908a5.445 5.445 0 0 0-1.737-2.044 4.185 4.185 0 0 0-2.468-.772h-8.868v11.72ZM177.171 64.156c-2.346 0-4.449-.53-6.308-1.59a12.084 12.084 0 0 1-4.342-4.406c-1.066-1.878-1.6-4.013-1.6-6.405 0-2.393.534-4.513 1.6-6.36a11.735 11.735 0 0 1 4.342-4.361c1.859-1.06 3.962-1.59 6.308-1.59 2.347 0 4.434.53 6.262 1.59a11.307 11.307 0 0 1 4.343 4.36c1.066 1.848 1.599 3.968 1.599 6.36 0 2.393-.533 4.528-1.599 6.406-1.037 1.847-2.484 3.316-4.343 4.406-1.828 1.06-3.915 1.59-6.262 1.59Zm0-3.543c1.615 0 3.048-.379 4.297-1.136a8.2 8.2 0 0 0 2.925-3.18c.732-1.332 1.082-2.846 1.052-4.542.03-1.696-.32-3.195-1.052-4.498-.701-1.332-1.676-2.377-2.925-3.134-1.249-.757-2.682-1.136-4.297-1.136-1.615 0-3.062.379-4.342 1.136-1.249.757-2.225 1.802-2.925 3.134-.701 1.333-1.052 2.832-1.052 4.498 0 1.696.351 3.21 1.052 4.542a8.193 8.193 0 0 0 2.925 3.18c1.28.757 2.727 1.136 4.342 1.136ZM193.552 63.702V30.086h3.839v33.616h-3.839ZM212.539 64.156c-2.042 0-3.901-.53-5.577-1.59-1.645-1.09-2.955-2.574-3.93-4.452-.975-1.877-1.463-3.997-1.463-6.36 0-2.392.503-4.512 1.508-6.36 1.006-1.847 2.347-3.3 4.023-4.36 1.706-1.06 3.611-1.59 5.713-1.59 1.249 0 2.392.182 3.428.545a9.146 9.146 0 0 1 2.834 1.544 8.611 8.611 0 0 1 2.057 2.272 7.568 7.568 0 0 1 1.097 2.726l-1.006-.455.046-6.132h3.84v23.758h-3.84v-5.77l.96-.499c-.213.878-.625 1.726-1.234 2.544a9.336 9.336 0 0 1-2.194 2.18 11.145 11.145 0 0 1-2.88 1.454 10.415 10.415 0 0 1-3.382.545Zm.914-3.589c1.554 0 2.925-.378 4.114-1.135 1.188-.757 2.133-1.787 2.834-3.09.701-1.332 1.051-2.861 1.051-4.587 0-1.696-.35-3.195-1.051-4.498a7.729 7.729 0 0 0-2.834-3.089c-1.189-.757-2.56-1.135-4.114-1.135-1.554 0-2.925.378-4.114 1.135-1.188.757-2.133 1.787-2.834 3.09-.67 1.302-1.005 2.8-1.005 4.497 0 1.696.335 3.21 1.005 4.542.701 1.333 1.646 2.378 2.834 3.135 1.189.757 2.56 1.135 4.114 1.135ZM230.042 63.702V39.944h3.84l.091 6.677-.411-1.135a8.464 8.464 0 0 1 1.645-3.044 8.9 8.9 0 0 1 2.697-2.18 7.331 7.331 0 0 1 3.382-.818c.518 0 1.006.045 1.463.136.488.06.883.152 1.188.273l-1.051 4.224a5.889 5.889 0 0 0-1.234-.408 5.738 5.738 0 0 0-1.189-.137c-.975 0-1.873.182-2.696.545a6.302 6.302 0 0 0-2.057 1.5 7.242 7.242 0 0 0-1.326 2.135 7.501 7.501 0 0 0-.457 2.634v13.356h-3.885Z" />
-          <path
-            d="M84.878 67.863c11.075 7.45 26.13 4.568 33.627-6.44 7.497-11.006 4.597-25.97-6.478-33.42-11.075-7.45-26.131-4.568-33.628 6.439s-4.597 25.97 6.479 33.42Zm3.212.197c10.13 5.15 22.982.315 28.705-10.8 5.722-11.116 2.148-24.304-7.983-29.455s-22.983-.316-28.705 10.8c-5.722 11.116-2.148 24.303 7.983 29.455Z"
-            clipRule="evenodd"
-            fillRule="evenodd"
-          />
-          <path
-            d="M90.977 70.688c9.145 2.959 19.903-4.856 24.029-17.455 4.126-12.598.057-25.209-9.088-28.167-9.146-2.958-19.904 4.857-24.03 17.455-4.125 12.598-.056 25.21 9.089 28.167Zm2.797-.957c7.74 1.64 16.108-6.79 18.692-18.829 2.584-12.039-1.595-23.129-9.335-24.77-7.74-1.64-16.108 6.79-18.692 18.83C81.855 57 86.035 68.09 93.774 69.73Z"
-            clipRule="evenodd"
-            fillRule="evenodd"
-          />
-          <path
-            d="M95.896 71.716c6.119.65 12.226-9.494 13.64-22.656 1.414-13.162-2.4-24.358-8.519-25.008-6.119-.649-12.226 9.495-13.64 22.657-1.414 13.161 2.4 24.358 8.519 25.007Zm2.863-4.006c4.429-.07 7.878-8.979 7.704-19.9-.173-10.92-3.904-19.718-8.332-19.648-4.429.07-7.878 8.979-7.704 19.9.173 10.92 3.904 19.718 8.332 19.648Z"
-            clipRule="evenodd"
-            fillRule="evenodd"
-          />
-        </svg>
-      );
-    },
-    icon: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="72 18 56 60" {...props}>
-          <path
-            d="M84.878 67.863c11.075 7.45 26.13 4.568 33.627-6.44 7.497-11.006 4.597-25.97-6.478-33.42-11.075-7.45-26.131-4.568-33.628 6.439s-4.597 25.97 6.479 33.42Zm3.212.197c10.13 5.15 22.982.315 28.705-10.8 5.722-11.116 2.148-24.304-7.983-29.455s-22.983-.316-28.705 10.8c-5.722 11.116-2.148 24.303 7.983 29.455Z"
-            clipRule="evenodd"
-            fillRule="evenodd"
-          />
-          <path
-            d="M90.977 70.688c9.145 2.959 19.903-4.856 24.029-17.455 4.126-12.598.057-25.209-9.088-28.167-9.146-2.958-19.904 4.857-24.03 17.455-4.125 12.598-.056 25.21 9.089 28.167Zm2.797-.957c7.74 1.64 16.108-6.79 18.692-18.829 2.584-12.039-1.595-23.129-9.335-24.77-7.74-1.64-16.108 6.79-18.692 18.83C81.855 57 86.035 68.09 93.774 69.73Z"
-            clipRule="evenodd"
-            fillRule="evenodd"
-          />
-          <path
-            d="M95.896 71.716c6.119.65 12.226-9.494 13.64-22.656 1.414-13.162-2.4-24.358-8.519-25.008-6.119-.649-12.226 9.495-13.64 22.657-1.414 13.161 2.4 24.358 8.519 25.007Zm2.863-4.006c4.429-.07 7.878-8.979 7.704-19.9-.173-10.92-3.904-19.718-8.332-19.648-4.429.07-7.878 8.979-7.704 19.9.173 10.92 3.904 19.718 8.332 19.648Z"
-            clipRule="evenodd"
-            fillRule="evenodd"
-          />
-        </svg>
-      );
-    },
-  },
-  {
     name: "Namespace",
     categories: ["Hosting"],
     directory: true,
     url: "https://namespace.so/?utm_source=tailwindcss",
+    careersUrl: "https://namespace.so/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Namespace supports Tailwind CSS",
+      summary:
+        "Namespace is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Namespace offers fast cloud computers purpose-built for developer workflows - CI, builds, tests, and dev environments. Where hyperscalers optimize for production, Namespace optimizes for the bursty, latency-sensitive shape of code: high-frequency cores, NVMe storage, and built-in caching on hardware we own across data centers in the US and Europe.",
+        "Swap one line in your GitHub Actions workflow and your builds can run 2-10x faster on Namespace runner instances. Devboxes give every engineer or AI coding agent an isolated cloud machine that boots in seconds with your repo already checked out. Cache Volumes make incremental builds and tests feel local, even at scale.",
+        "Companies like Ramp, Verkada, Vanta, Framer, and Zed ship on Namespace. Products like Buildkite Hosted Agents and Warp Background Agents build on it too.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -93,6 +76,17 @@ export const partners = [
     categories: ["Email"],
     directory: true,
     url: "https://go.resend.com/tailwind?utm_source=tailwindcss",
+    careersUrl: "https://resend.com/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Resend supports Tailwind CSS",
+      summary:
+        "Resend is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Resend is an email API for developers. It handles transactional and marketing email at scale, with SDKs for most languages so sending fits inside the codebase rather than alongside it. Templates are built with react-email (an open source component library) instead of nested <table> HTML, and webhooks deliver real-time events back to your server every time a message is delivered, opened, bounces, or has a link clicked.",
+        "Resend treats email as infrastructure, on the same shelf as water, energy, and transportation (the kind of thing you don't think about until it's not there). That framing sets a different bar for uptime, deliverability, and the surface developers actually touch. Documentation isn't auxiliary to the product, it's part of it: the first thing you read when you integrate, and the thing you keep coming back to as you go deeper.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -109,30 +103,27 @@ export const partners = [
     },
   },
   {
-    name: "TipTap",
-    categories: ["CMS & Editors"],
-    directory: true,
-    url: "https://tiptap.dev/?utm_source=tailwindcss",
-    logo: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path d="M122.314 31.25h22.73v4.866h-8.605v23.679h-5.52V36.116h-8.605v-4.865ZM148.307 35.792v-5.19h5.196v5.19h-5.196Zm0 24.003V38.387h5.196v21.408h-5.196ZM162.937 38.387v.81c0 .852-.203 1.5-.569 2.23-.162.406-.446.893-.04 1.095.406.203.649-.324.73-.486 1.299-2.27 3.45-3.974 6.779-3.974 5.56 0 9.335 4.866 9.335 11.029s-3.775 11.028-9.335 11.028c-3.248 0-5.48-1.662-6.779-4.014-.081-.122-.243-.527-.609-.405-.446.162-.284.567-.081.973.366.73.569 1.378.569 2.19v8.716h-5.196V38.387h5.196Zm5.682 17.029c3.653 0 5.358-2.92 5.358-6.325 0-3.406-1.705-6.325-5.358-6.325-3.41 0-5.682 2.919-5.682 6.325 0 3.405 2.272 6.325 5.682 6.325ZM195.107 42.928h-5.845v9.771c0 2.352.041 2.555 2.233 2.555h3.612v4.54h-4.708c-4.303 0-6.332-1.419-6.332-6.568V42.928h-3.897v-4.541h3.897v-5.839h5.195v5.839h5.845v4.54ZM213.624 38.387h5.195v21.408h-5.195v-.933c0-.81.203-1.46.568-2.19.203-.405.366-.81-.081-.972-.365-.122-.528.283-.609.405-1.502 2.23-3.531 4.014-6.778 4.014-5.561 0-9.336-4.865-9.336-11.028s3.775-11.029 9.336-11.029c3.328 0 5.601 1.622 6.778 3.974.081.162.325.689.731.486.406-.202.162-.689-.041-1.094-.365-.73-.568-1.379-.568-2.23v-.811Zm-5.683 17.029c3.41 0 5.683-2.92 5.683-6.325 0-3.406-2.273-6.325-5.683-6.325-3.653 0-5.357 2.919-5.357 6.325 0 3.405 1.704 6.325 5.357 6.325ZM228.26 38.387v.81c0 .852-.203 1.5-.569 2.23-.162.406-.446.893-.04 1.095.406.203.649-.324.731-.486 1.298-2.27 3.45-3.974 6.778-3.974 5.561 0 9.336 4.866 9.336 11.029s-3.775 11.028-9.336 11.028c-3.247 0-5.48-1.662-6.778-4.014-.082-.122-.244-.527-.609-.405-.447.162-.284.567-.082.973.366.73.569 1.378.569 2.19v8.716h-5.196V38.387h5.196Zm5.682 17.029c3.653 0 5.358-2.92 5.358-6.325 0-3.406-1.705-6.325-5.358-6.325-3.409 0-5.682 2.919-5.682 6.325 0 3.405 2.273 6.325 5.682 6.325ZM82.574 26a21.94 21.94 0 0 0-11.12 3.007c-.658.385-.947 1.24-.388 1.758.491.456 1.15.735 1.873.735h19.27c.724 0 1.382-.279 1.873-.735.559-.518.27-1.373-.387-1.758A21.94 21.94 0 0 0 82.575 26ZM104.598 48a2.751 2.751 0 0 0-2.753-2.75H63.304A2.751 2.751 0 0 0 60.55 48a2.751 2.751 0 0 0 2.753 2.75h38.541a2.751 2.751 0 0 0 2.753-2.75ZM94.082 65.235c.559.518.27 1.373-.387 1.758A21.94 21.94 0 0 1 82.575 70a21.94 21.94 0 0 1-11.122-3.007c-.657-.385-.946-1.24-.387-1.758a2.745 2.745 0 0 1 1.873-.735h19.27c.724 0 1.382.279 1.873.735ZM63.304 38.375a2.751 2.751 0 0 1 2.753-2.75h33.035a2.751 2.751 0 1 1 0 5.5H66.057a2.751 2.751 0 0 1-2.753-2.75ZM63.304 57.625a2.751 2.751 0 0 1 2.753-2.75h33.035a2.751 2.751 0 1 1 0 5.5H66.057a2.751 2.751 0 0 1-2.753-2.75Z" />
-        </svg>
-      );
-    },
-    icon: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="58 24 50 48" {...props}>
-          <path d="M82.574 26a21.94 21.94 0 0 0-11.12 3.007c-.658.385-.947 1.24-.388 1.758.491.456 1.15.735 1.873.735h19.27c.724 0 1.382-.279 1.873-.735.559-.518.27-1.373-.387-1.758A21.94 21.94 0 0 0 82.575 26ZM104.598 48a2.751 2.751 0 0 0-2.753-2.75H63.304A2.751 2.751 0 0 0 60.55 48a2.751 2.751 0 0 0 2.753 2.75h38.541a2.751 2.751 0 0 0 2.753-2.75ZM94.082 65.235c.559.518.27 1.373-.387 1.758A21.94 21.94 0 0 1 82.575 70a21.94 21.94 0 0 1-11.122-3.007c-.657-.385-.946-1.24-.387-1.758a2.745 2.745 0 0 1 1.873-.735h19.27c.724 0 1.382.279 1.873.735ZM63.304 38.375a2.751 2.751 0 0 1 2.753-2.75h33.035a2.751 2.751 0 1 1 0 5.5H66.057a2.751 2.751 0 0 1-2.753-2.75ZM63.304 57.625a2.751 2.751 0 0 1 2.753-2.75h33.035a2.751 2.751 0 1 1 0 5.5H66.057a2.751 2.751 0 0 1-2.753-2.75Z" />
-        </svg>
-      );
-    },
-  },
-  {
     name: "Mux",
     categories: ["Media APIs"],
     directory: true,
     url: "https://mux.com/?utm_source=tailwindcss",
+    ctas: {
+      secondary: {
+        label: "View Docs",
+        href: "https://www.mux.com/docs?utm_source=tailwindcss",
+      },
+    } satisfies SponsorCtas,
+    detail: {
+      eyebrow: "Partner",
+      title: "Mux supports Tailwind CSS",
+      summary:
+        "Mux is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Mux is a video API platform that turns your assets into video intelligence. Video files contain a boatload of data and context that most developers never tap. Mux Robots powers AI workflows that run automatically on every upload: summarization, caption translation, content moderation, chapter generation, and more. Configure them once, and every new asset is processed without webhooks or self-hosted glue code.",
+        "And the delivery layer? That's table stakes for Mux. Your assets are ready for playback in seconds. Upload a video or start a live stream, get a playback URL, and your viewers get smooth streaming on any device, without you thinking about transcoding, CDN configuration, or why Safari is doing something Chrome isn't.",
+        "Trusted by Cursor, Shopify, and Synthesia. Start building at Mux.com. Enter TAILWINDCSS at signup for $50 in credits.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -153,6 +144,17 @@ export const partners = [
     categories: ["Media APIs"],
     directory: true,
     url: "https://www.nutrient.io/sdk/web?utm_source=tailwindcss",
+    careersUrl: "https://www.nutrient.io/company/careers/",
+    detail: {
+      eyebrow: "Partner",
+      title: "Nutrient supports Tailwind CSS",
+      summary:
+        "Nutrient is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Nutrient is a document SDK that drops PDF viewing, annotation, editing, and form filling into your web app. You point it at a file, embed the viewer, and your users get a fast, polished reading experience with tools for highlights, comments, signatures, and redactions, without you having to wrangle PDF.js or build any of it from scratch.",
+        "Beyond the viewer, Nutrient handles the document work that usually turns into its own project: generating PDFs from HTML, converting between formats, running OCR on scanned files, and processing documents on the server. Whether you're shipping a contract workflow, a knowledge base, or a full-blown document editor, you get a single SDK that covers the whole pipeline.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -173,6 +175,17 @@ export const partners = [
     categories: ["Auth"],
     directory: true,
     url: "https://go.clerk.com/tailwind?utm_source=tailwindcss",
+    careersUrl: "https://clerk.com/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Clerk supports Tailwind CSS",
+      summary:
+        "Clerk is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Clerk is authentication and user management for your application. Drop in React components for sign-in, sign-up, profile, and organization management, or scaffold the setup from your terminal with clerk init, which detects your framework, installs the SDK, and creates your auth pages, middleware, and providers. Style the components to match your brand with any CSS library, and deploy to your own domain. Clerk handles the full session lifecycle, including active device monitoring and session revocation, and gives you the multi-tenancy primitives you need to onboard and manage organizations in a B2B SaaS app.",
+        "Subscription billing works the same way. Add recurring revenue to a B2C or B2B application by dropping in React components, without writing payment code, building custom UI, or wrangling webhooks. The same source of truth that holds your users now holds their subscriptions, so the work you'd usually spread across an auth provider, a billing integration, and a pile of glue code collapses into one set of components.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -207,6 +220,17 @@ export const partners = [
     categories: ["AI App Builders"],
     directory: true,
     url: "https://bolt.new/?utm_source=tailwindcss",
+    careersUrl: "https://bolt.new/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Bolt supports Tailwind CSS",
+      summary:
+        "Bolt is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Bolt is an AI app builder for shipping real products without touching infrastructure. You describe what you want, and Bolt generates the app along with everything it needs to run: databases, hosting, authentication, payments, storage, and SEO. No terminal, no configuration, no separate accounts to set up. You can bring your own design system, sync with GitHub, fork projects, and collaborate with your team in shared workspaces. Buying a domain and going live takes a few clicks.",
+        "A lot of AI builders are fun until you try to scale them. They spin up a frontend in minutes and then fall apart under real traffic. Bolt is built on battle-tested infrastructure, so the app you ship on day one is the same app that handles your millionth user. Signups, logins, password resets, and role-based access work out of the box, and enterprise-grade hosting comes standard with every project.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -234,45 +258,21 @@ export const partners = [
     },
   },
   {
-    name: "Graphite",
-    categories: ["AI Code Review"],
-    directory: true,
-    url: "https://graphite.dev/?utm_source=tailwindcss",
-    logo: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path d="M74.852 35.319 58.797 31.02 47.044 42.77l4.298 16.041 16.053 4.296 11.756-11.745-4.297-16.042-.002-.002Z" />
-          <path d="m69.555 23-24.096 6.448L39 53.51l17.641 17.62 24.096-6.45 6.459-24.063L69.554 23Zm3.93 42.042H52.711l-10.388-17.98 10.388-17.979h20.774l10.387 17.98-10.39 17.979h.003Z" />
-          <path
-            fillRule="evenodd"
-            d="M201.745 63.962V30.535h4.761v12.746h.24c1.961-2.766 4.122-3.687 6.922-3.687 5.72 0 9.523 3.766 9.523 10.02v14.349h-4.762v-14.35a5.701 5.701 0 0 0-1.661-4.07 5.669 5.669 0 0 0-4.06-1.662c-3.561 0-6.202 2.646-6.202 5.731v14.35h-4.761Zm40.598-5.01V44.604h-4.202v-4.529h4.2v-5.2l4.763-2.758v7.958h7.04v4.53h-7.04V58.23c0 .963.479 1.444 1.439 1.444h5.601l-2.515 4.288h-4.046c-3.4 0-5.24-1.923-5.24-5.01Zm-48.995-7.035c0-4.971-3.081-8.136-6.922-8.136-3.801 0-6.882 3.167-6.882 8.136 0 4.97 3.081 8.098 6.882 8.098 3.839 0 6.922-3.127 6.922-8.098ZM174.785 73V39.973h4.281l.48 3.687h.24c.801-1.722 2.762-4.168 7.364-4.168 6.24 0 10.961 4.77 10.961 12.425 0 7.656-4.721 12.425-10.963 12.425-4.56 0-6.642-2.404-7.362-4.167h-.24V73h-4.761Zm51.237-28.638h4.2v19.6h4.763V40.075h-8.965l.002 4.287Z"
-            clipRule="evenodd"
-          />
-          <path d="M234.985 30.535h-5.241v5.01h5.241v-5.01Z" />
-          <path
-            fillRule="evenodd"
-            d="M134.561 63.962v-23.89h4.041l.48 2.97h.24c1.16-2.367 2.32-2.97 5.72-2.97h2.545v4.29h-3.265c-3.521 0-5 1.363-5 4.57v15.03h-4.761Zm126.353-13.968h14.042c-.519-3.809-3.081-6.455-6.922-6.455-4.041 0-6.4 2.646-7.12 6.455Zm13.452 7.118 3.872 2.24c-2.044 2.694-5.416 4.99-10.201 4.99-6.883 0-11.883-5.01-11.883-12.425 0-7.415 5-12.425 11.883-12.425 6.44 0 11.442 5.01 11.442 11.704-.01.576-.05 1.15-.121 1.723l-.121.68h-18.323c.52 4.049 3.319 6.655 7.12 6.655 2.882 0 5.022-1.202 6.332-3.142Zm-109.991-3.291v-.963h-5.681c-3.64 0-5.24 1.644-5.24 3.809 0 2.166 1.4 3.566 4.281 3.566 4.32 0 6.64-2.364 6.64-6.412Zm4.36 10.02c-3.317 0-3.959-2.285-4.118-3.447h-.242c-1.439 2.885-4.521 3.929-7.12 3.929-5.241 0-8.602-3.088-8.602-7.417 0-4.77 3.121-7.896 9.801-7.896h5.921v-.441c0-3.125-1.88-5.005-5.001-5.05a6.047 6.047 0 0 0-5.361 3.285l-4.054-2.34c1.636-2.97 4.74-4.993 9.417-4.993 6.242 0 9.801 3.527 9.801 9.1v10.083a.902.902 0 0 0 .898.898h1.904v4.29h-3.244Zm-39.623-17.416v17.437h-4.041l-.48-5.091h-.24c-2.32 3.648-6.081 5.57-10.483 5.57-8.762 0-15.964-6.933-15.964-17.193 0-10.263 7.202-17.196 15.964-17.196 7.089 0 11.762 4.25 14.234 8.93l-4.108 2.378c-2.307-3.964-5.803-6.537-10.126-6.537-6.242 0-10.963 4.77-10.963 12.425 0 7.614 4.721 12.425 10.963 12.425 5.72 0 10.243-4.49 10.243-8.858v-.24h-8.829l-2.326-4.05h16.156Z"
-            clipRule="evenodd"
-          />
-        </svg>
-      );
-    },
-    icon: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="37 21 54 54" {...props}>
-          <path d="M74.852 35.319 58.797 31.02 47.044 42.77l4.298 16.041 16.053 4.296 11.756-11.745-4.297-16.042-.002-.002Z" />
-          <path d="m69.555 23-24.096 6.448L39 53.51l17.641 17.62 24.096-6.45 6.459-24.063L69.554 23Zm3.93 42.042H52.711l-10.388-17.98 10.388-17.979h20.774l10.387 17.98-10.39 17.979h.003Z" />
-
-          <path d="M74.852 35.319 58.797 31.02 47.044 42.77l4.298 16.041 16.053 4.296 11.756-11.745-4.297-16.042-.002-.002Z" />
-        </svg>
-      );
-    },
-  },
-  {
     name: "Base UI",
     categories: ["Developer Tools"],
     directory: true,
     url: "https://base-ui.com/?utm_source=tailwindcss",
+    careersUrl: "https://mui.com/careers/",
+    detail: {
+      eyebrow: "Partner",
+      title: "Base UI supports Tailwind CSS",
+      summary:
+        "Base UI is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Base UI is an open-source React component library for building accessible user interfaces. The components are unstyled and ship without any CSS, so the styling layer stays under your control, whether you use Tailwind, CSS Modules, plain CSS, CSS-in-JS, or whatever else you reach for. Component APIs are fully open, with direct access to each node, so you can add or remove parts and wrap them however the design needs.",
+        "Accessibility is the primary focus. Components follow WAI-ARIA design patterns and are tested across a wide range of screen readers, browsers, devices, and platforms. Base UI comes from the team behind Radix, Floating UI, and Material UI, with multiple decades of collective experience building component libraries, and the details show it.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -305,6 +305,17 @@ export const partners = [
     categories: ["Commerce"],
     directory: true,
     url: "https://shopify.com/?utm_source=tailwindcss",
+    careersUrl: "https://www.shopify.com/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Shopify supports Tailwind CSS",
+      summary:
+        "Shopify is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Shopify is a complete commerce platform for selling online and in person. You get a storefront and a back office in one place, with prebuilt themes (or AI-assisted design if you want to move faster), inventory and order management, marketing tools, and analytics. The same setup runs across channels, so a product can sell on your own site, in a retail shop through Shopify POS, on social, and through AI agents, with everything staying in sync. The same foundation works for a side hustle and a global brand.",
+        "Shopify Checkout with Shop Pay lifts conversion by up to 50%, and puts your store in front of the hundreds of millions of buyers who already have Shop Pay credentials saved. It's built into every Shopify store rather than something you bolt on.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -325,6 +336,17 @@ export const partners = [
     categories: ["AI Code Review"],
     directory: true,
     url: "https://www.coderabbit.ai/?utm_source=tailwindcss",
+    careersUrl: "https://www.coderabbit.ai/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "CodeRabbit supports Tailwind CSS",
+      summary:
+        "CodeRabbit is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        'CodeRabbit is an AI code reviewer that works at the pull request stage, in your IDE, or in the CLI. Reviews come with a summary of changes, a walkthrough, and an architectural diagram, plus line-by-line suggestions and real-time chat. Easy fixes ship with a one-click commit. Harder ones get a "Fix with AI" button. 40+ linters and security scanners run alongside the model, with false positives filtered out before anything reaches the PR.',
+        "CodeRabbit understands the context of your code and maintains a 1:1 ratio of code-to-context in its prompts, pulling in codebase structure through a codegraph, past PRs, team conventions, and ticket requirements for every line under review. Verification scripts run in a sandbox against each suggested comment and drop low-value feedback before it ships. Set the baseline in a yaml file, then train the agent further through replies.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -354,6 +376,17 @@ export const partners = [
     categories: ["AI App Builders"],
     directory: true,
     url: "https://v0.app/?utm_source=tailwindcss",
+    careersUrl: "https://vercel.com/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "v0 supports Tailwind CSS",
+      summary:
+        "v0 is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "v0 is an AI app builder for shipping production apps from a prompt. You describe what you want and v0 generates a working app running in a real environment, with UI, logic, and data wired together. You can start from scratch or point v0 at an existing GitHub repo, where it picks up your environment variables and configuration from Vercel and keeps building on what you've already shipped. From there it plans, reasons, and debugs alongside you as the project grows.",
+        "Every prompt creates a branch, opens a PR against main, and deploys on merge. The code lives in your actual repo from the first message, which means product managers, designers, and marketers can ship real features through the same git workflow as engineers, instead of handing prototypes off to be rebuilt.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -374,44 +407,28 @@ export const partners = [
     categories: ["AI Code Review"],
     directory: true,
     url: "https://www.greptile.com/?utm_source=tailwind",
+    careersUrl: "https://www.greptile.com/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Greptile supports Tailwind CSS",
+      summary:
+        "Greptile is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Greptile is an AI code review agent that reviews every pull request. Install the GitHub or GitLab app, pick your repos, and Greptile posts findings as PR comments on every push. Each PR gets a 0–5 confidence score so you can see at a glance how safe it is to merge, along with sequence diagrams and flowcharts for changes that touch a lot of surface area. Every comment has a one-click fix button that hands the issue, with file paths and suggested code, straight to Claude Code, Cursor, Codex, or Devin.",
+        "Greptile builds a graph of your entire codebase (files, functions, dependencies) and reviews each change with that whole-repo context, so it catches the bugs that file-by-file tools and tired human reviewers miss. A swarm of agents assesses how a diff ripples through distant parts of the system, not just the lines that changed.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path d="M87.213 34.467a.3.3 0 0 1 .192.485l-1.73 2.178a14.7 14.7 0 0 0-3.189 9.144v1.098a.6.6 0 0 1-.346.542l-.697.324a12.94 12.94 0 0 0-6.263 6.245l-.325.695a.6.6 0 0 1-.543.345H73.21c-3.329 0-6.56 1.12-9.17 3.18l-2.184 1.724a.302.302 0 0 1-.486-.191l-1.39-9.204a41.2 41.2 0 0 0-5.816-15.705 1.08 1.08 0 0 1 .154-1.337l6.573-6.555c.357-.355.913-.419 1.34-.152a41.5 41.5 0 0 0 15.752 5.798zM73.21 58.769c.138 0 .25.108.255.245l.056 1.66.331 9.76c.02.587-.73.848-1.08.376l-4.508-6.075-2.261-3.05a.316.316 0 0 1 .058-.436 11.5 11.5 0 0 1 3.8-1.98c1.081-.329 2.211-.5 3.35-.5M86.243 46.695v-.003l-.098-.003a.416.416 0 0 1-.403-.416 11.4 11.4 0 0 1 .8-4.199c.344-.873.834-1.754 1.395-2.538a.58.58 0 0 1 .815-.118l3.548 2.616q2.68 1.98 5.363 3.956c.473.35.211 1.098-.377 1.078zM84.402 50.444a.6.6 0 0 1 .783.264l7.443 14.12c.273.519-.289 1.08-.81.807l-5.517-2.892-8.644-4.529a.596.596 0 0 1-.264-.781l.738-1.577a9.678 9.678 0 0 1 4.69-4.676zM120.159 73c-7.35 0-11.869-3.583-12.414-9.283h5.5c.326 2.986 2.776 4.886 7.023 4.886 4.682 0 7.296-2.28 7.296-7.384v-4.723c-1.96 3.312-4.9 5.158-8.875 5.158-6.588 0-11.706-4.94-11.706-13.735 0-8.85 5.118-13.79 11.706-13.79 3.975 0 6.969 1.9 8.929 5.266v-4.723h5.499v26.222c0 7.709-4.791 12.106-12.958 12.106M112.7 48.624c0 5.43 2.886 8.415 7.459 8.415 4.683 0 7.405-3.149 7.405-8.035v-2.171c0-4.995-2.722-8.198-7.405-8.198-4.573 0-7.459 3.04-7.459 8.578zm24.086 13.192V34.673h5.445v4.669c1.688-3.746 4.355-4.94 7.677-4.94h1.089v5.483h-3.431c-3.539 0-5.226 1.629-5.226 5.537v16.396zm27.836.543c-8.058 0-13.557-5.537-13.557-14.115s5.499-14.115 13.34-14.115c7.513 0 12.631 5.05 12.631 14.115v1.575h-20.254c.055 5.048 3.213 8.034 7.84 8.034 3.703 0 5.826-1.954 6.48-4.288h5.499c-1.089 5.157-5.445 8.794-11.979 8.794m-7.84-16.612h14.592c0-4.397-2.886-7.112-7.078-7.112-4.138 0-7.187 2.606-7.514 7.112m22.597 26.927V34.672h5.445v4.94c1.96-3.528 4.954-5.483 9.038-5.483 6.588 0 11.597 4.995 11.597 14.115S200.45 62.36 193.862 62.36c-4.029 0-6.969-1.9-8.929-5.266v15.581zm5.554-23.127c0 4.995 2.668 8.252 7.35 8.252 4.573 0 7.513-3.04 7.513-8.795V47.54c0-5.864-2.94-8.958-7.513-8.958-4.682 0-7.35 3.311-7.35 8.415zm30.532 12.27c-5.009 0-6.806-2.118-6.806-6.57V39.45h-3.647v-4.778h3.647v-6.786l5.554-.814v7.6h5.39v4.778h-5.39v15.255c0 1.9.544 2.334 2.341 2.334h3.049v4.777zm6.295 0V34.671h5.553v27.145zm-.218-31.922h5.935v-5.863h-5.935zm9.472 31.922V23h5.553v34.148h2.559v4.668zm22.572.542c-8.058 0-13.557-5.537-13.557-14.115s5.499-14.115 13.34-14.115c7.513 0 12.631 5.05 12.631 14.115v1.575h-20.254c.055 5.048 3.212 8.034 7.84 8.034 3.703 0 5.826-1.954 6.479-4.288h5.499c-1.089 5.157-5.444 8.794-11.978 8.794m-7.84-16.612h14.592c0-4.397-2.886-7.112-7.078-7.112-4.138 0-7.187 2.606-7.514 7.112" />
+          <path d="M252.413 60.877q-6.318 0-8.982-3.457-2.707-3.458-2.706-9.535-.001-6.357 2.75-9.643 2.727-3.285 8.851-3.286 6.317 0 8.939 3.286 2.598 3.33 2.598 9.6 0 .88-.106 1.61h-18.543v-3.178h13.407q-.192-4.275-1.59-6.013-1.675-1.911-4.683-1.911-2.943 0-4.77 2.04-1.826 2.018-1.827 7.516.001 5.24 1.784 7.388 1.762 2.19 4.878 2.19zm0-3.393q1.782 0 3.093-.558 1.31-.58 2.02-1.933.71-1.374 1.095-3.092l4.663 1.288q-.387 2.577-1.784 4.317a7.96 7.96 0 0 1-3.545 2.555q-2.127.816-5.542.816zm-18.502 3.178V26.947h5.178v33.717zm-8.458 0v-25.47h5.201v25.47zm0-32.62h5.201v4.187h-5.201zm-8.12 32.921q-2.987 0-5.027-1.288-2.02-1.31-2.019-4.768V38.822h-5.931v-3.608h5.931v-5.777h5.199v5.777h8.249v3.608h-8.249v14.904q0 2.254.944 2.985.946.73 2.644.73a9.4 9.4 0 0 0 3.072-.515v3.479a20.3 20.3 0 0 1-4.813.558m-35.205 9.213V35.214h4.039l1.139 4.23v30.732zm13.3-9.363q-4.276 0-7.327-2.083-3.051-2.105-3.051-4.446l2.256-2.577q0 2.212 1.869 3.887 1.891 1.654 4.469 1.654 2.75 0 4.297-1.954 1.547-1.977 1.547-7.388 0-5.39-1.547-7.344-1.546-1.976-4.297-1.976-2.578 0-4.469 1.653-1.869 1.654-1.869 3.823l-2.256-2.513q0-2.362 3.051-4.466 3.05-2.105 7.327-2.105 4.747 0 7.026 3.286 2.277 3.285 2.277 9.62 0 6.315-2.277 9.622-2.28 3.307-7.026 3.307m-26.306.064q-6.316 0-8.981-3.457-2.706-3.458-2.707-9.535 0-6.357 2.75-9.643 2.729-3.285 8.852-3.286 6.318 0 8.938 3.286 2.6 3.33 2.6 9.6a11 11 0 0 1-.107 1.61h-18.542v-3.178h13.407q-.193-4.275-1.59-6.013-1.677-1.911-4.684-1.911-2.943 0-4.77 2.04-1.826 2.017-1.826 7.516 0 5.24 1.783 7.388 1.762 2.19 4.877 2.19zm0-3.393q1.783 0 3.094-.558 1.31-.58 2.02-1.933.709-1.374 1.096-3.092l4.662 1.288q-.387 2.577-1.783 4.317a7.96 7.96 0 0 1-3.545 2.555q-2.128.816-5.544.816zm-17.563-10.222q0-5.111-1.203-6.872-1.203-1.783-3.502-1.783-2.622 0-4.147 1.783-1.503 1.76-1.504 3.994l-1.998-1.331q0-3.372 2.6-5.713 2.621-2.362 6.961-2.362 4.555 0 6.274 2.963 1.719 2.943 1.719 9.32zm-15.512 13.4V35.215h4.039l1.139 4.768v20.68zM122.484 70.67q-4.319 0-7.326-1.933-3.008-1.911-3.373-6.593h5.07q.172 1.869.881 3.007a4.2 4.2 0 0 0 1.998 1.654q1.29.536 2.922.536 2.708 0 4.34-1.417 1.655-1.396 1.655-5.691V40.368l1.353-5.154h3.846V59.74q0 4.188-1.568 6.572-1.548 2.405-3.932 3.371-2.364.988-5.866.988m-1.847-9.857q-4.748 0-7.091-3.264-2.32-3.286-2.32-9.664t2.299-9.643 7.069-3.264q4.275 0 7.283 2.169 3.03 2.148 3.03 4.51l-2.278 2.405q0-2.169-1.847-3.823-1.848-1.653-4.427-1.653-2.728 0-4.318 1.954-1.569 1.933-1.569 7.366t1.569 7.388q1.59 1.953 4.318 1.954 2.579 0 4.427-1.675t1.847-3.866l2.299 2.577q0 2.406-3.008 4.467-2.987 2.062-7.283 2.062M84.599 28.927l-8.75 7.875-6.046 5.167 7.781 7.275 8.148-6.964-6.31-5.899 6.7-6.03 13.039 12.19L77.275 61.25l-20.9-19.541L78.26 23zM78.38 63.04l21.242-18.456v9.93L78.38 72.968zM56 43.816l20.584 19.186v9.929L56 53.745z" />
         </svg>
       );
     },
     icon: function (props: React.SVGProps<SVGSVGElement>) {
       return (
-        <svg fill="currentColor" viewBox="52 24 50 48" {...props}>
-          <path d="M87.213 34.467a.3.3 0 0 1 .192.485l-1.73 2.178a14.7 14.7 0 0 0-3.189 9.144v1.098a.6.6 0 0 1-.346.542l-.697.324a12.94 12.94 0 0 0-6.263 6.245l-.325.695a.6.6 0 0 1-.543.345H73.21c-3.329 0-6.56 1.12-9.17 3.18l-2.184 1.724a.302.302 0 0 1-.486-.191l-1.39-9.204a41.2 41.2 0 0 0-5.816-15.705 1.08 1.08 0 0 1 .154-1.337l6.573-6.555c.357-.355.913-.419 1.34-.152a41.5 41.5 0 0 0 15.752 5.798zM73.21 58.769c.138 0 .25.108.255.245l.056 1.66.331 9.76c.02.587-.73.848-1.08.376l-4.508-6.075-2.261-3.05a.316.316 0 0 1 .058-.436 11.5 11.5 0 0 1 3.8-1.98c1.081-.329 2.211-.5 3.35-.5M86.243 46.695v-.003l-.098-.003a.416.416 0 0 1-.403-.416 11.4 11.4 0 0 1 .8-4.199c.344-.873.834-1.754 1.395-2.538a.58.58 0 0 1 .815-.118l3.548 2.616q2.68 1.98 5.363 3.956c.473.35.211 1.098-.377 1.078zM84.402 50.444a.6.6 0 0 1 .783.264l7.443 14.12c.273.519-.289 1.08-.81.807l-5.517-2.892-8.644-4.529a.596.596 0 0 1-.264-.781l.738-1.577a9.678 9.678 0 0 1 4.69-4.676z" />
-        </svg>
-      );
-    },
-  },
-  {
-    name: "Gumroad",
-    categories: ["Commerce"],
-    directory: true,
-    url: "https://gumroad.com/?utm_source=tailwindcss",
-    logo: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path d="M184.498 31.273c-5.371 0-10.62 4.59-11.223 11.222V31.82h-7.712v32.189h7.806v-15.58c0-4.364 3.278-10.522 11.129-10.522v-6.634Zm81.95 27.583V36.803h4.522c6.03 0 10.929 3.557 10.929 10.849 0 7.291-4.899 11.204-10.929 11.204h-4.522Zm-7.726 5.158h13.191c8.101 0 18.087-4.98 18.087-16.362 0-11.205-9.986-15.829-18.087-15.829h-13.191v32.19ZM229.097 48.01c0-5.87 3.203-10.67 8.479-10.67 5.087 0 7.914 4.8 7.914 10.668 0 5.87-2.827 10.673-7.914 10.673-5.276 0-8.479-4.803-8.479-10.671Zm-7.914.355c0 9.604 5.276 16.362 13.566 16.362 6.03 0 9.61-3.734 11.495-9.782v9.07h7.724V31.826h-7.724v8.536c-1.696-5.69-5.276-9.07-10.928-9.07-8.479 0-14.133 7.292-14.133 17.073ZM45.263 64.727C35.652 64.727 30 57.435 30 48.365c0-9.425 6.218-17.072 18.089-17.072 12.247 0 16.392 7.825 16.58 12.27h-8.854c-.19-2.49-2.451-6.224-7.916-6.224-5.84 0-9.609 4.801-9.609 10.67S42.06 58.68 47.9 58.68c5.276 0 7.537-3.913 8.48-7.825H47.9v-3.203h17.791v16.364h-7.803V53.7c-.565 3.734-3.014 11.026-12.624 11.026h-.002Zm36.253-.003c-7.348 0-11.87-4.623-11.87-13.872V31.823h7.914v19.03c0 4.802 2.45 7.114 6.594 7.114 8.102 0 11.118-9.425 11.118-16.007V31.823h7.912v32.19H95.46V52.099c-1.507 6.58-5.653 12.627-13.944 12.627v-.001Zm68.947-33.45c-6.752 0-11.011 6.155-12.401 11.846-.238-7.625-4.213-11.847-10.57-11.847-5.495 0-10.592 4.625-11.916 11.94V31.822h-7.713v32.19h7.813V52.473c0-2.862 1.263-14.603 9.128-14.603 5.096 0 5.627 4.338 5.627 10.269v15.874h7.81v-11.54c0-2.862 1.315-14.603 9.181-14.603 5.091 0 5.618 4.338 5.618 10.269v15.874h7.819v-19.04c.037-9.133-3.381-13.696-10.396-13.696v-.003Zm50.798 0c-10.117 0-16.97 7.486-16.97 16.726 0 10.18 6.518 16.724 16.97 16.724 10.115 0 17.09-7.485 17.09-16.724 0-10.181-6.646-16.727-17.09-16.727Zm0 27.752c-5.889 0-9.705-4.705-9.705-11.026s3.829-11.029 9.705-11.029c5.874 0 9.548 4.706 9.548 11.03 0 6.32-3.678 11.025-9.548 11.025Z" />
-        </svg>
-      );
-    },
-    icon: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 50 50" {...props}>
-          <path d="M27 49.498c12.627 0 22.863-10.236 22.863-22.863S39.627 3.773 27 3.773c-12.627 0-22.863 10.236-22.863 22.862 0 12.627 10.236 22.863 22.862 22.863" />
-          <path
-            fill="white"
-            stroke="currentColor"
-            strokeWidth="1.557"
-            d="M23.83 47.18c12.897 0 23.351-10.453 23.351-23.35 0-12.895-10.454-23.35-23.35-23.35S.48 10.935.48 23.83s10.454 23.35 23.35 23.35Z"
-          />
-          <path d="M21.847 35.353c-6.697 0-10.636-5.37-10.636-12.053 0-6.944 4.333-12.577 12.606-12.577 8.535 0 11.424 5.765 11.555 9.04H29.2c-.131-1.835-1.706-4.586-5.515-4.586-4.07 0-6.697 3.537-6.697 7.861s2.627 7.86 6.698 7.86c3.676 0 5.252-2.882 5.908-5.763h-5.909v-2.359h12.4V34.83h-5.44V27.23c-.394 2.752-2.101 8.123-8.798 8.123Z" />
+        <svg fill="currentColor" viewBox="0 0 367 420" {...props}>
+          <path d="m240.269 49.815-73.465 66.148-50.838 43.477 65.369 61.145 68.449-58.537-53.004-49.578 56.288-50.682 109.537 102.458-183.866 157.243L3.145 157.242 187.011 0zM188.017 336.544 366.47 181.417v83.457L188.017 420zM0 174.962l172.93 161.26v83.457L0 258.42z" />
         </svg>
       );
     },
@@ -421,6 +438,17 @@ export const partners = [
     categories: ["Vertical AI"],
     directory: true,
     url: "https://www.tryprofound.com?utm_source=tailwindcss",
+    careersUrl: "https://www.tryprofound.com/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Profound supports Tailwind CSS",
+      summary:
+        "Profound is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Profound is an AI visibility platform for brands. It tracks how often you show up in AI answers and how those answers describe you, turning it into a visibility score and a share of voice you can watch over time. You can see the recurring themes AI repeats about your brand, which websites are shaping those answers and how much authority they carry, and how all of it stacks up against the competitors in your space.",
+        "The difference is where the data comes from. Most tools read AI responses through the API, but Profound captures them from the browser, so what you see is what your customers see when they ask. AI answers are never identical twice, so every tracked prompt runs daily and your score reflects the true average across all of them. As people stop searching links and start asking questions, this is how you find out what AI is actually saying about you.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -449,6 +477,17 @@ export const partners = [
     categories: ["Documentation"],
     directory: true,
     url: "https://www.mintlify.com/?utm_source=tailwindcss",
+    careersUrl: "https://www.mintlify.com/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Mintlify supports Tailwind CSS",
+      summary:
+        "Mintlify is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Mintlify is a documentation platform for software teams. You write, edit, and maintain your docs with a context-aware AI agent that drafts content from your prompts and keeps it accurate as your product changes, so you ship without piling up documentation debt. The docs are fast and good-looking out of the box, and every visit can turn into a guided conversation where an assistant answers questions in context instead of leaving people to dig through pages.",
+        "What sets Mintlify apart is that it treats documentation as infrastructure, not just content. AI agents don't learn about your product from your marketing site, they learn from your docs, which makes them the system of record agents rely on to understand your company and take action. Mintlify supports llms.txt, MCP, and whatever standard comes next, so your product shows up correctly in the AI workflows your users already depend on.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg viewBox="0 0 320 96" {...props}>
@@ -503,6 +542,17 @@ export const partners = [
     categories: ["AI App Builders"],
     directory: true,
     url: "https://lovable.dev/?utm_source=tailwindcss",
+    careersUrl: "https://lovable.dev/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Lovable supports Tailwind CSS",
+      summary:
+        "Lovable is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Lovable is a full-stack AI platform for building web applications using natural language. You describe what you want to build and Lovable generates a working app, complete with frontend, backend, database, authentication, and the integrations to tie them together, covering the full arc from early prototype to deployed product.",
+        "Everything Lovable builds is real, editable code that you own. Projects sync to GitHub, so engineers can review, extend, and maintain what was generated using the tools they already use. That means Lovable fits into existing workflows instead of replacing them, and the code is yours to take anywhere, with no lock-in, no proprietary runtime, and no rewrite later if the team grows around it.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -532,6 +582,17 @@ export const partners = [
     categories: ["Foundation Models"],
     directory: true,
     url: "https://aistudio.google.com/?utm_source=tailwindcss",
+    careersUrl: "https://www.google.com/about/careers/applications/",
+    detail: {
+      eyebrow: "Partner",
+      title: "Google AI Studio supports Tailwind CSS",
+      summary:
+        "Google AI Studio is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Google AI Studio is a place to build AI-powered apps from a prompt. You describe what you want and Gemini generates a complete application, with the code and files appearing alongside a live preview as it runs. By default you get a full-stack setup: a React frontend and a Node.js runtime that handles secure API calls, database connections, and npm packages. So you can build a working app with server-side logic, not just a client-side prototype.",
+        "The agent behind Build mode keeps context of your entire project rather than generating code one file at a time. It manages multiple files across your stack and propagates changes correctly as the app grows, so a project can get more complex without falling apart. You start from a single prompt and keep building from there, all the way to something production-ready.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -554,6 +615,16 @@ export const partners = [
     categories: ["Other"],
     directory: true,
     url: "https://syntax.fm/?utm_source=tailwindcss",
+    detail: {
+      eyebrow: "Partner",
+      title: "Syntax supports Tailwind CSS",
+      summary:
+        "Syntax is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Syntax is a podcast about full-stack web development, hosted by Wes Bos and Scott Tolinski. Twice a week they dig into JavaScript, CSS, TypeScript, frameworks, databases, servers, and deployment, working through the practical stuff developers actually run into. Nearly a thousand episodes in, it covers the front end, the back end, and everything in between.",
+        'Wes and Scott are both independent developers who build online training courses, so the show comes from people who teach this for a living. Every episode is built around "Tasty Treats", applicable tips and nuggets you can take straight back to your own work. Syntax is produced by Sentry, the application monitoring platform that millions of developers use to catch and fix errors in their code.',
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -574,6 +645,17 @@ export const partners = [
     categories: ["Databases"],
     directory: true,
     url: "https://supabase.com/?utm_source=tailwindcss",
+    careersUrl: "https://supabase.com/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Supabase supports Tailwind CSS",
+      summary:
+        "Supabase is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Supabase is the Postgres development platform. You sign up and start building without installing anything, and you get a full Postgres database plus the things you'd otherwise wire up yourself: user signups and logins, auto-generated APIs, realtime subscriptions over websockets, file storage, database functions, and a vector toolkit for embeddings. If you've never touched Postgres, you can treat it like a simple table store and grow into the rest. If you're a veteran, the whole database is there with full privileges.",
+        "Every part of Supabase is open source. When a good tool already exists under a permissive license, they use it. When it doesn't, they build it and open source it themselves. They also employ maintainers, sponsor projects, and invest in the businesses behind the tools they rely on. So you can inspect, run, and host every part of the stack yourself.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -625,30 +707,20 @@ export const partners = [
     },
   },
   {
-    name: "Macroscope",
-    categories: ["AI Code Review"],
-    directory: true,
-    url: "https://macroscope.com/?utm_source=tailwindcss",
-    logo: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path d="M41.261 32.296c8.923-8.95 23.39-8.95 32.312 0 8.923 8.95 8.923 23.46 0 32.409-8.922 8.95-23.389 8.95-32.312 0-8.922-8.95-8.922-23.46 0-32.41Zm29.45 2.86c-7.269-7.29-19.055-7.29-26.324 0-9.735 9.766 3.13 12.237 8.628 17.751 5.498 5.515 7.961 18.42 17.696 8.654 7.27-7.291 7.27-19.113 0-26.404Zm-20.739 5.72a10.614 10.614 0 0 1 15.043 0c4.153 4.166 4.153 10.921 0 15.088-4.967 4.982-5.073-.89-9.614-5.446-4.541-4.555-10.396-4.66-5.429-9.643ZM93.278 36.267h6.107l6.84 19.252 6.839-19.252h6.107V61.12h-4.536V43.968l-6.247 17.116h-4.327l-6.247-17.116v17.151h-4.536V36.267Zm34.874 25.272c-1.978 0-3.559-.443-4.746-1.33-1.163-.91-1.745-2.17-1.745-3.78 0-1.587.489-2.835 1.466-3.745 1-.934 2.536-1.599 4.606-1.996l6.177-1.225c0-1.306-.302-2.298-.907-2.975s-1.489-1.015-2.653-1.015c-2.117 0-3.384.968-3.803 2.905l-4.572-.21c.372-1.96 1.28-3.477 2.722-4.55 1.443-1.074 3.327-1.61 5.653-1.61 2.629 0 4.619.676 5.968 2.03 1.373 1.33 2.059 3.243 2.059 5.74v6.791c0 .49.081.828.244 1.015.163.187.431.28.803.28h.593v3.255c-.372.094-.907.14-1.605.14-1.094 0-1.978-.233-2.652-.7-.652-.466-1.071-1.248-1.257-2.345-.465 1.004-1.268 1.809-2.408 2.415-1.116.607-2.431.91-3.943.91Zm.907-3.255c1.466 0 2.641-.432 3.525-1.295.884-.863 1.326-2.007 1.326-3.43v-1.05l-4.816.98c-.977.186-1.686.49-2.128.91-.443.42-.664.956-.664 1.61 0 .723.233 1.283.698 1.68.489.397 1.175.595 2.059.595Zm20.619 3.255c-1.838 0-3.455-.396-4.851-1.19-1.372-.816-2.443-1.96-3.21-3.43-.745-1.47-1.117-3.185-1.117-5.145 0-1.937.372-3.64 1.117-5.111.767-1.493 1.838-2.637 3.21-3.43 1.396-.817 3.013-1.225 4.851-1.225 2.397 0 4.374.63 5.932 1.89 1.559 1.237 2.478 2.952 2.758 5.145l-4.607.245c-.163-1.166-.616-2.065-1.361-2.695-.721-.63-1.629-.945-2.722-.945-1.443 0-2.559.537-3.35 1.61-.791 1.074-1.186 2.579-1.186 4.515 0 1.937.395 3.442 1.186 4.516.791 1.073 1.907 1.61 3.35 1.61 1.117 0 2.036-.327 2.756-.98.722-.653 1.164-1.622 1.327-2.905l4.607.21c-.256 2.24-1.176 4.025-2.758 5.355-1.558 1.307-3.535 1.96-5.932 1.96Zm10.23-19.111h4.188l.105 3.605c.372-1.237.918-2.147 1.64-2.73.744-.584 1.686-.875 2.826-.875h1.71v3.85h-1.745c-1.442 0-2.512.327-3.21.98-.698.63-1.047 1.657-1.047 3.08V61.12h-4.467V42.428Zm19.609 19.111c-1.838 0-3.454-.396-4.85-1.19-1.372-.816-2.442-1.96-3.21-3.43-.745-1.47-1.117-3.185-1.117-5.145 0-1.96.372-3.676 1.117-5.146.768-1.47 1.838-2.602 3.21-3.395 1.396-.817 3.012-1.225 4.85-1.225 1.816 0 3.409.408 4.781 1.225 1.396.793 2.466 1.925 3.211 3.395.768 1.47 1.152 3.185 1.152 5.145 0 1.96-.384 3.676-1.152 5.146-.745 1.47-1.815 2.614-3.211 3.43-1.372.794-2.965 1.19-4.781 1.19Zm0-3.64c1.443 0 2.56-.537 3.351-1.61.79-1.074 1.187-2.579 1.187-4.516 0-1.936-.408-3.441-1.223-4.515-.79-1.073-1.895-1.61-3.315-1.61-1.441 0-2.559.537-3.349 1.61-.792 1.074-1.187 2.579-1.187 4.515 0 1.937.395 3.442 1.187 4.516.79 1.073 1.908 1.61 3.349 1.61Zm18.726 3.64c-2.676 0-4.758-.571-6.247-1.715-1.488-1.143-2.303-2.672-2.442-4.585l4.571-.21c.163 1.003.57 1.773 1.222 2.31.674.513 1.639.77 2.896.77 2.233 0 3.35-.7 3.35-2.1 0-.443-.105-.805-.314-1.085-.209-.28-.605-.525-1.187-.735-.581-.21-1.441-.409-2.581-.595-1.908-.327-3.409-.724-4.502-1.19-1.071-.49-1.839-1.086-2.303-1.786-.467-.723-.698-1.633-.698-2.73 0-1.773.686-3.197 2.058-4.27 1.373-1.074 3.315-1.61 5.828-1.61 2.42 0 4.304.571 5.654 1.715 1.372 1.143 2.198 2.672 2.477 4.585l-4.537.21c-.162-.956-.558-1.703-1.186-2.24-.628-.56-1.442-.84-2.443-.84-1.046 0-1.85.21-2.408.63-.535.42-.802.98-.802 1.68 0 .747.279 1.307.837 1.68.559.35 1.547.642 2.966.875 1.954.304 3.49.7 4.607 1.19 1.14.467 1.955 1.062 2.442 1.786.489.7.734 1.586.734 2.66 0 1.773-.734 3.15-2.199 4.13-1.442.98-3.374 1.47-5.793 1.47Zm18.033 0c-1.838 0-3.456-.396-4.852-1.19-1.372-.816-2.442-1.96-3.21-3.43-.744-1.47-1.117-3.185-1.117-5.145 0-1.937.373-3.64 1.117-5.111.768-1.493 1.838-2.637 3.21-3.43 1.396-.817 3.014-1.225 4.852-1.225 2.396 0 4.373.63 5.932 1.89 1.558 1.237 2.478 2.952 2.757 5.145l-4.606.245c-.164-1.166-.617-2.065-1.362-2.695-.721-.63-1.628-.945-2.721-.945-1.443 0-2.56.537-3.351 1.61-.791 1.074-1.186 2.579-1.186 4.515 0 1.937.395 3.442 1.186 4.516.791 1.073 1.908 1.61 3.351 1.61 1.116 0 2.036-.327 2.757-.98.72-.653 1.162-1.622 1.326-2.905l4.606.21c-.256 2.24-1.175 4.025-2.757 5.355-1.559 1.307-3.536 1.96-5.932 1.96Zm18.43 0c-1.838 0-3.455-.396-4.851-1.19-1.373-.816-2.443-1.96-3.211-3.43-.744-1.47-1.116-3.185-1.116-5.145 0-1.96.372-3.676 1.116-5.146.768-1.47 1.838-2.602 3.211-3.395 1.396-.817 3.013-1.225 4.851-1.225 1.814 0 3.407.408 4.78 1.225 1.396.793 2.467 1.925 3.21 3.395.769 1.47 1.153 3.185 1.153 5.145 0 1.96-.384 3.676-1.153 5.146-.743 1.47-1.814 2.614-3.21 3.43-1.373.794-2.966 1.19-4.78 1.19Zm0-3.64c1.442 0 2.558-.537 3.35-1.61.791-1.074 1.186-2.579 1.186-4.516 0-1.936-.407-3.441-1.221-4.515-.791-1.073-1.897-1.61-3.315-1.61-1.443 0-2.559.537-3.351 1.61-.79 1.074-1.186 2.579-1.186 4.515 0 1.937.396 3.442 1.186 4.516.792 1.073 1.908 1.61 3.351 1.61Zm11.013-15.471h4.293l.07 2.765c.534-1.027 1.291-1.809 2.267-2.345.978-.56 2.083-.84 3.317-.84 1.697 0 3.14.431 4.327 1.295 1.21.863 2.105 2.03 2.687 3.5.604 1.47.907 3.127.907 4.97 0 1.844-.303 3.5-.907 4.97-.606 1.471-1.501 2.638-2.687 3.501-1.187.864-2.641 1.295-4.363 1.295-1.187 0-2.269-.268-3.245-.805-.954-.536-1.688-1.26-2.199-2.17v7.806h-4.467V42.428Zm8.865 15.471c1.372 0 2.442-.537 3.21-1.61.767-1.097 1.151-2.602 1.151-4.516 0-1.913-.384-3.407-1.151-4.48-.768-1.097-1.838-1.645-3.21-1.645-1.396 0-2.478.525-3.246 1.575-.768 1.027-1.152 2.544-1.152 4.55 0 2.007.384 3.536 1.152 4.586.768 1.027 1.85 1.54 3.246 1.54Zm19.026 3.64c-1.838 0-3.455-.396-4.851-1.19-1.373-.816-2.432-1.96-3.176-3.43-.744-1.47-1.117-3.185-1.117-5.145 0-1.937.373-3.64 1.117-5.111.744-1.493 1.792-2.637 3.141-3.43 1.373-.817 2.967-1.225 4.781-1.225 1.768 0 3.315.396 4.641 1.19 1.349.793 2.385 1.948 3.106 3.465.745 1.494 1.116 3.279 1.116 5.356v1.015h-13.26c.093 1.61.534 2.835 1.326 3.675.79.84 1.861 1.26 3.21 1.26.978 0 1.804-.221 2.478-.665.675-.467 1.14-1.108 1.396-1.925l4.571.28c-.511 1.82-1.524 3.255-3.036 4.305-1.489 1.05-3.304 1.575-5.443 1.575Zm4.118-11.516c-.094-1.493-.513-2.613-1.257-3.36-.745-.747-1.733-1.12-2.966-1.12-1.21 0-2.211.385-3.001 1.155-.768.77-1.233 1.879-1.396 3.325h8.62Z" />
-        </svg>
-      );
-    },
-    icon: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="30 22 54 54" {...props}>
-          <path d="M41.261 32.296c8.923-8.95 23.39-8.95 32.312 0 8.923 8.95 8.923 23.46 0 32.409-8.922 8.95-23.389 8.95-32.312 0-8.922-8.95-8.922-23.46 0-32.41Zm29.45 2.86c-7.269-7.29-19.055-7.29-26.324 0-9.735 9.766 3.13 12.237 8.628 17.751 5.498 5.515 7.961 18.42 17.696 8.654 7.27-7.291 7.27-19.113 0-26.404Zm-20.739 5.72a10.614 10.614 0 0 1 15.043 0c4.153 4.166 4.153 10.921 0 15.088-4.967 4.982-5.073-.89-9.614-5.446-4.541-4.555-10.396-4.66-5.429-9.643Z" />
-        </svg>
-      );
-    },
-  },
-  {
     name: "Momentic",
     categories: ["Vertical AI"],
     directory: true,
     url: "https://momentic.ai/?utm_source=tailwindcss",
+    detail: {
+      eyebrow: "Partner",
+      title: "Momentic supports Tailwind CSS",
+      summary:
+        "Momentic is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Momentic is an AI-powered end-to-end testing platform for web, iOS, and Android apps. You describe what a test should do in plain English, and an AI agent turns that into reliable steps, navigating the user flow, interacting with the screen, and validating the result. Tests live in your repo as YAML, run locally or in CI, and surface results in a dashboard. It's CLI-first, with web tests on Chromium browsers, iOS on simulators, and Android on emulators, with no real devices required.",
+        "Most tests break the moment your UI changes, because they're tied to fragile DOM selectors. Momentic tracks user intent instead, so when the interface shifts, tests adapt on their own and brittle locators auto-heal. AI coding tools let teams ship code faster, which also means shipping bugs faster, and Momentic is the layer that verifies the code keeps working. No brittle tests, no endless maintenance, just signals you can trust.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -669,6 +741,17 @@ export const partners = [
     categories: ["Vertical AI"],
     directory: true,
     url: "https://getunblocked.com/?utm_source=tailwindcss",
+    careersUrl: "https://getunblocked.com/careers/",
+    detail: {
+      eyebrow: "Partner",
+      title: "Unblocked supports Tailwind CSS",
+      summary:
+        "Unblocked is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Unblocked is a context engine for coding agents. It connects to where your team's knowledge lives (the codebase, Jira, Slack, Confluence) and builds a living graph it reasons over all at once, instead of searching each source one at a time. Ask it a question and it returns the single best answer for the task, then runs from prompt to PR: clone a repo, gather context, make the changes, and open a pull request grounded in your code, conversations, docs, and issues.",
+        "One connection replaces the stack of MCP servers that each add context-window overhead before an agent does any real work. Context gets scored, compressed, and assembled server-side, so the agent receives prioritized context instead of a pile of sources to sort through, with fewer wasted tokens and rework loops.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -719,16 +802,31 @@ export const partners = [
     categories: ["Email"],
     directory: true,
     url: "https://postmarkapp.com/?utm_source=tailwindcss",
+    careersUrl: "https://www.activecampaign.com/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Postmark supports Tailwind CSS",
+      summary:
+        "Postmark is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Postmark is a transactional email API built for developers. If your app sends password resets, magic links, welcome emails, invoices, or notifications, Postmark delivers them fast (typically within seconds) with consistently high inbox placement and no shared infrastructure with marketing or bulk senders.",
+        "Integration is straightforward: a REST API, SMTP, and official libraries for Ruby, Python, Node.js, PHP, Go, Java, .NET, and many more. Postmark fits into any stack and you can be sending in minutes. The details that determine whether email reaches the inbox - IP reputation management, feedback loop processing, blocklist monitoring, SPF, DKIM, and DMARC configuration - are handled for you.",
+        "Transactional and broadcast email run on completely separate Message Streams. A marketing campaign can't affect the deliverability of a time-sensitive password reset. Every sending account is manually reviewed before it can send, which keeps the shared IP pools clean and deliverability strong by default. No dedicated IP required, no minimum volume.",
+        "Postmark has been purpose-built for transactional email since 2010. It's the right choice when reliable email delivery is part of your application's core functionality.",
+        "Tailwind CSS users can get 20% off any Postmark plan for 3 months with code POSTMARKLOVESTAILWIND.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <g opacity=".2">
-            <path d="M117.286 33.911c-4.67 4.466-13.637 7.496-23.984 7.496-7.694 0-14.645-1.7-19.632-4.412-5.731-3.137-13.637-7.496-23.984-7.496-7.694 0-14.645 1.7-19.633 4.412v-2.126c4.988-2.712 11.939-4.413 19.633-4.413 10.347 0 18.253 4.36 23.984 7.496 4.987 2.712 11.938 4.413 19.632 4.413 10.347 0 19.314-3.03 23.984-7.496v2.126Z" />
-            <path d="M117.286 42.95c-4.67 4.465-13.637 7.496-23.984 7.496-7.694 0-14.645-1.702-19.632-4.413-5.731-3.137-13.637-7.496-23.984-7.496-7.694 0-14.645 1.701-19.633 4.412v-2.126c4.988-2.712 11.939-4.413 19.633-4.413 10.347 0 18.253 4.36 23.984 7.496 4.987 2.712 11.938 4.413 19.632 4.413 10.347 0 19.314-3.03 23.984-7.496v2.126Z" />
-            <path d="M117.286 51.987c-4.67 4.466-13.637 7.497-23.984 7.497-7.694 0-14.645-1.702-19.632-4.413-5.731-3.137-13.637-7.496-23.984-7.496-7.694 0-14.645 1.701-19.633 4.412v-2.126c4.988-2.711 11.939-4.413 19.633-4.413 10.347 0 18.253 4.36 23.984 7.496 4.987 2.712 11.938 4.413 19.632 4.413 10.347 0 19.314-3.03 23.984-7.496v2.127Z" />
-            <path d="M117.286 61.025c-4.67 4.466-13.637 7.496-23.984 7.496-7.694 0-14.645-1.701-19.632-4.412-5.731-3.137-13.637-7.497-23.984-7.497-7.694 0-14.645 1.702-19.633 4.413v-2.127c4.988-2.71 11.939-4.412 19.633-4.412 10.347 0 18.253 4.36 23.984 7.496 4.987 2.711 11.938 4.413 19.632 4.413 10.347 0 19.314-3.03 23.984-7.496v2.126Z" />
+          <g fillRule="evenodd" clipRule="evenodd" opacity=".2">
+            <path d="M120.16 43.026c-3.97 3.793-11.593 6.367-20.39 6.367-6.54 0-12.45-1.445-16.69-3.748-4.872-2.665-11.593-6.368-20.39-6.368-6.54 0-12.45 1.445-16.69 3.749v-1.807c4.24-2.303 10.15-3.748 16.69-3.748 8.797 0 15.518 3.703 20.39 6.367 4.24 2.304 10.15 3.749 16.69 3.749 8.797 0 16.42-2.574 20.39-6.368z" />
+            <path d="M120.16 50.703c-3.97 3.793-11.593 6.367-20.39 6.367-6.54 0-12.45-1.445-16.69-3.748-4.872-2.664-11.593-6.368-20.39-6.368-6.54 0-12.45 1.446-16.69 3.749v-1.807c4.24-2.303 10.15-3.748 16.69-3.748 8.797 0 15.518 3.703 20.39 6.368 4.24 2.303 10.15 3.748 16.69 3.748 8.797 0 16.42-2.574 20.39-6.368z" />
+            <path d="M120.16 58.38c-3.97 3.794-11.593 6.368-20.39 6.368-6.54 0-12.45-1.445-16.69-3.749-4.872-2.664-11.593-6.367-20.39-6.367-6.54 0-12.45 1.445-16.69 3.748v-1.806c4.24-2.304 10.15-3.749 16.69-3.749 8.797 0 15.518 3.703 20.39 6.368 4.24 2.303 10.15 3.748 16.69 3.748 8.797 0 16.42-2.574 20.39-6.367z" />
+            <path d="M120.16 66.058c-3.97 3.793-11.593 6.367-20.39 6.367-6.54 0-12.45-1.445-16.69-3.748-4.872-2.665-11.593-6.368-20.39-6.368-6.54 0-12.45 1.445-16.69 3.749V64.25c4.24-2.303 10.15-3.748 16.69-3.748 8.797 0 15.518 3.703 20.39 6.368 4.24 2.303 10.15 3.748 16.69 3.748 8.797 0 16.42-2.574 20.39-6.368z" />
           </g>
-          <path d="M70.804 32.53h-4.51v-4.52h15.971c9.976 0 12.045 6.593 12.045 11.165 0 3.668-1.485 6.486-3.024 8.028-2.494 2.498-5.89 3.083-11.037 3.083h-4.033v9.304h4.723v4.519H66.294V59.59h4.51V32.53Zm9.923 13.397c6.632 0 8.065-3.084 8.065-6.805 0-4.254-2.388-6.593-6.367-6.593h-6.209v13.398h4.51ZM109.274 38.271c7.534 0 13.159 5.689 13.159 13.291 0 7.603-5.678 13.291-13.212 13.291-7.535 0-13.16-5.688-13.16-13.29 0-7.603 5.625-13.292 13.213-13.292Zm-.053 21.797c4.51 0 7.906-3.615 7.906-8.506 0-4.838-3.396-8.506-7.906-8.506-4.457 0-7.853 3.668-7.853 8.506 0 4.891 3.396 8.507 7.853 8.507ZM126.625 55.496h4.404v.85c.424 2.5 2.706 4.041 5.996 4.041 3.13 0 5.146-1.223 5.146-3.136 0-4.679-8.808-1.702-13.583-6.486-1.168-1.17-1.963-2.925-1.963-4.785 0-4.307 3.714-7.39 8.808-7.39 2.281 0 4.457.531 6.102 1.435v-1.01h4.351v8.294h-4.351v-1.542c-1.433-2.127-3.29-3.084-5.837-3.084-2.653 0-4.404 1.223-4.404 3.084 0 4.2 9.657 1.755 13.796 5.901 1.486 1.489 2.122 3.456 2.122 5.21 0 4.573-3.873 7.656-9.604 7.656-2.706 0-4.775-.585-6.579-1.807v1.382h-4.404v-8.613ZM150.343 39.015h3.237v-3.88l4.987-4.52v8.4h4.617v4.36h-4.617v14.514c0 2.445 2.176 2.339 4.617 1.488v4.466c-1.168.372-2.494.691-3.662.691-3.502 0-5.942-1.595-5.942-5.954V43.375h-3.237v-4.36ZM170.824 43.375h-4.191v-4.36h9.179v3.137c2.919-2.34 5.731-3.562 8.49-3.562 2.812 0 4.988 1.382 6.049 3.934 3.608-2.818 6.155-3.934 9.02-3.934 4.139 0 6.686 2.552 6.686 6.911V59.75h4.298v4.36h-9.286V46.618c0-2.446-1.114-3.669-3.024-3.669-2.016 0-4.616 1.223-7.11 3.297v13.503h4.298v4.36h-9.286V46.724c0-2.658-1.486-3.562-3.078-3.562-1.804 0-4.032.957-7.057 3.084v13.503h4.298v4.36h-13.849v-4.36h4.563V43.375ZM238.265 64.109h-8.702v-3.084c-3.13 2.552-5.306 3.51-8.065 3.51-4.775 0-8.49-3.51-8.49-7.975 0-4.573 3.98-8.135 9.127-8.135 2.228 0 4.828.798 6.845 2.127v-3.296c0-3.562-2.6-4.838-5.572-4.838-2.387 0-4.245 1.01-5.359 2.977l-4.722-1.276c2.122-3.88 5.73-5.848 10.824-5.848 7.323 0 9.816 3.668 9.816 7.709v13.77h4.298v4.359Zm-9.285-9.357c-2.123-1.648-4.351-2.499-6.474-2.499-2.759 0-4.775 1.808-4.775 4.307 0 2.445 1.857 4.146 4.51 4.146 2.229 0 4.722-1.116 6.739-2.977v-2.977ZM245.057 43.375h-5.04v-4.36h8.967v5.636h.106c1.592-4.2 4.776-6.061 7.906-6.061h3.237v4.997h-2.653c-5.784 0-7.535 3.243-7.535 8.985v7.177h5.412v4.36h-15.334v-4.36h4.934V43.375ZM265.698 32.37h-4.51v-4.36h9.498v22.542l9.392-7.39v-.106h-4.192v-4.04h13.902v4.04h-3.874l-9.391 7.815 8.861 8.878h4.298v4.36h-6.368l-12.628-12.653v8.293h3.714v4.36h-13.265v-4.36h4.563V32.37Z" />
+          <path d="M77.154 64.392h1.664a1.278 1.278 0 0 0 1.38-1.382V43.823a1.283 1.283 0 0 0-1.38-1.382h-1.664v-4.269h12.1c6.496 0 11.653 3.293 11.653 9.594S95.75 57.4 89.254 57.4h-4.142v5.61a1.295 1.295 0 0 0 1.421 1.382h3.37v4.268h-12.75zm11.734-11.463c4.304 0 6.781-1.789 6.781-5.122 0-3.374-2.477-5.122-6.78-5.122h-3.777v10.244zM101.029 57.563c0-6.545 4.953-11.748 11.45-11.748 6.619 0 11.531 5.203 11.531 11.748 0 6.666-4.912 11.748-11.531 11.748-6.537 0-11.45-5.082-11.45-11.748m17.906 0c0-4.228-2.639-7.398-6.456-7.398-3.735 0-6.374 3.17-6.374 7.398s2.639 7.398 6.374 7.398c3.817 0 6.456-3.17 6.456-7.398M130.385 66.424l-.162 2.236H126v-7.317h4.344v.081a4.13 4.13 0 0 0 1.178 2.277 4.97 4.97 0 0 0 3.695 1.422 3.93 3.93 0 0 0 2.801-.975 2.83 2.83 0 0 0 .812-1.992 2.46 2.46 0 0 0-.69-1.83 4.1 4.1 0 0 0-2.233-1.015l-3.776-.732c-1.908-.366-3.329-1.057-4.304-1.992a5.62 5.62 0 0 1-1.543-4.065 6.82 6.82 0 0 1 1.868-4.715 7.33 7.33 0 0 1 5.197-1.992c2.193 0 4.142.813 5.36 2.52l.162-1.91h4.02v6.219h-4.182v-.081a3.06 3.06 0 0 0-1.665-1.992 5.44 5.44 0 0 0-2.477-.61 3.96 3.96 0 0 0-2.801.976 1.93 1.93 0 0 0-.65 1.544 1.79 1.79 0 0 0 .528 1.423 3.5 3.5 0 0 0 1.787.772l3.776.731c2.152.407 3.735 1.139 4.751 2.155a6.24 6.24 0 0 1 1.705 4.553 7.278 7.278 0 0 1-2.072 5.204 7 7 0 0 1-4.953 1.992 7.62 7.62 0 0 1-6.253-2.887M149.63 61.059v-8.944a1.28 1.28 0 0 0-.358-1.034 1.3 1.3 0 0 0-1.022-.388h-2.801v-4.269h4.181V39.92h4.792v6.504h6.699v4.269h-5.278a1.303 1.303 0 0 0-1.421 1.422v8.944c0 2.235 1.34 3.536 3.735 3.536.893 0 2.355-.203 2.964-.569v4.472c-.73.406-2.233.61-3.491.61-4.954 0-8-3.009-8-8.05M164.735 64.392h1.299a1.294 1.294 0 0 0 1.422-1.382V52.116a1.31 1.31 0 0 0-.857-1.352 1.3 1.3 0 0 0-.565-.07h-1.299v-4.27h7.349v3.456c1.258-2.48 4.385-4.065 7.349-4.065 3.087 0 5.685 1.544 6.985 4.228a9.82 9.82 0 0 1 7.877-4.228c4.791 0 7.836 2.846 7.836 7.398v9.797a1.3 1.3 0 0 0 .081.555 1.28 1.28 0 0 0 .783.762c.18.062.37.085.557.065h1.259v4.268h-10.679v-4.268h1.747a1.278 1.278 0 0 0 1.38-1.382v-9.065c0-2.561-1.543-4.024-4.061-4.024-3.613 0-5.968 2.601-5.968 6.341v6.748a1.29 1.29 0 0 0 .834 1.308c.174.064.361.09.546.074h1.787v4.268H179.19v-4.268h1.787a1.27 1.27 0 0 0 1.01-.371 1.29 1.29 0 0 0 .37-1.011v-9.024c0-2.561-1.543-4.065-4.06-4.065-3.655 0-5.969 2.601-5.969 6.422v6.667a1.27 1.27 0 0 0 .363 1.019 1.26 1.26 0 0 0 1.017.363h1.746v4.268h-10.719zM229.742 64.392v4.268h-6.821v-4.756a7.6 7.6 0 0 1-1.421 2.277 10.3 10.3 0 0 1-7.512 3.13c-4.06 0-6.861-2.602-6.903-6.22 0-4.715 3.98-6.26 8.894-7.235 2.598-.529 4.994-.854 6.049-1.91a1.77 1.77 0 0 0 .569-1.342c0-1.504-1.138-2.683-4.02-2.683-3.37 0-6.091 1.666-6.456 3.577v.082h-3.979v-7.155h4.304v2.56c1.664-2.154 4.506-3.17 7.186-3.17 4.426 0 7.431 2.724 7.431 7.195v10a1.26 1.26 0 0 0 .363 1.019 1.26 1.26 0 0 0 1.018.363zm-7.065-6.666c-.973.812-2.842 1.178-4.628 1.544-3.045.65-5.969 1.26-5.969 3.577 0 1.463 1.34 2.48 3.127 2.48a7.3 7.3 0 0 0 5.115-2.317 8.05 8.05 0 0 0 2.355-5.285M232.707 64.392h1.705a1.26 1.26 0 0 0 1.313-.832c.063-.176.086-.364.068-.55V52.115a1.29 1.29 0 0 0-.351-1.041 1.28 1.28 0 0 0-1.03-.381h-1.705v-4.269h7.755v4.065a7.78 7.78 0 0 1 7.065-4.674 4.8 4.8 0 0 1 1.786.325v4.634a7 7 0 0 0-2.111-.285c-3.776 0-6.537 2.155-6.537 6.423v6.098a1.3 1.3 0 0 0 .081.554 1.28 1.28 0 0 0 .784.763c.179.062.368.084.555.065h2.761v4.268h-12.139zM250.368 64.392h1.706a1.26 1.26 0 0 0 1.314-.832 1.3 1.3 0 0 0 .067-.55V42.604a1.27 1.27 0 0 0-.364-1.02 1.25 1.25 0 0 0-1.017-.362h-1.706v-4.269h7.96v19.553l8.404-10.081h6.577v4.268h-3.004a3.02 3.02 0 0 0-2.599 1.26l-3.857 4.716 5.969 6.544a3.37 3.37 0 0 0 2.679 1.179H274v4.268h-5.847l-9.825-11.504v5.854a1.3 1.3 0 0 0 .08.555 1.3 1.3 0 0 0 1.34.827h1.664v4.268h-11.044zM112.697 29.909a.407.407 0 0 0-.541 0 2.66 2.66 0 0 1-1.726.626c-1.144 0-2.164-.704-2.164-2.29 0-1.605.957-2.29 1.997-2.29 1.29 0 1.935.979 1.956 1.919h-2.663c-.229 0-.416.176-.416.39v.373h3.578c.291 0 .52-.235.52-.51-.062-1.858-1.31-3.033-2.975-3.033-1.768 0-3.078 1.35-3.078 3.151s1.373 3.151 3.203 3.151c1.082 0 1.935-.39 2.684-1.174zM123.785 25.662c.583-.255 1.353-.529 2.372-.529 1.768 0 2.746.861 2.746 2.447v3.699h-.603c-.229 0-.416-.176-.416-.392v-.41c-.416.45-1.103.92-2.226.92-1.165 0-2.413-.607-2.413-1.919 0-1.252 1.04-1.977 2.766-1.977h1.082v.372a.4.4 0 0 1-.437.392h-.561c-1.124 0-1.789.45-1.789 1.194 0 .783.79 1.135 1.539 1.135 1.165 0 2.06-.666 2.06-1.546v-1.429c0-1.018-.645-1.566-1.831-1.566-.603 0-1.124.137-1.56.294-.208.078-.458-.02-.521-.235zM99.092 24.077h-.624c-.229 0-.416-.176-.416-.392v-.587h.624c.23 0 .416.176.416.392zM157.757 24.077h-.624c-.228 0-.416-.176-.416-.392v-.587h.624c.229 0 .416.176.416.392zM92.102 26.19c-.5-.509-1.29-1.115-2.6-1.115-1.852 0-3.287 1.39-3.287 3.17 0 1.762 1.456 3.151 3.287 3.151 1.331 0 2.142-.665 2.663-1.213l-.396-.352a.435.435 0 0 0-.561 0c-.5.43-1.061.665-1.665.665a2.247 2.247 0 0 1-2.267-2.27c0-1.272.978-2.251 2.205-2.251.707 0 1.207.294 1.643.665.167.137.416.137.562-.02zM103.502 31.28c.271 0 .52-.157.624-.392l2.622-5.657h-.562c-.354 0-.666.196-.791.49l-1.872 4.208-1.872-4.208c-.125-.294-.437-.49-.791-.49h-.582l2.6 5.657a.68.68 0 0 0 .624.391M96.513 30.222c-.312.137-.666.235-.978.235-.687 0-.999-.313-.999-.94v-3.405h1.997v-.49c0-.215-.187-.39-.416-.39h-1.58V23.49c0-.216-.188-.392-.417-.392h-.624v6.576c0 .92.749 1.723 1.768 1.723.458 0 .895-.079 1.27-.274zM98.468 31.28h.624v-5.657c0-.215-.187-.392-.416-.392h-.624v5.657c-.021.215.166.391.416.391M122.371 24.33c-.749-.664-1.727-1.33-3.412-1.33-2.496 0-4.389 1.82-4.389 4.228 0 2.387 1.872 4.208 4.348 4.208 1.726 0 2.767-.764 3.495-1.468l-.437-.411c-.146-.137-.396-.137-.562-.02-.686.568-1.435.94-2.475.94-1.831 0-3.246-1.449-3.246-3.288 0-1.86 1.394-3.25 3.246-3.25 1.06 0 1.851.45 2.413.881a.413.413 0 0 0 .561-.039zM137.849 25.094c-.937 0-1.665.372-2.226 1.135-.417-.724-1.124-1.135-2.039-1.135-1.02 0-1.581.49-1.977.998v-.47c0-.215-.187-.39-.416-.39h-.624v6.047h.624c.229 0 .416-.176.416-.391v-3.054c0-1.056.708-1.82 1.706-1.82.978 0 1.561.646 1.561 1.723v3.15c0 .216.187.392.416.392h.624v-3.484c0-1.233.853-1.78 1.685-1.78.998 0 1.581.625 1.581 1.741v3.132c0 .215.187.391.416.391h.624v-3.738c.021-1.507-.894-2.447-2.371-2.447M145.38 25.094c-.957 0-1.727.392-2.372 1.214v-.685c0-.216-.187-.392-.416-.392h-.624v7.516c0 .215.187.391.416.391h.624v-2.896c.603.763 1.415 1.154 2.372 1.154 1.497 0 3.078-1.115 3.078-3.15 0-2.056-1.601-3.152-3.078-3.152m1.997 3.151c0 1.331-.895 2.251-2.164 2.251-1.102 0-2.226-.841-2.226-2.25s1.124-2.251 2.226-2.251c1.248 0 2.164.959 2.164 2.25M157.112 31.28h.624v-5.657c0-.215-.186-.392-.415-.392h-.625v5.657c0 .215.188.391.416.391M159.462 32.277a5.46 5.46 0 0 0 2.955.861c2.08 0 3.267-1.076 3.267-2.955v-4.952h-.625c-.229 0-.415.176-.415.392v.567c-.625-.724-1.437-1.096-2.414-1.096-1.498 0-3.016 1.077-3.016 2.877 0 1.84 1.56 2.838 3.016 2.838.956 0 1.769-.372 2.414-1.154v.548c0 1.31-.813 2.055-2.248 2.055a4.2 4.2 0 0 1-2.101-.568c-.208-.117-.458-.059-.561.137zm5.182-4.325c0 1.233-1.145 1.977-2.269 1.977-1.206 0-2.121-.842-2.121-1.977s.895-1.957 2.121-1.957c1.124 0 2.269.724 2.269 1.957M170.551 25.094c-.894 0-1.601.352-2.101 1.038v-.51c0-.215-.186-.39-.416-.39h-.624v6.047h.624c.23 0 .416-.176.416-.391v-3.073c0-1.057.749-1.8 1.831-1.8 1.061 0 1.685.645 1.685 1.741v3.132c0 .215.188.391.416.391h.624v-3.758c.021-1.468-.936-2.427-2.455-2.427M183.075 28.108l-5.389 3.367a.78.78 0 0 0-.373.665v.842l6.532-4.032c.291-.196.478-.509.478-.842a.99.99 0 0 0-.478-.841l-6.532-3.993v.783a.78.78 0 0 0 .373.665z" />
+          <path d="M179.83 28.383a.93.93 0 0 0 .956 0l.458-.294-3.411-2.173c-.208-.137-.52 0-.52.255v.646l1.768 1.115zM149.956 25.662c.582-.255 1.352-.529 2.371-.529 1.769 0 2.747.861 2.747 2.447v3.699h-.604c-.229 0-.416-.176-.416-.392v-.41c-.416.45-1.102.92-2.226.92-1.165 0-2.413-.607-2.413-1.919 0-1.252 1.04-1.977 2.767-1.977h1.082v.372a.4.4 0 0 1-.437.392h-.562c-1.123 0-1.789.45-1.789 1.194 0 .783.791 1.135 1.539 1.135 1.165 0 2.06-.666 2.06-1.546v-1.429c0-1.018-.645-1.566-1.831-1.566-.603 0-1.123.137-1.56.294-.208.078-.458-.02-.52-.235zM85.258 31.279h.604l-3.745-7.77c-.187-.353-.395-.411-.707-.411s-.541.058-.687.391l-3.745 7.79h.562a.91.91 0 0 0 .79-.47l.791-1.644h2.975c.229 0 .416-.176.416-.391v-.529h-2.975l1.873-3.914 3.058 6.459c.124.293.437.489.79.489" />
         </svg>
       );
     },
@@ -771,6 +869,17 @@ export const partners = [
     categories: ["Hosting"],
     directory: true,
     url: "https://vercel.com/?utm_source=tailwindcss",
+    careersUrl: "https://vercel.com/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Vercel supports Tailwind CSS",
+      summary:
+        "Vercel is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Vercel is the AI Cloud, a unified platform for building, deploying, and scaling AI-powered applications. Connect a Git repository and every push deploys, with preview environments for testing changes before production. You can ship a static site, a multi-tenant SaaS product, or an agentic workload, and the Marketplace adds integrations for AI providers, databases, CMSs, analytics, and storage.",
+        "Whether you're building a static site or an autonomous agent, the infrastructure comes from your code, not from configuration. Add a route and the function to run it exists. Caching, scaling, and regions are inferred from the app instead of wired up by hand.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -797,6 +906,32 @@ export const partners = [
     categories: ["Other"],
     directory: true,
     url: "https://serpapi.com/?utm_source=tailwindcss",
+    careersUrl: "https://serpapi.com/careers",
+    ctas: {
+      secondary: {
+        label: "Explore the APIs",
+        href: "https://serpapi.com/search-engine-apis?utm_source=tailwindcss",
+      },
+    } satisfies SponsorCtas,
+    detail: {
+      eyebrow: "Partner",
+      title: "SerpApi supports Tailwind CSS",
+      summary:
+        "SerpApi is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "SerpApi is a web search API that gives developers real-time, structured data from Google, Bing, Amazon, Maps, Shopping, Flights, Hotels, and 100+ search engines through one simple API.",
+        "No more scraping headaches, so you can focus on building your actual product.",
+        "Top use cases for SerpApi:",
+        {
+          type: "list",
+          items: [
+            "AI Grounding: Enhance AI models with real-time search data to improve the relevance and accuracy of generated content and insights.",
+            "SEO Tools: Integrate SERP data into SEO tools for tracking keyword rankings and analyzing search engine visibility.",
+            "Product Research: Gather competitor product listings and market trends to inform product development and pricing strategies.",
+          ],
+        },
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -819,6 +954,17 @@ export const partners = [
     categories: ["Vertical AI"],
     directory: true,
     url: "http://fin.ai/?utm_source=tailwind&utm_medium=mindshare&utm_campaign=20260109-ungated-webpage-finlogo",
+    careersUrl: "https://fin.ai/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Fin supports Tailwind CSS",
+      summary:
+        "Fin is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Fin is an AI agent for customer service that resolves complex queries across every channel. It handles multi-step support work like troubleshooting login issues, processing returns, and investigating fraud. When a conversation takes an unexpected turn, like a customer correcting a detail or changing their answer halfway through, Fin jumps back and continues naturally instead of getting stuck in a rigid flow.",
+        "You train Fin like any new teammate. Most support teams already have SOPs written up in Google Docs or Notion. You can paste those in and describe how Fin should act in natural language. From there it follows the procedure carefully while exercising judgment along the way, the way an experienced teammate would.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -838,7 +984,28 @@ export const partners = [
     name: "Webflow",
     categories: ["CMS & Editors"],
     directory: true,
-    url: "https://webflow.com/?utm_source=tailwindcss",
+    url: "https://developers.webflow.com/?utm_source=tailwindcss",
+    careersUrl: "https://webflow.com/careers",
+    ctas: {
+      primary: {
+        label: "Visit Webflow",
+        href: "https://developers.webflow.com/?utm_source=tailwindcss",
+      },
+      secondary: {
+        label: "View Docs",
+        href: "https://developers.webflow.com/home?utm_source=tailwindcss",
+      },
+    } satisfies SponsorCtas,
+    detail: {
+      eyebrow: "Partner",
+      title: "Webflow supports Tailwind CSS",
+      summary:
+        "Webflow is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Webflow is an agentic web marketing platform that brings together marketers, designers, and developers in a single governed system. Developers extend the platform through Code Components, Webflow Cloud, the CLI, APIs covering content, design, and user workflows, and an MCP server that connects Webflow to your LLM, IDE, or agent platform of choice.",
+        "AI Code Components and Webflow Cloud apps both support Tailwind CSS. Build Code Components using Tailwind directly, or deploy full Tailwind-based applications on Webflow Cloud without a separate hosting layer.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -905,6 +1072,17 @@ export const partners = [
     categories: ["CMS & Editors"],
     directory: true,
     url: "https://sanity.io/?utm_source=tailwindcss",
+    careersUrl: "https://www.sanity.io/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Sanity supports Tailwind CSS",
+      summary:
+        "Sanity is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Sanity is a content operating system for all your websites, apps, and AI agents. Underneath is a content-first database with Sanity Studio as its configurable interface. Teams model content as structured JSON, define schemas in Studio configuration rather than database constraints, and power every surface from a single API. Content agents, functions, and agent actions automate work before and after publishing, triggered by any mutation in the dataset.",
+        "Sanity Studio is fully configurable, so teams shape the platform around their workflows rather than the other way around. Content lives as data in a central database, which means the same dataset can feed a marketing site, a product catalog, a learning system, and the agents built on top of it.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -927,6 +1105,17 @@ export const partners = [
     categories: ["Hosting"],
     directory: true,
     url: "https://railway.com/?utm_medium=sponsor&utm_source=oss&utm_campaign=tailwind",
+    careersUrl: "https://railway.com/careers",
+    detail: {
+      eyebrow: "Partner",
+      title: "Railway supports Tailwind CSS",
+      summary:
+        "Railway is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Railway is an all-in-one cloud platform for deploying and running applications. Point it at a Git repository and Railway will build an OCI image and run it with the right start command. Bring a Dockerfile if you already have one, or pull an image directly from Docker Hub, GitHub Container Registry, or another registry. The same project covers local development, deployment, and the instrumentation needed to diagnose what's running.",
+        "Railway is designed to just work, then get out of the way when you want control. Sane defaults handle the first deploy with no configuration; knobs and switches appear when you outgrow the abstraction or need to layer Railway into existing infrastructure. Take what you need, leave what you don't.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -949,6 +1138,17 @@ export const partners = [
     categories: ["AI Code Editors"],
     directory: true,
     url: "https://kiro.dev/?utm_source=tailwindcss",
+    careersUrl: "https://www.amazon.jobs/en/search?base_query=kiro",
+    detail: {
+      eyebrow: "Partner",
+      title: "Kiro supports Tailwind CSS",
+      summary:
+        "Kiro is a Tailwind CSS partner, helping ensure the framework millions of developers rely on every day continues to thrive.",
+      body: [
+        "Kiro is an AI IDE for taking work from prototype to production. It runs long, multi-step tasks across large codebases, picking up your team's conventions through steering rules. Hooks fire in the background when you save, create, or delete a file, handling things like quality checks, code standards, and boilerplate.",
+        "With specs, Kiro plans the whole feature before writing any code. It unpacks the feature into user stories with acceptance criteria, then a design document with data flow diagrams, TypeScript interfaces, database schemas, and API endpoints, then a sequenced task list with each task tied back to a requirement. The specs stay synced with the codebase as it evolves, so the original intent doesn't drift during implementation.",
+      ],
+    },
     logo: function (props: React.SVGProps<SVGSVGElement>) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -1024,26 +1224,6 @@ export const ambassadors = [
     },
   },
   {
-    name: "Braintrust",
-    categories: ["AI Platforms"],
-    directory: true,
-    url: "https://www.braintrust.dev/?utm_source=tailwindcss",
-    logo: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path d="M44.355 28c2.265 0 4.102 1.878 4.102 4.194v4.192c0 2.316-1.837 4.194-4.102 4.194h-2.05v1.63h2.05c2.265 0 4.102 1.878 4.102 4.193v4.194c0 2.315-1.837 4.192-4.102 4.192h-2.05v1.631h2.05c2.265 0 4.102 1.878 4.102 4.194v4.192c0 2.316-1.837 4.194-4.102 4.194h-4.102c-2.264 0-4.1-1.878-4.1-4.194v-2.91h-2.05c-2.266 0-4.103-1.879-4.103-4.194v-4.194c0-2.315 1.837-4.192 4.102-4.192h2.05v-1.632h-2.05c-2.265 0-4.102-1.877-4.102-4.192v-4.194c0-2.315 1.837-4.193 4.102-4.193h2.05v-2.911c0-2.316 1.837-4.194 4.101-4.194zm14.128 0c2.265 0 4.1 1.878 4.1 4.194v2.91h2.052c2.265.001 4.101 1.88 4.101 4.194v4.194c0 2.315-1.836 4.192-4.1 4.192h-2.052v1.632h2.051c2.265 0 4.1 1.877 4.101 4.192v4.194c0 2.315-1.836 4.193-4.1 4.193h-2.052v2.911c0 2.316-1.836 4.194-4.101 4.194H54.38c-2.265 0-4.1-1.878-4.1-4.194v-4.192c0-2.315 1.835-4.194 4.1-4.194h2.05v-1.63h-2.05c-2.265-.001-4.1-1.878-4.1-4.193v-4.194c0-2.315 1.835-4.192 4.1-4.192h2.05V40.58h-2.05c-2.265 0-4.1-1.878-4.1-4.194v-4.192c0-2.316 1.835-4.194 4.1-4.194zm83.519 12.01c5.12 0 9.362 2.992 9.362 8.475v12.461h2.925v4.488h-4.388c-1.755 0-3.023-1.247-3.023-2.992v-.848c-.78 2.343-3.071 4.338-6.777 4.338-4.534 0-8.386-2.792-8.386-7.627 0-4.636 2.827-7.428 8.97-8.076l5.705-.598v-1.794c0-1.894-1.365-3.54-4.388-3.54-2.584 0-3.998 1.446-4.242 3.09h-5.167c.536-4.585 4.777-7.377 9.409-7.377m90.822 15.752c0 3.639 2.145 5.334 5.119 5.334 2.926 0 5.071-1.695 5.071-5.334V40.508h5.12v15.355c-.002 7.078-4.925 10.069-10.191 10.069-5.314 0-10.239-2.992-10.239-10.12V40.51h5.12zm29.428-15.752c5.119 0 8.824 3.24 9.653 7.528h-5.021c-.487-1.845-2.194-3.24-4.632-3.24-2.583 0-3.949 1.346-3.949 2.99 0 4.836 13.991 1.147 13.993 10.916 0 4.885-4.339 7.728-9.362 7.728-5.07 0-9.752-2.942-10.532-8.076h5.121c.536 2.193 2.681 3.69 5.411 3.69 2.39 0 4.389-1.098 4.389-3.091 0-5.633-14.043-1.347-14.043-11.067 0-4.287 3.951-7.378 8.972-7.378m-161.553-8.473c6.631 0 10.337 4.137 10.337 9.271 0 2.791-.879 5.483-3.658 6.928 2.828 1.296 5.218 4.188 5.218 7.827 0 6.032-4.145 9.87-10.581 9.87H87.194V31.538zm28.919 13.807h-7.167v20.09h-5.12V44.996c0-2.592 1.463-4.487 4.144-4.488h8.143zm33.907 20.09h-5.119V40.509h5.119zm17.376-25.424c4.973 0 8.68 3.79 8.68 8.974v16.45h-4.974V49.88c0-3.09-1.852-5.383-4.924-5.383-3.218 0-5.266 2.292-5.266 5.383v15.553h-5.022V40.509h4.973V43.3c1.219-1.645 3.023-3.29 6.533-3.29m20.95.498h5.021v4.488h-5.021v15.701h4.632v4.737h-4.875c-3.122 0-4.78-2.095-4.78-4.686V44.996h-3.802v-4.488h4.046V33.53h4.779zm21.951 4.836h-7.167v20.09h-5.12V44.996c0-2.592 1.463-4.488 4.145-4.488h8.142zm59.781-4.836h5.022v4.488h-5.022v15.701h4.632v4.737h-4.876c-3.12 0-4.776-2.095-4.776-4.686V44.996h-3.805v-4.488h4.048V33.53h4.777zm-142.702 13.81c-2.682.299-4.145 1.395-4.145 3.738 0 2.193 1.805 3.538 4.243 3.538 3.169 0 5.411-2.542 5.411-6.03v-1.795zm-48.373 6.33h9.264c3.315 0 5.459-1.646 5.46-5.034 0-3.639-2.291-5.235-5.46-5.235h-9.264zm-.05-14.955h8.241c2.974 0 4.972-1.146 4.972-4.735s-2.144-4.636-4.972-4.636h-8.241zm71.311-9.022h-5.558v-5.134h5.558z" />
-        </svg>
-      );
-    },
-    icon: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="28 26 44 46" {...props}>
-          <path d="M44.355 28c2.265 0 4.102 1.878 4.102 4.194v4.192c0 2.316-1.837 4.194-4.102 4.194h-2.05v1.63h2.05c2.265 0 4.102 1.878 4.102 4.193v4.194c0 2.315-1.837 4.192-4.102 4.192h-2.05v1.631h2.05c2.265 0 4.102 1.878 4.102 4.194v4.192c0 2.316-1.837 4.194-4.102 4.194h-4.102c-2.264 0-4.1-1.878-4.1-4.194v-2.91h-2.05c-2.266 0-4.103-1.879-4.103-4.194v-4.194c0-2.315 1.837-4.192 4.102-4.192h2.05v-1.632h-2.05c-2.265 0-4.102-1.877-4.102-4.192v-4.194c0-2.315 1.837-4.193 4.102-4.193h2.05v-2.911c0-2.316 1.837-4.194 4.101-4.194ZM58.483 28c2.265 0 4.1 1.878 4.1 4.194v2.91h2.052c2.265.001 4.101 1.88 4.101 4.194v4.194c0 2.315-1.836 4.192-4.1 4.192h-2.052v1.632h2.051c2.265 0 4.1 1.877 4.101 4.192v4.194c0 2.315-1.836 4.193-4.1 4.193h-2.052v2.911c0 2.316-1.836 4.194-4.101 4.194H54.38c-2.265 0-4.1-1.878-4.1-4.194v-4.192c0-2.315 1.835-4.194 4.1-4.194h2.05v-1.63h-2.05c-2.265-.001-4.1-1.878-4.1-4.193v-4.194c0-2.315 1.835-4.192 4.1-4.192h2.05V40.58h-2.05c-2.265 0-4.1-1.878-4.1-4.194v-4.192c0-2.316 1.835-4.194 4.1-4.194Z" />
-        </svg>
-      );
-    },
-  },
-  {
     name: "Auth0",
     categories: ["Auth"],
     directory: true,
@@ -1093,6 +1273,55 @@ export const ambassadors = [
         <svg fill="currentColor" viewBox="59 21 54 54" {...props}>
           <path fillRule="evenodd" d="M109.5 24.5h-47v47h47v-47ZM61 23v50h50V23H61Z" clipRule="evenodd" />
           <path d="M78.959 59.11V36.89h7.618a5.69 5.69 0 0 1 5.715 5.714v1.27c0 1.46-.54 2.825-1.46 3.81a5.735 5.735 0 0 1 2.095 4.444v1.27a5.69 5.69 0 0 1-5.715 5.714h-8.254Zm3.174-3.174h5.08a2.507 2.507 0 0 0 2.54-2.54v-1.27a2.507 2.507 0 0 0-2.54-2.539h-5.08v6.35Zm0-9.523h4.445a2.507 2.507 0 0 0 2.54-2.54v-1.27a2.507 2.507 0 0 0-2.54-2.54h-4.445v6.35Z" />
+        </svg>
+      );
+    },
+  },
+  {
+    name: "Polar",
+    categories: ["Commerce"],
+    directory: true,
+    url: "https://polar.sh/?utm_source=tailwindcss",
+    logo: function (props: React.SVGProps<SVGSVGElement>) {
+      return (
+        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
+          <path d="M140.641 63.702V31.903h12.752c1.676 0 3.2.424 4.571 1.272 1.372.818 2.453 1.953 3.246 3.407.822 1.454 1.234 3.074 1.234 4.86 0 1.848-.412 3.514-1.234 4.998-.793 1.484-1.874 2.665-3.246 3.543-1.371.878-2.895 1.317-4.571 1.317h-8.776v12.402h-3.976Zm3.976-16.263h8.868c.914 0 1.737-.257 2.468-.772.731-.545 1.31-1.272 1.737-2.18.427-.91.64-1.924.64-3.044 0-1.09-.213-2.06-.64-2.908a5.445 5.445 0 0 0-1.737-2.044 4.185 4.185 0 0 0-2.468-.772h-8.868v11.72ZM177.171 64.156c-2.346 0-4.449-.53-6.308-1.59a12.084 12.084 0 0 1-4.342-4.406c-1.066-1.878-1.6-4.013-1.6-6.405 0-2.393.534-4.513 1.6-6.36a11.735 11.735 0 0 1 4.342-4.361c1.859-1.06 3.962-1.59 6.308-1.59 2.347 0 4.434.53 6.262 1.59a11.307 11.307 0 0 1 4.343 4.36c1.066 1.848 1.599 3.968 1.599 6.36 0 2.393-.533 4.528-1.599 6.406-1.037 1.847-2.484 3.316-4.343 4.406-1.828 1.06-3.915 1.59-6.262 1.59Zm0-3.543c1.615 0 3.048-.379 4.297-1.136a8.2 8.2 0 0 0 2.925-3.18c.732-1.332 1.082-2.846 1.052-4.542.03-1.696-.32-3.195-1.052-4.498-.701-1.332-1.676-2.377-2.925-3.134-1.249-.757-2.682-1.136-4.297-1.136-1.615 0-3.062.379-4.342 1.136-1.249.757-2.225 1.802-2.925 3.134-.701 1.333-1.052 2.832-1.052 4.498 0 1.696.351 3.21 1.052 4.542a8.193 8.193 0 0 0 2.925 3.18c1.28.757 2.727 1.136 4.342 1.136ZM193.552 63.702V30.086h3.839v33.616h-3.839ZM212.539 64.156c-2.042 0-3.901-.53-5.577-1.59-1.645-1.09-2.955-2.574-3.93-4.452-.975-1.877-1.463-3.997-1.463-6.36 0-2.392.503-4.512 1.508-6.36 1.006-1.847 2.347-3.3 4.023-4.36 1.706-1.06 3.611-1.59 5.713-1.59 1.249 0 2.392.182 3.428.545a9.146 9.146 0 0 1 2.834 1.544 8.611 8.611 0 0 1 2.057 2.272 7.568 7.568 0 0 1 1.097 2.726l-1.006-.455.046-6.132h3.84v23.758h-3.84v-5.77l.96-.499c-.213.878-.625 1.726-1.234 2.544a9.336 9.336 0 0 1-2.194 2.18 11.145 11.145 0 0 1-2.88 1.454 10.415 10.415 0 0 1-3.382.545Zm.914-3.589c1.554 0 2.925-.378 4.114-1.135 1.188-.757 2.133-1.787 2.834-3.09.701-1.332 1.051-2.861 1.051-4.587 0-1.696-.35-3.195-1.051-4.498a7.729 7.729 0 0 0-2.834-3.089c-1.189-.757-2.56-1.135-4.114-1.135-1.554 0-2.925.378-4.114 1.135-1.188.757-2.133 1.787-2.834 3.09-.67 1.302-1.005 2.8-1.005 4.497 0 1.696.335 3.21 1.005 4.542.701 1.333 1.646 2.378 2.834 3.135 1.189.757 2.56 1.135 4.114 1.135ZM230.042 63.702V39.944h3.84l.091 6.677-.411-1.135a8.464 8.464 0 0 1 1.645-3.044 8.9 8.9 0 0 1 2.697-2.18 7.331 7.331 0 0 1 3.382-.818c.518 0 1.006.045 1.463.136.488.06.883.152 1.188.273l-1.051 4.224a5.889 5.889 0 0 0-1.234-.408 5.738 5.738 0 0 0-1.189-.137c-.975 0-1.873.182-2.696.545a6.302 6.302 0 0 0-2.057 1.5 7.242 7.242 0 0 0-1.326 2.135 7.501 7.501 0 0 0-.457 2.634v13.356h-3.885Z" />
+          <path
+            d="M84.878 67.863c11.075 7.45 26.13 4.568 33.627-6.44 7.497-11.006 4.597-25.97-6.478-33.42-11.075-7.45-26.131-4.568-33.628 6.439s-4.597 25.97 6.479 33.42Zm3.212.197c10.13 5.15 22.982.315 28.705-10.8 5.722-11.116 2.148-24.304-7.983-29.455s-22.983-.316-28.705 10.8c-5.722 11.116-2.148 24.303 7.983 29.455Z"
+            clipRule="evenodd"
+            fillRule="evenodd"
+          />
+          <path
+            d="M90.977 70.688c9.145 2.959 19.903-4.856 24.029-17.455 4.126-12.598.057-25.209-9.088-28.167-9.146-2.958-19.904 4.857-24.03 17.455-4.125 12.598-.056 25.21 9.089 28.167Zm2.797-.957c7.74 1.64 16.108-6.79 18.692-18.829 2.584-12.039-1.595-23.129-9.335-24.77-7.74-1.64-16.108 6.79-18.692 18.83C81.855 57 86.035 68.09 93.774 69.73Z"
+            clipRule="evenodd"
+            fillRule="evenodd"
+          />
+          <path
+            d="M95.896 71.716c6.119.65 12.226-9.494 13.64-22.656 1.414-13.162-2.4-24.358-8.519-25.008-6.119-.649-12.226 9.495-13.64 22.657-1.414 13.161 2.4 24.358 8.519 25.007Zm2.863-4.006c4.429-.07 7.878-8.979 7.704-19.9-.173-10.92-3.904-19.718-8.332-19.648-4.429.07-7.878 8.979-7.704 19.9.173 10.92 3.904 19.718 8.332 19.648Z"
+            clipRule="evenodd"
+            fillRule="evenodd"
+          />
+        </svg>
+      );
+    },
+    icon: function (props: React.SVGProps<SVGSVGElement>) {
+      return (
+        <svg fill="currentColor" viewBox="72 18 56 60" {...props}>
+          <path
+            d="M84.878 67.863c11.075 7.45 26.13 4.568 33.627-6.44 7.497-11.006 4.597-25.97-6.478-33.42-11.075-7.45-26.131-4.568-33.628 6.439s-4.597 25.97 6.479 33.42Zm3.212.197c10.13 5.15 22.982.315 28.705-10.8 5.722-11.116 2.148-24.304-7.983-29.455s-22.983-.316-28.705 10.8c-5.722 11.116-2.148 24.303 7.983 29.455Z"
+            clipRule="evenodd"
+            fillRule="evenodd"
+          />
+          <path
+            d="M90.977 70.688c9.145 2.959 19.903-4.856 24.029-17.455 4.126-12.598.057-25.209-9.088-28.167-9.146-2.958-19.904 4.857-24.03 17.455-4.125 12.598-.056 25.21 9.089 28.167Zm2.797-.957c7.74 1.64 16.108-6.79 18.692-18.829 2.584-12.039-1.595-23.129-9.335-24.77-7.74-1.64-16.108 6.79-18.692 18.83C81.855 57 86.035 68.09 93.774 69.73Z"
+            clipRule="evenodd"
+            fillRule="evenodd"
+          />
+          <path
+            d="M95.896 71.716c6.119.65 12.226-9.494 13.64-22.656 1.414-13.162-2.4-24.358-8.519-25.008-6.119-.649-12.226 9.495-13.64 22.657-1.414 13.161 2.4 24.358 8.519 25.007Zm2.863-4.006c4.429-.07 7.878-8.979 7.704-19.9-.173-10.92-3.904-19.718-8.332-19.648-4.429.07-7.878 8.979-7.704 19.9.173 10.92 3.904 19.718 8.332 19.648Z"
+            clipRule="evenodd"
+            fillRule="evenodd"
+          />
         </svg>
       );
     },
@@ -1185,48 +1414,6 @@ export const supporters = [
             d="M57.117 60.702c7.072 0 12.805-5.697 12.805-12.723 0-2.678-.833-5.163-2.255-7.213l8.322-8.268c.703-.698.302-1.902-.674-2.083a55.603 55.603 0 0 1-9.353-2.598l-.191-.072c-.369-.14-.737-.284-1.103-.432A22.206 22.206 0 0 0 57.118 26a22.121 22.121 0 0 0-15.63 6.426C37.48 36.404 35 41.902 35 47.976c0 2.375.38 4.662 1.08 6.804.38 1.157 1.744 1.593 2.804.985.897-.514 1.257-1.607.958-2.591a17.844 17.844 0 0 1 4.514-17.872c6.49-6.447 16.69-6.957 23.767-1.531l-3.749 3.724a12.803 12.803 0 0 0-7.257-2.239c-7.072 0-12.806 5.696-12.806 12.723 0 2.677.833 5.16 2.254 7.21l-8.32 8.267c-.703.698-.303 1.902.674 2.083a55.71 55.71 0 0 1 9.352 2.598l.192.072c.369.14.737.284 1.103.432a22.208 22.208 0 0 0 7.55 1.313 22.12 22.12 0 0 0 15.548-6.346l.094-.093c4.001-3.977 6.476-9.47 6.476-15.536 0-2.374-.379-4.66-1.08-6.802-.379-1.157-1.745-1.595-2.806-.986-.897.514-1.258 1.608-.959 2.594a17.843 17.843 0 0 1-4.515 17.87c-6.488 6.447-16.69 6.957-23.766 1.531l3.75-3.725a12.804 12.804 0 0 0 7.259 2.24Zm8.501-12.724c0 4.791-3.909 8.675-8.731 8.675a8.736 8.736 0 0 1-4.158-1.045l11.837-11.76a8.592 8.592 0 0 1 1.052 4.13Zm-17.462 0c0-4.79 3.909-8.674 8.731-8.674 1.625 0 3.147.44 4.45 1.21L49.373 52.398a8.592 8.592 0 0 1-1.217-4.42Z"
             clipRule="evenodd"
           />
-        </svg>
-      );
-    },
-  },
-  {
-    name: "Hyperbrowser",
-    categories: ["Browsers"],
-    directory: true,
-    url: "https://www.hyperbrowser.ai/?utm_source=tailwindcss",
-    logo: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path d="M48.284 28.213 30.206 47.98h9.8c1.492 0 2.805-.99 3.226-2.433l5.052-17.334ZM41.76 50.414 36.71 67.748 54.786 47.98h-9.799c-1.492 0-2.806.991-3.226 2.434ZM84.462 48.515 82 61.162h-5.875l2.128-11.057c.548-2.85 0-3.658-1.948-3.658-2.054 0-4.042 1.293-4.557 3.921l-2.095 10.794h-5.875l5.106-26.44h5.875l-1.98 10.242.032-.148c1.326-1.739 3.339-3.18 6.17-3.18 4.148 0 6.276 2.553 5.474 6.879h.008ZM94.78 61.681c-2.537 4.845-4.41 6.031-8.19 6.031-1.18 0-2.243-.148-3.38-.404l.695-4.325c1.473.297 2.938-.074 3.633-1.145.77-.7 1.032-1.887.81-3.551l-3.084-16.05h5.76l1.874 12.424h.074l5.948-12.424h5.99L94.772 61.681h.008ZM123.28 52.033c-1.178 6.023-4.885 9.722-9.696 9.722-2.905 0-4.623-1.623-5.18-2.629l-.221.149-1.612 8.428h-5.875l4.918-25.475h5.875l-.295 1.664c.958-.996 3.085-2.257 5.548-2.257 5.18 0 7.782 3.996 6.538 10.39v.008Zm-8.191-5.957c-2.569 0-4.623 2.068-5.4 5.957-.663 3.51.253 5.289 2.463 5.289 2.569 0 4.623-2.068 5.4-5.957.663-3.51-.253-5.29-2.463-5.29ZM136.168 55.287h5.916c-1.76 4.103-5.033 6.468-9.95 6.468-6.424 0-9.623-4.581-8.297-11.057 1.137-5.586 5.253-9.055 11.054-9.055 6.612 0 9.181 4.878 7.855 11.535h-13.509c-.515 2.884 1.358 4.144 3.265 4.144 2.201 0 3.486-1.112 3.674-2.035h-.008Zm-6.244-5.438h7.708c.475-2.957-.916-4.144-2.978-4.144-2.422 0-4.222 1.475-4.738 4.144h.008ZM158.015 42.089l-.843 5.067c-2.864-.445-6.496 1.408-7.274 5.363l-1.685 8.651h-5.876l3.674-18.933h5.875l-.621 3.106.032-.148c1.326-2.11 3.085-3.288 4.959-3.288.696 0 1.105.033 1.759.182ZM177.072 52.033c-1.178 6.023-4.885 9.722-9.696 9.722-2.905 0-4.623-1.623-5.18-2.628l-.22.148-.369 1.887h-5.875l5.106-26.44h5.875l-1.726 9.17c.957-.996 3.085-2.257 5.548-2.257 5.179 0 7.781 3.996 6.537 10.39v.008Zm-8.182-5.957c-2.569 0-4.623 2.068-5.401 5.957-.662 3.51.254 5.29 2.463 5.29 2.57 0 4.623-2.069 5.401-5.958.663-3.51-.254-5.289-2.463-5.289ZM192.202 42.089l-.843 5.067c-2.864-.445-6.497 1.408-7.274 5.363l-1.686 8.651h-5.875l3.674-18.933h5.875l-.622 3.106.033-.148c1.325-2.11 3.084-3.288 4.958-3.288.696 0 1.105.033 1.76.182ZM190.402 52.033c1.178-6.064 5.99-10.39 12.446-10.39 6.054 0 8.886 4.03 7.781 9.722-1.178 6.064-5.99 10.39-12.413 10.39s-8.927-4.03-7.822-9.722h.008Zm14.18 0c1.105-3.848-.073-5.957-2.831-5.957-2.422 0-4.329 1.813-5.286 5.29-1.105 3.847.074 5.956 2.864 5.956 2.389 0 4.296-1.812 5.253-5.29ZM216.88 42.237l.589 11.535h.074l5.327-11.535h5.138l.843 11.535h.074l5.065-11.535h5.949l-8.927 18.933h-5.475l-1.325-11.98h-.074l-5.948 11.98h-5.548l-1.58-18.933h5.818ZM254.774 55.172c0 4.622-3.601 6.583-8.633 6.583-6.906 0-8.853-3.18-8.853-6.732h5.433c-.18 1.887 1.137 2.662 3.265 2.662 1.832 0 2.937-.668 2.937-1.961 0-1.294-1.325-1.41-3.968-2.258-3.232-1.038-5.875-2.331-5.875-5.363 0-4.07 3.559-6.468 8.297-6.468 6.57 0 8.297 3.213 8.297 6.245h-5.401c.107-1.516-1.178-2.183-2.896-2.183-1.473 0-2.463.445-2.463 1.475 0 1.145.883 1.334 3.379 2.109 3.379 1.07 6.464 2.513 6.464 5.883l.017.008Z" />
-          <path d="M267.997 55.287h5.916c-1.76 4.103-5.033 6.468-9.95 6.468-6.424 0-9.623-4.581-8.297-11.057 1.137-5.586 5.253-9.055 11.054-9.055 6.612 0 9.181 4.878 7.855 11.535h-13.509c-.515 2.884 1.358 4.144 3.265 4.144 2.201 0 3.486-1.112 3.674-2.035h-.008Zm-6.244-5.438h7.708c.475-2.957-.916-4.144-2.978-4.144-2.422 0-4.222 1.475-4.738 4.144h.008ZM289.844 42.089l-.842 5.067c-2.864-.445-6.498 1.408-7.275 5.363l-1.686 8.651h-5.874l3.674-18.933h5.875l-.622 3.106.032-.148c1.326-2.11 3.085-3.288 4.959-3.288.695 0 1.105.033 1.759.182Z" />
-        </svg>
-      );
-    },
-    icon: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="28 26 28 44" {...props}>
-          <path d="M48.284 28.213 30.206 47.98h9.8c1.492 0 2.805-.99 3.226-2.433l5.052-17.334ZM41.76 50.414 36.71 67.748 54.786 47.98h-9.799c-1.492 0-2.806.991-3.226 2.434Z" />
-          <path d="M48.284 28.213 30.206 47.98h9.8c1.492 0 2.805-.99 3.226-2.433l5.052-17.334ZM41.76 50.414 36.71 67.748 54.786 47.98h-9.799c-1.492 0-2.806.991-3.226 2.434Z" />
-        </svg>
-      );
-    },
-  },
-  {
-    name: "Magic Patterns",
-    categories: ["AI App Builders"],
-    directory: true,
-    url: "https://www.magicpatterns.com/?utm_source=tailwindcss",
-    logo: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path d="M141.897 42.734c1.121 0 2.098.23 2.96.658.862.43 1.523 1.002 2.011 1.717v-2.117h3.822V58.1c0 1.373-.258 2.632-.833 3.72a6.313 6.313 0 0 1-2.529 2.603c-1.12.658-2.5.973-4.08.973-2.127 0-3.879-.487-5.259-1.488-1.379-1.001-2.155-2.346-2.328-4.063h3.765c.201.687.632 1.23 1.293 1.631.661.4 1.466.6 2.414.6 1.12 0 2.012-.342 2.701-1 .69-.687 1.034-1.66 1.034-3.005v-2.318a5.725 5.725 0 0 1-2.011 1.746c-.862.486-1.868.715-2.96.715-1.264 0-2.413-.315-3.477-.973-1.063-.658-1.896-1.574-2.5-2.747-.603-1.173-.919-2.517-.919-4.063 0-1.516.316-2.86.919-4.034.604-1.173 1.437-2.089 2.472-2.718 1.063-.63 2.212-.945 3.505-.945Zm100.144-.028c1.437 0 2.73.315 3.85.915 1.121.63 2.012 1.488 2.644 2.633.632 1.144.948 2.432.948 3.891 0 .544-.028 1.03-.115 1.46h-11.005c.086 1.087.488 1.945 1.149 2.546.661.601 1.494.916 2.471.916 1.408 0 2.414-.601 3.018-1.803h4.109a6.762 6.762 0 0 1-2.5 3.548c-1.236.945-2.759 1.403-4.54 1.403-1.466 0-2.759-.344-3.909-.974a6.674 6.674 0 0 1-2.701-2.718c-.66-1.173-.977-2.518-.977-4.063s.316-2.919.948-4.092c.633-1.173 1.524-2.088 2.673-2.718 1.149-.63 2.442-.944 3.937-.944Zm-117.701 0c1.12 0 2.126.229 2.959.686a6.216 6.216 0 0 1 2.012 1.717v-2.146h3.822v14.994h-3.822v-2.204c-.489.716-1.15 1.288-2.012 1.746-.862.458-1.868.687-2.988.687-1.293 0-2.443-.315-3.477-.973-1.035-.658-1.868-1.574-2.472-2.747-.603-1.173-.919-2.518-.919-4.063 0-1.517.316-2.862.919-4.035.604-1.173 1.437-2.088 2.472-2.718 1.063-.63 2.212-.944 3.506-.944Zm77.212 0c1.12 0 2.126.229 2.959.686a6.205 6.205 0 0 1 2.012 1.717v-2.146h3.822v14.994h-3.822v-2.204c-.488.716-1.15 1.288-2.012 1.746-.861.458-1.867.687-2.988.687-1.293 0-2.442-.315-3.477-.973-1.035-.658-1.868-1.574-2.471-2.747-.604-1.173-.92-2.518-.92-4.063 0-1.517.316-2.862.92-4.035.603-1.173 1.436-2.088 2.471-2.718 1.063-.63 2.213-.944 3.506-.944Zm-35.661-.029c1.868 0 3.391.486 4.626 1.402 1.236.944 2.041 2.232 2.471 3.92h-4.109a2.932 2.932 0 0 0-1.092-1.516c-.517-.372-1.178-.544-1.925-.544-1.063 0-1.925.4-2.586 1.173-.632.801-.948 1.917-.948 3.348 0 1.43.316 2.547.948 3.32.632.772 1.494 1.172 2.586 1.172 1.552 0 2.558-.686 3.017-2.06h4.109c-.402 1.602-1.235 2.918-2.471 3.863-1.235.944-2.787 1.43-4.626 1.43-1.437 0-2.73-.343-3.851-.972-1.12-.659-2.011-1.546-2.643-2.719-.632-1.144-.949-2.518-.949-4.063s.317-2.89.949-4.063c.632-1.173 1.523-2.089 2.643-2.718 1.121-.658 2.414-.973 3.851-.973Zm117.902.057c1.782 0 3.219.458 4.282 1.345 1.063.887 1.638 2.09 1.753 3.606h-3.65c-.057-.601-.316-1.088-.747-1.431-.46-.344-1.034-.515-1.781-.515-.69 0-1.207.114-1.581.372-.373.257-.546.6-.546 1.059 0 .486.23.886.747 1.144.489.258 1.293.544 2.357.801 1.092.258 1.982.544 2.701.83.718.286 1.322.744 1.839 1.345.517.6.776 1.402.833 2.403 0 .859-.23 1.631-.718 2.318-.489.687-1.178 1.202-2.069 1.602-.891.373-1.925.572-3.132.572s-2.328-.228-3.305-.658c-.977-.457-1.753-1.03-2.327-1.802-.575-.773-.891-1.603-.949-2.518h3.822a2.16 2.16 0 0 0 .862 1.43c.517.373 1.121.573 1.868.573.718 0 1.293-.143 1.695-.43.403-.286.604-.658.604-1.115 0-.487-.259-.83-.748-1.088-.517-.257-1.293-.515-2.384-.8-1.121-.258-2.041-.544-2.759-.83a4.642 4.642 0 0 1-1.839-1.317c-.517-.6-.776-1.402-.776-2.403 0-.83.23-1.574.718-2.26.489-.688 1.178-1.231 2.069-1.632.891-.4 1.954-.6 3.161-.6Zm-184.54-3.662 6.035 14.05 6.035-14.05h4.281v18.885h-3.793V45.653l-5.086 12.304h-2.902l-5.086-12.304v12.304h-3.822V39.072h4.339Zm88.334 0c3.333 0 6.063 2.69 6.034 6.009 0 3.319-2.701 6.009-6.034 6.009h-4.684v6.867h-3.793V39.072h8.477Zm-31.006 18.884h-3.793V42.963h3.793v14.993Zm62.385-14.993h2.931v3.119h-2.931v11.874h-3.822V46.082h-2.931v-3.119h2.931v-3.72h3.822v3.72Zm11.552 0h2.931v3.119h-2.931v11.874h-3.822V46.082h-2.931v-3.119h2.931v-3.72h3.822v3.72Zm29.223 3.777h-1.006c-1.207 0-2.097.258-2.701.83-.603.543-.919 1.516-.919 2.918v7.468h-3.794V42.963h3.794v2.318a5.115 5.115 0 0 1 1.925-1.831c.776-.458 1.695-.687 2.701-.687v3.977Zm10.202-4.006c1.81 0 3.247.572 4.339 1.688 1.12 1.116 1.666 2.69 1.666 4.722v8.784h-3.793v-8.27c0-1.2-.287-2.117-.891-2.746-.603-.658-1.408-.973-2.442-.973-1.063 0-1.897.343-2.5.973-.604.63-.92 1.545-.92 2.747v8.269h-3.793V42.935h3.793v1.86a5.706 5.706 0 0 1 1.954-1.517c.776-.372 1.638-.544 2.587-.544Zm-144.627 3.32c-.689 0-1.35.171-1.954.515-.603.314-1.091.83-1.465 1.487-.374.659-.546 1.431-.546 2.347 0 .915.172 1.688.546 2.375a4.23 4.23 0 0 0 1.465 1.545 3.67 3.67 0 0 0 1.954.544c.719 0 1.38-.172 1.983-.515.604-.344 1.092-.859 1.466-1.517.373-.658.546-1.46.546-2.375 0-.916-.173-1.717-.546-2.375-.374-.658-.862-1.173-1.466-1.516a3.939 3.939 0 0 0-1.983-.515Zm77.213 0a3.91 3.91 0 0 0-1.954.515c-.604.314-1.092.83-1.466 1.487-.373.659-.546 1.431-.546 2.347 0 .915.173 1.688.546 2.375a4.224 4.224 0 0 0 1.466 1.545 3.665 3.665 0 0 0 1.954.544c.718 0 1.379-.172 1.982-.515.604-.344 1.092-.859 1.466-1.517.374-.658.546-1.46.546-2.375 0-.916-.172-1.717-.546-2.375-.374-.658-.862-1.173-1.466-1.516a3.938 3.938 0 0 0-1.982-.515Zm-59.655 0c-.689 0-1.35.171-1.954.514-.603.315-1.092.83-1.465 1.489-.374.658-.546 1.43-.546 2.346 0 .915.172 1.688.546 2.375a4.221 4.221 0 0 0 1.465 1.545 3.67 3.67 0 0 0 1.954.543c.719 0 1.38-.171 1.983-.515.603-.343 1.092-.858 1.466-1.516.345-.658.545-1.46.545-2.375 0-.916-.172-1.717-.545-2.375-.374-.658-.863-1.173-1.466-1.517a3.938 3.938 0 0 0-1.983-.515Zm99.052-.23c-.948 0-1.753.287-2.385.859-.633.572-1.035 1.374-1.178 2.375h7.155c-.029-.973-.374-1.745-1.063-2.346-.69-.601-1.524-.887-2.529-.887ZM182.932 48h3.879c1.609 0 2.931-1.345 2.931-2.947a2.919 2.919 0 0 0-2.931-2.919h-3.879V48Zm-28.248-10.3c.632 0 1.149.2 1.58.6.431.401.632.887.632 1.488s-.201 1.087-.632 1.488c-.431.4-.948.601-1.58.601-.633 0-1.15-.2-1.581-.6-.431-.402-.632-.888-.632-1.489 0-.6.201-1.087.632-1.487.431-.401.948-.601 1.581-.601ZM82.816 47.913h-.115l-3.65.573h-.085a.71.71 0 0 1-.719-.716v-.114l2.73-13.105c.029-.086.029-.2.029-.286 0-.773-.632-1.374-1.38-1.374-.086 0-.172 0-.23.029l-12.298 1.974c-.087 0-.144.029-.23.029-.776 0-1.38-.63-1.38-1.373 0-.086 0-.172.03-.258l.545-2.632s.029-.2.029-.287c0-.772-.632-1.373-1.38-1.373-.086 0-.172 0-.23.029l-25.545 4.063c-1.207.2-2.184 1.116-2.443 2.289L30.03 66.34s-.029.2-.029.285C30 67.4 30.632 68 31.38 68c.23 0 .43-.057.631-.143l15.604-7.926a1.377 1.377 0 0 1 1.983 1.23c0 .086 0 .172-.03.258l-1.005 4.864c-.029.115-.029.23-.029.343 0 .773.633 1.374 1.38 1.374.23 0 .43-.057.632-.143l17.701-9.013a.58.58 0 0 1 .316-.086.71.71 0 0 1 .719.715v.143l-.748 3.634c0 .057-.028.114-.028.143 0 .4.316.716.718.716.115 0 .23-.029.345-.086l11.12-5.637c.604-.315 1.064-.887 1.179-1.545l1.666-8.07c0-.056.03-.114.03-.17a.75.75 0 0 0-.748-.688Z" />
-        </svg>
-      );
-    },
-    icon: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="28 27 58 44" {...props}>
-          <path d="M82.816 47.913h-.115l-3.65.573h-.085a.71.71 0 0 1-.719-.716v-.114l2.73-13.105c.029-.086.029-.2.029-.286 0-.773-.632-1.374-1.38-1.374-.086 0-.172 0-.23.029l-12.298 1.974c-.087 0-.144.029-.23.029-.776 0-1.38-.63-1.38-1.373 0-.086 0-.172.03-.258l.545-2.632s.029-.2.029-.287c0-.772-.632-1.373-1.38-1.373-.086 0-.172 0-.23.029l-25.545 4.063c-1.207.2-2.184 1.116-2.443 2.289L30.03 66.34s-.029.2-.029.285C30 67.4 30.632 68 31.38 68c.23 0 .43-.057.631-.143l15.604-7.926a1.377 1.377 0 0 1 1.983 1.23c0 .086 0 .172-.03.258l-1.005 4.864c-.029.115-.029.23-.029.343 0 .773.633 1.374 1.38 1.374.23 0 .43-.057.632-.143l17.701-9.013a.58.58 0 0 1 .316-.086.71.71 0 0 1 .719.715v.143l-.748 3.634c0 .057-.028.114-.028.143 0 .4.316.716.718.716.115 0 .23-.029.345-.086l11.12-5.637c.604-.315 1.064-.887 1.179-1.545l1.666-8.07c0-.056.03-.114.03-.17a.75.75 0 0 0-.748-.688Z" />
         </svg>
       );
     },
@@ -1472,26 +1659,6 @@ export const supporters = [
     },
   },
   {
-    name: "GitHub",
-    categories: ["Developer Tools"],
-    directory: true,
-    url: "https://github.com/?utm_source=tailwindcss",
-    logo: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path d="M144.25 64.25c-.368 0-1.325.22-2.356.22-3.238 0-4.342-1.47-4.342-3.382V48.22h6.55c.368 0 .663-.294.663-.808v-6.986a.66.66 0 0 0-.663-.661h-6.55v-8.603c0-.294-.221-.515-.589-.515h-8.832c-.368 0-.589.22-.589.515v8.897l-4.784 1.176a.707.707 0 0 0-.515.662v5.588c0 .441.295.809.663.809h4.563V61.75c0 10 6.992 11.03 11.776 11.03 2.208 0 4.784-.662 5.225-.883.221-.074.368-.368.368-.662V65.06c.074-.441-.22-.736-.588-.81Zm97.299-8.97c0-7.427-3.018-8.383-6.183-8.089-2.429.147-4.416 1.397-4.416 1.397V63s1.988 1.397 5.005 1.47c4.269.148 5.594-1.397 5.594-9.19Zm10.009-.663c0 14.045-4.563 18.089-12.512 18.089-6.697 0-10.377-3.383-10.377-3.383s-.148 1.912-.368 2.133c-.148.22-.295.294-.589.294h-6.109c-.441 0-.809-.294-.809-.662l.073-45.588a.66.66 0 0 1 .663-.662h8.758c.368 0 .662.294.662.662l-.073 15.367s3.385-2.205 8.317-2.205h.073c5.005 0 12.291 1.838 12.291 15.956Zm-35.843-14.852h-8.611c-.442 0-.662.294-.662.808v22.28s-2.282 1.617-5.373 1.617c-3.092 0-3.975-1.397-3.975-4.485V40.5a.659.659 0 0 0-.662-.662h-8.758a.66.66 0 0 0-.663.662v20.956c0 9.044 5.079 11.25 11.997 11.25 5.741 0 10.378-3.162 10.378-3.162s.22 1.618.294 1.838c.074.22.368.368.662.368h5.52c.442 0 .663-.294.663-.662l.073-30.662c-.073-.294-.441-.661-.883-.661Zm-97.299 0h-8.758c-.368 0-.663.367-.663.808v30.074c0 .809.515 1.103 1.251 1.103h7.876c.809 0 1.03-.368 1.03-1.103v-30.22c0-.368-.368-.662-.736-.662Zm-4.269-13.898c-3.165 0-5.667 2.5-5.667 5.662s2.502 5.662 5.667 5.662c3.091 0 5.594-2.5 5.594-5.662s-2.503-5.662-5.594-5.662Zm67.712-1.029h-8.685a.659.659 0 0 0-.662.662v16.765h-13.616V25.573a.659.659 0 0 0-.662-.661h-8.759a.659.659 0 0 0-.662.661v45.589c0 .367.368.661.662.661h8.759a.659.659 0 0 0 .662-.661v-19.56h13.616l-.074 19.486a.66.66 0 0 0 .663.662h8.758a.66.66 0 0 0 .663-.662V25.5c0-.294-.295-.662-.663-.662Zm-77.501 20.22v23.53c0 .147-.073.441-.22.515 0 0-5.153 3.676-13.617 3.676-10.23 0-22.3-3.235-22.3-24.264 0-21.103 10.598-25.442 20.902-25.368 8.98 0 12.586 1.985 13.101 2.353.147.22.221.367.221.588l-1.693 7.28c0 .367-.368.808-.81.661-1.472-.44-3.68-1.323-8.905-1.323-6.036 0-12.512 1.69-12.512 15.294 0 13.603 6.182 15.147 10.598 15.147 3.754 0 5.152-.441 5.152-.441v-9.412H88.24c-.442 0-.81-.294-.81-.662V45.06c0-.368.295-.662.81-.662h15.382c.442-.074.736.294.736.662Z" />
-        </svg>
-      );
-    },
-    icon: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="10 10 108 108" {...props}>
-          <path d="M56.794 84.969C44.419 83.469 35.7 74.563 35.7 63.03c0-4.687 1.688-9.75 4.5-13.125-1.219-3.093-1.031-9.656.375-12.375 3.75-.468 8.813 1.5 11.813 4.219 3.562-1.125 7.312-1.687 11.906-1.687s8.344.562 11.719 1.593c2.906-2.625 8.062-4.593 11.812-4.125 1.313 2.532 1.5 9.094.281 12.282 3 3.562 4.594 8.343 4.594 13.218 0 11.532-8.719 20.25-21.281 21.844 3.187 2.063 5.344 6.563 5.344 11.719v9.75c0 2.812 2.343 4.406 5.156 3.281 16.969-6.469 30.281-23.437 30.281-44.437C112.2 38.656 90.638 17 64.106 17 37.575 17 16.2 38.656 16.2 65.188c0 20.812 13.219 38.062 31.031 44.531 2.532.937 4.969-.75 4.969-3.281v-7.5c-1.312.562-3 .937-4.5.937-6.187 0-9.844-3.375-12.469-9.656-1.031-2.531-2.156-4.031-4.312-4.313-1.125-.094-1.5-.562-1.5-1.125 0-1.125 1.875-1.969 3.75-1.969 2.719 0 5.062 1.688 7.5 5.157 1.875 2.719 3.844 3.937 6.187 3.937s3.844-.844 6-3c1.594-1.594 2.813-3 3.938-3.937" />
-        </svg>
-      );
-    },
-  },
-  {
     name: "Rootly AI",
     categories: ["Vertical AI"],
     directory: true,
@@ -1507,56 +1674,6 @@ export const supporters = [
       return (
         <svg fill="currentColor" viewBox="32 25 54 48" {...props}>
           <path d="M34.003 56.914c.056-.01 17.651-3.246 24.992 6.26 7.149-9.38 24.975-6.263 24.992-6.26l-.81 5.176c-.02-.005-19.635-4.3-21.149 8.155h-6.06c-1.514-12.424-21.135-8.16-21.155-8.155l-.81-5.176Zm70.085-21.518c2.819-1.349 5.664-1.199 8.672-1.199v6.937c-2.271.015-4.391-.117-5.764.677-1.04.873-1.398 1.837-1.398 3.544 0 5.711-.047 17.388-.047 17.422h-6.82c0-.034.004-11.318-.013-16.963-.01-4.439 1.304-8.49 5.37-10.418Zm181.723 27.21h-37.813v-1.894h37.813v1.894ZM36.902 46.734c.014-.007 4.452-2.19 8.064-1.07 2.171.672 3.71 2.746 3.152 4.545-.557 1.798-2.998 2.64-5.17 1.967-3.614-1.12-6.042-5.435-6.045-5.442Zm36.104-1.07c3.612-1.12 8.05 1.063 8.064 1.07-.01.018-2.436 4.323-6.046 5.442-2.17.673-4.612-.169-5.17-1.967-.557-1.799.982-3.873 3.152-4.546Zm-29.982-9.537c.016-.003 4.87-.944 8.062 1.084 1.918 1.219 2.858 3.624 1.849 5.213-1.01 1.59-3.587 1.76-5.505.542-3.197-2.032-4.406-6.839-4.406-6.839Zm23.748 1.084c3.192-2.028 8.047-1.087 8.062-1.084 0 0-1.21 4.807-4.406 6.839-1.918 1.218-4.495 1.047-5.504-.542-1.01-1.589-.07-3.994 1.848-5.213Zm-7.774-10.022s3.409 3.599 3.409 7.387c0 2.273-1.526 4.356-3.409 4.356-1.883 0-3.409-2.084-3.409-4.356 0-3.788 3.409-7.387 3.409-7.387Zm221.624.594c1.094-.953 2.839-1.074 3.993-.151.519.441.844.984.983 1.65l.015.068c.01.062.014.122.017.184l.005.108c.026.873-.284 1.659-.875 2.297-.518.546-1.268.91-2.025.932-.417.007-.799-.001-1.196-.133l-.062-.02a2.862 2.862 0 0 1-1.103-.702l-.067-.066c-.479-.502-.707-1.212-.699-1.898a3.212 3.212 0 0 1 1.014-2.27Z" />
-        </svg>
-      );
-    },
-  },
-  {
-    name: "Browser Cash",
-    categories: ["Browsers"],
-    directory: true,
-    url: "https://browser.cash/?utm_source=tailwindcss",
-    logo: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path d="M30 57.603V38.301h7.06c5.16 0 8.096.931 8.096 4.71 0 2.82-2.105 3.942-4.241 4.106v.657c3.203.082 5.784 1.205 5.784 4.682 0 3.943-3.263 5.147-8.394 5.147H30Zm2.7-2.08h5.694c3.5 0 5.606-.493 5.606-3.478 0-2.792-2.136-3.504-5.606-3.504h-5.695v6.982Zm0-8.953h4.478c3.263 0 5.309-.411 5.309-3.121 0-2.93-2.017-3.122-5.31-3.122H32.7v6.243ZM50.362 57.603V38.301h7.742c4.894 0 8.156 1.013 8.156 5.175 0 3.011-1.69 4.134-4.182 4.545v.684h2.284c1.453 0 1.928.767 1.928 1.89v7.008h-2.67v-7.638H53.062v7.638h-2.699Zm2.7-9.774h5.042c3.41 0 5.487-.547 5.487-3.806 0-3.312-2.106-3.586-5.487-3.586H53.06v7.392ZM69.991 47.938c0-5.64 3.678-9.938 9.877-9.938 6.2 0 9.847 4.298 9.847 9.938 0 5.668-3.648 9.966-9.847 9.966s-9.877-4.298-9.877-9.966Zm2.729 0c0 4.545 2.343 7.803 7.148 7.803s7.148-3.258 7.148-7.803c0-4.517-2.343-7.775-7.148-7.775s-7.148 3.258-7.148 7.776ZM117.325 38.301l-3.796 19.302h-5.22l-3.589-18.617h-.742l-3.5 18.617h-5.28l-3.855-19.302h2.67l3.44 16.564-.178 2.054h.771l3.559-18.618h5.517l3.53 18.618h.771l-.119-2.054 3.352-16.564h2.669ZM136.494 52.456c0 3.45-2.521 5.448-8.097 5.448-6.347 0-9.61-2.71-9.61-7.556h2.729c0 3.696 2.343 5.448 6.94 5.448 3.619 0 5.31-1.068 5.31-3.203 0-1.506-1.068-2.656-3.5-3.23l-5.843-1.397c-3.293-.794-4.657-2.546-4.657-4.846 0-3.34 2.61-5.12 7.415-5.12 5.695 0 8.69 2.519 8.69 6.68h-2.758c0-3.066-1.987-4.6-5.932-4.6-3.055 0-4.686.96-4.686 2.93 0 1.37.889 2.41 3.173 2.957l5.784 1.342c3.381.794 5.042 2.6 5.042 5.147ZM139.865 57.603V38.301h14.534v2.136h-11.835v6.461h10.352v2.081h-10.352v6.489h11.835v2.135h-14.534ZM157.969 57.603V38.301h7.74c4.895 0 8.158 1.013 8.158 5.175 0 3.011-1.691 4.134-4.183 4.545v.684h2.284c1.453 0 1.928.767 1.928 1.89v7.008h-2.669v-7.638h-10.56v7.638h-2.698Zm2.698-9.774h5.042c3.412 0 5.488-.547 5.488-3.806 0-3.312-2.106-3.586-5.488-3.586h-5.042v7.392ZM219.43 57.904c-6.228 0-9.906-4.298-9.906-9.966 0-5.64 3.678-9.938 9.906-9.938 5.399 0 8.928 2.957 9.551 7.748h-2.698c-.475-3.532-2.878-5.585-6.853-5.585-4.715 0-7.177 3.203-7.177 7.776 0 4.6 2.462 7.803 7.177 7.803 3.975 0 6.378-2.081 6.853-5.613h2.698c-.623 4.819-4.152 7.775-9.551 7.775ZM230.763 57.603l6.644-19.302h5.784l6.674 19.302h-2.818l-2.521-7.392h-8.453l-2.521 7.392h-2.789Zm6.051-9.528h6.97l-3.114-9.09h-.742l-3.114 9.09ZM269.307 52.456c0 3.45-2.521 5.448-8.097 5.448-6.347 0-9.61-2.71-9.61-7.556h2.729c0 3.696 2.343 5.448 6.941 5.448 3.618 0 5.309-1.068 5.309-3.203 0-1.506-1.068-2.656-3.5-3.23l-5.843-1.397c-3.293-.794-4.657-2.546-4.657-4.846 0-3.34 2.61-5.12 7.415-5.12 5.695 0 8.69 2.519 8.69 6.68h-2.758c0-3.066-1.987-4.6-5.932-4.6-3.055 0-4.686.96-4.686 2.93 0 1.37.89 2.41 3.173 2.957l5.784 1.342c3.381.794 5.042 2.6 5.042 5.147ZM272.679 38.301h2.698v8.707h11.925V38.3H290v19.302h-2.698v-8.432h-11.925v8.432h-2.698V38.301ZM190.131 47.384c.497-.123.67-1.013.387-1.989-.283-.975-.916-1.666-1.412-1.544-.496.123-.67 1.014-.387 1.989.284.975.916 1.666 1.412 1.544Z" />
-          <path d="M194.68 44.364c.282.974.109 1.866-.387 1.988-.496.123-1.128-.567-1.412-1.543-.282-.976-.109-1.866.387-1.989s1.128.568 1.412 1.544Z" />
-          <path
-            stroke="currentColor"
-            fill="none"
-            strokeMiterlimit="10"
-            strokeWidth=".6"
-            d="M197.688 46.88c-.183-.628.22-1.272.9-1.44.68-.168 1.377.204 1.559.83M185.081 49.996c-.182-.627.221-1.27.901-1.439.679-.168 1.376.204 1.56.831"
-          />
-          <path
-            stroke="currentColor"
-            fill="none"
-            strokeMiterlimit="10"
-            strokeWidth=".6"
-            d="M198.577 45.497c.931 3.207-1.129 6.503-4.606 7.362-3.475.86-7.045-1.043-7.975-4.25"
-          />
-        </svg>
-      );
-    },
-    icon: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="182 40 21 16" {...props}>
-          <path d="M190.131 47.384c.497-.123.67-1.013.387-1.989-.283-.975-.916-1.666-1.412-1.544-.496.123-.67 1.014-.387 1.989.284.975.916 1.666 1.412 1.544Z" />
-          <path d="M194.68 44.364c.282.974.109 1.866-.387 1.988-.496.123-1.128-.567-1.412-1.543-.282-.976-.109-1.866.387-1.989s1.128.568 1.412 1.544Z" />
-          <path
-            stroke="currentColor"
-            fill="none"
-            strokeMiterlimit="10"
-            strokeWidth=".6"
-            d="M197.688 46.88c-.183-.628.22-1.272.9-1.44.68-.168 1.377.204 1.559.83M185.081 49.996c-.182-.627.221-1.27.901-1.439.679-.168 1.376.204 1.56.831"
-          />
-          <path
-            stroke="currentColor"
-            fill="none"
-            strokeMiterlimit="10"
-            strokeWidth=".6"
-            d="M198.577 45.497c.931 3.207-1.129 6.503-4.606 7.362-3.475.86-7.045-1.043-7.975-4.25"
-          />
         </svg>
       );
     },
@@ -1584,28 +1701,6 @@ export const supporters = [
     },
   },
   {
-    name: "Firsthand",
-    categories: ["Vertical AI"],
-    directory: true,
-    url: "https://www.firsthand.ai/?utm_source=tailwindcss",
-    logo: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path d="M113.734 42.966h-4.899v23.498h4.899V42.966ZM123.906 43.337l-.496-3.278h-4.28v26.466h4.9v-13.48c0-3.092.868-8.224 6.512-8.224h2.418v-4.762h-1.488c-4.279 0-6.326 1.608-7.566 3.278ZM146.294 50.819c-3.907-.495-6.14-.866-6.14-3.278 0-2.164 2.233-3.524 5.644-3.524 3.225 0 5.644 1.731 5.892 4.267l.062.309h4.961l-.062-.371c-.372-5.256-4.465-8.41-10.915-8.472-3.473 0-6.388.99-8.31 2.906-1.427 1.423-2.171 3.216-2.171 5.195 0 5.75 5.272 6.925 10.667 7.544l.248.062c3.969.494 6.078.865 6.078 3.524 0 2.103-2.419 3.587-5.892 3.587-3.969 0-6.636-1.917-6.76-4.885v-.371h-4.961v.37c.124 5.628 4.589 9.153 11.783 9.153 6.264 0 10.667-3.34 10.667-8.163.124-6.06-5.023-7.173-10.791-7.853ZM168.373 59.352v-14.84h6.698v-4.515h-6.698v-7.173h-4.9v7.235h-4.651v4.514h4.651v14.903c0 4.947 2.109 7.05 7.07 7.05h4.9v-4.514h-4.466c-1.984 0-2.604-.619-2.604-2.66ZM191.878 39.75c-4.155 0-6.636 1.855-8.125 3.772V30.475h-4.899v36.05h4.899V53.294c0-5.566 2.853-9.029 7.443-9.029 4.279 0 6.698 2.783 6.698 7.792v14.408h4.899V51.809c-.062-7.668-4.031-12.059-10.915-12.059ZM229.709 60.651V49.397c0-6.122-3.907-9.647-10.729-9.647-6.45 0-10.667 3.092-11.288 8.348l-.062.433h4.838l.062-.31c.496-2.473 2.853-4.019 6.202-4.019 3.783 0 6.078 1.855 6.078 5.01v1.421h-7.257c-6.946 0-10.729 2.969-10.729 8.41 0 4.762 3.845 7.854 9.861 7.854 3.535 0 6.326-1.237 8.373-3.71.372 2.287 1.984 3.4 4.961 3.4h2.667v-4.514h-1.675c-.992-.123-1.302-.309-1.302-1.422Zm-4.899-5.009c0 4.267-2.977 6.926-7.815 6.926-3.163 0-5.271-1.546-5.271-3.896 0-2.659 1.798-3.895 5.395-3.895h7.629l.062.865ZM248.686 39.75c-4.217 0-6.76 1.67-8.248 3.277l-.496-3.03h-4.279v26.467h4.899V53.292c0-5.627 2.791-9.028 7.442-9.028 4.342 0 6.636 2.721 6.636 7.792v14.408h4.9V51.808c-.124-10.512-6.884-12.058-10.854-12.058ZM284.595 30.474v12.8c-1.861-2.287-4.837-3.524-8.496-3.524-7.505 0-12.776 5.565-12.776 13.542 0 7.977 5.023 13.543 12.776 13.543 3.473 0 6.449-1.36 8.62-3.896l.496 3.587h4.279V30.413l-4.899.061Zm-8.124 31.909c-4.9 0-8.187-3.649-8.187-9.152 0-5.504 3.287-9.152 8.187-9.152 4.899 0 8.124 3.71 8.124 9.213 0 5.504-3.287 9.09-8.124 9.09Z" />
-          <path d="M111.316 34.927h-2.791v-2.103c0-1.36-1.116-2.411-2.419-2.411h-5.023c-4.9 0-7.07 2.164-7.07 7.05v2.534H89.36v4.514h4.652v21.953h4.9v-21.89h7.317v-4.515h-7.318v-2.597c0-1.793.62-2.473 2.481-2.473h7.194v2.968a2.775 2.775 0 0 0 2.791 2.782 2.776 2.776 0 0 0 2.791-2.782v-.124c-.062-1.608-1.303-2.906-2.853-2.906ZM30.568 55.024v.31c0 3.524 2.853 6.368 6.45 6.368a6.37 6.37 0 0 0 6.388-6.369v-6.74h-6.45c-3.535 0-6.388 2.906-6.388 6.43ZM62.26 35.792H49.793a6.37 6.37 0 0 0-6.388 6.37v6.369H62.32a6.37 6.37 0 0 0 6.388-6.37c0-3.524-2.853-6.369-6.45-6.369Z" />
-        </svg>
-      );
-    },
-    icon: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="28 34 42 28" {...props}>
-          <path d="M30.568 55.024v.31c0 3.524 2.853 6.368 6.45 6.368a6.37 6.37 0 0 0 6.388-6.369v-6.74h-6.45c-3.535 0-6.388 2.906-6.388 6.43ZM62.26 35.792H49.793a6.37 6.37 0 0 0-6.388 6.37v6.369H62.32a6.37 6.37 0 0 0 6.388-6.37c0-3.524-2.853-6.369-6.45-6.369Z" />
-          <path d="M30.568 55.024v.31c0 3.524 2.853 6.368 6.45 6.368a6.37 6.37 0 0 0 6.388-6.369v-6.74h-6.45c-3.535 0-6.388 2.906-6.388 6.43ZM62.26 35.792H49.793a6.37 6.37 0 0 0-6.388 6.37v6.369H62.32a6.37 6.37 0 0 0 6.388-6.37c0-3.524-2.853-6.369-6.45-6.369Z" />
-        </svg>
-      );
-    },
-  },
-  {
     name: "Domaine",
     categories: ["Agencies"],
     directory: true,
@@ -1621,26 +1716,6 @@ export const supporters = [
       return (
         <svg fill="currentColor" viewBox="20 20 56 56" {...props}>
           <path d="M56.333 39.667V23H23v16.667zM23 56.333V73h33.333V56.333zm50-16.666H56.333v16.666H73z" />
-        </svg>
-      );
-    },
-  },
-  {
-    name: "Harvey",
-    categories: ["Vertical AI"],
-    directory: true,
-    url: "https://www.harvey.ai/?utm_source=tailwindcss",
-    logo: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path d="m105.069 58.187-4.614 3.139v.22h14.612v-.22l-4.614-3.139V26.36l4.614-3.139V23h-14.612v.22l4.614 3.139v13.987H86.997V26.359l4.615-3.139V23H77v.22l4.614 3.139v31.828L77 61.326v.22h14.612v-.22l-4.615-3.139V42.77h18.072v15.418Zm20.38 3.91c2.911 0 5.822-1.707 7.855-4.075v3.524h9.228v-.22l-4.175-3.249V42.328c0-5.341-3.735-7.984-9.722-7.984-3.131 0-7.416 1.046-10.162 2.147v6.828h.219c3.296-4.515 6.427-6.773 9.558-6.773 3.131 0 5.054 2.203 5.054 6.333v2.753l-6.812 1.597c-6.152 1.377-8.898 3.8-8.898 7.6 0 4.184 3.405 7.268 7.855 7.268Zm1.757-3.524c-2.471 0-4.284-1.818-4.284-4.295 0-2.478 1.648-4.46 4.889-5.177l5.493-1.266v8.26c-2.307 1.652-4.34 2.478-6.098 2.478Zm36.969-18.502 10.986 22.246h.989l10.766-23.843 3.296-3.25v-.22h-10.053v.166l4.175 3.028-7.415 16.355-8.13-16.355 4.065-3.028v-.166h-8.569c-5.219 0-8.679 1.597-11.426 4.736V34.62l-9.228 2.148v.275l4.174 2.423v18.612l-4.174 3.249v.22h14.501v-.22l-5.273-3.249V42.328c1.923-2.147 4.23-3.139 6.647-3.139 1.538 0 2.966.22 4.669.882Zm37.957 22.026c5.053 0 7.8-3.139 10.656-6.223l-1.373-1.266c-2.802 2.643-4.944 3.8-7.745 3.8-5.383 0-9.393-4.956-9.393-11.895h18.346v-.826c0-6.498-3.845-11.343-10.162-11.343-7.031 0-12.799 6.332-12.799 14.152 0 7.874 5.494 13.6 12.47 13.6Zm4.998-17.952h-12.689c.66-4.79 3.681-7.544 7.141-7.544 3.461 0 5.603 2.478 5.603 6.443 0 .496 0 .881-.055 1.101Zm9.393-5.671 11.371 22.742L219.655 73h6.207l13.842-34.526 3.296-3.25v-.22h-10.052v.166l4.229 3.028-6.866 16.685-8.349-16.685 4.064-3.028v-.166h-13.018v.22l3.515 3.25Z" />
-        </svg>
-      );
-    },
-    icon: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 23 20" {...props}>
-          <path d="M22.3 20h-9.976l2.935-2.941v-5.294H7.041v5.294L9.977 20H0l2.934-2.941V2.941L0 0h9.977L7.042 2.941v5.294h8.217V2.941L12.324 0h9.977l-2.934 2.941V17.06z" />
         </svg>
       );
     },
@@ -1682,44 +1757,6 @@ export const supporters = [
       return (
         <svg fill="currentColor" viewBox="28 24 56 48" {...props}>
           <path d="M80.651 56.702l-10.9-18.193c-.5-.836-1.731-1.52-2.737-1.52H60.21c-1.582 0-2.23-1.075-1.442-2.389l3.732-6.212c.296-.493.296-1.1-.002-1.592A1.677 1.677 0 0 0 61.06 26h-9.493c-1.005 0-2.24.683-2.743 1.517L30.378 58.103c-.504.834-.504 2.2-.001 3.034l4.746 7.878c.791 1.312 2.088 1.314 2.882.003l3.709-6.12c.794-1.31 2.09-1.31 2.882.003l3.362 5.58C48.46 69.317 49.694 70 50.7 70h21.936c1.005 0 2.239-.683 2.742-1.517l5.267-8.743c.503-.834.505-2.201.006-3.037Zm-14.72-.876c.786 1.315.135 2.392-1.447 2.392H47.422c-1.582 0-2.229-1.075-1.438-2.387l8.538-14.17c.79-1.313 2.085-1.313 2.876 0l8.533 14.165Z" />
-        </svg>
-      );
-    },
-  },
-  {
-    name: "Wrangle",
-    categories: ["Vertical AI"],
-    directory: true,
-    url: "https://wrangle.ai/?utm_source=tailwindcss",
-    logo: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
-          <path
-            fillOpacity=".7"
-            d="m80.015 39.67-.027 10.902a1.675 1.675 0 0 0 1.826 1.673l10.256-.928a5.908 5.908 0 0 0 .48-11.704l-10.324-1.798a1.887 1.887 0 0 0-2.21 1.855Z"
-          />
-          <path d="m97.474 46.727-.04-1.038c-.603-2.925-5.797-6.222-28.564-7.315a2.877 2.877 0 0 1-2.742-2.752l-.38-9.678c-.062-1.613 1.233-2.959 2.847-2.923 17.699.395 27.833 4.66 28.27 8.035l.568 14.633c.073.353.079.7.04 1.038Z" />
-          <path
-            fillOpacity=".7"
-            d="m74.652 56.331.027-10.902a1.675 1.675 0 0 0-1.826-1.673l-10.256.928a5.908 5.908 0 0 0-.481 11.704l10.325 1.798a1.887 1.887 0 0 0 2.21-1.855Z"
-          />
-          <path d="m57.193 49.273.04 1.039c.603 2.924 5.797 6.222 28.564 7.315a2.877 2.877 0 0 1 2.742 2.752l.38 9.677c.062 1.614-1.233 2.96-2.847 2.924-17.699-.396-27.833-4.66-28.27-8.036l-.569-14.632a3.285 3.285 0 0 1-.04-1.039ZM122.178 61.886a3.903 3.903 0 0 1-3.744-2.8l-6.103-20.735a3.078 3.078 0 1 1 5.942-1.602l4.077 16.634a.152.152 0 0 0 .294.004l4.403-16.287a3.65 3.65 0 0 1 7.048.005l4.39 16.316a.16.16 0 0 0 .31-.004l4.077-16.667a3.077 3.077 0 1 1 5.941 1.6l-6.103 20.734a3.903 3.903 0 0 1-7.485.018l-4.518-15.079a.148.148 0 0 0-.284 0l-4.506 15.078a3.902 3.902 0 0 1-3.739 2.785ZM153.899 61.886a2.941 2.941 0 0 1-2.941-2.94V44.124a2.851 2.851 0 0 1 2.851-2.851h1.053c.993 0 1.798.805 1.798 1.798v1.671a.127.127 0 0 0 .248.037c.39-1.235 1.03-2.17 1.92-2.808.91-.663 1.959-.994 3.147-.994l.054.005c1.056.094 1.796.943 1.796 2.004v.575c0 1.245-2.485 2.382-2.485 2.382-.865 0-1.638.183-2.319.55a4.119 4.119 0 0 0-1.602 1.503c-.386.644-.579 1.387-.579 2.228v8.72a2.941 2.941 0 0 1-2.941 2.941ZM171.527 62.275c-1.353 0-2.558-.228-3.616-.684-1.059-.465-1.896-1.15-2.513-2.053-.608-.913-.911-2.049-.911-3.409 0-1.145.216-2.107.648-2.885a5.165 5.165 0 0 1 1.768-1.879 8.7 8.7 0 0 1 2.539-1.073 19.89 19.89 0 0 1 3.01-.51 77.983 77.983 0 0 0 2.982-.35c.755-.116 1.303-.285 1.643-.51.341-.223.511-.554.511-.992v-.08c0-.85-.277-1.508-.829-1.973-.543-.466-1.315-.698-2.319-.698-1.058 0-1.9.228-2.526.684-1.015.726-2.131 1.621-3.375 1.523l-.115-.01c-1.687-.133-2.9-1.798-1.864-3.136.096-.124.196-.245.301-.363.81-.921 1.855-1.628 3.134-2.12 1.288-.501 2.78-.752 4.473-.752 1.178 0 2.305.135 3.382.403 1.086.268 2.048.684 2.885 1.248a6.118 6.118 0 0 1 2.002 2.174c.488.877.732 1.928.732 3.154v11.113a2.79 2.79 0 0 1-2.789 2.79h-1.359a1.43 1.43 0 0 1-1.429-1.43V59.13a.104.104 0 0 0-.195-.048 5.855 5.855 0 0 1-1.338 1.65c-.571.482-1.256.862-2.056 1.14-.802.268-1.727.402-2.776.402Zm1.684-3.945c.866 0 1.63-.166 2.292-.497.663-.34 1.183-.796 1.56-1.368a3.46 3.46 0 0 0 .566-1.946v-1.36c0-.36-.416-.61-.759-.505-.313.089-.667.174-1.063.254-.396.072-.791.14-1.187.202l-1.078.147c-.689.099-1.292.255-1.808.47-.515.215-.915.506-1.2.872-.286.358-.429.806-.429 1.342 0 .779.29 1.374.87 1.785.589.403 1.335.604 2.236.604ZM193.135 49.97v8.975a2.94 2.94 0 1 1-5.881 0V44.077a2.803 2.803 0 0 1 2.803-2.803h.984c1.004 0 1.818.814 1.818 1.818v1.67a.148.148 0 0 0 .286.055 5.788 5.788 0 0 1 2.323-2.752c1.105-.706 2.444-1.06 4.018-1.06 1.472 0 2.756.313 3.851.94 1.096.626 1.947 1.52 2.555 2.684.607 1.154.911 2.531.911 4.133v10.183a2.941 2.941 0 0 1-5.882 0v-9.163c.01-1.262-.321-2.246-.993-2.953-.672-.715-1.598-1.073-2.776-1.073-.791 0-1.49.165-2.098.496a3.502 3.502 0 0 0-1.408 1.45c-.331.626-.502 1.382-.511 2.268ZM220.214 70.045c-1.906 0-3.54-.255-4.901-.765-1.353-.5-2.43-1.185-3.231-2.053a7.042 7.042 0 0 1-.098-.108c-1.145-1.29.01-3.01 1.72-3.233l.863-.113c.821-.108 1.595.387 2.182.971.358.358.832.645 1.421.86.599.223 1.326.335 2.181.335 1.28 0 2.333-.304 3.162-.913.838-.6 1.256-1.606 1.256-3.02v-3.619a.151.151 0 0 0-.151-.151.156.156 0 0 0-.139.089 5.484 5.484 0 0 1-1.118 1.535c-.516.51-1.178.926-1.988 1.248-.81.322-1.776.483-2.899.483-1.593 0-3.042-.358-4.348-1.074-1.299-.724-2.334-1.83-3.107-3.314-.764-1.494-1.146-3.382-1.146-5.663 0-2.335.391-4.286 1.173-5.851.783-1.566 1.823-2.738 3.121-3.516a8.236 8.236 0 0 1 4.293-1.168c1.187 0 2.182.197 2.982.59.801.386 1.445.869 1.933 1.45a7.81 7.81 0 0 1 1.108 1.614.136.136 0 0 0 .259-.06v-1.594a1.73 1.73 0 0 1 1.73-1.731h1.19a2.92 2.92 0 0 1 2.919 2.92v17.893c0 1.754-.441 3.221-1.325 4.402-.883 1.181-2.107 2.067-3.672 2.657-1.556.6-3.346.9-5.37.9Zm.124-12.748c.947 0 1.748-.228 2.402-.685.662-.465 1.168-1.127 1.518-1.986.36-.868.539-1.905.539-3.113s-.175-2.255-.525-3.14c-.35-.895-.856-1.588-1.518-2.08-.663-.492-1.469-.738-2.416-.738-.966 0-1.781.255-2.444.764-.663.502-1.164 1.2-1.505 2.094-.34.895-.511 1.928-.511 3.1 0 1.19.171 2.218.511 3.086.35.86.852 1.526 1.505 2 .663.465 1.478.698 2.444.698ZM237.424 34.403a2.941 2.941 0 0 1 2.941 2.94v21.602a2.941 2.941 0 0 1-5.882 0V37.344a2.941 2.941 0 0 1 2.941-2.941ZM253.962 62.289c-2.181 0-4.059-.43-5.632-1.289a8.94 8.94 0 0 1-3.618-3.676c-.846-1.593-1.27-3.476-1.27-5.65 0-2.12.424-3.981 1.27-5.583.847-1.601 2.039-2.85 3.577-3.744 1.545-.894 3.358-1.342 5.439-1.342 1.399 0 2.701.22 3.907.658a8.71 8.71 0 0 1 3.175 1.946c.911.867 1.619 1.959 2.126 3.274.506 1.306.759 2.836.759 4.59a1.57 1.57 0 0 1-1.57 1.57h-14.564a1.771 1.771 0 0 1 0-3.543h8.315c1.261 0 2.363-1.097 1.731-2.187a3.903 3.903 0 0 0-1.532-1.49c-.645-.367-1.395-.55-2.251-.55-.892 0-1.684.201-2.374.604a4.298 4.298 0 0 0-1.602 1.597 4.415 4.415 0 0 0-.593 2.214v3.368c0 1.02.193 1.901.579 2.644a4.18 4.18 0 0 0 1.671 1.717c.718.403 1.569.604 2.554.604.654 0 1.252-.09 1.795-.268a3.75 3.75 0 0 0 1.394-.805c.698-.647 1.529-1.274 2.478-1.213l.506.032c1.757.113 3.024 1.839 1.922 3.212-.09.113-.184.223-.282.33-.846.94-1.941 1.674-3.285 2.201-1.334.52-2.876.779-4.625.779Z" />
-        </svg>
-      );
-    },
-    icon: function (props: React.SVGProps<SVGSVGElement>) {
-      return (
-        <svg fill="currentColor" viewBox="55 21 46 54" {...props}>
-          <path
-            fillOpacity=".7"
-            d="m80.015 39.67-.027 10.902a1.675 1.675 0 0 0 1.826 1.673l10.256-.928a5.908 5.908 0 0 0 .48-11.704l-10.324-1.798a1.887 1.887 0 0 0-2.21 1.855Z"
-          />
-          <path d="m97.474 46.727-.04-1.038c-.603-2.925-5.797-6.222-28.564-7.315a2.877 2.877 0 0 1-2.742-2.752l-.38-9.678c-.062-1.613 1.233-2.959 2.847-2.923 17.699.395 27.833 4.66 28.27 8.035l.568 14.633c.073.353.079.7.04 1.038Z" />
-          <path
-            fillOpacity=".7"
-            d="m74.652 56.331.027-10.902a1.675 1.675 0 0 0-1.826-1.673l-10.256.928a5.908 5.908 0 0 0-.481 11.704l10.325 1.798a1.887 1.887 0 0 0 2.21-1.855Z"
-          />
-          <path d="m57.193 49.273.04 1.039c.603 2.924 5.797 6.222 28.564 7.315a2.877 2.877 0 0 1 2.742 2.752l.38 9.677c.062 1.614-1.233 2.96-2.847 2.924-17.699-.396-27.833-4.66-28.27-8.036l-.569-14.632a3.285 3.285 0 0 1-.04-1.039Z" />
         </svg>
       );
     },
@@ -1889,6 +1926,30 @@ export const supporters = [
             fillRule="evenodd"
             d="M31.836 32.314h12.763a3.796 3.796 0 0 1 3.789 3.803v10.648c0 .528.147 1.037.411 1.423l1.884 2.752-8.463 12.415c-.302.442-.814.442-1.116.001L30.72 48.188c-.264-.386-.411-.895-.411-1.423V34.399c0-1.152.683-2.085 1.526-2.085Zm21.132 3.803c0-2.1 1.697-3.803 3.79-3.803H69.52c.843 0 1.527.933 1.527 2.085v12.368c0 .527-.146 1.035-.41 1.42L60.299 63.356c-.301.442-.814.442-1.116.001l-8.5-12.416 1.877-2.752c.263-.386.41-.894.41-1.421v-10.65Z"
             clipRule="evenodd"
+          />
+        </svg>
+      );
+    },
+  },
+  {
+    name: "Carly AI",
+    categories: ["Vertical AI"],
+    directory: true,
+    url: "https://www.usecarly.com/?utm_source=tailwindcss",
+    logo: function (props: React.SVGProps<SVGSVGElement>) {
+      return (
+        <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
+          <path d="M84.246 62.744q-6.557 0-10.475-3.873t-3.918-11.352v-8.44q0-7.48 3.918-11.351 3.918-3.873 10.475-3.873 6.504 0 9.943 3.659 3.438 3.66 3.438 9.963v.267h-3.412v-.374q0-4.595-2.425-7.506-2.427-2.91-7.544-2.91-5.171 0-8.076 3.15-2.906 3.153-2.906 8.868v8.654q0 5.716 2.906 8.868 2.906 3.15 8.076 3.151 5.118 0 7.544-2.911t2.425-7.505v-.802h3.412v.695q0 6.303-3.438 9.962-3.44 3.66-9.943 3.66M113.247 62.744q-2.719 0-4.931-.935-2.213-.934-3.492-2.751-1.28-1.816-1.28-4.38 0-2.619 1.28-4.328t3.465-2.564q2.186-.855 4.851-.854h9.489v-2.084q0-3.15-1.812-4.914t-5.278-1.763q-3.411 0-5.411 1.683-2 1.682-2.692 4.514l-3.092-.909a12.3 12.3 0 0 1 2.026-4.14q1.386-1.843 3.678-2.937 2.293-1.096 5.491-1.096 4.905 0 7.597 2.564t2.692 7.159v12.606q0 1.603 1.493 1.603h2.505v2.778h-3.412q-1.652 0-2.612-.989-.959-.987-.959-2.697v-.374h-.533a12.2 12.2 0 0 1-1.786 2.297q-1.094 1.122-2.852 1.816-1.76.695-4.425.695m.213-2.885q4.105 0 6.637-2.484t2.532-7.025v-.64h-9.435q-2.773 0-4.612 1.201-1.839 1.203-1.839 3.713 0 2.511 1.893 3.873 1.892 1.362 4.824 1.362M135.904 61.996V36.035h3.092v3.258h.64q.746-1.763 2.212-2.564t4.078-.801h3.039v2.991h-3.412q-2.933 0-4.691 1.656-1.76 1.656-1.76 5.182v16.24zM155.575 61.996V24.603h3.199v37.393zM171.408 72.68v-2.885h15.14q1.6 0 1.6-1.603V57.51h-.64q-.64 1.282-1.786 2.43-1.146 1.15-2.985 1.87-1.84.72-4.612.721-2.772 0-5.144-1.175t-3.785-3.526-1.413-5.93V36.035h3.199v15.652q0 4.22 2.132 6.09t5.704 1.87q3.999 0 6.664-2.618 2.666-2.617 2.666-7.96V36.035h3.198V68.62q0 1.924-1.039 2.991-1.04 1.07-3.119 1.069zM211.284 61.996l12.208-37.393h6.078l12.207 37.393h-3.571l-3.199-9.936h-16.952l-3.199 9.936zm7.73-13.034h15.034l-7.197-22.33h-.64zM247.854 61.996V24.603h3.412v37.393z" />
+        </svg>
+      );
+    },
+    icon: function (props: React.SVGProps<SVGSVGElement>) {
+      return (
+        <svg fill="currentColor" viewBox="0 0 180 180" {...props}>
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M27.375 35.563C11.059 54.368 6.465 76.757 8 101c2.287 21.05 14.24 40.025 30.023 53.719 19.204 14.717 41.554 19.709 65.381 17.009 20.651-3.184 39.96-15.183 52.596-31.728 13.729-19.983 18.934-40.998 15.496-65.098-4.14-21.364-16.587-40.747-34.535-53.09C100.23-.67 57.526 4.363 27.375 35.563M78.563 59.625c5.562 5.42 9.266 9.765 9.562 17.75L88 80h-9l-.687-4.187C77.244 71.205 76.113 68.656 72 66c-4.283-.944-8.116-.981-12.062 1.074-7.333 5.768-9.925 14.263-11.278 23.16-2.053 13.198-2.053 13.198 1.153 25.516 2.834 2.915 4.4 4.176 8.5 4.563 4.162-.353 6.257-.927 9.687-3.313 2.655-3.435 4.627-6.882 6-11h9c-2.227 7.619-4.6 13.266-10.875 18.313C66.415 127.396 60.5 128.993 54 128c-5.802-1.891-9.61-4.867-13-10-5.452-11.256-3.415-24.793 0-36.398C44.361 72.115 48.963 63.929 58 59c6.442-2.147 14.393-2.19 20.563.625M132.445 58.621c4.544 1.944 7.25 4.794 9.657 9.074C143.66 71.692 143.904 75.742 144 80h-8l-.621-2.082-.816-2.73-.81-2.708A216 216 0 0 0 132 67c-5.511-1.837-10.969-1.881-16.312.438-9.818 9.36-11.604 23.947-12.063 36.875.09 5.248 1.148 9.478 4.375 13.687 3.715 2.477 6.694 2.654 11 2 6.154-3.077 9.18-7.89 12-14h8c-.803 6.427-3.508 11.972-8.312 16.313-5.897 4.574-11.46 6.395-18.903 6.16-4.854-.824-8.31-3.041-11.785-6.473-6.64-9.767-5.895-21.979-4.312-33.25C97.888 77.623 102.326 68.506 111 61c6.673-4.045 13.93-4.288 21.445-2.379"
           />
         </svg>
       );
