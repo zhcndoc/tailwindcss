@@ -23,6 +23,8 @@ export const description = "控制在快照容器内项目周围的滚动偏移�
   ].flatMap(([prefix, property]) => [
     [`${prefix}-<number>`, `${property}: calc(var(--spacing) * <number>);`],
     [`-${prefix}-<number>`, `${property}: calc(var(--spacing) * -<number>);`],
+    [`${prefix}-px`, `${property}: 1px;`],
+    [`-${prefix}-px`, `${property}: -1px;`],
     [`${prefix}-(<custom-property>)`, `${property}: var(<custom-property>);`],
     [`${prefix}-[<value>]`, `${property}: <value>;`],
   ])}
@@ -125,35 +127,35 @@ export const description = "控制在快照容器内项目周围的滚动偏移�
       <p className="mb-4 pt-8 pl-6 text-sm font-medium">从左至右</p>
       <div className="flex w-full snap-x gap-12 overflow-x-auto pb-10" dir="ltr">
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pr-[calc(100%-21.5rem)]">
-          <Stripes border className="absolute start-0 top-0 bottom-0 w-6" />
+          <Stripes border className="absolute inset-s-0 top-0 bottom-0 w-6" />
           <img
             className="relative h-40 w-80 shrink-0 rounded-lg bg-white"
             src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
           />
         </div>
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pr-[calc(100%-21.5rem)]">
-          <Stripes border className="absolute -start-6 top-0 bottom-0 w-6" />
+          <Stripes border className="absolute -inset-s-6 top-0 bottom-0 w-6" />
           <img
             className="relative h-40 w-80 shrink-0 rounded-lg bg-white"
             src="https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
           />
         </div>
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pr-[calc(100%-21.5rem)]">
-          <Stripes border className="absolute -start-6 top-0 bottom-0 w-6" />
+          <Stripes border className="absolute -inset-s-6 top-0 bottom-0 w-6" />
           <img
             className="relative h-40 w-80 shrink-0 rounded-lg bg-white"
             src="https://images.unsplash.com/photo-1622890806166-111d7f6c7c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
           />
         </div>
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pr-[calc(100%-21.5rem)]">
-          <Stripes border className="absolute -start-6 top-0 bottom-0 w-6" />
+          <Stripes border className="absolute -inset-s-6 top-0 bottom-0 w-6" />
           <img
             className="relative h-40 w-80 shrink-0 rounded-lg bg-white"
             src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
           />
         </div>
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pr-[calc(100%-21.5rem)]">
-          <Stripes border className="absolute -start-6 top-0 bottom-0 w-6" />
+          <Stripes border className="absolute -inset-s-6 top-0 bottom-0 w-6" />
           <img
             className="relative h-40 w-80 shrink-0 rounded-lg bg-white"
             src="https://images.unsplash.com/photo-1575424909138-46b05e5919ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
@@ -163,35 +165,35 @@ export const description = "控制在快照容器内项目周围的滚动偏移�
       <p className="mt-4 mb-4 pl-6 text-sm font-medium">从右至左</p>
       <div className="flex w-full snap-x gap-12 overflow-x-auto pb-10" dir="rtl">
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pl-[calc(100%-21.5rem)]">
-          <Stripes border className="absolute start-0 top-0 bottom-0 w-6" />
+          <Stripes border className="absolute inset-s-0 top-0 bottom-0 w-6" />
           <img
             className="relative h-40 w-80 shrink-0 rounded-lg bg-white"
             src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
           />
         </div>
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pl-[calc(100%-21.5rem)]">
-          <Stripes border className="absolute -start-6 top-0 bottom-0 w-6" />
+          <Stripes border className="absolute -inset-s-6 top-0 bottom-0 w-6" />
           <img
             className="relative h-40 w-80 shrink-0 rounded-lg bg-white"
             src="https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
           />
         </div>
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pl-[calc(100%-21.5rem)]">
-          <Stripes border className="absolute -start-6 top-0 bottom-0 w-6" />
+          <Stripes border className="absolute -inset-s-6 top-0 bottom-0 w-6" />
           <img
             className="relative h-40 w-80 shrink-0 rounded-lg bg-white"
             src="https://images.unsplash.com/photo-1622890806166-111d7f6c7c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
           />
         </div>
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pl-[calc(100%-21.5rem)]">
-          <Stripes border className="absolute -start-6 top-0 bottom-0 w-6" />
+          <Stripes border className="absolute -inset-s-6 top-0 bottom-0 w-6" />
           <img
             className="relative h-40 w-80 shrink-0 rounded-lg bg-white"
             src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
           />
         </div>
         <div className="relative shrink-0 snap-start scroll-ms-6 first:ps-6 last:pl-[calc(100%-21.5rem)]">
-          <Stripes border className="absolute -start-6 top-0 bottom-0 w-6" />
+          <Stripes border className="absolute -inset-s-6 top-0 bottom-0 w-6" />
           <img
             className="relative h-40 w-80 shrink-0 rounded-lg bg-white"
             src="https://images.unsplash.com/photo-1575424909138-46b05e5919ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"

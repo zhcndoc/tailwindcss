@@ -1,4 +1,4 @@
-import { css, handlebars, js, Page, shell, Step, Tile } from "./utils";
+import { css, html, js, Page, shell, Step, Tile } from "./utils";
 import Logo from "@/docs/img/guides/ember.react.svg";
 
 export let tile: Tile = {
@@ -17,9 +17,9 @@ export let steps: Step[] = [
     title: "创建你的项目",
     body: (
       <p>
-        如果你还没有设置 Ember.js 项目，请先创建一个新项目。最常见的方法是使用{" "}
+        如果你尚未设置 Ember.js 项目，请先创建一个新项目。最常用的方法请参阅{" "}
         <a href="https://guides.emberjs.com/release/getting-started/quick-start/#toc_create-a-new-application">
-          Ember CLI
+          Ember.js 快速入门
         </a>
         。
       </p>
@@ -28,88 +28,56 @@ export let steps: Step[] = [
       name: "Terminal",
       lang: "shell",
       code: shell`
-        npx ember-cli new my-project --embroider --no-welcome
+        npx ember-cli@latest new my-project --no-welcome
         cd my-project
       `,
     },
   },
   {
-    title: "安装Tailwind CSS",
+    title: "安装 Tailwind CSS",
     body: (
       <p>
-        使用 npm 安装 <code>@tailwindcss/postcss</code> 及其对等依赖项，以及 <code>postcss-loader</code>。
+        通过 npm 安装 <code>@tailwindcss/vite</code> 及其对等依赖项。
       </p>
     ),
     code: {
       name: "Terminal",
       lang: "shell",
       code: shell`
-        npm install tailwindcss @tailwindcss/postcss postcss postcss-loader
+        npm install tailwindcss @tailwindcss/vite
       `,
     },
   },
   {
-    title: "启用 PostCSS 支持",
+    title: "配置 Vite 插件",
     body: (
       <p>
-        在你的 <code>ember-cli-build.js</code> 文件中，配置 PostCSS 以处理你的 CSS 文件。
+        将 <code>@tailwindcss/vite</code> 插件添加到你的 Vite 配置中。
       </p>
     ),
     code: {
-      name: "ember-cli-build.js",
+      name: "vite.config.mjs",
       lang: "js",
       code: js`
-        'use strict';
+        import { defineConfig } from 'vite';
+        import { extensions, classicEmberSupport, ember } from '@embroider/vite';
+        import { babel } from '@rollup/plugin-babel';
+        // [!code highlight:2]
+        import tailwindcss from '@tailwindcss/vite';
 
-        const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-
-        module.exports = function (defaults) {
-          const app = new EmberApp(defaults, {
-            // 在这里添加选项
-          });
-
-          const { Webpack } = require('@embroider/webpack');
-          return require('@embroider/compat').compatBuild(app, Webpack, {
-            skipBabel: [
-              {
-                package: 'qunit',
-              },
-            ],
-            // [!code highlight:22]
-            packagerOptions: {
-              webpackConfig: {
-                module: {
-                  rules: [
-                    {
-                      test: /\.css$/i,
-                      use: ['postcss-loader'],
-                    },
-                  ],
-                },
-              },
-            },
-          });
-        };
-      `,
-    },
-  },
-  {
-    title: "配置 PostCSS 插件",
-    body: (
-      <p>
-        在项目根目录下创建 <code>postcss.config.mjs</code> 文件，并将 <code>@tailwindcss/postcss</code> 插件添加到 PostCSS 配置中。
-      </p>
-    ),
-    code: {
-      name: "postcss.config.mjs",
-      lang: "js",
-      code: js`
-        export default {
-          plugins: {
+        export default defineConfig({
+          plugins: [
             // [!code highlight:2]
-            "@tailwindcss/postcss": {},
-          },
-        }
+            tailwindcss(),
+            classicEmberSupport(),
+            ember(),
+            // 在此处添加其他插件
+            babel({
+              babelHelpers: 'runtime',
+              extensions,
+            }),
+          ],
+        });
       `,
     },
   },
@@ -117,7 +85,7 @@ export let steps: Step[] = [
     title: "导入 Tailwind CSS",
     body: (
       <p>
-        创建一个 <code>./app/app.css</code> 文件，并添加一个 <code>@import</code> 导入 Tailwind CSS。
+        在 <code>./app/styles/app.css</code> 中添加 <code>@import</code>，以导入 Tailwind CSS。
       </p>
     ),
     code: {
@@ -129,30 +97,26 @@ export let steps: Step[] = [
     },
   },
   {
-    title: "导入 CSS 文件",
+    title: "链接 CSS 文件",
     body: (
       <p>
-        在你的 <code>./app/app.js</code> 文件中导入新创建的 <code>./app/app.css</code> 文件。
+        在 <code>./index.html</code> 文件中，将 <code>@embroider/virtual/app.css</code> 样式表链接替换为直接指向{" "}
+        <code>./app/styles/app.css</code> 的链接，以便由 Vite 处理。
       </p>
     ),
     code: {
-      name: "app.js",
-      lang: "js",
-      code: js`
-        import Application from '@ember/application';
-        import Resolver from 'ember-resolver';
-        import loadInitializers from 'ember-load-initializers';
-        import config from 'my-project/config/environment';
-        // [!code highlight:2]
-        import 'my-project/app.css';
+      name: "index.html",
+      lang: "html",
+      code: html`
+        {{content-for "head"}}
 
-        export default class App extends Application {
-          modulePrefix = config.modulePrefix;
-          podModulePrefix = config.podModulePrefix;
-          Resolver = Resolver;
-        }
+        <link integrity="" rel="stylesheet" href="/@embroider/virtual/vendor.css" />
+        <!-- [!code --:2] -->
+        <link integrity="" rel="stylesheet" href="/@embroider/virtual/app.css" />
+        <!-- [!code ++:2] -->
+        <link integrity="" rel="stylesheet" href="/app/styles/app.css" />
 
-        loadInitializers(App, config.modulePrefix);
+        {{content-for "head-footer"}}
       `,
     },
   },
@@ -175,17 +139,21 @@ export let steps: Step[] = [
     title: "在你的项目中开始使用 Tailwind",
     body: <p>开始使用 Tailwind 的工具类来样式化你的内容。</p>,
     code: {
-      name: "application.hbs",
-      lang: "hbs",
-      code: handlebars`
-        {{page-title "MyProject"}}
+      name: "application.gjs",
+      lang: "glimmer-js",
+      code: js`
+        import { pageTitle } from 'ember-page-title';
 
-        <!-- [!code highlight:4] -->
-        <h1 class="text-3xl font-bold underline">
-          Hello world!
-        </h1>
+        <template>
+          {{pageTitle "MyProject"}}
 
-        {{outlet}}
+          <!-- [!code highlight:4] -->
+          <h1 class="text-3xl font-bold underline">
+            Hello world!
+          </h1>
+
+          {{outlet}}
+        </template>
       `,
     },
   },

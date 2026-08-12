@@ -15,7 +15,7 @@ export let page: Page = {
 
   // 注意：目前未使用此介绍，但作为参考保留在此，因为当 rails gem 更新为稳定版 v4 版本时，我们希望重新启用它。
   intro: (
-    <div className="prose prose-slate dark:prose-dark relative z-10 mb-16 max-w-3xl">
+    <div className="dark:prose-dark prose prose-slate relative z-10 mb-16 max-w-3xl">
       <p>
         在 Rails 项目中开始使用 Tailwind CSS 的最快方法是使用 <a href="https://github.com/rails/tailwindcss-rails">Tailwind CSS for Rails</a>，运行 <code>rails new my-project --css tailwind</code>。这将根据官方 Rails 示例自动配置 Tailwind 设置。如果您希望手动配置 Tailwind，请继续阅读本指南剩余部分。
       </p>

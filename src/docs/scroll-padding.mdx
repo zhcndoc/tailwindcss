@@ -22,7 +22,7 @@ export const description = "用于控制元素在捕捉容器内的滚动偏移�
     ["scroll-pl", "scroll-padding-left"],
   ].flatMap(([prefix, property]) => [
     [`${prefix}-<number>`, `${property}: calc(var(--spacing) * <number>);`],
-    [`-${prefix}-<number>`, `${property}: calc(var(--spacing) * -<number>);`],
+    [`${prefix}-px`, `${property}: 1px;`],
     [`${prefix}-(<custom-property>)`, `${property}: var(<custom-property>);`],
     [`${prefix}-[<value>]`, `${property}: <value>;`],
   ])}
@@ -110,7 +110,7 @@ export const description = "用于控制元素在捕捉容器内的滚动偏移�
     <>
       <p className="mb-4 pt-8 pl-6 text-sm font-medium">从左到右</p>
       <div className="relative" dir="ltr">
-        <Stripes border className="absolute start-0 top-0 bottom-10 w-6" />
+        <Stripes border className="absolute inset-s-0 top-0 bottom-10 w-6" />
         <div className="flex w-full snap-x scroll-ps-6 gap-8 overflow-x-auto pb-10">
           <div className="shrink-0 snap-start first:ps-6 last:pe-[calc(100%-21.5rem)]">
             <img
@@ -146,7 +146,7 @@ export const description = "用于控制元素在捕捉容器内的滚动偏移�
       </div>
       <p className="mt-4 mb-4 pl-6 text-sm font-medium">从右到左</p>
       <div className="relative" dir="rtl">
-        <Stripes border className="absolute start-0 top-0 bottom-10 w-6" />
+        <Stripes border className="absolute inset-s-0 top-0 bottom-10 w-6" />
         <div className="flex w-full snap-x scroll-ps-6 gap-8 overflow-x-auto pb-10">
           <div className="shrink-0 snap-start first:ps-6 last:pe-[calc(100%-21.5rem)]">
             <img
@@ -210,17 +210,6 @@ export const description = "用于控制元素在捕捉容器内的滚动偏移�
 ```html
 <!-- [!code classes:scroll-pbs-6] -->
 <div class="snap-y scroll-pbs-6 ...">
-  <!-- ... -->
-</div>
-```
-
-### 使用负值
-
-要使用负的滚动内边距值，请用短横线作为前缀将类名转换为负值：
-
-```html
-<!-- [!code classes:-scroll-ps-6] -->
-<div class="-scroll-ps-6 snap-x ...">
   <!-- ... -->
 </div>
 ```

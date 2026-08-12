@@ -27,8 +27,8 @@ export default async function Showcase() {
       </GridContainer>
 
       <GridContainer className="mt-10">
-        <p className="prose mx-2 max-w-(--breakpoint-md) text-lg leading-8 text-gray-600 dark:text-gray-400">
-          几乎什么东西都可以，但你不能用它来建造一艘宇宙飞船。不过你绝对可以用它建造宇宙飞船的网站，
+        <p className="prose mx-2 max-w-(--breakpoint-md) text-lg/8 text-gray-600 dark:text-gray-400">
+          并非<em>任何东西</em>都能用它来构建，例如你不能用它造一艘宇宙飞船。不过，你绝对可以为宇宙飞船构建网站，
           <a href="https://www.jpl.nasa.gov/?utm_source=tailwindcss" target="_blank" rel="noopener noreferrer">
             NASA
           </a>{" "}
