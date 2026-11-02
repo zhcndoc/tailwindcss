@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import createMdx from "@next/mdx";
 
 const nextConfig = {
+  output: "standalone",
   serverExternalPackages: ["@tailwindcss/node"],
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
   outputFileTracingIncludes: {
